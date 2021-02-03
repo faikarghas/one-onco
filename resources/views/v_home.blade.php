@@ -66,7 +66,11 @@
                         <div class="d-flex justify-content-center"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="170px" alt="one-onco logo"/></div>
                     </div>
                 </div>
-                <div class="box__welcome"></div>
+                <div class="box__welcome">
+                    <h4 class="text-white text-center">"Selamat pagi, jangan menyerah!"</h4>
+                    <p class="text-white text-center mb-4"><i>Angelina Ong, cancer sruvivor 2019</i></p>
+                    <a class="boxReadStory" href="">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a>
+                </div>
                 <div class="halfBoxRounded"></div>
             </div>
         </header>
