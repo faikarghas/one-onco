@@ -95,7 +95,7 @@
                                     'image_url'=>'dirkanker.png',
                                     'title'=>'Direktori Kanker',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#80bc41;'
+                                    'color'=>'#32A48E;'
                                 ))
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                                     'image_url'=>'beliobat.png',
                                     'title'=>'Beli Obat',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#80bc41;'
+                                    'color'=>'#00A2E3;'
                                 ))
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                                     'image_url'=>'live-chat.png',
                                     'title'=>'Live Chat',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#80bc41;'
+                                    'color'=>'#C6CB57;'
                                 ))
                             </div>
                         </div>
