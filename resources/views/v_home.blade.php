@@ -130,6 +130,12 @@
                             </p>
                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya'))
                         </div>
+                        <div class="col-12 mt-4"><hr></div>
+                        <div class="col-12">
+                            <div class="boxSearchKanker">
+                                <h3 class="text-center"><strong>CARI KATEGORI KANKER<br/>SESUAI SISTEM TUBUH</strong></h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

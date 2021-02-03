@@ -413,6 +413,14 @@ footer .sosmed ul li {
   margin-left: 1rem;
 }
 
+.boxSearchKanker {
+  box-shadow: 0px 0px 2px 1px #32a48dd0;
+  padding: 3rem;
+}
+.boxSearchKanker h3 strong {
+  font-weight: 900 !important;
+}
+
 section, footer {
   padding: 0 1rem;
 }
