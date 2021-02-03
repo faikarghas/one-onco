@@ -1,6 +1,7 @@
 .boxSearchKanker{
-    // border: 1px solid $color_green;
-    box-shadow: 0px 0px 2px 1px #32a48dd0;
+    -webkit-box-shadow: 0px 0px 2px 1px #32a48da6;
+    -moz-box-shadow: 0px 0px 2px 1px#32a48da6;
+    box-shadow: 0px 0px 2px 1px #32a48da6;
     padding: 3rem;
     h3{
         strong{
