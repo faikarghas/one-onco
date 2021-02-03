@@ -56,8 +56,12 @@
                         <div class="menu">
                             <ul>
                                 <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                                <li class="van">
-                                    <div>nav</div>
+                                <li class="open_menu">
+                                    <div id="nav-icon3" class="">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
