@@ -1,0 +1,13 @@
+.forDesktop{
+    display: block;
+    @include respond(down-tab-port){
+        display: none;
+    }
+}
+
+.forMobile{
+    display: none;
+    @include respond(down-tab-port){
+        display: block;
+    }
+}

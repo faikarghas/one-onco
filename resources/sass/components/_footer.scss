@@ -1,0 +1,53 @@
+footer{
+    background-color: $color_black;
+    .newsletter{
+        p{
+            font-size: 1.3rem;
+        }
+        .input-group{
+            height: 35px;
+            input{
+                width: 60%;
+                ::placeholder{
+                    font-style: italic;
+                }
+            }
+            button{
+                width: 40%;
+                background-color: $color_green;
+                color: white;
+                font-style: italic;
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .sitemap{
+        ul{
+            padding-top: 2rem;
+            padding-left: 10px;
+            li{
+                margin-bottom: 1rem;
+                list-style: none;
+                a{
+                    color: white;
+                    font-size: 1.3rem;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .sosmed{
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        ul{
+            li{
+                list-style: none;
+                display: inline-block;
+            }
+        }
+    }
+}

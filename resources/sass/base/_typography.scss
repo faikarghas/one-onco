@@ -1,0 +1,34 @@
+p,li,a{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+
+h1,h2,h3,h4,h5,th,td{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+label,button,span{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+input{
+    font-family: 'Nunito Sans', sans-serif;
+    &:focus{
+        outline: none;
+    }
+
+    &::placeholder{
+        font-family: 'Nunito Sans', sans-serif;
+    }
+}
+
+textarea{
+    font-family: 'Nunito Sans', sans-serif;
+    &:focus{
+        outline: none;
+    }
+
+    &::placeholder{
+        font-family: 'Nunito Sans', sans-serif;
+    }
+}

@@ -1,0 +1,21 @@
+.box__rec{
+    height: 90px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: white;
+    margin-bottom: 1rem;
+    .container{
+        height: 100%;
+        .row{
+            height: 100%;
+            img{
+                object-fit: contain;
+            }
+            svg{
+                height: 15px;
+                width: 15px;
+                object-fit: contain;
+            }
+        }
+    }
+}
