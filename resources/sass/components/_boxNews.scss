@@ -1,0 +1,25 @@
+.boxNews{
+    background-color: white;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    .boxImage{
+        height: 140px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .boxInformation{
+        padding: 0.5rem 2rem 2rem 2rem;
+        span{
+            color: rgb(146, 146, 146);
+        }
+        h3{
+            font-weight: 600;
+        }
+        p{
+            font-size: 1.3rem;
+        }
+    }
+}

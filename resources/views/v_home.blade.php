@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -75,75 +75,94 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="box__rec">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-3 d-flex align-items-center justify-content-center"><img width="40px" height="40px" src="{{asset('/images/perkanker.png')}}" alt="" /></div>
-                                        <div class="col-7 d-flex flex-column align-items-start justify-content-center">
-                                            <h3>Perawatan Kanker</h3>
-                                            <p class="m-0">Cari tau mengenai perawatan kanker yang diderita</p>
-                                        </div>
-                                        <div class="col-2 d-flex align-items-center justify-content-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">
-                                            <path style="fill: #80bc41;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
+                                @include('components/presentational.boxRec',array(
+                                    'image_url'=>'perkanker.png',
+                                    'title'=>'Perawatan Kanker',
+                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                    'color'=>'#80bc41;'
+                                ))
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="box__rec">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-3 d-flex align-items-center justify-content-center"><img width="40px" height="40px" src="{{asset('/images/dirkanker.png')}}" alt="" /></div>
-                                        <div class="col-7 d-flex flex-column align-items-start justify-content-center">
-                                            <h3>Direktori Kanker</h3>
-                                            <p class="m-0">Cari tau mengenai perawatan kanker yang diderita</p>
-                                        </div>
-                                        <div class="col-2 d-flex align-items-center justify-content-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">
-                                            <path style="fill: #80bc41;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
+                                @include('components/presentational.boxRec',array(
+                                    'image_url'=>'dirkanker.png',
+                                    'title'=>'Direktori Kanker',
+                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                    'color'=>'#80bc41;'
+                                ))
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="box__rec">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-3 d-flex align-items-center justify-content-center"><img width="40px" height="40px" src="{{asset('/images/beliobat.png')}}" alt="" /></div>
-                                        <div class="col-7 d-flex flex-column align-items-start justify-content-center">
-                                            <h3>Beli Obat</h3>
-                                            <p class="m-0">Cari tau mengenai perawatan kanker yang diderita</p>
-                                        </div>
-                                        <div class="col-2 d-flex align-items-center justify-content-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">
-                                            <path style="fill: #80bc41;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
+                                @include('components/presentational.boxRec',array(
+                                    'image_url'=>'beliobat.png',
+                                    'title'=>'Beli Obat',
+                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                    'color'=>'#80bc41;'
+                                ))
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="box__rec">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-3 d-flex align-items-center justify-content-center"><img width="40px" height="40px" src="{{asset('/images/live-chat.png')}}" alt="" /></div>
-                                        <div class="col-7 d-flex flex-column align-items-start justify-content-center">
-                                            <h3>Live Chat</h3>
-                                            <p class="m-0">Cari tau mengenai perawatan kanker yang diderita</p>
-                                        </div>
-                                        <div class="col-2 d-flex align-items-center justify-content-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">
-                                            <path style="fill: #80bc41;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
+                                @include('components/presentational.boxRec',array(
+                                    'image_url'=>'live-chat.png',
+                                    'title'=>'Live Chat',
+                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                    'color'=>'#80bc41;'
+                                ))
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="second__section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <img class="img-fluid mb-4" src="{{asset('/images/oneonco-logo.png')}}" alt="" srcset="">
+                            <h2 class="mb-4"><strong>SOLUSI TOTAL ONCOLOGY</strong></h2>
+                            <p class="mb-5">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam velit quod natus doloremque necessitatibus, totam aliquam omnis aut voluptatibus consequuntur mollitia dolores similique modi aspernatur rem? Dolores tempora magni sequi magnam soluta nihil officiis iusto molestiae sint incidunt! Aliquid accusamus provident natus excepturi in fuga error nostrum soluta asperiores quidem recusandae quod consectetur dolore maiores doloremque minima quaerat eaque quam, ipsa sunt temporibus eos. Veniam maxime eos totam dolores quis et iste quaerat voluptate sequi, porro voluptatibus aut fuga voluptates repellat nihil, illo amet est voluptatem quisquam nulla distinctio. Hic, libero laboriosam quod recusandae eius explicabo aliquam quisquam ducimus laborum!
+                            </p>
+                            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya'))
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="third__section pt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-center mb-5"><strong>JOURNAL ONKOLOGI</strong></h2>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            @include('components/presentational.boxNews',array(
+                                'date'=>'24 Nov 2020',
+                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
+                                'image_url'=>'https://source.unsplash.com/random'
+                            ))
+                        </div>
+                        <div class="col-12 col-md-4">
+                            @include('components/presentational.boxNews',array(
+                                'date'=>'24 Nov 2020',
+                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
+                                'image_url'=>'https://source.unsplash.com/random'
+                            ))
+                        </div>
+                        <div class="col-12 col-md-4">
+                            @include('components/presentational.boxNews',array(
+                                'date'=>'24 Nov 2020',
+                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
+                                'image_url'=>'https://source.unsplash.com/random'
+                            ))
+                        </div>
+                        <div class="col-12 text-center mt-5">
+                            @include('components/presentational.boxShowMore',array(
+                                'title'=>'Tampilkan lainnya'
+                            ))
                         </div>
                     </div>
                 </div>
