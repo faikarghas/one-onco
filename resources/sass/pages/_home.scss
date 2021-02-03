@@ -5,7 +5,7 @@
 
 .second__section{
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     p{
         font-size: 12px;
         color: black;
@@ -15,5 +15,11 @@
 
 .third__section{
     background-color: $color_lightGrey;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
+}
+
+.fourth__section{
+    background-color: $color_lightGrey;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }

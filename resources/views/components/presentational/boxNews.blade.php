@@ -8,7 +8,7 @@
         @if(empty($description))
 
         @else
-            <p class="mb-4">{{$description}}}</p>
+            <p class="mb-5">{{$description}}}</p>
         @endif
         @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya'))
     </div>

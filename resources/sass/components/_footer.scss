@@ -6,10 +6,19 @@ footer{
         }
         .input-group{
             height: 35px;
+
             input{
                 width: 60%;
-                ::placeholder{
-                    font-style: italic;
+                font-style: italic !important;
+                font-size: 15px !important;
+                padding-left: 1.8rem;
+                @include respond(down-tab-port){
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                }
+                ::-webkit-input-placeholder{
+                    font-style: italic !important;
+                    font-size: 15px !important;
                 }
             }
             button{
@@ -18,6 +27,10 @@ footer{
                 color: white;
                 font-style: italic;
                 font-size: 1.3rem;
+                @include respond(down-tab-port){
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                }
             }
         }
     }

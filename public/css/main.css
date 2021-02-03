@@ -282,15 +282,19 @@ footer .newsletter .input-group {
 }
 footer .newsletter .input-group input {
   width: 60%;
+  font-style: italic !important;
+  font-size: 15px !important;
+  padding-left: 1.8rem;
 }
-footer .newsletter .input-group input ::-moz-placeholder {
-  font-style: italic;
+@media only screen and (max-width: 62em) {
+  footer .newsletter .input-group input {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
 }
-footer .newsletter .input-group input :-ms-input-placeholder {
-  font-style: italic;
-}
-footer .newsletter .input-group input ::placeholder {
-  font-style: italic;
+footer .newsletter .input-group input ::-webkit-input-placeholder {
+  font-style: italic !important;
+  font-size: 15px !important;
 }
 footer .newsletter .input-group button {
   width: 40%;
@@ -298,6 +302,12 @@ footer .newsletter .input-group button {
   color: white;
   font-style: italic;
   font-size: 1.3rem;
+}
+@media only screen and (max-width: 62em) {
+  footer .newsletter .input-group button {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
 }
 footer .sitemap ul {
   padding-top: 2rem;
@@ -414,7 +424,7 @@ section, footer {
 
 .second__section {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 .second__section p {
   font-size: 12px;
@@ -424,5 +434,11 @@ section, footer {
 
 .third__section {
   background-color: #E8EAEA;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+}
+
+.fourth__section {
+  background-color: #E8EAEA;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
