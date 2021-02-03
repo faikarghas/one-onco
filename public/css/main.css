@@ -257,6 +257,7 @@ header .headerMobile .box__welcome {
   width: calc(100% - 4rem);
   border-radius: 12px;
   z-index: 2;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
 }
 header .headerMobile .halfBoxRounded {
   position: absolute;
@@ -330,6 +331,7 @@ footer .sosmed ul li {
   border-radius: 12px;
   background-color: white;
   margin-bottom: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
 }
 .box__rec a {
   text-decoration: none;
