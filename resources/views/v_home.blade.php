@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-2">
                     <div class="col-12">
                         <div class="d-flex justify-content-center"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="160px" alt="one-onco logo"/></div>
                     </div>
