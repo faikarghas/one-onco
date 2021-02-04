@@ -8,6 +8,7 @@
 @import "base/_typography";
 
 @import "components/_homeHeader";
+@import "components/_otherHeader";
 @import "components/_footer";
 @import "components/_boxRectangle";
 @import "components/_boxReadMore";
@@ -15,11 +16,14 @@
 @import "components/_boxShowMore";
 @import "components/_boxSearchKanker";
 @import "components/_boxReadStory";
+@import "components/_boxAuthButton";
 
 
 @import "layout/_layout";
 
 @import "pages/_home";
+@import "pages/_login";
+@import "pages/_register";
 
 
 

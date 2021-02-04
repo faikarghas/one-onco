@@ -16,9 +16,9 @@
         @laravelPWA
     </head>
     <body>
-        <header>
+        <header class="homeHeader">
             @include('components/presentational.menuShowcase')
-            <div class="container-fluid headerHome forDesktop">
+            <div class="container-fluid headerDesktop forDesktop">
                 <div class="row">
                     <div class="col-2"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="200px" alt="one-onco logo"/></div>
                     <div class="col-8">
@@ -35,8 +35,8 @@
                     <div class="col-2">
                         <ul class="userAction">
                             <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                            <li><a><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
-                            <li><a>LOGIN</a></li>
+                            <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
+                            <li><a href="/login">LOGIN</a></li>
                             <li><a><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
                         </ul>
                     </div>
@@ -50,8 +50,8 @@
                     <div class="col-6">
                         <div class="user">
                             <ul>
-                                <li><a><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
-                                <li><a>LOGIN</a></li>
+                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
+                                <li><a href="/login">LOGIN</a></li>
                             </ul>
                         </div>
                     </div>
@@ -235,8 +235,5 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
-        @env('local')
-        <script src="http://localhost:35729/livereload.js"></script>
-        @endenv
     </body>
 </html>

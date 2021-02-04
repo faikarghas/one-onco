@@ -16,6 +16,10 @@ ORDER:  Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
+.text-green {
+  color: #32A48E;
+}
+
 *,
 *::after,
 *::before {
@@ -228,7 +232,7 @@ strong {
   font-weight: 800 !important;
 }
 
-header {
+.homeHeader {
   height: 100vh;
   background-image: url("/images/headerHomeDesktop.jpg");
   background-position: center;
@@ -236,20 +240,20 @@ header {
   background-repeat: no-repeat;
 }
 @media only screen and (max-width: 62em) {
-  header {
+  .homeHeader {
     background-image: url("/images/headerHomeMobile.jpg");
     height: 40vh;
   }
 }
-header .headerHome {
+.homeHeader .headerDesktop {
   padding: 4rem 6rem;
 }
 @media only screen and (max-width: 62em) {
-  header .headerHome {
+  .homeHeader .headerDesktop {
     padding: 4rem 0rem;
   }
 }
-header .headerHome nav {
+.homeHeader .headerDesktop nav {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,20 +261,20 @@ header .headerHome nav {
   align-items: center;
   justify-content: flex-end;
 }
-header .headerHome nav ul {
+.homeHeader .headerDesktop nav ul {
   margin: 0;
   padding-top: 5px;
 }
-header .headerHome nav ul li {
+.homeHeader .headerDesktop nav ul li {
   margin-left: 2rem;
 }
-header .headerHome nav ul li a {
+.homeHeader .headerDesktop nav ul li a {
   font-family: "Nunito Sans", sans-serif;
   color: white;
   font-size: 1.3rem;
   letter-spacing: 1px;
 }
-header .headerHome .userAction {
+.homeHeader .headerDesktop .userAction {
   margin: 0;
   height: 100%;
   display: -webkit-box;
@@ -280,48 +284,48 @@ header .headerHome .userAction {
   justify-content: flex-end;
   padding: 0;
 }
-header .headerHome .userAction li {
+.homeHeader .headerDesktop .userAction li {
   margin-left: 2rem;
 }
-header .headerHome .userAction li:nth-child(2) {
+.homeHeader .headerDesktop .userAction li:nth-child(2) {
   margin-left: 3.5rem;
 }
-header .headerHome .userAction li:nth-child(3) {
+.homeHeader .headerDesktop .userAction li:nth-child(3) {
   margin-left: 1.5rem;
 }
-header .headerHome .userAction li a {
+.homeHeader .headerDesktop .userAction li a {
   color: white;
 }
-header .headerMobile {
+.homeHeader .headerMobile {
   height: 100%;
   position: relative;
 }
-header .headerMobile .headerNavBox {
+.homeHeader .headerMobile .headerNavBox {
   transition: 0.3s all;
 }
-header .headerMobile .headerNavBox.topScroll {
+.homeHeader .headerMobile .headerNavBox.topScroll {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 9;
   background-color: #1A1A1A;
 }
-header .headerMobile .user {
+.homeHeader .headerMobile .user {
   padding: 2rem 0;
 }
-header .headerMobile .user ul {
+.homeHeader .headerMobile .user ul {
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0;
 }
-header .headerMobile .user ul li {
+.homeHeader .headerMobile .user ul li {
   margin-left: 1.5rem;
   height: 16px;
   list-style: none;
 }
-header .headerMobile .user ul li a {
+.homeHeader .headerMobile .user ul li a {
   font-family: "Nunito Sans", sans-serif;
   color: white;
   font-size: 11px;
@@ -332,30 +336,31 @@ header .headerMobile .user ul li a {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
-header .headerMobile .user ul li a img {
+.homeHeader .headerMobile .user ul li a img {
   height: 16px;
 }
-header .headerMobile .menu {
+.homeHeader .headerMobile .menu {
   padding: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   justify-content: flex-end;
 }
-header .headerMobile .menu ul {
+.homeHeader .headerMobile .menu ul {
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0;
 }
-header .headerMobile .menu ul li {
+.homeHeader .headerMobile .menu ul li {
   margin-right: 1.5rem;
   height: 16px;
   list-style: none;
 }
-header .headerMobile .menu ul li a {
+.homeHeader .headerMobile .menu ul li a {
   font-family: "Nunito Sans", sans-serif;
   color: white;
   font-size: 11px;
@@ -367,10 +372,10 @@ header .headerMobile .menu ul li a {
   display: flex;
   align-items: center;
 }
-header .headerMobile .menu ul li a img {
+.homeHeader .headerMobile .menu ul li a img {
   height: 16px;
 }
-header .headerMobile .box__welcome {
+.homeHeader .headerMobile .box__welcome {
   min-height: 100px;
   background-color: orangered;
   position: absolute;
@@ -384,10 +389,169 @@ header .headerMobile .box__welcome {
   padding: 1.5rem;
   text-align: center;
 }
-header .headerMobile .box__welcome h4 {
+.homeHeader .headerMobile .box__welcome h4 {
   font-size: 1.5rem;
 }
-header .headerMobile .halfBoxRounded {
+.homeHeader .headerMobile .halfBoxRounded {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #E8EAEA;
+  height: 41px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-left-radius: 38px;
+  border-top-right-radius: 38px;
+}
+
+.otherHeader .headerDesktop {
+  padding: 4rem 6rem;
+}
+@media only screen and (max-width: 62em) {
+  .otherHeader .headerDesktop {
+    padding: 4rem 0rem;
+  }
+}
+.otherHeader .headerDesktop nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.otherHeader .headerDesktop nav ul {
+  margin: 0;
+  padding-top: 5px;
+}
+.otherHeader .headerDesktop nav ul li {
+  margin-left: 2rem;
+}
+.otherHeader .headerDesktop nav ul li a {
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.otherHeader .headerDesktop .userAction {
+  margin: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+}
+.otherHeader .headerDesktop .userAction li {
+  margin-left: 2rem;
+}
+.otherHeader .headerDesktop .userAction li:nth-child(2) {
+  margin-left: 3.5rem;
+}
+.otherHeader .headerDesktop .userAction li:nth-child(3) {
+  margin-left: 1.5rem;
+}
+.otherHeader .headerDesktop .userAction li a {
+  color: white;
+}
+.otherHeader .headerMobile {
+  position: relative;
+  background-color: #32A48E;
+}
+.otherHeader .headerMobile .headerNavBox {
+  transition: 0.3s all;
+}
+.otherHeader .headerMobile .headerNavBox.topScroll {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  background-color: #1A1A1A;
+}
+.otherHeader .headerMobile .user {
+  padding: 2rem 0;
+}
+.otherHeader .headerMobile .user ul {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+.otherHeader .headerMobile .user ul li {
+  margin-left: 1.5rem;
+  height: 16px;
+  list-style: none;
+}
+.otherHeader .headerMobile .user ul li a {
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 1;
+  height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.otherHeader .headerMobile .user ul li a img {
+  height: 16px;
+}
+.otherHeader .headerMobile .menu {
+  padding: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: flex-end;
+}
+.otherHeader .headerMobile .menu ul {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+.otherHeader .headerMobile .menu ul li {
+  margin-right: 1.5rem;
+  height: 16px;
+  list-style: none;
+}
+.otherHeader .headerMobile .menu ul li a {
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 1;
+  height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+.otherHeader .headerMobile .menu ul li a img {
+  height: 16px;
+}
+.otherHeader .headerMobile .box__welcome {
+  min-height: 100px;
+  background-color: orangered;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  border-radius: 12px;
+  z-index: 2;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+  padding: 1.5rem;
+  text-align: center;
+}
+.otherHeader .headerMobile .box__welcome h4 {
+  font-size: 1.5rem;
+}
+.otherHeader .headerMobile .halfBoxRounded {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -560,6 +724,17 @@ footer .sosmed ul li {
   margin-left: 1rem;
 }
 
+.button__auth {
+  width: 100%;
+  padding: 0.8rem;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+.button__auth img {
+  margin-left: 1rem;
+}
+
 section, footer {
   padding: 0 1rem;
 }
@@ -588,4 +763,129 @@ section, footer {
   background-color: #E8EAEA;
   padding-top: 2rem;
   padding-bottom: 3rem;
+}
+
+.box__login {
+  padding: 4rem 3rem;
+}
+.box__login h2 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.box__login form .input-group {
+  height: 32px;
+  margin-bottom: 1.5rem;
+}
+.box__login form .input-group-text {
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #32A48E;
+}
+.box__login form #email {
+  width: 27px;
+}
+.box__login form #password {
+  width: 27px;
+}
+.box__login form #showpass {
+  width: 32px;
+}
+.box__login form input {
+  border: none;
+  border-bottom: 1px solid #32A48E;
+  font-size: 15px !important;
+}
+.box__login form input:focus {
+  box-shadow: none;
+  border-color: none;
+}
+.box__login form input ::-webkit-input-placeholder {
+  font-size: 15px !important;
+}
+.box__login .for_or_reg p {
+  font-size: 12px;
+  color: dimgray;
+}
+.box__login .line_or {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.box__login .line_or span {
+  width: 43%;
+  background-color: #32A48E;
+  display: block;
+  height: 1px;
+}
+
+.box__register {
+  padding: 4rem 3rem;
+}
+.box__register h2 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.box__register form .input-group {
+  height: 32px;
+  margin-bottom: 1.5rem;
+}
+.box__register form .input-group-text {
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #32A48E;
+}
+.box__register form input {
+  border: none;
+  border-bottom: 1px solid #32A48E;
+  font-size: 15px !important;
+  padding-left: 0;
+  color: black;
+}
+.box__register form input:focus {
+  box-shadow: none;
+  border-color: none;
+}
+.box__register form input ::-webkit-input-placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__register form select, .box__register form textarea {
+  border: none;
+  border-bottom: 1px solid #32A48E;
+  font-size: 15px !important;
+  padding-left: 0;
+  color: black;
+}
+.box__register form select:focus {
+  box-shadow: none;
+}
+.box__register form textarea {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.box__register form textarea ::-webkit-input-placeholder {
+  color: black;
+}
+.box__register .for_or_reg p {
+  font-size: 12px;
+  color: dimgray;
+}
+.box__register .line_or {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.box__register .line_or span {
+  width: 43%;
+  background-color: #32A48E;
+  display: block;
+  height: 1px;
 }

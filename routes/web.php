@@ -17,3 +17,13 @@ Route::get('/', function () {
     return view('v_home');
 });
 
+
+Route::get('/login', function () {
+    return view('v_login');
+});
+
+
+Route::get('/register', function () {
+    return view('v_register');
+});
+
