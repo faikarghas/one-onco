@@ -142,6 +142,7 @@ button:focus {
   transition: 0.3s all;
   padding: 3rem;
   padding-top: 4rem;
+  box-shadow: 2px 0px 2px 1px rgba(56, 56, 56, 0.842);
 }
 .menumMobile .menuShowcase.open {
   left: 0;
@@ -164,17 +165,18 @@ button:focus {
   text-decoration: none;
   font-size: 1.5rem;
 }
-.menumMobile .menuOverlay {
+
+.menuOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.356);
+  background-color: rgba(0, 0, 0, 0.65);
   z-index: 9;
   display: none;
 }
-.menumMobile .menuOverlay.open {
+.menuOverlay.open {
   display: block;
 }
 

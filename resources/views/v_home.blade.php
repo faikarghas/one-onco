@@ -44,6 +44,8 @@
             </div>
 
             <div class="container-fluid headerMobile forMobile">
+                <div class="menuOverlay"></div>
+
                 <div class="row headerNavBox">
                     <div class="col-6">
                         <div class="user">

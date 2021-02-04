@@ -1,8 +1,7 @@
 <div class="menumMobile forMobile">
-    {{-- <div class="menuOverlay"></div> --}}
     <div class="menuShowcase">
-        <div class="container">
-            <div class="row">
+        <div class="container h-100">
+            <div class="row align-items-stretch h-100">
                 <div class="col-12">
                     <ul class="listmenu">
                         <li><a href="">Beranda</a></li>
@@ -22,8 +21,6 @@
                             'color'=>'#80bc41;'
                         ))
                     </div>
-                </div>
-                <div class="col-12">
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'dirkanker.png',
@@ -31,8 +28,6 @@
                             'color'=>'#32A48E;'
                         ))
                     </div>
-                </div>
-                <div class="col-12">
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'beliobat.png',
@@ -40,8 +35,6 @@
                             'color'=>'#00A2E3;'
                         ))
                     </div>
-                </div>
-                <div class="col-12">
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'live-chat.png',
