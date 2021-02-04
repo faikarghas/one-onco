@@ -301,6 +301,7 @@ header .headerMobile .headerNavBox {
 }
 header .headerMobile .headerNavBox.topScroll {
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 5;
   background-color: #1A1A1A;
