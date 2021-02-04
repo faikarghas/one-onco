@@ -73,7 +73,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="d-flex justify-content-center"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="170px" alt="one-onco logo"/></div>
+                        <div class="d-flex justify-content-center"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="160px" alt="one-onco logo"/></div>
                     </div>
                 </div>
                 <div class="box__welcome">
