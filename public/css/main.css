@@ -67,7 +67,8 @@ button:focus {
   }
 }
 
-#nav-icon3 {
+/* hamburger menu */
+#menu-hamburger {
   width: 30px;
   height: 37px;
   position: relative;
@@ -76,9 +77,10 @@ button:focus {
   transform: translateY(-50%);
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  z-index: 20;
 }
 
-#nav-icon3 span {
+#menu-hamburger span {
   display: block;
   position: absolute;
   height: 1px;
@@ -91,39 +93,91 @@ button:focus {
   transition: 0.25s ease-in-out;
 }
 
-#nav-icon3 span:nth-child(1) {
-  top: 8px;
+#menu-hamburger span:nth-child(1) {
+  top: 10px;
 }
 
-#nav-icon3 span:nth-child(2) {
+#menu-hamburger span:nth-child(2), #menu-hamburger span:nth-child(3) {
   top: 18px;
 }
 
-#nav-icon3 span:nth-child(3) {
-  top: 28px;
+#menu-hamburger span:nth-child(3) {
+  display: none;
 }
 
-#nav-icon3.open span:nth-child(1) {
+#menu-hamburger span:nth-child(4) {
+  top: 26px;
+}
+
+#menu-hamburger.open span:nth-child(1) {
   top: 18px;
   width: 0%;
   left: 50%;
 }
 
-#nav-icon3.open span:nth-child(2) {
+#menu-hamburger.open span:nth-child(2) {
   transform: rotate(45deg);
 }
 
-#nav-icon3.open span:nth-child(3) {
+#menu-hamburger.open span:nth-child(3) {
   transform: rotate(-45deg);
+  display: block;
 }
 
-#nav-icon3.open span:nth-child(4) {
+#menu-hamburger.open span:nth-child(4) {
   top: 18px;
   width: 0%;
   left: 50%;
+  display: none;
 }
 
-/* hamburger menu */
+.menumMobile .menuShowcase {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 81%;
+  height: 100%;
+  background-color: #32A48E;
+  z-index: 10;
+  transition: 0.3s all;
+  padding: 3rem;
+  padding-top: 4rem;
+}
+.menumMobile .menuShowcase.open {
+  left: 0;
+}
+.menumMobile .menuShowcase .listmenu {
+  margin-bottom: 3rem;
+}
+.menumMobile .menuShowcase .setting {
+  margin-top: 3rem;
+}
+.menumMobile .menuShowcase ul {
+  padding-left: 0;
+}
+.menumMobile .menuShowcase ul li {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.menumMobile .menuShowcase ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.menumMobile .menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.356);
+  z-index: 9;
+  display: none;
+}
+.menumMobile .menuOverlay.open {
+  display: block;
+}
+
 p, li, a {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -239,6 +293,15 @@ header .headerHome .userAction li a {
 header .headerMobile {
   height: 100%;
   position: relative;
+}
+header .headerMobile .headerNavBox {
+  transition: 0.3s all;
+}
+header .headerMobile .headerNavBox.topScroll {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background-color: #1A1A1A;
 }
 header .headerMobile .user {
   padding: 2rem 0;

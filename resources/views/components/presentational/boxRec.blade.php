@@ -6,7 +6,10 @@
             </div>
             <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                 <h3 style="color: {{$color}}"><strong>{{$title}}</strong></h3>
-                <p class="m-0">{{$description}}</p>
+                @if(empty($description))
+                @else
+                    <p class="m-0">{{$description}}</p>
+                @endif
             </div>
             <div class="col-2 d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">

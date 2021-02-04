@@ -12,7 +12,9 @@
     }
 }
 
-#nav-icon3 {
+/* hamburger menu */
+
+#menu-hamburger {
     width: 30px;
     height: 37px;
     position: relative;
@@ -23,9 +25,10 @@
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
+    z-index: 20;
 }
 
-#nav-icon3 span{
+#menu-hamburger span{
     display: block;
     position: absolute;
     height: 1px;
@@ -43,40 +46,99 @@
 }
 
 
-#nav-icon3 span:nth-child(1) {
-    top: 8px;
+#menu-hamburger span:nth-child(1) {
+    top: 10px;
 }
 
-#nav-icon3 span:nth-child(2){
+#menu-hamburger span:nth-child(2),#menu-hamburger span:nth-child(3) {
     top: 18px;
 }
-#nav-icon3 span:nth-child(3){
-    top: 28px;
+#menu-hamburger span:nth-child(3) {
+    display: none;
 }
 
-#nav-icon3.open span:nth-child(1) {
+#menu-hamburger span:nth-child(4){
+    top: 26px;
+}
+
+
+#menu-hamburger.open span:nth-child(1) {
     top: 18px;
     width: 0%;
     left: 50%;
 }
 
-#nav-icon3.open span:nth-child(2) {
+#menu-hamburger.open span:nth-child(2) {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
-#nav-icon3.open span:nth-child(3) {
+#menu-hamburger.open span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
+    display: block;
 }
 
-#nav-icon3.open span:nth-child(4) {
+#menu-hamburger.open span:nth-child(4) {
     top: 18px;
     width: 0%;
     left: 50%;
+    display: none;
 }
 
-/* hamburger menu */
+// MENU MOBILE
+
+.menumMobile{
+
+    .menuShowcase{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 81%;
+        height: 100%;
+        background-color: #32A48E;
+        z-index: 10;
+        transition: 0.3s all;
+        padding: 3rem;
+        padding-top: 4rem;
+        &.open{
+            left: 0;
+        }
+
+        .listmenu{
+            margin-bottom: 3rem;
+        }
+        .setting{
+            margin-top: 3rem;
+        }
+
+        ul{
+            padding-left: 0;
+            li{
+                list-style: none;
+                margin-bottom: 1rem;
+                a{
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .menuOverlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.356);
+        z-index: 9;
+        display: none;
+        &.open{
+            display: block;
+        }
+    }
+}
 

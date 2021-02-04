@@ -17,13 +17,14 @@
     </head>
     <body>
         <header>
+            @include('components/presentational.menuShowcase')
             <div class="container-fluid headerHome forDesktop">
                 <div class="row">
                     <div class="col-2"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="200px" alt="one-onco logo"/></div>
                     <div class="col-8">
                         <nav>
                             <ul>
-                                <li><a href=""> Tentang Kami</a></li>
+                                <li><a href="">Tentang Kami</a></li>
                                 <li><a href="">Untuk Pasien</a></li>
                                 <li><a href="">Untuk Pendamping</a></li>
                                 <li><a href="">Cerita Inspiratif Survivor</a></li>
@@ -43,7 +44,7 @@
             </div>
 
             <div class="container-fluid headerMobile forMobile">
-                <div class="row">
+                <div class="row headerNavBox">
                     <div class="col-6">
                         <div class="user">
                             <ul>
@@ -57,7 +58,8 @@
                             <ul>
                                 <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                                 <li class="open_menu">
-                                    <div id="nav-icon3" class="">
+                                    <div id="menu-hamburger" class="">
+                                        <span></span>
                                         <span></span>
                                         <span></span>
                                         <span></span>
@@ -66,6 +68,8 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-12">
                         <div class="d-flex justify-content-center"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="170px" alt="one-onco logo"/></div>
                     </div>

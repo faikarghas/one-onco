@@ -28,3 +28,24 @@ window.setInterval(() => {
     console.log(h);
 
 }, 3000);
+
+
+// MENU HAMBURGER
+
+$('#menu-hamburger').click(function (params) {
+    $('#menu-hamburger').toggleClass('open')
+    $('.menuShowcase').toggleClass('open')
+    $('.menuOverlay').toggleClass('open')
+})
+
+
+// MENU SHOWCASE
+
+$(window).on('scroll', function() {
+    var scrollPos = $(this).scrollTop();
+    if (scrollPos > 5) {
+        $('.headerNavBox').addClass('topScroll')
+    } else {
+        $('.headerNavBox').removeClass('topScroll')
+    }
+});
