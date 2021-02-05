@@ -40,6 +40,16 @@ body {
   transition: all 0.4s ease-out;
   font-family: "Nunito Sans", sans-serif;
 }
+@media only screen and (max-width: 62em) {
+  body {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 
 input,
 textarea,
@@ -51,6 +61,10 @@ a {
 
 button:focus {
   outline: 0;
+}
+
+hr {
+  background-color: #32A48E;
 }
 
 .forDesktop {
@@ -377,7 +391,6 @@ strong {
 }
 .homeHeader .headerMobile .box__welcome {
   min-height: 100px;
-  background-color: orangered;
   position: absolute;
   bottom: 5%;
   left: 50%;
@@ -738,6 +751,40 @@ footer .sosmed ul li {
   margin-left: 1rem;
 }
 
+.box__success {
+  text-align: center;
+  padding: 4rem 3rem;
+}
+.box__success h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.box__success p {
+  font-size: 1.5rem;
+  color: #808080;
+}
+
+.box__banner {
+  height: 200px;
+  position: relative;
+}
+.box__banner img {
+  width: 100%;
+}
+.box__banner-desc {
+  position: absolute;
+  bottom: calc(3rem + 1.5rem / 2);
+  left: calc(3rem + 1.5rem / 2);
+}
+.box__banner-desc h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+}
+.box__banner-desc p {
+  color: white;
+}
+
 section, footer {
   padding: 0 1rem;
 }
@@ -967,4 +1014,30 @@ section, footer {
 .box__setting form textarea::placeholder {
   font-size: 15px !important;
   color: black;
+}
+
+.perawatanKanker__page {
+  padding: 4rem 3rem;
+}
+.perawatanKanker__page-intro h3 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+.perawatanKanker__page-intro p {
+  font-size: 1.5rem;
+}
+.perawatanKanker__page-list--item {
+  margin-bottom: 2rem;
+}
+.perawatanKanker__page-list a {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #32A48E;
+  text-decoration: none;
+  line-height: 1;
+}
+.perawatanKanker__page-list p {
+  font-size: 1.3rem;
+  color: dimgray;
+  margin-bottom: 0;
 }

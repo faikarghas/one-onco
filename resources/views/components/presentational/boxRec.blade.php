@@ -1,4 +1,4 @@
-<a class="d-blok h-100">
+<a href="/{{$path}}" class="d-blok h-100">
     <div class="container">
         <div class="row">
             <div class="col-3 d-flex align-items-center justify-content-center">

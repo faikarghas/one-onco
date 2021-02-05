@@ -1,0 +1,21 @@
+.box__banner{
+    height: 200px;
+    position: relative;
+    img{
+        width: 100%;
+    }
+
+    &-desc{
+        position: absolute;
+        bottom: calc(3rem + 1.5rem / 2);
+        left: calc(3rem + 1.5rem / 2);
+        h2{
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+        }
+        p{
+            color: white;
+        }
+    }
+}

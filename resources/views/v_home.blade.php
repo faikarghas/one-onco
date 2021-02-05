@@ -95,7 +95,8 @@
                                     'image_url'=>'perkanker.png',
                                     'title'=>'Perawatan Kanker',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#80bc41;'
+                                    'color'=>'#80bc41;',
+                                    'path'=>'perawatan-kanker'
                                 ))
                             </div>
                         </div>
@@ -105,7 +106,8 @@
                                     'image_url'=>'dirkanker.png',
                                     'title'=>'Direktori Kanker',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#32A48E;'
+                                    'color'=>'#32A48E;',
+                                    'path'=>'perawatan-kanker'
                                 ))
                             </div>
                         </div>
@@ -115,7 +117,8 @@
                                     'image_url'=>'beliobat.png',
                                     'title'=>'Beli Obat',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#00A2E3;'
+                                    'color'=>'#00A2E3;',
+                                    'path'=>'login'
                                 ))
                             </div>
                         </div>
@@ -125,7 +128,8 @@
                                     'image_url'=>'live-chat.png',
                                     'title'=>'Live Chat',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#C6CB57;'
+                                    'color'=>'#C6CB57;',
+                                    'path'=>'login'
                                 ))
                             </div>
                         </div>

@@ -18,28 +18,32 @@
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'perkanker.png',
                             'title'=>'Perawatan Kanker',
-                            'color'=>'#80bc41;'
+                            'color'=>'#80bc41;',
+                            'path'=>'perawatan-kanker'
                         ))
                     </div>
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'dirkanker.png',
                             'title'=>'Direktori Kanker',
-                            'color'=>'#32A48E;'
+                            'color'=>'#32A48E;',
+                            'path'=>'perawatan-kanker'
                         ))
                     </div>
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'beliobat.png',
                             'title'=>'Beli Obat',
-                            'color'=>'#00A2E3;'
+                            'color'=>'#00A2E3;',
+                            'path'=>'login'
                         ))
                     </div>
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'live-chat.png',
                             'title'=>'Live Chat',
-                            'color'=>'#C6CB57;'
+                            'color'=>'#C6CB57;',
+                            'path'=>'login'
                         ))
                     </div>
                 </div>

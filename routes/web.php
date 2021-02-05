@@ -31,6 +31,15 @@ Route::get('/pengaturan', function () {
     return view('v_pengaturan');
 });
 
+Route::get('/sukses', function () {
+    return view('v_success');
+});
+
+
+Route::get('/perawatan-kanker', function () {
+    return view('v_perawatanKanker');
+});
+
 
 
 
