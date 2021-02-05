@@ -27,3 +27,10 @@ Route::get('/register', function () {
     return view('v_register');
 });
 
+Route::get('/pengaturan', function () {
+    return view('v_pengaturan');
+});
+
+
+
+

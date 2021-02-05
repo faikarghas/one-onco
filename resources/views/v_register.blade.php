@@ -1,8 +1,9 @@
 
 @extends('components/layouts.layout')
-@include('components/presentational/header',['path'=>'login'])
 
 @section('content')
+    @include('components/presentational/header',['path'=>'login'])
+
     <main>
         <section class="register__page">
             <div class="container">

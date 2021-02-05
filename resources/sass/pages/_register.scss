@@ -25,7 +25,7 @@
                 box-shadow: none;
                 border-color: none;
             }
-            ::-webkit-input-placeholder{
+            &::placeholder{
                 font-size: 15px !important;
                 color: black;
             }
@@ -45,28 +45,10 @@
         textarea{
             width: 100%;
             margin-bottom: 3rem;
-            ::-webkit-input-placeholder{
+            &::placeholder{
+                font-size: 15px !important;
                 color: black;
             }
-        }
-    }
-    .for_or_reg{
-        p{
-            font-size: 12px;
-            color: rgb(105, 105, 105);
-        }
-    }
-    .line_or{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-        span{
-            width: 43%;
-            background-color: $color_green;
-            display: block;
-            height: 1px;
         }
     }
 }

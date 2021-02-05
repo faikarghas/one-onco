@@ -46,7 +46,7 @@
                 <div class="col-12">
                     <ul class="setting">
                         <li>
-                            <a href="" class="d-flex align-items-center">
+                            <a href="/pengaturan" class="d-flex align-items-center">
                                 <img class="me-4" src="{{asset('/images/setting.png')}}" alt="" width="15px">
                                 Pengaturan Akun
                             </a>

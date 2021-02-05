@@ -730,6 +730,9 @@ footer .sosmed ul li {
   color: white;
   border: none;
   border-radius: 8px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
 }
 .button__auth img {
   margin-left: 1rem;
@@ -799,12 +802,24 @@ section, footer {
   box-shadow: none;
   border-color: none;
 }
-.box__login form input ::-webkit-input-placeholder {
+.box__login form input::-moz-placeholder {
   font-size: 15px !important;
+  color: black;
+}
+.box__login form input:-ms-input-placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__login form input::placeholder {
+  font-size: 15px !important;
+  color: black;
 }
 .box__login .for_or_reg p {
   font-size: 12px;
   color: dimgray;
+}
+.box__login .for_or_reg p a {
+  text-decoration: none;
 }
 .box__login .line_or {
   display: -webkit-box;
@@ -849,7 +864,15 @@ section, footer {
   box-shadow: none;
   border-color: none;
 }
-.box__register form input ::-webkit-input-placeholder {
+.box__register form input::-moz-placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__register form input:-ms-input-placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__register form input::placeholder {
   font-size: 15px !important;
   color: black;
 }
@@ -867,25 +890,81 @@ section, footer {
   width: 100%;
   margin-bottom: 3rem;
 }
-.box__register form textarea ::-webkit-input-placeholder {
+.box__register form textarea::-moz-placeholder {
+  font-size: 15px !important;
   color: black;
 }
-.box__register .for_or_reg p {
-  font-size: 12px;
-  color: dimgray;
+.box__register form textarea:-ms-input-placeholder {
+  font-size: 15px !important;
+  color: black;
 }
-.box__register .line_or {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+.box__register form textarea::placeholder {
+  font-size: 15px !important;
+  color: black;
 }
-.box__register .line_or span {
-  width: 43%;
-  background-color: #32A48E;
-  display: block;
-  height: 1px;
+
+.box__setting {
+  padding: 4rem 3rem;
+}
+.box__setting h2 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.box__setting form .input-group {
+  height: 32px;
+  margin-bottom: 1.5rem;
+}
+.box__setting form .input-group-text {
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #32A48E;
+}
+.box__setting form input {
+  border: none;
+  border-bottom: 1px solid #32A48E;
+  font-size: 15px !important;
+  padding-left: 0;
+  color: black;
+}
+.box__setting form input:focus {
+  box-shadow: none;
+  border-color: none;
+}
+.box__setting form input::-moz-placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__setting form input:-ms-input-placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__setting form input::placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__setting form select, .box__setting form textarea {
+  border: none;
+  border-bottom: 1px solid #32A48E;
+  font-size: 15px !important;
+  padding-left: 0;
+  color: black;
+}
+.box__setting form select:focus {
+  box-shadow: none;
+}
+.box__setting form textarea {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.box__setting form textarea::-moz-placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__setting form textarea:-ms-input-placeholder {
+  font-size: 15px !important;
+  color: black;
+}
+.box__setting form textarea::placeholder {
+  font-size: 15px !important;
+  color: black;
 }

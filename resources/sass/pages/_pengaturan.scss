@@ -1,4 +1,4 @@
-.box__login{
+.box__setting{
     padding: 4rem 3rem;
     h2{
         font-size: 2rem;
@@ -14,19 +14,12 @@
             border: none;
             border-bottom: 1px solid $color_green;
         }
-        #email{
-            width: 27px;
-        }
-        #password{
-            width: 27px;
-        }
-        #showpass{
-            width: 32px;
-        }
         input{
             border: none;
             border-bottom: 1px solid $color_green;
             font-size: 15px !important;
+            padding-left: 0;
+            color: black;
 
             &:focus{
                 box-shadow: none;
@@ -37,27 +30,25 @@
                 color: black;
             }
         }
-    }
-    .for_or_reg{
-        p{
-            font-size: 12px;
-            color: rgb(105, 105, 105);
-            a{
-                text-decoration: none;
+        select,textarea{
+            border: none;
+            border-bottom: 1px solid $color_green;
+            font-size: 15px !important;
+            padding-left: 0;
+            color: black;
+        }
+        select{
+            &:focus{
+                box-shadow: none;
             }
         }
-    }
-    .line_or{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-        span{
-            width: 43%;
-            background-color: $color_green;
-            display: block;
-            height: 1px;
+        textarea{
+            width: 100%;
+            margin-bottom: 3rem;
+            &::placeholder{
+                font-size: 15px !important;
+                color: black;
+            }
         }
     }
 }

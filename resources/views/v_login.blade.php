@@ -1,7 +1,8 @@
 @extends('components/layouts.layout')
-@include('components/presentational/header',['path'=>''])
 
 @section('content')
+    @include('components/presentational/header',['path'=>''])
+
     <main>
         <section class="login__page">
             <div class="container">
@@ -22,10 +23,10 @@
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
                             </form>
                             <div class="for_or_reg mt-4">
-                                <p class="text-center">Lupa kata kunci ? <span class="text-green">klik disini</span></p>
+                                <p class="text-center">Lupa kata kunci ? <a href="/pengaturan" class="text-green">klik disini</a></p>
                                 <div class="line_or"><span></span>Atau<span></span></div>
                                 <p class="text-center">Belum terdaftar ? Daftar dibawah ini</p>
-                                @include('/components/presentational.boxAuthButton',['title'=>'Daftar','color'=>'#00A2E3'])
+                                @include('/components/presentational.boxAuthButton',['title'=>'Daftar','color'=>'#00A2E3','type'=>'a','path'=>'register'])
                             </div>
                         </div>
                     </div>
