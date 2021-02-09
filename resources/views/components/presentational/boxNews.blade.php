@@ -10,6 +10,6 @@
         @else
             <p class="mb-5">{{$description}}}</p>
         @endif
-        @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya'))
+        @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/berita-terkini/test'))
     </div>
 </div>

@@ -20,7 +20,7 @@
                             <h3>Mengenal Nutrisi</h3>
                             <p>Makanan dan Minuman yang baik <br>untuk perawatan kanker.</p>
                         </div>
-                        <?php 
+                        <?php
                             $slug = 'test';
                         ?>
                         @include('/components/presentational.listContent',['description'=>'Lorem ipsum dolor sit amet obcaecati.','path'=>'/perawatan-kanker/jenis-olahraga',$slug])

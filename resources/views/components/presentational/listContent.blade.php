@@ -4,7 +4,7 @@
             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
         </div>
         <div class="col-11 ps-4">
-            <a href="">Jenis olahraga</a>
+            <a href="/perawatan-kanker/jenis-olahraga">Jenis olahraga</a>
             @if(empty($description))
             @else
                 <p>{{$description}}</p>
@@ -16,7 +16,7 @@
             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
         </div>
         <div class="col-11 ps-4">
-            <a href="">Pola olahraga dirumah</a>
+            <a href="/perawatan-kanker/jenis-olahraga">Pola olahraga dirumah</a>
             @if(empty($description))
             @else
                 <p>{{$description}}</p>
@@ -28,7 +28,7 @@
             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
         </div>
         <div class="col-11 ps-4">
-            <a href="">Referensi</a>
+            <a href="/perawatan-kanker/jenis-olahraga">Referensi</a>
             @if(empty($description))
             @else
                 <p>{{$description}}</p>
@@ -40,7 +40,7 @@
             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
         </div>
         <div class="col-11 ps-4">
-            <a href="">FAQ</a>
+            <a href="/perawatan-kanker/jenis-olahraga">FAQ</a>
             @if(empty($description))
             @else
                 <p>{{$description}}</p>
