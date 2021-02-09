@@ -1,7 +1,7 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>'login'])
+    @include('components/presentational/header',['path'=>'/'])
     <main>
         <section class="direktoriKanker__page">
             <div class="container">

@@ -107,7 +107,7 @@
                                     'title'=>'Direktori Kanker',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#32A48E;',
-                                    'path'=>'direktori-kanker'
+                                    'path'=>'direktori'
                                 ))
                             </div>
                         </div>

@@ -49,7 +49,11 @@ Route::get('/berita-terkini/{slug}', function ($slug) {
     return view('v_beritaTerkiniDetail',['slug'=>$slug]);
 });
 
-Route::get('/direktori-kanker', function () {
+Route::get('/direktori', function () {
     return view('v_direktoriKanker');
+});
+
+Route::get('/direktori-dokter', function () {
+    return view('v_direktoriDokter');
 });
 

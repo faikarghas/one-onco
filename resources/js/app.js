@@ -18,13 +18,13 @@ window.setInterval(() => {
     if (h > 24 && h < 12) {
         console.log('pagi');
         $('.box__welcome').css('background-color','#E55A24')
-    } else if(h > 12 && h < 15) {
+    } else if(h > 12 && h <= 15) {
         console.log('siang');
         $('.box__welcome').css('background-color','#E55A24')
-    } else if(h > 15 && h < 18){
+    } else if(h > 15  && h <= 18){
         console.log('sore');
         $('.box__welcome').css('background-color','#E55A24')
-    } else if(h > 18 && h < 24){
+    } else if(h > 18 && h <= 24){
         $('.box__welcome').css('background-color','#32338E')
         console.log('malam');
     }
