@@ -41,5 +41,16 @@ Route::get('/perawatan-kanker', function () {
 });
 
 
+Route::get('/perawatan-kanker/{slug}', function ($slug) {
+    return view('v_perawatanKankerDetail',['slug'=>$slug]);
+});
+
+Route::get('/berita-terkini', function () {
+    return view('v_beritaTerkini');
+});
+
+Route::get('/berita-terkini/{slug}', function ($slug) {
+    return view('v_beritaTerkiniDetail',['slug'=>$slug]);
+});
 
 

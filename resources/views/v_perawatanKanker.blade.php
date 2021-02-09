@@ -20,44 +20,10 @@
                             <h3>Mengenal Nutrisi</h3>
                             <p>Makanan dan Minuman yang baik <br>untuk perawatan kanker.</p>
                         </div>
-                        <div class="perawatanKanker__page-list">
-                                <div class="row perawatanKanker__page-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="">Jenis sayuran dan kandungan</a>
-                                        <p>Lorem ipsum dolor sit amet obcaecati.</p>
-                                    </div>
-                                </div>
-                                <div class="row perawatanKanker__page-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="">Jenis buah-buahan dan kandungan</a>
-                                        <p>Lorem ipsum dolor sit amet obcaecati sit amet obcaecati sit amet obcaecati.</p>
-                                    </div>
-                                </div>
-                                <div class="row perawatanKanker__page-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="">Cara pengolahan makanan</a>
-                                        <p>Lorem ipsum dolor sit amet obcaecati.</p>
-                                    </div>
-                                </div>
-                                <div class="row perawatanKanker__page-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="">FAQ</a>
-                                        <p>Lorem ipsum dolor sit amet obcaecati.</p>
-                                    </div>
-                                </div>
-                        </div>
+                        <?php 
+                            $slug = 'test';
+                        ?>
+                        @include('/components/presentational.listContent',['description'=>'Lorem ipsum dolor sit amet obcaecati.','path'=>'/perawatan-kanker/jenis-olahraga',$slug])
                     </div>
                     <div class="col-12 mt-4 mb-5"><hr></div>
                     <div class="col-12">
@@ -65,44 +31,7 @@
                             <h3>Olahraga bagi pasien</h3>
                             <p>Pilihan olahraga yang bisa dilakukan <br> oleh pasien kanker</p>
                         </div>
-                        <div class="perawatanKanker__page-list">
-                                <div class="row perawatanKanker__page-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="">Jenis olahraga</a>
-                                        <p>Lorem ipsum dolor sit amet obcaecati.</p>
-                                    </div>
-                                </div>
-                                <div class="row perawatanKanker__page-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="">Pola olahraga dirumah</a>
-                                        <p>Lorem ipsum dolor sit amet obcaecati sit amet obcaecati sit amet obcaecati.</p>
-                                    </div>
-                                </div>
-                                <div class="row perawatanKanker__page-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="">Referensi</a>
-                                        <p>Lorem ipsum dolor sit amet obcaecati.</p>
-                                    </div>
-                                </div>
-                                <div class="row perawatanKanker__page-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="">FAQ</a>
-                                        <p>Lorem ipsum dolor sit amet obcaecati.</p>
-                                    </div>
-                                </div>
-                        </div>
+                        @include('/components/presentational.listContent',['description'=>'Lorem ipsum dolor sit amet obcaecati.','path'=>'/perawatan-kanker',$slug])
                     </div>
                 </div>
             </div>

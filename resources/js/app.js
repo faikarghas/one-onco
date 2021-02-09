@@ -26,11 +26,10 @@ window.setInterval(() => {
         $('.box__welcome').css('background-color','#E55A24')
     } else if(h > 18 && h < 24){
         $('.box__welcome').css('background-color','#32338E')
-
         console.log('malam');
     }
 
-    console.log(h);
+    // console.log(h);
 
 }, 3000);
 
@@ -43,7 +42,6 @@ $('#menu-hamburger').click(function (params) {
     $('.menuOverlay').toggleClass('open')
 })
 
-
 // MENU SHOWCASE
 
 $(window).on('scroll', function() {
@@ -53,4 +51,9 @@ $(window).on('scroll', function() {
     } else {
         $('.headerNavBox').removeClass('topScroll')
     }
+});
+
+
+$( document ).ready(function() {
+    console.log($('.pagi-init').text().split(' ').length);
 });
