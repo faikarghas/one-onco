@@ -194,7 +194,7 @@
                 </div>
             </section>
 
-            <section class="fourth__section">
+            <section class="berita__section">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">

@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="row justify-content-center">
-                            <h3 class="text-center"> <strong>Cari dokter Onkologi di daerahmu:</strong></h3>
+                            <h3 class="text-center"><strong>Cari Care Center di daerahmu:</strong></h3>
                         </div>
                     </div>
                     <div class="col-12">
@@ -40,7 +40,7 @@
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#4172CB;',
                                     'path'=>'direktori-dokter',
-                                    'rounded'=>'rounded_img'
+                                    'rounded'=>'square_img'
                                 ))
                             </div>
                         @endfor
@@ -54,17 +54,17 @@
                     <div class="col-12">
                         <div class="box__rec">
                             @include('components/presentational.boxRec',array(
-                                'image_url'=>'dir-lab.png',
-                                'title'=>'Direktori Lab',
+                                'image_url'=>'dir-dokter.png',
+                                'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'perawatan-kanker'
+                                'path'=>'direktori-dokter'
                             ))
                         </div>
                         <div class="box__rec">
                             @include('components/presentational.boxRec',array(
-                                'image_url'=>'dir-care.png',
-                                'title'=>'Direktori Care Center',
+                                'image_url'=>'dir-lab.png',
+                                'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
                                 'path'=>'perawatan-kanker'

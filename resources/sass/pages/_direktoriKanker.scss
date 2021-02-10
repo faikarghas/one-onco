@@ -3,3 +3,18 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
+.direktoriDet__header{
+    position: fixed;
+    top: 56px;
+    width: 100%;
+    left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+}
+
+.direktoriDet__list{
+    background-color: $color_lightGrey;
+    padding-top: 135px;
+}

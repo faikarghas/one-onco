@@ -5,7 +5,7 @@
                 <div class="col-12">
                     <ul class="listmenu">
                         <li><a href="">Beranda</a></li>
-                        <li><a href="">Tentang Kami</a></li>
+                        <li><a href="/tentang-kami">Tentang Kami</a></li>
                         <li><a href="">Untuk Pasien</a></li>
                         <li><a href="">Untuk Pedamping</a></li>
                         <li><a href="">Cerita Inspiratif Survivor</a></li>

@@ -20,6 +20,10 @@ ORDER:  Base + typography > general layout + grid > page layout > components
   color: #32A48E;
 }
 
+.bg-color_lightGrey {
+  background-color: #E8EAEA;
+}
+
 *,
 *::after,
 *::before {
@@ -546,7 +550,7 @@ strong {
   background-color: #32A48E;
 }
 .otherHeader .headerMobile .headerNavBox {
-  transition: 0.3s all;
+  transition: 0.1s all;
 }
 .otherHeader .headerMobile .headerNavBox.topScroll {
   position: fixed;
@@ -742,6 +746,82 @@ footer .sosmed ul li {
      object-fit: contain;
 }
 
+.box__rec2 {
+  height: 85px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+}
+.box__rec2 .rounded_img {
+  border-radius: 33px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  background-color: #ecfc92;
+  padding: 5px;
+}
+.box__rec2 .rounded_img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.box__rec2 .square_img {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  background-color: #ecfc92;
+  padding: 5px;
+}
+.box__rec2 .square_img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.box__rec2 h3 {
+  font-size: 1rem;
+}
+.box__rec2 a {
+  text-decoration: none;
+  color: black;
+}
+.box__rec2 a .container {
+  height: 100%;
+}
+.box__rec2 a .container .row {
+  height: 100%;
+}
+.box__rec2 a .container .row img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.box__rec2 a .container .row svg {
+  height: 15px;
+  width: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.box__rec2 ul {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.box__rec2 ul li {
+  display: inline-block;
+}
+.box__rec2 ul li:nth-child(2) {
+  margin-left: 0.5rem;
+}
+.box__rec2 ul li p {
+  margin: 0;
+}
+
 .boxReadMore {
   background-color: #32A48E;
   color: white;
@@ -903,7 +983,7 @@ section, footer {
   padding-bottom: 3rem;
 }
 
-.fourth__section {
+.berita__section {
   background-color: #E8EAEA;
   padding-top: 2rem;
   padding-bottom: 3rem;
@@ -1162,7 +1242,51 @@ section, footer {
   padding-bottom: 2rem;
 }
 
+.direktoriDet__header {
+  position: fixed;
+  top: 56px;
+  width: 100%;
+  left: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
+}
+
+.direktoriDet__list {
+  background-color: #E8EAEA;
+  padding-top: 135px;
+}
+
 .direktoriDet__page h3 {
   font-size: 1.6rem;
   font-weight: 800;
+}
+
+.tentangKami__page {
+  padding: 4rem 3rem;
+}
+.tentangKami__page-intro h3 {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.tentangKami__page-intro p {
+  font-size: 1.5rem;
+}
+.tentangKami__page-list--item {
+  margin-bottom: 2rem;
+}
+.tentangKami__page-list a {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #32A48E;
+  text-decoration: none;
+  line-height: 1;
+}
+.tentangKami__page-list p {
+  font-size: 1.3rem;
+  color: dimgray;
+  margin-bottom: 0;
+}
+.tentangKami__page-content p {
+  font-size: 1.3rem;
 }

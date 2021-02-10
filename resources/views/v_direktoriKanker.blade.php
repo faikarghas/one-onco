@@ -23,7 +23,7 @@
                                 'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'perawatan-kanker'
+                                'path'=>'direktori-dokter'
                             ))
                         </div>
                         <div class="box__rec">
@@ -41,7 +41,7 @@
                                 'title'=>'Direktori Care Center',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'perawatan-kanker'
+                                'path'=>'direktori-care'
                             ))
                         </div>
                     </div>

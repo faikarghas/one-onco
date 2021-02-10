@@ -33,6 +33,14 @@ Route::get('/sukses', function () {
     return view('v_success');
 });
 
+Route::get('/tentang-kami', function () {
+    return view('v_tentang');
+});
+
+Route::get('/tentang-kami/{slug}', function ($slug) {
+    return view('v_tentangDetail',['slug'=>$slug]);
+});
+
 Route::get('/perawatan-kanker', function () {
     return view('v_perawatanKanker');
 });
@@ -55,5 +63,9 @@ Route::get('/direktori', function () {
 
 Route::get('/direktori-dokter', function () {
     return view('v_direktoriDokter');
+});
+
+Route::get('/direktori-care', function () {
+    return view('v_direktoriCare');
 });
 
