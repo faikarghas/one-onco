@@ -41,6 +41,14 @@ Route::get('/tentang-kami/{slug}', function ($slug) {
     return view('v_tentangDetail',['slug'=>$slug]);
 });
 
+Route::get('/untuk-pasien', function () {
+    return view('v_untukPasien');
+});
+
+Route::get('/untuk-pasien/{slug}', function ($slug) {
+    return view('v_untukPasienDetail',['slug'=>$slug]);
+});
+
 Route::get('/perawatan-kanker', function () {
     return view('v_perawatanKanker');
 });

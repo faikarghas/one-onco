@@ -753,6 +753,16 @@ footer .sosmed ul li {
   background-color: white;
   margin-bottom: 1rem;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+.box__rec2.bdrec h3 {
+  font-size: 0.9rem;
+}
+.box__rec2.bdrec ul li p {
+  font-size: 0.9rem;
 }
 .box__rec2 .rounded_img {
   border-radius: 33px;
@@ -948,7 +958,7 @@ footer .sosmed ul li {
 }
 .list__component-list--item a {
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #32A48E;
   text-decoration: none;
   line-height: 1;
