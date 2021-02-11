@@ -52,6 +52,9 @@ button,
 select,
 a {
   -webkit-tap-highlight-color: transparent;
+  &:focus{
+      color: white;
+  }
 }
 
 button:focus {outline:0;}

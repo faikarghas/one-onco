@@ -10,7 +10,7 @@
                         <li><a href="/untuk-pendamping">Untuk Pedamping</a></li>
                         <li><a href="">Cerita Inspiratif Survivor</a></li>
                         <li><a href="/berita-terkini">Berita Terkini</a></li>
-                        <li><a href="">Jurnal Onkologi</a></li>
+                        <li><a href="/jurnal-onkologi">Jurnal Onkologi</a></li>
                     </ul>
                 </div>
                 <div class="col-12">

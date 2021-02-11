@@ -91,6 +91,14 @@ Route::get('/berita-terkini/{slug}', function ($slug) {
     return view('v_beritaTerkiniDetail',['slug'=>$slug]);
 });
 
+Route::get('/jurnal-onkologi', function () {
+    return view('v_jurnalOnkologi');
+});
+
+Route::get('/jurnal-onkologi/{slug}', function ($slug) {
+    return view('v_jurnalOnkologiDetail',['slug'=>$slug]);
+});
+
 Route::get('/direktori', function () {
     return view('v_direktoriKanker');
 });
