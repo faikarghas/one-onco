@@ -13,8 +13,8 @@
             <div class="col-6">
                 <div class="sitemap">
                     <ul>
-                        <li><a href="">Perawatan Kanker</a></li>
-                        <li><a href="">Direktori</a></li>
+                        <li><a href="/perawatan-kanker">Perawatan Kanker</a></li>
+                        <li><a href="/direktori">Direktori</a></li>
                         <li><a href="">Beli Obat</a></li>
                         <li><a href="">Live Chat</a></li>
                     </ul>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="col-6 mt-4">
-                <img src="{{asset('/images/oneonco-logo.png')}}" width="120px"/>
+                <img src="{{asset('/images/logo_oneonco.png')}}" width="120px"/>
             </div>
             <div class="col-6 d-flex align-items-end justify-content-end ">
                 <p class="text-white mb-0">© Copyright OneOnco 2021</p>

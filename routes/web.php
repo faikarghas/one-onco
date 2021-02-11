@@ -17,6 +17,24 @@ Route::get('/', function () {
     return view('v_home');
 });
 
+////////////////////////////////////////
+// CARI SESUAI KATEGORI KANKER HOME PAGE
+
+Route::get('/sistem-tubuh', function () {
+    $slug = 'test';
+    return view('v_sistemTubuh',['slug'=>$slug]);
+});
+
+Route::get('/sistem-tubuh/{slug}', function ($slug) {
+    return view('v_sistemTubuhKanker',['slug'=>$slug]);
+});
+
+Route::get('/jenis-kanker/{slug}', function ($slug) {
+    return view('v_jenisKanker',['slug'=>$slug]);
+});
+
+////////////////////////////////////////
+
 Route::get('/login', function () {
     return view('v_login');
 });
@@ -47,6 +65,14 @@ Route::get('/untuk-pasien', function () {
 
 Route::get('/untuk-pasien/{slug}', function ($slug) {
     return view('v_untukPasienDetail',['slug'=>$slug]);
+});
+
+Route::get('/untuk-pendamping', function () {
+    return view('v_untukPendamping');
+});
+
+Route::get('/untuk-pendamping/{slug}', function ($slug) {
+    return view('v_untukPendampingDetail',['slug'=>$slug]);
 });
 
 Route::get('/perawatan-kanker', function () {

@@ -20,7 +20,7 @@
             @include('components/presentational.menuShowcase')
             <div class="container-fluid headerDesktop forDesktop">
                 <div class="row">
-                    <div class="col-2"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="200px" alt="one-onco logo"/></div>
+                    <div class="col-2"><img class="img-fluid" src="{{ asset('/images/logo_oneonco.png') }}" width="200px" alt="one-onco logo"/></div>
                     <div class="col-8">
                         <nav>
                             <ul>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-12">
-                        <div class="d-flex justify-content-center"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="160px" alt="one-onco logo"/></div>
+                        <div class="d-flex justify-content-center"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="160px" alt="one-onco logo"/></div>
                     </div>
                 </div>
                 <div class="box__welcome">
@@ -141,7 +141,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <img class="img-fluid mb-4" src="{{asset('/images/oneonco-logo.png')}}" alt="" srcset="">
+                            <img class="img-fluid mb-4" src="{{asset('/images/logo_oneonco.png')}}" width="200px" alt="logo oneonco" srcset="">
                             <h2 class="mb-4"><strong>SOLUSI TOTAL ONCOLOGY</strong></h2>
                             <p class="mb-5">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam velit quod natus doloremque necessitatibus, totam aliquam omnis aut voluptatibus consequuntur mollitia dolores similique modi aspernatur rem? Dolores tempora magni sequi magnam soluta nihil officiis iusto molestiae sint incidunt! Aliquid accusamus provident natus excepturi in fuga error nostrum soluta asperiores quidem recusandae quod consectetur dolore maiores doloremque minima quaerat eaque quam, ipsa sunt temporibus eos. Veniam maxime eos totam dolores quis et iste quaerat voluptate sequi, porro voluptatibus aut fuga voluptates repellat nihil, illo amet est voluptatem quisquam nulla distinctio. Hic, libero laboriosam quod recusandae eius explicabo aliquam quisquam ducimus laborum!
@@ -151,7 +151,15 @@
                         <div class="col-12 mt-4"><hr></div>
                         <div class="col-12">
                             <div class="boxSearchKanker">
-                                <h3 class="text-center"><strong>CARI KATEGORI KANKER<br/>SESUAI SISTEM TUBUH</strong></h3>
+                                <h3 class="text-center mb-4"><strong>CARI KATEGORI KANKER<br/>SESUAI SISTEM TUBUH</strong></h3>
+                                <div class="cari_kanker">
+                                    <a href="/sistem-tubuh">
+                                        <ul>
+                                            <li>Pilih...</li>
+                                            <li> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"></li>
+                                        </ul>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

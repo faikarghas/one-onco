@@ -275,6 +275,35 @@ hr {
   color: #a8a8a8;
 }
 
+.cari_kanker {
+  background-color: black;
+  border-radius: 10px;
+}
+.cari_kanker a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  height: 35px;
+}
+.cari_kanker a ul {
+  margin-bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+.cari_kanker a ul li {
+  display: inline-block;
+  list-style: none;
+  color: white;
+  font-size: 1.3rem;
+}
+
 p, li, a {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -962,6 +991,8 @@ footer .sosmed ul li {
   color: #32A48E;
   text-decoration: none;
   line-height: 1;
+  display: block;
+  margin-bottom: 0.7rem;
 }
 .list__component-list--item p {
   font-size: 1.3rem;
@@ -1299,4 +1330,27 @@ section, footer {
 }
 .tentangKami__page-content p {
   font-size: 1.3rem;
+}
+
+.sistem_tubuh {
+  background-color: black;
+  height: 100vh;
+  overflow: auto;
+  padding: 4rem 3rem;
+}
+.sistem_tubuh ul {
+  list-style: none;
+  padding-left: 0;
+}
+.sistem_tubuh ul li {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.233);
+}
+.sistem_tubuh ul li a {
+  color: #32A48E;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.sistem_tubuh ul li a:focus {
+  color: white;
 }

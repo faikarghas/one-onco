@@ -1,0 +1,23 @@
+.sistem_tubuh{
+    background-color: black;
+    height: 100vh;
+    overflow: auto;
+    padding: 4rem 3rem;
+
+    ul{
+        list-style: none;
+        padding-left: 0;
+        li{
+            padding: 1rem;
+            border-bottom: 1px solid rgba(153, 153, 153, 0.233);
+            a{
+                color: $color_green;
+                text-decoration: none;
+                font-size: 1.5rem;
+                &:focus{
+                    color: white;
+                }
+            }
+        }
+    }
+}
