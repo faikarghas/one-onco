@@ -1,17 +1,30 @@
 .homeHeader{
-    height: 100vh;
-    background-image: url('/images/headerHomeDesktop.jpg');
+    height: 85vh;
+    // background-image: url('/images/headerHomeDesktop.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
     @include respond(down-tab-port){
-        background-image: url('/images/headerHomeMobile.jpg');
+        // background-image: url('/images/headerHomeMobile.jpg');
         height: 40vh;
     }
 
+    .headOverlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     .headerDesktop{
+        height: 100%;
         padding: 4rem 6rem;
+        position: relative;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
         @include respond(down-tab-port){
             padding: 4rem 0rem;
         }
@@ -25,23 +38,27 @@
                 padding-top: 5px;
                 li{
                     margin-left: 2rem;
+                    display:inline-block;
                     a{
                         font-family: 'Nunito Sans', sans-serif;
                         color: white;
                         font-size: 1.3rem;
                         letter-spacing: 1px;
+                        text-decoration: none;
                     }
                 }
             }
         }
         .userAction{
             margin: 0;
-            height: 100%;
+            // height: 100%;
             display: flex;
             align-items: center;
             justify-content: flex-end;
             padding: 0;
+            list-style: none;
             li{
+                display: inline-block;
                 margin-left: 2rem;
                 &:nth-child(2){
                     margin-left: 3.5rem;
@@ -51,14 +68,40 @@
                 }
                 a{
                     color:white;
+                    text-decoration: none;
                 }
             }
+        }
+
+        .halfBoxRounded{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: $color_lightGrey;
+            height: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-top-left-radius: 38px;
+            border-top-right-radius: 38px;
+        }
+
+        .ps{
+            position: absolute;
+            bottom: 20px;
+            z-index: 3;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
         }
     }
 
     .headerMobile{
         height: 100%;
         position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
         .headerNavBox{
             transition: 0.3s all;
             &.topScroll{
@@ -142,7 +185,7 @@
         }
         .halfBoxRounded{
             position: absolute;
-            bottom: 0;
+            bottom: -1px;
             width: 100%;
             background-color: $color_lightGrey;
             height: 41px;

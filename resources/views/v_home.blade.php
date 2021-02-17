@@ -18,10 +18,12 @@
     <body>
         <header class="homeHeader">
             @include('components/presentational.menuShowcase')
-            <div class="container-fluid headerDesktop forDesktop">
+            <div class="container-fluid headerDesktop forDesktop" style="background-image:url({{asset('/images/imagebanner_desktop.jpg')}})">
+                <div class="headOverlay" style="background-color:#00a3e398;"></div>
+
                 <div class="row">
-                    <div class="col-2"><img class="img-fluid" src="{{ asset('/images/logo_oneonco.png') }}" width="200px" alt="one-onco logo"/></div>
-                    <div class="col-8">
+                    <div class="col-2 position-relative"><img class="img-fluid" src="{{ asset('/images/logo_oneonco.png') }}" width="200px" alt="one-onco logo"/></div>
+                    <div class="col-8 position-relative">
                         <nav>
                             <ul>
                                 <li><a href="">Tentang Kami</a></li>
@@ -32,21 +34,71 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-2">
-                        <ul class="userAction">
-                            <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                            <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
-                            <li><a href="/login">LOGIN</a></li>
-                            <li><a><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
-                        </ul>
+                    <div class="col-2 position-relative">
+                        <nav>
+                            <ul class="userAction">
+                                <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
+                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
+                                <li><a href="/login">LOGIN</a></li>
+                                <li><a><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                            </ul>
+                        <nav>
                     </div>
                 </div>
+                <div class="row ps">
+                    <div class="col-12 col-md-6">
+                        <div class="box__rec">
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'perkanker.png',
+                                'title'=>'Perawatan Kanker',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#80bc41;',
+                                'path'=>'perawatan-kanker'
+                            ))
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="box__rec">
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'dirkanker.png',
+                                'title'=>'Direktori Kanker',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#32A48E;',
+                                'path'=>'direktori'
+                            ))
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="box__rec">
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'beliobat.png',
+                                'title'=>'Beli Obat',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#00A2E3;',
+                                'path'=>'login'
+                            ))
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="box__rec">
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'live-chat.png',
+                                'title'=>'Live Chat',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#C6CB57;',
+                                'path'=>'login'
+                            ))
+                        </div>
+                    </div>
+                </div>
+                <div class="halfBoxRounded"></div>
             </div>
 
-            <div class="container-fluid headerMobile forMobile">
-                <div class="menuOverlay"></div>
+            <div class="container-fluid headerMobile forMobile" style="background-image:url({{asset('/images/imagebanner_mobile.jpg')}}), linear-gradient(to right, #6DB3F2, #6DB3F2);">
+                <div class="headOverlay" style="background-color:#00a3e398;"></div>
 
-                <div class="row headerNavBox">
+                <div class="menuOverlay"></div>
+                <div class="row headerNavBox position-relative">
                     <div class="col-6">
                         <div class="user">
                             <ul>
@@ -71,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-2">
+                <div class="row mt-2 position-relative">
                     <div class="col-12">
                         <div class="d-flex justify-content-center"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="160px" alt="one-onco logo"/></div>
                     </div>
@@ -83,13 +135,14 @@
                 </div>
                 <div class="halfBoxRounded"></div>
             </div>
+
         </header>
 
         <main>
-            <section class="first__section">
+            <section class="first__section forMobile">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 col-md-6">
                             <div class="box__rec">
                                 @include('components/presentational.boxRec',array(
                                     'image_url'=>'perkanker.png',
@@ -100,7 +153,7 @@
                                 ))
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 col-md-6">
                             <div class="box__rec">
                                 @include('components/presentational.boxRec',array(
                                     'image_url'=>'dirkanker.png',
@@ -111,7 +164,7 @@
                                 ))
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 col-md-6">
                             <div class="box__rec">
                                 @include('components/presentational.boxRec',array(
                                     'image_url'=>'beliobat.png',
@@ -122,7 +175,7 @@
                                 ))
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 col-md-6">
                             <div class="box__rec">
                                 @include('components/presentational.boxRec',array(
                                     'image_url'=>'live-chat.png',
@@ -141,7 +194,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <img class="img-fluid mb-4" src="{{asset('/images/logo_oneonco.png')}}" width="200px" alt="logo oneonco" srcset="">
+                            <img class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="200px" alt="logo oneonco" srcset="">
                             <h2 class="mb-4"><strong>SOLUSI TOTAL ONCOLOGY</strong></h2>
                             <p class="mb-5">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam velit quod natus doloremque necessitatibus, totam aliquam omnis aut voluptatibus consequuntur mollitia dolores similique modi aspernatur rem? Dolores tempora magni sequi magnam soluta nihil officiis iusto molestiae sint incidunt! Aliquid accusamus provident natus excepturi in fuga error nostrum soluta asperiores quidem recusandae quod consectetur dolore maiores doloremque minima quaerat eaque quam, ipsa sunt temporibus eos. Veniam maxime eos totam dolores quis et iste quaerat voluptate sequi, porro voluptatibus aut fuga voluptates repellat nihil, illo amet est voluptatem quisquam nulla distinctio. Hic, libero laboriosam quod recusandae eius explicabo aliquam quisquam ducimus laborum!
@@ -211,6 +264,15 @@
                         <div class="col-12">
                             <h2 class="text-center"><strong>BERITA TERKINI</strong></h2>
                             <p class="text-center mb-5"><i>Yang terbaru mengenai dunia onkologi</i></p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            @include('components/presentational.boxNews',array(
+                                'date'=>'24 Nov 2020',
+                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
+                                'image_url'=>'https://source.unsplash.com/random',
+                                'description'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam perspiciatis dolor rem blanditiis. Vitae veniam, aliquid molestias non nostrum',
+                                'path'=>'berita-terkini'
+                            ))
                         </div>
                         <div class="col-12 col-md-4">
                             @include('components/presentational.boxNews',array(

@@ -37,4 +37,43 @@
             </div>
         </div>
     </div>
+    <div class="container forDesktop">
+        <div class="row">
+            <div class="col-8 d-flex align-items-center">
+                <img src="{{asset('/images/logo_oneonco.png')}}" width="220px"/>
+            </div>
+            <div class="col-4">
+                <div class="newsletter">
+                    <p class="text-white text-end">Terhubung dengan e-Newsletter kami</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Anda..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Berlangganan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="sitemap">
+                    <ul class="m-0 d-flex align-items-center">
+                        <li><a href="/perawatan-kanker">Perawatan Kanker</a></li>
+                        <li><a href="/direktori">Direktori</a></li>
+                        <li><a href="">Beli Obat</a></li>
+                        <li><a href="">Live Chat</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="sosmed d-flex align-items-center">
+                    <p class="m-0">Terhubung dengan sosial media kami</p>
+                    <ul class="m-0">
+                        <li><a href=""><img src="{{asset('/images/fb-logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
+                        <li><a href=""><img src="{{asset('/images/twitter-logo.png')}}" alt="logo-twitter" width="30px" height="30px"/></a></li>
+                        <li><a href=""><img src="{{asset('/images/ig-logo.png')}}" alt="logo-ig" width="30px" height="30px"/></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 d-flex align-items-end justify-content-end mt-5">
+                <p class="text-white mb-0 text-end">© Copyright OneOnco 2021</p>
+            </div>
+        </div>
+    </div>
 </footer>

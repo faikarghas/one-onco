@@ -75,7 +75,7 @@ button:focus {
 }
 
 hr {
-  background-color: #32A48E;
+  background-color: #00A2E3;
 }
 
 .forDesktop {
@@ -166,7 +166,7 @@ hr {
   left: -100%;
   width: 81%;
   height: 100%;
-  background-color: #32A48E;
+  background-color: #00A2E3;
   z-index: 10;
   transition: 0.3s all;
   padding: 3rem;
@@ -236,7 +236,7 @@ hr {
   border-radius: 20px;
   background-color: white;
   margin-right: 2px;
-  color: #32A48E;
+  color: #00A2E3;
   font-size: 12px;
   font-weight: 600;
   display: -webkit-box;
@@ -247,10 +247,10 @@ hr {
 }
 .pagination__wrapper-button .page_number .page_numberButton.active {
   color: white;
-  background-color: #32A48E;
+  background-color: #00A2E3;
 }
 .pagination__wrapper-button .show_all {
-  background-color: #32A48E;
+  background-color: #00A2E3;
   padding: 0.5rem 1.8rem;
   border-radius: 8px;
   display: -webkit-inline-box;
@@ -271,8 +271,8 @@ hr {
 
 .share_sosmed {
   padding: 12px;
-  border-top: 1px solid #32A48E;
-  border-bottom: 1px solid #32A48E;
+  border-top: 1px solid #00A2E3;
+  border-bottom: 1px solid #00A2E3;
   text-align: center;
 }
 .share_sosmed p {
@@ -369,20 +369,30 @@ strong {
 }
 
 .homeHeader {
-  height: 100vh;
-  background-image: url("/images/headerHomeDesktop.jpg");
+  height: 85vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 @media only screen and (max-width: 62em) {
   .homeHeader {
-    background-image: url("/images/headerHomeMobile.jpg");
     height: 40vh;
   }
 }
+.homeHeader .headOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .homeHeader .headerDesktop {
+  height: 100%;
   padding: 4rem 6rem;
+  position: relative;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 @media only screen and (max-width: 62em) {
   .homeHeader .headerDesktop {
@@ -403,24 +413,27 @@ strong {
 }
 .homeHeader .headerDesktop nav ul li {
   margin-left: 2rem;
+  display: inline-block;
 }
 .homeHeader .headerDesktop nav ul li a {
   font-family: "Nunito Sans", sans-serif;
   color: white;
   font-size: 1.3rem;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 .homeHeader .headerDesktop .userAction {
   margin: 0;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0;
+  list-style: none;
 }
 .homeHeader .headerDesktop .userAction li {
+  display: inline-block;
   margin-left: 2rem;
 }
 .homeHeader .headerDesktop .userAction li:nth-child(2) {
@@ -431,10 +444,33 @@ strong {
 }
 .homeHeader .headerDesktop .userAction li a {
   color: white;
+  text-decoration: none;
+}
+.homeHeader .headerDesktop .halfBoxRounded {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #E8EAEA;
+  height: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-left-radius: 38px;
+  border-top-right-radius: 38px;
+}
+.homeHeader .headerDesktop .ps {
+  position: absolute;
+  bottom: 20px;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
 }
 .homeHeader .headerMobile {
   height: 100%;
   position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .homeHeader .headerMobile .headerNavBox {
   transition: 0.3s all;
@@ -529,7 +565,7 @@ strong {
 }
 .homeHeader .headerMobile .halfBoxRounded {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   background-color: #E8EAEA;
   height: 41px;
@@ -592,7 +628,7 @@ strong {
 }
 .otherHeader .headerMobile {
   position: relative;
-  background-color: #32A48E;
+  background-color: #00A2E3;
 }
 .otherHeader .headerMobile .headerNavBox {
   transition: 0.1s all;
@@ -701,22 +737,37 @@ strong {
 footer {
   background-color: #1A1A1A;
 }
-footer .newsletter p {
+footer p {
   font-size: 1.3rem;
+  color: white;
+}
+@media only screen and (max-width: 62em) {
+  footer p {
+    font-size: unset;
+  }
 }
 footer .newsletter .input-group {
-  height: 35px;
+  height: 45px;
+}
+@media only screen and (max-width: 62em) {
+  footer .newsletter .input-group {
+    height: 35px;
+  }
 }
 footer .newsletter .input-group input {
   width: 60%;
   font-style: italic !important;
   font-size: 15px !important;
   padding-left: 1.8rem;
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px;
 }
 @media only screen and (max-width: 62em) {
   footer .newsletter .input-group input {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
 }
 footer .newsletter .input-group input ::-webkit-input-placeholder {
@@ -725,7 +776,7 @@ footer .newsletter .input-group input ::-webkit-input-placeholder {
 }
 footer .newsletter .input-group button {
   width: 40%;
-  background-color: #32A48E;
+  background-color: #00A2E3;
   color: white;
   font-style: italic;
   font-size: 1.3rem;
@@ -736,13 +787,34 @@ footer .newsletter .input-group button {
     border-bottom-right-radius: 8px;
   }
 }
+footer .sitemap {
+  height: 100%;
+  padding-top: 6rem;
+}
+@media only screen and (max-width: 62em) {
+  footer .sitemap {
+    padding-top: 0;
+  }
+}
 footer .sitemap ul {
-  padding-top: 2rem;
+  height: 100%;
   padding-left: 10px;
 }
+@media only screen and (max-width: 62em) {
+  footer .sitemap ul {
+    padding-top: 2rem;
+  }
+}
 footer .sitemap ul li {
-  margin-bottom: 1rem;
   list-style: none;
+  display: inline-block;
+  margin-right: 1rem;
+}
+@media only screen and (max-width: 62em) {
+  footer .sitemap ul li {
+    display: block;
+    margin-bottom: 1rem;
+  }
 }
 footer .sitemap ul li a {
   color: white;
@@ -756,6 +828,15 @@ footer .sosmed {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  padding-top: 6rem;
+}
+@media only screen and (max-width: 62em) {
+  footer .sosmed {
+    padding-top: 0;
+  }
+}
+footer .sosmed p {
+  color: white;
 }
 footer .sosmed ul li {
   list-style: none;
@@ -878,7 +959,7 @@ footer .sosmed ul li {
 }
 
 .boxReadMore {
-  background-color: #32A48E;
+  background-color: #00A2E3;
   color: white;
   padding: 0.5rem 1.9rem;
   border-radius: 5px;
@@ -899,7 +980,12 @@ footer .sosmed ul li {
   border-radius: 2px;
 }
 .boxNews .boxImage {
-  height: 140px;
+  height: 200px;
+}
+@media only screen and (max-width: 62em) {
+  .boxNews .boxImage {
+    height: 140px;
+  }
 }
 .boxNews .boxImage img {
   width: 100%;
@@ -1004,7 +1090,7 @@ footer .sosmed ul li {
 .list__component-list--item a {
   font-weight: 600;
   font-size: 1.6rem;
-  color: #32A48E;
+  color: #00A2E3;
   text-decoration: none;
   line-height: 1;
   display: block;
@@ -1028,6 +1114,12 @@ section, footer {
 .second__section {
   padding-top: 2rem;
   padding-bottom: 3rem;
+  background-color: #E8EAEA;
+}
+@media only screen and (max-width: 62em) {
+  .second__section {
+    background-color: white;
+  }
 }
 .second__section p {
   font-size: 12px;
@@ -1060,7 +1152,7 @@ section, footer {
 .box__login form .input-group-text {
   background-color: white;
   border: none;
-  border-bottom: 1px solid #32A48E;
+  border-bottom: 1px solid #00A2E3;
 }
 .box__login form #email {
   width: 27px;
@@ -1073,7 +1165,7 @@ section, footer {
 }
 .box__login form input {
   border: none;
-  border-bottom: 1px solid #32A48E;
+  border-bottom: 1px solid #00A2E3;
   font-size: 15px !important;
 }
 .box__login form input:focus {
@@ -1110,7 +1202,7 @@ section, footer {
 }
 .box__login .line_or span {
   width: 43%;
-  background-color: #32A48E;
+  background-color: #00A2E3;
   display: block;
   height: 1px;
 }
@@ -1129,11 +1221,11 @@ section, footer {
 .box__register form .input-group-text {
   background-color: white;
   border: none;
-  border-bottom: 1px solid #32A48E;
+  border-bottom: 1px solid #00A2E3;
 }
 .box__register form input {
   border: none;
-  border-bottom: 1px solid #32A48E;
+  border-bottom: 1px solid #00A2E3;
   font-size: 15px !important;
   padding-left: 0;
   color: black;
@@ -1156,7 +1248,7 @@ section, footer {
 }
 .box__register form select, .box__register form textarea {
   border: none;
-  border-bottom: 1px solid #32A48E;
+  border-bottom: 1px solid #00A2E3;
   font-size: 15px !important;
   padding-left: 0;
   color: black;
@@ -1195,11 +1287,11 @@ section, footer {
 .box__setting form .input-group-text {
   background-color: white;
   border: none;
-  border-bottom: 1px solid #32A48E;
+  border-bottom: 1px solid #00A2E3;
 }
 .box__setting form input {
   border: none;
-  border-bottom: 1px solid #32A48E;
+  border-bottom: 1px solid #00A2E3;
   font-size: 15px !important;
   padding-left: 0;
   color: black;
@@ -1222,7 +1314,7 @@ section, footer {
 }
 .box__setting form select, .box__setting form textarea {
   border: none;
-  border-bottom: 1px solid #32A48E;
+  border-bottom: 1px solid #00A2E3;
   font-size: 15px !important;
   padding-left: 0;
   color: black;
@@ -1263,7 +1355,7 @@ section, footer {
 .perawatanKanker__page-list a {
   font-weight: 600;
   font-size: 1.8rem;
-  color: #32A48E;
+  color: #00A2E3;
   text-decoration: none;
   line-height: 1;
 }
@@ -1342,7 +1434,7 @@ section, footer {
 .tentangKami__page-list a {
   font-weight: 600;
   font-size: 1.8rem;
-  color: #32A48E;
+  color: #00A2E3;
   text-decoration: none;
   line-height: 1;
 }
@@ -1370,7 +1462,7 @@ section, footer {
   border-bottom: 1px solid rgba(153, 153, 153, 0.233);
 }
 .sistem_tubuh ul li a {
-  color: #32A48E;
+  color: #00A2E3;
   text-decoration: none;
   font-size: 1.5rem;
 }

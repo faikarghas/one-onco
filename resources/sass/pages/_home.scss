@@ -6,6 +6,10 @@
 .second__section{
     padding-top: 2rem;
     padding-bottom: 3rem;
+    background-color: $color_lightGrey;
+    @include respond(down-tab-port){
+        background-color: white;
+    }
     p{
         font-size: 12px;
         color: black;

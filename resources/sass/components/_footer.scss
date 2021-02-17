@@ -1,20 +1,30 @@
 footer{
     background-color: $color_black;
-    .newsletter{
-        p{
-            font-size: 1.3rem;
+    p{
+        font-size: 1.3rem;
+        color: white;
+        @include respond(down-tab-port){
+            font-size: unset;
         }
+    }
+    .newsletter{
         .input-group{
-            height: 35px;
-
+            height: 45px;
+            @include respond(down-tab-port){
+                height: 35px;
+            }
             input{
                 width: 60%;
                 font-style: italic !important;
                 font-size: 15px !important;
                 padding-left: 1.8rem;
+                border-top-left-radius: 22px;
+                border-bottom-left-radius: 22px;
                 @include respond(down-tab-port){
                     border-top-left-radius: 8px;
                     border-bottom-left-radius: 8px;
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
                 }
                 ::-webkit-input-placeholder{
                     font-style: italic !important;
@@ -36,12 +46,25 @@ footer{
     }
 
     .sitemap{
+        height: 100%;
+        padding-top: 6rem;
+        @include respond(down-tab-port){
+            padding-top: 0;
+        }
         ul{
-            padding-top: 2rem;
+            height: 100%;
             padding-left: 10px;
+            @include respond(down-tab-port){
+                padding-top: 2rem;
+            }
             li{
-                margin-bottom: 1rem;
                 list-style: none;
+                display: inline-block;
+                margin-right: 1rem;
+                @include respond(down-tab-port){
+                    display: block;
+                    margin-bottom: 1rem;
+                }
                 a{
                     color: white;
                     font-size: 1.3rem;
@@ -56,6 +79,13 @@ footer{
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
+        padding-top: 6rem;
+        @include respond(down-tab-port){
+            padding-top: 0;
+        }
+        p{
+            color: white;
+        }
         ul{
             li{
                 list-style: none;
