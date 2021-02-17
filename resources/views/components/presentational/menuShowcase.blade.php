@@ -8,7 +8,7 @@
                         <li><a href="/tentang-kami">Tentang Kami</a></li>
                         <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                         <li><a href="/untuk-pendamping">Untuk Pedamping</a></li>
-                        <li><a href="">Cerita Inspiratif Survivor</a></li>
+                        <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
                         <li><a href="/berita-terkini">Berita Terkini</a></li>
                         <li><a href="/jurnal-onkologi">Jurnal Onkologi</a></li>
                     </ul>

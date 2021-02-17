@@ -234,3 +234,11 @@
     }
 }
 
+.fix-top{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    top: 56px;
+    padding: 20px !important;
+    left: 0;
+}

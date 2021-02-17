@@ -1,6 +1,7 @@
 .detail__page1{
     padding: 4rem 3rem;
-
+    position: relative;
+    z-index: 2;
     &--img{
         height: 180px;
         width: 100%;
@@ -16,6 +17,11 @@
         p{
             font-size: 1.4rem;
             font-weight: 400;
+        }
+        a{
+            font-weight: 900;
+            font-size: 1.4rem;
+            text-decoration: none;
         }
     }
 }

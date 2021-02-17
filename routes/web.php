@@ -75,6 +75,14 @@ Route::get('/untuk-pendamping/{slug}', function ($slug) {
     return view('v_untukPendampingDetail',['slug'=>$slug]);
 });
 
+Route::get('/cerita-survivor', function () {
+    return view('v_ceritaSurvivor');
+});
+
+Route::get('/cerita-survivor/{slug}', function ($slug) {
+    return view('v_ceritaSurvivorDetail',['slug'=>$slug]);
+});
+
 Route::get('/perawatan-kanker', function () {
     return view('v_perawatanKanker');
 });

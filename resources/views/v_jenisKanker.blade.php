@@ -8,9 +8,9 @@
         <section class="detail__page1">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 fix-top">
                         <p class="text-center h5"><strong>SORTIR BERDASARKAN JENIS KANKER</strong></p>
-                        <div class="cari_kanker mb-4">
+                        <div class="cari_kanker">
                             <a href="/sistem-tubuh">
                                 <ul>
                                     <li><i>{{$slug}}</i></li>
@@ -19,7 +19,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12" style="margin-top: 55px">
                         <div class="detail__page1--img mb-5">
                             <img src="https://source.unsplash.com/random" alt="{{$slug}}-img" height="180px" width="100%">
                         </div>
