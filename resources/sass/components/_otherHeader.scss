@@ -59,13 +59,13 @@
         position: relative;
         background-color: $color_green;
         .headerNavBox{
-            transition: 0.1s all;
+            transition: 0s all;
             &.topScroll{
                 position: fixed;
                 top: 0;
                 width: 100%;
                 z-index: 9;
-                background-color: $color_black;
+                background-color: $color_blue;
             }
         }
         .user{

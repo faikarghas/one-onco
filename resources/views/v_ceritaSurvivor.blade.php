@@ -31,6 +31,5 @@
         </div>
         @include('/components/presentational.storyList',[])
         @include('/components/presentational.newsList',[])
-
     </main>
 @endsection

@@ -199,7 +199,7 @@
                             <p class="mb-5">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam velit quod natus doloremque necessitatibus, totam aliquam omnis aut voluptatibus consequuntur mollitia dolores similique modi aspernatur rem? Dolores tempora magni sequi magnam soluta nihil officiis iusto molestiae sint incidunt! Aliquid accusamus provident natus excepturi in fuga error nostrum soluta asperiores quidem recusandae quod consectetur dolore maiores doloremque minima quaerat eaque quam, ipsa sunt temporibus eos. Veniam maxime eos totam dolores quis et iste quaerat voluptate sequi, porro voluptatibus aut fuga voluptates repellat nihil, illo amet est voluptatem quisquam nulla distinctio. Hic, libero laboriosam quod recusandae eius explicabo aliquam quisquam ducimus laborum!
                             </p>
-                            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/berita-terkini/test'))
+                            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/tentang-kami'))
                         </div>
                         <div class="col-12 mt-4"><hr></div>
                         <div class="col-12">
@@ -251,7 +251,8 @@
                         </div>
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
-                                'title'=>'Tampilkan lainnya'
+                                'title'=>'Tampilkan semua',
+                                'path'=>'jurnal-onkologi'
                             ))
                         </div>
                     </div>
@@ -294,7 +295,8 @@
                         </div>
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
-                                'title'=>'Tampilkan lainnya'
+                                'title'=>'Tampilkan semua',
+                                'path'=>'berita-terkini'
                             ))
                         </div>
                     </div>

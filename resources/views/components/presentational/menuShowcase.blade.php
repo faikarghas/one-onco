@@ -4,7 +4,7 @@
             <div class="row align-items-stretch h-100">
                 <div class="col-12">
                     <ul class="listmenu">
-                        <li><a href="">Beranda</a></li>
+                        <li><a href="/">Beranda</a></li>
                         <li><a href="/tentang-kami">Tentang Kami</a></li>
                         <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                         <li><a href="/untuk-pendamping">Untuk Pedamping</a></li>
@@ -27,7 +27,7 @@
                             'image_url'=>'dirkanker.png',
                             'title'=>'Direktori Kanker',
                             'color'=>'#32A48E;',
-                            'path'=>'perawatan-kanker'
+                            'path'=>'direktori'
                         ))
                     </div>
                     <div class="box__rec" style="height: 60px">

@@ -119,3 +119,6 @@ Route::get('/direktori-care', function () {
     return view('v_direktoriCare');
 });
 
+Route::get('/direktori-lab', function () {
+    return view('v_direktoriLab');
+});

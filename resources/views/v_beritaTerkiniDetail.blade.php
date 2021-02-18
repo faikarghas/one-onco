@@ -39,7 +39,8 @@
                     </div>
                     <div class="col-12 text-center">
                         @include('components/presentational.boxShowMore',array(
-                            'title'=>'Berita Terkini'
+                            'title'=>'Berita Terkini',
+                            'path'=>''
                         ))
                     </div>
                 </div>

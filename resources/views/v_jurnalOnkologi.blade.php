@@ -25,12 +25,12 @@
                             'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
                             'image_url'=>'https://source.unsplash.com/random',
                             'path'=>'jurnal-onkologi/test'
-
                         ))
                     </div>
                     <div class="col-12 text-center mt-5">
                         @include('components/presentational.boxShowMore',array(
-                            'title'=>'Tampilkan lainnya'
+                            'title'=>'Tampilkan lainnya',
+                            'path'=>''
                         ))
                     </div>
                 </div>

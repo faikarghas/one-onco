@@ -32,7 +32,7 @@
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'perawatan-kanker'
+                                'path'=>'direktori-lab'
                             ))
                         </div>
                         <div class="box__rec">
