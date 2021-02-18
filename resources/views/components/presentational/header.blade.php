@@ -1,8 +1,8 @@
 <header class="otherHeader">
     @include('components/presentational.menuShowcase')
-    <div class="container-fluid headerHome forDesktop">
+    <div class="container-fluid headerDesktop forDesktop">
         <div class="row">
-            <div class="col-2"><img class="img-fluid" src="{{ asset('/images/oneonco-logo.png') }}" width="200px" alt="one-onco logo"/></div>
+            <div class="col-2"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/></div>
             <div class="col-8">
                 <nav>
                     <ul>
@@ -55,3 +55,4 @@
         </div>
     </div>
 </header>
+

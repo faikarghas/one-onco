@@ -26,11 +26,11 @@
                     <div class="col-8 position-relative">
                         <nav>
                             <ul>
-                                <li><a href="">Tentang Kami</a></li>
-                                <li><a href="">Untuk Pasien</a></li>
-                                <li><a href="">Untuk Pendamping</a></li>
-                                <li><a href="">Cerita Inspiratif Survivor</a></li>
-                                <li><a href="">Berita Terkini & Jurnal</a></li>
+                                <li><a href="/tentang-kami">Tentang Kami</a></li>
+                                <li><a href="/untuk-pasien">Untuk Pasien</a></li>
+                                <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
+                                <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
+                                <li><a href="/berita-terkini">Berita Terkini & Jurnal</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -201,8 +201,8 @@
                             </p>
                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/tentang-kami'))
                         </div>
-                        <div class="col-12 mt-4"><hr></div>
-                        <div class="col-12">
+                        <div class="col-12 mt-4 forMobile"><hr></div>
+                        <div class="col-12 forMobile">
                             <div class="boxSearchKanker">
                                 <h3 class="text-center mb-4"><strong>CARI KATEGORI KANKER<br/>SESUAI SISTEM TUBUH</strong></h3>
                                 <div class="cari_kanker">
@@ -212,6 +212,110 @@
                                             <li> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"></li>
                                         </ul>
                                     </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exSecondSection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="boxSearchKanker">
+                                <h3 class="text-center mb-5"><strong>CARI TAU JENIS PENYAKIT BERDASARKAN <br/> LOKASI ATAU SISTEM TUBUH</strong></h3>
+                                <div class="cari_kanker">
+                                    <a href="/sistem-tubuh">
+                                        <ul>
+                                            <li>Pilih...</li>
+                                            <li> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"></li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div class="boxSearchKanker-list mt-5">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Breast Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Colorectal Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Lung Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Cervix Uteri Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Thyroid Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Prostate Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Stomach Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Liver Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Bladder Cancer</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
+                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
+                                                </svg>
+                                                <p>Oesophagus Cancer</p>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
