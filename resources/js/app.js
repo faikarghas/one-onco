@@ -15,11 +15,11 @@ window.setInterval(() => {
     // malam
     // 18-24
 
-    if (h > 24 && h < 12) {
+    if (h <= 12) {
         // console.log('pagi');
         $('.box__welcome').css('background-color','#E55A24')
     } else if(h > 12 && h <= 15) {
-        // console.log('siang');
+        console.log('siang');
         $('.box__welcome').css('background-color','#E55A24')
     } else if(h > 15  && h <= 18){
         // console.log('sore');
@@ -37,11 +37,11 @@ window.setInterval(() => {
 const d = new Date();
 const h = d.getHours()
 
-if (h > 0 && h < 12) {
+if (h <= 12) {
     // console.log('pagi');
     $('.box__welcome').css('background-color','#E55A24')
 } else if(h > 12 && h <= 15) {
-    // console.log('siang');
+    console.log('siang');
     $('.box__welcome').css('background-color','#E55A24')
 } else if(h > 15  && h <= 18){
     // console.log('sore');
