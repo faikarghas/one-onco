@@ -2,7 +2,11 @@
     @include('components/presentational.menuShowcase')
     <div class="container-fluid headerDesktop forDesktop">
         <div class="row">
-            <div class="col-2"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/></div>
+            <div class="col-2">
+                <a href="/">
+                    <img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/>
+                </a>
+            </div>
             <div class="col-8">
                 <nav>
                     <ul>
@@ -19,7 +23,7 @@
                     <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                     <li><a><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
                     <li><a href="/login">LOGIN</a></li>
-                    <li><a><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                    <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
                 </ul>
             </div>
         </div>

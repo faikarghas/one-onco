@@ -60,7 +60,7 @@
                 </div>
             </div>
         </section>
-        <section class="tentangKami__pageD forDesktop-dflex">
+        <section class="tentangKami__pageD tab__menu forDesktop-dflex">
             <div class="col-cs-4">
                 <div class="list__component">
                     <div class="row list__component-list--item">
