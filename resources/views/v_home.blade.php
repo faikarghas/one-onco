@@ -219,7 +219,7 @@
                 </div>
             </section>
 
-            <section class="exSecondSection">
+            <section class="exSecondSection forDesktop">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">

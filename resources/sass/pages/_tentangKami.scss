@@ -82,6 +82,12 @@
             &--item{
                 position: relative;
                 padding: 0 1rem;
+                a{
+                    height: 100%;
+                    &.active{
+                        color: black;
+                    }
+                }
                 .col-11{
                     .tab_line{
                         width: 50px;

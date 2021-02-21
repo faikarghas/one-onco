@@ -1,8 +1,23 @@
+.register__page{
+    .col-12{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .box__register{
     padding: 4rem 3rem;
+    width: 50%;
+    @include respond(down-tab-port){
+        width: unset;
+    }
     h2{
         font-size: 2rem;
         font-weight: 900;
+        text-align: center;
+        @include respond(down-tab-port){
+            text-align: start;
+        }
     }
     form{
         .input-group{

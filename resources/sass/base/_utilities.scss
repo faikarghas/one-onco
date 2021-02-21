@@ -5,6 +5,13 @@
     }
 }
 
+.forDesktop-dflex{
+    display: flex !important;
+    @include respond(down-tab-port){
+        display: none !important;
+    }
+}
+
 .forMobile{
     display: none;
     @include respond(down-tab-port){

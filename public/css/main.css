@@ -87,6 +87,17 @@ hr {
   }
 }
 
+.forDesktop-dflex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+@media only screen and (max-width: 62em) {
+  .forDesktop-dflex {
+    display: none !important;
+  }
+}
+
 .forMobile {
   display: none;
 }
@@ -1141,7 +1152,12 @@ footer .sosmed ul li {
   text-decoration: none;
   line-height: 1;
   display: block;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 62em) {
+  .list__component-list--item a {
+    margin-bottom: 0.7rem;
+  }
 }
 .list__component-list--item p {
   font-size: 1.3rem;
@@ -1197,12 +1213,31 @@ section, footer {
   padding-bottom: 3rem;
 }
 
+.login__page .col-12 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+}
+
 .box__login {
   padding: 4rem 3rem;
+  width: 50%;
+}
+@media only screen and (max-width: 62em) {
+  .box__login {
+    width: unset;
+  }
 }
 .box__login h2 {
   font-size: 2rem;
   font-weight: 900;
+  text-align: center;
+}
+@media only screen and (max-width: 62em) {
+  .box__login h2 {
+    text-align: start;
+  }
 }
 .box__login form .input-group {
   height: 32px;
@@ -1266,12 +1301,31 @@ section, footer {
   height: 1px;
 }
 
+.register__page .col-12 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+}
+
 .box__register {
   padding: 4rem 3rem;
+  width: 50%;
+}
+@media only screen and (max-width: 62em) {
+  .box__register {
+    width: unset;
+  }
 }
 .box__register h2 {
   font-size: 2rem;
   font-weight: 900;
+  text-align: center;
+}
+@media only screen and (max-width: 62em) {
+  .box__register h2 {
+    text-align: start;
+  }
 }
 .box__register form .input-group {
   height: 32px;
@@ -1332,12 +1386,31 @@ section, footer {
   color: black;
 }
 
+.setting__page .col-12 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+}
+
 .box__setting {
   padding: 4rem 3rem;
+  width: 50%;
+}
+@media only screen and (max-width: 62em) {
+  .box__setting {
+    width: unset;
+  }
 }
 .box__setting h2 {
   font-size: 2rem;
   font-weight: 900;
+  text-align: center;
+}
+@media only screen and (max-width: 62em) {
+  .box__setting h2 {
+    text-align: start;
+  }
 }
 .box__setting form .input-group {
   height: 32px;
@@ -1583,6 +1656,12 @@ section, footer {
 .tentangKami__pageD .list__component-list--item {
   position: relative;
   padding: 0 1rem;
+}
+.tentangKami__pageD .list__component-list--item a {
+  height: 100%;
+}
+.tentangKami__pageD .list__component-list--item a.active {
+  color: black;
 }
 .tentangKami__pageD .list__component-list--item .col-11 .tab_line {
   width: 50px;

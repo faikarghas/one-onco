@@ -6,11 +6,11 @@
             <div class="col-8">
                 <nav>
                     <ul>
-                        <li><a href="">Tentang Kami</a></li>
-                        <li><a href="">Untuk Pasien</a></li>
-                        <li><a href="">Untuk Pendamping</a></li>
-                        <li><a href="">Cerita Inspiratif Survivor</a></li>
-                        <li><a href="">Berita Terkini & Jurnal</a></li>
+                        <li><a href="/tentang-kami">Tentang Kami</a></li>
+                        <li><a href="/untuk-pasien">Untuk Pasien</a></li>
+                        <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
+                        <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
+                        <li><a href="/berita-terkini">Berita Terkini & Jurnal</a></li>
                     </ul>
                 </nav>
             </div>
