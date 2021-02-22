@@ -18,12 +18,20 @@
         }
 
         h2{
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             font-weight: 900;
             color: white;
+            @include respond(down-tab-port){
+                font-size: 2.5rem;
+            }
         }
         p{
+            font-size: 1.8rem;
+            font-style: italic;
             color: white;
+            @include respond(down-tab-port){
+                font-size: 1.2rem;
+            }
         }
     }
 }

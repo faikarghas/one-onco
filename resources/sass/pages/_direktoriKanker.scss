@@ -14,13 +14,57 @@
     background-color: white;
 }
 
+.direktori__menuTab{
+    padding-top: 3rem;
+    background-color: $color_lightGrey;
+    position: fixed;
+    width: 100%;
+    top: 137px;
+    left: 0;
+}
+
 .direktoriDet__list{
     background-color: $color_lightGrey;
-    padding-top: 135px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: calc(137px + 130px);
+    @include respond(down-tab-port){
+        padding-top: 137px;
+        margin-top: unset;
+    }
+
+    form{
+        select{
+            height: 35px;
+            border-radius: 12px;
+            color: black;
+            option{
+                color: black;
+            }
+        }
+    }
 }
 
 .direktoriLab__list{
     background-color: $color_lightGrey;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: calc(137px + 130px);
+    @include respond(down-tab-port){
+        padding-top: 137px;
+        padding-bottom: unset;
+        margin-top: unset;
+    }
+    form{
+        select{
+            height: 35px;
+            border-radius: 12px;
+            color: black;
+            option{
+                color: black;
+            }
+        }
+    }
     &-item{
         background-color: white;
         padding: 2rem;

@@ -208,6 +208,9 @@
     border-top: 1px solid $color_green;
     border-bottom: 1px solid $color_green;
     text-align: center;
+    &.forDesktop{
+        width: calc(40%);
+    }
     p{
         text-align: center;
         font-size: 11px;

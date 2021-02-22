@@ -6,7 +6,7 @@
         <section class="direktoriKanker__page">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 forMobile">
                         <div class="row justify-content-center">
                             <div class="col-3 text-center"><img src="{{asset('/images/dirblack.png')}}" alt="dir-kanker" width="55px"></div>
                             <div class="col-6 d-flex flex-column align-items-start justify-content-center">
@@ -16,7 +16,7 @@
                         </div>
                         <hr class="mt-4 mb-4">
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 col-lg-4">
                         <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-dokter.png',
@@ -26,6 +26,8 @@
                                 'path'=>'direktori-dokter'
                             ))
                         </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
                         <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-lab.png',
@@ -35,6 +37,8 @@
                                 'path'=>'direktori-lab'
                             ))
                         </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
                         <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-care.png',

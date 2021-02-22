@@ -5,6 +5,13 @@
     @include('components/presentational/header',['path'=>''])
 
     <main>
+        <div class="box__banner forDesktop">
+            <img src="{{asset('/images/beritabanner.jpg')}}" width="100%" height="100%" alt="">
+            <div class="box__banner-desc">
+                <h2>Berita Terkini</h2>
+                <p>Artikel terkini untuk Anda</p>
+            </div>
+        </div>
         <section class="bg-color_lightGrey">
             <div class="container pt-5 pb-5 ">
                 <div class="row">

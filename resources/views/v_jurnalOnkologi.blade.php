@@ -5,6 +5,11 @@
     @include('components/presentational/header',['path'=>''])
 
     <main>
+        <div class="box__banner forDesktop">
+            <img src="{{asset('/images/jurnalbanner.jpg')}}" width="100%" height="100%" alt="">
+            <div class="box__banner-desc">
+            </div>
+        </div>
         <section class="bg-color_lightGrey">
             <div class="container pt-5 pb-5 ">
                 <div class="row">

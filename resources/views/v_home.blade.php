@@ -30,7 +30,15 @@
                                 <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                                 <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
                                 <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
-                                <li><a href="/berita-terkini">Berita Terkini & Jurnal</a></li>
+                                <li class="show_menu">
+                                    <a href="/berita-terkini">Berita Terkini & Jurnal</a>
+                                    <div class="sub_menu">
+                                        <ul>
+                                            <li><a href="/berita-terkini">Berita Terkini</a></li>
+                                            <li><a href="/jurnal-onkologi">Jurnal Onkologi</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -58,13 +66,22 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="box__rec">
+                        <div class="box__rec forMobile">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
                                 'path'=>'direktori'
+                            ))
+                        </div>
+                        <div class="box__rec forDesktop">
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'dirkanker.png',
+                                'title'=>'Direktori Kanker',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#32A48E;',
+                                'path'=>'direktori-dokter'
                             ))
                         </div>
                     </div>
@@ -138,7 +155,7 @@
 
         </header>
 
-        <main>
+        <main page="home">
             <section class="first__section forMobile">
                 <div class="container">
                     <div class="row">
@@ -355,7 +372,7 @@
                         </div>
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
-                                'title'=>'Tampilkan semua',
+                                'title'=>'Lihat semua',
                                 'path'=>'jurnal-onkologi'
                             ))
                         </div>
@@ -399,7 +416,7 @@
                         </div>
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
-                                'title'=>'Tampilkan semua',
+                                'title'=>'Lihat semua',
                                 'path'=>'berita-terkini'
                             ))
                         </div>

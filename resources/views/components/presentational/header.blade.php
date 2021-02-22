@@ -14,7 +14,15 @@
                         <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                         <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
                         <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
-                        <li><a href="/berita-terkini">Berita Terkini & Jurnal</a></li>
+                        <li class="show_menu">
+                            <a href="/berita-terkini">Berita Terkini & Jurnal</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="/berita-terkini">Berita Terkini</a></li>
+                                    <li><a href="/jurnal-onkologi">Jurnal Onkologi</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>

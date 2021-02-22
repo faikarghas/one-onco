@@ -1,0 +1,32 @@
+.boxNewsWimg{
+    background-color: #E8EAEA;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    box-shadow: 0px 0px 14px 0px rgba(16,24,32,0.14);
+
+    .boxInformation{
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        span{
+            color: rgb(146, 146, 146);
+        }
+        .title{
+            h3{
+                font-weight: 600;
+            }
+            .author{
+                color: lightgrey;
+                font-style: italic;
+            }
+        }
+
+        p{
+            font-size: 1.3rem;
+        }
+
+
+    }
+}
