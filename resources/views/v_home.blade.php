@@ -242,15 +242,30 @@
                         <div class="col-12">
                             <div class="boxSearchKanker">
                                 <h3 class="text-center mb-5"><strong>CARI TAU JENIS PENYAKIT BERDASARKAN <br/> LOKASI ATAU SISTEM TUBUH</strong></h3>
-                                <div class="cari_kanker">
-                                    <a href="/sistem-tubuh">
-                                        <ul>
-                                            <li>Pilih...</li>
-                                            <li> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"></li>
-                                        </ul>
-                                    </a>
+                                <div class="cari_kanker-select">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <select id="selectLokasiKanker" class="form-select mb-2" aria-label="Default select example" name="lokasi">
+                                                    <option selected value="null">Pilih...</option>
+                                                    <option value="Topography">Topography</option>
+                                                    <option value="Breast">Breast</option>
+                                                    <option value="Head and Neck">Head and Neck</option>
+                                                    <option value="Digestive System">Digestive System</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <select id="selectJenisKanker" class="form-select mb-2" aria-label="Default select example" name="jenisKanker" disabled>
+                                                    <option selected>Pilih...</option>
+                                                </select>
+                                            </div>
+                                          </div>
+                                          <div class="text-center mt-5">
+                                            <button  class="boxReadMore">Cari</button>
+                                          </div>
+                                    </form>
                                 </div>
-                                <div class="boxSearchKanker-list mt-5">
+                                {{-- <div class="boxSearchKanker-list mt-5">
                                     <ul>
                                         <li>
                                             <a href="">
@@ -333,7 +348,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

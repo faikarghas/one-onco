@@ -107,3 +107,44 @@ $( document ).ready(function() {
     // $('.pagi-init').html(page1)
 
 });
+
+// CARI KANKER
+
+const dataJenisKanker = [
+    {
+        lokasi: 'Topography',
+        jenis: 'Lung Cancer'
+    },
+    {
+        lokasi: 'Breast',
+        jenis: 'Breast Cancer'
+    },
+]
+
+function filterJenisKanker(type) {
+    let data = dataJenisKanker.filter(function (item) {
+        // return item.lokasi !== type
+        return item.lokasi == type
+    })
+
+    return data
+}
+
+$('#selectLokasiKanker').change(function(){
+    let data= $(this).val();
+    if (data !== null) {
+        $('#selectJenisKanker option').empty().remove()
+        let dataJenisKanker = filterJenisKanker(data)
+        $('#selectJenisKanker').removeAttr( "disabled" )
+
+        console.log(dataJenisKanker);
+        $.each(dataJenisKanker, function (i, item) {
+            $('#selectJenisKanker').append($('<option>', { 
+                value: item.jenis,
+                text : item.jenis
+            }));
+        });
+    }
+});
+
+
