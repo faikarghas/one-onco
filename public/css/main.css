@@ -526,6 +526,25 @@ strong {
   border-top-left-radius: 38px;
   border-top-right-radius: 38px;
 }
+.homeHeader .headerDesktop .box__welcomeHome {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-150%);
+}
+.homeHeader .headerDesktop .box__welcomeHome h1 {
+  font-size: 4rem;
+}
+.homeHeader .headerDesktop .box__welcomeHome p {
+  font-size: 2rem;
+}
+.homeHeader .headerDesktop .box__welcomeHome .boxReadStory {
+  background-color: orangered;
+  color: white;
+  font-size: 1.3rem;
+  padding: 0.5rem 9.9rem;
+}
 .homeHeader .headerDesktop .ps {
   position: absolute;
   bottom: 20px;

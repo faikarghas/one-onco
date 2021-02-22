@@ -1840,6 +1840,8 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // CONTENT FOR SPECIFIC TIME PERIOD
 
 
@@ -1936,11 +1938,13 @@ var dataJenisKanker = [{
 }, {
   lokasi: 'Breast',
   jenis: 'Breast Cancer'
+}, {
+  lokasi: 'Breast',
+  jenis: 'Breast 2 Cancer'
 }];
 
 function filterJenisKanker(type) {
   var data = dataJenisKanker.filter(function (item) {
-    // return item.lokasi !== type
     return item.lokasi == type;
   });
   return data;
@@ -1948,20 +1952,26 @@ function filterJenisKanker(type) {
 
 $('#selectLokasiKanker').change(function () {
   var data = $(this).val();
+  console.log(_typeof(data));
 
-  if (data !== null) {
+  if (data !== "null") {
     $('#selectJenisKanker option').empty().remove();
 
     var _dataJenisKanker = filterJenisKanker(data);
 
     $('#selectJenisKanker').removeAttr("disabled");
-    console.log(_dataJenisKanker);
     $.each(_dataJenisKanker, function (i, item) {
       $('#selectJenisKanker').append($('<option>', {
         value: item.jenis,
         text: item.jenis
       }));
     });
+  } else if (data === "null") {
+    console.log('test');
+    $('#selectJenisKanker').attr("disabled", "disabled");
+    $('#selectJenisKanker option').empty().remove();
+  } else {
+    console.log('nok');
   }
 });
 

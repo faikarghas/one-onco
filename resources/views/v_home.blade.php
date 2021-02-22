@@ -22,7 +22,7 @@
                 <div class="headOverlay" style="background-color:#00a3e398;"></div>
 
                 <div class="row">
-                    <div class="col-2 position-relative"><img class="img-fluid" src="{{ asset('/images/logo_oneonco.png') }}" width="200px" alt="one-onco logo"/></div>
+                    <div class="col-2 position-relative"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/></div>
                     <div class="col-8 position-relative">
                         <nav>
                             <ul>
@@ -52,6 +52,11 @@
                             </ul>
                         <nav>
                     </div>
+                </div>
+                <div class="box__welcomeHome forDesktop">
+                    <h1 class="text-white text-center">"Selamat pagi, jangan menyerah!"</h1>
+                    <p class="text-white text-center mb-5"><i>Angelina Ong, cancer sruvivor 2019</i></p>
+                    <a class="boxReadStory" href="">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
