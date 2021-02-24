@@ -33,35 +33,46 @@
                 <div class="row">
                     <div class="col-12 col-lg-4">
                         <div class="box__rec">
-                            @include('components/presentational.boxRec',array(
+                            <?php
+                                $currentUrl = $_SERVER['REQUEST_URI'];
+                                $bgColor = $currentUrl == '/direktori-care' ? '#32A48E;' : 'white';
+                                $color = $currentUrl == '/direktori-care' ? 'white' : '#32A48E;';
+                            ?>
+                            @include('components/presentational.boxRec',[
                                 'image_url'=>'dir-dokter.png',
                                 'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'direktori-dokter'
-                            ))
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-dokter',
+                                'bgColor'=> 'white'
+                            ])
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="box__rec">
-                            @include('components/presentational.boxRec',array(
+                            @include('components/presentational.boxRec',[
                                 'image_url'=>'dir-lab.png',
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'direktori-lab'
-                            ))
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-lab',
+                                'bgColor'=>'white'
+                            ])
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="box__rec">
-                            @include('components/presentational.boxRec',array(
+                                @include('components/presentational.boxRec',[
                                 'image_url'=>'dir-care.png',
                                 'title'=>'Direktori Care Center',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
-                                'path'=>'direktori-care'
-                            ))
+                                'color'=>$color,
+                                'colorPar'=>$color,
+                                'path'=>'direktori-care',
+                                'bgColor'=>$bgColor
+                            ])
                         </div>
                     </div>
                 </div>
@@ -126,6 +137,7 @@
                                 'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'direktori-dokter'
                             ))
                         </div>
@@ -135,6 +147,7 @@
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'direktori-lab'
                             ))
                         </div>

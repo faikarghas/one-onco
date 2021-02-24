@@ -135,7 +135,6 @@ function filterJenisKanker(type) {
 
 $('#selectLokasiKanker').change(function(){
     let data= $(this).val();
-    console.log( typeof data);
     if (data !== "null") {
         $('#selectJenisKanker option').empty().remove()
         let dataJenisKanker = filterJenisKanker(data)
@@ -148,11 +147,8 @@ $('#selectLokasiKanker').change(function(){
             }));
         });
     } else if (data === "null") {
-        console.log('test');
         $('#selectJenisKanker').attr( "disabled","disabled")
         $('#selectJenisKanker option').empty().remove()
-    } else {
-        console.log('nok');
     }
 });
 

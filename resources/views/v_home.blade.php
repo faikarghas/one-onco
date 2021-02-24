@@ -66,6 +66,7 @@
                                 'title'=>'Perawatan Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#80bc41;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'perawatan-kanker'
                             ))
                         </div>
@@ -77,6 +78,7 @@
                                 'title'=>'Direktori Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'direktori'
                             ))
                         </div>
@@ -86,6 +88,7 @@
                                 'title'=>'Direktori Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'direktori-dokter'
                             ))
                         </div>
@@ -97,6 +100,7 @@
                                 'title'=>'Beli Obat',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#00A2E3;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'login'
                             ))
                         </div>
@@ -108,6 +112,7 @@
                                 'title'=>'Live Chat',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#C6CB57;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'login'
                             ))
                         </div>
@@ -171,6 +176,7 @@
                                     'title'=>'Perawatan Kanker',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#80bc41;',
+                                    'colorPar'=>'#808080;',
                                     'path'=>'perawatan-kanker'
                                 ))
                             </div>
@@ -182,6 +188,7 @@
                                     'title'=>'Direktori Kanker',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#32A48E;',
+                                    'colorPar'=>'#808080;',
                                     'path'=>'direktori'
                                 ))
                             </div>
@@ -193,6 +200,7 @@
                                     'title'=>'Beli Obat',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#00A2E3;',
+                                    'colorPar'=>'#808080;',
                                     'path'=>'login'
                                 ))
                             </div>
@@ -204,6 +212,7 @@
                                     'title'=>'Live Chat',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#C6CB57;',
+                                    'colorPar'=>'#808080;',
                                     'path'=>'login'
                                 ))
                             </div>
