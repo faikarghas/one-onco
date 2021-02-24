@@ -138,7 +138,8 @@
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
                                 'colorPar'=>'#808080;',
-                                'path'=>'direktori-dokter'
+                                'path'=>'direktori-dokter',
+                                'bgColor'=> 'white'
                             ))
                         </div>
                         <div class="box__rec">
@@ -148,7 +149,8 @@
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
                                 'colorPar'=>'#808080;',
-                                'path'=>'direktori-lab'
+                                'path'=>'direktori-lab',
+                                'bgColor'=> 'white'
                             ))
                         </div>
                     </div>

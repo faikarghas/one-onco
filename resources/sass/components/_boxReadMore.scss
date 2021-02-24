@@ -5,6 +5,9 @@
     border-radius: 5px;
     text-decoration: none;
     width: 150px;
+    &:hover{
+        color: white;
+    }
     @include respond(down-tab-port){
         width: unset;
     }
