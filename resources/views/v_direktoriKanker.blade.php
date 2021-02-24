@@ -23,7 +23,9 @@
                                 'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'direktori-dokter'
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-dokter',
+                                'bgColor'=> 'white'
                             ))
                         </div>
                     </div>
@@ -34,7 +36,9 @@
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'direktori-lab'
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-lab',
+                                'bgColor'=> 'white'
                             ))
                         </div>
                     </div>
@@ -45,7 +49,9 @@
                                 'title'=>'Direktori Care Center',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'direktori-care'
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-care',
+                                'bgColor'=> 'white'
                             ))
                         </div>
                     </div>
