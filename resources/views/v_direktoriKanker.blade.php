@@ -1,12 +1,12 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>'/'])
+    @include('components/presentational/header',['path'=>''])
     <main>
         <section class="direktoriKanker__page">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 forMobile">
                         <div class="row justify-content-center">
                             <div class="col-3 text-center"><img src="{{asset('/images/dirblack.png')}}" alt="dir-kanker" width="55px"></div>
                             <div class="col-6 d-flex flex-column align-items-start justify-content-center">
@@ -16,32 +16,42 @@
                         </div>
                         <hr class="mt-4 mb-4">
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 col-lg-4">
                         <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-dokter.png',
                                 'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'direktori-dokter'
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-dokter',
+                                'bgColor'=> 'white'
                             ))
                         </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
                         <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-lab.png',
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'direktori-lab'
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-lab',
+                                'bgColor'=> 'white'
                             ))
                         </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
                         <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-care.png',
                                 'title'=>'Direktori Care Center',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
-                                'path'=>'direktori-care'
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-care',
+                                'bgColor'=> 'white'
                             ))
                         </div>
                     </div>

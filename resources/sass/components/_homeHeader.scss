@@ -84,7 +84,25 @@
             border-top-left-radius: 38px;
             border-top-right-radius: 38px;
         }
-
+        .box__welcomeHome{
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-150%);
+            h1{
+                font-size: 4rem;
+            }
+            p{
+                font-size: 2rem;
+            }
+            .boxReadStory{
+                background-color: orangered;
+                color: white;
+                font-size: 1.3rem;
+                padding: 0.5rem 9.9rem;
+            }
+        }
         .ps{
             position: absolute;
             bottom: 20px;
@@ -183,6 +201,7 @@
                 font-size: 1.5rem;
             }
         }
+     
         .halfBoxRounded{
             position: absolute;
             bottom: -1px;

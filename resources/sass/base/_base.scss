@@ -62,3 +62,10 @@ button:focus {outline:0;}
 hr{
     background-color: $color_green;
 }
+
+main:not([page="home"]){
+    margin-top: 137px ;
+    @include respond(down-tab-port){
+        margin-top: unset;
+    }
+}

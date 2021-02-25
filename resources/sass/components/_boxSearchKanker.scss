@@ -1,10 +1,15 @@
 .boxSearchKanker{
+    padding: 3rem 20rem;
     @include respond(down-tab-port){
         -webkit-box-shadow: 0px 0px 2px 1px #00a3e3d3;
         -moz-box-shadow: 0px 0px 2px 1px#00a3e3d3;
         box-shadow: 0px 0px 2px 1px #00a3e3d3;
+        padding: 3rem;
     }
-    padding: 3rem;
+    .form-select:disabled {
+        color: #6c757d;
+        background-color: #e9ecef;
+    }
     h3{
         strong{
             font-weight: 900 !important;

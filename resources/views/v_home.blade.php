@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel3</title>
+        <title>ONE ONCO</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,7 +22,7 @@
                 <div class="headOverlay" style="background-color:#00a3e398;"></div>
 
                 <div class="row">
-                    <div class="col-2 position-relative"><img class="img-fluid" src="{{ asset('/images/logo_oneonco.png') }}" width="200px" alt="one-onco logo"/></div>
+                    <div class="col-2 position-relative"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/></div>
                     <div class="col-8 position-relative">
                         <nav>
                             <ul>
@@ -37,8 +37,20 @@
                                 <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                                 <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
                                 <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
+<<<<<<< HEAD
                                 <li><a href="/berita-terkini">Berita Terkini & Jurnal</a></li>
 >>>>>>> f03093ea112ec36c9e11714ad21728510d4dfe90
+=======
+                                <li class="show_menu">
+                                    <a href="/berita-terkini">Berita Terkini & Jurnal</a>
+                                    <div class="sub_menu">
+                                        <ul>
+                                            <li><a href="/berita-terkini">Berita Terkini</a></li>
+                                            <li><a href="/jurnal-onkologi">Jurnal Onkologi</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+>>>>>>> 332225919e2f95f83007dcbd806935f7fb91f1e1
                             </ul>
                         </nav>
                     </div>
@@ -53,6 +65,11 @@
                         <nav>
                     </div>
                 </div>
+                <div class="box__welcomeHome forDesktop">
+                    <h1 class="text-white text-center">"Selamat pagi, jangan menyerah!"</h1>
+                    <p class="text-white text-center mb-5"><i>Angelina Ong, cancer sruvivor 2019</i></p>
+                    <a class="boxReadStory" href="">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+                </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
                         <div class="box__rec">
@@ -61,18 +78,30 @@
                                 'title'=>'Perawatan Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#80bc41;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'perawatan-kanker'
                             ))
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="box__rec">
+                        <div class="box__rec forMobile">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'direktori'
+                            ))
+                        </div>
+                        <div class="box__rec forDesktop">
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'dirkanker.png',
+                                'title'=>'Direktori Kanker',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#32A48E;',
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori-dokter'
                             ))
                         </div>
                     </div>
@@ -83,6 +112,7 @@
                                 'title'=>'Beli Obat',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#00A2E3;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'login'
                             ))
                         </div>
@@ -94,6 +124,7 @@
                                 'title'=>'Live Chat',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#C6CB57;',
+                                'colorPar'=>'#808080;',
                                 'path'=>'login'
                             ))
                         </div>
@@ -146,7 +177,7 @@
 
         </header>
 
-        <main>
+        <main page="home">
             <section class="first__section forMobile">
                 <div class="container">
                     <div class="row">
@@ -157,6 +188,7 @@
                                     'title'=>'Perawatan Kanker',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#80bc41;',
+                                    'colorPar'=>'#808080;',
                                     'path'=>'perawatan-kanker'
                                 ))
                             </div>
@@ -168,6 +200,7 @@
                                     'title'=>'Direktori Kanker',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#32A48E;',
+                                    'colorPar'=>'#808080;',
                                     'path'=>'direktori'
                                 ))
                             </div>
@@ -179,6 +212,7 @@
                                     'title'=>'Beli Obat',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#00A2E3;',
+                                    'colorPar'=>'#808080;',
                                     'path'=>'login'
                                 ))
                             </div>
@@ -190,6 +224,7 @@
                                     'title'=>'Live Chat',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#C6CB57;',
+                                    'colorPar'=>'#808080;',
                                     'path'=>'login'
                                 ))
                             </div>
@@ -205,7 +240,7 @@
                             <img class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="200px" alt="logo oneonco" srcset="">
                             <h2 class="mb-4"><strong>SOLUSI TOTAL ONCOLOGY</strong></h2>
                             <p class="mb-5">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam velit quod natus doloremque necessitatibus, totam aliquam omnis aut voluptatibus consequuntur mollitia dolores similique modi aspernatur rem? Dolores tempora magni sequi magnam soluta nihil officiis iusto molestiae sint incidunt! Aliquid accusamus provident natus excepturi in fuga error nostrum soluta asperiores quidem recusandae quod consectetur dolore maiores doloremque minima quaerat eaque quam, ipsa sunt temporibus eos. Veniam maxime eos totam dolores quis et iste quaerat voluptate sequi, porro voluptatibus aut fuga voluptates repellat nihil, illo amet est voluptatem quisquam nulla distinctio. Hic, libero laboriosam quod recusandae eius explicabo aliquam quisquam ducimus laborum!
+                                Lorem ipsum dolor dolor sit amet consectetur adipisicing elit. Laboriosam velit quod natus doloremque necessitatibus, totam aliquam omnis aut voluptatibus consequuntur mollitia dolores similique modi aspernatur rem? Dolores tempora magni sequi magnam soluta nihil officiis iusto molestiae sint incidunt! Aliquid accusamus provident natus excepturi in fuga error nostrum soluta asperiores quidem recusandae quod consectetur dolore maiores doloremque minima quaerat eaque quam, ipsa sunt temporibus eos. Veniam maxime eos totam dolores quis et iste quaerat voluptate sequi, porro voluptatibus aut fuga voluptates repellat nihil, illo amet est voluptatem quisquam nulla distinctio. Hic, libero laboriosam quod recusandae eius explicabo aliquam quisquam ducimus laborum!
                             </p>
                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/tentang-kami'))
                         </div>
@@ -227,21 +262,36 @@
                 </div>
             </section>
 
-            <section class="exSecondSection">
+            <section class="exSecondSection forDesktop">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="boxSearchKanker">
                                 <h3 class="text-center mb-5"><strong>CARI TAU JENIS PENYAKIT BERDASARKAN <br/> LOKASI ATAU SISTEM TUBUH</strong></h3>
-                                <div class="cari_kanker">
-                                    <a href="/sistem-tubuh">
-                                        <ul>
-                                            <li>Pilih...</li>
-                                            <li> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"></li>
-                                        </ul>
-                                    </a>
+                                <div class="cari_kanker-select">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <select id="selectLokasiKanker" class="form-select mb-2" aria-label="Default select example" name="lokasi">
+                                                    <option selected value="null">Pilih...</option>
+                                                    <option value="Topography">Topography</option>
+                                                    <option value="Breast">Breast</option>
+                                                    <option value="Head and Neck">Head and Neck</option>
+                                                    <option value="Digestive System">Digestive System</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <select id="selectJenisKanker" class="form-select mb-2" aria-label="Default select example" name="jenisKanker" disabled>
+                                                    <option selected>Pilih...</option>
+                                                </select>
+                                            </div>
+                                          </div>
+                                          <div class="text-center mt-5">
+                                            <button  class="boxReadMore">Cari</button>
+                                          </div>
+                                    </form>
                                 </div>
-                                <div class="boxSearchKanker-list mt-5">
+                                {{-- <div class="boxSearchKanker-list mt-5">
                                     <ul>
                                         <li>
                                             <a href="">
@@ -324,7 +374,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -363,7 +413,7 @@
                         </div>
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
-                                'title'=>'Tampilkan semua',
+                                'title'=>'Lihat semua',
                                 'path'=>'jurnal-onkologi'
                             ))
                         </div>
@@ -407,7 +457,7 @@
                         </div>
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
-                                'title'=>'Tampilkan semua',
+                                'title'=>'Lihat semua',
                                 'path'=>'berita-terkini'
                             ))
                         </div>

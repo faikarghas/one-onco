@@ -5,6 +5,13 @@
     }
 }
 
+.forDesktop-dflex{
+    display: flex !important;
+    @include respond(down-tab-port){
+        display: none !important;
+    }
+}
+
 .forMobile{
     display: none;
     @include respond(down-tab-port){
@@ -201,6 +208,9 @@
     border-top: 1px solid $color_green;
     border-bottom: 1px solid $color_green;
     text-align: center;
+    &.forDesktop{
+        width: calc(40%);
+    }
     p{
         text-align: center;
         font-size: 11px;
@@ -234,6 +244,27 @@
     }
 }
 
+.cari_kanker-select{
+    .form-select{
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+    }
+    select{
+        height: 35px;
+        border-radius: 12px;
+        background-color: black;
+        color: white;
+        padding-left: 15px;
+        font-size: 1.5rem;
+
+        option{
+            background-color: black !important;
+            font-size: 1.5rem;
+        }
+    }
+
+
+}
+
 .fix-top{
     position: fixed;
     width: 100%;
@@ -241,4 +272,42 @@
     top: 56px;
     padding: 20px !important;
     left: 0;
+}
+
+.tab__menu{
+    .list__component{
+        &-list{
+            &--item{
+                position: relative;
+                padding: 0 1rem;
+                a{
+                    height: 100%;
+                    &.active{
+                        color: black;
+                    }
+                }
+                .col-11{
+                    .tab_line{
+                        width: 50px;
+                        height: 2px;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-color: $color_blue;
+                    }
+                }
+            }
+        }
+    }
+    .col-cs-4{
+        width: 35%;
+        padding-top: 5rem;
+        padding-left: 6rem;
+        background-color: $color_lightGrey;
+    }
+    .col-cs-8{
+        width: 65%;
+        padding: 5rem 5rem;
+    }
 }

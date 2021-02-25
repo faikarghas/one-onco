@@ -1,5 +1,9 @@
 <a href="/{{$path}}" class="d-blok h-100">
-    <div class="container">
+        @if(empty($bgColor))
+            <div class="container">
+        @else
+            <div class="container" style="background-color: {{$bgColor}}">
+        @endif
         <div class="row">
             <div class="col-3 d-flex align-items-center justify-content-center">
                 <img width="40px" height="40px" src="{{asset("/images/$image_url")}}" alt="" />
@@ -8,7 +12,7 @@
                 <h3 style="color: {{$color}}"><strong>{{$title}}</strong></h3>
                 @if(empty($description))
                 @else
-                    <p class="m-0">{{$description}}</p>
+                    <p class="m-0" style="color: {{$colorPar}}">{{$description}}</p>
                 @endif
             </div>
             <div class="col-2 d-flex align-items-center justify-content-center">

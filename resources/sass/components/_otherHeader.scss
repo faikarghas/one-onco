@@ -1,7 +1,12 @@
 .otherHeader{
     .headerDesktop{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
         padding: 4rem 6rem;
         background-color: $color_blue;
+        z-index: 10;
         @include respond(down-tab-port){
             padding: 4rem 0rem;
         }
@@ -15,6 +20,7 @@
                 padding-top: 5px;
                 li{
                     margin-left: 2rem;
+                    padding-bottom: 0.5rem;
                     display: inline-block;
                     a{
                         font-family: 'Nunito Sans', sans-serif;
@@ -22,6 +28,7 @@
                         font-size: 1.3rem;
                         letter-spacing: 1px;
                         text-decoration: none;
+
                     }
                 }
             }
@@ -148,4 +155,34 @@
         }
     }
 
+}
+
+.show_menu{
+    position: relative;
+    &:hover{
+        .sub_menu{
+            display: block;
+        }
+    }
+    .sub_menu{
+        display: none;
+        width: 120%;
+        background-color: #000000d9;
+        position: absolute;
+        z-index: 4;
+        left: 0;
+        top: 100%;
+        border-top: 1px solid white;
+        padding: 2rem 2rem;
+        ul{
+            padding: 0;
+            li{
+                margin-left: 0 !important;
+                padding-bottom: 0rem;
+                &:first-child{
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
 }

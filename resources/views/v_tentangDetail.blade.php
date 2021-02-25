@@ -11,7 +11,7 @@
                 <h2>Solusi Total<br>Onkologi</h2>
             </div>
         </div>
-        <section class="tentangKami__page">
+        <section class="tentangKami__page forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -37,6 +37,66 @@
                     <div class="col-11 ps-4">
                         <a href="/tentang-kami/tentang">Kolaborasi sebagai <br> semangat ONEOnco</a>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="tentangKami__pageD tab__menu forDesktop-dflex">
+            <div class="col-cs-4">
+                <div class="list__component">
+                    <div class="row list__component-list--item">
+                        <div class="col-1">
+                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                        </div>
+                        <div class="col-11 ps-4">
+                            <a class="{{ request()->is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami">Perkenalan</a>
+                            <div class="tab_line {{ request()->is('tentang-kami') ? '' : 'd-none' }}"></div>
+                        </div>
+                    </div>
+                    <div class="row list__component-list--item">
+                        <div class="col-1">
+                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                        </div>
+                        <div class="col-11 ps-4">
+                            <a class="{{ request()->is('tentang-kami/mengenal-oneonco') ? 'active' : '' }}" href="/tentang-kami/mengenal-oneonco">Mengenal OneOnco</a>
+                            <div class="tab_line {{ request()->is('tentang-kami/mengenal-oneonco') ? '' : 'd-none' }}"></div>
+                        </div>
+                    </div>
+                    <div class="row list__component-list--item">
+                        <div class="col-1">
+                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                        </div>
+                        <div class="col-11 ps-4">
+                            <a class="{{ request()->is('tentang-kami/apa-yang-ditawarkan') ? 'active' : '' }}" href="/tentang-kami/apa-yang-ditawarkan">Apa yang Tawarkan</a>
+                            <div class="tab_line {{ request()->is('tentang-kami/apa-yang-ditawarkan') ? '' : 'd-none' }}"></div>
+                        </div>
+                    </div>
+                    <div class="row list__component-list--item">
+                        <div class="col-1">
+                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                        </div>
+                        <div class="col-11 ps-4">
+                            <a class="{{ request()->is('tentang-kami/visi-misi') ? 'active' : '' }}" href="/tentang-kami/visi-misi">Visi dan Misi</a>
+                            <div class="tab_line {{ request()->is('tentang-kami/visi-misi') ? '' : 'd-none' }}"></div>
+                        </div>
+                    </div>
+                    <div class="row list__component-list--item">
+                        <div class="col-1">
+                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                        </div>
+                        <div class="col-11 ps-4">
+                            <a class="{{ request()->is('tentang-kami/hubungi-kami') ? 'active' : '' }}" href="/tentang-kami/hubungi-kami">Hubungi kami</a>
+                            <div class="tab_line {{ request()->is('tentang-kami/hubungi-kami') ? '' : 'd-none' }}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-cs-8">
+                <div class="mb-5">
+                    <img src="{{asset('/images/kalbe.png')}}" width="180px" alt="" srcset="">
+                </div>
+                <div class="tentangKami__page-intro mb-5">
+                    <h3>SEJARAH KALBE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quasi porro amet itaque, nulla dolor nobis atque aliquid iure ullam. Mollitia temporibus deserunt velit, quo culpa beatae ullam minus dignissimos?</p>
                 </div>
             </div>
         </section>

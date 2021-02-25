@@ -3,12 +3,20 @@
         <img src="{{$image_url}}" alt="{{$title}}">
     </div>
     <div class="boxInformation">
-        <span>{{$date}}</span>
-        <h3 class="mb-4 mt-2">{{$title}}</h3>
-        @if(empty($description))
-
+        @if(empty($description) && !@empty($author))
+            <div class="title">
+                <span>{{$date}}</span>
+                <h3 class="mt-2">{{$title}}</h3>
+                <p class="author">{{$author}}</p>
         @else
-            <p class="mb-5">{{$description}}}</p>
+            <div class="title">
+                <span>{{$date}}</span>
+                <h3 class="mt-2">{{$title}}</h3>
+        @endif
+        </div>
+        @if(empty($description))
+        @else
+            <p class="mb-5 mt-4">{{$description}}}</p>
         @endif
         @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>$path))
     </div>

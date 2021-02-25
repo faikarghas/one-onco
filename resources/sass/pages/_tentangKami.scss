@@ -77,33 +77,5 @@
             margin-bottom: 0;
         }
     }
-    .list__component{
-        &-list{
-            &--item{
-                position: relative;
-                padding: 0 1rem;
-                .col-11{
-                    .tab_line{
-                        width: 50px;
-                        height: 2px;
-                        position: absolute;
-                        right: 0;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        background-color: $color_blue;
-                    }
-                }
-            }
-        }
-    }
-    .col-cs-4{
-        width: 35%;
-        padding-top: 5rem;
-        padding-left: 6rem;
-        background-color: $color_lightGrey;
-    }
-    .col-cs-8{
-        width: 65%;
-        padding: 5rem 5rem;
-    }
+    
 }
