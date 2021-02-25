@@ -1,5 +1,8 @@
 .tentangKami__page{
-    padding: 4rem 3rem;
+    padding: 4rem 6rem;
+    @include respond(down-tab-port){
+        padding: 4rem 3rem;
+    }
     &-intro{
         h3{
             font-weight: 900;
@@ -13,6 +16,15 @@
     &-list{
         &--item{
             margin-bottom: 2rem;
+            .col-11{
+                position: relative;
+                .tab_line{
+                    width: 50px;
+                    height: 1px;
+                    background-color: $color_blue;
+                    right: 0;
+                }
+            }
         }
         a{
             font-weight: 600;
@@ -35,3 +47,63 @@
     }
 }
 
+.tentangKami__pageD{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    &-list{
+        &--item{
+            margin-bottom: 2rem;
+            .col-11{
+                position: relative;
+                .tab_line{
+                    width: 50px;
+                    height: 1px;
+                    background-color: $color_blue;
+                    right: 0;
+                }
+            }
+        }
+        a{
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: $color_green;
+            text-decoration: none;
+            line-height: 1;
+        }
+        p{
+            font-size: 1.3rem;
+            color: rgb(105, 105, 105);
+            margin-bottom: 0;
+        }
+    }
+    .list__component{
+        &-list{
+            &--item{
+                position: relative;
+                padding: 0 1rem;
+                .col-11{
+                    .tab_line{
+                        width: 50px;
+                        height: 2px;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-color: $color_blue;
+                    }
+                }
+            }
+        }
+    }
+    .col-cs-4{
+        width: 35%;
+        padding-top: 5rem;
+        padding-left: 6rem;
+        background-color: $color_lightGrey;
+    }
+    .col-cs-8{
+        width: 65%;
+        padding: 5rem 5rem;
+    }
+}

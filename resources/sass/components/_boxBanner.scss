@@ -1,14 +1,22 @@
 .box__banner{
-    height: 200px;
+    height: 320px;
+    @include respond(down-tab-port){
+        height: 200px;
+    }
     position: relative;
     img{
         width: 100%;
+        object-fit: cover;
     }
 
     &-desc{
         position: absolute;
+        left: 6rem;
         bottom: calc(3rem + 1.5rem / 2);
-        left: calc(3rem + 1.5rem / 2);
+        @include respond(down-tab-port){
+            left: calc(3rem + 1.5rem / 2);
+        }
+
         h2{
             font-size: 2.5rem;
             font-weight: 900;

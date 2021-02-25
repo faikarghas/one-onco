@@ -1,16 +1,7 @@
 .otherHeader{
-    // height: 100vh;
-    // background-position: center;
-    // background-size: cover;
-    // background-repeat: no-repeat;
-
-    @include respond(down-tab-port){
-        // background-image: url('/images/headerHomeMobile.jpg');
-        // height: 40vh;
-    }
-
     .headerDesktop{
         padding: 4rem 6rem;
+        background-color: $color_blue;
         @include respond(down-tab-port){
             padding: 4rem 0rem;
         }
@@ -24,11 +15,13 @@
                 padding-top: 5px;
                 li{
                     margin-left: 2rem;
+                    display: inline-block;
                     a{
                         font-family: 'Nunito Sans', sans-serif;
                         color: white;
                         font-size: 1.3rem;
                         letter-spacing: 1px;
+                        text-decoration: none;
                     }
                 }
             }
@@ -40,6 +33,7 @@
             align-items: center;
             justify-content: flex-end;
             padding: 0;
+            list-style: none;
             li{
                 margin-left: 2rem;
                 &:nth-child(2){
@@ -50,6 +44,7 @@
                 }
                 a{
                     color:white;
+                    text-decoration: none;
                 }
             }
         }
@@ -57,9 +52,9 @@
 
     .headerMobile{
         position: relative;
-        background-color: $color_green;
+        background-color: $color_blue;
         .headerNavBox{
-            transition: 0s all;
+            transition: 0.1s all;
             &.topScroll{
                 position: fixed;
                 top: 0;
