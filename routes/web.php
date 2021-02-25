@@ -25,12 +25,13 @@ Route::get('/sistem-tubuh', function () {
     return view('v_sistemTubuh',['slug'=>$slug]);
 });
 
-Route::get('/sistem-tubuh/{slug}', function ($slug) {
-    return view('v_sistemTubuhKanker',['slug'=>$slug]);
+Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
+    $jenis = 'test';
+    return view('v_sistemLokasiKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
 });
 
-Route::get('/jenis-kanker/{slug}', function ($slug) {
-    return view('v_jenisKanker',['slug'=>$slug]);
+Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
+    return view('v_sistemJenisKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
 });
 
 ////////////////////////////////////////
@@ -115,8 +116,16 @@ Route::get('/direktori-dokter', function () {
     return view('v_direktoriDokter');
 });
 
+Route::get('/direktori-dokter/{slug}', function ($slug) {
+    return view('v_direktoriDokterDetail',['slug'=>$slug]);
+});
+
 Route::get('/direktori-care', function () {
     return view('v_direktoriCare');
+});
+
+Route::get('/direktori-care/{slug}', function ($slug) {
+    return view('v_direktoriCareDetail',['slug'=>$slug]);
 });
 
 Route::get('/direktori-lab', function () {
