@@ -26,19 +26,11 @@
                     <div class="col-8 position-relative">
                         <nav>
                             <ul>
-                                <li><a href="">Tentang Kami.</a></li>
-                                <li><a href="">Untuk Pasien</a></li>
-                                <li><a href="">Untuk Pendamping</a></li>
-                                <li><a href="">Cerita Inspiratif Survivor</a></li>
-                                <li><a href="">Berita Terkini & Jurnal</a></li>
-
+                          
                                 <li><a href="/tentang-kami">Tentang Kami</a></li>
                                 <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                                 <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
                                 <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
-
-                                <li><a href="/berita-terkini">Berita Terkini & Jurnal</a></li>
-
                                 <li class="show_menu">
                                     <a href="/berita-terkini">Berita Terkini & Jurnal</a>
                                     <div class="sub_menu">
@@ -64,9 +56,11 @@
                     </div>
                 </div>
                 <div class="box__welcomeHome forDesktop">
+
                     <h1 class="text-white text-center">"Selamat pagi, jangan menyerah!"</h1>
                     <p class="text-white text-center mb-5"><i>Angelina Ong, cancer sruvivor 2019</i></p>
                     <a class="boxReadStory" href="">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+                
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">

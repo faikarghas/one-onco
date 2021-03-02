@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('v_home');
-});
+// Route::get('/', function () {
+//     return view('v_home');
+// });
+
+Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 ////////////////////////////////////////
 // CARI SESUAI KATEGORI KANKER HOME PAGE
