@@ -23,7 +23,7 @@
     left: 0;
 }
 
-.direktoriDet__list{
+.direktori__list{
     background-color: $color_lightGrey;
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -31,6 +31,29 @@
     @include respond(down-tab-port){
         padding-top: 137px;
         margin-top: unset;
+        padding-bottom: 0rem;
+    }
+    form{
+        select{
+            height: 35px;
+            border-radius: 12px;
+            color: black;
+            option{
+                color: black;
+            }
+        }
+    }
+
+}
+
+.direktori__list-detail{
+    background-color: white;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    margin-top: calc(137px + 130px);
+    @include respond(down-tab-port){
+        margin-top: unset;
+
     }
 
     form{
@@ -40,6 +63,38 @@
             color: black;
             option{
                 color: black;
+            }
+        }
+    }
+
+    .jadwal_list{
+        margin-top: 1rem;
+        h4{
+            border-bottom: 1px solid rgb(224, 221, 221);
+            padding-bottom: 0.3rem;
+        }
+    }
+    .jam_op-title{
+        padding: 1rem 0;
+        border-top: 1px solid #e0dddd;
+        margin-top: 1rem;
+        p{
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+    }
+    .jam_op-sch{
+        border-top: 1px solid #e0dddd;
+        padding-left: 0;
+        li{
+            list-style: none;
+            border-bottom: 1px solid #e0dddd;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            span{
+                width: 50px;
+                display: inline-block;
             }
         }
     }

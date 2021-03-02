@@ -72,7 +72,6 @@
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
-                        <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'perkanker.png',
                                 'title'=>'Perawatan Kanker',
@@ -81,10 +80,9 @@
                                 'colorPar'=>'#808080;',
                                 'path'=>'perawatan-kanker'
                             ))
-                        </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="box__rec forMobile">
+                        <div class="forMobile">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Kanker',
@@ -94,7 +92,7 @@
                                 'path'=>'direktori'
                             ))
                         </div>
-                        <div class="box__rec forDesktop">
+                        <div class="forDesktop">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Kanker',
@@ -106,28 +104,24 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="box__rec">
-                            @include('components/presentational.boxRec',array(
-                                'image_url'=>'beliobat.png',
-                                'title'=>'Beli Obat',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#00A2E3;',
-                                'colorPar'=>'#808080;',
-                                'path'=>'login'
-                            ))
-                        </div>
+                        @include('components/presentational.boxRec',array(
+                            'image_url'=>'beliobat.png',
+                            'title'=>'Beli Obat',
+                            'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                            'color'=>'#00A2E3;',
+                            'colorPar'=>'#808080;',
+                            'path'=>'login'
+                        ))
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="box__rec">
-                            @include('components/presentational.boxRec',array(
-                                'image_url'=>'live-chat.png',
-                                'title'=>'Live Chat',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#C6CB57;',
-                                'colorPar'=>'#808080;',
-                                'path'=>'login'
-                            ))
-                        </div>
+                        @include('components/presentational.boxRec',array(
+                            'image_url'=>'live-chat.png',
+                            'title'=>'Live Chat',
+                            'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                            'color'=>'#C6CB57;',
+                            'colorPar'=>'#808080;',
+                            'path'=>'login'
+                        ))
                     </div>
                 </div>
                 <div class="halfBoxRounded"></div>
@@ -182,52 +176,44 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <div class="box__rec">
-                                @include('components/presentational.boxRec',array(
-                                    'image_url'=>'perkanker.png',
-                                    'title'=>'Perawatan Kanker',
-                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#80bc41;',
-                                    'colorPar'=>'#808080;',
-                                    'path'=>'perawatan-kanker'
-                                ))
-                            </div>
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'perkanker.png',
+                                'title'=>'Perawatan Kanker',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#80bc41;',
+                                'colorPar'=>'#808080;',
+                                'path'=>'perawatan-kanker'
+                            ))
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="box__rec">
-                                @include('components/presentational.boxRec',array(
-                                    'image_url'=>'dirkanker.png',
-                                    'title'=>'Direktori Kanker',
-                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#32A48E;',
-                                    'colorPar'=>'#808080;',
-                                    'path'=>'direktori'
-                                ))
-                            </div>
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'dirkanker.png',
+                                'title'=>'Direktori Kanker',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#32A48E;',
+                                'colorPar'=>'#808080;',
+                                'path'=>'direktori'
+                            ))
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="box__rec">
-                                @include('components/presentational.boxRec',array(
-                                    'image_url'=>'beliobat.png',
-                                    'title'=>'Beli Obat',
-                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#00A2E3;',
-                                    'colorPar'=>'#808080;',
-                                    'path'=>'login'
-                                ))
-                            </div>
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'beliobat.png',
+                                'title'=>'Beli Obat',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#00A2E3;',
+                                'colorPar'=>'#808080;',
+                                'path'=>'login'
+                            ))
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="box__rec">
-                                @include('components/presentational.boxRec',array(
-                                    'image_url'=>'live-chat.png',
-                                    'title'=>'Live Chat',
-                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#C6CB57;',
-                                    'colorPar'=>'#808080;',
-                                    'path'=>'login'
-                                ))
-                            </div>
+                            @include('components/presentational.boxRec',array(
+                                'image_url'=>'live-chat.png',
+                                'title'=>'Live Chat',
+                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'color'=>'#C6CB57;',
+                                'colorPar'=>'#808080;',
+                                'path'=>'login'
+                            ))
                         </div>
                     </div>
                 </div>

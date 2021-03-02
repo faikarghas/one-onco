@@ -13,7 +13,7 @@
                         <div class="cari_kanker">
                             <a href="/sistem-tubuh">
                                 <ul>
-                                    <li><i>{{$slug}}</i></li>
+                                    <li><i>{{$jenis}}</i></li>
                                     <li> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"></li>
                                 </ul>
                             </a>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-12" style="margin-top: 55px">
                         <div class="detail__page1--img mb-5">
-                            <img src="https://source.unsplash.com/random" alt="{{$slug}}-img" height="180px" width="100%">
+                            <img src="https://source.unsplash.com/random" alt="{{$jenis}}-img" height="180px" width="100%">
                         </div>
                         <div class="detail__page1--description mb-5">
                             <h1 class="mb-4">Jenis Sayuran dan Kandungan</h1>

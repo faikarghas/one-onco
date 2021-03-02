@@ -1,7 +1,7 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>'/'])
+    @include('components/presentational/header',['path'=>''])
     <main>
         <section class="direktoriDet__header forMobile">
             <div class="container">
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </section>
-        <section class="direktoriDet__list">
+        <section class="direktori__list">
             <div class="container mb-5 forDesktop">
                 <div class="row">
                     <div class="col-12">
@@ -110,49 +110,45 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        @for ($i = 0; $i < 3; $i++)
+                    @for ($i = 0; $i < 3; $i++)
+                        <div class="col-12 col-md-6">
                             <div class="box__rec2">
                                 @include('components/presentational.boxRec2',array(
                                     'image_url'=>'dir-dokter.png',
                                     'title'=>'dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM',
                                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                     'color'=>'#4172CB;',
-                                    'path'=>'direktori-dokter',
-                                    'rounded'=>'square_img'
+                                    'path'=>'direktori-care/faikar',
+                                    'rounded'=>'rounded_img'
                                 ))
                             </div>
-                        @endfor
-                    </div>
+                        </div>
+                    @endfor
                 </div>
             </div>
         </section>
-        <section class="bg-color_lightGrey pt-3 forMobile">
+        <section class="bg-color_lightGrey pt-3 pb-4 forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="box__rec">
-                            @include('components/presentational.boxRec',array(
-                                'image_url'=>'dir-dokter.png',
-                                'title'=>'Direktori Dokter',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
-                                'colorPar'=>'#808080;',
-                                'path'=>'direktori-dokter',
-                                'bgColor'=> 'white'
-                            ))
-                        </div>
-                        <div class="box__rec">
-                            @include('components/presentational.boxRec',array(
-                                'image_url'=>'dir-lab.png',
-                                'title'=>'Direktori Lab',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
-                                'colorPar'=>'#808080;',
-                                'path'=>'direktori-lab',
-                                'bgColor'=> 'white'
-                            ))
-                        </div>
+                        @include('components/presentational.boxRec',array(
+                            'image_url'=>'dir-dokter.png',
+                            'title'=>'Direktori Dokter',
+                            'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                            'color'=>'#32A48E;',
+                            'colorPar'=>'#808080;',
+                            'path'=>'direktori-dokter',
+                            'bgColor'=> 'white'
+                        ))
+                        @include('components/presentational.boxRec',array(
+                            'image_url'=>'dir-lab.png',
+                            'title'=>'Direktori Lab',
+                            'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                            'color'=>'#32A48E;',
+                            'colorPar'=>'#808080;',
+                            'path'=>'direktori-lab',
+                            'bgColor'=> 'white'
+                        ))
                     </div>
                 </div>
             </div>

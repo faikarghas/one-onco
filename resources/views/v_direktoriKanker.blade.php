@@ -17,7 +17,6 @@
                         <hr class="mt-4 mb-4">
                     </div>
                     <div class="col-12 col-lg-4">
-                        <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-dokter.png',
                                 'title'=>'Direktori Dokter',
@@ -27,10 +26,8 @@
                                 'path'=>'direktori-dokter',
                                 'bgColor'=> 'white'
                             ))
-                        </div>
                     </div>
                     <div class="col-12 col-lg-4">
-                        <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-lab.png',
                                 'title'=>'Direktori Lab',
@@ -40,10 +37,8 @@
                                 'path'=>'direktori-lab',
                                 'bgColor'=> 'white'
                             ))
-                        </div>
                     </div>
                     <div class="col-12 col-lg-4">
-                        <div class="box__rec">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dir-care.png',
                                 'title'=>'Direktori Care Center',
@@ -53,7 +48,6 @@
                                 'path'=>'direktori-care',
                                 'bgColor'=> 'white'
                             ))
-                        </div>
                     </div>
                 </div>
             </div>

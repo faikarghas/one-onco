@@ -1,19 +1,11 @@
 <a href="/{{$path}}" class="d-block h-100">
-    <div class="container">
+    <div class="container" >
         <div class="row">
             <div class="col-3 d-flex align-items-center justify-content-center">
-                <div class="{{$rounded}}">
-                    <img width="100%" height="100%" src="{{asset("/images/$image_url")}}" alt="{{$image_url}}" />
-                </div>
+                <img width="40px" height="40px" src="{{asset("/images/$image_url")}}" alt="" />
             </div>
-            <div class="col-7 d-flex flex-column align-items-start">
-                <div class="title_wrapper">
-                    <h3><strong>{{$title}}</strong></h3>
-                </div>
-                <ul>
-                    <li><p><strong>Unit Operasional Onkologi</strong></p></li>
-                    <li><p>Kemoterapi</p></li>
-                </ul>
+            <div class="col-7 d-flex flex-column align-items-start justify-content-center">
+                <h3 style="color: {{$color}}"><strong>{{$title}}</strong></h3>
             </div>
             <div class="col-2 d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">

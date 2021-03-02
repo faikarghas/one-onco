@@ -1,37 +1,13 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>'/'])
+    @include('components/presentational/header',['path'=>''])
     <main>
-        <section class="direktoriDet__header forMobile">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row justify-content-center">
-                            <h3 class="text-center"> <strong>Cari dokter Onkologi di daerahmu:</strong></h3>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <form action="">
-                            <select class="form-select mb-2" aria-label="Default select example">
-                                <option selected>Pilih Kota</option>
-                                <option value="1">One</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <select class="form-select mb-3" aria-label="Default select example">
-                                <option selected>Pilih Rumah Sakit</option>
-                                <option value="1">One</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="direktori__menuTab forDesktop">
+        <section class="direktori__menuTab forDesktop" style="background-color: white">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-4">
+                        <div class="box__rec">
                             <?php
                                 $currentUrl = $_SERVER['REQUEST_URI'];
                                 $bgColor = $currentUrl == '/direktori-dokter' ? '#32A48E;' : 'white';
@@ -46,8 +22,10 @@
                                 'path'=>'direktori-dokter',
                                 'bgColor'=> $bgColor
                             ])
+                        </div>
                     </div>
                     <div class="col-12 col-lg-4">
+                        <div class="box__rec">
                             @include('components/presentational.boxRec',[
                                 'image_url'=>'dir-lab.png',
                                 'title'=>'Direktori Lab',
@@ -57,8 +35,10 @@
                                 'path'=>'direktori-lab',
                                 'bgColor'=>'white'
                             ])
+                        </div>
                     </div>
                     <div class="col-12 col-lg-4">
+                        <div class="box__rec">
                                 @include('components/presentational.boxRec',[
                                 'image_url'=>'dir-care.png',
                                 'title'=>'Direktori Care Center',
@@ -68,11 +48,12 @@
                                 'path'=>'direktori-care',
                                 'bgColor'=>'white'
                             ])
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="direktori__list">
+        <section class="direktori__list-detail">
             <div class="container mb-5 forDesktop">
                 <div class="row">
                     <div class="col-12">
@@ -104,24 +85,63 @@
             </div>
             <div class="container">
                 <div class="row">
-                    @for ($i = 0; $i < 3; $i++)
-                    <div class="col-12 col-lg-6">
-                        <div class="box__rec2">
-                            @include('components/presentational.boxRec2',array(
-                                'image_url'=>'dir-dokter.png',
-                                'title'=>'dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#4172CB;',
-                                'path'=>'direktori-dokter/faikar',
-                                'rounded'=>'rounded_img'
-                            ))
+                    <div class="col-12 col-md-6">
+                        <div class="box__rec3">
+                            <div class="container p-0">
+                                <div class="row">
+                                    <div class="col-3 d-flex align-items-center justify-content-center">
+                                        <div class="rounded_img">
+                                            <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
+                                        </div>
+                                    </div>
+                                    <div class="col-9 d-flex flex-column align-items-start">
+                                        <div class="title_wrapper">
+                                            <h3><strong>dr. Faikar Ghassan</strong></h3>
+                                        </div>
+                                        <ul>
+                                            <li><p><strong>Unit Operasional Onkologi</strong></p></li>
+                                            <li><p>Kemoterapi</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    @endfor
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="jadwal_list">
+                            <h4><strong>Jadwal Praktik</strong></h4>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        @for ($i = 0; $i < 3; $i++)
+                        <div class="box__rec3">
+                            <a href="/direktori-care/rsu-kabupaten-tangerang">
+                                <div class="container p-0">
+                                    <div class="row">
+                                        <div class="col-3 d-flex align-items-center justify-content-center">
+                                            <div class="rounded_img">
+                                                <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
+                                            </div>
+                                        </div>
+                                        <div class="col-9 d-flex flex-column align-items-start">
+                                            <h3 style="color: #00A2E3;"><strong>RSU Kabupaten Tangerang</strong></h3>
+                                            <p><strong>Unit Operasional Onkologi</strong></p>
+                                            <p>Kemoterapi</p>
+                                            <p><strong>Jadwal Praktik</strong></p>
+                                            <p>Senin, Selasa, Kamis : 09.00 - 13.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        @endfor
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="bg-color_lightGrey pt-3 pb-4 forMobile">
+        <section class="bg-color_lightGrey pt-3 forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
