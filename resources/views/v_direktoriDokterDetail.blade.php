@@ -115,64 +115,28 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
+                        @for ($i = 0; $i < 3; $i++)
                         <div class="box__rec3">
-                            <div class="container p-0">
-                                <div class="row">
-                                    <div class="col-3 d-flex align-items-center justify-content-center">
-                                        <div class="rounded_img">
-                                            <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
+                            <a href="/direktori-care/rsu-kabupaten-tangerang">
+                                <div class="container p-0">
+                                    <div class="row">
+                                        <div class="col-3 d-flex align-items-center justify-content-center">
+                                            <div class="rounded_img">
+                                                <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
+                                            </div>
+                                        </div>
+                                        <div class="col-9 d-flex flex-column align-items-start">
+                                            <h3 style="color: #00A2E3;"><strong>RSU Kabupaten Tangerang</strong></h3>
+                                            <p><strong>Unit Operasional Onkologi</strong></p>
+                                            <p>Kemoterapi</p>
+                                            <p><strong>Jadwal Praktik</strong></p>
+                                            <p>Senin, Selasa, Kamis : 09.00 - 13.00</p>
                                         </div>
                                     </div>
-                                    <div class="col-9 d-flex flex-column align-items-start">
-                                        <h3 style="color: #00A2E3;"><strong>RSU Kabupaten Tangerang</strong></h3>
-                                        <p><strong>Unit Operasional Onkologi</strong></p>
-                                        <p>Kemoterapi</p>
-                                        <p><strong>Jadwal Praktik</strong></p>
-                                        <p>Senin, Selasa, Kamis : 09.00 - 13.00</p>
-                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="box__rec3">
-                            <div class="container p-0">
-                                <div class="row">
-                                    <div class="col-3 d-flex align-items-center justify-content-center">
-                                        <div class="rounded_img">
-                                            <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
-                                        </div>
-                                    </div>
-                                    <div class="col-9 d-flex flex-column align-items-start">
-                                        <h3 style="color: #00A2E3;"><strong>RSU Kabupaten Tangerang</strong></h3>
-                                        <p><strong>Unit Operasional Onkologi</strong></p>
-                                        <p>Kemoterapi</p>
-                                        <p><strong>Jadwal Praktik</strong></p>
-                                        <p>Senin, Selasa, Kamis : 09.00 - 13.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="box__rec3">
-                            <div class="container p-0">
-                                <div class="row">
-                                    <div class="col-3 d-flex align-items-center justify-content-center">
-                                        <div class="rounded_img">
-                                            <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
-                                        </div>
-                                    </div>
-                                    <div class="col-9 d-flex flex-column align-items-start">
-                                        <h3 style="color: #00A2E3;"><strong>RSU Kabupaten Tangerang</strong></h3>
-                                        <p><strong>Unit Operasional Onkologi</strong></p>
-                                        <p>Kemoterapi</p>
-                                        <p><strong>Jadwal Praktik</strong></p>
-                                        <p>Senin, Selasa, Kamis : 09.00 - 13.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endfor
                     </div>
                 </div>
             </div>
