@@ -26,21 +26,19 @@
                     <div class="col-8 position-relative">
                         <nav>
                             <ul>
-<<<<<<< HEAD
                                 <li><a href="">Tentang Kami.</a></li>
                                 <li><a href="">Untuk Pasien</a></li>
                                 <li><a href="">Untuk Pendamping</a></li>
                                 <li><a href="">Cerita Inspiratif Survivor</a></li>
                                 <li><a href="">Berita Terkini & Jurnal</a></li>
-=======
+
                                 <li><a href="/tentang-kami">Tentang Kami</a></li>
                                 <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                                 <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
                                 <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
-<<<<<<< HEAD
+
                                 <li><a href="/berita-terkini">Berita Terkini & Jurnal</a></li>
->>>>>>> f03093ea112ec36c9e11714ad21728510d4dfe90
-=======
+
                                 <li class="show_menu">
                                     <a href="/berita-terkini">Berita Terkini & Jurnal</a>
                                     <div class="sub_menu">
@@ -50,7 +48,7 @@
                                         </ul>
                                     </div>
                                 </li>
->>>>>>> 332225919e2f95f83007dcbd806935f7fb91f1e1
+
                             </ul>
                         </nav>
                     </div>
