@@ -22,13 +22,13 @@ class HomeController extends Controller
         // check sebagai customer apa bukan
         if(Session()->get('username')=="") {
 
-        $statusLogin = "<a href='/login'>LOGIN</a>";
-        // tampilakan  slider news story random
-        $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
-        } else {
-        // tampilakan  slider news story bedasarkan jenis kanker customer
-        $statusLogin = "<a href='/logout'>LOGOUT</a>";
-        $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
+          $statusLogin = "<a href='/login'>LOGIN</a>";
+          // tampilakan  slider news story random
+          $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
+          } else {
+          // tampilakan  slider news story bedasarkan jenis kanker customer
+          $statusLogin = "<a href='/logout'>LOGOUT</a>";
+          $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
         }
 
         //var_dump ($sliderArtikel);

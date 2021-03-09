@@ -259,7 +259,7 @@ $('.searchinputact').on('keypress', function (e) {
        $(this).attr("disabled", "disabled");
 
        //Do Stuff, submit, etc..
-        console.log('test');
+        location.href = '/search'
        //Enable the textbox again if needed.
        $(this).removeAttr("disabled");
     }

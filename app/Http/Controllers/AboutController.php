@@ -13,7 +13,7 @@ class AboutController extends Controller
     public function index(Request $request){
 
       // GET variable from global data for website
-      $siteConfig   = DB::table('global_data')->first();    
+      $siteConfig   = DB::table('global_data')->first();
       // check sebagai customer apa bukan
       if(Session()->get('username')=="") {
         $statusLogin = "<a href='/login'>LOGIN</a>";
@@ -44,16 +44,16 @@ class AboutController extends Controller
                     'listingKatArtikel'=>$listingKatArtikel
                     // 'listingSlugKatArtikel'=>$listingKatArtikel->slug,
                     // 'contentKatArtikel'=>$listingKatArtikel->content,
-                    
+
 
                   );
-      
+
       return view ('v_tentang', $data);
     }
     public function pages($slug){
 
       // GET variable from global data for website
-      $siteConfig   = DB::table('global_data')->first();    
+      $siteConfig   = DB::table('global_data')->first();
       // check sebagai customer apa bukan
       if(Session()->get('username')=="") {
         $statusLogin = "<a href='/login'>LOGIN</a>";
@@ -78,10 +78,10 @@ class AboutController extends Controller
                     'listingKatArtikel'=>$listingKatArtikel
                     // 'listingSlugKatArtikel'=>$listingKatArtikel->slug,
                     // 'contentKatArtikel'=>$listingKatArtikel->content,
-                    
+
 
                   );
-      
+
       return view ('v_tentangDetail', $data);
     }
 }

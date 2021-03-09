@@ -2006,7 +2006,7 @@ $('.searchinputact').on('keypress', function (e) {
     //Disable textbox to prevent multiple submit
     $(this).attr("disabled", "disabled"); //Do Stuff, submit, etc..
 
-    console.log('test'); //Enable the textbox again if needed.
+    location.href = '/search'; //Enable the textbox again if needed.
 
     $(this).removeAttr("disabled");
   }

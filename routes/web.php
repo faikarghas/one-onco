@@ -7,6 +7,7 @@ use App\Http\Controllers\StoryController;
 use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\BeritaTerkiniController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SearchController;
 
 
 /*
@@ -121,3 +122,5 @@ Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
 
 ////////////////////////////////////////
 
+
+Route::get('/search', [SearchController::class,'index']);
