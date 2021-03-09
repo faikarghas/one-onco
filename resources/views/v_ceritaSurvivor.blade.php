@@ -25,8 +25,8 @@
         <div class="box__banner">
             <img src="{{asset('/images/ceritasurvivorbanner.jpg')}}" width="100%" height="100%" alt="">
             <div class="box__banner-desc">
-                <h2>Cerita Inspiratif<br/>Kanker Survivor</h2>
-                <p>Cerita inspiratif dan survivor kanker,<br>sebagai penyemangat hari Anda.</p>
+                <h2>{!! $title_header !!}</h2>
+                <p>{!! $tagline_header !!}</p>
             </div>
         </div>
         @include('/components/presentational.storyList',[])

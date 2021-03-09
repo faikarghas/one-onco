@@ -110,46 +110,153 @@ $( document ).ready(function() {
 
 // CARI KANKER
 
-const dataJenisKanker = [
-    {
-        lokasi: 'Topography',
-        jenis: 'Lung Cancer'
-    },
-    {
-        lokasi: 'Breast',
-        jenis: 'Breast Cancer'
-    },
-    {
-        lokasi: 'Breast',
-        jenis: 'Breast 2 Cancer'
-    },
-]
+// const dataJenisKanker = [
+//     {
+//         lokasi: 'Topography',
+//         jenis: 'Lung Cancer'
+//     },
+//     {
+//         lokasi: 'Breast',
+//         jenis: 'Breast Cancer'
+//     },
+//     {
+//         lokasi: 'Breast',
+//         jenis: 'Breast 2 Cancer'
+//     },
+// ]
 
-function filterJenisKanker(type) {
-    let data = dataJenisKanker.filter(function (item) {
-        return item.lokasi == type
-    })
+// function filterJenisKanker(type) {
+//     let data = dataJenisKanker.filter(function (item) {
+//         return item.lokasi == type
+//     })
 
-    return data
-}
+//     return data
+// }
 
-$('#selectLokasiKanker').change(function(){
+// $('#selectLokasiKanker').change(function(){
+//     let data= $(this).val();
+//     if (data !== "null") {
+//         $('#selectJenisKanker option').empty().remove()
+//         let dataJenisKanker = filterJenisKanker(data)
+//         $('#selectJenisKanker').removeAttr( "disabled" )
+
+//         $.each(dataJenisKanker, function (i, item) {
+//             $('#selectJenisKanker').append($('<option>', {
+//                 value: item.jenis,
+//                 text : item.jenis
+//             }));
+//         });
+//     } else if (data === "null") {
+//         $('#selectJenisKanker').attr( "disabled","disabled")
+//         $('#selectJenisKanker option').empty().remove()
+//     }
+// });
+
+$('#selectKatKanker').change(function(){
+      let data= $(this).val();
+      console.log(data);
+      if (data !== "null") {
+        $.ajax({
+          url: '/jenisKanker/get/'+data,
+          type:"GET",
+          dataType:"json",
+          beforeSend: function(){
+              $('#loader').css("visibility", "visible");
+          },
+          success:function(data) {
+              $('select[name="jenisKanker"]').empty();
+              $.each(data, function(key, value){
+                  $('select[name="jenisKanker"]').append('<option value="'+ key +'">' + value + '</option>');
+              });
+          },
+          complete: function(){
+              $('#loader').css("visibility", "hidden");
+          }
+      });
+      } else if (data === "null") {
+          $('#selectJenisKanker').attr( "disabled","disabled")
+          $('#selectJenisKanker option').empty().remove()
+      }
+  });
+
+  $('#selectCities').change(function(){
     let data= $(this).val();
+   
     if (data !== "null") {
-        $('#selectJenisKanker option').empty().remove()
-        let dataJenisKanker = filterJenisKanker(data)
-        $('#selectJenisKanker').removeAttr( "disabled" )
-
-        $.each(dataJenisKanker, function (i, item) {
-            $('#selectJenisKanker').append($('<option>', {
-                value: item.jenis,
-                text : item.jenis
-            }));
-        });
+      $.ajax({
+        url: '/faskes/get/'+data,
+        type:"GET",
+        dataType:"json",
+        beforeSend: function(){
+            $('#loader').css("visibility", "visible");
+        },
+        success:function(data) {
+            $('select[name="faskes"]').empty();
+            $.each(data, function(key, value){
+                $('select[name="faskes"]').append('<option value="'+ key +'">' + value + '</option>');
+            });
+        },
+        complete: function(){
+            $('#loader').css("visibility", "hidden");
+        }
+    });
     } else if (data === "null") {
-        $('#selectJenisKanker').attr( "disabled","disabled")
-        $('#selectJenisKanker option').empty().remove()
+        $('#selectFasekes').attr( "disabled","disabled")
+        $('#selectFasekes option').empty().remove()
     }
 });
 
+
+$('#selectFaskes').change(function(){
+    let data= $(this).val();
+    console.log(data);
+    if (data !== "null") {
+      $.ajax({
+        url: '/dokter/get/'+data,
+        type:"GET",
+        dataType:"json",
+        beforeSend: function(){
+            $('#loader').css("visibility", "visible");
+        },
+        success:function(data) {
+            // $('select[name="faskes"]').empty();
+            // $.each(data, function(key, value){
+            //     $('select[name="faskes"]').append('<option value="'+ key +'">' + value + '</option>');
+            // });
+        },
+        complete: function(){
+            $('#loader').css("visibility", "hidden");
+        }
+    });
+    } else if (data === "null") {
+        // $('#selectFasekes').attr( "disabled","disabled")
+        // $('#selectFasekes option').empty().remove()
+    }
+});
+
+// $('select[name="katKanker"]').on('change', function(){
+//     var katKankerId = $(this).val();
+//     console.log(katKankerId)
+//     if(katKankerId) {
+//         $.ajax({
+//             url: '/jenisKanker/get/'+katKankerId,
+//             type:"GET",
+//             dataType:"json",
+//             beforeSend: function(){
+//                 $('#loader').css("visibility", "visible");
+//             },
+//             success:function(data) {
+//                 $('select[name="jenisKanker"]').empty();
+//                 $.each(data, function(key, value){
+//                     $('select[name="jenisKanker"]').append('<option value="'+ key +'">' + value + '</option>');
+//                 });
+//             },
+//             complete: function(){
+//                 $('#loader').css("visibility", "hidden");
+//             }
+//         });
+//     } else {
+//         $('select[name="jenisKanker"]').empty();
+//     }
+// });
 

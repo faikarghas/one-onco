@@ -3,16 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>ONE ONCO</title>
-
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
         @laravelPWA
     </head>
     <body>
@@ -48,7 +45,7 @@
                             <ul class="userAction">
                                 <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                                 <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
-                                <li><a href="/login">LOGIN</a></li>
+                                <li>{!! $statusLogin !!}</li>
                                 <li><a><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
                             </ul>
                         <nav>
@@ -56,9 +53,9 @@
                 </div>
                 <div class="box__welcomeHome forDesktop">
 
-                    <h1 class="text-white text-center">"Selamat pagi, jangan menyerah!"</h1>
-                    <p class="text-white text-center mb-5"><i>Angelina Ong, cancer sruvivor 2019</i></p>
-                    <a class="boxReadStory" href="">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+                    <h1 class="text-white text-center">{!! $titleStory !!}</h1>
+                    <p class="text-white text-center mb-5"><i>{!! $shortStory !!}</i></p>
+                    <a class="boxReadStory" href="cerita-survivor/{{ $slugStory }}">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
                 
                 </div>
                 <div class="row ps">
@@ -161,7 +158,6 @@
             </div>
 
         </header>
-
         <main page="home">
             <section class="first__section forMobile">
                 <div class="container">
@@ -215,9 +211,9 @@
                     <div class="row">
                         <div class="col-12 text-center">
                             <img class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="200px" alt="logo oneonco" srcset="">
-                            <h2 class="mb-4"><strong>SOLUSI TOTAL ONCOLOGY</strong></h2>
+                            <h2 class="mb-4"><strong>{{ $titleAbout }}</strong></h2>
                             <p class="mb-5">
-                                Lorem ipsum dolor dolor sit amet consectetur adipisicing elit. Laboriosam velit quod natus doloremque necessitatibus, totam aliquam omnis aut voluptatibus consequuntur mollitia dolores similique modi aspernatur rem? Dolores tempora magni sequi magnam soluta nihil officiis iusto molestiae sint incidunt! Aliquid accusamus provident natus excepturi in fuga error nostrum soluta asperiores quidem recusandae quod consectetur dolore maiores doloremque minima quaerat eaque quam, ipsa sunt temporibus eos. Veniam maxime eos totam dolores quis et iste quaerat voluptate sequi, porro voluptatibus aut fuga voluptates repellat nihil, illo amet est voluptatem quisquam nulla distinctio. Hic, libero laboriosam quod recusandae eius explicabo aliquam quisquam ducimus laborum!
+                            {{ $contentAbout }}
                             </p>
                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/tentang-kami'))
                         </div>
@@ -246,19 +242,21 @@
                             <div class="boxSearchKanker">
                                 <h3 class="text-center mb-5"><strong>CARI TAU JENIS PENYAKIT BERDASARKAN <br/> LOKASI ATAU SISTEM TUBUH</strong></h3>
                                 <div class="cari_kanker-select">
-                                    <form action="">
+                                    <form action="" method="POST">
                                         <div class="row">
                                             <div class="col-12">
-                                                <select id="selectLokasiKanker" class="form-select mb-2" aria-label="Default select example" name="lokasi">
+                                                <select id="selectKatKanker" class="form-select mb-2" aria-label="Default select example" name="katnKaker">
                                                     <option selected value="null">Pilih...</option>
-                                                    <option value="Topography">Topography</option>
-                                                    <option value="Breast">Breast</option>
-                                                    <option value="Head and Neck">Head and Neck</option>
-                                                    <option value="Digestive System">Digestive System</option>
+                                                    
+                                                    
+                    
+                                                    @foreach ($katKankers as $katKanker => $value)
+                                                        <option value="{{ $katKanker }}"> {{ $value }}</option>   
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="col-12">
-                                                <select id="selectJenisKanker" class="form-select mb-2" aria-label="Default select example" name="jenisKanker" disabled>
+                                                <select id="selectJenisKanker" class="form-select mb-2" aria-label="Default select example" name="jenisKanker">
                                                     <option selected>Pilih...</option>
                                                 </select>
                                             </div>
@@ -364,30 +362,19 @@
                         <div class="col-12">
                             <h2 class="text-center mb-5"><strong>JOURNAL ONKOLOGI</strong></h2>
                         </div>
+                        @foreach($listingJurnal as $row)
                         <div class="col-12 col-md-4">
                             @include('components/presentational.boxNews',array(
-                                'date'=>'24 Nov 2020',
-                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
+                                'date'=> $row->createdAt,
+                                'title'=>$row->title ,
                                 'image_url'=>'https://source.unsplash.com/random',
-                                'path'=>'jurnal-onkologi/test'
+                                'description'=>$row->shortContent,
+                                'path'=>'jurnal-onkologi'
                             ))
                         </div>
-                        <div class="col-12 col-md-4">
-                            @include('components/presentational.boxNews',array(
-                                'date'=>'24 Nov 2020',
-                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                                'image_url'=>'https://source.unsplash.com/random',
-                                'path'=>'jurnal-onkologi/test'
-                            ))
-                        </div>
-                        <div class="col-12 col-md-4">
-                            @include('components/presentational.boxNews',array(
-                                'date'=>'24 Nov 2020',
-                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                                'image_url'=>'https://source.unsplash.com/random',
-                                'path'=>'jurnal-onkologi/test'
-                            ))
-                        </div>
+                        @endforeach
+                        
+                        
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
                                 'title'=>'Lihat semua',
@@ -405,33 +392,20 @@
                             <h2 class="text-center"><strong>BERITA TERKINI</strong></h2>
                             <p class="text-center mb-5"><i>Yang terbaru mengenai dunia onkologi</i></p>
                         </div>
-                        <div class="col-12 col-md-4">
+                        @foreach($listingNews as $row)
+                        <div class="col-12 col-md-4">                        
                             @include('components/presentational.boxNews',array(
-                                'date'=>'24 Nov 2020',
-                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
+                                'date'=>$row->createdAt,
+                                'title'=>$row->title,
                                 'image_url'=>'https://source.unsplash.com/random',
-                                'description'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam perspiciatis dolor rem blanditiis. Vitae veniam, aliquid molestias non nostrum',
+                                'description'=>$row->shortContent,
                                 'path'=>'berita-terkini'
                             ))
                         </div>
-                        <div class="col-12 col-md-4">
-                            @include('components/presentational.boxNews',array(
-                                'date'=>'24 Nov 2020',
-                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                                'image_url'=>'https://source.unsplash.com/random',
-                                'description'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam perspiciatis dolor rem blanditiis. Vitae veniam, aliquid molestias non nostrum',
-                                'path'=>'berita-terkini'
-                            ))
-                        </div>
-                        <div class="col-12 col-md-4">
-                            @include('components/presentational.boxNews',array(
-                                'date'=>'24 Nov 2020',
-                                'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                                'image_url'=>'https://source.unsplash.com/random',
-                                'description'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam perspiciatis dolor rem blanditiis. Vitae veniam, aliquid molestias non nostrum',
-                                'path'=>'berita-terkini'
-                            ))
-                        </div>
+                        @endforeach
+                        
+                        
+                        
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
                                 'title'=>'Lihat semua',
@@ -442,16 +416,7 @@
                 </div>
             </section>
         </main>
-
-
-
-
-
-
-
-
         @include('components/presentational/footer')
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="{{ asset('/js/app.js') }}"></script>

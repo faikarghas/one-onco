@@ -30,7 +30,7 @@
                 <ul class="userAction">
                     <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                     <li><a><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
-                    <li><a href="/login">LOGIN</a></li>
+                    <li>{!! $statusLogin !!}</li>
                     <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
                 </ul>
             </div>

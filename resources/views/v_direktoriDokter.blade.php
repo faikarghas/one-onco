@@ -13,12 +13,13 @@
                     </div>
                     <div class="col-12">
                         <form action="">
-                            <select class="form-select mb-2" aria-label="Default select example">
+                            <select class="form-select mb-2" aria-label="Default select example" id="selectCitiesm" name="citiesm">
                                 <option selected>Pilih Kota</option>
-                                <option value="1">One</option>
-                                <option value="3">Three</option>
+                                @foreach ($cities as $citie => $value)
+                                    <option value="{{ $citie }}"> {{ $value }}</option>   
+                                @endforeach
                             </select>
-                            <select class="form-select mb-3" aria-label="Default select example">
+                            <select class="form-select mb-3" aria-label="Default select example" id="selectFaskesm" name="faskesm">
                                 <option selected>Pilih Rumah Sakit</option>
                                 <option value="1">One</option>
                                 <option value="3">Three</option>
@@ -81,20 +82,20 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <form action="">
+                        <form action="" method="POST">
                             <div class="row">
                                 <div class="col">
-                                    <select class="form-select mb-2" aria-label="Default select example">
+                                    <select class="form-select mb-2" aria-label="Default select example" id="selectCities" name="cities">
                                         <option selected>Pilih Kota</option>
-                                        <option value="1">One</option>
-                                        <option value="3">Three</option>
+                                        @foreach ($cities as $citie => $value)
+                                            <option value="{{ $citie }}"> {{ $value }}</option>   
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <select class="form-select mb-3" aria-label="Default select example">
+                                    <select class="form-select mb-3" aria-label="Default select example" id="selectFaskes" name="faskes">
                                         <option selected>Pilih Rumah Sakit</option>
-                                        <option value="1">One</option>
-                                        <option value="3">Three</option>
+                                       
                                     </select>
                                 </div>
                               </div>

@@ -12,12 +12,43 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// FRONTEND 
+Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/home', 'App\Http\Controllers\HomeController@index');
+Route::get('/tentang-kami', 'App\Http\Controllers\AboutController@index');
+Route::get('/tentang-kami/{slug}', 'App\Http\Controllers\AboutController@pages');
 
-// Route::get('/', function () {
-//     return view('v_home');
+Route::get('jenisKanker/get/{id}', 'App\Http\Controllers\HomeController@getJenisKanker');
+// Route::get('faskes/get/{id}', 'App\Http\Controllers\FaskesController@getFaskes');
+
+Route::get('/cerita-survivor', 'App\Http\Controllers\StoryController@index');
+Route::get('/cerita-survivor/{slug}', 'App\Http\Controllers\StoryController@detail');
+
+Route::get('/direktori', 'App\Http\Controllers\DirectoryController@index');
+Route::get('/direktori/dokter', 'App\Http\Controllers\DirectoryController@dokter');
+Route::get('/direktori-dokter', 'App\Http\Controllers\DirectoryController@dokter');
+Route::get('faskes/get/{id}', 'App\Http\Controllers\DirectoryController@getFaskes');
+Route::get('dokter/get/{id}', 'App\Http\Controllers\DirectoryController@getDokter');
+
+
+
+
+// Route::get('/direktori-dokter/{slug}', function ($slug) {
+//     return view('v_direktoriDokterDetail',['slug'=>$slug]);
 // });
 
-Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+
+// Login
+Route::get('login', 'App\Http\Controllers\LoginController@index');
+Route::post('login/auth', 'App\Http\Controllers\LoginController@auth');
+Route::get('forgot', 'App\Http\Controllers\LoginController@forgot');
+Route::get('logout', 'App\Http\Controllers\LoginController@logout');
+
+
+
+
+
 
 ////////////////////////////////////////
 // CARI SESUAI KATEGORI KANKER HOME PAGE
@@ -38,9 +69,9 @@ Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
 
 ////////////////////////////////////////
 
-Route::get('/login', function () {
-    return view('v_login');
-});
+// Route::get('/login', function () {
+//     return view('v_login');
+// });
 
 Route::get('/register', function () {
     return view('v_register');
@@ -54,13 +85,13 @@ Route::get('/sukses', function () {
     return view('v_success');
 });
 
-Route::get('/tentang-kami', function () {
-    return view('v_tentang');
-});
+// Route::get('/tentang-kami', function () {
+//     return view('v_tentang');
+// });
 
-Route::get('/tentang-kami/{slug}', function ($slug) {
-    return view('v_tentangDetail',['slug'=>$slug]);
-});
+// Route::get('/tentang-kami/{slug}', function ($slug) {
+//     return view('v_tentangDetail',['slug'=>$slug]);
+// });
 
 Route::get('/untuk-pasien', function () {
     return view('v_untukPasien');
@@ -78,13 +109,13 @@ Route::get('/untuk-pendamping/{slug}', function ($slug) {
     return view('v_untukPendampingDetail',['slug'=>$slug]);
 });
 
-Route::get('/cerita-survivor', function () {
-    return view('v_ceritaSurvivor');
-});
+// Route::get('/cerita-survivor', function () {
+//     return view('v_ceritaSurvivor');
+// });
 
-Route::get('/cerita-survivor/{slug}', function ($slug) {
-    return view('v_ceritaSurvivorDetail',['slug'=>$slug]);
-});
+// Route::get('/cerita-survivor/{slug}', function ($slug) {
+//     return view('v_ceritaSurvivorDetail',['slug'=>$slug]);
+// });
 
 Route::get('/perawatan-kanker', function () {
     return view('v_perawatanKanker');
@@ -110,17 +141,17 @@ Route::get('/jurnal-onkologi/{slug}', function ($slug) {
     return view('v_jurnalOnkologiDetail',['slug'=>$slug]);
 });
 
-Route::get('/direktori', function () {
-    return view('v_direktoriKanker');
-});
+// Route::get('/direktori', function () {
+//     return view('v_direktoriKanker');
+// });
 
-Route::get('/direktori-dokter', function () {
-    return view('v_direktoriDokter');
-});
+// Route::get('/direktori-dokter', function () {
+//     return view('v_direktoriDokter');
+// });
 
-Route::get('/direktori-dokter/{slug}', function ($slug) {
-    return view('v_direktoriDokterDetail',['slug'=>$slug]);
-});
+// Route::get('/direktori-dokter/{slug}', function ($slug) {
+//     return view('v_direktoriDokterDetail',['slug'=>$slug]);
+// });
 
 Route::get('/direktori-care', function () {
     return view('v_direktoriCare');

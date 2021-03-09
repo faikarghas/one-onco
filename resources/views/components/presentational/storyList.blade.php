@@ -2,42 +2,25 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center text-lg-start mb-5"><strong>Cerita Inspiratif kanker survivor</strong></h2>
+                <h2 class="text-center text-lg-start mb-5"><strong>Cerita Inspiratif kanker survivor1</strong></h2>
             </div>
+            @foreach($listingStory as $row)
             <div class="col-12 col-lg-4">
                 @include('components/presentational.boxNews',array(
-                    'date'=>'24 Nov 2020',
-                    'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                    'image_url'=>'https://source.unsplash.com/random',
-                    'description'=>'',
-                    'author'=>'Angelina Ong, cancer survivor 2019',
-                    'path'=>'/cerita-survivor/test'
+                    'date'=>$row->createdAt,
+                    'title'=>strip_tags($row->title),
+                    'image_url'=>'https://source.unsplash.com/random',     
+                    'author'=>$row->shortContent,
+                    'path'=>'/cerita-survivor/'.$row->slug
                 ))
             </div>
-            <div class="col-12 col-lg-4">
-                @include('components/presentational.boxNews',array(
-                    'date'=>'24 Nov 2020',
-                    'title'=>'Hidup untuk hari ini, hadapi hari ini',
-                    'image_url'=>'https://source.unsplash.com/random',
-                    'description'=>'',
-                    'author'=>'Angelina Ong, cancer survivor 2019',
-                    'path'=>'/cerita-survivor/test'
-                ))
-            </div>
-            <div class="col-12 col-lg-4">
-                @include('components/presentational.boxNews',array(
-                    'date'=>'24 Nov 2020',
-                    'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                    'image_url'=>'https://source.unsplash.com/random',
-                    'description'=>'',
-                    'author'=>'Angelina Ong, cancer survivor 2019',
-                    'path'=>'/cerita-survivor/test'
-                ))
-            </div>
+            @endforeach
+
+            <!-- {{ $listingStory->links() }} -->
             <div class="col-12 text-center mt-5">
                 @include('components/presentational.boxShowMore',array(
-                    'title'=>'Tampilkan lainnya',
-                    'path'=>'/berita-terkini'
+                    'title'=>'Load More',
+                    'path'=>'{{ $pagesStory->links() }}'
                 ))
             </div>
         </div>

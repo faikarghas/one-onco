@@ -10,14 +10,15 @@
                     <div class="col-12">
                         <div class="box__login">
                             <h2 class="mb-5">Masuk</h2>
-                            <form >
+                            <form action={{ asset('login/auth') }} method="post" accept-charset="utf-8" >
+                            {{ csrf_field() }}
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="email"><img class="img-fluid" src="{{asset('/images/mail.png')}}" alt="" srcset=""></span>
-                                    <input type="text" class="form-control" placeholder="Email Anda" aria-label="Email" aria-describedby="email">
+                                    <input type="text" class="form-control" placeholder="Email Anda" aria-label="Email" aria-describedby="email" name="email">
                                 </div>
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="password"><img class="img-fluid" src="{{asset('/images/secure.png')}}" alt="" srcset=""></span>
-                                    <input type="password" class="form-control" aria-label="password" placeholder="Kata Kunci">
+                                    <input type="password" class="form-control" aria-label="password" placeholder="Kata Kunci" name="password">
                                     <span class="input-group-text" id="showpass"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" alt="" srcset=""></span>
                                   </div>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])

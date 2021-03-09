@@ -63,47 +63,21 @@
         <section class="tentangKami__pageD tab__menu forDesktop-dflex">
             <div class="col-cs-4">
                 <div class="list__component">
+
+                @foreach($listingKatArtikel as $row)
+                     <!-- {{ Request::segment(1) }} -->                     
                     <div class="row list__component-list--item">
                         <div class="col-1">
                             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                         </div>
                         <div class="col-11 ps-4">
-                            <a class="{{ request()->is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami/perkenalan">Perkenalan</a>
-                            <div class="tab_line {{ request()->is('tentang-kami') ? '' : 'd-none' }}"></div>
+                            <a class="{{ request()->is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                            @if ( $row->slug ==='' ) 
+                               <div class="tab_line {{ request()->is('tentang-kami') ? '' : 'd-none' }}"></div>
+                            @endif
                         </div>
                     </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a href="/tentang-kami/mengenal-oneonco">Mengenal OneOnco</a>
-                        </div>
-                    </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a href="/tentang-kami/apa-yang-ditawarkan">Apa yang Tawarkan</a>
-                        </div>
-                    </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a href="/tentang-kami/visi-misi">Visi dan Misi</a>
-                        </div>
-                    </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a href="/tentang-kami/hubungi-kami">Hubungi kami</a>
-                        </div>
-                    </div>
+                @endforeach
                 </div>
             </div>
             <div class="col-cs-8">
@@ -128,33 +102,18 @@
                         <h2 class="text-center"><strong>BERITA TERKINI</strong></h2>
                         <p class="text-center mb-5"><i>Yang terbaru mengenai dunia onkologi</i></p>
                     </div>
+                    @foreach($listingNews as $row)
                     <div class="col-12 col-md-4">
                         @include('components/presentational.boxNews',array(
-                            'date'=>'24 Nov 2020',
-                            'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                            'image_url'=>'https://source.unsplash.com/random',
-                            'description'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam perspiciatis dolor rem blanditiis. Vitae veniam, aliquid molestias non nostrum',
-                            'path'=>'berita-terkini'
+                            'date'=>$row->createdAt,
+                                'title'=>$row->title,
+                                'image_url'=>'https://source.unsplash.com/random',
+                                'description'=>$row->shortContent,
+                                'path'=>'berita-terkini'
                         ))
                     </div>
-                    <div class="col-12 col-md-4">
-                        @include('components/presentational.boxNews',array(
-                            'date'=>'24 Nov 2020',
-                            'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                            'image_url'=>'https://source.unsplash.com/random',
-                            'description'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam perspiciatis dolor rem blanditiis. Vitae veniam, aliquid molestias non nostrum',
-                            'path'=>'berita-terkini'
-                        ))
-                    </div>
-                    <div class="col-12 col-md-4">
-                        @include('components/presentational.boxNews',array(
-                            'date'=>'24 Nov 2020',
-                            'title'=>'Perbandingan biaya kemotrapi antara indonesia & Malaysia 2020',
-                            'image_url'=>'https://source.unsplash.com/random',
-                            'description'=>'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam perspiciatis dolor rem blanditiis. Vitae veniam, aliquid molestias non nostrum',
-                            'path'=>'berita-terkini'
-                        ))
-                    </div>
+                    @endforeach
+
                     <div class="col-12 text-center mt-5">
                         @include('components/presentational.boxShowMore',array(
                             'title'=>'Tampilkan lainnya',
