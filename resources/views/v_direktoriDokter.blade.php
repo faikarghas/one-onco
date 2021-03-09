@@ -95,7 +95,6 @@
                                 <div class="col">
                                     <select class="form-select mb-3" aria-label="Default select example" id="selectFaskes" name="faskes">
                                         <option selected>Pilih Rumah Sakit</option>
-                                       
                                     </select>
                                 </div>
                               </div>
@@ -104,8 +103,8 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row">
-                    @for ($i = 0; $i < 3; $i++)
+                <div class="row listDokter">
+                    {{-- @for ($i = 0; $i < 3; $i++)
                     <div class="col-12 col-lg-6">
                         <div class="box__rec2">
                             @include('components/presentational.boxRec2',array(
@@ -118,7 +117,7 @@
                             ))
                         </div>
                     </div>
-                    @endfor
+                    @endfor --}}
                 </div>
             </div>
         </section>

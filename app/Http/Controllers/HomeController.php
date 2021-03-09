@@ -21,7 +21,7 @@ class HomeController extends Controller
 
         // check sebagai customer apa bukan
         if(Session()->get('username')=="") {
-        
+
         $statusLogin = "<a href='/login'>LOGIN</a>";
         // tampilakan  slider news story random
         $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
@@ -34,7 +34,7 @@ class HomeController extends Controller
         //var_dump ($sliderArtikel);
         //variable  data about us ( general)
         $shortContentAbout = DB::table('kategori_artikel')->where('id',6)->first();
-        
+
         // variable jenis kanker dan nama kanker
         $katKankers = DB::table('kategori_kanker')->pluck("title","id");
 
@@ -43,8 +43,8 @@ class HomeController extends Controller
         // variable news terbaru
         //$sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
         $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
-        // all data variable to views 
-        
+        // all data variable to views
+
         //var_dump($listingJurnal);
 
         $data = array('title' => $siteConfig->pvar2,
@@ -59,14 +59,12 @@ class HomeController extends Controller
                       'listingJurnal'=>$listingJurnal,
                       'listingNews'=>$listingNews
                     //   'katKankers' => compact('katKankers')
-                      
-
-                    );
+        );
 
 
     	return view ('v_home', $data,compact('katKankers'));
     }
-    
+
     public function getJenisKanker($id) {
         $jenisKanker = DB::table("kanker")->where("idKat",$id)->pluck("title","id");
         return json_encode($jenisKanker);

@@ -19,17 +19,9 @@
         <main>
             <div class="sistem_tubuh">
                 <ul>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Topography</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Breast</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Head and Neck</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Digestive System</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Respiratory System</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Bone and muscle</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Skin</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Blood</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Urogenital</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Nervous System</a></li>
-                    <li><a href="/sistem-tubuh/{{$slug}}">Endocrine System</a></li>
+                    @foreach ($katKankers as $katKanker => $value)
+                        <li><a href="/sistem-tubuh/{{$value}}">{{$value}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </main>

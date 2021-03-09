@@ -1858,7 +1858,7 @@ window.setInterval(function () {
     // console.log('pagi');
     $('.box__welcome').css('background-color', '#E55A24');
   } else if (h > 12 && h <= 15) {
-    console.log('siang');
+    // console.log('siang');
     $('.box__welcome').css('background-color', '#E55A24');
   } else if (h > 15 && h <= 18) {
     // console.log('sore');
@@ -1882,9 +1882,8 @@ if (h <= 12) {
   $('.box__welcome').css('background-color', '#E55A24');
 } else if (h > 18 && h <= 24) {
   $('.box__welcome').css('background-color', '#32338E'); // console.log('malam');
-}
+} // MENU HAMBURGER
 
-console.log(h); // MENU HAMBURGER
 
 $('#menu-hamburger').click(function (params) {
   $('#menu-hamburger').toggleClass('open');
@@ -1929,91 +1928,57 @@ $(document).ready(function () {
     $('.pagi-init').html(data);
   }); // $('.pagi-init').html(page1)
 }); // CARI KANKER
-// const dataJenisKanker = [
-//     {
-//         lokasi: 'Topography',
-//         jenis: 'Lung Cancer'
-//     },
-//     {
-//         lokasi: 'Breast',
-//         jenis: 'Breast Cancer'
-//     },
-//     {
-//         lokasi: 'Breast',
-//         jenis: 'Breast 2 Cancer'
-//     },
-// ]
-// function filterJenisKanker(type) {
-//     let data = dataJenisKanker.filter(function (item) {
-//         return item.lokasi == type
-//     })
-//     return data
-// }
-// $('#selectLokasiKanker').change(function(){
-//     let data= $(this).val();
-//     if (data !== "null") {
-//         $('#selectJenisKanker option').empty().remove()
-//         let dataJenisKanker = filterJenisKanker(data)
-//         $('#selectJenisKanker').removeAttr( "disabled" )
-//         $.each(dataJenisKanker, function (i, item) {
-//             $('#selectJenisKanker').append($('<option>', {
-//                 value: item.jenis,
-//                 text : item.jenis
-//             }));
-//         });
-//     } else if (data === "null") {
-//         $('#selectJenisKanker').attr( "disabled","disabled")
-//         $('#selectJenisKanker option').empty().remove()
-//     }
-// });
 
-$('#selectKatKanker').change(function () {
+var kankerData = {
+  lokasi: '',
+  jenis: ''
+}; // DESKTOP
+
+$('#selectLokasiKanker').change(function () {
   var data = $(this).val();
-  console.log(data);
+  var namaLokasiKanker = $('#selectLokasiKanker option:selected').text().toLowerCase().split(' ').filter(function (e, i, a) {
+    return i != 0;
+  }).join('-');
+  kankerData['lokasi'] = namaLokasiKanker;
 
   if (data !== "null") {
-    $.ajax({
-      url: '/jenisKanker/get/' + data,
-      type: "GET",
-      dataType: "json",
-      beforeSend: function beforeSend() {
-        $('#loader').css("visibility", "visible");
-      },
-      success: function success(data) {
-        $('select[name="jenisKanker"]').empty();
-        $.each(data, function (key, value) {
-          $('select[name="jenisKanker"]').append('<option value="' + key + '">' + value + '</option>');
-        });
-      },
-      complete: function complete() {
-        $('#loader').css("visibility", "hidden");
-      }
+    $('#selectJenisKanker').removeAttr("disabled");
+    axios.get("/jenisKanker/get/".concat(data)).then(function (response) {
+      // handle success
+      $('select[name="jenisKanker"]').empty(); // console.log('start');
+
+      $.each(response.data, function (key, value) {
+        // console.log('finish');
+        $('select[name="jenisKanker"]').append("<option value=\"".concat(key, "\">").concat(value, "</option>"));
+      });
     });
   } else if (data === "null") {
     $('#selectJenisKanker').attr("disabled", "disabled");
     $('#selectJenisKanker option').empty().remove();
   }
 });
+$('#selectJenisKanker').change(function () {
+  var namaJenisKanker = $('#selectJenisKanker option:selected').text().toLowerCase().split(' ').join('-');
+  kankerData['jenis'] = namaJenisKanker;
+  console.log(namaJenisKanker);
+});
+$('.boxReadMore').click(function (params) {
+  console.log(kankerData);
+  location.href = "/sistem-tubuh/".concat(kankerData['lokasi'], "/").concat(kankerData['jenis']);
+}); //MOBILE
+// DOKTER
+
 $('#selectCities').change(function () {
   var data = $(this).val();
+  console.log(data);
 
   if (data !== "null") {
-    $.ajax({
-      url: '/faskes/get/' + data,
-      type: "GET",
-      dataType: "json",
-      beforeSend: function beforeSend() {
-        $('#loader').css("visibility", "visible");
-      },
-      success: function success(data) {
-        $('select[name="faskes"]').empty();
-        $.each(data, function (key, value) {
-          $('select[name="faskes"]').append('<option value="' + key + '">' + value + '</option>');
-        });
-      },
-      complete: function complete() {
-        $('#loader').css("visibility", "hidden");
-      }
+    axios.get("/faskes/get/".concat(data)).then(function (response) {
+      $('select[name="faskes"]').empty();
+      $.each(response.data, function (key, value) {
+        $('select[name="faskes"]').append("<option value=\"".concat(key, "\">").concat(value, "</option>"));
+      });
+      $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n            <a href=\"/direktori-dokter/faikar\" class=\"d-block h-100\">\n               <div class=\"container\">\n                  <div class=\"row\">\n                     <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                        <div class=\"rounded_img\">\n                           <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/dir-dokter.png\" alt=\"dir-dokter.png\">\n                        </div>\n                     </div>\n                     <div class=\"col-7 d-flex flex-column align-items-start\">\n                        <div class=\"title_wrapper\">\n                           <h3><strong>dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM</strong></h3>\n                        </div>\n                        <ul>\n                           <li>\n                              <p><strong>Unit Operasional Onkologi</strong></p>\n                           </li>\n                           <li>\n                              <p>Kemoterapi</p>\n                           </li>\n                        </ul>\n                     </div>\n                     <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                           <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                        </svg>\n                     </div>\n                  </div>\n               </div>\n            </a>\n            </div></div>");
     });
   } else if (data === "null") {
     $('#selectFasekes').attr("disabled", "disabled");
@@ -2022,53 +1987,33 @@ $('#selectCities').change(function () {
 });
 $('#selectFaskes').change(function () {
   var data = $(this).val();
-  console.log(data);
 
   if (data !== "null") {
-    $.ajax({
-      url: '/dokter/get/' + data,
-      type: "GET",
-      dataType: "json",
-      beforeSend: function beforeSend() {
-        $('#loader').css("visibility", "visible");
-      },
-      success: function success(data) {// $('select[name="faskes"]').empty();
-        // $.each(data, function(key, value){
-        //     $('select[name="faskes"]').append('<option value="'+ key +'">' + value + '</option>');
-        // });
-      },
-      complete: function complete() {
-        $('#loader').css("visibility", "hidden");
-      }
-    });
+    // axios.get(`/dokter/get/${data}`).then(function (response) {
+    // })
+    $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n            <a href=\"/direktori-dokter/faikar\" class=\"d-block h-100\">\n               <div class=\"container\">\n                  <div class=\"row\">\n                     <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                        <div class=\"rounded_img\">\n                           <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/dir-dokter.png\" alt=\"dir-dokter.png\">\n                        </div>\n                     </div>\n                     <div class=\"col-7 d-flex flex-column align-items-start\">\n                        <div class=\"title_wrapper\">\n                           <h3><strong>dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM</strong></h3>\n                        </div>\n                        <ul>\n                           <li>\n                              <p><strong>Unit Operasional Onkologi</strong></p>\n                           </li>\n                           <li>\n                              <p>Kemoterapi</p>\n                           </li>\n                        </ul>\n                     </div>\n                     <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                           <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                        </svg>\n                     </div>\n                  </div>\n               </div>\n            </a>\n         </div></div>");
   } else if (data === "null") {// $('#selectFasekes').attr( "disabled","disabled")
     // $('#selectFasekes option').empty().remove()
   }
-}); // $('select[name="katKanker"]').on('change', function(){
-//     var katKankerId = $(this).val();
-//     console.log(katKankerId)
-//     if(katKankerId) {
-//         $.ajax({
-//             url: '/jenisKanker/get/'+katKankerId,
-//             type:"GET",
-//             dataType:"json",
-//             beforeSend: function(){
-//                 $('#loader').css("visibility", "visible");
-//             },
-//             success:function(data) {
-//                 $('select[name="jenisKanker"]').empty();
-//                 $.each(data, function(key, value){
-//                     $('select[name="jenisKanker"]').append('<option value="'+ key +'">' + value + '</option>');
-//                 });
-//             },
-//             complete: function(){
-//                 $('#loader').css("visibility", "hidden");
-//             }
-//         });
-//     } else {
-//         $('select[name="jenisKanker"]').empty();
-//     }
-// });
+}); // search
+
+$('.search_act').click(function (params) {
+  console.log('test');
+  $('.searchpop').toggleClass('show');
+});
+$('.searchinputact').on('keypress', function (e) {
+  if (e.which === 13) {
+    //Disable textbox to prevent multiple submit
+    $(this).attr("disabled", "disabled"); //Do Stuff, submit, etc..
+
+    console.log('test'); //Enable the textbox again if needed.
+
+    $(this).removeAttr("disabled");
+  }
+});
+$('.close-search').click(function (params) {
+  $('.searchpop').removeClass('show');
+});
 
 /***/ }),
 

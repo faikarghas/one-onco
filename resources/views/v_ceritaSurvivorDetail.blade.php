@@ -44,15 +44,15 @@
                                     @include('components/presentational.boxNews',array(
                                       'date'=>$row->createdAt,
                                       'title'=>strip_tags($row->title),
-                                      'image_url'=>'https://source.unsplash.com/random', 
-                                      'description'=>'',    
+                                      'image_url'=>'https://source.unsplash.com/random',
+                                      'description'=>'',
                                       'author'=>$row->shortContent,
                                       'path'=>'/cerita-survivor/'.$row->slug
                                     ))
                                 </div>
                                 @endforeach
-                                
-                               
+
+
                             </div>
                         </div>
                     </div>

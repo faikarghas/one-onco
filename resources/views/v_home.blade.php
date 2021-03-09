@@ -17,7 +17,6 @@
             @include('components/presentational.menuShowcase')
             <div class="container-fluid headerDesktop forDesktop" style="background-image:url({{asset('/images/imagebanner_desktop.jpg')}})">
                 <div class="headOverlay" style="background-color:#00a3e398;"></div>
-
                 <div class="row">
                     <div class="col-2 position-relative"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/></div>
                     <div class="col-8 position-relative">
@@ -43,20 +42,18 @@
                     <div class="col-2 position-relative">
                         <nav>
                             <ul class="userAction">
-                                <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
+                                <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
+                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
                                 <li>{!! $statusLogin !!}</li>
-                                <li><a><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                                <li><a><img src="{{ asset('/images/setting.png') }}" alt="setting" width="15px"/></a></li>
                             </ul>
                         <nav>
                     </div>
                 </div>
                 <div class="box__welcomeHome forDesktop">
-
                     <h1 class="text-white text-center">{!! $titleStory !!}</h1>
                     <p class="text-white text-center mb-5"><i>{!! $shortStory !!}</i></p>
                     <a class="boxReadStory" href="cerita-survivor/{{ $slugStory }}">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
-                
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
@@ -117,13 +114,12 @@
 
             <div class="container-fluid headerMobile forMobile" style="background-image:url({{asset('/images/imagebanner_mobile.jpg')}}), linear-gradient(to right, #6DB3F2, #6DB3F2);">
                 <div class="headOverlay" style="background-color:#00a3e398;"></div>
-
                 <div class="menuOverlay"></div>
                 <div class="row headerNavBox position-relative">
                     <div class="col-6">
                         <div class="user">
                             <ul>
-                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
+                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
                                 <li><a href="/login">LOGIN</a></li>
                             </ul>
                         </div>
@@ -131,7 +127,7 @@
                     <div class="col-6">
                         <div class="menu">
                             <ul>
-                                <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
+                                <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                                 <li class="open_menu">
                                     <div id="menu-hamburger" class="">
                                         <span></span>
@@ -156,7 +152,6 @@
                 </div>
                 <div class="halfBoxRounded"></div>
             </div>
-
         </header>
         <main page="home">
             <section class="first__section forMobile">
@@ -242,29 +237,26 @@
                             <div class="boxSearchKanker">
                                 <h3 class="text-center mb-5"><strong>CARI TAU JENIS PENYAKIT BERDASARKAN <br/> LOKASI ATAU SISTEM TUBUH</strong></h3>
                                 <div class="cari_kanker-select">
-                                    <form action="" method="POST">
+                                    <form>
                                         <div class="row">
                                             <div class="col-12">
-                                                <select id="selectKatKanker" class="form-select mb-2" aria-label="Default select example" name="katnKaker">
+                                                <select id="selectLokasiKanker" class="form-select mb-2" aria-label="Default select example" name="katnKaker">
                                                     <option selected value="null">Pilih...</option>
-                                                    
-                                                    
-                    
                                                     @foreach ($katKankers as $katKanker => $value)
-                                                        <option value="{{ $katKanker }}"> {{ $value }}</option>   
+                                                        <option value="{{ $katKanker }}"> {{ $value }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="col-12">
-                                                <select id="selectJenisKanker" class="form-select mb-2" aria-label="Default select example" name="jenisKanker">
+                                                <select id="selectJenisKanker" class="form-select mb-2" aria-label="Default select example" name="jenisKanker" disabled>
                                                     <option selected>Pilih...</option>
                                                 </select>
                                             </div>
                                           </div>
-                                          <div class="text-center mt-5">
-                                            <button  class="boxReadMore">Cari</button>
-                                          </div>
                                     </form>
+                                    <div class="text-center mt-5">
+                                        <button  class="boxReadMore">Cari</button>
+                                    </div>
                                 </div>
                                 {{-- <div class="boxSearchKanker-list mt-5">
                                     <ul>
@@ -373,8 +365,6 @@
                             ))
                         </div>
                         @endforeach
-                        
-                        
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
                                 'title'=>'Lihat semua',
@@ -393,7 +383,7 @@
                             <p class="text-center mb-5"><i>Yang terbaru mengenai dunia onkologi</i></p>
                         </div>
                         @foreach($listingNews as $row)
-                        <div class="col-12 col-md-4">                        
+                        <div class="col-12 col-md-4">
                             @include('components/presentational.boxNews',array(
                                 'date'=>$row->createdAt,
                                 'title'=>$row->title,
@@ -403,9 +393,7 @@
                             ))
                         </div>
                         @endforeach
-                        
-                        
-                        
+
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
                                 'title'=>'Lihat semua',
@@ -417,6 +405,10 @@
             </section>
         </main>
         @include('components/presentational/footer')
+        <div class="searchpop">
+            <input type="text" class="form-control searchinputact" placeholder="Kata Kunci..." aria-label="search" aria-describedby="button-addon2">
+            <div class="close-search">X</div>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
