@@ -8,6 +8,7 @@ use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\BeritaTerkiniController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SistemTubuhController;
 
 
 /*
@@ -116,9 +117,14 @@ Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
     return view('v_sistemLokasiKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
 });
 
-Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
-    return view('v_sistemJenisKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
-});
+// Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
+//     return view('v_sistemJenisKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
+// });
+
+Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'sistemTubuhDetail']);
+
+
+
 
 ////////////////////////////////////////
 

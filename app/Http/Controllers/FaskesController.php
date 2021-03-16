@@ -12,7 +12,6 @@ class FaskesController extends Controller
 {
     public function index(){
 
-    
     }
     public function getFaskes($id) {
         $faskes = DB::table("faskes")->where("provinsi",$id)->pluck("namaFaskes","faskesId");

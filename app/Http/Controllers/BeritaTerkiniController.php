@@ -12,16 +12,9 @@ use Illuminate\Pagination\Paginator;
 class BeritaTerkiniController extends Controller
 {
     public function index(Request $request){
-
-      // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();
-
-      // check sebagai customer apa bukan
-      if(Session()->get('username')=="") {
-        $statusLogin = "<a href='/login'>LOGIN</a>";
-      } else {
-        $statusLogin = "<a href='/logout'>LOGOUT</a>";
-      }
+      $listnews = $this->getnews();
+      $statusLogin = $this->checkLogin();
 
       // listing all story with load more
       $segment = $request->segment(1);
@@ -52,15 +45,10 @@ class BeritaTerkiniController extends Controller
 
 
     public function detail($slug, Request $request){
-
-      // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();
-      // check sebagai customer apa bukan
-      if(Session()->get('username')=="") {
-        $statusLogin = "<a href='/login'>LOGIN</a>";
-      } else {
-        $statusLogin = "<a href='/logout'>LOGOUT</a>";
-      }
+
+      $statusLogin = $this->checkLogin();
+
       // header title and image
       $segment = $request->segment(1);
       $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
