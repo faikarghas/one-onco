@@ -166,14 +166,14 @@ $('#selectCities').change(function(){
                 // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
                 $('select[name="faskes"]').append(new Option(value, key));
             });
-            
+
             axios.get(`/dokter/get/${data}`).then(function (response) {
                 // console.log(data);
                 $('.direktori__list .listDokter').empty();
                 i = 0;
                 $.each(response.data, function(i, dokter ){
 
-                   
+
                     console.log(data);
                     display = response.data;
 
@@ -210,11 +210,11 @@ $('#selectCities').change(function(){
                </div>
             </a>
             </div></div>`);
-                   
+
                 });
             });
-            
-            
+
+
         });
     } else if (data === "null") {
         $('#selectFasekes').attr( "disabled","disabled")
@@ -224,7 +224,7 @@ $('#selectCities').change(function(){
 
 $('#selectFaskes').change(function(){
     $('.direktori__list .listDokter').empty();
-    let data= $(this).val();    
+    let data= $(this).val();
     if (data !== "null") {
         axios.get(`/dokterWithKabupaten/get/${data}`).then(function (response) {
           $.each(response.data, function(i, dokter ){
@@ -264,14 +264,14 @@ $('#selectFaskes').change(function(){
           });
 
         })
-        
+
     } else if (data === "null") {
         // $('#selectFasekes').attr( "disabled","disabled")
         // $('#selectFasekes option').empty().remove()
     }
 });
 
-// lab 
+// lab
 $('#selectProvinces2').change(function(){
   let data= $(this).val();
   // console.log(data);
@@ -311,7 +311,7 @@ $('#selectProvinces2').change(function(){
               </div>
           </div>
       </div>
-          `);    
+          `);
       });
   } else if (data === "null") {
       $('#selectFaskes2').attr( "disabled","disabled")
@@ -321,7 +321,7 @@ $('#selectProvinces2').change(function(){
 
 $('#selectFaskes2').change(function(){
   $('.direktori__list .listFaskes2').empty();
-  let data= $(this).val();    
+  let data= $(this).val();
   if (data !== "null") {
       axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
         $.each(response.data, function(i, dokter ){
@@ -330,9 +330,9 @@ $('#selectFaskes2').change(function(){
         });
 
       })
-      
+
   } else if (data === "null") {
-    
+
   }
 });
 
@@ -349,14 +349,14 @@ $('#selectProvinces3').change(function(){
               // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
               $('select[name="cities3"]').append(new Option(value, key));
           });
-          
+
           axios.get(`/faskes/get/${data}`).then(function (response) {
               // console.log(data);
               $('.direktori__list .listFaskes').empty();
               i = 0;
               $.each(response.data, function(i, dokter ){
 
-                 
+
                   console.log(data);
                   display = response.data;
 
@@ -405,11 +405,11 @@ $('#selectProvinces3').change(function(){
                       </div>
                   </div>
               </div>`);
-                 
+
               });
           });
-          
-          
+
+
       });
   } else if (data === "null") {
       $('#selectCities3').attr( "disabled","disabled")
@@ -419,7 +419,7 @@ $('#selectProvinces3').change(function(){
 
 $('#selectCities3').change(function(){
   $('.direktori__list .listFaskes').empty();
-  let data= $(this).val();    
+  let data= $(this).val();
   if (data !== "null") {
       axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
         $.each(response.data, function(i, dokter ){
@@ -471,7 +471,7 @@ $('#selectCities3').change(function(){
         });
 
       })
-      
+
   } else if (data === "null") {
       // $('#selectFasekes').attr( "disabled","disabled")
       // $('#selectFasekes option').empty().remove()

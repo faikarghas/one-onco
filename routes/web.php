@@ -11,7 +11,6 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SistemTubuhController;
 use App\Http\Controllers\UntukPasienDanPendampingController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,20 +51,14 @@ Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
 Route::get('/cerita-survivor',[StoryController::class,'index']);
 Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
 
-Route::get('/untuk-pasien',[PasienController::class,'index']);
-Route::get('/untuk-pasien/{slug}',[PasienController::class,'detail']);
-
-Route::get('/untuk-pendamping',[PendampingController::class,'index']);
-Route::get('/untuk-pendamping/{slug}',[PendampingController::class,'detail']);
+Route::get('/untuk-pasien',[UntukPasienDanPendampingController::class,'pasien']);
+Route::get('/untuk-pasien/{slug}',[UntukPasienDanPendampingController::class,'detailPasien']);
+Route::get('/untuk-pendamping',[UntukPasienDanPendampingController::class,'pendamping']);
+Route::get('/untuk-pendamping/{slug}',[UntukPasienDanPendampingController::class,'detailPendamping']);
 
 Route::get('/jurnal-onkologi', function () {
     return view('v_jurnalOnkologi');
 });
-
-
-
-
-
 
 
 Route::get('/direktori',[DirectoryController::class,'index']);
@@ -79,39 +72,18 @@ Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokter
 Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
 
 Route::get('/direktori-lab',[DirectoryController::class,'lab']);
-
-// Route::get('/direktori-lab', function () {
-//     return view('v_direktoriLab');
-// });
-
 Route::get('/direktori-care',[DirectoryController::class,'carehome']);
 Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
 
-Route::get('/berita-terkini',[BeritaTerkiniController::class,'index']);
-Route::get('/berita-terkini/{slug}',[BeritaTerkiniController::class,'detail']);
-
-
+Route::get('/berita-terkini',[BeritaDanJurnalController::class,'berita']);
+Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'beritaDetail']);
+Route::get('/jurnal-onkologi',[BeritaDanJurnalController::class,'jurnal']);
+Route::get('/jurnal-onkologi/{slug}',[BeritaDanJurnalController::class,'jurnalDetail']);
 
 
 Route::get('/sukses', function () {
     return view('v_success');
 });
-
-// Route::get('/untuk-pasien', function () {
-//     return view('v_untukPasien');
-// });
-
-// Route::get('/untuk-pasien/{slug}', function ($slug) {
-//     return view('v_untukPasienDetail',['slug'=>$slug]);
-// });
-
-// Route::get('/untuk-pendamping', function () {
-//     return view('v_untukPendamping');
-// });
-
-// Route::get('/untuk-pendamping/{slug}', function ($slug) {
-//     return view('v_untukPendampingDetail',['slug'=>$slug]);
-// });
 
 Route::get('/perawatan-kanker', function () {
     return view('v_perawatanKanker');
