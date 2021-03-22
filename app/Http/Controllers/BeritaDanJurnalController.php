@@ -40,6 +40,8 @@ class BeritaDanJurnalController extends Controller
                     'listingNews'=>$listingNews
                   );
 
+      // dd($segment);
+
       return view ('v_beritaTerkini', $data);
     }
     public function beritaDetail($slug, Request $request){
@@ -97,7 +99,7 @@ class BeritaDanJurnalController extends Controller
       $listingStory  = $model->all_kategori($id_kategori);
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingNews = DB::table('artikel')->where('idKat',2)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'statusLogin'=>$statusLogin,
@@ -136,7 +138,7 @@ class BeritaDanJurnalController extends Controller
       $otherStory  = $model->otherArticle($id, $id_kategori);
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingNews = DB::table('artikel')->where('idKat',2)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'statusLogin'=>$statusLogin,
