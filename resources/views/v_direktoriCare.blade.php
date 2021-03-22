@@ -109,7 +109,6 @@
             </div>
             <div class="container">
                 <div class="row listFaskes">
-                    
                 </div>
             </div>
         </section>
@@ -141,3 +140,8 @@
         </section>
     </main>
 @endsection
+
+
+
+
+
