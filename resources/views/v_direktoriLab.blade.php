@@ -56,20 +56,19 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <form action="">
+                        <form action="" method="POST">
                             <div class="row">
                                 <div class="col">
-                                    <select class="form-select mb-2" aria-label="Default select example">
+                                    <select class="form-select mb-2" aria-label="Default select example" id="selectProvinces2" name="provinces2">
                                         <option selected>Pilih Kota</option>
-                                        <option value="1">One</option>
-                                        <option value="3">Three</option>
+                                        @foreach ($provinces as $province => $value)
+                                            <option value="{{ $province }}"> {{ $value }}</option>   
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Pilih Rumah Sakit</option>
-                                        <option value="1">One</option>
-                                        <option value="3">Three</option>
+                                    <select class="form-select mb-3" aria-label="Default select example" id="selectFaskes2" name="faskes2">
+                                        <option value="">Pilih Rumah Sakit</option>
                                     </select>
                                 </div>
                               </div>
@@ -78,8 +77,8 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6">
+                <div class="row listFaskes2">
+                    {{-- <div class="col-12 col-md-6">
                         <div class="direktoriLab__list-item mb-4">
                             <div class="row">
                                 <div class="col-12 mb-4">
@@ -134,7 +133,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

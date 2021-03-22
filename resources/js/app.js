@@ -157,15 +157,30 @@ $('.boxReadMore').click(function (params) {
 
 $('#selectCities').change(function(){
     let data= $(this).val();
-    console.log(data);
+    // console.log(data);
     if (data !== "null") {
-        axios.get(`/faskes/get/${data}`).then(function (response) {
+        axios.get(`/cities/get/${data}`).then(function (response) {
             $('select[name="faskes"]').empty();
+            $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
             $.each(response.data, function(key, value){
-                $('select[name="faskes"]').append(`<option value="${key}">${value}</option>`);
+                // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
+                $('select[name="faskes"]').append(new Option(value, key));
             });
-            $('.direktori__list .listDokter').append(`<div class="col-12 col-lg-6"><div class="box__rec2">
-            <a href="/direktori-dokter/faikar" class="d-block h-100">
+            
+            axios.get(`/dokter/get/${data}`).then(function (response) {
+                // console.log(data);
+                $('.direktori__list .listDokter').empty();
+                i = 0;
+                $.each(response.data, function(i, dokter ){
+
+                   
+                    console.log(data);
+                    display = response.data;
+
+                    // console.log(display[i]['dokterId']);
+
+                    $('.direktori__list .listDokter').append(`<div class="col-12 col-lg-6"><div class="box__rec2">
+            <a href="/dokter-detail/${display[i]['dokterId']}" class="d-block h-100">
                <div class="container">
                   <div class="row">
                      <div class="col-3 d-flex align-items-center justify-content-center">
@@ -175,11 +190,11 @@ $('#selectCities').change(function(){
                      </div>
                      <div class="col-7 d-flex flex-column align-items-start">
                         <div class="title_wrapper">
-                           <h3><strong>dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM</strong></h3>
+                           <h3><strong>${display[i]['NamaDokterDenganGelar']}</strong></h3>
                         </div>
                         <ul>
                            <li>
-                              <p><strong>Unit Operasional Onkologi</strong></p>
+                              <p><strong>Unit Operasional : ${display[i]['unit']}</strong></p>
                            </li>
                            <li>
                               <p>Kemoterapi</p>
@@ -195,6 +210,11 @@ $('#selectCities').change(function(){
                </div>
             </a>
             </div></div>`);
+                   
+                });
+            });
+            
+            
         });
     } else if (data === "null") {
         $('#selectFasekes').attr( "disabled","disabled")
@@ -203,13 +223,14 @@ $('#selectCities').change(function(){
 });
 
 $('#selectFaskes').change(function(){
-    let data= $(this).val();
+    $('.direktori__list .listDokter').empty();
+    let data= $(this).val();    
     if (data !== "null") {
-        // axios.get(`/dokter/get/${data}`).then(function (response) {
-
-        // })
-        $('.direktori__list .listDokter').append(`<div class="col-12 col-lg-6"><div class="box__rec2">
-            <a href="/direktori-dokter/faikar" class="d-block h-100">
+        axios.get(`/dokterWithKabupaten/get/${data}`).then(function (response) {
+          $.each(response.data, function(i, dokter ){
+            display = response.data;
+            $('.direktori__list .listDokter').append(`<div class="col-12 col-lg-6"><div class="box__rec2">
+            <a href="/dokter/dokter-detail/${display[i]['dokterId']}" class="d-block h-100">
                <div class="container">
                   <div class="row">
                      <div class="col-3 d-flex align-items-center justify-content-center">
@@ -219,7 +240,7 @@ $('#selectFaskes').change(function(){
                      </div>
                      <div class="col-7 d-flex flex-column align-items-start">
                         <div class="title_wrapper">
-                           <h3><strong>dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM</strong></h3>
+                           <h3><strong>${display[i]['NamaDokterDenganGelar']}</strong></h3>
                         </div>
                         <ul>
                            <li>
@@ -239,11 +260,230 @@ $('#selectFaskes').change(function(){
                </div>
             </a>
          </div></div>`);
+
+          });
+
+        })
+        
     } else if (data === "null") {
         // $('#selectFasekes').attr( "disabled","disabled")
         // $('#selectFasekes option').empty().remove()
     }
 });
+
+// lab 
+$('#selectProvinces2').change(function(){
+  let data= $(this).val();
+  // console.log(data);
+  if (data !== "null") {
+      axios.get(`/faskesWithPropinsi/get/${data}`).then(function (response) {
+          $('select[name="faskes2"]').empty();
+          $('select[name="faskes2"]').append('<option value=""> Pilih Rumah Sakit</option>');
+          $.each(response.data, function(key, value){
+              // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
+              $('select[name="faskes2"]').append(new Option(value, key));
+          });
+          $('.direktoriLab__list .listFaskes2').append(`<div class="col-12 col-md-12">
+          <div class="direktoriLab__list-item mb-4">
+              <div class="row">
+                  <div class="col-12 mb-4">
+                      <h4><strong>KALGen INNOLAB</strong></h4>
+                  </div>
+                  <div class="col-5">
+                      <img src="http://127.0.0.1:8000/images/kalgen.png" width="100px" alt="kalgen">
+                  </div>
+                  <div class="col-7">
+                      <ul>
+                          <li>
+                              <img src="{{asset('/images/addr-icon.png')}}" width="15px" alt="">
+                              <p>Jl. Yos Sudarso Kav 85, RT.10/RW.11, Sunter Jaya, Tj. Priok, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14360</p>
+                          </li>
+                          <li>
+                              <img src="{{asset('/images/phone-icon.png')}}" width="15px" alt="">
+                              <p>(021) 21882388</p>
+                          </li>
+                          <li>
+                              <img src="{{asset('/images/web-icon.png')}}" width="15px" alt="">
+                              <p>www.kalgeninnolab.co.id</p>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+          `);    
+      });
+  } else if (data === "null") {
+      $('#selectFaskes2').attr( "disabled","disabled")
+      $('#selectFaskes2 option').empty().remove()
+  }
+});
+
+$('#selectFaskes2').change(function(){
+  $('.direktori__list .listFaskes2').empty();
+  let data= $(this).val();    
+  if (data !== "null") {
+      axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
+        $.each(response.data, function(i, dokter ){
+          display = response.data;
+          $('.direktori__list .listFaskes').append(``);
+        });
+
+      })
+      
+  } else if (data === "null") {
+    
+  }
+});
+
+// care
+
+$('#selectProvinces3').change(function(){
+  let data= $(this).val();
+  // console.log(data);
+  if (data !== "null") {
+      axios.get(`/cities/get/${data}`).then(function (response) {
+          $('select[name="cities3"]').empty();
+          $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
+          $.each(response.data, function(key, value){
+              // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
+              $('select[name="cities3"]').append(new Option(value, key));
+          });
+          
+          axios.get(`/faskes/get/${data}`).then(function (response) {
+              // console.log(data);
+              $('.direktori__list .listFaskes').empty();
+              i = 0;
+              $.each(response.data, function(i, dokter ){
+
+                 
+                  console.log(data);
+                  display = response.data;
+
+                  // console.log(display[i]['dokterId']);
+
+                  $('.direktori__list .listFaskes').append(`<div class="col-12 col-md-6">
+                  <div class="box__rec3">
+                      <div class="container p-0">
+                          <div class="row">
+                              <div class="col-3 d-flex align-items-start justify-content-center">
+                                  <div class="rounded_img">
+                                      <img width="100%" height="100%" src="http://127.0.0.1:8000/images/dir-dokter.png" alt="dokter" />
+                                  </div>
+                              </div>
+                              <div class="col-9 d-flex flex-column align-items-start">
+                                  <h3><strong>${display[i]['NamaFaskes']}</strong></h3>
+                                  <ul>
+                                      <li><p>${display[i]['alamat']}<br>${display[i]['propinsi']}</p></li>
+                                      <li class="mt-3"><p>${display[i]['fax']}</p></li>
+                                      <li><p>${display[i]['phone']}</p></li>
+                                  </ul>
+                                  <a class="mt-3" href="" style="color: #00A2E3">${display[i]['website']}</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6">
+                  <div class="jam_op-title">
+                      <p>Jam Operasional</p>
+                  </div>
+                  <div class="row">
+                      <div class="col-6">
+                          <ul class="jam_op-sch">
+                              <li><span>Senin</span>09.00 - 15.00</li>
+                              <li><span>Selasa</span>09.00 - 15.00</li>
+                              <li><span>Rabu</span>09.00 - 15.00</li>
+                          </ul>
+                      </div>
+                      <div class="col-6">
+                          <ul class="jam_op-sch">
+                              <li><span>Kamis</span>09.00 - 15.00</li>
+                              <li><span>Jumat</span>09.00 - 15.00</li>
+                              <li><span>Sabtu</span>09.00 - 15.00</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>`);
+                 
+              });
+          });
+          
+          
+      });
+  } else if (data === "null") {
+      $('#selectCities3').attr( "disabled","disabled")
+      $('#selectCities3 option').empty().remove()
+  }
+});
+
+$('#selectCities3').change(function(){
+  $('.direktori__list .listFaskes').empty();
+  let data= $(this).val();    
+  if (data !== "null") {
+      axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
+        $.each(response.data, function(i, dokter ){
+          display = response.data;
+          $('.direktori__list .listFaskes').append(`<div class="col-12 col-md-6">
+          <div class="box__rec3">
+              <div class="container p-0">
+                  <div class="row">
+                      <div class="col-3 d-flex align-items-start justify-content-center">
+                          <div class="rounded_img">
+                              <img width="100%" height="100%" src="http://127.0.0.1:8000/images/dir-dokter.png" alt="dokter" />
+                          </div>
+                      </div>
+                      <div class="col-9 d-flex flex-column align-items-start">
+                          <h3><strong>${display[i]['NamaFaskes']}</strong></h3>
+                          <ul>
+                              <li><p>${display[i]['alamat']}<br>${display[i]['propinsi']}</p></li>
+                              <li class="mt-3"><p>${display[i]['fax']}</p></li>
+                              <li><p>${display[i]['phone']}</p></li>
+                          </ul>
+                          <a class="mt-3" href="" style="color: #00A2E3">${display[i]['website']}</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-12 col-md-6">
+          <div class="jam_op-title">
+              <p>Jam Operasional</p>
+          </div>
+          <div class="row">
+              <div class="col-6">
+                  <ul class="jam_op-sch">
+                      <li><span>Senin</span>09.00 - 15.00</li>
+                      <li><span>Selasa</span>09.00 - 15.00</li>
+                      <li><span>Rabu</span>09.00 - 15.00</li>
+                  </ul>
+              </div>
+              <div class="col-6">
+                  <ul class="jam_op-sch">
+                      <li><span>Kamis</span>09.00 - 15.00</li>
+                      <li><span>Jumat</span>09.00 - 15.00</li>
+                      <li><span>Sabtu</span>09.00 - 15.00</li>
+                  </ul>
+              </div>
+          </div>
+      </div>`);
+
+        });
+
+      })
+      
+  } else if (data === "null") {
+      // $('#selectFasekes').attr( "disabled","disabled")
+      // $('#selectFasekes option').empty().remove()
+  }
+});
+
+
+
+
+
+
+
 
 // search
 

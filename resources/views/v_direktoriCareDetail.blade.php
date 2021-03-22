@@ -95,13 +95,13 @@
                                         </div>
                                     </div>
                                     <div class="col-9 d-flex flex-column align-items-start">
-                                        <h3><strong>RS Puri Indah</strong></h3>
+                                        <h3><strong>{{ $name }}</strong></h3>
                                         <ul>
-                                            <li><p>Jl. Anggrek putih 2, Anggrek Loka, <br> Tangerang Selatan</p></li>
-                                            <li class="mt-3"><p>08128783145</p></li>
-                                            <li><p>08128783145</p></li>
+                                            <li><p>{{ $address }}<br>Tangerang Selatan</p></li>
+                                            <li class="mt-3"><p>{{ $phone }}</p></li>
+                                            <li><p>{{ $fax }}</p></li>
                                         </ul>
-                                        <a class="mt-3" href="" style="color: #00A2E3">www.rspondokindah.co.id</a>
+                                        <a class="mt-3" href="" style="color: #00A2E3">{{ $website }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                             <h4><strong>Dokter Praktik</strong></h4>
                         </div>
                     </div>
-                    @for ($i = 0; $i < 3; $i++)
+                    @foreach ($viewDokter as $row)
                     <div class="col-12 col-md-6">
                         <div class="box__rec3">
                             <a href="/direktori-dokter/dr-faikar">
@@ -148,17 +148,17 @@
                                         </div>
                                         <div class="col-9 d-flex flex-column align-items-start">
                                             <div class="title_wrapper">
-                                                <h3 style="color: #00A2E3;"><strong>dr. Faikar Ghassan</strong></h3>
+                                                <h3 style="color: #00A2E3;"><strong>{{ $row->fullname }}</strong></h3>
                                             </div>
                                             <p><strong>Jadwal Praktik</strong></p>
-                                            <p>Senin, Selasa, Kamis : 09.00 - 13.00</p>
+                                            <p>{{ $row->jadwal }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </section>

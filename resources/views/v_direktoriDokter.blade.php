@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="col">
                                     <select class="form-select mb-3" aria-label="Default select example" id="selectFaskes" name="faskes">
-                                        <option selected>Pilih Rumah Sakit</option>
+                                        <option value="">Pilih Kabupaten</option>
                                     </select>
                                 </div>
                               </div>
