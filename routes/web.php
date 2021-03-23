@@ -46,33 +46,66 @@ Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
 Route::get('/cerita-survivor',[StoryController::class,'index']);
 Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
 
+Route::get('/untuk-pasien',[PasienController::class,'index']);
+Route::get('/untuk-pasien/{slug}',[PasienController::class,'detail']);
+
+Route::get('/untuk-pendamping',[PendampingController::class,'index']);
+Route::get('/untuk-pendamping/{slug}',[PendampingController::class,'detail']);
+
+Route::get('/jurnal-onkologi', function () {
+    return view('v_jurnalOnkologi');
+});
+
+Route::get('/untuk-pendamping/{slug}',[PendampingController::class,'detail']);
+
+
+
+
+
 Route::get('/direktori',[DirectoryController::class,'index']);
 Route::get('/direktori-dokter',[DirectoryController::class,'dokter']);
-Route::get('faskes/get/{id}',[DirectoryController::class,'getFaskes']);
+Route::get('cities/get/{id}',[DirectoryController::class,'getCities']);
 Route::get('dokter/get/{id}',[DirectoryController::class,'getDokter']);
+Route::get('faskes/get/{id}',[DirectoryController::class,'getFaskes']);
+Route::get('faskesWithPropinsi/get/{id}',[DirectoryController::class,'getFaskesWithPropinsi']);
+Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskesWithKabupaten']);
+Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
+Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
+
+Route::get('/direktori-lab',[DirectoryController::class,'lab']);
+
+// Route::get('/direktori-lab', function () {
+//     return view('v_direktoriLab');
+// });
+
+Route::get('/direktori-care',[DirectoryController::class,'carehome']);
+Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
 
 Route::get('/berita-terkini',[BeritaTerkiniController::class,'index']);
 Route::get('/berita-terkini/{slug}',[BeritaTerkiniController::class,'detail']);
+
+
+
 
 Route::get('/sukses', function () {
     return view('v_success');
 });
 
-Route::get('/untuk-pasien', function () {
-    return view('v_untukPasien');
-});
+// Route::get('/untuk-pasien', function () {
+//     return view('v_untukPasien');
+// });
 
-Route::get('/untuk-pasien/{slug}', function ($slug) {
-    return view('v_untukPasienDetail',['slug'=>$slug]);
-});
+// Route::get('/untuk-pasien/{slug}', function ($slug) {
+//     return view('v_untukPasienDetail',['slug'=>$slug]);
+// });
 
-Route::get('/untuk-pendamping', function () {
-    return view('v_untukPendamping');
-});
+// Route::get('/untuk-pendamping', function () {
+//     return view('v_untukPendamping');
+// });
 
-Route::get('/untuk-pendamping/{slug}', function ($slug) {
-    return view('v_untukPendampingDetail',['slug'=>$slug]);
-});
+// Route::get('/untuk-pendamping/{slug}', function ($slug) {
+//     return view('v_untukPendampingDetail',['slug'=>$slug]);
+// });
 
 Route::get('/perawatan-kanker', function () {
     return view('v_perawatanKanker');
@@ -83,25 +116,21 @@ Route::get('/perawatan-kanker/{slug}', function ($slug) {
 });
 
 
-Route::get('/jurnal-onkologi', function () {
-    return view('v_jurnalOnkologi');
-});
+// Route::get('/jurnal-onkologi', function () {
+//     return view('v_jurnalOnkologi');
+// });
 
-Route::get('/jurnal-onkologi/{slug}', function ($slug) {
-    return view('v_jurnalOnkologiDetail',['slug'=>$slug]);
-});
+// Route::get('/jurnal-onkologi/{slug}', function ($slug) {
+//     return view('v_jurnalOnkologiDetail',['slug'=>$slug]);
+// });
 
-Route::get('/direktori-care', function () {
-    return view('v_direktoriCare');
-});
+// Route::get('/direktori-care', function () {
+//     return view('v_direktoriCare');
+// });
 
-Route::get('/direktori-care/{slug}', function ($slug) {
-    return view('v_direktoriCareDetail',['slug'=>$slug]);
-});
 
-Route::get('/direktori-lab', function () {
-    return view('v_direktoriLab');
-});
+
+
 
 
 ////////////////////////////////////////

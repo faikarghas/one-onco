@@ -87,20 +87,19 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <form action="">
+                        <form action="" method="POST">
                             <div class="row">
                                 <div class="col">
-                                    <select class="form-select mb-2" aria-label="Default select example">
+                                    <select class="form-select mb-2" aria-label="Default select example" id="selectProvinces3" name="provinces3">
                                         <option selected>Pilih Kota</option>
-                                        <option value="1">One</option>
-                                        <option value="3">Three</option>
+                                        @foreach ($provinces as $province => $value)
+                                            <option value="{{ $province }}"> {{ $value }}</option>   
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Pilih Rumah Sakit</option>
-                                        <option value="1">One</option>
-                                        <option value="3">Three</option>
+                                    <select class="form-select mb-3" aria-label="Default select example" id="selectCities3" name="cities3">
+                                        <option value="">Pilih Kabupaten</option>
                                     </select>
                                 </div>
                               </div>
@@ -109,21 +108,8 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row">
-                    @for ($i = 0; $i < 3; $i++)
-                        <div class="col-12 col-md-6">
-                            <div class="box__rec2">
-                                @include('components/presentational.boxRec2',array(
-                                    'image_url'=>'dir-dokter.png',
-                                    'title'=>'dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM',
-                                    'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                    'color'=>'#4172CB;',
-                                    'path'=>'direktori-care/faikar',
-                                    'rounded'=>'rounded_img'
-                                ))
-                            </div>
-                        </div>
-                    @endfor
+                <div class="row listFaskes">
+                    
                 </div>
             </div>
         </section>

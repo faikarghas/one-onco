@@ -66,7 +66,7 @@ class HomeController extends Controller
     }
 
     public function getJenisKanker($id) {
-        $jenisKanker = DB::table("kanker")->where("idKat",$id)->pluck("title","id");
-        return json_encode($jenisKanker);
+      $jenisKanker = DB::table("kanker")->where("idKat",$id)->pluck("title","id");
+      return json_encode($jenisKanker);
     }
 }

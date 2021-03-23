@@ -91,15 +91,15 @@
                                 <div class="row">
                                     <div class="col-3 d-flex align-items-center justify-content-center">
                                         <div class="rounded_img">
-                                            <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
+                                            <img width="100%" height="100%" src="{{ asset("/images/dir-dokter.png") }}" alt="dokter" />
                                         </div>
                                     </div>
                                     <div class="col-9 d-flex flex-column align-items-start">
                                         <div class="title_wrapper">
-                                            <h3><strong>dr. Faikar Ghassan</strong></h3>
+                                            <h3><strong>{{ $fullname }}</strong></h3>
                                         </div>
                                         <ul>
-                                            <li><p><strong>Unit Operasional Onkologi</strong></p></li>
+                                            <li><p><strong>Unit Operasional :  {{ $layanan }}</strong></p></li>
                                             <li><p>Kemoterapi</p></li>
                                         </ul>
                                     </div>
@@ -115,9 +115,9 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        @for ($i = 0; $i < 3; $i++)
+                        @foreach($dokterPraktek as $row)
                         <div class="box__rec3">
-                            <a href="/direktori-care/rsu-kabupaten-tangerang">
+                            <a href="/direktori-care/{{ $row->faskesId }}">
                                 <div class="container p-0">
                                     <div class="row">
                                         <div class="col-3 d-flex align-items-center justify-content-center">
@@ -126,17 +126,15 @@
                                             </div>
                                         </div>
                                         <div class="col-9 d-flex flex-column align-items-start">
-                                            <h3 style="color: #00A2E3;"><strong>RSU Kabupaten Tangerang</strong></h3>
-                                            <p><strong>Unit Operasional Onkologi</strong></p>
-                                            <p>Kemoterapi</p>
-                                            <p><strong>Jadwal Praktik</strong></p>
-                                            <p>Senin, Selasa, Kamis : 09.00 - 13.00</p>
+                                            <h3 style="color: #00A2E3;"><strong>{{ $row->namaFaskes }}</strong></h3>
+                                            <p><strong>{{ $row->alamat }}</strong></p>
+                                            <p>{{ $row->website }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        @endfor
+                        @endforeach
                     </div>
                 </div>
             </div>

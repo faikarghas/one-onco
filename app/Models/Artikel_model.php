@@ -11,7 +11,7 @@ class Artikel_model extends Model
     use HasFactory;
 
     protected $table 		= "artikel";
-	  protected $primaryKey 	= 'id';
+	protected $primaryKey 	= 'id';
 
     // listing artikel by kategori
     public function all_kategori($id_kategori)

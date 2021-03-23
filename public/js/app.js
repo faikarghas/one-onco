@@ -1969,16 +1969,27 @@ $('.boxReadMore').click(function (params) {
 // DOKTER
 
 $('#selectCities').change(function () {
-  var data = $(this).val();
-  console.log(data);
+  var data = $(this).val(); // console.log(data);
 
   if (data !== "null") {
-    axios.get("/faskes/get/".concat(data)).then(function (response) {
+    axios.get("/cities/get/".concat(data)).then(function (response) {
       $('select[name="faskes"]').empty();
+      $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
-        $('select[name="faskes"]').append("<option value=\"".concat(key, "\">").concat(value, "</option>"));
+        // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
+        $('select[name="faskes"]').append(new Option(value, key));
       });
-      $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n            <a href=\"/direktori-dokter/faikar\" class=\"d-block h-100\">\n               <div class=\"container\">\n                  <div class=\"row\">\n                     <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                        <div class=\"rounded_img\">\n                           <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/dir-dokter.png\" alt=\"dir-dokter.png\">\n                        </div>\n                     </div>\n                     <div class=\"col-7 d-flex flex-column align-items-start\">\n                        <div class=\"title_wrapper\">\n                           <h3><strong>dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM</strong></h3>\n                        </div>\n                        <ul>\n                           <li>\n                              <p><strong>Unit Operasional Onkologi</strong></p>\n                           </li>\n                           <li>\n                              <p>Kemoterapi</p>\n                           </li>\n                        </ul>\n                     </div>\n                     <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                           <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                        </svg>\n                     </div>\n                  </div>\n               </div>\n            </a>\n            </div></div>");
+      axios.get("/dokter/get/".concat(data)).then(function (response) {
+        // console.log(data);
+        $('.direktori__list .listDokter').empty();
+        i = 0;
+        $.each(response.data, function (i, dokter) {
+          console.log(data);
+          display = response.data; // console.log(display[i]['dokterId']);
+
+          $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n            <a href=\"/dokter-detail/".concat(display[i]['dokterId'], "\" class=\"d-block h-100\">\n               <div class=\"container\">\n                  <div class=\"row\">\n                     <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                        <div class=\"rounded_img\">\n                           <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/dir-dokter.png\" alt=\"dir-dokter.png\">\n                        </div>\n                     </div>\n                     <div class=\"col-7 d-flex flex-column align-items-start\">\n                        <div class=\"title_wrapper\">\n                           <h3><strong>").concat(display[i]['NamaDokterDenganGelar'], "</strong></h3>\n                        </div>\n                        <ul>\n                           <li>\n                              <p><strong>Unit Operasional : ").concat(display[i]['unit'], "</strong></p>\n                           </li>\n                           <li>\n                              <p>Kemoterapi</p>\n                           </li>\n                        </ul>\n                     </div>\n                     <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                           <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                        </svg>\n                     </div>\n                  </div>\n               </div>\n            </a>\n            </div></div>"));
+        });
+      });
     });
   } else if (data === "null") {
     $('#selectFasekes').attr("disabled", "disabled");
@@ -1986,12 +1997,92 @@ $('#selectCities').change(function () {
   }
 });
 $('#selectFaskes').change(function () {
+  $('.direktori__list .listDokter').empty();
   var data = $(this).val();
 
   if (data !== "null") {
-    // axios.get(`/dokter/get/${data}`).then(function (response) {
-    // })
-    $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n            <a href=\"/direktori-dokter/faikar\" class=\"d-block h-100\">\n               <div class=\"container\">\n                  <div class=\"row\">\n                     <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                        <div class=\"rounded_img\">\n                           <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/dir-dokter.png\" alt=\"dir-dokter.png\">\n                        </div>\n                     </div>\n                     <div class=\"col-7 d-flex flex-column align-items-start\">\n                        <div class=\"title_wrapper\">\n                           <h3><strong>dr. Rajesh Kahwani, Sp PD-KHOM, FINASIM</strong></h3>\n                        </div>\n                        <ul>\n                           <li>\n                              <p><strong>Unit Operasional Onkologi</strong></p>\n                           </li>\n                           <li>\n                              <p>Kemoterapi</p>\n                           </li>\n                        </ul>\n                     </div>\n                     <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                           <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                        </svg>\n                     </div>\n                  </div>\n               </div>\n            </a>\n         </div></div>");
+    axios.get("/dokterWithKabupaten/get/".concat(data)).then(function (response) {
+      $.each(response.data, function (i, dokter) {
+        display = response.data;
+        $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n            <a href=\"/dokter/dokter-detail/".concat(display[i]['dokterId'], "\" class=\"d-block h-100\">\n               <div class=\"container\">\n                  <div class=\"row\">\n                     <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                        <div class=\"rounded_img\">\n                           <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/dir-dokter.png\" alt=\"dir-dokter.png\">\n                        </div>\n                     </div>\n                     <div class=\"col-7 d-flex flex-column align-items-start\">\n                        <div class=\"title_wrapper\">\n                           <h3><strong>").concat(display[i]['NamaDokterDenganGelar'], "</strong></h3>\n                        </div>\n                        <ul>\n                           <li>\n                              <p><strong>Unit Operasional Onkologi</strong></p>\n                           </li>\n                           <li>\n                              <p>Kemoterapi</p>\n                           </li>\n                        </ul>\n                     </div>\n                     <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                           <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                        </svg>\n                     </div>\n                  </div>\n               </div>\n            </a>\n         </div></div>"));
+      });
+    });
+  } else if (data === "null") {// $('#selectFasekes').attr( "disabled","disabled")
+    // $('#selectFasekes option').empty().remove()
+  }
+}); // lab 
+
+$('#selectProvinces2').change(function () {
+  var data = $(this).val(); // console.log(data);
+
+  if (data !== "null") {
+    axios.get("/faskesWithPropinsi/get/".concat(data)).then(function (response) {
+      $('select[name="faskes2"]').empty();
+      $('select[name="faskes2"]').append('<option value=""> Pilih Rumah Sakit</option>');
+      $.each(response.data, function (key, value) {
+        // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
+        $('select[name="faskes2"]').append(new Option(value, key));
+      });
+      $('.direktoriLab__list .listFaskes2').append("<div class=\"col-12 col-md-12\">\n          <div class=\"direktoriLab__list-item mb-4\">\n              <div class=\"row\">\n                  <div class=\"col-12 mb-4\">\n                      <h4><strong>KALGen INNOLAB</strong></h4>\n                  </div>\n                  <div class=\"col-5\">\n                      <img src=\"http://127.0.0.1:8000/images/kalgen.png\" width=\"100px\" alt=\"kalgen\">\n                  </div>\n                  <div class=\"col-7\">\n                      <ul>\n                          <li>\n                              <img src=\"{{asset('/images/addr-icon.png')}}\" width=\"15px\" alt=\"\">\n                              <p>Jl. Yos Sudarso Kav 85, RT.10/RW.11, Sunter Jaya, Tj. Priok, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14360</p>\n                          </li>\n                          <li>\n                              <img src=\"{{asset('/images/phone-icon.png')}}\" width=\"15px\" alt=\"\">\n                              <p>(021) 21882388</p>\n                          </li>\n                          <li>\n                              <img src=\"{{asset('/images/web-icon.png')}}\" width=\"15px\" alt=\"\">\n                              <p>www.kalgeninnolab.co.id</p>\n                          </li>\n                      </ul>\n                  </div>\n              </div>\n          </div>\n      </div>\n          ");
+    });
+  } else if (data === "null") {
+    $('#selectFaskes2').attr("disabled", "disabled");
+    $('#selectFaskes2 option').empty().remove();
+  }
+});
+$('#selectFaskes2').change(function () {
+  $('.direktori__list .listFaskes2').empty();
+  var data = $(this).val();
+
+  if (data !== "null") {
+    axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
+      $.each(response.data, function (i, dokter) {
+        display = response.data;
+        $('.direktori__list .listFaskes').append("");
+      });
+    });
+  } else if (data === "null") {}
+}); // care
+
+$('#selectProvinces3').change(function () {
+  var data = $(this).val(); // console.log(data);
+
+  if (data !== "null") {
+    axios.get("/cities/get/".concat(data)).then(function (response) {
+      $('select[name="cities3"]').empty();
+      $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
+      $.each(response.data, function (key, value) {
+        // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
+        $('select[name="cities3"]').append(new Option(value, key));
+      });
+      axios.get("/faskes/get/".concat(data)).then(function (response) {
+        // console.log(data);
+        $('.direktori__list .listFaskes').empty();
+        i = 0;
+        $.each(response.data, function (i, dokter) {
+          console.log(data);
+          display = response.data; // console.log(display[i]['dokterId']);
+
+          $('.direktori__list .listFaskes').append("<div class=\"col-12 col-md-6\">\n                  <div class=\"box__rec3\">\n                      <div class=\"container p-0\">\n                          <div class=\"row\">\n                              <div class=\"col-3 d-flex align-items-start justify-content-center\">\n                                  <div class=\"rounded_img\">\n                                      <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/dir-dokter.png\" alt=\"dokter\" />\n                                  </div>\n                              </div>\n                              <div class=\"col-9 d-flex flex-column align-items-start\">\n                                  <h3><strong>".concat(display[i]['NamaFaskes'], "</strong></h3>\n                                  <ul>\n                                      <li><p>").concat(display[i]['alamat'], "<br>").concat(display[i]['propinsi'], "</p></li>\n                                      <li class=\"mt-3\"><p>").concat(display[i]['fax'], "</p></li>\n                                      <li><p>").concat(display[i]['phone'], "</p></li>\n                                  </ul>\n                                  <a class=\"mt-3\" href=\"\" style=\"color: #00A2E3\">").concat(display[i]['website'], "</a>\n                              </div>\n                          </div>\n                      </div>\n                  </div>\n              </div>\n              <div class=\"col-12 col-md-6\">\n                  <div class=\"jam_op-title\">\n                      <p>Jam Operasional</p>\n                  </div>\n                  <div class=\"row\">\n                      <div class=\"col-6\">\n                          <ul class=\"jam_op-sch\">\n                              <li><span>Senin</span>09.00 - 15.00</li>\n                              <li><span>Selasa</span>09.00 - 15.00</li>\n                              <li><span>Rabu</span>09.00 - 15.00</li>\n                          </ul>\n                      </div>\n                      <div class=\"col-6\">\n                          <ul class=\"jam_op-sch\">\n                              <li><span>Kamis</span>09.00 - 15.00</li>\n                              <li><span>Jumat</span>09.00 - 15.00</li>\n                              <li><span>Sabtu</span>09.00 - 15.00</li>\n                          </ul>\n                      </div>\n                  </div>\n              </div>"));
+        });
+      });
+    });
+  } else if (data === "null") {
+    $('#selectCities3').attr("disabled", "disabled");
+    $('#selectCities3 option').empty().remove();
+  }
+});
+$('#selectCities3').change(function () {
+  $('.direktori__list .listFaskes').empty();
+  var data = $(this).val();
+
+  if (data !== "null") {
+    axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
+      $.each(response.data, function (i, dokter) {
+        display = response.data;
+        $('.direktori__list .listFaskes').append("<div class=\"col-12 col-md-6\">\n          <div class=\"box__rec3\">\n              <div class=\"container p-0\">\n                  <div class=\"row\">\n                      <div class=\"col-3 d-flex align-items-start justify-content-center\">\n                          <div class=\"rounded_img\">\n                              <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/dir-dokter.png\" alt=\"dokter\" />\n                          </div>\n                      </div>\n                      <div class=\"col-9 d-flex flex-column align-items-start\">\n                          <h3><strong>".concat(display[i]['NamaFaskes'], "</strong></h3>\n                          <ul>\n                              <li><p>").concat(display[i]['alamat'], "<br>").concat(display[i]['propinsi'], "</p></li>\n                              <li class=\"mt-3\"><p>").concat(display[i]['fax'], "</p></li>\n                              <li><p>").concat(display[i]['phone'], "</p></li>\n                          </ul>\n                          <a class=\"mt-3\" href=\"\" style=\"color: #00A2E3\">").concat(display[i]['website'], "</a>\n                      </div>\n                  </div>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-12 col-md-6\">\n          <div class=\"jam_op-title\">\n              <p>Jam Operasional</p>\n          </div>\n          <div class=\"row\">\n              <div class=\"col-6\">\n                  <ul class=\"jam_op-sch\">\n                      <li><span>Senin</span>09.00 - 15.00</li>\n                      <li><span>Selasa</span>09.00 - 15.00</li>\n                      <li><span>Rabu</span>09.00 - 15.00</li>\n                  </ul>\n              </div>\n              <div class=\"col-6\">\n                  <ul class=\"jam_op-sch\">\n                      <li><span>Kamis</span>09.00 - 15.00</li>\n                      <li><span>Jumat</span>09.00 - 15.00</li>\n                      <li><span>Sabtu</span>09.00 - 15.00</li>\n                  </ul>\n              </div>\n          </div>\n      </div>"));
+      });
+    });
   } else if (data === "null") {// $('#selectFasekes').attr( "disabled","disabled")
     // $('#selectFasekes option').empty().remove()
   }
