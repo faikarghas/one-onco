@@ -56,7 +56,7 @@ Route::get('/jurnal-onkologi', function () {
     return view('v_jurnalOnkologi');
 });
 
-Route::get('/untuk-pendamping/{slug}',[PendampingController::class,'detail']);
+
 
 
 
