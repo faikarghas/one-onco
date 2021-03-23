@@ -11,7 +11,7 @@ class Jadwal_model extends Model
     use HasFactory;
 
     protected $table 		= "jadwal_dokter";
-	  protected $primaryKey 	= 'jadwalId';
+	protected $primaryKey 	= 'jadwalId';
 
    
 

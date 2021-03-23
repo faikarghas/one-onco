@@ -125,6 +125,7 @@ $('#selectLokasiKanker').change(function(){
             // handle success
             $('select[name="jenisKanker"]').empty();
             // console.log('start');
+            $('select[name="jenisKanker"]').append('<option value=""> Pilih ...</option>');
             $.each(response.data, function(key, value){
                 // console.log('finish');
                 $('select[name="jenisKanker"]').append(`<option value="${key}">${value}</option>`);
