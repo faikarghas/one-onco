@@ -5,10 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\DirectoryController;
-use App\Http\Controllers\BeritaTerkiniController;
+use App\Http\Controllers\BeritaDanJurnalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SistemTubuhController;
+use App\Http\Controllers\UntukPasienDanPendampingController;
 
 
 /*
@@ -36,6 +37,11 @@ Route::get('/pengaturan', function () {
     return view('v_pengaturan');
 });
 
+Route::get('/sukses', function () {
+    return view('v_success');
+});
+
+// Main
 Route::get('/', [HomeController::class,'index']);
 Route::get('/home', [HomeController::class,'index']);
 Route::get('/tentang-kami',[AboutController::class,'index']);
@@ -127,7 +133,6 @@ Route::get('/perawatan-kanker/{slug}', function ($slug) {
 // Route::get('/direktori-care', function () {
 //     return view('v_direktoriCare');
 // });
-
 
 
 
