@@ -39,7 +39,13 @@ class HomeController extends Controller
         $katKankers = DB::table('kategori_kanker')->pluck("title","id");
 
         // variable journal onkologi terbaru
-        $listingJurnal = DB::table('artikel')->where('idKat',2)->limit(3)->orderBy('id', 'DESC')->get();
+        $listingJurnal = DB::table('artikel')
+                          ->leftJoin('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')
+                          ->select('artikel.*', 'kategori_artikel.slug AS slugkat', 'kategori_artikel.intro' )
+                          ->where('artikel.idKat',2)
+                          ->limit(3)
+                          ->orderBy('artikel.id', 'DESC')
+                          ->get();
         // variable news terbaru
         //$sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
         $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();

@@ -13,8 +13,8 @@
                             <img src="https://source.unsplash.com/random" alt="{{$slugStory}}-img" height="180px" width="100%">
                         </div>
                         <div class="detail__page1--description mb-5">
-                            <h1 class="mb-4">Jenis Sayuran dan Kandungan</h1>
-                            <p class="pagi-init">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sapiente sunt fugiat quis molestias, expedita asperiores, eaque laudantium necessitatibus incidunt recusandae perferendis libero non? Nobis dolorum aperiam est esse tenetur a qui ab quos odit totam rerum, quis perspiciatis porro nihil tempora sequi ex repellendus et quisquam. Quia quidem eum qui, blanditiis aperiam, nobis maxime maiores ratione quis corrupti ipsam consequuntur iure quisquam possimus at voluptatem alias? Qui veniam magnam suscipit officiis et quod officia necessitatibus atque corrupti odio accusantium optio laudantium possimus, dicta consequuntur blanditiis quos ipsam vero nam veritatis eum! Architecto id reprehenderit sit facere eaque placeat iure in similique vero, totam ipsum repellat pariatur dolorum natus itaque tenetur laboriosam iste hic corporis, deleniti qui? Voluptatibus voluptates commodi praesentium molestiae pariatur eius, dolores fugiat! Asperiores est alias tempore sunt aperiam reprehenderit provident quo a. Nostrum commodi vero labore ad molestias consectetur minus. Repellendus illum tenetur excepturi facere voluptatem fugiat praesentium sapiente, corporis enim, minima ipsa consequuntur ad repellat esse? Magnam accusamus exercitationem repellat laudantium ut sint numquam reiciendis neque quo harum excepturi tempore hic commodi minima molestias, alias voluptatibus ipsa</p>
+                            <h1 class="mb-4">{{ $titleStory }}</h1>
+                            <p class="pagi-init">{!! $contentStory !!}</p>
                         </div>
                         <div class="share_sosmed forDesktop">
                             <p>Apabila informasi ini berguna untuk Anda, <br>bagikan ke keluarga, kerabat, dan teman Anda.</p>
@@ -29,39 +29,26 @@
                                 <div class="col-12">
                                     <h2 class="text-center text-lg-start mb-5"><strong>Artikel lainnya</strong></h2>
                                 </div>
+                                
+                                @foreach ( $otherStory as $row )
+                                    
+                                
+                                
                                 <div class="col-12">
                                     <div class="boxNewsWimg mt-4">
                                         <div class="boxInformation">
                                             <div class="title">
-                                                <span>15 Jan 2021</span>
-                                                <h3 class="mt-2 mb-4">Harus bagaimana? efek C-19 terhadap pasien kanker di Indonesia.</h3>
+                                                <span>{{ $row->createdAt }}</span>
+                                                <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
                                             </div>
                                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>''))
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="boxNewsWimg mt-4">
-                                        <div class="boxInformation">
-                                            <div class="title">
-                                                <span>15 Jan 2021</span>
-                                                <h3 class="mt-2 mb-4">Harus bagaimana? efek C-19 terhadap pasien kanker di Indonesia.</h3>
-                                            </div>
-                                            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>''))
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="boxNewsWimg mt-4">
-                                        <div class="boxInformation">
-                                            <div class="title">
-                                                <span>15 Jan 2021</span>
-                                                <h3 class="mt-2 mb-4">Harus bagaimana? efek C-19 terhadap pasien kanker di Indonesia.</h3>
-                                            </div>
-                                            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>''))
-                                        </div>
-                                    </div>
-                                </div>
+
+                                @endforeach
+
+
                             </div>
                         </div>
                     </div>

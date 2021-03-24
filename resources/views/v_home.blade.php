@@ -277,14 +277,14 @@
                                 'title'=>$row->title ,
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,
-                                'path'=>'jurnal-onkologi'
+                                'path'=>'artikel-kanker/'.$row->slug
                             ))
                         </div>
                         @endforeach
                         <div class="col-12 text-center mt-5">
                             @include('components/presentational.boxShowMore',array(
                                 'title'=>'Lihat semua',
-                                'path'=>'jurnal-onkologi'
+                                'path'=>'artikel-kanker'
                             ))
                         </div>
                     </div>
@@ -301,7 +301,7 @@
                         @foreach($listingNews as $row)
                         <div class="col-12 col-md-4">
                             @include('components/presentational.boxNews',array(
-                                'date'=>$row->createdAt,
+                                'date'=>$row->createdAt,    
                                 'title'=>$row->title,
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,

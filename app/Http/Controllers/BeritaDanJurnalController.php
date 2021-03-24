@@ -67,6 +67,8 @@ class BeritaDanJurnalController extends Controller
       $id =  $detailStory->id;
       $otherModel  = new Artikel_model();
       $otherStory  = $model->otherArticle($id, $id_kategori);
+
+    
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
@@ -80,7 +82,7 @@ class BeritaDanJurnalController extends Controller
                     'listingNews'=>$listingNews
                   );
 
-      return view ('v_beritaTerkini', $data);
+      return view ('v_beritaTerkiniDetail', $data);
     }
 
     public function jurnal(Request $request){
@@ -121,7 +123,11 @@ class BeritaDanJurnalController extends Controller
 
       // header title and image
       $segment = $request->segment(1);
+      //DB::enableQueryLog();
       $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
+      // dd(DB::getQueryLog());
+      // dd($content_kategori);
+
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
