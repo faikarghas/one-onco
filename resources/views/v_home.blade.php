@@ -205,8 +205,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <img class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="200px" alt="logo oneonco" srcset="">
-                            <h2 class="mb-4"><strong>{{ $titleAbout }}</strong></h2>
+                            <img class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
+                            <h2><strong>{{ $titleAbout }}</strong></h2>
                             <p class="mb-5">
                             {{ $contentAbout }}
                             </p>
