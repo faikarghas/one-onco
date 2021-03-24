@@ -60,11 +60,10 @@ class HomeController extends Controller
                       'contentAbout'=>$shortContentAbout->content,
                       'titleStory' => $sliderArtikel->title,
                       'shortStory' => $sliderArtikel->shortContent,
-                    //   'slugStory' => $sliderArtikel->slug
-                      'slugStory' => 'testt',
+                      'slug' => $sliderArtikel->slug,
                       'listingJurnal'=>$listingJurnal,
                       'listingNews'=>$listingNews
-                    //   'katKankers' => compact('katKankers')
+                    
         );
 
 
