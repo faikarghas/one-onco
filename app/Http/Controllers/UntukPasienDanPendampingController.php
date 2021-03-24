@@ -64,7 +64,7 @@ class UntukPasienDanPendampingController extends Controller
         $statusLogin = $this->checkLogin();
 
         $listingKatArtikel = DB::table('artikel')->where('idKat',4)->orderBy('id', 'ASC')->get();
-        $slug = $request->segment(1);
+        $slug = $request->segment(2);
         $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
 
 
@@ -124,10 +124,9 @@ class UntukPasienDanPendampingController extends Controller
         $tagline_header = $content_kategori->content;
         $img_header = $content_kategori->img;
         $model  = new Artikel_model();
-        $slug = $request->segment(1);
+        $slug = $request->segment(2);
         $listingStory  = $model->all_kategori($id_kategori);
         $statusLogin = $this->checkLogin();
-
         $listingKatArtikel = DB::table('artikel')->where('idKat',5)->orderBy('id', 'ASC')->get();
 
         $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
