@@ -26,7 +26,7 @@ class PerawatanKankerController extends Controller
       // main page
 
       //listing kategori artikel bedasarkan url dan kategori
-      $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'DESC')->get();
+      $listingKatArtikel = DB::table('artikel')->where('idKat',7)->orderBy('id', 'DESC')->get();
 
       // content about us
       // $kat=6;
@@ -35,7 +35,7 @@ class PerawatanKankerController extends Controller
 
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingNews = DB::table('artikel')->where('idKat',7)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'statusLogin'=>$statusLogin,
@@ -66,7 +66,7 @@ class PerawatanKankerController extends Controller
       // main page
 
       //listing kategori artikel bedasarkan url dan kategori
-      $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'DESC')->get();
+      $listingKatArtikel = DB::table('artikel')->where('idKat',7)->orderBy('id', 'DESC')->get();
 
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();

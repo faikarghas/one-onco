@@ -34,7 +34,7 @@ class UntukPasienDanPendampingController extends Controller
         
         $listingKatArtikel = DB::table('artikel')->where('idKat',4)->orderBy('id', 'ASC')->get();
 
-        $viewData = DB::table('artikel')->where('id','86')->first();
+        $viewData = DB::table('artikel')->where('id','83')->first();
 
         $data = [
             'statusLogin'=>$statusLogin,
@@ -63,7 +63,7 @@ class UntukPasienDanPendampingController extends Controller
 
         $statusLogin = $this->checkLogin();
 
-        $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
+        $listingKatArtikel = DB::table('artikel')->where('idKat',4)->orderBy('id', 'ASC')->get();
 
         $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
 
@@ -98,7 +98,7 @@ class UntukPasienDanPendampingController extends Controller
 
         $statusLogin = $this->checkLogin();
 
-        $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
+        $listingKatArtikel = DB::table('artikel')->where('idKat',5)->orderBy('id', 'ASC')->get();
 
         $viewData = DB::table('artikel')->where('id',91)->first();
 
@@ -128,7 +128,7 @@ class UntukPasienDanPendampingController extends Controller
         $listingStory  = $model->all_kategori($id_kategori);
         $statusLogin = $this->checkLogin();
 
-        $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
+        $listingKatArtikel = DB::table('artikel')->where('idKat',5)->orderBy('id', 'ASC')->get();
 
         $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
   
