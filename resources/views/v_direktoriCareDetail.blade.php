@@ -92,7 +92,7 @@
                                 <div class="row">
                                     <div class="col-3 d-flex align-items-start justify-content-center">
                                         <div class="rounded_img">
-                                            <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
+                                            <img width="100%" height="100%" src="{{asset("/images/care_center.svg")}}" alt="dokter" />
                                         </div>
                                     </div>
                                     <div class="col-9 d-flex flex-column align-items-start">
@@ -144,7 +144,7 @@
                                     <div class="row">
                                         <div class="col-3 d-flex align-items-center justify-content-center">
                                             <div class="rounded_img">
-                                                <img width="100%" height="100%" src="{{asset("/images/dir-dokter.png")}}" alt="dokter" />
+                                                <img width="100%" height="100%" src="{{asset("/images/doctor.svg")}}" alt="dokter" />
                                             </div>
                                         </div>
                                         <div class="col-9 d-flex flex-column align-items-start">
