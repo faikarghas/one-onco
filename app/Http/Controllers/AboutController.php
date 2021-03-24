@@ -26,7 +26,9 @@ class AboutController extends Controller
       // main page
 
       //listing kategori artikel bedasarkan url dan kategori
-      $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'DESC')->get();
+      $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
+
+      //dd($listingKatArtikel);
 
       // content about us
       // $kat=6;
