@@ -90,7 +90,7 @@ class BeritaDanJurnalController extends Controller
 
       // listing all story with load more
       $segment = $request->segment(1);
-      $content_kategori = DB::table('kategori_artikel')->where('slug','jurnal-onkologi')->first();
+      $content_kategori = DB::table('kategori_artikel')->where('slug','artikel-kanker')->first();
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;

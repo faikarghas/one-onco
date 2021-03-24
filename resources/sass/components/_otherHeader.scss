@@ -28,7 +28,13 @@
                         font-size: 1.3rem;
                         letter-spacing: 1px;
                         text-decoration: none;
-
+                        &.active{
+                            border-bottom: 1px solid white;
+                            padding-bottom: 15px;
+                        }
+                        &:hover{
+                            background-color: #048dc4;
+                        }
                     }
                 }
             }

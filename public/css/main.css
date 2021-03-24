@@ -502,6 +502,13 @@ strong {
   letter-spacing: 1px;
   text-decoration: none;
 }
+.homeHeader .headerDesktop nav ul li a.active {
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+}
+.homeHeader .headerDesktop nav ul li a:hover {
+  background-color: #048dc4;
+}
 .homeHeader .headerDesktop .userAction {
   margin: 0;
   display: -webkit-box;
@@ -711,6 +718,13 @@ strong {
   font-size: 1.3rem;
   letter-spacing: 1px;
   text-decoration: none;
+}
+.otherHeader .headerDesktop nav ul li a.active {
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+}
+.otherHeader .headerDesktop nav ul li a:hover {
+  background-color: #048dc4;
 }
 .otherHeader .headerDesktop .userAction {
   margin: 0;

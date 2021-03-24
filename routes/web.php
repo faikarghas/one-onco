@@ -80,8 +80,8 @@ Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
 
 Route::get('/berita-terkini',[BeritaDanJurnalController::class,'berita']);
 Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'beritaDetail']);
-Route::get('/jurnal-onkologi',[BeritaDanJurnalController::class,'jurnal']);
-Route::get('/jurnal-onkologi/{slug}',[BeritaDanJurnalController::class,'jurnalDetail']);
+Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'jurnal']);
+Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'jurnalDetail']);
 
 
 Route::get('/sukses', function () {

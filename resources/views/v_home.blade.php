@@ -31,7 +31,7 @@
                                     <div class="sub_menu">
                                         <ul>
                                             <li><a href="/berita-terkini">Berita Terkini</a></li>
-                                            <li><a href="/jurnal-onkologi">Jurnal Onkologi</a></li>
+                                            <li><a href="/artikel-kanker">Artikel Kanker</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -268,7 +268,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="text-center mb-5"><strong>JOURNAL ONKOLOGI</strong></h2>
+                            <h2 class="text-center mb-5"><strong>ARTIKEL KANKER</strong></h2>
                         </div>
                         @foreach($listingJurnal as $row)
                         <div class="col-12 col-md-4">
