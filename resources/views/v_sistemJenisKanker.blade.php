@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="boxSearchKanker">
+                        <div class="boxSearchKanker forDesktop">
                             <h3 class="text-center mb-5"><strong>CARI TAU JENIS PENYAKIT BERDASARKAN <br/> LOKASI ATAU SISTEM TUBUH</strong></h3>
                             <div class="cari_kanker-select">
                                 <form>

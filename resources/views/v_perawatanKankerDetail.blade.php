@@ -2,7 +2,7 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>''])
+    @include('components/presentational/header',['path'=>'perawatan-kanker'])
 
     <main>
         <div class="box__banner forDesktop">
@@ -23,7 +23,18 @@
                             <h1><strong>{{ $title }}</strong></h1>
                             <p>{{ $Content }}</p>
                         </div>
-                        @include('/components/presentational.listContent',[])
+                        <div class="list__component">
+                            @foreach($listingKatArtikel as $row)
+                                <div class="row list__component-list--item">
+                                    <div class="col-1">
+                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                                    </div>
+                                    <div class="col-11 ps-4">
+                                        <a href="/perawatan-kanker/{{ $row->slug }}">{{ $row->title }}</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

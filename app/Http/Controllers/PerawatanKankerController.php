@@ -78,8 +78,8 @@ class PerawatanKankerController extends Controller
 
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array('title' =>  $viewDataDetail->title,
+                    'copyright'=>$viewDataDetail->content,
                     'statusLogin'=>$statusLogin,
                     'slugStory' => 'testt',
                     'listingNews'=>$listingNews,

@@ -20,8 +20,8 @@
                             <img src="https://source.unsplash.com/random" alt="{{$slug}}-img" height="180px" width="100%">
                         </div>
                         <div class="detail__page1--description mb-5">
-                            <h1 class="mb-4">Jenis Sayuran dan Kandungan</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sapiente sunt fugiat quis molestias, expedita asperiores, eaque laudantium necessitatibus incidunt recusandae perferendis libero non? Nobis dolorum aperiam est esse tenetur a qui ab quos odit totam rerum, quis perspiciatis porro nihil tempora sequi ex repellendus et quisquam. Quia quidem eum qui, blanditiis aperiam, nobis maxime maiores ratione quis corrupti ipsam consequuntur iure quisquam possimus at voluptatem alias? Qui veniam magnam suscipit officiis et quod officia necessitatibus atque corrupti odio accusantium optio laudantium possimus, dicta consequuntur blanditiis quos ipsam vero nam veritatis eum! Architecto id reprehenderit sit facere eaque placeat iure in similique vero, totam ipsum repellat pariatur dolorum natus itaque tenetur laboriosam iste hic corporis, deleniti qui? Voluptatibus voluptates commodi praesentium molestiae pariatur eius, dolores fugiat! Asperiores est alias tempore sunt aperiam reprehenderit provident quo a. Nostrum commodi vero labore ad molestias consectetur minus. Repellendus illum tenetur excepturi facere voluptatem fugiat praesentium sapiente, corporis enim, minima ipsa consequuntur ad repellat esse? Magnam accusamus exercitationem repellat laudantium ut sint numquam reiciendis neque quo harum excepturi tempore hic commodi minima molestias, alias voluptatibus ipsa </p>
+                            <h3>{{ $titlePages }}</h3>
+                            <p>{{ $Content }}</p>
                         </div>
                     </div>
                     <div class="col-12">
@@ -57,7 +57,16 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        @include('/components/presentational.listContent',[])
+                        @foreach($listingKatArtikel as $row)
+                            <div class="row list__component-list--item">
+                                <div class="col-1">
+                                    <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                                </div>
+                                <div class="col-11 ps-4">
+                                    <a href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

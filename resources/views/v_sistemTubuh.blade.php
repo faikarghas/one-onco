@@ -19,8 +19,8 @@
         <main>
             <div class="sistem_tubuh">
                 <ul>
-                    @foreach ($katKankers as $katKanker => $value)
-                        <li><a href="/sistem-tubuh/{{$value}}">{{$value}}</a></li>
+                    @foreach ($katKankers as $row)
+                        <li><a href="/sistem-tubuh/{{$row->slug}}">{{$row->title}}</a></li>
                     @endforeach
                 </ul>
             </div>

@@ -12,7 +12,7 @@
                                 'title'=>$row->title,
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,
-                                'path'=>'berita-terkini/'.$row->slug
+                                'path'=>'/berita-terkini/'.$row->slug
                         ))
                     </div>
             @endforeach
