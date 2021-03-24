@@ -258,90 +258,6 @@
                                         <button  class="boxReadMore">Cari</button>
                                     </div>
                                 </div>
-                                {{-- <div class="boxSearchKanker-list mt-5">
-                                    <ul>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Breast Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Colorectal Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Lung Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Cervix Uteri Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Thyroid Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Prostate Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Stomach Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Liver Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Bladder Cancer</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13" width="17px">
-                                                    <path style="fill:#00A2E3;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"/>
-                                                </svg>
-                                                <p>Oesophagus Cancer</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -389,7 +305,7 @@
                                 'title'=>$row->title,
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,
-                                'path'=>'berita-terkini'
+                                'path'=>"berita-terkini/$row->slug"
                             ))
                         </div>
                         @endforeach
