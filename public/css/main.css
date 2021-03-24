@@ -1285,6 +1285,10 @@ button.boxReadMore {
 .boxShowMore img {
   margin-left: 1rem;
 }
+.boxShowMore:hover {
+  color: white;
+  text-decoration: none;
+}
 
 .boxSearchKanker {
   padding: 3rem 20rem;
