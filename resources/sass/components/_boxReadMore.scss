@@ -8,7 +8,9 @@
     font-size: 13px;
     display: inline-block;
     text-align: center;
+    transition: 0.5s all;
     &:hover{
+        background-color: #018cc4;
         color: white;
     }
     @include respond(down-tab-port){

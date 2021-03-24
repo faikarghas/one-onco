@@ -1173,8 +1173,10 @@ footer .sosmed ul li {
   font-size: 13px;
   display: inline-block;
   text-align: center;
+  transition: 0.5s all;
 }
 .boxReadMore:hover {
+  background-color: #018cc4;
   color: white;
 }
 @media only screen and (max-width: 62em) {
@@ -1294,13 +1296,14 @@ button.boxReadMore {
   font-size: 13px;
   display: inline-block;
   text-align: center;
+  transition: 0.5s all;
 }
 .boxShowMore img {
   margin-left: 1rem;
 }
 .boxShowMore:hover {
+  background-color: rgba(0, 0, 0, 0.774);
   color: white;
-  text-decoration: none;
 }
 
 .boxSearchKanker {

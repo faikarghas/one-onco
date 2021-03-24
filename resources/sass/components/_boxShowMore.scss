@@ -8,12 +8,14 @@
     font-size: 13px;
     display: inline-block;
     text-align: center;
+    transition: 0.5s all;
+
     img{
         margin-left: 1rem;
     }
 
     &:hover{
+        background-color: rgba(0, 0, 0, 0.774);
         color: white;
-        text-decoration: none;
     }
 }
