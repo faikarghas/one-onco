@@ -57,7 +57,16 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        @include('/components/presentational.listContent',[])
+                        @foreach($listingKatArtikel as $row)
+                            <div class="row list__component-list--item">
+                                <div class="col-1">
+                                    <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                                </div>
+                                <div class="col-11 ps-4">
+                                    <a href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -19,10 +19,9 @@
         <main>
             <div class="sistem_tubuh">
                 <ul>
-                    <li><a href="/sistem-tubuh/{{$lokasi}}/{{$jenis}}">Breast Cancer</a></li>
-                    <li><a href="/sistem-tubuh/{{$lokasi}}/{{$jenis}}">Vaginal Cancer</a></li>
-                    <li><a href="/sistem-tubuh/{{$lokasi}}/{{$jenis}}">Cervical Cancer</a></li>
-                    <li><a href="/sistem-tubuh/{{$lokasi}}/{{$jenis}}">Uterine Cancer</a></li>
+                    @foreach ($lokasi as $row)
+                        <li><a href="/sistem-tubuh/{{$row->slugkat}}/{{$row->slug}}">{{$row->title}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </main>

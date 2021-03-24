@@ -118,15 +118,23 @@ Route::get('/sukses', function () {
 // CARI SESUAI KATEGORI KANKER HOME PAGE
 
 
-
 Route::get('/sistem-tubuh', function () {
-    $katKankers = DB::table('kategori_kanker')->pluck("title","id");
+    // $katKankers = DB::table('kategori_kanker')->pluck("title","id");
+    $katKankers = DB::table('kategori_kanker')
+                    ->select('id','title','slug')
+                    ->get();
+    // dd($katKankers);
     return view('v_sistemTubuh',['katKankers'=>$katKankers]);
 });
 
 Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
-    $jenis = 'test';
-    return view('v_sistemLokasiKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
+    $lokasi = DB::table('kanker')
+                    ->leftJoin('kategori_kanker', 'kategori_kanker.id', '=', 'kanker.idKat')
+                    ->select('kanker.*', 'kategori_kanker.slug AS slugkat')
+                    ->where ('kategori_kanker.slug',$lokasi)
+                    ->get();
+    // dd($lokasi);
+    return view('v_sistemLokasiKanker',['lokasi'=>$lokasi]);
 });
 
 // Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
