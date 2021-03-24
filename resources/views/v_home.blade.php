@@ -53,7 +53,7 @@
                 <div class="box__welcomeHome forDesktop">
                     <h1 class="text-white text-center">{!! $titleStory !!}</h1>
                     <p class="text-white text-center mb-5"><i>{!! $shortStory !!}</i></p>
-                    <a class="boxReadStory" href="artikel-kanker/{{ $slugStory }}">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+                    <a class="boxReadStory" href="artikel-kanker/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
