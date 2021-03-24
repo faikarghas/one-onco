@@ -10,6 +10,18 @@
         height: 40vh;
     }
 
+    .box__rec{
+        img{
+            width: 60px;
+            height: 60px;
+        }
+        .col-7{
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+
     .headOverlay{
         position: absolute;
         top: 0;
