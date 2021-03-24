@@ -65,7 +65,18 @@
         <section class="tab__menu forDesktop-dflex">
             <div class="col-cs-4">
                 <div class="list__component">
-                    <div class="row list__component-list--item">
+                    @foreach($listingKatArtikel as $row)
+                        <div class="row list__component-list--item">
+                            <div class="col-1">
+                                <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                            </div>
+                            <div class="col-11 ps-4">
+                                <a class="{{ Request::segment(2) == $row->slug ? '' : 'active' }}" href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                                <div class="tab_line {{ Request::segment(2) == $row->slug ? '' : 'd-none' }}"></div>
+                            </div>
+                        </div>
+                    @endforeach
+                    {{-- <div class="row list__component-list--item">
                         <div class="col-1">
                             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                         </div>
@@ -100,7 +111,7 @@
                             <a class="{{ request()->is('untuk-pendamping/pengaruh-fisik') ? 'active' : '' }}" href="/untuk-pendamping/pengaruh-fisik">Pengaruh Fisik, Emosional, dan Sosial</a>
                             <div class="tab_line {{ request()->is('untuk-pendamping/pengaruh-fisik') ? '' : 'd-none' }}"></div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="col-cs-8">
