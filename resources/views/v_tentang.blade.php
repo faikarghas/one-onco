@@ -70,7 +70,6 @@
                     <h3>{{ $titlePages }}</h3>
                     <p>{{ $contentPages }}<p>
 
-             
 
 
                     {{-- <img class="mb-5" src="{{asset('/images/logo_oneonco_black.png')}}" width="220px" alt="logo-oneonco">
@@ -100,7 +99,7 @@
                                 'title'=>$row->title,
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,
-                                'path'=>'berita-terkini'
+                                'path'=>'berita-terkini/'.$row->slug
                         ))
                     </div>
                     @endforeach
