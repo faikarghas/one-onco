@@ -16,7 +16,6 @@ class Controller extends BaseController
 
     public function getnews(){
         $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
-
         return $listingNews;
     }
 
@@ -27,7 +26,6 @@ class Controller extends BaseController
         } else {
           $statusLogin = "<a href='/logout'>LOGOUT</a>";
         }
-
         return $statusLogin;
     }
 }

@@ -1446,6 +1446,12 @@ button.boxReadMore {
   background-color: #E8EAEA;
   padding-bottom: 2rem;
 }
+@media only screen and (max-width: 62em) {
+  .first__section {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 
 .second__section {
   padding-top: 2rem;

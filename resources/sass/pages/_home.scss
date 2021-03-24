@@ -1,6 +1,10 @@
 .first__section{
     background-color: $color_lightGrey;
     padding-bottom: 2rem;
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+    }
 }
 
 .second__section{

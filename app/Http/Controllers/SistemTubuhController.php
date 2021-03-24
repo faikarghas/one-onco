@@ -10,18 +10,38 @@ use App\Models\Customer_model;
 
 class SistemTubuhController extends Controller
 {
-    public function index(Request $request){
+    public function index($lokasi,Request $request){
 
+        $listnews = $this->getnews();
+        $statusLogin = $this->checkLogin();
+        $data = [
+            'statusLogin'=>$statusLogin,
+            'lokasi'=>$lokasi,
+            'jenis'=>$jenis,
+            'listingNews'=>$listnews
+        ];
+        return view ('v_sistemJenisKanker', $data);
     }
 
     public function sistemTubuhDetail($lokasi,$jenis){
         $listnews = $this->getnews();
         $statusLogin = $this->checkLogin();
+        
+        // view data sistem tubuh 
+
+        $viewData = DB::table('kanker')
+                    ->where('slug',$jenis)
+                    ->first();
+        //dd($viewData);
+        
+       
 
         $data = [
             'statusLogin'=>$statusLogin,
             'lokasi'=>$lokasi,
             'jenis'=>$jenis,
+            'titleKanker'=>$viewData->title,
+            'contentKanker'=>$viewData->content,
             'listingNews'=>$listnews
         ];
 

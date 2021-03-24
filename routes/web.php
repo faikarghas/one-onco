@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SistemTubuhController;
 use App\Http\Controllers\UntukPasienDanPendampingController;
+use App\Http\Controllers\PerawatanKankerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,9 +57,12 @@ Route::get('/untuk-pasien/{slug}',[UntukPasienDanPendampingController::class,'de
 Route::get('/untuk-pendamping',[UntukPasienDanPendampingController::class,'pendamping']);
 Route::get('/untuk-pendamping/{slug}',[UntukPasienDanPendampingController::class,'detailPendamping']);
 
-Route::get('/jurnal-onkologi', function () {
-    return view('v_jurnalOnkologi');
-});
+Route::get('/perawatan-kanker',[PerawatanKankerController::class,'index']);
+Route::get('/perawatan-kanker/{slug}',[PerawatanKankerController::class,'detail']);
+
+// Route::get('/perawatan-kanker/{slug}', function ($slug) {
+//     return view('v_perawatanKankerDetail',['slug'=>$slug]);
+// });
 
 
 Route::get('/direktori',[DirectoryController::class,'index']);
@@ -85,13 +89,13 @@ Route::get('/sukses', function () {
     return view('v_success');
 });
 
-Route::get('/perawatan-kanker', function () {
-    return view('v_perawatanKanker');
-});
+// Route::get('/perawatan-kanker', function () {
+//     return view('v_perawatanKanker');
+// });
 
-Route::get('/perawatan-kanker/{slug}', function ($slug) {
-    return view('v_perawatanKankerDetail',['slug'=>$slug]);
-});
+// Route::get('/perawatan-kanker/{slug}', function ($slug) {
+//     return view('v_perawatanKankerDetail',['slug'=>$slug]);
+// });
 
 
 // Route::get('/jurnal-onkologi', function () {
@@ -113,21 +117,24 @@ Route::get('/perawatan-kanker/{slug}', function ($slug) {
 ////////////////////////////////////////
 // CARI SESUAI KATEGORI KANKER HOME PAGE
 
-Route::get('/sistem-tubuh', function () {
-    $katKankers = DB::table('kategori_kanker')->pluck("title","id");
-    return view('v_sistemTubuh',['katKankers'=>$katKankers]);
-});
 
-Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
-    $jenis = 'test';
-    return view('v_sistemLokasiKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
-});
+
+// Route::get('/sistem-tubuh', function () {
+//     $katKankers = DB::table('kategori_kanker')->pluck("title","id");
+//     return view('v_sistemTubuh',['katKankers'=>$katKankers]);
+// });
+
+// Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
+//     $jenis = 'test';
+//     return view('v_sistemLokasiKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
+// });
 
 // Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
 //     return view('v_sistemJenisKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
 // });
 
 Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'sistemTubuhDetail']);
+Route::get('/sistem-tubuh/{lokasi}',[SistemTubuhController::class,'index']);
 
 
 
