@@ -120,7 +120,7 @@
                         <div class="user">
                             <ul>
                                 <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
-                                <li><a href="/login">LOGIN</a></li>
+                                <li>{!! $statusLogin !!}</li>
                             </ul>
                         </div>
                     </div>
