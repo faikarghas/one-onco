@@ -43,38 +43,11 @@ $slug = 'test';
                                 <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                             </div>
                             <div class="col-11 ps-4">
-                                <a href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                                <a href="/untuk-pasien/{{ $row->slug }}">{{ $row->title }}</a>
                             </div>
                         </div>
                     @endforeach
-                    {{-- <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a class="{{ request()->is('untuk-pasien') ? 'active' : '' }}" href="/untuk-pasien">Kanker Secara Umum</a>
-                            <div class="tab_line {{ request()->is('untuk-pasien') ? '' : 'd-none' }}"></div>
-                        </div>
-                    </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a href="/untuk-pasien/tahapan-kanker">Tahapan Kanker</a>
-                            <div class="tab_line {{ request()->is('untuk-pasien/tahapan-kanker') ? '' : 'd-none' }}"></div>
-                        </div>
-                    </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a href="/untuk-pasien/bagaimana-kanker-diobati">Bagaimana Kanker Diobati</a>
-                            <div class="tab_line {{ request()->is('untuk-pasien/bagaimana-kanker-diobati') ? '' : 'd-none' }}"></div>
-                        </div>
-                    </div> --}}
-
+                    
 
                 </div>
             </div>
