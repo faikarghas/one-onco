@@ -124,7 +124,10 @@ $('#selectLokasiKanker').change(function(){
             axios.get(`/jenisKanker/get/${data}`).then(function (response) {
             // handle success
             $('select[name="jenisKanker"]').empty();
-            console.log(response.data);
+            kankerData['jenis'] =  Object.values(response.data)[0].toLowerCase().split(' ').join('-');
+            console.log(Object.values(response.data)[0].toLowerCase().split(' ').join('-'))
+
+
             $.each(response.data, function(key, value){
                 // console.log('finish');
                 $('select[name="jenisKanker"]').append(`<option value="${key}">${value}</option>`);

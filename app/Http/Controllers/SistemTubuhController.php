@@ -26,6 +26,7 @@ class SistemTubuhController extends Controller
     public function sistemTubuhDetail($lokasi,$jenis){
         $listnews = $this->getnews();
         $statusLogin = $this->checkLogin();
+        $katKankers = DB::table('kategori_kanker')->pluck("title","id");
 
         // view data sistem tubuh 
 
@@ -40,7 +41,8 @@ class SistemTubuhController extends Controller
             'jenis'=>$jenis,
             'titleKanker'=>$viewData->title,
             'contentKanker'=>$viewData->content,
-            'listingNews'=>$listnews
+            'listingNews'=>$listnews,
+            'katKankers'=>$katKankers
         ];
 
         return view ('v_sistemJenisKanker', $data);
