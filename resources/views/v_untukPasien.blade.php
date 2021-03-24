@@ -8,7 +8,7 @@ $slug = 'test';
 
     <main>
         <div class="box__banner">
-            <img src="{{asset('/images/perkankerbanner.jpg')}}" width="100%" height="100%" alt="">
+            <img src="{{asset('/images/untuk_pasien.jpg')}}" width="100%" height="100%" alt="">
             <div class="box__banner-desc">
                 <h2>Menghadapi <br> Kanker</h2>
                 <p>Pelajari cara perawatan <br> bagi pasien kanker</p>
