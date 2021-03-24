@@ -2071,12 +2071,13 @@ $('#selectProvinces3').change(function () {
         // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
         $('select[name="cities3"]').append(new Option(value, key));
       });
+      console.log(response.data);
       axios.get("/faskes/get/".concat(data)).then(function (response) {
         $('.direktori__list .listFaskes').empty();
         i = 0;
         $.each(response.data, function (i, dokter) {
           display = response.data;
-          html.direktoriCareBox(display[0]["NamaFaskes"], display[0]["alamat"], display[0]["website"], display[0]["website"]);
+          html.direktoriCareBox(display[0]["NamaFaskes"], display[0]["alamat"], display[0]["website"], display[0]["faskesId"]);
         });
       });
     });
@@ -2098,7 +2099,7 @@ $('#selectCities3').change(function () {
       if (response.data.length != 0) {
         $.each(response.data, function (i, dokter) {
           display = response.data;
-          html.direktoriCareBox(display[i]["NamaFaskes"], display[i]["alamat"], display[i]["website"], display[i]["website"]);
+          html.direktoriCareBox(display[i]["NamaFaskes"], display[i]["alamat"], display[i]["website"], display[i]["faskesId"]);
         });
       } else {
         $('.direktori__list .listFaskes').empty();

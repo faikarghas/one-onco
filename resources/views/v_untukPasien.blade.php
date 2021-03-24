@@ -19,34 +19,16 @@ $slug = 'test';
                 <div class="row">
                     <div class="col-12">
                         <div class="list__component">
-                            {{-- <div class="row list__component-list--item">
-                                <div class="col-1">
-                                    <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                            @foreach($listingKatArtikel as $row)
+                                <div class="row list__component-list--item">
+                                    <div class="col-1">
+                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                                    </div>
+                                    <div class="col-11 ps-4">
+                                        <a href="/untuk-pasien/{{ $row->slug }}">{{ $row->title }}</a>
+                                    </div>
                                 </div>
-                                <div class="col-11 ps-4">
-                                    <a href="/untuk-pasien/jenis-olahraga">Kanker Secara Umum</a>
-                                    <p>Memahami penyakit kanker, tim perawatan kesehatan, dan istilah umum yang sering digunakan.</p>
-                                </div>
-                            </div> --}}
-                            {{-- <div class="row list__component-list--item">
-                                <div class="col-1">
-                                    <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                </div>
-                                <div class="col-11 ps-4">
-                                    <a href="/untuk-pasien/jenis-olahraga">Tahapan Kanker</a>
-                                    <p>Pelajari tahapan kanker dalam tubuh</p>
-                                </div>
-                            </div> --}}
-
-                            <div class="row list__component-list--item">
-                                <div class="col-1">
-                                    <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                </div>
-                                <div class="col-11 ps-4">
-                                    <a href="/untuk-pasien/jenis-olahraga">Bagaimana Kanker Diobati</a>
-                                    <p>Temukan cara terbaik dan efisien dalam perawatan kanker</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
