@@ -13,23 +13,38 @@ class UntukPasienDanPendampingController extends Controller
 {
 
     public function pasien(Request $request){
+
+
         $segment = $request->segment(1);
+        
         $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
+
+
         $id_kategori = $content_kategori->id;
         $title_header = $content_kategori->intro;
         $tagline_header = $content_kategori->content;
         $img_header = $content_kategori->img;
+
         $model  = new Artikel_model();
         $slug = 'test';
         $listingStory  = $model->all_kategori($id_kategori);
 
+
         $statusLogin = $this->checkLogin();
+        
+        $listingKatArtikel = DB::table('artikel')->where('idKat',4)->orderBy('id', 'ASC')->get();
+
+        $viewData = DB::table('artikel')->where('id','86')->first();
 
         $data = [
             'statusLogin'=>$statusLogin,
+            
             'listingStory'=>$listingStory,
             'slug'=>$slug,
             'pagesStory' => $listingStory,
+            'listingKatArtikel'=>$listingKatArtikel,
+            'titlePages' => $viewData->title,
+            'contentPages' => $viewData->content
         ];
 
         return view ('v_untukPasien', $data);
@@ -48,6 +63,10 @@ class UntukPasienDanPendampingController extends Controller
 
         $statusLogin = $this->checkLogin();
 
+        $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
+
+        $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
+
 
         // dd($listingStory);
 
@@ -57,6 +76,10 @@ class UntukPasienDanPendampingController extends Controller
             'listingStory'=>$listingStory,
             'slug'=>$slug,
             'pagesStory' => $listingStory,
+            'listingKatArtikel'=>$listingKatArtikel,
+            'titlePages'=>$viewDataDetail->title,
+            'shortContent'=>$viewDataDetail->shortContent,
+            'Content'=>$viewDataDetail->content
         ];
 
         return view ('v_untukPasienDetail', $data);
@@ -75,11 +98,18 @@ class UntukPasienDanPendampingController extends Controller
 
         $statusLogin = $this->checkLogin();
 
+        $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
+
+        $viewData = DB::table('artikel')->where('id',91)->first();
+
         $data = [
             'statusLogin'=>$statusLogin,
             'listingStory'=>$listingStory,
             'slug'=>$slug,
             'pagesStory' => $listingStory,
+            'listingKatArtikel'=>$listingKatArtikel,
+            'titlePages' => $viewData->title,
+            'contentPages' => $viewData->content
         ];
 
         return view ('v_untukPendamping', $data);
@@ -98,11 +128,20 @@ class UntukPasienDanPendampingController extends Controller
         $listingStory  = $model->all_kategori($id_kategori);
         $statusLogin = $this->checkLogin();
 
+        $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
+
+        $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
+  
+
         $data = [
             'statusLogin'=>$statusLogin,
             'listingStory'=>$listingStory,
             'slug'=>$slug,
             'pagesStory' => $listingStory,
+            'listingKatArtikel'=>$listingKatArtikel,
+            'titlePages'=>$viewDataDetail->title,
+            'shortContent'=>$viewDataDetail->shortContent,
+            'Content'=>$viewDataDetail->content
 
         ];
 
