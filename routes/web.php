@@ -119,22 +119,21 @@ Route::get('/sukses', function () {
 
 
 
-// Route::get('/sistem-tubuh', function () {
-//     $katKankers = DB::table('kategori_kanker')->pluck("title","id");
-//     return view('v_sistemTubuh',['katKankers'=>$katKankers]);
-// });
+Route::get('/sistem-tubuh', function () {
+    $katKankers = DB::table('kategori_kanker')->pluck("title","id");
+    return view('v_sistemTubuh',['katKankers'=>$katKankers]);
+});
 
-// Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
-//     $jenis = 'test';
-//     return view('v_sistemLokasiKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
-// });
+Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
+    $jenis = 'test';
+    return view('v_sistemLokasiKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
+});
 
-// Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
-//     return view('v_sistemJenisKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
-// });
+Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
+    return view('v_sistemJenisKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
+});
 
-Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'sistemTubuhDetail']);
-Route::get('/sistem-tubuh/{lokasi}',[SistemTubuhController::class,'index']);
+// Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'sistemTubuhDetail']);
 
 
 

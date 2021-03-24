@@ -26,15 +26,13 @@ class SistemTubuhController extends Controller
     public function sistemTubuhDetail($lokasi,$jenis){
         $listnews = $this->getnews();
         $statusLogin = $this->checkLogin();
-        
+
         // view data sistem tubuh 
 
         $viewData = DB::table('kanker')
                     ->where('slug',$jenis)
                     ->first();
         //dd($viewData);
-        
-       
 
         $data = [
             'statusLogin'=>$statusLogin,
@@ -47,4 +45,5 @@ class SistemTubuhController extends Controller
 
         return view ('v_sistemJenisKanker', $data);
     }
+
 }
