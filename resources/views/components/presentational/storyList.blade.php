@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center text-lg-start mb-5"><strong>Cerita Inspiratif kanker survivor1</strong></h2>
+                <h2 class="text-center text-lg-start mb-5"><strong>Cerita Inspiratif kanker survivor</strong></h2>
             </div>
             @foreach($listingStory as $row)
             <div class="col-12 col-lg-4">

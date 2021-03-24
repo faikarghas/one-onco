@@ -1948,7 +1948,8 @@ $('#selectLokasiKanker').change(function () {
     axios.get("/jenisKanker/get/".concat(data)).then(function (response) {
       // handle success
       $('select[name="jenisKanker"]').empty();
-      console.log(response.data);
+      kankerData['jenis'] = Object.values(response.data)[0].toLowerCase().split(' ').join('-');
+      console.log(Object.values(response.data)[0].toLowerCase().split(' ').join('-'));
       $.each(response.data, function (key, value) {
         // console.log('finish');
         $('select[name="jenisKanker"]').append("<option value=\"".concat(key, "\">").concat(value, "</option>"));
@@ -1975,8 +1976,8 @@ $('#selectCities').change(function () {
   var data = $(this).val(); // console.log(data);
 
   if (data !== "null") {
+    $('.direktori__list .listDokter').empty();
     $('.direktori__list .listDokter').append(html.direktoriLoader());
-    console.log('ganti');
     $('#selectFasekes').attr("disabled", "disabled");
     $('#selectFasekes option').empty().remove();
     axios.get("/cities/get/".concat(data)).then(function (response) {
@@ -2006,11 +2007,19 @@ $('#selectFaskes').change(function () {
   var data = $(this).val();
 
   if (data !== "null") {
+    $('.direktori__list .listDokter').empty();
+    $('.direktori__list .listDokter').append(html.direktoriLoader());
     axios.get("/dokterWithKabupaten/get/".concat(data)).then(function (response) {
-      $.each(response.data, function (i, dokter) {
-        display = response.data;
-        html.direktoriDoktorBox(display[i]['dokterId'], display[i]['NamaDokterDenganGelar'], display[i]['unit'], display[i]['dokterId']);
-      });
+      $('.direktori__list .listDokter').empty();
+
+      if (response.data.length != 0) {
+        $.each(response.data, function (i, dokter) {
+          display = response.data;
+          html.direktoriDoktorBox(display[i]['dokterId'], display[i]['NamaDokterDenganGelar'], display[i]['unit'], display[i]['dokterId']);
+        });
+      } else {
+        $('.direktori__list .listDokter').empty();
+      }
     });
   } else if (data === "null") {// $('#selectFasekes').attr( "disabled","disabled")
     // $('#selectFasekes option').empty().remove()
@@ -2053,6 +2062,8 @@ $('#selectProvinces3').change(function () {
   var data = $(this).val(); // console.log(data);
 
   if (data !== "null") {
+    $('.direktori__list .listFaskes').empty();
+    $('.direktori__list .listFaskes').append(html.direktoriLoader());
     axios.get("/cities/get/".concat(data)).then(function (response) {
       $('select[name="cities3"]').empty();
       $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
@@ -2079,11 +2090,19 @@ $('#selectCities3').change(function () {
   var data = $(this).val();
 
   if (data !== "null") {
+    $('.direktori__list .listFaskes').empty();
+    $('.direktori__list .listFaskes').append(html.direktoriLoader());
     axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
-      $.each(response.data, function (i, dokter) {
-        display = response.data;
-        html.direktoriCareBox(display[i]["NamaFaskes"], display[i]["alamat"], display[i]["website"], display[i]["website"]);
-      });
+      $('.direktori__list .listFaskes').empty();
+
+      if (response.data.length != 0) {
+        $.each(response.data, function (i, dokter) {
+          display = response.data;
+          html.direktoriCareBox(display[i]["NamaFaskes"], display[i]["alamat"], display[i]["website"], display[i]["website"]);
+        });
+      } else {
+        $('.direktori__list .listFaskes').empty();
+      }
     });
   } else if (data === "null") {// $('#selectFasekes').attr( "disabled","disabled")
     // $('#selectFasekes option').empty().remove()
@@ -2106,6 +2125,15 @@ $('.searchinputact').on('keypress', function (e) {
 });
 $('.close-search').click(function (params) {
   $('.searchpop').removeClass('show');
+});
+$('#showpass').click(function (params) {
+  var x = document.getElementById("ipss");
+
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
 });
 
 /***/ }),
@@ -2155,17 +2183,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "direktoriDoktorBox": () => /* binding */ direktoriDoktorBox,
 /* harmony export */   "direktoriLoader": () => /* binding */ direktoriLoader
 /* harmony export */ });
+var baseUrl = window.location.origin;
 function direktoriCareBox(rs, alamat, website, link) {
-  $('.direktori__list .listFaskes').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n    <a href=\"/direktori-care/".concat(link, "\" class=\"d-block h-100\">\n       <div class=\"container\">\n          <div class=\"row\">\n             <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                <div class=\"rounded_img\">\n                   <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/care_center.svg\" alt=\"dir-dokter.png\">\n                </div>\n             </div>\n             <div class=\"col-7 d-flex flex-column align-items-start\">\n                <div class=\"title_wrapper\">\n                   <h3><strong>").concat(rs, "</strong></h3>\n                </div>\n                <ul>\n                   <li>\n                      <p style=\"font-size:1.2rem;\">").concat(alamat, "</p>\n                   </li>\n                   <li>\n                      <p style=\"font-size:1.2rem;color:#00A2E3;\">").concat(website, "</p>\n                   </li>\n                </ul>\n             </div>\n             <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                   <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                </svg>\n             </div>\n          </div>\n       </div>\n    </a>\n</div></div>"));
+  $('.direktori__list .listFaskes').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n    <a href=\"/direktori-care/".concat(link, "\" class=\"d-block h-100\">\n       <div class=\"container\">\n          <div class=\"row\">\n             <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                <div class=\"rounded_img\">\n                   <img width=\"100%\" height=\"100%\" src=\"").concat(baseUrl, "/images/care_center.svg\" alt=\"dir-dokter.png\">\n                </div>\n             </div>\n             <div class=\"col-7 d-flex flex-column align-items-start\">\n                <div class=\"title_wrapper\">\n                   <h3><strong>").concat(rs, "</strong></h3>\n                </div>\n                <ul>\n                   <li>\n                      <p style=\"font-size:1.2rem;\">").concat(alamat, "</p>\n                   </li>\n                   <li>\n                      <p style=\"font-size:1.2rem;color:#00A2E3;\">").concat(website, "</p>\n                   </li>\n                </ul>\n             </div>\n             <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                   <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                </svg>\n             </div>\n          </div>\n       </div>\n    </a>\n</div></div>"));
 }
 function direktoriLabBox(image, alamat, website, link) {
-  $('.direktoriLab__list .listFaskes2').append("<div class=\"col-12 col-md-12\">\n    <div class=\"direktoriLab__list-item mb-4\">\n        <div class=\"row\">\n            <div class=\"col-12 mb-4\">\n                <h4><strong>KALGen INNOLAB</strong></h4>\n            </div>\n            <div class=\"col-5\">\n                <img src=\"http://127.0.0.1:8000/images/kalgen.png\" width=\"100px\" alt=\"kalgen\">\n            </div>\n            <div class=\"col-7\">\n                <ul>\n                    <li>\n                        <img src=\"{{asset('/images/addr-icon.png')}}\" width=\"15px\" alt=\"\">\n                        <p>Jl. Yos Sudarso Kav 85, RT.10/RW.11, Sunter Jaya, Tj. Priok, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14360</p>\n                    </li>\n                    <li>\n                        <img src=\"{{asset('/images/phone-icon.png')}}\" width=\"15px\" alt=\"\">\n                        <p>(021) 21882388</p>\n                    </li>\n                    <li>\n                        <img src=\"{{asset('/images/web-icon.png')}}\" width=\"15px\" alt=\"\">\n                        <p>www.kalgeninnolab.co.id</p>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</div>\n    ");
+  $('.direktoriLab__list .listFaskes2').append("<div class=\"col-12 col-md-12\">\n    <div class=\"direktoriLab__list-item mb-4\">\n        <div class=\"row\">\n            <div class=\"col-12 mb-4\">\n                <h4><strong>KALGen INNOLAB</strong></h4>\n            </div>\n            <div class=\"col-5\">\n                <img src=\"".concat(baseUrl, "/images/kalgen.png\" width=\"100px\" alt=\"kalgen\">\n            </div>\n            <div class=\"col-7\">\n                <ul>\n                    <li>\n                        <img src=\"{{asset('/images/addr-icon.png')}}\" width=\"15px\" alt=\"\">\n                        <p>Jl. Yos Sudarso Kav 85, RT.10/RW.11, Sunter Jaya, Tj. Priok, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14360</p>\n                    </li>\n                    <li>\n                        <img src=\"{{asset('/images/phone-icon.png')}}\" width=\"15px\" alt=\"\">\n                        <p>(021) 21882388</p>\n                    </li>\n                    <li>\n                        <img src=\"{{asset('/images/web-icon.png')}}\" width=\"15px\" alt=\"\">\n                        <p>www.kalgeninnolab.co.id</p>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</div>\n    "));
 }
 function direktoriDoktorBox(link, dokter, unit, desc) {
-  $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n    <a href=\"/dokter-detail/".concat(link, "\" class=\"d-block h-100\">\n       <div class=\"container\">\n          <div class=\"row\">\n             <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                <div class=\"rounded_img\">\n                   <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/doctor.svg\" alt=\"dir-dokter.png\">\n                </div>\n             </div>\n             <div class=\"col-7 d-flex flex-column align-items-start\">\n                <div class=\"title_wrapper\">\n                   <h3><strong>").concat(dokter, "</strong></h3>\n                </div>\n                <ul>\n                   <li>\n                      <p><strong>Unit Operasional : ").concat(unit, "</strong></p>\n                   </li>\n                   <li>\n                      <p>").concat(desc, "</p>\n                   </li>\n                </ul>\n             </div>\n             <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                   <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                </svg>\n             </div>\n          </div>\n       </div>\n    </a>\n    </div></div>"));
+  $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n    <a href=\"/dokter-detail/".concat(link, "\" class=\"d-block h-100\">\n       <div class=\"container\">\n          <div class=\"row\">\n             <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                <div class=\"rounded_img\">\n                   <img width=\"100%\" height=\"100%\" src=\"").concat(baseUrl, "/images/doctor.svg\" alt=\"dir-dokter.png\">\n                </div>\n             </div>\n             <div class=\"col-7 d-flex flex-column align-items-start\">\n                <div class=\"title_wrapper\">\n                   <h3><strong>").concat(dokter, "</strong></h3>\n                </div>\n                <ul>\n                   <li>\n                      <p><strong>Unit Operasional : ").concat(unit, "</strong></p>\n                   </li>\n                   <li>\n                      <p>").concat(desc, "</p>\n                   </li>\n                </ul>\n             </div>\n             <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                   <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                </svg>\n             </div>\n          </div>\n       </div>\n    </a>\n    </div></div>"));
 }
 function direktoriLoader() {
-  var loader = "<div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   <div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   ";
+  var loader = "<div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img skr\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper skr\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper skr\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   <div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   ";
   return loader;
 }
 

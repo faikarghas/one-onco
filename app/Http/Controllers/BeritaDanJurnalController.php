@@ -61,12 +61,12 @@ class BeritaDanJurnalController extends Controller
       $segment2 = $request->segment(2);
       $model  = new Artikel_model();
       $detailStory  = $model->detail($segment2);
+      // dd($detailStory);
 
       // other artikel
       $id =  $detailStory->id;
       $otherModel  = new Artikel_model();
       $otherStory  = $model->otherArticle($id, $id_kategori);
-
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
@@ -80,7 +80,7 @@ class BeritaDanJurnalController extends Controller
                     'listingNews'=>$listingNews
                   );
 
-      return view ('v_beritaTerkiniDetail', $data);
+      return view ('v_beritaTerkini', $data);
     }
 
     public function jurnal(Request $request){
@@ -90,7 +90,7 @@ class BeritaDanJurnalController extends Controller
 
       // listing all story with load more
       $segment = $request->segment(1);
-      $content_kategori = DB::table('kategori_artikel')->where('slug','jurnal-onkologi')->first();
+      $content_kategori = DB::table('kategori_artikel')->where('slug','artikel-kanker')->first();
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;

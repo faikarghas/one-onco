@@ -116,6 +116,8 @@ $slug = 'test';
                 </div>
             </div>
         </section>
-        @include('/components/presentational.newsList',[])
+        <div style="background-color: #e0e0e0;">
+            @include('/components/presentational.storyList',[])
+        </div>
     </main>
 @endsection

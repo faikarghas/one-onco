@@ -79,7 +79,7 @@ hr {
 }
 
 main:not([page=home]) {
-  margin-top: 137px;
+  margin-top: 136px;
 }
 @media only screen and (max-width: 62em) {
   main:not([page=home]) {
@@ -448,6 +448,17 @@ strong {
     height: 40vh;
   }
 }
+.homeHeader .headerDesktop .box__rec img {
+  width: 70px;
+  height: 70px;
+}
+.homeHeader .headerDesktop .box__rec .col-7 h3 {
+  font-size: 1.9rem;
+}
+.homeHeader .headerDesktop .box__rec .col-7 p {
+  font-size: 16px;
+  line-height: 1.2em;
+}
 .homeHeader .headOverlay {
   position: absolute;
   top: 0;
@@ -490,6 +501,13 @@ strong {
   font-size: 1.3rem;
   letter-spacing: 1px;
   text-decoration: none;
+}
+.homeHeader .headerDesktop nav ul li a.active {
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+}
+.homeHeader .headerDesktop nav ul li a:hover {
+  color: #e4e4e4;
 }
 .homeHeader .headerDesktop .userAction {
   margin: 0;
@@ -543,7 +561,7 @@ strong {
   background-color: orangered;
   color: white;
   font-size: 1.3rem;
-  padding: 0.5rem 9.9rem;
+  padding: 1rem 10.9rem;
 }
 .homeHeader .headerDesktop .ps {
   position: absolute;
@@ -700,6 +718,13 @@ strong {
   font-size: 1.3rem;
   letter-spacing: 1px;
   text-decoration: none;
+}
+.otherHeader .headerDesktop nav ul li a.active {
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+}
+.otherHeader .headerDesktop nav ul li a:hover {
+  color: #e4e4e4;
 }
 .otherHeader .headerDesktop .userAction {
   margin: 0;
@@ -864,6 +889,12 @@ strong {
 footer {
   background-color: #1A1A1A;
 }
+@media only screen and (max-width: 62em) {
+  footer {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 footer p {
   font-size: 1.3rem;
   color: white;
@@ -971,12 +1002,15 @@ footer .sosmed ul li {
 }
 
 .box__rec {
-  height: 90px;
+  height: 110px;
   width: 100%;
   border-radius: 12px;
   background-color: white;
   margin-bottom: 1rem;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+}
+.box__rec:hover {
+  background-color: #e3f4fd;
 }
 .box__rec a {
   text-decoration: none;
@@ -1132,20 +1166,54 @@ footer .sosmed ul li {
   margin-bottom: 0;
 }
 
+.skr {
+  position: relative;
+}
+.skr::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(20%, rgba(255, 255, 255, 0.2)), color-stop(60%, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
+  -webkit-animation: shimmer 2s infinite;
+          animation: shimmer 2s infinite;
+  content: "";
+}
+@-webkit-keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .boxReadMore {
   background-color: #00A2E3;
   color: white;
-  padding: 0.5rem 1.9rem;
+  padding: 10px 0;
   border-radius: 5px;
   text-decoration: none;
-  width: 150px;
+  width: 197px;
+  font-size: 13px;
+  display: inline-block;
+  text-align: center;
+  transition: 0.5s all;
 }
 .boxReadMore:hover {
+  background-color: #018cc4;
   color: white;
 }
 @media only screen and (max-width: 62em) {
   .boxReadMore {
     width: unset;
+    display: block;
   }
 }
 .boxReadMore img {
@@ -1161,10 +1229,21 @@ button.boxReadMore {
   background-color: #E8EAEA;
   padding: 4rem 3rem;
 }
+@media only screen and (max-width: 62em) {
+  .newsListWrapper {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 
 .storyListWrapper {
-  background-color: white;
   padding: 4rem 3rem;
+}
+@media only screen and (max-width: 62em) {
+  .storyListWrapper {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
 }
 
 .boxNews {
@@ -1242,12 +1321,21 @@ button.boxReadMore {
 .boxShowMore {
   background-color: black;
   color: white;
-  padding: 0.75rem 8rem;
+  padding: 10px 0;
   border-radius: 5px;
   text-decoration: none;
+  width: 197px;
+  font-size: 13px;
+  display: inline-block;
+  text-align: center;
+  transition: 0.5s all;
 }
 .boxShowMore img {
   margin-left: 1rem;
+}
+.boxShowMore:hover {
+  background-color: rgba(0, 0, 0, 0.774);
+  color: white;
 }
 
 .boxSearchKanker {
@@ -1467,6 +1555,11 @@ button.boxReadMore {
   .second__section {
     background-color: white;
     padding-bottom: 3rem;
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+  .second__section #img-one {
+    width: 200px;
   }
 }
 .second__section p {
@@ -1479,11 +1572,27 @@ button.boxReadMore {
     font-size: 1.2rem;
   }
 }
+.second__section h2 {
+  font-size: 27px;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+}
+@media only screen and (max-width: 62em) {
+  .second__section h2 {
+    font-size: 2.2rem;
+  }
+}
 
 .exSecondSection {
   padding-top: 2rem;
   padding-bottom: 3rem;
   background-color: white;
+}
+@media only screen and (max-width: 62em) {
+  .exSecondSection {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
 }
 .exSecondSection p {
   font-size: 12px;
@@ -1495,11 +1604,39 @@ button.boxReadMore {
   background-color: #E8EAEA;
   padding-bottom: 3rem;
 }
+@media only screen and (max-width: 62em) {
+  .third__section {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
+.third__section h2 {
+  text-align: left !important;
+}
+@media only screen and (max-width: 62em) {
+  .third__section h2 {
+    text-align: center !important;
+  }
+}
 
 .berita__section {
   background-color: #E8EAEA;
   padding-top: 2rem;
   padding-bottom: 3rem;
+}
+@media only screen and (max-width: 62em) {
+  .berita__section {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
+.berita__section h2, .berita__section p {
+  text-align: left !important;
+}
+@media only screen and (max-width: 62em) {
+  .berita__section h2, .berita__section p {
+    text-align: center !important;
+  }
 }
 
 .login__page .col-12 {
@@ -1848,6 +1985,10 @@ button.boxReadMore {
   width: 100%;
   top: 137px;
   left: 0;
+}
+.direktori__menuTab .box__rec img {
+  width: 60px;
+  height: 60px;
 }
 
 .direktori__list {

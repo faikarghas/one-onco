@@ -11,6 +11,7 @@
                                 $currentUrl = $_SERVER['REQUEST_URI'];
                                 $bgColor = $currentUrl == '/direktori-lab' ? '#32A48E;' : 'white';
                                 $color = $currentUrl == '/direktori-lab' ? 'white' : '#32A48E;';
+                                $image_url = $currentUrl == '/direktori-lab' ? 'dir-lab_white.png' : 'dir-lab.png';
                             ?>
                             @include('components/presentational.boxRec',[
                                 'image_url'=>'dir-dokter.png',
@@ -24,7 +25,7 @@
                     </div>
                     <div class="col-12 col-lg-4">
                             @include('components/presentational.boxRec',[
-                                'image_url'=>'dir-lab.png',
+                                'image_url'=>$image_url,
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>$color,

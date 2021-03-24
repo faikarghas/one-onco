@@ -1,3 +1,5 @@
+var baseUrl = window.location.origin
+
 export function direktoriCareBox(rs,alamat,website,link) {
     $('.direktori__list .listFaskes').append(`<div class="col-12 col-lg-6"><div class="box__rec2">
     <a href="/direktori-care/${link}" class="d-block h-100">
@@ -5,7 +7,7 @@ export function direktoriCareBox(rs,alamat,website,link) {
           <div class="row">
              <div class="col-3 d-flex align-items-center justify-content-center">
                 <div class="rounded_img">
-                   <img width="100%" height="100%" src="http://127.0.0.1:8000/images/care_center.svg" alt="dir-dokter.png">
+                   <img width="100%" height="100%" src="${baseUrl}/images/care_center.svg" alt="dir-dokter.png">
                 </div>
              </div>
              <div class="col-7 d-flex flex-column align-items-start">
@@ -40,7 +42,7 @@ export function direktoriLabBox(image,alamat,website,link) {
                 <h4><strong>KALGen INNOLAB</strong></h4>
             </div>
             <div class="col-5">
-                <img src="http://127.0.0.1:8000/images/kalgen.png" width="100px" alt="kalgen">
+                <img src="${baseUrl}/images/kalgen.png" width="100px" alt="kalgen">
             </div>
             <div class="col-7">
                 <ul>
@@ -71,7 +73,7 @@ export function direktoriDoktorBox(link,dokter,unit,desc) {
           <div class="row">
              <div class="col-3 d-flex align-items-center justify-content-center">
                 <div class="rounded_img">
-                   <img width="100%" height="100%" src="http://127.0.0.1:8000/images/doctor.svg" alt="dir-dokter.png">
+                   <img width="100%" height="100%" src="${baseUrl}/images/doctor.svg" alt="dir-dokter.png">
                 </div>
              </div>
              <div class="col-7 d-flex flex-column align-items-start">
@@ -105,7 +107,7 @@ export function direktoriLoader() {
          <div class="container">
             <div class="row">
                <div class="col-3 d-flex align-items-center justify-content-center">
-                  <div class="rounded_img" style="
+                  <div class="rounded_img skr" style="
                      background-color: lightgrey;
                      ">
                   </div>
@@ -113,11 +115,11 @@ export function direktoriLoader() {
                <div class="col-9 d-flex flex-column align-items-center" style="
                   justify-content: center;
                   ">
-                  <div class="title_wrapper" style="
+                  <div class="title_wrapper skr" style="
                      background-color: lightgrey;
                      ">
                   </div>
-                  <div class="title_wrapper" style="
+                  <div class="title_wrapper skr" style="
                      background-color: lightgrey;
                      margin-bottom: 0;
                      ">

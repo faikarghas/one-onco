@@ -11,6 +11,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SistemTubuhController;
 use App\Http\Controllers\UntukPasienDanPendampingController;
 use App\Http\Controllers\PerawatanKankerController;
+use App\Http\Controllers\PengaturanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,7 @@ Route::get('/register', function () {
     return view('v_register');
 });
 
-Route::get('/pengaturan', function () {
-    return view('v_pengaturan');
-});
+Route::get('/pengaturan', [PengaturanController::class,'index']);
 
 Route::get('/sukses', function () {
     return view('v_success');
@@ -81,8 +80,8 @@ Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
 
 Route::get('/berita-terkini',[BeritaDanJurnalController::class,'berita']);
 Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'beritaDetail']);
-Route::get('/jurnal-onkologi',[BeritaDanJurnalController::class,'jurnal']);
-Route::get('/jurnal-onkologi/{slug}',[BeritaDanJurnalController::class,'jurnalDetail']);
+Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'jurnal']);
+Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'jurnalDetail']);
 
 
 
@@ -130,11 +129,11 @@ Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
     return view('v_sistemLokasiKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
 });
 
-Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
-    return view('v_sistemJenisKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
-});
+// Route::get('/sistem-tubuh/{lokasi}/{jenis}', function ($lokasi,$jenis) {
+//     return view('v_sistemJenisKanker',['lokasi'=>$lokasi,'jenis'=>$jenis]);
+// });
 
-// Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'sistemTubuhDetail']);
+Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'sistemTubuhDetail']);
 
 
 

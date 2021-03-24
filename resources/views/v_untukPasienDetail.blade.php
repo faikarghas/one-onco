@@ -109,6 +109,6 @@
                 </div>
             </div>
         </section>
-        @include('/components/presentational.newsList',[])
+        @include('/components/presentational.storyList',[])
     </main>
 @endsection

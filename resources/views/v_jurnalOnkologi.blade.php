@@ -10,11 +10,11 @@
             <div class="box__banner-desc">
             </div>
         </div>
-        <section class="bg-color_lightGrey">
+        <section class="bg-color_lightGrey berita__section">
             <div class="container pt-5 pb-5 ">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-center mb-5"><strong>JURNAL ONKOLOGI</strong></h2>
+                        <h2 class="text-center mb-5"><strong>ARTIKEL KANKER</strong></h2>
                     </div>
                     <div class="col-12 col-md-4">
                         @include('components/presentational.boxNews',array(

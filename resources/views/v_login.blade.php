@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="password"><img class="img-fluid" src="{{asset('/images/secure.png')}}" alt="" srcset=""></span>
-                                    <input type="password" class="form-control" aria-label="password" placeholder="Kata Kunci" name="password">
+                                    <input id="ipss" type="password" class="form-control" aria-label="password" placeholder="Kata Kunci" name="password">
                                     <span class="input-group-text" id="showpass"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" alt="" srcset=""></span>
                                   </div>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])

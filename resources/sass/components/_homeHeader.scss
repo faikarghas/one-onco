@@ -10,6 +10,24 @@
         height: 40vh;
     }
 
+    .headerDesktop{
+        .box__rec{
+            img{
+                width: 70px;
+                height: 70px;
+            }
+            .col-7{
+                h3{
+                    font-size: 1.9rem;
+                }
+                p{
+                    font-size: 16px;
+                    line-height: 1.2em;
+                }
+            }
+        }
+    }
+
     .headOverlay{
         position: absolute;
         top: 0;
@@ -45,6 +63,13 @@
                         font-size: 1.3rem;
                         letter-spacing: 1px;
                         text-decoration: none;
+                        &.active{
+                            border-bottom: 1px solid white;
+                            padding-bottom: 15px;
+                        }
+                        &:hover{
+                            color: rgb(228, 228, 228);
+                        }
                     }
                 }
             }
@@ -100,7 +125,7 @@
                 background-color: orangered;
                 color: white;
                 font-size: 1.3rem;
-                padding: 0.5rem 9.9rem;
+                padding: 1rem 10.9rem;
             }
         }
         .ps{

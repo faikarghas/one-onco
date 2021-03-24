@@ -79,7 +79,7 @@
                 </div>
             </div>
         </section>
-        <section class="berita__section">
+        <section class="berita__section" style="background-color: #e0e0e0;">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

@@ -19,6 +19,11 @@ class Controller extends BaseController
         return $listingNews;
     }
 
+    public function getstory(){
+      $listingNews = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('id', 'DESC')->get();
+      return $listingNews;
+  }
+
     public function checkLogin(){
         // check sebagai customer apa bukan
         if(Session()->get('username')=="") {
