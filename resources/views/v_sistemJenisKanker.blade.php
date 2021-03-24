@@ -56,7 +56,7 @@
                         </div>
                         <div class="detail__page1--description mb-5">
                             <h1 class="mb-4">{{ $titleKanker }}</h1>
-                            {{!! $contentKanker !!}}
+                            {!! $contentKanker !!}
                         </div>
                     </div>
                 </div>
