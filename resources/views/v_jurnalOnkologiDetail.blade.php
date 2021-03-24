@@ -34,8 +34,6 @@
                                 <div class="col-12">
                                     <h2 class="text-center text-lg-start mb-5"><strong>Cerita lainnya</strong></h2>
                                 </div>
-                                
-                                
                                 <div class="col-12">
                                     <div class="boxNewsWimg mt-4">
                                         <div class="boxInformation">
@@ -47,10 +45,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-
-
-
                             </div>
                         </div>
                     </div>
