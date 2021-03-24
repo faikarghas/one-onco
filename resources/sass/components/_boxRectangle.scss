@@ -31,7 +31,7 @@
         font-style: italic;
         color: $color_semiLightGrey;
         @include respond(down-tab-port){
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
     }
 }
