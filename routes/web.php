@@ -85,6 +85,7 @@ Route::get('/jurnal-onkologi',[BeritaDanJurnalController::class,'jurnal']);
 Route::get('/jurnal-onkologi/{slug}',[BeritaDanJurnalController::class,'jurnalDetail']);
 
 
+
 Route::get('/sukses', function () {
     return view('v_success');
 });

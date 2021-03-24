@@ -14,8 +14,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function getnews(){
-        $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+    public function getnews($kat){
+        $listingNews = DB::table('artikel')->where('idKat',$id)->limit(3)->orderBy('id', 'DESC')->get();
         return $listingNews;
     }
 
