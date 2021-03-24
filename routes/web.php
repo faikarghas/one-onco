@@ -11,6 +11,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SistemTubuhController;
 use App\Http\Controllers\UntukPasienDanPendampingController;
 use App\Http\Controllers\PerawatanKankerController;
+use App\Http\Controllers\PengaturanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,7 @@ Route::get('/register', function () {
     return view('v_register');
 });
 
-Route::get('/pengaturan', function () {
-    return view('v_pengaturan');
-});
+Route::get('/pengaturan', [PengaturanController::class,'index']);
 
 Route::get('/sukses', function () {
     return view('v_success');
