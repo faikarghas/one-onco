@@ -16,7 +16,7 @@
                     <div class="col-12">
                         <h2 class="text-center mb-5"><strong>ARTIKEL KANKER</strong></h2>
                     </div>
-                    @foreach($listingJurnal as $row)
+                    @foreach($listingNews as $row)
                         <div class="col-12 col-md-4">
                             @include('components/presentational.boxNews',array(
                                 'date'=> $row->createdAt,
@@ -27,12 +27,12 @@
                             ))  
                         </div>
                     @endforeach
-                    <div class="col-12 text-center mt-5">
+                    {{-- <div class="col-12 text-center mt-5">
                         @include('components/presentational.boxShowMore',array(
                             'title'=>'Tampilkan lainnya',
                             'path'=>''
                         ))
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
