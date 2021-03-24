@@ -507,7 +507,7 @@ strong {
   padding-bottom: 15px;
 }
 .homeHeader .headerDesktop nav ul li a:hover {
-  background-color: #048dc4;
+  color: #e4e4e4;
 }
 .homeHeader .headerDesktop .userAction {
   margin: 0;
@@ -724,7 +724,7 @@ strong {
   padding-bottom: 15px;
 }
 .otherHeader .headerDesktop nav ul li a:hover {
-  background-color: #048dc4;
+  color: #e4e4e4;
 }
 .otherHeader .headerDesktop .userAction {
   margin: 0;
