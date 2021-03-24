@@ -320,3 +320,12 @@ $('.searchinputact').on('keypress', function (e) {
 $('.close-search').click(function (params) {
     $('.searchpop').removeClass('show')
 })
+
+$('#showpass').click(function (params) {
+    var x = document.getElementById("ipss");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+})
