@@ -88,7 +88,6 @@ class PerawatanKankerController extends Controller
                     'shortContent'=>$viewDataDetail->shortContent,
                     'Content'=>$viewDataDetail->content
                   );
-
       return view ('v_perawatanKankerDetail', $data);
     }
 }
