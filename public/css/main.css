@@ -79,7 +79,7 @@ hr {
 }
 
 main:not([page=home]) {
-  margin-top: 137px;
+  margin-top: 136px;
 }
 @media only screen and (max-width: 62em) {
   main:not([page=home]) {
@@ -1554,6 +1554,14 @@ button.boxReadMore {
     padding-left: 12.75px;
   }
 }
+.third__section h2 {
+  text-align: left !important;
+}
+@media only screen and (max-width: 62em) {
+  .third__section h2 {
+    text-align: center !important;
+  }
+}
 
 .berita__section {
   background-color: #E8EAEA;
@@ -1564,6 +1572,14 @@ button.boxReadMore {
   .berita__section {
     padding-right: 12.75px;
     padding-left: 12.75px;
+  }
+}
+.berita__section h2, .berita__section p {
+  text-align: left !important;
+}
+@media only screen and (max-width: 62em) {
+  .berita__section h2, .berita__section p {
+    text-align: center !important;
   }
 }
 

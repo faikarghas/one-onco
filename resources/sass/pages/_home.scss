@@ -54,6 +54,12 @@
         padding-right: 12.75px;
         padding-left: 12.75px;
     }
+    h2{
+        text-align: left !important;
+        @include respond(down-tab-port){
+            text-align: center !important;
+        }
+    }
 }
 
 .berita__section{
@@ -63,5 +69,11 @@
     @include respond(down-tab-port){
         padding-right: 12.75px;
         padding-left: 12.75px;
+    }
+    h2,p{
+        text-align: left !important;
+        @include respond(down-tab-port){
+            text-align: center !important;
+        }
     }
 }
