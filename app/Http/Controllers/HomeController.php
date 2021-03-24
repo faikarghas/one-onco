@@ -33,7 +33,7 @@ class HomeController extends Controller
 
         //var_dump ($sliderArtikel);
         //variable  data about us ( general)
-        $shortContentAbout = DB::table('kategori_artikel')->where('id',6)->first();
+        $shortContentAbout = DB::table('artikel')->where('id',7)->first();
 
         // variable jenis kanker dan nama kanker
         $katKankers = DB::table('kategori_kanker')->pluck("title","id");
@@ -57,7 +57,7 @@ class HomeController extends Controller
                       'copyright'=>$siteConfig->pvar3,
                       'statusLogin'=>$statusLogin,
                       'titleAbout'=>$shortContentAbout->title,
-                      'contentAbout'=>$shortContentAbout->content,
+                      'contentAbout'=>$shortContentAbout->shortContent,
                       'titleStory' => $sliderArtikel->title,
                       'shortStory' => $sliderArtikel->shortContent,
                       'slug' => $sliderArtikel->slug,

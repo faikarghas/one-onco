@@ -206,7 +206,7 @@
                     <div class="row">
                         <div class="col-12 text-center">
                             <img id="img-one" class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
-                            <h2><strong>{{ $titleAbout }}</strong></h2>
+                            <h2><strong>SOLUSI TOTAL ONCOLOGY</strong></h2>
                             <p class="mb-5">
                             {{ $contentAbout }}
                             </p>
