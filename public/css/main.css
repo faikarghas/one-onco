@@ -1011,6 +1011,11 @@ footer .sosmed ul li {
     font-size: 1.3rem;
   }
 }
+@media only screen and (max-width: 23.44em) {
+  .box__rec p {
+    font-size: 1.2rem;
+  }
+}
 
 .box__rec2, .box__rec3 {
   width: 100%;

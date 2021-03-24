@@ -33,6 +33,9 @@
         @include respond(down-tab-port){
             font-size: 1.3rem;
         }
+        @include respond(down-phone375){
+                font-size: 1.2rem;
+        }
     }
 }
 
