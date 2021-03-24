@@ -1976,8 +1976,8 @@ $('#selectCities').change(function () {
   var data = $(this).val(); // console.log(data);
 
   if (data !== "null") {
+    $('.direktori__list .listDokter').empty();
     $('.direktori__list .listDokter').append(html.direktoriLoader());
-    console.log('ganti');
     $('#selectFasekes').attr("disabled", "disabled");
     $('#selectFasekes option').empty().remove();
     axios.get("/cities/get/".concat(data)).then(function (response) {
@@ -2007,6 +2007,8 @@ $('#selectFaskes').change(function () {
   var data = $(this).val();
 
   if (data !== "null") {
+    $('.direktori__list .listDokter').empty();
+    $('.direktori__list .listDokter').append(html.direktoriLoader());
     axios.get("/dokterWithKabupaten/get/".concat(data)).then(function (response) {
       $.each(response.data, function (i, dokter) {
         display = response.data;
@@ -2054,6 +2056,8 @@ $('#selectProvinces3').change(function () {
   var data = $(this).val(); // console.log(data);
 
   if (data !== "null") {
+    $('.direktori__list .listFaskes').empty();
+    $('.direktori__list .listFaskes').append(html.direktoriLoader());
     axios.get("/cities/get/".concat(data)).then(function (response) {
       $('select[name="cities3"]').empty();
       $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
@@ -2080,6 +2084,8 @@ $('#selectCities3').change(function () {
   var data = $(this).val();
 
   if (data !== "null") {
+    $('.direktori__list .listFaskes').empty();
+    $('.direktori__list .listFaskes').append(html.direktoriLoader());
     axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
       $.each(response.data, function (i, dokter) {
         display = response.data;
@@ -2175,7 +2181,7 @@ function direktoriDoktorBox(link, dokter, unit, desc) {
   $('.direktori__list .listDokter').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n    <a href=\"/dokter-detail/".concat(link, "\" class=\"d-block h-100\">\n       <div class=\"container\">\n          <div class=\"row\">\n             <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                <div class=\"rounded_img\">\n                   <img width=\"100%\" height=\"100%\" src=\"http://127.0.0.1:8000/images/doctor.svg\" alt=\"dir-dokter.png\">\n                </div>\n             </div>\n             <div class=\"col-7 d-flex flex-column align-items-start\">\n                <div class=\"title_wrapper\">\n                   <h3><strong>").concat(dokter, "</strong></h3>\n                </div>\n                <ul>\n                   <li>\n                      <p><strong>Unit Operasional : ").concat(unit, "</strong></p>\n                   </li>\n                   <li>\n                      <p>").concat(desc, "</p>\n                   </li>\n                </ul>\n             </div>\n             <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                   <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                </svg>\n             </div>\n          </div>\n       </div>\n    </a>\n    </div></div>"));
 }
 function direktoriLoader() {
-  var loader = "<div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   <div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   ";
+  var loader = "<div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img skr\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper skr\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper skr\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   <div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   ";
   return loader;
 }
 

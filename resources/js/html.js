@@ -105,7 +105,7 @@ export function direktoriLoader() {
          <div class="container">
             <div class="row">
                <div class="col-3 d-flex align-items-center justify-content-center">
-                  <div class="rounded_img" style="
+                  <div class="rounded_img skr" style="
                      background-color: lightgrey;
                      ">
                   </div>
@@ -113,11 +113,11 @@ export function direktoriLoader() {
                <div class="col-9 d-flex flex-column align-items-center" style="
                   justify-content: center;
                   ">
-                  <div class="title_wrapper" style="
+                  <div class="title_wrapper skr" style="
                      background-color: lightgrey;
                      ">
                   </div>
-                  <div class="title_wrapper" style="
+                  <div class="title_wrapper skr" style="
                      background-color: lightgrey;
                      margin-bottom: 0;
                      ">

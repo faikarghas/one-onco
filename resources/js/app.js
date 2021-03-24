@@ -164,10 +164,13 @@ $('#selectCities').change(function(){
     let data= $(this).val();
     // console.log(data);
     if (data !== "null") {
+
+        $('.direktori__list .listDokter').empty();
         $('.direktori__list .listDokter').append(html.direktoriLoader())
-        console.log('ganti');
+
         $('#selectFasekes').attr( "disabled","disabled")
         $('#selectFasekes option').empty().remove()
+
         axios.get(`/cities/get/${data}`).then(function (response) {
             $('select[name="faskes"]').empty();
             $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
@@ -185,8 +188,6 @@ $('#selectCities').change(function(){
                     html.direktoriDoktorBox(display[i]['dokterId'],display[i]['NamaDokterDenganGelar'],display[i]['unit'],display[i]['dokterId'])
                 });
             });
-
-
         });
     } else if (data === "null") {
         $('#selectFasekes').attr( "disabled","disabled")
@@ -198,6 +199,8 @@ $('#selectFaskes').change(function(){
     $('.direktori__list .listDokter').empty();
     let data= $(this).val();
     if (data !== "null") {
+        $('.direktori__list .listDokter').empty();
+        $('.direktori__list .listDokter').append(html.direktoriLoader())
         axios.get(`/dokterWithKabupaten/get/${data}`).then(function (response) {
           $.each(response.data, function(i, dokter ){
             display = response.data;
@@ -255,6 +258,8 @@ $('#selectProvinces3').change(function(){
   let data= $(this).val();
   // console.log(data);
   if (data !== "null") {
+    $('.direktori__list .listFaskes').empty();
+    $('.direktori__list .listFaskes').append(html.direktoriLoader())
       axios.get(`/cities/get/${data}`).then(function (response) {
           $('select[name="cities3"]').empty();
           $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
@@ -285,14 +290,15 @@ $('#selectCities3').change(function(){
   $('.direktori__list .listFaskes').empty();
   let data= $(this).val();
   if (data !== "null") {
-      axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
+    $('.direktori__list .listFaskes').empty();
+    $('.direktori__list .listFaskes').append(html.direktoriLoader())
+    axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
         $.each(response.data, function(i, dokter ){
             display = response.data;
             html.direktoriCareBox(display[i]["NamaFaskes"],display[i]["alamat"],display[i]["website"],display[i]["website"])
 
         });
-
-      })
+    })
 
   } else if (data === "null") {
       // $('#selectFasekes').attr( "disabled","disabled")
