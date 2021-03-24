@@ -58,7 +58,7 @@ class UntukPasienDanPendampingController extends Controller
         $tagline_header = $content_kategori->content;
         $img_header = $content_kategori->img;
         $model  = new Artikel_model();
-        $slug = 'test';
+
         $listingStory  = $model->all_kategori($id_kategori);
 
         $statusLogin = $this->checkLogin();
@@ -124,7 +124,7 @@ class UntukPasienDanPendampingController extends Controller
         $tagline_header = $content_kategori->content;
         $img_header = $content_kategori->img;
         $model  = new Artikel_model();
-        $slug = 'test';
+
         $listingStory  = $model->all_kategori($id_kategori);
         $statusLogin = $this->checkLogin();
 
