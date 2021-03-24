@@ -2006,6 +2006,7 @@ button.boxReadMore {
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-top: calc(137px + 130px);
+  min-height: 300px;
 }
 @media only screen and (max-width: 62em) {
   .direktori__list {
