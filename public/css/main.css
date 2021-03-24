@@ -1152,11 +1152,12 @@ footer .sosmed ul li {
 .boxReadMore {
   background-color: #00A2E3;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 0;
   border-radius: 5px;
   text-decoration: none;
   width: 197px;
   font-size: 13px;
+  display: inline-block;
   text-align: center;
 }
 .boxReadMore:hover {
@@ -1273,9 +1274,13 @@ button.boxReadMore {
 .boxShowMore {
   background-color: black;
   color: white;
-  padding: 0.75rem 8rem;
+  padding: 10px 0;
   border-radius: 5px;
   text-decoration: none;
+  width: 197px;
+  font-size: 13px;
+  display: inline-block;
+  text-align: center;
 }
 .boxShowMore img {
   margin-left: 1rem;
