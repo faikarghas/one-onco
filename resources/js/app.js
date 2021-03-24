@@ -201,13 +201,17 @@ $('#selectFaskes').change(function(){
     if (data !== "null") {
         $('.direktori__list .listDokter').empty();
         $('.direktori__list .listDokter').append(html.direktoriLoader())
+
         axios.get(`/dokterWithKabupaten/get/${data}`).then(function (response) {
-          $.each(response.data, function(i, dokter ){
-            display = response.data;
-            html.direktoriDoktorBox(display[i]['dokterId'],display[i]['NamaDokterDenganGelar'],display[i]['unit'],display[i]['dokterId'])
-
-          });
-
+            $('.direktori__list .listDokter').empty();
+            if (response.data.length != 0) {
+                $.each(response.data, function(i, dokter ){
+                    display = response.data;
+                    html.direktoriDoktorBox(display[i]['dokterId'],display[i]['NamaDokterDenganGelar'],display[i]['unit'],display[i]['dokterId'])
+                });
+            } else {
+                $('.direktori__list .listDokter').empty();
+            }
         })
 
     } else if (data === "null") {
@@ -293,11 +297,15 @@ $('#selectCities3').change(function(){
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader())
     axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
-        $.each(response.data, function(i, dokter ){
-            display = response.data;
-            html.direktoriCareBox(display[i]["NamaFaskes"],display[i]["alamat"],display[i]["website"],display[i]["website"])
-
-        });
+        $('.direktori__list .listFaskes').empty();
+        if (response.data.length != 0) {
+            $.each(response.data, function(i, dokter ){
+                display = response.data;
+                html.direktoriCareBox(display[i]["NamaFaskes"],display[i]["alamat"],display[i]["website"],display[i]["website"])
+            });
+        } else {
+            $('.direktori__list .listFaskes').empty();
+        }
     })
 
   } else if (data === "null") {

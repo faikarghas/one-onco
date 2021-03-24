@@ -10,11 +10,12 @@
                         <div class="box__rec">
                             <?php
                                 $currentUrl = $_SERVER['REQUEST_URI'];
-                                $bgColor = $currentUrl == '/direktori-dokter' ? '#32A48E;' : 'white';
-                                $color = $currentUrl == '/direktori-dokter' ? 'white' : '#32A48E;';
+                                $bgColor = $currentUrl == '/direktori-care' ? '#32A48E;' : 'white';
+                                $color = $currentUrl == '/direktori-care' ? 'white' : '#32A48E;';
+                                $image_url = $currentUrl == '/direktori-care' ? 'dir-care_white.png' : 'dir-care.png';
                             ?>
                             @include('components/presentational.boxRec',[
-                                'image_url'=>'dir-dokter.png',
+                                'image_url'=>$image_url,
                                 'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>$color,
@@ -40,7 +41,7 @@
                     <div class="col-12 col-lg-4">
                         <div class="box__rec">
                                 @include('components/presentational.boxRec',[
-                                'image_url'=>'dir-care.png',
+                                'image_url'=>$image_url,
                                 'title'=>'Direktori Care Center',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#32A48E;',

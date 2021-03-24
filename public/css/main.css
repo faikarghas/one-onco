@@ -448,14 +448,14 @@ strong {
     height: 40vh;
   }
 }
-.homeHeader .box__rec img {
+.homeHeader .headerDesktop .box__rec img {
   width: 70px;
   height: 70px;
 }
-.homeHeader .box__rec .col-7 h3 {
+.homeHeader .headerDesktop .box__rec .col-7 h3 {
   font-size: 1.9rem;
 }
-.homeHeader .box__rec .col-7 p {
+.homeHeader .headerDesktop .box__rec .col-7 p {
   font-size: 16px;
   line-height: 1.2em;
 }
@@ -1213,6 +1213,7 @@ footer .sosmed ul li {
 @media only screen and (max-width: 62em) {
   .boxReadMore {
     width: unset;
+    display: block;
   }
 }
 .boxReadMore img {
@@ -1557,6 +1558,9 @@ button.boxReadMore {
     padding-right: 12.75px;
     padding-left: 12.75px;
   }
+  .second__section #img-one {
+    width: 200px;
+  }
 }
 .second__section p {
   font-size: 1.6rem;
@@ -1572,6 +1576,11 @@ button.boxReadMore {
   font-size: 27px;
   margin-top: 2rem;
   margin-bottom: 3.5rem;
+}
+@media only screen and (max-width: 62em) {
+  .second__section h2 {
+    font-size: 2.2rem;
+  }
 }
 
 .exSecondSection {
@@ -1976,6 +1985,10 @@ button.boxReadMore {
   width: 100%;
   top: 137px;
   left: 0;
+}
+.direktori__menuTab .box__rec img {
+  width: 60px;
+  height: 60px;
 }
 
 .direktori__list {

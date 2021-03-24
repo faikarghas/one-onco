@@ -16,6 +16,9 @@
         padding-bottom: 3rem;
         padding-right: 12.75px;
         padding-left: 12.75px;
+        #img-one{
+            width: 200px;
+        }
     }
     p{
         font-size: 1.6rem;
@@ -29,6 +32,9 @@
         font-size: 27px;
         margin-top: 2rem;
         margin-bottom: 3.5rem;
+        @include respond(down-tab-port){
+            font-size: 2.2rem;
+        }
     }
 }
 

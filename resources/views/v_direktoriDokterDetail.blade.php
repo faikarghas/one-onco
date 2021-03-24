@@ -12,6 +12,7 @@
                                 $currentUrl = $_SERVER['REQUEST_URI'];
                                 $bgColor = $currentUrl == '/direktori-dokter' ? '#32A48E;' : 'white';
                                 $color = $currentUrl == '/direktori-dokter' ? 'white' : '#32A48E;';
+                                $image_url = $currentUrl == '/direktori-dokter' ? 'dir-dokter_white.png' : 'dir-dokter.png';
                             ?>
                             @include('components/presentational.boxRec',[
                                 'image_url'=>'dir-dokter.png',

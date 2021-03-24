@@ -15,6 +15,7 @@
     }
     @include respond(down-tab-port){
         width: unset;
+        display: block;
     }
     img{
         margin-left: 1rem;
