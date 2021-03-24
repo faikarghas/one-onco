@@ -69,9 +69,9 @@ $slug = 'test';
                             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                         </div>
                         <div class="col-11 ps-4">
-                            <a class="{{ request()->is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                            <a class="{{ request()->is('untuk-pendaping') ? 'active' : '' }}" href="/untuk-pendaping/{{ $row->slug }}">{{ $row->title }}</a>
                             @if ( $row->slug ==='' ) 
-                               <div class="tab_line {{ request()->is('tentang-kami') ? '' : 'd-none' }}"></div>
+                               <div class="tab_line {{ request()->is('untuk-pendaping') ? '' : 'd-none' }}"></div>
                             @endif
                         </div>
                     </div>
