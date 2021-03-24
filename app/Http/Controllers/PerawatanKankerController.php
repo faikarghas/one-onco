@@ -28,7 +28,7 @@ class PerawatanKankerController extends Controller
       //listing kategori artikel bedasarkan url dan kategori
       $listingKatArtikel = DB::table('artikel')->where('idKat',7)->orderBy('id', 'DESC')->get();
 
-      $viewData = DB::table('artikel')->where('id',98)->first();
+      $viewData = DB::table('artikel')->where('id',98)->first();  
 
       // content about us
       // $kat=6;
@@ -38,6 +38,8 @@ class PerawatanKankerController extends Controller
 
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',7)->limit(3)->orderBy('id', 'DESC')->get();
+
+
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'statusLogin'=>$statusLogin,
@@ -72,6 +74,8 @@ class PerawatanKankerController extends Controller
       //listing kategori artikel bedasarkan url dan kategori
       $listingKatArtikel = DB::table('artikel')->where('idKat',7)->orderBy('id', 'DESC')->get();
 
+      $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
+
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
@@ -79,11 +83,10 @@ class PerawatanKankerController extends Controller
                     'statusLogin'=>$statusLogin,
                     'slugStory' => 'testt',
                     'listingNews'=>$listingNews,
-                    'listingKatArtikel'=>$listingKatArtikel
-                    // 'listingSlugKatArtikel'=>$listingKatArtikel->slug,
-                    // 'contentKatArtikel'=>$listingKatArtikel->content,
-
-
+                    'listingKatArtikel'=>$listingKatArtikel,
+                    'titlePages'=>$viewDataDetail->title,
+                    'shortContent'=>$viewDataDetail->shortContent,
+                    'Content'=>$viewDataDetail->content
                   );
 
       return view ('v_perawatanKankerDetail', $data);
