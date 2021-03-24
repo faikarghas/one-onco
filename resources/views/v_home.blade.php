@@ -45,7 +45,7 @@
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                                 <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
                                 <li>{!! $statusLogin !!}</li>
-                                <li><a><img src="{{ asset('/images/setting.png') }}" alt="setting" width="15px"/></a></li>
+                                <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="setting" width="15px"/></a></li>
                             </ul>
                         <nav>
                     </div>
