@@ -147,6 +147,12 @@
     @include respond(down-tab-port){
         height: 90px;
     }
+    h3{
+        font-size: 14px;
+    }
+    p{
+        font-size: 12px;
+    }
 }
 
 .box__rec3{
