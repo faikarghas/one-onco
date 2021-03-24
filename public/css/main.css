@@ -1153,6 +1153,12 @@ footer .sosmed ul li {
     height: 90px;
   }
 }
+.box__rec2 h3 {
+  font-size: 14px;
+}
+.box__rec2 p {
+  font-size: 12px;
+}
 
 .box__rec3 {
   height: 130px;
@@ -1544,6 +1550,10 @@ button.boxReadMore {
     padding-right: 12.75px;
     padding-left: 12.75px;
   }
+}
+.first__section .box__rec .col-3 img {
+  width: 50px;
+  height: 50px;
 }
 
 .second__section {
