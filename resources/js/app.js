@@ -124,7 +124,7 @@ $('#selectLokasiKanker').change(function(){
             axios.get(`/jenisKanker/get/${data}`).then(function (response) {
             // handle success
             $('select[name="jenisKanker"]').empty();
-            // console.log('start');
+            console.log(response.data);
             $.each(response.data, function(key, value){
                 // console.log('finish');
                 $('select[name="jenisKanker"]').append(`<option value="${key}">${value}</option>`);
@@ -161,6 +161,10 @@ $('#selectCities').change(function(){
     let data= $(this).val();
     // console.log(data);
     if (data !== "null") {
+        $('.direktori__list .listDokter').append(html.direktoriLoader())
+        console.log('ganti');
+        $('#selectFasekes').attr( "disabled","disabled")
+        $('#selectFasekes option').empty().remove()
         axios.get(`/cities/get/${data}`).then(function (response) {
             $('select[name="faskes"]').empty();
             $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
@@ -261,8 +265,7 @@ $('#selectProvinces3').change(function(){
               i = 0;
               $.each(response.data, function(i, dokter ){
                 display = response.data;
-
-                html.direktoriCareBox('asdas','adas','ada','adas')
+                html.direktoriCareBox(display[0]["NamaFaskes"],display[0]["alamat"],display[0]["website"],display[0]["website"])
 
               });
           });
@@ -282,7 +285,8 @@ $('#selectCities3').change(function(){
       axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
         $.each(response.data, function(i, dokter ){
             display = response.data;
-            html.direktoriCareBox('asdas','adas','ada','adas')
+            html.direktoriCareBox(display[i]["NamaFaskes"],display[i]["alamat"],display[i]["website"],display[i]["website"])
+
         });
 
       })

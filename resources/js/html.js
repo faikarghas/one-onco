@@ -14,10 +14,10 @@ export function direktoriCareBox(rs,alamat,website,link) {
                 </div>
                 <ul>
                    <li>
-                      <p>${alamat}</p>
+                      <p style="font-size:1.2rem;">${alamat}</p>
                    </li>
                    <li>
-                      <p>${website}</p>
+                      <p style="font-size:1.2rem;color:#00A2E3;">${website}</p>
                    </li>
                 </ul>
              </div>
@@ -98,3 +98,65 @@ export function direktoriDoktorBox(link,dokter,unit,desc) {
     </div></div>`);
 }
 
+export function direktoriLoader() {
+   let loader = `<div class="col-12 col-lg-6">
+   <div class="box__rec2">
+      <a href="/dokter-detail/21011058" class="d-block h-100">
+         <div class="container">
+            <div class="row">
+               <div class="col-3 d-flex align-items-center justify-content-center">
+                  <div class="rounded_img" style="
+                     background-color: lightgrey;
+                     ">
+                  </div>
+               </div>
+               <div class="col-9 d-flex flex-column align-items-center" style="
+                  justify-content: center;
+                  ">
+                  <div class="title_wrapper" style="
+                     background-color: lightgrey;
+                     ">
+                  </div>
+                  <div class="title_wrapper" style="
+                     background-color: lightgrey;
+                     margin-bottom: 0;
+                     ">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </a>
+   </div>
+   </div>
+   <div class="col-12 col-lg-6">
+   <div class="box__rec2">
+      <a href="/dokter-detail/21011058" class="d-block h-100">
+         <div class="container">
+            <div class="row">
+               <div class="col-3 d-flex align-items-center justify-content-center">
+                  <div class="rounded_img" style="
+                     background-color: lightgrey;
+                     ">
+                  </div>
+               </div>
+               <div class="col-9 d-flex flex-column align-items-center" style="
+                  justify-content: center;
+                  ">
+                  <div class="title_wrapper" style="
+                     background-color: lightgrey;
+                     ">
+                  </div>
+                  <div class="title_wrapper" style="
+                     background-color: lightgrey;
+                     margin-bottom: 0;
+                     ">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </a>
+   </div>
+   </div>
+   `
+   return loader
+}
