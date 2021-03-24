@@ -449,11 +449,15 @@ strong {
   }
 }
 .homeHeader .box__rec img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+}
+.homeHeader .box__rec .col-7 h3 {
+  font-size: 1.9rem;
 }
 .homeHeader .box__rec .col-7 p {
   font-size: 16px;
+  line-height: 1.2em;
 }
 .homeHeader .headOverlay {
   position: absolute;
