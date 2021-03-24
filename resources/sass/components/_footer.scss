@@ -1,5 +1,9 @@
 footer{
     background-color: $color_black;
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+    }
     p{
         font-size: 1.3rem;
         color: white;

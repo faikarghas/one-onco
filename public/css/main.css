@@ -864,6 +864,12 @@ strong {
 footer {
   background-color: #1A1A1A;
 }
+@media only screen and (max-width: 62em) {
+  footer {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 footer p {
   font-size: 1.3rem;
   color: white;
@@ -1161,10 +1167,22 @@ button.boxReadMore {
   background-color: #E8EAEA;
   padding: 4rem 3rem;
 }
+@media only screen and (max-width: 62em) {
+  .newsListWrapper {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 
 .storyListWrapper {
   background-color: white;
   padding: 4rem 3rem;
+}
+@media only screen and (max-width: 62em) {
+  .storyListWrapper {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
 }
 
 .boxNews {
@@ -1467,6 +1485,8 @@ button.boxReadMore {
   .second__section {
     background-color: white;
     padding-bottom: 3rem;
+    padding-right: 12.75px;
+    padding-left: 12.75px;
   }
 }
 .second__section p {
@@ -1485,6 +1505,12 @@ button.boxReadMore {
   padding-bottom: 3rem;
   background-color: white;
 }
+@media only screen and (max-width: 62em) {
+  .exSecondSection {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 .exSecondSection p {
   font-size: 12px;
   color: black;
@@ -1495,11 +1521,23 @@ button.boxReadMore {
   background-color: #E8EAEA;
   padding-bottom: 3rem;
 }
+@media only screen and (max-width: 62em) {
+  .third__section {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 
 .berita__section {
   background-color: #E8EAEA;
   padding-top: 2rem;
   padding-bottom: 3rem;
+}
+@media only screen and (max-width: 62em) {
+  .berita__section {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
 }
 
 .login__page .col-12 {

@@ -1,10 +1,18 @@
 .newsListWrapper{
     background-color: $color_lightGrey;
     padding: 4rem 3rem;
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+    }
 }
 .storyListWrapper{
     background-color: white;
     padding: 4rem 3rem;
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+    }
 }
 .boxNews{
     background-color: white;

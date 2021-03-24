@@ -12,7 +12,7 @@
                 <p>Artikel terkini untuk Anda</p>
             </div>
         </div>
-        <section class="bg-color_lightGrey">
+        <section class="bg-color_lightGrey berita__section">
             <div class="container pt-5 pb-5 ">
                 <div class="row">
                     <div class="col-12">
