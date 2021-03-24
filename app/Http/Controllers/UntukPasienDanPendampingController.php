@@ -68,7 +68,7 @@ class UntukPasienDanPendampingController extends Controller
         $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
 
 
-        // dd($listingStory);
+        // dd($listingKatArtikel);
 
 
         $data = [

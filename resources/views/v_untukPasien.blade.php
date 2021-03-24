@@ -47,7 +47,6 @@ $slug = 'test';
                             </div>
                         </div>
                     @endforeach
-                    
 
                 </div>
             </div>
