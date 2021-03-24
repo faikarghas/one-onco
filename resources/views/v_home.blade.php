@@ -67,6 +67,16 @@
                             ))
                     </div>
                     <div class="col-12 col-md-6">
+                        @include('components/presentational.boxRec',array(
+                            'image_url'=>'beliobat.png',
+                            'title'=>'Beli Obat',
+                            'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                            'color'=>'#00A2E3;',
+                            'colorPar'=>'#808080;',
+                            'path'=>'login'
+                        ))
+                    </div>
+                    <div class="col-12 col-md-6">
                         <div class="forMobile">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dirkanker.png',
@@ -87,16 +97,6 @@
                                 'path'=>'direktori-dokter'
                             ))
                         </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        @include('components/presentational.boxRec',array(
-                            'image_url'=>'beliobat.png',
-                            'title'=>'Beli Obat',
-                            'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#00A2E3;',
-                            'colorPar'=>'#808080;',
-                            'path'=>'login'
-                        ))
                     </div>
                     <div class="col-12 col-md-6">
                         @include('components/presentational.boxRec',array(
