@@ -1,7 +1,7 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>''])
+    @include('components/presentational/header',['path'=>'direktori'])
     <main>
         <section class="direktoriDet__header forMobile">
             <div class="container">
@@ -12,16 +12,15 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <form action="">
-                            <select class="form-select mb-2" aria-label="Default select example">
+                        <form action="" method="POST">
+                            <select class="form-select mb-2" aria-label="Default select example" id="selectProvinces3" name="provinces3">
                                 <option selected>Pilih Kota</option>
-                                <option value="1">One</option>
-                                <option value="3">Three</option>
+                                @foreach ($provinces as $province => $value)
+                                    <option value="{{ $province }}"> {{ $value }}</option>   
+                                @endforeach
                             </select>
-                            <select class="form-select mb-3" aria-label="Default select example">
-                                <option selected>Pilih Rumah Sakit</option>
-                                <option value="1">One</option>
-                                <option value="3">Three</option>
+                            <select class="form-select mb-3" aria-label="Default select example" id="selectCities3" name="cities3">
+                                <option value="">Pilih Kabupaten</option>
                             </select>
                         </form>
                     </div>

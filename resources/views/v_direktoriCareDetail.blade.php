@@ -1,7 +1,7 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>''])
+    @include('components/presentational/header',['path'=>'direktori-care'])
     <main>
         <section class="direktori__menuTab forDesktop" style="background-color: white">
             <div class="container">

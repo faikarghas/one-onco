@@ -19,42 +19,16 @@ $slug = 'test';
                 <div class="row">
                     <div class="col-12">
                         <div class="list__component">
+                            @foreach($listingKatArtikel as $row)
                             <div class="row list__component-list--item">
                                 <div class="col-1">
                                     <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                                 </div>
                                 <div class="col-11 ps-4">
-                                    <a href="/untuk-pendamping/jenis-olahraga">Mengolah Emosi</a>
-                                    <p>Mengatasi efek samping emosional dari kanker dan pengobatan.</p>
+                                    <a href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
                                 </div>
                             </div>
-                            <div class="row list__component-list--item">
-                                <div class="col-1">
-                                    <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                </div>
-                                <div class="col-11 ps-4">
-                                    <a href="/untuk-pendamping/jenis-olahraga">Merawat yang Terkasih</a>
-                                    <p>Kiat tentang perawatan dan mengatasinya.</p>
-                                </div>
-                            </div>
-                            <div class="row list__component-list--item">
-                                <div class="col-1">
-                                    <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                </div>
-                                <div class="col-11 ps-4">
-                                    <a href="/untuk-pendamping/jenis-olahraga">Manajemen Perawatan</a>
-                                    <p>Temukan cara terbaik dan efisien dalam perawatan kanker.</p>
-                                </div>
-                            </div>
-                            <div class="row list__component-list--item">
-                                <div class="col-1">
-                                    <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                </div>
-                                <div class="col-11 ps-4">
-                                    <a href="/untuk-pendamping/jenis-olahraga">Pengaruh Fisik, Emosional, dan Sosial</a>
-                                    <p>Cari tau mengenai perawatan paliatif dan perawatan suportif. Berfokus pada pengurangan gejala, meningkatkan kualitas hidup, dan mendukung pasien dan keluarganya.</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -76,42 +50,6 @@ $slug = 'test';
                         </div>
                     </div>
                 @endforeach
-                    {{-- <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a class="{{ request()->is('untuk-pendamping') ? 'active' : '' }}" href="/untuk-pendamping">Mengolah Emosi</a>
-                            <div class="tab_line {{ request()->is('untuk-pendamping') ? '' : 'd-none' }}"></div>
-                        </div>
-                    </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a class="{{ request()->is('untuk-pendamping/merawat-yang-terkasih') ? 'active' : '' }}" href="/untuk-pendamping/merawat-yang-terkasih">Merawat yang Terkasih</a>
-                            <div class="tab_line {{ request()->is('untuk-pendamping/merawat-yang-terkasih') ? '' : 'd-none' }}"></div>
-                        </div>
-                    </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a class="{{ request()->is('untuk-pendamping/manajemen-perawatan') ? 'active' : '' }}" href="/untuk-pendamping/manajemen-perawatan">Manajemen Perawatan</a>
-                            <div class="tab_line {{ request()->is('untuk-pendamping/manajemen-perawatan') ? '' : 'd-none' }}"></div>
-                        </div>
-                    </div>
-                    <div class="row list__component-list--item">
-                        <div class="col-1">
-                            <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                        </div>
-                        <div class="col-11 ps-4">
-                            <a class="{{ request()->is('untuk-pendamping/pengaruh-fisik') ? 'active' : '' }}" href="/untuk-pendamping/pengaruh-fisik">Pengaruh Fisik, Emosional, dan Sosial</a>
-                            <div class="tab_line {{ request()->is('untuk-pendamping/pengaruh-fisik') ? '' : 'd-none' }}"></div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
             <div class="col-cs-8">

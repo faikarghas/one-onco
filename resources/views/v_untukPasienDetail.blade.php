@@ -2,7 +2,7 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>''])
+    @include('components/presentational/header',['path'=>'untuk-pasien'])
 
     <main>
         <div class="box__banner forDesktop">
@@ -73,7 +73,7 @@
                                 <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                             </div>
                             <div class="col-11 ps-4">
-                                <a class="{{ Request::segment(2) == $row->slug ? '' : 'active' }}" href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                                <a class="{{ Request::segment(2) == $row->slug ? '' : 'active' }}" href="/untuk-pasien/{{ $row->slug }}">{{ $row->title }}</a>
                                 <div class="tab_line {{ Request::segment(2) == $row->slug ? '' : 'd-none' }}"></div>
                             </div>
                         </div>

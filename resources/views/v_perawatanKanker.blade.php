@@ -39,16 +39,15 @@
             <div class="col-cs-4">
                 <div class="list__component">
                     @foreach($listingKatArtikel as $row)
-                                <div class="row list__component-list--item">
-                                    <div class="col-1">
-                                        <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
-                                    </div>
-                                    <div class="col-11 ps-4">
-                                        <a href="/perawatan-kanker/{{ $row->slug }}">{{ $row->title }}</a>
-                                    </div>
-                                </div>
-                            @endforeach
-                    
+                        <div class="row list__component-list--item">
+                            <div class="col-1">
+                                <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
+                            </div>
+                            <div class="col-11 ps-4">
+                                <a href="/perawatan-kanker/{{ $row->slug }}">{{ $row->title }}</a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-cs-8">
