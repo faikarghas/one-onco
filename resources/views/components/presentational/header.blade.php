@@ -44,7 +44,7 @@
             <div class="col-6">
                 <div class="user">
                     <ul>
-                        <li><a href="/"><img src="{{ asset('/images/arrow-left.png') }}" alt="search" width="14px" style="object-fit:contain;"/></a></li>
+                        <li><a href="/{{$path}}"><img src="{{ asset('/images/arrow-left.png') }}" alt="search" width="14px" style="object-fit:contain;"/></a></li>
                         <li><a href="/{{$path}}">Kembali</a></li>
                     </ul>
                 </div>

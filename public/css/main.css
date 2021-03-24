@@ -365,6 +365,7 @@ main:not([page=home]) {
 }
 .tab__menu .list__component-list--item a {
   height: 100%;
+  color: #00A2E3;
 }
 .tab__menu .list__component-list--item a.active {
   color: black;
