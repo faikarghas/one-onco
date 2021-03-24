@@ -17,10 +17,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="detail__page1--img mb-5">
-                            <img src="https://source.unsplash.com/random" alt="{{$slug}}-img" height="180px" width="100%">
+                            <img src="https://source.unsplash.com/random" alt="{{$slugStory}}-img" height="180px" width="100%">
                         </div>
                         <div class="detail__page1--description mb-5">
-                            <h1><strong>{{ $titlePages }}</strong></h1>
+                            <h1><strong>{{ $title }}</strong></h1>
                             <p>{{ $Content }}</p>
                         </div>
                         @include('/components/presentational.listContent',[])

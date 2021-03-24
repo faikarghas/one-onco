@@ -13,13 +13,13 @@
                     </div>
                     <div class="col-12">
                         <form action="" method="POST">
-                            <select class="form-select mb-2" aria-label="Default select example" id="selectCities" name="cities">
+                            <select class="form-select mb-2" aria-label="Default select example" id="selectCitiesM" name="cities">
                                 <option selected>Pilih Kota</option>
                                 @foreach ($cities as $citie => $value)
                                     <option value="{{ $citie }}"> {{ $value }}</option>   
                                 @endforeach
                             </select>
-                            <select class="form-select mb-3" aria-label="Default select example" id="selectFaskes" name="faskes">
+                            <select class="form-select mb-3" aria-label="Default select example" id="selectFaskesM" name="faskes">
                                 <option value="">Pilih Kabupaten</option>
                             </select>
                         </form>

@@ -220,6 +220,66 @@ $('#selectFaskes').change(function(){
     }
 });
 
+$('#selectCitiesM').change(function(){
+    let data= $(this).val();
+    // console.log(data);
+    if (data !== "null") {
+
+        $('.direktori__list .listDokter').empty();
+        $('.direktori__list .listDokter').append(html.direktoriLoader())
+
+        $('#selectFasekes').attr( "disabled","disabled")
+        $('#selectFasekes option').empty().remove()
+
+        axios.get(`/cities/get/${data}`).then(function (response) {
+            $('select[name="faskes"]').empty();
+            $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
+            $.each(response.data, function(key, value){
+                // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
+                $('select[name="faskes"]').append(new Option(value, key));
+            });
+
+            axios.get(`/dokter/get/${data}`).then(function (response) {
+                // console.log(data);
+                $('.direktori__list .listDokter').empty();
+                i = 0;
+                $.each(response.data, function(i, dokter ){
+                    display = response.data;
+                    html.direktoriDoktorBox(display[i]['dokterId'],display[i]['NamaDokterDenganGelar'],display[i]['unit'],display[i]['dokterId'])
+                });
+            });
+        });
+    } else if (data === "null") {
+        $('#selectFasekes').attr( "disabled","disabled")
+        $('#selectFasekes option').empty().remove()
+    }
+});
+
+$('#selectFaskesM').change(function(){
+    $('.direktori__list .listDokter').empty();
+    let data= $(this).val();
+    if (data !== "null") {
+        $('.direktori__list .listDokter').empty();
+        $('.direktori__list .listDokter').append(html.direktoriLoader())
+
+        axios.get(`/dokterWithKabupaten/get/${data}`).then(function (response) {
+            $('.direktori__list .listDokter').empty();
+            if (response.data.length != 0) {
+                $.each(response.data, function(i, dokter ){
+                    display = response.data;
+                    html.direktoriDoktorBox(display[i]['dokterId'],display[i]['NamaDokterDenganGelar'],display[i]['unit'],display[i]['dokterId'])
+                });
+            } else {
+                $('.direktori__list .listDokter').empty();
+            }
+        })
+
+    } else if (data === "null") {
+        // $('#selectFasekes').attr( "disabled","disabled")
+        // $('#selectFasekes option').empty().remove()
+    }
+});
+
 // LAB
 $('#selectProvinces2').change(function(){
   let data= $(this).val();
@@ -257,6 +317,7 @@ $('#selectFaskes2').change(function(){
   }
 });
 
+
 // CARE
 $('#selectProvinces3').change(function(){
   let data= $(this).val();
@@ -279,7 +340,7 @@ $('#selectProvinces3').change(function(){
               i = 0;
               $.each(response.data, function(i, dokter ){
                 display = response.data;
-                
+
                 html.direktoriCareBox(display[0]["NamaFaskes"],display[0]["alamat"],display[0]["website"],display[0]["faskesId"])
 
               });
@@ -315,6 +376,65 @@ $('#selectCities3').change(function(){
       // $('#selectFasekes').attr( "disabled","disabled")
       // $('#selectFasekes option').empty().remove()
   }
+});
+
+$('#selectProvinces4').change(function(){
+    let data= $(this).val();
+    // console.log(data);
+    if (data !== "null") {
+      $('.direktori__list .listFaskes').empty();
+      $('.direktori__list .listFaskes').append(html.direktoriLoader())
+        axios.get(`/cities/get/${data}`).then(function (response) {
+            $('select[name="cities3"]').empty();
+            $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
+            $.each(response.data, function(key, value){
+                // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
+                $('select[name="cities3"]').append(new Option(value, key));
+            });
+
+            console.log(response.data);
+
+            axios.get(`/faskes/get/${data}`).then(function (response) {
+                $('.direktori__list .listFaskes').empty();
+                i = 0;
+                $.each(response.data, function(i, dokter ){
+                  display = response.data;
+
+                  html.direktoriCareBox(display[0]["NamaFaskes"],display[0]["alamat"],display[0]["website"],display[0]["faskesId"])
+
+                });
+            });
+
+
+        });
+    } else if (data === "null") {
+        $('#selectCities3').attr( "disabled","disabled")
+        $('#selectCities3 option').empty().remove()
+    }
+});
+
+$('#selectCities4').change(function(){
+$('.direktori__list .listFaskes').empty();
+let data= $(this).val();
+if (data !== "null") {
+    $('.direktori__list .listFaskes').empty();
+    $('.direktori__list .listFaskes').append(html.direktoriLoader())
+    axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
+        $('.direktori__list .listFaskes').empty();
+        if (response.data.length != 0) {
+            $.each(response.data, function(i, dokter ){
+                display = response.data;
+                html.direktoriCareBox(display[i]["NamaFaskes"],display[i]["alamat"],display[i]["website"],display[i]["faskesId"])
+            });
+        } else {
+            $('.direktori__list .listFaskes').empty();
+        }
+    })
+
+} else if (data === "null") {
+    // $('#selectFasekes').attr( "disabled","disabled")
+    // $('#selectFasekes option').empty().remove()
+}
 });
 
 // search
