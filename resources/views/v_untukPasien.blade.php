@@ -98,6 +98,8 @@ $slug = 'test';
                 </div>
             </div>
         </section>
-        @include('/components/presentational.storyList',[])
+        <div style="background-color: #e0e0e0;">
+            @include('/components/presentational.storyList',[])
+        </div>
     </main>
 @endsection
