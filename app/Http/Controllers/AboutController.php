@@ -28,6 +28,13 @@ class AboutController extends Controller
       //listing kategori artikel bedasarkan url dan kategori
       $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
 
+      $viewData = DB::table('artikel')->where('title','Tentang Kami')->first();
+
+      // echo $title3 = $viewData->title;
+      // echo $content = $viewData->content;
+      
+
+
       //dd($listingKatArtikel);
 
       // content about us
@@ -43,7 +50,9 @@ class AboutController extends Controller
                     'statusLogin'=>$statusLogin,
                     'slugStory' => 'testt',
                     'listingNews'=>$listingNews,
-                    'listingKatArtikel'=>$listingKatArtikel
+                    'listingKatArtikel'=>$listingKatArtikel,
+                    'titlePages' => $viewData->title,
+                    'contentPages' => $viewData->content
                     // 'listingSlugKatArtikel'=>$listingKatArtikel->slug,
                     // 'contentKatArtikel'=>$listingKatArtikel->content,
 
@@ -68,7 +77,11 @@ class AboutController extends Controller
       // main page
 
       //listing kategori artikel bedasarkan url dan kategori
-      $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'DESC')->get();
+      $listingKatArtikel = DB::table('artikel')->where('idKat',6)->orderBy('id', 'ASC')->get();
+
+      $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
+
+      
 
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
@@ -77,7 +90,11 @@ class AboutController extends Controller
                     'statusLogin'=>$statusLogin,
                     'slugStory' => 'testt',
                     'listingNews'=>$listingNews,
-                    'listingKatArtikel'=>$listingKatArtikel
+                    'listingKatArtikel'=>$listingKatArtikel,
+                    'titlePages'=>$viewDataDetail->title,
+                    'shortContent'=>$viewDataDetail->shortContent,
+                    'Content'=>$viewDataDetail->content
+
                     // 'listingSlugKatArtikel'=>$listingKatArtikel->slug,
                     // 'contentKatArtikel'=>$listingKatArtikel->content,
 

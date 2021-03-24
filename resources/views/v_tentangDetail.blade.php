@@ -16,8 +16,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="tentangKami__page-content">
-                            <h1><strong>Tentang Kami</strong></h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ipsa, laboriosam eveniet similique magnam maiores expedita consectetur eos nesciunt laudantium, labore voluptas delectus voluptates odio minima assumenda fugiat placeat officiis autem explicabo reiciendis at ad rem fuga. Perferendis saepe vitae iure a exercitationem numquam dolor velit error rem, suscipit, sunt autem cupiditate aspernatur facilis, eligendi accusantium! Fugit debitis voluptatibus nesciunt, qui aliquam reprehenderit id cumque dolore assumenda sequi, vel molestiae illo asperiores nihil quas laboriosam cum aperiam impedit veritatis. Ex obcaecati nisi nesciunt officia suscipit adipisci doloremque id nihil. Quidem magnam blanditiis deserunt, itaque distinctio laborum consequatur quo quae praesentium magni natus perferendis eos. Impedit perspiciatis nemo ad voluptatibus nihil eos qui deserunt incidunt eum ipsum inventore quis, sit maiores et ullam. Aliquid ratione aperiam, eum facilis voluptatem id. Nostrum fuga quisquam animi laborum, sit corrupti tenetur exercitationem saepe asperiores libero voluptatum ipsam rerum illo. Soluta sapiente nobis doloribus doloremque sequi, possimus incidunt similique reiciendis suscipit tenetur neque fugit, ratione, illum accusamus perferendis alias natus cumque dolore exercitationem eum totam voluptatum rerum in laboriosam! Minima quos ipsum repudiandae repellat aut odit sequi nihil, maxime dicta, nam sed ex similique est fuga eos aperiam sapiente perspiciatis unde qui temporibus voluptatibus illum vitae debitis? Quis saepe aperiam optio ullam nostrum, amet corrupti consectetur dignissimos? Magnam, sunt a distinctio eum deserunt voluptates quibusdam rerum laboriosam ullam reiciendis! Dolorem accusantium fuga quam culpa iusto consequatur dicta nisi placeat impedit facere corrupti quos cumque qui harum, eveniet, eaque magni architecto, temporibus nesciunt natus voluptatem minima perspiciatis. Sed velit porro molestias alias officiis quis odit eaque ullam a dolorum obcaecati blanditiis perferendis veniam, eligendi repudiandae, incidunt totam et mollitia dicta vitae eius rem quae doloremque! Repellat possimus quaerat nisi vero nesciunt minus odit, quam eum est veniam doloremque odio excepturi architecto quis! Dolores doloremque odio sunt!</p>
+                            <h1><strong>{{ $titlePages }}</strong></h1>
+                            <p>{{ $Content }}</p>
                         </div>
                         <hr class="mt-5 mb-5">
                     </div>
@@ -55,8 +55,8 @@
                     <img src="{{asset('/images/kalbe.png')}}" width="180px" alt="" srcset="">
                 </div>
                 <div class="tentangKami__page-intro mb-5">
-                    <h3>SEJARAH KALBE</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quasi porro amet itaque, nulla dolor nobis atque aliquid iure ullam. Mollitia temporibus deserunt velit, quo culpa beatae ullam minus dignissimos?</p>
+                    <h3>{{ $titlePages }}</h3>
+                    <p>{{ $Content }}</p>
                 </div>
             </div>
         </section>
