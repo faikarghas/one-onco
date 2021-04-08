@@ -7,10 +7,10 @@
         <section class="login__page">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-6 forDesktop">
                         <img class="login__page-img" src="{{asset('/images/login_image.jpg')}}" width="100%" height="100%" alt="login image">
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="box__login">
                             <h2 class="mb-5">Masuk</h2>
                             <form action={{ asset('login/auth') }} method="post" accept-charset="utf-8" >
