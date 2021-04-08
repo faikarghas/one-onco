@@ -26,6 +26,9 @@
             display: block;
             color: black;
             text-decoration: none;
+            &:hover{
+                color: $color_blue;
+            }
         }
         &-boxImg{
             width: 150px;
