@@ -43,7 +43,7 @@ $slug = 'test';
                             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                         </div>
                         <div class="col-11 ps-4">
-                            <a class="{{ request()->is('untuk-pendamping') ? 'active' : '' }}" href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
+                            <a class="{{ request()->is('untuk-pendamping') ? '' : '' }}" href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
                             @if ( $row->slug ==='' ) 
                                <div class="tab_line {{ request()->is('untuk-pendamping') ? '' : 'd-none' }}"></div>
                             @endif
@@ -56,7 +56,7 @@ $slug = 'test';
                 <div class="tentangKami__page-intro mb-5">
                     <img class="mb-5" src="{{asset('/images/logo_oneonco_black.png')}}" width="220px" alt="logo-oneonco">
                     <h3>{{ $titlePages }}</h3>
-                    <p>{{ $contentPages }}<p>
+                    {!! $contentPages !!}
                 </div>
             </div>
         </section>

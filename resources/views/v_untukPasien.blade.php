@@ -10,8 +10,8 @@ $slug = 'test';
         <div class="box__banner">
             <img src="{{asset('/images/untuk_pasien.jpg')}}" width="100%" height="100%" alt="">
             <div class="box__banner-desc">
-                <h2>Menghadapi <br> Kanker</h2>
-                <p>Pelajari cara perawatan <br> bagi pasien kanker</p>
+                <h2>Mengahadapi Kanker<br/>Sebagai Seorang Pasien</h2>
+                <p>Memahami penyakit kanker langkah<br/>pertama menuju kesehatan </p>
             </div>
         </div>
         <section class="perawatanKanker__page forMobile">
@@ -47,7 +47,6 @@ $slug = 'test';
                             </div>
                         </div>
                     @endforeach
-
                 </div>
             </div>
             <div class="col-cs-8">

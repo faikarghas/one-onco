@@ -365,10 +365,10 @@ main:not([page=home]) {
 }
 .tab__menu .list__component-list--item a {
   height: 100%;
-  color: #00A2E3;
+  color: black;
 }
 .tab__menu .list__component-list--item a.active {
-  color: black;
+  color: #00A2E3;
 }
 .tab__menu .list__component-list--item .col-11 .tab_line {
   width: 50px;
@@ -388,6 +388,20 @@ main:not([page=home]) {
 .tab__menu .col-cs-8 {
   width: 65%;
   padding: 5rem 5rem;
+}
+
+.hrdiv {
+  background-color: #E8EAEA;
+}
+.hrdiv hr {
+  color: #00A2E3;
+}
+.hrdiv hr:not([size]) {
+  height: 3px;
+}
+
+.slick-next:before, .slick-prev:before {
+  color: #00A2E3 !important;
 }
 
 p, li, a {
@@ -1573,7 +1587,7 @@ button.boxReadMore {
 .list__component-list--item a {
   font-weight: 600;
   font-size: 1.6rem;
-  color: #00A2E3;
+  color: black;
   text-decoration: none;
   line-height: 1;
   display: block;
@@ -1588,6 +1602,15 @@ button.boxReadMore {
   font-size: 1.3rem;
   color: dimgray;
   margin-bottom: 0;
+}
+
+.partnerKami__section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #E8EAEA;
+}
+.partnerKami__section ul {
+  padding-left: 0;
 }
 
 .searchpop {
@@ -1728,7 +1751,7 @@ button.boxReadMore {
 
 .berita__section {
   background-color: #E8EAEA;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 3rem;
 }
 @media only screen and (max-width: 62em) {

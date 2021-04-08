@@ -282,9 +282,9 @@
                 padding: 0 1rem;
                 a{
                     height: 100%;
-                    color: $color_blue;
+                    color: black;
                     &.active{
-                        color: black;
+                        color: $color_blue;
                     }
                 }
                 .col-11{
@@ -311,4 +311,18 @@
         width: 65%;
         padding: 5rem 5rem;
     }
+}
+
+.hrdiv{
+    background-color: $color_lightGrey;
+    hr{
+        color: $color_blue;
+        &:not([size]) {
+            height: 3px;
+        }
+    }
+}
+
+.slick-next:before, .slick-prev:before {
+    color: $color_blue !important;
 }

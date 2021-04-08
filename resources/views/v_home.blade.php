@@ -10,6 +10,8 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
         @laravelPWA
     </head>
     <body>
@@ -212,20 +214,6 @@
                             </p>
                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/tentang-kami'))
                         </div>
-                        {{-- <div class="col-12 mt-4 forMobile"><hr></div>
-                        <div class="col-12 forMobile">
-                            <div class="boxSearchKanker">
-                                <h3 class="text-center mb-4"><strong>CARI KATEGORI KANKER<br/>SESUAI SISTEM TUBUH</strong></h3>
-                                <div class="cari_kanker">
-                                    <a href="/sistem-tubuh">
-                                        <ul>
-                                            <li>Pilih...</li>
-                                            <li> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"></li>
-                                        </ul>
-                                    </a>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </section>
@@ -329,6 +317,33 @@
                     </div>
                 </div>
             </section>
+
+            <div class="hrdiv">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="partnerKami__section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-5"><strong>PARTNER KAMI</strong></h2>
+                            <ul class="partner-slider mb-0">
+                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
+                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
+                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
+                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
+                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         @include('components/presentational/footer')
         <div class="searchpop">
@@ -337,6 +352,7 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
     </body>
 </html>
