@@ -2126,11 +2126,16 @@ $('#selectProvinces3').change(function () {
       });
       console.log(response.data);
       axios.get("/faskes/get/".concat(data)).then(function (response) {
-        $('.direktori__list .listFaskes').empty();
-        i = 0;
+        $('.direktori__list .listFaskes').empty(); // //   i = 0;
+        //   $.each(response.data, function(i, dokter ){
+        //     display = response.data;
+        //     html.direktoriCareBox(display[1]["NamaFaskes"],display[1]["alamat"],display[1]["website"],display[1]["faskesId"])
+        //   });
+
         $.each(response.data, function (i, dokter) {
           display = response.data;
-          html.direktoriCareBox(display[0]["NamaFaskes"], display[0]["alamat"], display[0]["website"], display[0]["faskesId"]);
+          html.direktoriCareBox(display[i]["NamaFaskes"], display[i]["alamat"], display[i]["website"], display[i]["faskesId"]);
+          i++;
         });
       });
     });
@@ -2177,11 +2182,12 @@ $('#selectProvinces4').change(function () {
       });
       console.log(response.data);
       axios.get("/faskes/get/".concat(data)).then(function (response) {
-        $('.direktori__list .listFaskes').empty();
-        i = 0;
+        $('.direktori__list .listFaskes').empty(); //i = 0;
+
         $.each(response.data, function (i, dokter) {
           display = response.data;
-          html.direktoriCareBox(display[0]["NamaFaskes"], display[0]["alamat"], display[0]["website"], display[0]["faskesId"]);
+          html.direktoriCareBox(display[i]["NamaFaskes"], display[i]["alamat"], display[i]["website"], display[i]["faskesId"]);
+          i++;
         });
       });
     });
@@ -2204,6 +2210,7 @@ $('#selectCities4').change(function () {
         $.each(response.data, function (i, dokter) {
           display = response.data;
           html.direktoriCareBox(display[i]["NamaFaskes"], display[i]["alamat"], display[i]["website"], display[i]["faskesId"]);
+          i++;
         });
       } else {
         $('.direktori__list .listFaskes').empty();
