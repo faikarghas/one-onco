@@ -1789,6 +1789,7 @@ button.boxReadMore {
 
 .box__login {
   padding: 4rem 3rem;
+  width: 100%;
 }
 @media only screen and (max-width: 62em) {
   .box__login {
