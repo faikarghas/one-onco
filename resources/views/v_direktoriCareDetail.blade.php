@@ -10,8 +10,8 @@
                         <div class="box__rec">
                             <?php
                                 $currentUrl = $_SERVER['REQUEST_URI'];
-                                $bgColor = $currentUrl == '/direktori-care' ? '#32A48E;' : 'white';
-                                $color = $currentUrl == '/direktori-care' ? 'white' : '#32A48E;';
+                                $bgColor = $currentUrl == '/direktori-care' ? '#00A2E3;' : 'white';
+                                $color = $currentUrl == '/direktori-care' ? 'white' : '#00A2E3;';
                                 $image_url = $currentUrl == '/direktori-care' ? 'dir-care_white.png' : 'dir-care.png';
                             ?>
                             @include('components/presentational.boxRec',[
@@ -31,7 +31,7 @@
                                 'image_url'=>'dir-lab.png',
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-lab',
                                 'bgColor'=>'white'
@@ -44,7 +44,7 @@
                                 'image_url'=>$image_url,
                                 'title'=>'Direktori Care Center',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-care',
                                 'bgColor'=>'white'
@@ -171,7 +171,7 @@
                             'image_url'=>'dir-lab.png',
                             'title'=>'Direktori Lab',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-lab',
                             'bgColor'=> 'white'
@@ -180,7 +180,7 @@
                             'image_url'=>'dir-care.png',
                             'title'=>'Direktori Care Center',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-care',
                             'bgColor'=> 'white'

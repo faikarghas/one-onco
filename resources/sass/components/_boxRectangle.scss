@@ -44,7 +44,7 @@
 
 .box__rec2,.box__rec3{
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -98,7 +98,6 @@
         height: 32px;
         width: 100%;
         margin-bottom: 0.5rem;
-        border-bottom: 1px solid rgb(224, 221, 221);
     }
 
     h3{
@@ -141,9 +140,10 @@
 }
 
 .box__rec2{
-    height: 100px;
+    height: 200px;
     background-color: white;
     box-shadow: 0px 4px 8px rgb(0 0 0 / 12%);
+    overflow: hidden;
     @include respond(down-tab-port){
         height: 90px;
     }
@@ -151,7 +151,14 @@
         font-size: 14px;
     }
     p{
-        font-size: 12px;
+        font-size: 13px;
+    }
+    ul{
+        width: 100%;
+        .spes{
+            border-bottom: 1px solid rgb(201, 201, 201);
+            border-top: 1px solid rgb(201, 201, 201);
+        }
     }
 }
 
@@ -185,7 +192,6 @@
         animation: shimmer 2s infinite;
         content: '';
       }
-    
       @keyframes shimmer {
         100% {
           transform: translateX(100%);

@@ -1,4 +1,8 @@
+@if(empty($class))
 <div class="boxNews">
+@else
+<div class='boxNews {{$class}}'>
+@endif
     <div class="boxImage">
         <img src="{{$image_url}}" alt="{{$title}}">
     </div>

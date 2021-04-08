@@ -29,11 +29,7 @@
                                 <div class="col-12">
                                     <h2 class="text-center text-lg-start mb-5"><strong>Artikel lainnya</strong></h2>
                                 </div>
-                                
                                 @foreach ( $otherStory as $row )
-                                    
-                                
-                                
                                 <div class="col-12">
                                     <div class="boxNewsWimg mt-4">
                                         <div class="boxInformation">
@@ -45,10 +41,7 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 @endforeach
-
-
                             </div>
                         </div>
                     </div>

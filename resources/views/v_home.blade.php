@@ -84,7 +84,7 @@
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Layanan',
                                 'description'=>'Temukan rumah sakit, dokter, dan layanan kanker terdekat',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori'
                             ))
@@ -94,7 +94,7 @@
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Layanan',
                                 'description'=>'Temukan rumah sakit, dokter, dan layanan kanker terdekat',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-dokter'
                             ))
@@ -174,7 +174,7 @@
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori'
                             ))

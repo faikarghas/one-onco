@@ -81,11 +81,11 @@ export function direktoriDoktorBox(link,dokter,unit,desc) {
                    <h3><strong>${dokter}</strong></h3>
                 </div>
                 <ul>
-                   <li>
-                      <p><strong>Unit Operasional : ${unit}</strong></p>
+                   <li class="pt-3 pb-3 spes">
+                     <p><strong>Spesialisasi ${unit}</strong></p>
                    </li>
-                   <li>
-                      <p>${desc}</p>
+                   <li class="pt-3 pb-5">
+                     <p><strong>Lokasi Praktek</strong></p>
                    </li>
                 </ul>
              </div>

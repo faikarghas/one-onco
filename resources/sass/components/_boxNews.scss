@@ -14,13 +14,31 @@
         padding-left: 12.75px;
     }
 }
+
 .boxNews{
     background-color: white;
     margin-bottom: 1rem;
     border-radius: 2px;
     height: 100%;
     box-shadow: 0px 0px 14px 0px rgba(16,24,32,0.14);
-
+    &.smallBox{
+        height: 300px;
+        .boxImage{
+            height: 130px;
+        }
+        .boxInformation{
+            height: calc(100% - 130px);
+        }
+    }
+    &.bigBox{
+        height: 500px;
+        .boxImage{
+            height: 270px;
+        }
+        .boxInformation{
+            height: calc(100% - 270px);
+        }
+    }
     .boxImage{
         height: 200px;
 
@@ -50,6 +68,13 @@
             .author{
                 color: lightgrey;
                 font-style: italic;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: pre-wrap;
+                line-height: 1.5;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
         }
 

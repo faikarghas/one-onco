@@ -10,12 +10,12 @@
                         <div class="box__rec">
                             <?php
                                 $currentUrl = $_SERVER['REQUEST_URI'];
-                                $bgColor = $currentUrl == '/direktori-dokter' ? '#32A48E;' : 'white';
-                                $color = $currentUrl == '/direktori-dokter' ? 'white' : '#32A48E;';
-                                $image_url = $currentUrl == '/direktori-dokter' ? 'dir-dokter_white.png' : 'dir-dokter.png';
+                                $bgColor = $currentUrl == '/direktori-dokter' ? '#00A2E3;' : 'white';
+                                $color = $currentUrl == '/direktori-dokter' ? 'white' : '#00A2E3;';
+                                $image_url = $currentUrl == '/direktori-dokter' ? 'dir-dokter_white.png' : 'directori_dokter2.svg';
                             ?>
                             @include('components/presentational.boxRec',[
-                                'image_url'=>'dir-dokter.png',
+                                'image_url'=>'directori_dokter2.svg',
                                 'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>$color,
@@ -28,10 +28,10 @@
                     <div class="col-12 col-lg-4">
                         <div class="box__rec">
                             @include('components/presentational.boxRec',[
-                                'image_url'=>'dir-lab.png',
+                                'image_url'=>'directori_komunitas.svg',
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-lab',
                                 'bgColor'=>'white'
@@ -41,10 +41,10 @@
                     <div class="col-12 col-lg-4">
                         <div class="box__rec">
                                 @include('components/presentational.boxRec',[
-                                'image_url'=>'dir-care.png',
+                                'image_url'=>'directori_care_center.svg',
                                 'title'=>'Direktori Care Center',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-care',
                                 'bgColor'=>'white'
@@ -145,19 +145,19 @@
                 <div class="row">
                     <div class="col-12">
                         @include('components/presentational.boxRec',[
-                            'image_url'=>'dir-lab.png',
+                            'image_url'=>'directori_komunitas.svg',
                             'title'=>'Direktori Lab',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-lab',
                             'bgColor'=> 'white'
                         ])
                         @include('components/presentational.boxRec',[
-                            'image_url'=>'dir-care.png',
+                            'image_url'=>'directori_care_center.svg',
                             'title'=>'Direktori Care Center',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-care',
                             'bgColor'=> 'white'

@@ -9,15 +9,15 @@
                     <div class="col-12 col-lg-4">
                             <?php
                                 $currentUrl = $_SERVER['REQUEST_URI'];
-                                $bgColor = $currentUrl == '/direktori-lab' ? '#32A48E;' : 'white';
-                                $color = $currentUrl == '/direktori-lab' ? 'white' : '#32A48E;';
-                                $image_url = $currentUrl == '/direktori-lab' ? 'dir-lab_white.png' : 'dir-lab.png';
+                                $bgColor = $currentUrl == '/direktori-lab' ? '#00A2E3;' : 'white';
+                                $color = $currentUrl == '/direktori-lab' ? 'white' : '#00A2E3;';
+                                $image_url = $currentUrl == '/direktori-lab' ? 'dir-lab_white.png' : 'directori_komunitas.svg';
                             ?>
                             @include('components/presentational.boxRec',[
-                                'image_url'=>'dir-dokter.png',
+                                'image_url'=>'directori_dokter2.svg',
                                 'title'=>'Direktori Dokter',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-dokter',
                                 'bgColor'=> 'white'
@@ -36,10 +36,10 @@
                     </div>
                     <div class="col-12 col-lg-4">
                         @include('components/presentational.boxRec',[
-                            'image_url'=>'dir-care.png',
+                            'image_url'=>'directori_care_center.svg',
                             'title'=>'Direktori Care Center',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-care',
                             'bgColor'=>'white'
@@ -143,19 +143,19 @@
                 <div class="row">
                     <div class="col-12">
                         @include('components/presentational.boxRec',array(
-                            'image_url'=>'dir-dokter.png',
+                            'image_url'=>'directori_dokter2.svg',
                             'title'=>'Direktori Dokter',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-dokter',
                             'bgColor'=> 'white'
                         ))
                         @include('components/presentational.boxRec',array(
-                            'image_url'=>'dir-care.png',
+                            'image_url'=>'directori_care_center.svg',
                             'title'=>'Direktori Care Center',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-care',
                             'bgColor'=> 'white'
