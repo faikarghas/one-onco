@@ -896,6 +896,9 @@ footer {
     padding-left: 12.75px;
   }
 }
+footer .text-sm {
+  font-size: 1rem;
+}
 footer p {
   font-size: 1.3rem;
   color: white;
@@ -948,7 +951,6 @@ footer .newsletter .input-group button {
 }
 footer .sitemap {
   height: 100%;
-  padding-top: 6rem;
 }
 @media only screen and (max-width: 62em) {
   footer .sitemap {
@@ -957,7 +959,7 @@ footer .sitemap {
 }
 footer .sitemap ul {
   height: 100%;
-  padding-left: 10px;
+  padding-left: 0;
 }
 @media only screen and (max-width: 62em) {
   footer .sitemap ul {
@@ -966,8 +968,8 @@ footer .sitemap ul {
 }
 footer .sitemap ul li {
   list-style: none;
-  display: inline-block;
   margin-right: 1rem;
+  text-align: right;
 }
 @media only screen and (max-width: 62em) {
   footer .sitemap ul li {
@@ -980,6 +982,64 @@ footer .sitemap ul li a {
   font-size: 1.3rem;
   text-decoration: none;
 }
+footer .sitemap2 {
+  height: 100%;
+}
+@media only screen and (max-width: 62em) {
+  footer .sitemap2 {
+    padding-top: 0;
+  }
+}
+footer .sitemap2 ul {
+  height: 100%;
+  padding-left: 0;
+}
+@media only screen and (max-width: 62em) {
+  footer .sitemap2 ul {
+    padding-top: 2rem;
+  }
+}
+footer .sitemap2 ul li {
+  list-style: none;
+  text-align: right;
+  display: inline-block;
+}
+footer .sitemap2 ul li:nth-child(1) {
+  padding-right: 1.5rem;
+}
+footer .sitemap2 ul li:nth-child(2) {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+}
+footer .sitemap2 ul li:nth-child(2)::after {
+  content: "|";
+  color: white;
+  position: absolute;
+  right: 0;
+  font-size: 1.3rem;
+}
+footer .sitemap2 ul li:nth-child(2)::before {
+  content: "|";
+  color: white;
+  position: absolute;
+  left: 0;
+  font-size: 1.3rem;
+}
+footer .sitemap2 ul li:nth-child(3) {
+  padding-left: 1.5rem;
+}
+@media only screen and (max-width: 62em) {
+  footer .sitemap2 ul li {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+footer .sitemap2 ul li a {
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
 footer .sosmed {
   height: 100%;
   display: -webkit-box;
@@ -987,7 +1047,6 @@ footer .sosmed {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  padding-top: 6rem;
 }
 @media only screen and (max-width: 62em) {
   footer .sosmed {
@@ -1336,6 +1395,7 @@ button.boxReadMore {
   display: inline-block;
   text-align: center;
   transition: 0.5s all;
+  height: 39px;
 }
 .boxShowMore img {
   margin-left: 1rem;
@@ -1346,11 +1406,10 @@ button.boxReadMore {
 }
 
 .boxSearchKanker {
-  padding: 3rem 20rem;
+  padding: 3rem 15rem;
 }
 @media only screen and (max-width: 62em) {
   .boxSearchKanker {
-    box-shadow: 0px 0px 2px 1px #00a3e3d3;
     padding: 3rem;
   }
 }
@@ -1360,6 +1419,43 @@ button.boxReadMore {
 }
 .boxSearchKanker h3 strong {
   font-weight: 900 !important;
+}
+@media only screen and (max-width: 62em) {
+  .boxSearchKanker_wrapper:nth-child(3) {
+    margin-top: 2rem;
+  }
+  .boxSearchKanker_wrapper:nth-child(4) {
+    margin-top: 2rem;
+  }
+}
+.boxSearchKanker_wrapper a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+.boxSearchKanker_wrapper-boxImg {
+  width: 150px;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 9px 2px #adadad;
+}
+@media only screen and (max-width: 62em) {
+  .boxSearchKanker_wrapper-boxImg {
+    width: 100px;
+    height: 100px;
+  }
+}
+.boxSearchKanker_wrapper-boxImg img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.boxSearchKanker_wrapper h4 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  font-weight: 700;
 }
 .boxSearchKanker-list ul {
   list-style: none;

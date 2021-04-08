@@ -5,12 +5,12 @@
     <div class="boxInformation">
         @if(empty($description) && !@empty($author))
             <div class="title">
-                <span>{{$date}}</span>
+                {{-- <span>{{date('d-m-Y', $date)}}</span> --}}
                 <h3 class="mt-2">{{$title}}</h3>
                 <p class="author">{{$author}}</p>
         @else
             <div class="title">
-                <span>{{$date}}</span>
+                {{-- <span>{{$date}}</span> --}}
                 <h3 class="mt-2">{{$title}}</h3>
         @endif
         </div>

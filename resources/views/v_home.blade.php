@@ -25,9 +25,9 @@
                                 <li><a href="/tentang-kami">Tentang Kami</a></li>
                                 <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                                 <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
-                                <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
+                                <li><a href="/cerita-survivor">Cerita Inspiratif</a></li>
                                 <li class="show_menu">
-                                    <a href="/berita-terkini">Berita Terkini & Jurnal</a>
+                                    <a href="/berita-terkini">Artikel & Berita Terkini</a>
                                     <div class="sub_menu">
                                         <ul>
                                             <li><a href="/berita-terkini">Berita Terkini</a></li>
@@ -60,7 +60,7 @@
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'perkanker.png',
                                 'title'=>'Perawatan Kanker',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'description'=>'Cari tau mengenai kanker dan perawatannya',
                                 'color'=>'#80bc41;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'perawatan-kanker'
@@ -69,8 +69,8 @@
                     <div class="col-12 col-md-6">
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'beliobat.png',
-                            'title'=>'Beli Obat',
-                            'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                            'title'=>'Belanja Sehat',
+                            'description'=>'Beli langsung suplemen dan nutrisi di sini',
                             'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'login'
@@ -80,8 +80,8 @@
                         <div class="forMobile">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dirkanker.png',
-                                'title'=>'Direktori Kanker',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'title'=>'Direktori Layanan',
+                                'description'=>'Temukan rumah sakit, dokter, dan layanan kanker terdekat',
                                 'color'=>'#32A48E;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori'
@@ -90,8 +90,8 @@
                         <div class="forDesktop">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dirkanker.png',
-                                'title'=>'Direktori Kanker',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'title'=>'Direktori Layanan',
+                                'description'=>'Temukan rumah sakit, dokter, dan layanan kanker terdekat',
                                 'color'=>'#32A48E;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-dokter'
@@ -101,8 +101,8 @@
                     <div class="col-12 col-md-6">
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'live-chat.png',
-                            'title'=>'Live Chat',
-                            'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                            'title'=>'Konsultasi Online',
+                            'description'=>'Konsultasi online dengan dokter seputar kanker',
                             'color'=>'#C6CB57;',
                             'colorPar'=>'#808080;',
                             'path'=>'login'
@@ -212,7 +212,7 @@
                             </p>
                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/tentang-kami'))
                         </div>
-                        <div class="col-12 mt-4 forMobile"><hr></div>
+                        {{-- <div class="col-12 mt-4 forMobile"><hr></div>
                         <div class="col-12 forMobile">
                             <div class="boxSearchKanker">
                                 <h3 class="text-center mb-4"><strong>CARI KATEGORI KANKER<br/>SESUAI SISTEM TUBUH</strong></h3>
@@ -225,39 +225,52 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </section>
 
-            <section class="exSecondSection forDesktop">
+            <section class="exSecondSection">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="boxSearchKanker">
-                                <h3 class="text-center mb-5"><strong>CARI TAU JENIS PENYAKIT BERDASARKAN <br/> LOKASI ATAU SISTEM TUBUH</strong></h3>
-                                <div class="cari_kanker-select">
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <select id="selectLokasiKanker" class="form-select mb-2" aria-label="Default select example" name="katnKaker">
-                                                    <option selected value="null">Pilih...</option>
-                                                    @foreach ($katKankers as $katKanker => $value)
-                                                        <option value="{{ $katKanker }}"> {{ $value }}</option>
-                                                    @endforeach
-                                                </select>
+                                <h3 class="text-center mb-5"><strong>CARI TAU LEBIH LANJUT TENTANG KANKER</strong></h3>
+                                <div class="row">
+                                    <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
+                                        <a href="">
+                                            <div class="boxSearchKanker_wrapper-boxImg">
+                                                <img src="{{asset('/images/kanker_payudara.svg')}}" alt="kankerpayudara" width="100%" height="100%">
                                             </div>
-                                            <div class="col-12">
-                                                <select id="selectJenisKanker" class="form-select mb-2" aria-label="Default select example" name="jenisKanker" disabled>
-                                                    <option selected>Pilih...</option>
-                                                </select>
+                                            <h4>Kanker<br/>Payudara</h4>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
+                                        <a href="">
+                                            <div class="boxSearchKanker_wrapper-boxImg">
+                                                <img src="{{asset('/images/kanker_servik.svg')}}" alt="kankerpayudara" width="100%" height="100%">
                                             </div>
-                                          </div>
-                                    </form>
-                                    <div class="text-center mt-5">
-                                        <button  class="boxReadMore">Cari</button>
+                                            <h4>Kanker<br/>Serviks</h4>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
+                                        <a href="">
+                                            <div class="boxSearchKanker_wrapper-boxImg">
+                                                <img src="{{asset('/images/kanker_paru.svg')}}" alt="kankerpayudara" width="100%" height="100%">
+                                            </div>
+                                            <h4>Kanker<br/>Paru-paru</h4>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
+                                        <a href="">
+                                            <div class="boxSearchKanker_wrapper-boxImg">
+                                                <img src="{{asset('/images/kanker_kolorektal.svg')}}" alt="kankerpayudara" width="100%" height="100%">
+                                            </div>
+                                            <h4>Kanker<br/>Kolorektal</h4>
+                                        </a>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -267,8 +280,12 @@
             <section class="third__section pt-5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <h2 class="text-center mb-5"><strong>ARTIKEL KANKER</strong></h2>
+                        <div class="col-12 d-flex justify-content-between mb-5">
+                            <h2 class="text-center"><strong>ARTIKEL KANKER</strong></h2>
+                            @include('components/presentational.boxShowMore',array(
+                                'title'=>'Lihat semua',
+                                'path'=>'artikel-kanker'
+                            ))
                         </div>
                         @foreach($listingJurnal as $row)
                         <div class="col-12 col-md-4">
@@ -278,15 +295,9 @@
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,
                                 'path'=>'artikel-kanker/'.$row->slug
-                            ))  
-                        </div>
-                        @endforeach
-                        <div class="col-12 text-center mt-5">
-                            @include('components/presentational.boxShowMore',array(
-                                'title'=>'Lihat semua',
-                                'path'=>'artikel-kanker'
                             ))
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -294,14 +305,20 @@
             <section class="berita__section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <h2 class="text-center"><strong>BERITA TERKINI</strong></h2>
-                            <p class="text-center mb-5"><i>Yang terbaru mengenai dunia onkologi</i></p>
+                        <div class="col-12 d-flex justify-content-between mb-5">
+                            <div>
+                                <h2 class="text-center"><strong>BERITA TERKINI</strong></h2>
+                                <p class="text-center"><i>Yang terbaru mengenai dunia onkologi</i></p>
+                            </div>
+                            @include('components/presentational.boxShowMore',array(
+                                'title'=>'Lihat semua',
+                                'path'=>'berita-terkini'
+                            ))
                         </div>
                         @foreach($listingNews as $row)
                         <div class="col-12 col-md-4">
                             @include('components/presentational.boxNews',array(
-                                'date'=>$row->createdAt,    
+                                'date'=>$row->createdAt,
                                 'title'=>$row->title,
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,
@@ -309,13 +326,6 @@
                             ))
                         </div>
                         @endforeach
-
-                        <div class="col-12 text-center mt-5">
-                            @include('components/presentational.boxShowMore',array(
-                                'title'=>'Lihat semua',
-                                'path'=>'berita-terkini'
-                            ))
-                        </div>
                     </div>
                 </div>
             </section>
