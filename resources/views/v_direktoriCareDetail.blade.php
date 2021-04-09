@@ -168,7 +168,7 @@
                 </div>
             </div>
         </section>
-        <section class="bg-color_lightGrey pt-3 forMobile">
+        <section class="direktori__menuTabM bg-color_lightGrey pt-3 forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

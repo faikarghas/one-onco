@@ -73,7 +73,7 @@
             </div>
             <div class="col-6 mt-5">
                 <div class="sitemap2">
-                    <ul>
+                    <ul class="m-0  d-flex align-items-center">
                         <li><a href="/perawatan-kanker">Syarat & Ketentuan</a></li>
                         <li><a href="/direktori">Kebijakan Privasi</a></li>
                         <li><a href="">FAQ</a></li>

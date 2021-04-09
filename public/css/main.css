@@ -1222,11 +1222,6 @@ footer .sosmed ul li {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
   overflow: hidden;
 }
-@media only screen and (max-width: 62em) {
-  .box__rec2 {
-    height: 90px;
-  }
-}
 .box__rec2 h3 {
   font-size: 14px;
 }
@@ -2143,6 +2138,12 @@ button.boxReadMore {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+@media only screen and (max-width: 62em) {
+  .direktoriKanker__page {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 
 .direktoriDet__header {
   position: fixed;
@@ -2152,6 +2153,12 @@ button.boxReadMore {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: white;
+}
+@media only screen and (max-width: 62em) {
+  .direktoriDet__header {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
 }
 
 .direktori__menuTab {
@@ -2166,6 +2173,12 @@ button.boxReadMore {
   width: 60px;
   height: 60px;
 }
+@media only screen and (max-width: 62em) {
+  .direktori__menuTab {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
 
 .direktori__list {
   background-color: #E8EAEA;
@@ -2179,6 +2192,8 @@ button.boxReadMore {
     padding-top: 137px;
     margin-top: unset;
     padding-bottom: 0rem;
+    padding-right: 12.75px;
+    padding-left: 12.75px;
   }
 }
 .direktori__list form select {
@@ -2199,6 +2214,8 @@ button.boxReadMore {
 @media only screen and (max-width: 62em) {
   .direktori__list-detail {
     margin-top: unset;
+    padding-right: 12.75px;
+    padding-left: 12.75px;
   }
 }
 .direktori__list-detail form select {
@@ -2253,6 +2270,8 @@ button.boxReadMore {
     padding-top: 137px;
     padding-bottom: unset;
     margin-top: unset;
+    padding-right: 12.75px;
+    padding-left: 12.75px;
   }
 }
 .direktoriLab__list form select {
@@ -2287,6 +2306,13 @@ button.boxReadMore {
 }
 .direktoriLab__list-item ul li p {
   margin: 0;
+}
+
+@media only screen and (max-width: 62em) {
+  .direktori__menuTabM {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
 }
 
 .direktoriDet__page h3 {

@@ -20,7 +20,7 @@
                                 <select class="form-select mb-2" aria-label="Default select example" id="selectProvinces4" name="provinces3">
                                     <option selected>Pilih Kota</option>
                                     @foreach ($provinces as $province => $value)
-                                        <option value="{{ $province }}"> {{ $value }}</option>   
+                                        <option value="{{ $province }}"> {{ $value }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -96,11 +96,19 @@
                     <div class="col-12">
                         <form action="" method="POST">
                             <div class="row">
+                                <div class="col-12 mb-4 mt-4">
+                                    <input style="border-radius: 12px;" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Ketik kata kunci">
+                                </div>
+                                <div class="col">
+                                    <select class="form-select mb-3" aria-label="Default select example" id="selectLayanan4" name="layanan3">
+                                        <option value="">Pilih Kabupaten</option>
+                                    </select>
+                                </div>
                                 <div class="col">
                                     <select class="form-select mb-2" aria-label="Default select example" id="selectProvinces3" name="provinces3">
                                         <option selected>Pilih Kota</option>
                                         @foreach ($provinces as $province => $value)
-                                            <option value="{{ $province }}"> {{ $value }}</option>   
+                                            <option value="{{ $province }}"> {{ $value }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -119,7 +127,7 @@
                 </div>
             </div>
         </section>
-        <section class="bg-color_lightGrey pt-3 pb-4 forMobile">
+        <section class="direktori__menuTabM bg-color_lightGrey pt-3 pb-4 forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

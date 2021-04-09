@@ -13,11 +13,17 @@
                     </div>
                     <div class="col-12">
                         <form action="" method="POST">
+                            <div class="col-12 mb-4 mt-4">
+                                <input style="border-radius: 12px;" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Ketik kata kunci">
+                            </div>
                             <select class="form-select mb-2" aria-label="Default select example" id="selectCitiesM" name="cities">
-                                <option selected>Pilih Kota</option>
+                                <option selected>Specialisasi - Kualifikasi Dokter</option>
                                 @foreach ($cities as $citie => $value)
                                     <option value="{{ $citie }}"> {{ $value }}</option>   
                                 @endforeach
+                            </select>
+                            <select class="form-select mb-3" aria-label="Default select example" id="selectFaskesM" name="faskes">
+                                <option value="">Provinsi Rumah Sakit</option>
                             </select>
                             <select class="form-select mb-3" aria-label="Default select example" id="selectFaskesM" name="faskes">
                                 <option value="">Pilih Kabupaten</option>
@@ -128,7 +134,7 @@
                 </div>
             </div>
         </section>
-        <section class="bg-color_lightGrey pt-3 pb-4 forMobile">
+        <section class="direktori__menuTabM bg-color_lightGrey pt-3 pb-4 forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
