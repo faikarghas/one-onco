@@ -21,7 +21,7 @@
                         </div>
                         <div class="detail__page1--description mb-5">
                             <h3>{{ $titlePages }}</h3>
-                            <p>{{ $Content }}</p>
+                            {!! $Content !!}
                         </div>
                     </div>
                     <div class="col-12">
@@ -80,19 +80,18 @@
                                 <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                             </div>
                             <div class="col-11 ps-4">
-                                <a class="{{ Request::segment(2) == $row->slug ? '' : 'active' }}" href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
+                                <a class="{{ Request::segment(2) == $row->slug ? 'active' : '' }}" href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
                                 <div class="tab_line {{ Request::segment(2) == $row->slug ? '' : 'd-none' }}"></div>
                             </div>
                         </div>
                     @endforeach
-                    
                 </div>
             </div>
             <div class="col-cs-8">
                 <div class="tentangKami__page-intro mb-5">
                     <img class="mb-5" src="{{asset('/images/logo_oneonco_black.png')}}" width="220px" alt="logo-oneonco">
                     <h3>{{ $titlePages }}</h3>
-                    <p>{{ $Content }}</p>
+                    {!! $Content !!}
                 </div>
             </div>
         </section>

@@ -131,21 +131,17 @@ public function getFaskesWithKabupaten($id) {
         ->where('jadwal_dokter.dokterId', $idDokter)->get();
         // ->dump();
 
-
-
-    //var_dump ($listFaskes);
+    $cities = DB::table('indonesia_provinces')->pluck("name","id");
 
     $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'fullname'=>$fullname,
                     'layanan'=>$layanan,
                     'statusLogin'=>$statusLogin,
-                    'dokterPraktek'=>$viewFaskes
+                    'dokterPraktek'=>$viewFaskes,
+                    'cities'=>$cities
                   );
     return view ('v_direktoriDokterDetail', $data);
-
-
-
 
 }
 
