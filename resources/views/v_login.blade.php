@@ -11,7 +11,8 @@
                         <div class="box__login">
                             <h2 class="mb-5">Masuk</h2>
                             <form action={{ asset('login/auth') }} method="post" accept-charset="utf-8" >
-                            {{ csrf_field() }}
+                            {{-- {{ csrf_field() }} --}}
+                            @csrf
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="email"><img class="img-fluid" src="{{asset('/images/mail.png')}}" alt="" srcset=""></span>
                                     <input type="text" class="form-control" placeholder="Email Anda" aria-label="Email" aria-describedby="email" name="email">

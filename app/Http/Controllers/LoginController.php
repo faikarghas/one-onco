@@ -11,7 +11,6 @@ class LoginController extends Controller
     // Main page login
     public function index()
     {
-
       $siteConfig   = DB::table('global_data')->first();
       if(Session()->get('username')=="") {
         $statusLogin = "<a href='/login'>LOGIN</a>";
