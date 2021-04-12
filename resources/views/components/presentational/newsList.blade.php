@@ -1,9 +1,15 @@
 <div class="newsListWrapper">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h2 class="text-center"><strong>BERITA TERKINI</strong></h2>
-                <p class="text-center mb-5"><i>Yang terbaru mengenai dunia onkologi</i></p>
+            <div class="col-12 d-flex justify-content-between mb-5">
+                <div>
+                    <h2 class="text-center"><strong>BERITA TERKINI</strong></h2>
+                    <p class="text-center"><i>Yang terbaru mengenai dunia onkologi</i></p>
+                </div>
+                @include('components/presentational.boxShowMore',array(
+                    'title'=>'Lihat semua',
+                    'path'=>'berita-terkini'
+                ))
             </div>
             @foreach($listingNews as $row)
                     <div class="col-12 col-lg-4">
@@ -16,12 +22,6 @@
                         ))
                     </div>
             @endforeach
-            <div class="col-12 text-center mt-5">
-                @include('components/presentational.boxShowMore',array(
-                    'title'=>'Tampilkan lainnya',
-                    'path'=>'/berita-terkini'
-                ))
-            </div>
         </div>
     </div>
 </div>

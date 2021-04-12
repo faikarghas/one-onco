@@ -13,7 +13,7 @@
                     <div class="col-12 col-lg-6">
                         <div class="box__login">
                             <h2 class="mb-5">Masuk</h2>
-                            <form action={{ asset('login/auth') }} method="post" accept-charset="utf-8" >
+                            <form action={{ url('login/auth') }} method="post" accept-charset="utf-8" >
                             {{ csrf_field() }}
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="email"><img class="img-fluid" src="{{asset('/images/mail.png')}}" alt="" srcset=""></span>

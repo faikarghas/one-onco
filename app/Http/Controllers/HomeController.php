@@ -63,7 +63,6 @@ class HomeController extends Controller
                       'slug' => $sliderArtikel->slug,
                       'listingJurnal'=>$listingJurnal,
                       'listingNews'=>$listingNews
-                    
         );
 
 
