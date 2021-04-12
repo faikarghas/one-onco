@@ -11,19 +11,24 @@ use App\Models\Artikel_model;
 
 class UntukPasienDanPendampingController extends Controller
 {
-
     public function pasien(Request $request){
 
 
         $segment = $request->segment(1);
+
+
+        DB::enableQueryLog(); // Enable query log before query
         
         $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
+
+        //dd(DB::getQueryLog()); // after query
+        //dd($content_kategori);
 
 
         $id_kategori = $content_kategori->id;
         $title_header = $content_kategori->intro;
         $tagline_header = $content_kategori->content;
-        $img_header = $content_kategori->img;
+        $img_header = $content_kategori->image;
 
         $model  = new Artikel_model();
         $slug = 'test';
@@ -56,7 +61,7 @@ class UntukPasienDanPendampingController extends Controller
         $id_kategori = $content_kategori->id;
         $title_header = $content_kategori->intro;
         $tagline_header = $content_kategori->content;
-        $img_header = $content_kategori->img;
+        $img_header = $content_kategori->image;
         $model  = new Artikel_model();
 
         $listingStory  = $model->all_kategori($id_kategori);
@@ -86,12 +91,21 @@ class UntukPasienDanPendampingController extends Controller
     }
 
     public function pendamping(Request $request){
-        $segment = $request->segment(1);
-        $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
+        
+        $segment2 = $request->segment(1);
+        
+        
+        
+        DB::enableQueryLog(); // Enable query log before query
+        $content_kategori = DB::table('kategori_artikel')->where('slug',$segment2)->first();
+        //dd(DB::getQueryLog());
+        
+
         $id_kategori = $content_kategori->id;
         $title_header = $content_kategori->intro;
         $tagline_header = $content_kategori->content;
-        $img_header = $content_kategori->img;
+        $img_header = $content_kategori->image;
+
         $model  = new Artikel_model();
         $slug = $request->segment(1);
         $listingStory  = $model->all_kategori($id_kategori);
@@ -122,7 +136,7 @@ class UntukPasienDanPendampingController extends Controller
         $id_kategori = $content_kategori->id;
         $title_header = $content_kategori->intro;
         $tagline_header = $content_kategori->content;
-        $img_header = $content_kategori->img;
+        $img_header = $content_kategori->image;
         $model  = new Artikel_model();
         $slug = $request->segment(2);
         $listingStory  = $model->all_kategori($id_kategori);
