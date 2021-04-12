@@ -29,26 +29,19 @@
                                 <div class="col-12">
                                     <h2 class="text-center text-lg-start mb-5"><strong>Artikel lainnya</strong></h2>
                                 </div>
-                                
                                 @foreach ( $otherStory as $row )
-                                    
-                                
-                                
                                 <div class="col-12">
                                     <div class="boxNewsWimg mt-4">
                                         <div class="boxInformation">
                                             <div class="title">
-                                                <span>{{ $row->createdAt }}</span>
+                                                <span>{{ $row->created_at }}</span>
                                                 <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
                                             </div>
                                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>''))
                                         </div>
                                     </div>
                                 </div>
-
                                 @endforeach
-
-
                             </div>
                         </div>
                     </div>

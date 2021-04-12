@@ -10,8 +10,8 @@
                         <div class="box__rec">
                             <?php
                                 $currentUrl = $_SERVER['REQUEST_URI'];
-                                $bgColor = $currentUrl == '/direktori-care' ? '#32A48E;' : 'white';
-                                $color = $currentUrl == '/direktori-care' ? 'white' : '#32A48E;';
+                                $bgColor = $currentUrl == '/direktori-care' ? '#00A2E3;' : 'white';
+                                $color = $currentUrl == '/direktori-care' ? 'white' : '#00A2E3;';
                                 $image_url = $currentUrl == '/direktori-care' ? 'dir-care_white.png' : 'dir-care.png';
                             ?>
                             @include('components/presentational.boxRec',[
@@ -31,7 +31,7 @@
                                 'image_url'=>'dir-lab.png',
                                 'title'=>'Direktori Lab',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
+                                'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-lab',
                                 'bgColor'=>'white'
@@ -41,13 +41,13 @@
                     <div class="col-12 col-lg-4">
                         <div class="box__rec">
                                 @include('components/presentational.boxRec',[
-                                'image_url'=>$image_url,
+                                'image_url'=>'dir-care_white.png',
                                 'title'=>'Direktori Care Center',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#32A48E;',
-                                'colorPar'=>'#808080;',
+                                'color'=>'white',
+                                'colorPar'=>'white',
                                 'path'=>'direktori-care',
-                                'bgColor'=>'white'
+                                'bgColor'=>'#00A2E3;'
                             ])
                         </div>
                     </div>
@@ -147,12 +147,17 @@
                                                 <img width="100%" height="100%" src="{{asset("/images/doctor.svg")}}" alt="dokter" />
                                             </div>
                                         </div>
-                                        <div class="col-9 d-flex flex-column align-items-start">
+                                        <div class="col-7 d-flex flex-column align-items-start">
                                             <div class="title_wrapper">
                                                 <h3 style="color: #00A2E3;"><strong>{{ $row->fullname }}</strong></h3>
                                             </div>
                                             <p><strong>Jadwal Praktik</strong></p>
                                             <p>{{ $row->jadwal }}</p>
+                                        </div>
+                                        <div class="col-2 d-flex align-items-center justify-content-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">
+                                               <path style="fill:#4172CB;" class="a" d="M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z"></path>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +168,7 @@
                 </div>
             </div>
         </section>
-        <section class="bg-color_lightGrey pt-3 forMobile">
+        <section class="direktori__menuTabM bg-color_lightGrey pt-3 forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -171,7 +176,7 @@
                             'image_url'=>'dir-lab.png',
                             'title'=>'Direktori Lab',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-lab',
                             'bgColor'=> 'white'
@@ -180,7 +185,7 @@
                             'image_url'=>'dir-care.png',
                             'title'=>'Direktori Care Center',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                            'color'=>'#32A48E;',
+                            'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
                             'path'=>'direktori-care',
                             'bgColor'=> 'white'

@@ -1,13 +1,19 @@
 .login__page{
+    padding: 5rem 0;
     .col-12{
         display: flex;
         justify-content: center;
+    }
+
+    &-img{
+        width: 500px;
+        object-fit: contain;
     }
 }
 
 .box__login{
     padding: 4rem 3rem;
-    width: 50%;
+    width: 100%;
     @include respond(down-tab-port){
         width: unset;
     }

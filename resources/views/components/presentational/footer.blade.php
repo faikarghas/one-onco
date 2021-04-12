@@ -11,13 +11,11 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="sitemap">
-                    <ul>
-                        <li><a href="/perawatan-kanker">Perawatan Kanker</a></li>
-                        <li><a href="/direktori">Direktori</a></li>
-                        <li><a href="">Beli Obat</a></li>
-                        <li><a href="">Live Chat</a></li>
-                    </ul>
+                <div>
+                    <p>Hubungi Kami</p>
+                    <p>Jl. Rawa Gatel Blok III-S Kav.36, Pulogadung,<br/>Jakarta Timur 13930</p>
+                    <p>Telp: 021-4600158*</p>
+                    <p>Email: contactus@oneonco.co.id</p>
                 </div>
             </div>
             <div class="col-6 mt-4">
@@ -51,17 +49,38 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 mt-5">
+                <div>
+                    <p>Hubungi Kami</p>
+                    <p>Jl. Rawa Gatel Blok III-S Kav.36, Pulogadung,<br/>
+                        Jakarta Timur 13930</p>
+                    <p class="m-0">Telp: 021-4600158*</p>
+                    <p>Email: contactus@oneonco.co.id</p>
+                </div>
+            </div>
+            <div class="col-6 mt-5">
                 <div class="sitemap">
-                    <ul class="m-0 d-flex align-items-center">
-                        <li><a href="/perawatan-kanker">Perawatan Kanker</a></li>
-                        <li><a href="/direktori">Direktori</a></li>
-                        <li><a href="">Beli Obat</a></li>
-                        <li><a href="">Live Chat</a></li>
+                    <ul>
+                        <li><a href="/perawatan-kanker">Site Map</a></li>
+                        <li><a href="/direktori">Tentang Kami</a></li>
+                        <li><a href="">Untuk Pasien</a></li>
+                        <li><a href="">Untuk Pendamping</a></li>
+                        <li><a href="">Cerita Inspiratif</a></li>
+                        <li><a href="">Artikel & Berita Terkini</a></li>
+                        <li><a href="">Partner Kami</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 mt-5">
+                <div class="sitemap2">
+                    <ul class="m-0  d-flex align-items-center">
+                        <li><a href="/perawatan-kanker">Syarat & Ketentuan</a></li>
+                        <li><a href="/direktori">Kebijakan Privasi</a></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 mt-5">
                 <div class="sosmed d-flex align-items-center">
                     <p class="m-0">Terhubung dengan sosial media kami</p>
                     <ul class="m-0">
@@ -71,8 +90,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-12 d-flex align-items-end justify-content-end mt-5">
-                <p class="text-white mb-0 text-end">© Copyright OneOnco 2021</p>
+            <div class="col-12 mt-5">
+                <p class="text-white mb-0 ">Copyright © 2021 One Onco | ALL RIGHTS RESERVED</p>
+                <p class="text-white text-sm">One Onco adalah sebuah unit kerja, hak cipta dan kepimilikan dari PT. Global Onkolab dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan One Onco dan masing-masing partnernya.</p>
             </div>
         </div>
     </div>

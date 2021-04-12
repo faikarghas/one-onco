@@ -2,6 +2,11 @@
     background-color: #E8EAEA;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+
+    }
 }
 
 .direktoriDet__header{
@@ -12,6 +17,11 @@
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: white;
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+
+    }
 }
 
 .direktori__menuTab{
@@ -27,6 +37,11 @@
             height: 60px;
         }
     }
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+
+    }
 }
 
 .direktori__list{
@@ -39,6 +54,8 @@
         padding-top: 137px;
         margin-top: unset;
         padding-bottom: 0rem;
+        padding-right: 12.75px;
+        padding-left: 12.75px;
     }
     form{
         select{
@@ -60,7 +77,8 @@
     margin-top: calc(137px + 130px);
     @include respond(down-tab-port){
         margin-top: unset;
-
+        padding-right: 12.75px;
+        padding-left: 12.75px;
     }
 
     form{
@@ -117,6 +135,8 @@
         padding-top: 137px;
         padding-bottom: unset;
         margin-top: unset;
+        padding-right: 12.75px;
+        padding-left: 12.75px;
     }
     form{
         select{
@@ -149,5 +169,12 @@
                 }
             }
         }
+    }
+}
+
+.direktori__menuTabM{
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
     }
 }

@@ -59,11 +59,6 @@ Route::get('/untuk-pendamping/{slug}',[UntukPasienDanPendampingController::class
 Route::get('/perawatan-kanker',[PerawatanKankerController::class,'index']);
 Route::get('/perawatan-kanker/{slug}',[PerawatanKankerController::class,'detail']);
 
-// Route::get('/perawatan-kanker/{slug}', function ($slug) {
-//     return view('v_perawatanKankerDetail',['slug'=>$slug]);
-// });
-
-
 Route::get('/direktori',[DirectoryController::class,'index']);
 Route::get('/direktori-dokter',[DirectoryController::class,'dokter']);
 Route::get('cities/get/{id}',[DirectoryController::class,'getCities']);
@@ -89,31 +84,6 @@ Route::get('/sukses', function () {
     return view('v_success');
 });
 
-// Route::get('/perawatan-kanker', function () {
-//     return view('v_perawatanKanker');
-// });
-
-// Route::get('/perawatan-kanker/{slug}', function ($slug) {
-//     return view('v_perawatanKankerDetail',['slug'=>$slug]);
-// });
-
-
-// Route::get('/jurnal-onkologi', function () {
-//     return view('v_jurnalOnkologi');
-// });
-
-// Route::get('/jurnal-onkologi/{slug}', function ($slug) {
-//     return view('v_jurnalOnkologiDetail',['slug'=>$slug]);
-// });
-
-// Route::get('/direktori-care', function () {
-//     return view('v_direktoriCare');
-// });
-
-
-
-
-
 ////////////////////////////////////////
 // CARI SESUAI KATEGORI KANKER HOME PAGE
 
@@ -123,7 +93,6 @@ Route::get('/sistem-tubuh', function () {
     $katKankers = DB::table('kategori_kanker')
                     ->select('id','title','slug')
                     ->get();
-    // dd($katKankers);
     return view('v_sistemTubuh',['katKankers'=>$katKankers]);
 });
 
@@ -133,7 +102,6 @@ Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
                     ->select('kanker.*', 'kategori_kanker.slug AS slugkat')
                     ->where ('kategori_kanker.slug',$lokasi)
                     ->get();
-    // dd($lokasi);
     return view('v_sistemLokasiKanker',['lokasi'=>$lokasi]);
 });
 
@@ -142,9 +110,6 @@ Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
 // });
 
 Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'sistemTubuhDetail']);
-
-
-
 
 ////////////////////////////////////////
 

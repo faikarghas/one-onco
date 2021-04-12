@@ -29,7 +29,56 @@
                 <p>{!! $tagline_header !!}</p>
             </div>
         </div>
-        @include('/components/presentational.storyList',[])
+        <div class="storyListWrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                    </div>
+                    <div class="col-12 d-flex justify-content-between mb-5">
+                        <div>
+                            <h2 class="text-center text-lg-start mb-5"><strong>Cerita Inspiratif Pasien & Pendamping Kanker</strong></h2>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        @include('components/presentational.boxNews',array(
+                            'date'=>$listingStory[0]->created_at,
+                            'title'=>strip_tags($listingStory[0]->title),
+                            'image_url'=>'https://source.unsplash.com/random',
+                            'author'=>$listingStory[0]->shortContent,
+                            'path'=>'/cerita-survivor/'.$listingStory[0]->slug,
+                            'class'=>'bigBox'
+                        ))
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <?php $index = 0; ?>
+                            @foreach($listingStory as $row)
+                            @if ($index != 0)
+                            <div class="col-12 col-lg-6">
+                                @include('components/presentational.boxNews',array(
+                                    'date'=>$row->created_at,
+                                    'title'=>strip_tags($row->title),
+                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'author'=>$row->shortContent,
+                                    'path'=>'/cerita-survivor/'.$row->slug,
+                                    'class'=>'smallBox'
+                                ))
+                            </div>
+                            @endif
+                            <?php $index++ ?>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5 text-center">
+                        @include('components/presentational.boxShowMore',array(
+                            'title'=>'Load More',
+                            'path'=>'{{ $pagesStory->links() }}'
+                        ))
+                    </div>
+                </div>
+            </div>
+        </div>
         @include('/components/presentational.newsList',[])
     </main>
 @endsection
+

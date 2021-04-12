@@ -124,8 +124,6 @@ class BeritaDanJurnalController extends Controller
       $segment = $request->segment(1);
       //DB::enableQueryLog();
       $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
-      // dd(DB::getQueryLog());
-      // dd($content_kategori);
 
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;

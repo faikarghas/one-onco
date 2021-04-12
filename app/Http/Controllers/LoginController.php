@@ -19,13 +19,11 @@ class LoginController extends Controller
         return redirect('/pengaturan');
       }
 
-
-      $data = array(  'title'     => 'Login',
-    				  'site'		=> $siteConfig,
-                      'statusLogin'		=> $statusLogin
-
-
-                    );
+      $data = array( 
+        'title' => 'Login',
+        'site'=> $siteConfig,
+        'statusLogin'=> $statusLogin
+      );
       return view('v_login',$data);
     }
 

@@ -32,7 +32,6 @@ class AboutController extends Controller
 
       // echo $title3 = $viewData->title;
       // echo $content = $viewData->content;
-      
 
 
       //dd($listingKatArtikel);

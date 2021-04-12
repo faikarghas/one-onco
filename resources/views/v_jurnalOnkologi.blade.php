@@ -16,23 +16,42 @@
                     <div class="col-12">
                         <h2 class="text-center mb-5"><strong>ARTIKEL KANKER</strong></h2>
                     </div>
-                    @foreach($listingNews as $row)
-                        <div class="col-12 col-md-4">
-                            @include('components/presentational.boxNews',array(
-                                'date'=> $row->createdAt,
-                                'title'=>$row->title ,
-                                'image_url'=>'https://source.unsplash.com/random',
-                                'description'=>$row->shortContent,
-                                'path'=>'artikel-kanker/'.$row->slug
-                            ))  
+                    <div class="col-12 col-lg-6">
+                        @include('components/presentational.boxNews',array(
+                            'date'=>$listingNews[0]->created_at,
+                            'title'=>strip_tags($listingNews[0]->title),
+                            'image_url'=>'https://source.unsplash.com/random',
+                            'author'=>$listingNews[0]->shortContent,
+                            'path'=>'/cerita-survivor/'.$listingNews[0]->slug,
+                            'class'=>'bigBox'
+                        ))
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <?php $index = 0; ?>
+                            @foreach($listingNews as $row)
+                            @if ($index != 0)
+                            <div class="col-12 col-lg-6">
+                                @include('components/presentational.boxNews',array(
+                                    'date'=>$row->created_at,
+                                    'title'=>strip_tags($row->title),
+                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'author'=>$row->shortContent,
+                                    'path'=>'/cerita-survivor/'.$row->slug,
+                                    'class'=>'smallBox'
+                                ))
+                            </div>
+                            @endif
+                            <?php $index++ ?>
+                            @endforeach
                         </div>
-                    @endforeach
-                    {{-- <div class="col-12 text-center mt-5">
+                    </div>
+                    <div class="col-12 text-center mt-5">
                         @include('components/presentational.boxShowMore',array(
                             'title'=>'Tampilkan lainnya',
                             'path'=>''
                         ))
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </section>
