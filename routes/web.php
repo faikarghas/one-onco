@@ -45,7 +45,6 @@ Route::get('/', [HomeController::class,'index']);
 Route::get('/home', [HomeController::class,'index']);
 Route::get('/tentang-kami',[AboutController::class,'index']);
 Route::get('/tentang-kami/{slug}',[AboutController::class,'pages']);
-
 Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
 
 Route::get('/cerita-survivor',[StoryController::class,'index']);

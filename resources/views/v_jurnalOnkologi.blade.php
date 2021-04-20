@@ -22,7 +22,7 @@
                             'title'=>strip_tags($listingNews[0]->title),
                             'image_url'=>'https://source.unsplash.com/random',
                             'author'=>$listingNews[0]->shortContent,
-                            'path'=>'/cerita-survivor/'.$listingNews[0]->slug,
+                            'path'=>'/artikel-kanker/'.$listingNews[0]->slug,
                             'class'=>'bigBox'
                         ))
                     </div>
@@ -37,7 +37,7 @@
                                     'title'=>strip_tags($row->title),
                                     'image_url'=>'https://source.unsplash.com/random',
                                     'author'=>$row->shortContent,
-                                    'path'=>'/cerita-survivor/'.$row->slug,
+                                    'path'=>'/artikel-kanker/'.$row->slug,
                                     'class'=>'smallBox'
                                 ))
                             </div>
