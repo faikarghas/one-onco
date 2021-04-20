@@ -12,6 +12,7 @@ use App\Http\Controllers\SistemTubuhController;
 use App\Http\Controllers\UntukPasienDanPendampingController;
 use App\Http\Controllers\PerawatanKankerController;
 use App\Http\Controllers\PengaturanController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,6 +84,8 @@ Route::get('/sukses', function () {
     return view('v_success');
 });
 
+
+
 ////////////////////////////////////////
 // CARI SESUAI KATEGORI KANKER HOME PAGE
 
@@ -114,3 +117,17 @@ Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'siste
 
 
 Route::get('/search', [SearchController::class,'index']);
+
+
+// Pages Footer
+Route::get('/syaratdanketentuan',[PagesController::class,'index']);
+Route::get('/syaratdanketentuan/{slug}',[PagesController::class,'index']);
+// Route::get('/kebijakan-privasi',[PagesController::class,'index']);
+
+// // partner
+// Route::get('/partnerkami',[PagesController::class,'index']);
+
+// // sitemap
+// Route::get('/sitemap',[PagesController::class,'index']);
+
+

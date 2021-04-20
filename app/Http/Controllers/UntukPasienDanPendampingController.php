@@ -12,13 +12,8 @@ use App\Models\Artikel_model;
 class UntukPasienDanPendampingController extends Controller
 {
     public function pasien(Request $request){
-
-
         $segment = $request->segment(1);
-
-
         DB::enableQueryLog(); // Enable query log before query
-        
         $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
 
         //dd(DB::getQueryLog()); // after query

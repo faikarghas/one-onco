@@ -42,7 +42,7 @@
             </div>
             <div class="col-4">
                 <div class="newsletter">
-                    <p class="text-white text-end">Terhubung dengan e-Newsletter kami</p>
+                    <p class="text-white text-end">Dapatkan informasi terkini seputar kanker melalui e-Newsletter kami</p>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Email Anda..." aria-label="Recipient's username" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Berlangganan</button>
@@ -85,7 +85,8 @@
                     <p class="m-0">Terhubung dengan sosial media kami</p>
                     <ul class="m-0">
                         <li><a href=""><img src="{{asset('/images/fb-logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
-                        <li><a href=""><img src="{{asset('/images/twitter-logo.png')}}" alt="logo-twitter" width="30px" height="30px"/></a></li>
+                        <li><a href=""><img src="{{asset('/images/mail-logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
+                        <li><a href=""><img src="{{asset('/images/youtube-logo.png')}}" alt="logo-youtube" width="30px" height="30px"/></a></li>
                         <li><a href=""><img src="{{asset('/images/ig-logo.png')}}" alt="logo-ig" width="30px" height="30px"/></a></li>
                     </ul>
                 </div>
