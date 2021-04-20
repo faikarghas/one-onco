@@ -46,8 +46,11 @@
                             <ul class="userAction">
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                                 <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
+
+                                
                                 <li>{!! $statusLogin !!}</li>
-                                <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="setting" width="15px"/></a></li>
+                                <li>{!! $statusConfig !!}</li>
+                            
                             </ul>
                         <nav>
                     </div>
@@ -206,9 +209,11 @@
             <section class="second__section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 text-center">
+                        <div class="col-6 text-center">
                             <img id="img-one" class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
-                            <h2><strong>SOLUSI TOTAL ONCOLOGY</strong></h2>
+                        </div>
+                        <div class="col-6">
+                            <h3><strong>Mengapa perawatan kanker harus menjadi rumit?</strong></h3>
                             <p class="mb-5">
                             {{ $contentAbout }}
                             </p>
@@ -290,7 +295,7 @@
                             <ul class="partner-slider mb-0">
                                 @foreach($listingPartners as $row)
                                     <li class="ps-3 pe-3">
-                                        <a href="{{ $row->partnerWebsite }}"><img src="http://oneonco-admin.herokuapp.com/data_file/{{ $row->images  }}" width="100%" height="200px" alt=""></a>
+                                        <a href="{{ $row->partnerWebsite }}"><img src="http://oneonco-admin.herokuapp.com/data_partner/{{ $row->images  }}" width="100%" height="200px" alt=""></a>
                                     </li>
                                 @endforeach
                             </ul>

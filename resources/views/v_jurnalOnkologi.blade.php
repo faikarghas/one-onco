@@ -20,7 +20,7 @@
                         @include('components/presentational.boxNews',array(
                             'date'=>$listingNews[0]->created_at,
                             'title'=>strip_tags($listingNews[0]->title),
-                            'image_url'=>'https://oneonco-admin.herokuapp.com/'$listingNews[0]->imgDesktop,
+                            'image_url'=>'https://oneonco-admin.herokuapp.com/{{ $listingNews[0]->imgDesktop }}',
                             'author'=>$listingNews[0]->shortContent,
                             'path'=>'/artikel-kanker/'.$listingNews[0]->slug,
                             'class'=>'bigBox'
@@ -35,7 +35,7 @@
                                 @include('components/presentational.boxNews',array(
                                     'date'=>$row->created_at,
                                     'title'=>strip_tags($row->title),
-                                    'image_url'=>'https://oneonco-admin.herokuapp.com/'$listingNews[0]->imgDesktop,
+                                    'image_url'=>'https://oneonco-admin.herokuapp.com/{{ $listingNews[0]->imgDesktop }}',
                                     'author'=>$row->shortContent,
                                     'path'=>'/artikel-kanker/'.$row->slug,
                                     'class'=>'smallBox'
