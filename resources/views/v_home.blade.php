@@ -45,9 +45,7 @@
                         <nav>
                             <ul class="userAction">
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
-
-                                
+                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>                                
                                 <li>{!! $statusLogin !!}</li>
                                 <li>{!! $statusConfig !!}</li>
                             
@@ -260,8 +258,17 @@
                         </div>
                         @foreach($listingJurnal as $row)
                         <div class="col-12 col-md-4">
+                            <?php 
+                                $yearCurrent  = date('Y');
+                                $dateNews =  date('Y', strtotime($row->publishDate));
+                                if ($yearCurrent == $dateNews ){
+                                   $date =  date('d-m', strtotime($dateNews));
+                                } else {
+                                   $date =  date('Y-d-m', strtotime($dateNews));
+                                }
+                            ?>
                             @include('components/presentational.boxNews',array(
-                                'date'=> $row->created_at,
+                                'date'=> $date,
                                 'title'=>$row->title ,
                                 'image_url'=>'http://oneonco-admin.herokuapp.com/data_artikel/'.$row->imgDesktop,
                                 'description'=>$row->shortContent,

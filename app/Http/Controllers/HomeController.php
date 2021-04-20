@@ -25,7 +25,7 @@ class HomeController extends Controller
           // tampilakan  slider news story bedasarkan jenis kanker customer
           $statusLogin = "<a href='/logout'>LOGOUT</a>";
           $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
-          $statusConfig = '';
+          $statusConfig = "<a href='/pengaturan'><img src='{{ asset('/images/setting.png') }}' alt='search' width='15px'/></a>";
         }
         //var_dump ($sliderArtikel);
         //variable  data about us ( general)

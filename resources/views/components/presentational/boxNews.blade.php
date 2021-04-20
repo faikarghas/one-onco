@@ -20,7 +20,8 @@
         </div>
         @if(empty($description))
         @else
-            <p class="mb-5 mt-4">{{$description}}}</p>
+            <p class="">{!! $description !!}<br><span>{{ $date }}</span></p>
+            
         @endif
         @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>$path))
     </div>
