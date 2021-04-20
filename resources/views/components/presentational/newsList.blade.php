@@ -12,11 +12,15 @@
                 ))
             </div>
             @foreach($listingNews as $row)
+                    <?php 
+                        $yearsNow = date("Y");
+                        $dataPublish = $row->publishDate;
+                    ?>
                     <div class="col-12 col-lg-4">
                         @include('components/presentational.boxNews',array(
-                            'date'=>$row->created_at,
+                                'date'=>$row->publishDate,
                                 'title'=>$row->title,
-                                'image_url'=>'https://source.unsplash.com/random',
+                                'image_url'=>'http://oneonco-admin.herokuapp.com/data_file/{{ >$row->imgDesktop }}',
                                 'description'=>$row->shortContent,
                                 'path'=>'/berita-terkini/'.$row->slug
                         ))
