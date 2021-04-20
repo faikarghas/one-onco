@@ -263,7 +263,7 @@
                             @include('components/presentational.boxNews',array(
                                 'date'=> $row->created_at,
                                 'title'=>$row->title ,
-                                'image_url'=>'http://oneonco-admin.herokuapp.com/data_file/{{ $row->imgDesktop }}',
+                                'image_url'=>'http://oneonco-admin.herokuapp.com/data_file/'.$row->imgDesktop,
                                 'description'=>$row->shortContent,
                                 'path'=>'artikel-kanker/'.$row->slug
                             ))
