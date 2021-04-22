@@ -19,6 +19,11 @@ class Controller extends BaseController
         return $listingNews;
     }
 
+    public function getPages($slugKat){
+        $getAllVariable = DB::table('kategori_artikel')->where('slug',$slugKat)->first();
+        return $getAllVariable;
+    }
+
     public function getstory(){
       $listingNews = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('id', 'DESC')->get();
       return $listingNews;

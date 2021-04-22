@@ -22,7 +22,7 @@ class BeritaDanJurnalController extends Controller
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
-      $img_header = $content_kategori->img;
+      $img_header = $content_kategori->image;
       $model  = new Artikel_model();
       $listingStory  = $model->all_kategori($id_kategori);
 
@@ -55,7 +55,7 @@ class BeritaDanJurnalController extends Controller
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
-      $img_header = $content_kategori->img;
+      $img_header = $content_kategori->image;
 
       // listing detail story
       $segment2 = $request->segment(2);
@@ -95,7 +95,7 @@ class BeritaDanJurnalController extends Controller
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
-      $img_header = $content_kategori->img;
+      $img_header = $content_kategori->image;
       $model  = new Artikel_model();
       $listingStory  = $model->all_kategori($id_kategori);
 
@@ -128,7 +128,7 @@ class BeritaDanJurnalController extends Controller
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
-      $img_header = $content_kategori->img;
+      $img_header = $content_kategori->image;
 
       // listing detail story
       $segment2 = $request->segment(2);

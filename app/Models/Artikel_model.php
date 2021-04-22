@@ -18,7 +18,7 @@ class Artikel_model extends Model
     {
       $query = DB::table('artikel')
         ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
-        ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.img')
+        ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')
         ->where(array( 'artikel.idKat' => $id_kategori))
         ->orderBy('id','DESC')
         ->paginate(3);
@@ -30,7 +30,7 @@ class Artikel_model extends Model
      {
          $query = DB::table('artikel')
           ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
-          ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content AS content_kategori_artikel','kategori_artikel.img')
+          ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content AS content_kategori_artikel','kategori_artikel.image')
           ->where('artikel.slug',$slug)
           ->orderBy('id','DESC')
           ->first();

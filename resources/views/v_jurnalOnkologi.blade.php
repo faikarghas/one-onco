@@ -18,11 +18,11 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         @include('components/presentational.boxNews',array(
-                            'date'=>$listingNews[0]->createdAt,
+                            'date'=>$listingNews[0]->created_at,
                             'title'=>strip_tags($listingNews[0]->title),
-                            'image_url'=>'https://source.unsplash.com/random',
+                            'image_url'=>'https://oneonco-admin.herokuapp.com/{{ $listingNews[0]->imgDesktop }}',
                             'author'=>$listingNews[0]->shortContent,
-                            'path'=>'/cerita-survivor/'.$listingNews[0]->slug,
+                            'path'=>'/artikel-kanker/'.$listingNews[0]->slug,
                             'class'=>'bigBox'
                         ))
                     </div>
@@ -33,11 +33,11 @@
                             @if ($index != 0)
                             <div class="col-12 col-lg-6">
                                 @include('components/presentational.boxNews',array(
-                                    'date'=>$row->createdAt,
+                                    'date'=>$row->created_at,
                                     'title'=>strip_tags($row->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'image_url'=>'https://oneonco-admin.herokuapp.com/{{ $listingNews[0]->imgDesktop }}',
                                     'author'=>$row->shortContent,
-                                    'path'=>'/cerita-survivor/'.$row->slug,
+                                    'path'=>'/artikel-kanker/'.$row->slug,
                                     'class'=>'smallBox'
                                 ))
                             </div>

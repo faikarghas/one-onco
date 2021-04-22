@@ -34,7 +34,7 @@
                 @endforeach
             </div>
         </section>
-        <section class="tentangKami__pageD tab__menu forDesktop-dflex">
+        <section class="tab__menu forDesktop-dflex">
             <div class="col-cs-4">
                 <div class="list__component">
                 @foreach($listingKatArtikel as $row)
@@ -43,7 +43,7 @@
                             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                         </div>
                         <div class="col-11 ps-4">
-                            <a class="{{ Request::segment(2) == $row->slug ? '' : 'active' }}" href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                            <a class="{{ Request::segment(2) == $row->slug ? 'active' : '' }}" href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
                             <div class="tab_line {{ Request::segment(2) == $row->slug ? '' : 'd-none' }}"></div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </section>
-        <section class="berita__section" style="background-color: #e0e0e0;">
+        {{-- <section class="berita__section" style="background-color: #e0e0e0;">
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-between mb-5">
@@ -76,7 +76,7 @@
                     @foreach($listingNews as $row)
                     <div class="col-12 col-md-4">
                         @include('components/presentational.boxNews',array(
-                            'date'=>$row->createdAt,
+                            'date'=>$row->created_at,
                                 'title'=>$row->title,
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,
@@ -86,6 +86,7 @@
                     @endforeach
                 </div>
             </div>
-        </section>
+        </section> --}}
+        @include('/components/presentational.newsList',[])
     </main>
 @endsection

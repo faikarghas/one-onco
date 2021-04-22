@@ -13,9 +13,9 @@
                         <li><a class="{{request()->is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a></li>
                         <li><a class="{{request()->is('untuk-pasien') ? 'active' : '' }}" href="/untuk-pasien">Untuk Pasien</a></li>
                         <li><a class="{{request()->is('untuk-pendamping') ? 'active' : '' }}" href="/untuk-pendamping">Untuk Pendamping</a></li>
-                        <li><a class="{{request()->is('cerita-survivor') ? 'active' : '' }}" href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
+                        <li><a class="{{request()->is('cerita-survivor') ? 'active' : '' }}" href="/cerita-survivor">Cerita Inspiratif</a></li>
                         <li class="show_menu">
-                            <a class="{{request()->is('berita-terkini') ? 'active' : '' }}" href="/berita-terkini">Berita Terkini & Jurnal</a>
+                            <a class="{{request()->is('berita-terkini') ? 'active' : '' }}" href="/berita-terkini">Artikel & Berita Terkini</a>
                             <div class="sub_menu">
                                 <ul>
                                     <li><a href="/berita-terkini">Berita Terkini</a></li>

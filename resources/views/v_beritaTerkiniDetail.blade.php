@@ -34,7 +34,7 @@
                                     <div class="boxNewsWimg mt-4">
                                         <div class="boxInformation">
                                             <div class="title">
-                                                <span>{{ $row->createdAt }}</span>
+                                                <span>{{ $row->created_at }}</span>
                                                 <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
                                             </div>
                                             @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>''))

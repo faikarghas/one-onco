@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         @include('components/presentational.boxNews',array(
-                            'date'=>$listingStory[0]->createdAt,
+                            'date'=>$listingStory[0]->created_at,
                             'title'=>strip_tags($listingStory[0]->title),
                             'image_url'=>'https://source.unsplash.com/random',
                             'author'=>$listingStory[0]->shortContent,
@@ -56,7 +56,7 @@
                             @if ($index != 0)
                             <div class="col-12 col-lg-6">
                                 @include('components/presentational.boxNews',array(
-                                    'date'=>$row->createdAt,
+                                    'date'=>$row->created_at,
                                     'title'=>strip_tags($row->title),
                                     'image_url'=>'https://source.unsplash.com/random',
                                     'author'=>$row->shortContent,

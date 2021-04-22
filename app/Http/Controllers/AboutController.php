@@ -57,7 +57,6 @@ class AboutController extends Controller
 
 
                   );
-
       return view ('v_tentang', $data);
     }
     public function pages($slug){

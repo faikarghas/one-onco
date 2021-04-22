@@ -46,7 +46,7 @@
                 </div>
             </div>
         </section>
-        <section class="tentangKami__pageD tab__menu forDesktop-dflex">
+        <section class="tab__menu forDesktop-dflex">
             <div class="col-cs-4">
                 <div class="list__component">
                 @foreach($listingKatArtikel as $row)
@@ -55,10 +55,11 @@
                             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                         </div>
                         <div class="col-11 ps-4">
-                            <a class="{{ request()->is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                            {{-- <a class="{{ request()->is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
                             @if ( $row->slug ==='' ) 
                                <div class="tab_line {{ request()->is('tentang-kami') ? '' : 'd-none' }}"></div>
-                            @endif
+                            @endif --}}
+                            <a href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
                         </div>
                     </div>
                 @endforeach
@@ -68,12 +69,12 @@
                 <div class="tentangKami__page-intro mb-5">
                     <img class="mb-5" src="{{asset('/images/logo_oneonco_black.png')}}" width="220px" alt="logo-oneonco">
                     <h3>{{ $titlePages }}</h3>
-                    <p>{{ $contentPages }}<p>
+                    <p>{!! $contentPages !!}<p>
                 </div>
             </div>
         </section>
-        <section class="berita__section" style="background-color: #e0e0e0;">
-            <div class="container">
+        <div style="background-color: #e0e0e0;">
+            {{-- <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-between mb-5">
                         <div>
@@ -88,7 +89,7 @@
                     @foreach($listingNews as $row)
                     <div class="col-12 col-md-4">
                         @include('components/presentational.boxNews',array(
-                            'date'=>$row->createdAt,
+                                'date'=>$row->created_at,
                                 'title'=>$row->title,
                                 'image_url'=>'https://source.unsplash.com/random',
                                 'description'=>$row->shortContent,
@@ -97,7 +98,8 @@
                     </div>
                     @endforeach
                 </div>
-            </div>
-        </section>
+            </div> --}}
+            @include('/components/presentational.newsList',[])
+        </div>
     </main>
 @endsection

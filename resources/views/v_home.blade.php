@@ -45,9 +45,10 @@
                         <nav>
                             <ul class="userAction">
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
+                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>                                
                                 <li>{!! $statusLogin !!}</li>
-                                <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="setting" width="15px"/></a></li>
+                                <li>{!! $statusConfig !!}</li>
+                            
                             </ul>
                         <nav>
                     </div>
@@ -206,9 +207,11 @@
             <section class="second__section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 text-center">
+                        <div class="col-6 text-center">
                             <img id="img-one" class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
-                            <h2><strong>SOLUSI TOTAL ONCOLOGY</strong></h2>
+                        </div>
+                        <div class="col-6">
+                            <h3><strong>Mengapa perawatan kanker harus menjadi rumit?</strong></h3>
                             <p class="mb-5">
                             {{ $contentAbout }}
                             </p>
@@ -225,40 +228,18 @@
                             <div class="boxSearchKanker">
                                 <h3 class="text-center mb-5"><strong>CARI TAU LEBIH LANJUT TENTANG KANKER</strong></h3>
                                 <div class="row">
-                                    <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
-                                        <a href="">
-                                            <div class="boxSearchKanker_wrapper-boxImg">
-                                                <img src="{{asset('/images/kanker_payudara.svg')}}" alt="kankerpayudara" width="100%" height="100%">
-                                            </div>
-                                            <h4>Kanker<br/>Payudara</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
-                                        <a href="">
-                                            <div class="boxSearchKanker_wrapper-boxImg">
-                                                <img src="{{asset('/images/kanker_servik.svg')}}" alt="kankerpayudara" width="100%" height="100%">
-                                            </div>
-                                            <h4>Kanker<br/>Serviks</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
-                                        <a href="">
-                                            <div class="boxSearchKanker_wrapper-boxImg">
-                                                <img src="{{asset('/images/kanker_paru.svg')}}" alt="kankerpayudara" width="100%" height="100%">
-                                            </div>
-                                            <h4>Kanker<br/>Paru-paru</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
-                                        <a href="">
-                                            <div class="boxSearchKanker_wrapper-boxImg">
-                                                <img src="{{asset('/images/kanker_kolorektal.svg')}}" alt="kankerpayudara" width="100%" height="100%">
-                                            </div>
-                                            <h4>Kanker<br/>Kolorektal</h4>
-                                        </a>
-                                    </div>
+                                    @foreach($listingKankers as $row)
+                                        <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
+                                            <a href="{{ url('/sistem-tubuh') }}">
+                                                <div class="boxSearchKanker_wrapper-boxImg">
+                                                    <img src="http://oneonco-admin.herokuapp.com/data_kanker/{{ $row->image }}" alt="kankerpayudara" width="100%" height="100%">
+                                                </div>
+                                                <?php $titleName = preg_replace("/[\s_]/", "<br>", $row->title, 1); ?>
+                                                <h4>{!! $titleName !!}</h4>
+                                            </a>
+                                        </div>
+                                    @endforeach
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -277,10 +258,19 @@
                         </div>
                         @foreach($listingJurnal as $row)
                         <div class="col-12 col-md-4">
+                            <?php 
+                                $yearCurrent  = date('Y');
+                                $dateNews =  date('Y', strtotime($row->publishDate));
+                                if ($yearCurrent == $dateNews ){
+                                   $date =  date('d-m', strtotime($dateNews));
+                                } else {
+                                   $date =  date('Y-d-m', strtotime($dateNews));
+                                }
+                            ?>
                             @include('components/presentational.boxNews',array(
-                                'date'=> $row->createdAt,
+                                'date'=> $date,
                                 'title'=>$row->title ,
-                                'image_url'=>'https://source.unsplash.com/random',
+                                'image_url'=>'http://oneonco-admin.herokuapp.com/data_artikel/'.$row->imgDesktop,
                                 'description'=>$row->shortContent,
                                 'path'=>'artikel-kanker/'.$row->slug
                             ))
@@ -310,16 +300,17 @@
                         <div class="col-12">
                             <h2 class="mb-5"><strong>PARTNER KAMI</strong></h2>
                             <ul class="partner-slider mb-0">
-                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
-                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
-                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
-                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
-                                <li class="ps-3 pe-3"><a href=""><img src="https://source.unsplash.com/random" width="100%" height="200px" alt=""></a></li>
+                                @foreach($listingPartners as $row)
+                                    <li class="ps-3 pe-3">
+                                        <a href="{{ $row->partnerWebsite }}"><img src="http://oneonco-admin.herokuapp.com/data_partner/{{ $row->images  }}" width="100%" height="200px" alt=""></a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
+            {{-- @include('components/presentational/boxPartner') --}}
         </main>
         @include('components/presentational/footer')
         <div class="searchpop">
