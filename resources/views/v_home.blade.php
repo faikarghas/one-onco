@@ -264,7 +264,6 @@
                             <?php 
                                 $yearCurrent  = date('Y');
                                 $dateNews =  date('Y', strtotime($row->publishDate));
-
                                 if ($yearCurrent === $dateNews ){
                                    $date =  date('d-M', strtotime($row->publishDate));
                                 } else {
@@ -287,7 +286,6 @@
             <section class="berita__section">
                 @include('/components/presentational.newsList',[])
             </section>
-
             <div class="hrdiv">
                 <div class="container">
                     <div class="row">

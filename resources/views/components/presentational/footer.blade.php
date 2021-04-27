@@ -83,10 +83,10 @@
                 <div class="sosmed d-flex align-items-center">
                     <p class="m-0">Terhubung dengan sosial media kami</p>
                     <ul class="m-0">
-                        <li><a href=""><img src="{{asset('/images/fb-logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
-                        <li><a href=""><img src="{{asset('/images/mail-logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
-                        <li><a href=""><img src="{{asset('/images/youtube-logo.png')}}" alt="logo-youtube" width="30px" height="30px"/></a></li>
-                        <li><a href=""><img src="{{asset('/images/ig-logo.png')}}" alt="logo-ig" width="30px" height="30px"/></a></li>
+                        <li><a href=""><img src="{{asset('/images/facebook_logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
+                        <li><a href=""><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
+                        <li><a href=""><img src="{{asset('/images/youtube_logo.png')}}" alt="logo-youtube" width="30px" height="30px"/></a></li>
+                        <li><a href=""><img src="{{asset('/images/instagram_logo.png')}}" alt="logo-ig" width="30px" height="30px"/></a></li>
                     </ul>
                 </div>
             </div>

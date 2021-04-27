@@ -16,8 +16,11 @@
             <div class="title">
                 {{-- <span>{{$date}}</span> --}}
                 <h3 class="mt-2">{{$title}}</h3>
-                <p class="text-secondary">{!! $description !!}<br><span>{{ $date }}</span></p>
+                <p class="text-secondary">{!! $description !!}</p>
         @endif
+        </div>
+        <div class="dateFormat">
+            <p>{{ $date }}</p>
         </div>
         {{-- @if(empty($description))
         @else
