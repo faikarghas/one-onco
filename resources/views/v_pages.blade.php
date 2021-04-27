@@ -56,7 +56,10 @@
                     @include('/components/presentational.storyList',[])
                     @break
                 @case('partner-kami')
-                    @include('/components/presentational.storyList',[])
+                    @include('/components/presentational.partnerList',[])
+                    @break
+                @case('syaratdanketentuan')
+                    @include('/components/presentational.partnerList',[])
                     @break
                 @default
                     @include('/components/presentational.newsList',[])

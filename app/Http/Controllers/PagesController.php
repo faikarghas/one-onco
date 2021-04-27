@@ -39,6 +39,7 @@ class PagesController extends Controller
       // widget
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
       $listingStory  = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingPartners = DB::table('partner')->limit(4)->orderBy('id', 'DESC')->get();
 
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
@@ -49,7 +50,9 @@ class PagesController extends Controller
                     'titleContentPages' => $titleContentPages,
                     'listingNews' => $listingNews,
                     'listingStory' => $listingStory,
-                    'contentPages' => $mainContent
+                    'contentPages' => $mainContent,
+                    'listingPartners' => $listingPartners
+
                   );
 
       //dd($data);
