@@ -68,7 +68,7 @@
               @else
               @include('components/presentational.boxRec',[
                 'image_url'=>'directori_care_center.svg',
-                'title'=>'Direktori Care Center',
+                'title'=>'Direktori Rumah Sakit',
                 'description'=>'Temukan fasilitas perawatan kanker terdekat',
                 'color'=>'#00A2E3;',
                 'colorPar'=>'#808080;',
