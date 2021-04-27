@@ -16,13 +16,13 @@
             <div class="title">
                 {{-- <span>{{$date}}</span> --}}
                 <h3 class="mt-2">{{$title}}</h3>
+                <p class="">{!! $description !!}<br><span>{{ $date }}</span></p>
         @endif
         </div>
-        @if(empty($description))
+        {{-- @if(empty($description))
         @else
             <p class="">{!! $description !!}<br><span>{{ $date }}</span></p>
-            
-        @endif
+        @endif --}}
         @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>$path))
     </div>
 </div>
