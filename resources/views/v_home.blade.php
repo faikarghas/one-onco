@@ -236,7 +236,7 @@
                                         <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
                                             <a href="{{ url('/sistem-tubuh') }}">
                                                 <div class="boxSearchKanker_wrapper-boxImg">
-                                                    <img src="http://oneonco-admin.herokuapp.com/data_kanker/{{ $row->image }}" alt="kankerpayudara" width="100%" height="100%">
+                                                    <img src="{{ asset("data_kanker/$row->image") }}" alt="kankerpayudara" width="100%" height="100%">
                                                 </div>
                                                 <?php $titleName = preg_replace("/[\s_]/", "<br>", $row->title, 1); ?>
                                                 <h4>{!! $titleName !!}</h4>
