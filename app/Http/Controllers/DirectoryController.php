@@ -130,7 +130,6 @@ class DirectoryController extends Controller
     ->distinct('dokter.fullname')
     ->where('jadwal_dokter.faskesId', $id)
     ->get();
-  
 
     //dd($viewDokter);
 
@@ -144,10 +143,6 @@ class DirectoryController extends Controller
                   'viewDokter' => $viewDokter,
                   'provinces' => $provinces,
                   'cities' => $cities
-                  
-
-                  
-                  
                 );
     return view ('v_direktoriCare', $data);
   }

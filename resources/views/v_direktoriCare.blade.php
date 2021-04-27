@@ -46,7 +46,6 @@
           @include('components/presentational/boxDirectoryFaskesDetail',['path'=>'direktori']) 
         </section>
         @endif
-        
         <section class="direktori__menuTabM bg-color_lightGrey pt-3 pb-4 forMobile">
             <div class="container">
                 <div class="row">
@@ -118,11 +117,9 @@
           'provinsi': selectedProvinsi,
           'kabupaten': selectedKabupaten
         },
-        
         url: "{{ route('faskes.get-more-faskes') }}",
         success:function(data) {
           $('#faskes_data').html(data);
-          
         }
       });
     }

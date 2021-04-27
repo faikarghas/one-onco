@@ -17,10 +17,22 @@
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: white;
+    box-shadow: 0px 2px 2px rgb(0 0 0 / 12%);
     @include respond(down-tab-port){
         padding-right: 12.75px;
         padding-left: 12.75px;
-
+    }
+    input{
+        height: 30px;
+        border-radius: 12px;
+        color: black;
+    }
+    form{
+        select,input{
+            height: 30px;
+            border-radius: 12px;
+            color: black;
+        }
     }
 }
 
@@ -29,8 +41,9 @@
     background-color: $color_lightGrey;
     position: fixed;
     width: 100%;
-    top: 137px;
+    top: 135px;
     left: 0;
+    z-index: 3;
     .box__rec{
         img{
             width: 60px;
@@ -51,7 +64,7 @@
     margin-top: calc(137px + 130px);
     min-height: 300px;
     @include respond(down-tab-port){
-        padding-top: 137px;
+        padding-top: 220px;
         margin-top: unset;
         padding-bottom: 0rem;
         padding-right: 12.75px;
@@ -76,6 +89,7 @@
     padding-bottom: 1rem;
     margin-top: calc(137px + 130px);
     @include respond(down-tab-port){
+        padding-top: 220px;
         margin-top: unset;
         padding-right: 12.75px;
         padding-left: 12.75px;

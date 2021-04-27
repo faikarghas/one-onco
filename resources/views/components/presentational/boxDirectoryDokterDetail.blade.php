@@ -15,7 +15,6 @@
                             </div>
                             <ul>
                                 <li><p><strong>Unit Operasional :  {{ $layanan }}</strong></p></li>
-                                
                             </ul>
                         </div>
                     </div>

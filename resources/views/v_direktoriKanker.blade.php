@@ -29,9 +29,9 @@
                     </div>
                     <div class="col-12 col-lg-4">
                             @include('components/presentational.boxRec',array(
-                                'image_url'=>'dir-lab.png',
-                                'title'=>'Direktori Lab',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'image_url'=>'directori_komunitas.svg',
+                                'title'=>'Direktori Komunitas',
+                                'description'=>'Temukan komunitas kanker disekitarmu',
                                 'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-lab',
@@ -40,9 +40,9 @@
                     </div>
                     <div class="col-12 col-lg-4">
                             @include('components/presentational.boxRec',array(
-                                'image_url'=>'dir-care.png',
-                                'title'=>'Direktori Care Center',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'image_url'=>'directori_care_center.svg',
+                                'title'=>'Direktori Rumah Sakit',
+                                'description'=>'Temukan fasilitas perawatan kanker terdekat',
                                 'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-care',

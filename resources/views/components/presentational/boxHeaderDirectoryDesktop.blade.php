@@ -21,10 +21,14 @@
       $color = $currentUrl == 'direktori-lab' ? 'white' : '#00A2E3;';
       $image_url = $currentUrl == 'direktori-lab' ? 'dir-lab_white.png' : 'directori_komunitas.svg';
       break;
-   
   }
 ?>
-<section class="direktori__menuTab forDesktop" style="{{ Request::segment(1) == 'dokter-detail' ? 'background-color: #FFF' : '' }}">
+
+@if (Request::segment(2))
+  <section class="direktori__menuTab forDesktop" style="background-color: #FFF">
+@else
+  <section class="direktori__menuTab forDesktop">
+@endif
   <div class="container">
       <div class="row">
           <div class="col-12 col-lg-4">
@@ -54,7 +58,6 @@
           </div>
         <div class="col-12 col-lg-4">
           <div class="box__rec">
-          
             @if ( $currentUrl == 'direktori-care')
               @include('components/presentational.boxRec',[
                 'image_url'=>$image_url,
