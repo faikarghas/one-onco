@@ -109,7 +109,8 @@ Route::get('/sistem-tubuh', function () {
 //     return view('v_sistemLokasiKanker',['lokasi'=>$lokasi]);
 // });
 
-Route::get('/sistem-tubuh/{jenis}',[PagesController::class,'index']);
+Route::get('/kanker-payudara',[PagesController::class,'index']);
+Route::get('/kanker-payudara/{slug}',[PagesController::class,'index']);
 
 ////////////////////////////////////////
 
