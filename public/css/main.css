@@ -1650,6 +1650,10 @@ button.boxReadMore {
 .partnerKami__section ul {
   padding-left: 0;
 }
+.partnerKami__section ul li img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .searchpop {
   width: 100%;

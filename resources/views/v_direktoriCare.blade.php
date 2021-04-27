@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-12">
                         <form action="" method="POST">
-                            <div class="col-12 mb-4 mt-4">
+                            <div class="col-12 mb-2 mt-4">
                                 <input style="border-radius: 12px;" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Ketik kata kunci">
                             </div>
                             <div class="col">
@@ -24,7 +24,7 @@
                                 </select>
                             </div>
                             <div class="col">
-                                <select class="form-select mb-3" aria-label="Default select example" id="selectCities4" name="cities3">
+                                <select class="form-select mb-2" aria-label="Default select example" id="selectCities4" name="cities3">
                                     <option value="">Pilih Kabupaten</option>
                                 </select>
                             </div>

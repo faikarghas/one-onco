@@ -4,5 +4,10 @@
     background-color: $color_lightGrey;
     ul{
         padding-left: 0;
+        li{
+            img{
+                object-fit: cover;
+            }
+        }
     }
 }
