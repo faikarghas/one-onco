@@ -11,7 +11,6 @@
                     <h3><strong>{{$title}}</strong></h3>
                 </div>
                 <ul>
-                    <li><p><strong>Unit Operasional Onkologi</strong></p></li>
                     <li><p>{{ $spesialis  }}</p></li>
                 </ul>
                 <ul>
