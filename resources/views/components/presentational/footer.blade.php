@@ -54,8 +54,8 @@
                     <p>Hubungi Kami</p>
                     <p>Jl. Rawa Gatel Blok III-S Kav.36, Pulogadung,<br/>
                         Jakarta Timur 13930</p>
-                    <p class="m-0">Telp: 021-4600158*</p>
-                    <p>Email: contactus@oneonco.co.id</p>
+                    <p class="m-0"><span class="fw-bold">Telp:</span> 021-4600158*</p>
+                    <p><span class="fw-bold">Email:</span> contactus@oneonco.co.id</p>
                 </div>
             </div>
             <div class="col-6 mt-5">
