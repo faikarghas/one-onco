@@ -61,7 +61,6 @@
             <div class="col-6 mt-5">
                 <div class="sitemap">
                     <ul>
-                        <li><a href="/perawatan-kanker">Site Map</a></li>
                         <li><a href="/direktori">Tentang Kami</a></li>
                         <li><a href="">Untuk Pasien</a></li>
                         <li><a href="">Untuk Pendamping</a></li>
