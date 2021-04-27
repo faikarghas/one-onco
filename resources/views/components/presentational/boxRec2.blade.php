@@ -10,8 +10,11 @@
                 <div class="title_wrapper">
                     <h3><strong>{{$title}}</strong></h3>
                     <p>{{ $spesialis  }}</p>
+
                 </div>
                 <ul>
+                    <li><p>&nbsp;<p></li>
+                        <li><p>&nbsp;<p></li>
                     <li><p><strong>Lokasi Praktek:</strong></p></li>
                     <li><p>{!! $praktek !!}</p></li>
                 </ul>
