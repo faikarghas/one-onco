@@ -33,7 +33,7 @@
                         </div>
                         <div class="tentangKami__page-intro mb-5">
                             <h3>{{ $titleContentPages }}</h3>
-                            <p>{{ $contentPages }}</p>
+                            <p>{!! $contentPages !!}</p>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
                     <div class="col-12">
                         <div class="tentangKami__page-content">
                             <h1><strong>{{ $titlePages }}</strong></h1>
-                            <p>{{ $Content }}</p>
+                            <p>{!! $Content !!}</p>
                         </div>
                         <hr class="mt-5 mb-5">
                     </div>
