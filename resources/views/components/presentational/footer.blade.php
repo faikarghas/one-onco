@@ -54,7 +54,7 @@
                     <p>Hubungi Kami</p>
                     <p>Jl. Rawa Gatel Blok III-S Kav.36, Pulogadung,<br/>
                         Jakarta Timur 13930</p>
-                    <p class="m-0"><span class="fw-bold">Telp:</span> 021-4600158*</p>
+                    <p class="m-0"><span class="fw-bold">Telp:</span> 021-4600158</p>
                     <p><span class="fw-bold">Email:</span> contactus@oneonco.co.id</p>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="col-12 mt-5">
-                <p class="text-white mb-0 ">Copyright © 2021 One Onco | ALL RIGHTS RESERVED</p>
+                <p class="text-white mb-0 ">Copyright © 2021 ONEOnco | ALL RIGHTS RESERVED</p>
                 <p class="text-white text-sm">ONEOnco adalah sebuah unit kerja, hak cipta dan kepemilikan dari PT. Global Onkolab dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan ONEOnco dan masing-masing partnernya.</p>
             </div>
         </div>
