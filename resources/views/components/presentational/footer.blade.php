@@ -92,7 +92,7 @@
             </div>
             <div class="col-12 mt-5">
                 <p class="text-white mb-0 ">Copyright © 2021 One Onco | ALL RIGHTS RESERVED</p>
-                <p class="text-white text-sm">One Onco adalah sebuah unit kerja, hak cipta dan kepemilikan dari PT. Global Onkolab dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan One Onco dan masing-masing partnernya.</p>
+                <p class="text-white text-sm">ONEOnco adalah sebuah unit kerja, hak cipta dan kepemilikan dari PT. Global Onkolab dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan ONEOnco dan masing-masing partnernya.</p>
             </div>
         </div>
     </div>
