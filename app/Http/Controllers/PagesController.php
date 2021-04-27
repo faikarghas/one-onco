@@ -15,8 +15,12 @@ class PagesController extends Controller
       
       // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();       
-      // get all atribut pages
-      $slugKat = $request->segment(1);
+      if ( Request::segment(1) == 'sistem-stubuh') {
+        $slugKat = $request->segment(2);
+      } else {
+        $slugKat = $request->segment(1);
+      }
+
       $listAttribute = $this->getPages($slugKat);
       //dd($listAttribute);
       $kategoriId = $listAttribute->id;
