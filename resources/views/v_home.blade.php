@@ -234,7 +234,7 @@
                                 <div class="row">
                                     @foreach($listingKankers as $row)
                                         <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
-                                            <a href="{{ url('/sistem-tubuh') }}">
+                                            <a href="{{ url("/sistem-tubuh/$row->slug") }}">
                                                 <div class="boxSearchKanker_wrapper-boxImg">
                                                     <img src="{{ asset("data_kanker/$row->image") }}" alt="kankerpayudara" width="100%" height="100%">
                                                 </div>

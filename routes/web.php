@@ -100,16 +100,16 @@ Route::get('/sistem-tubuh', function () {
     return view('v_sistemTubuh',['katKankers'=>$katKankers]);
 });
 
-Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
-    $lokasi = DB::table('kanker')
-                    ->leftJoin('kategori_kanker', 'kategori_kanker.id', '=', 'kanker.idKat')
-                    ->select('kanker.*', 'kategori_kanker.slug AS slugkat')
-                    ->where ('kategori_kanker.slug',$lokasi)
-                    ->get();
-    return view('v_sistemLokasiKanker',['lokasi'=>$lokasi]);
-});
+// Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
+//     $lokasi = DB::table('kanker')
+//                     ->leftJoin('kategori_kanker', 'kategori_kanker.id', '=', 'kanker.idKat')
+//                     ->select('kanker.*', 'kategori_kanker.slug AS slugkat')
+//                     ->where ('kategori_kanker.slug',$lokasi)
+//                     ->get();
+//     return view('v_sistemLokasiKanker',['lokasi'=>$lokasi]);
+// });
 
-Route::get('/sistem-tubuh/{lokasi}/{jenis}',[SistemTubuhController::class,'sistemTubuhDetail']);
+Route::get('/sistem-tubuh/{jenis}',[PagesController::class,'index']);
 
 ////////////////////////////////////////
 
