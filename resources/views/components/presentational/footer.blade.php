@@ -81,7 +81,7 @@
             </div>
             <div class="col-6 mt-5">
                 <div class="sosmed d-flex align-items-center">
-                    <p class="m-0">Temukam Kami Di</p>
+                    <p class="m-0">Temukan kami di</p>
                     <ul class="m-0">
                         <li><a href=""><img src="{{asset('/images/facebook_logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
                         <li><a href=""><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
@@ -92,7 +92,7 @@
             </div>
             <div class="col-12 mt-5">
                 <p class="text-white mb-0 ">Copyright © 2021 One Onco | ALL RIGHTS RESERVED</p>
-                <p class="text-white text-sm">One Onco adalah sebuah unit kerja, hak cipta dan kepimilikan dari PT. Global Onkolab dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan One Onco dan masing-masing partnernya.</p>
+                <p class="text-white text-sm">One Onco adalah sebuah unit kerja, hak cipta dan kepemilikan dari PT. Global Onkolab dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan One Onco dan masing-masing partnernya.</p>
             </div>
         </div>
     </div>
