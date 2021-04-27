@@ -37,7 +37,6 @@
                                         </ul>
                                     </div>
                                 </li>
-
                             </ul>
                         </nav>
                     </div>
@@ -46,8 +45,13 @@
                             <ul class="userAction">
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                                 <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>                                
-                                <li>{!! $statusLogin !!}</li>
-                                <li>{!! $statusConfig !!}</li>
+                                @if (Auth::check())
+                                    <li><a href='/logout'>LOGOUT</a></li>
+                                    <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                                @else 
+                                    <li><a href='/login'>LOGIN</a></li>
+                                    <li></li>
+                                @endif
                             
                             </ul>
                         <nav>
@@ -245,7 +249,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="third__section pt-5">
                 <div class="container">
                     <div class="row">
@@ -321,5 +324,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
+        
     </body>
 </html>

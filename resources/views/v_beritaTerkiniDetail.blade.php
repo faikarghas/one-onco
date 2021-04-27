@@ -13,7 +13,9 @@
                             <img src="https://source.unsplash.com/random" alt="{{$slugStory}}-img" height="180px" width="100%">
                         </div>
                         <div class="detail__page1--description mb-5">
+
                             <h1 class="mb-4">{{ $titleStory }}</h1>
+                            <p class="pagi-init">{!! $dateStory !!}</p>
                             <p class="pagi-init">{!! $contentStory !!}</p>
                         </div>
                         <div class="share_sosmed forDesktop">
@@ -27,8 +29,13 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
+                                    @if (Request::segment(1)=='berita-terkini')
+                                    <h2 class="text-center text-lg-start mb-5"><strong>Berita lainnya</strong></h2>
+                                    @else
                                     <h2 class="text-center text-lg-start mb-5"><strong>Artikel lainnya</strong></h2>
-                                </div>
+                                    @endif
+                                
+                                  </div>
                                 @foreach ( $otherStory as $row )
                                 <div class="col-12">
                                     <div class="boxNewsWimg mt-4">
@@ -36,8 +43,18 @@
                                             <div class="title">
                                                 <span>{{ $row->created_at }}</span>
                                                 <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
+                                                <?php 
+                                                  $yearCurrent  = date('Y');
+                                                  $dateNews =  date('Y', strtotime($row->publishDate));
+                                                  if ($yearCurrent == $dateNews ){
+                                                      $date =  date('d M', strtotime($dateNews));
+                                                  } else {
+                                                      $date =  date('Y-d-mm', strtotime($dateNews));
+                                                  }
+                                              ?>
+                                                <p>{{ $date }}</p>
                                             </div>
-                                            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>''))
+                                            {{-- @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'')) --}}
                                         </div>
                                     </div>
                                 </div>

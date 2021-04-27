@@ -23,7 +23,7 @@ class HomeController extends Controller
           $statusConfig = '';
           } else {
           // tampilakan  slider news story bedasarkan jenis kanker customer
-          $statusLogin = "<a href='/logout'>LOGOUT</a>";
+          $statusLogin = "";
           $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
           $statusConfig = "<a href='/pengaturan'><img src='{{ asset('/images/setting.png') }}' alt='search' width='15px'/></a>";
         }

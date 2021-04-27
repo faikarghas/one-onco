@@ -13,7 +13,26 @@
                     <div class="col-12 col-lg-6">
                         <div class="box__login">
                             <h2 class="mb-5">Masuk</h2>
-                            <form action={{ asset('login/auth') }} method="post" accept-charset="utf-8" >
+                            @if(session('errors'))
+                              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <ul>
+                                  @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                  @endforeach
+                                </ul>
+                              </div>
+                            @endif
+                            @if (Session::has('success'))
+                              <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                              </div>
+                            @endif
+                            @if (Session::has('error'))
+                              <div class="alert alert-danger">
+                                {{ Session::get('error') }}
+                              </div>
+                            @endif
+                            <form action={{ asset('login') }} method="post" accept-charset="utf-8" >
                             {{-- {{ csrf_field() }} --}}
                             @csrf
                                 <div class="input-group mb-4">

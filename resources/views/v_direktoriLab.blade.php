@@ -3,7 +3,7 @@
 @section('content')
     @include('components/presentational/header',['path'=>'/'])
     <main>
-        <section class="direktori__menuTab forDesktop">
+        {{-- <section class="direktori__menuTab forDesktop">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-4">
@@ -47,7 +47,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
+        @include('components/presentational/boxHeaderDirectoryDesktop',['path'=>'direktori'])
         <section class="direktoriLab__list pt-5">
             <div class="container mb-5 forDesktop">
                 <div class="row">

@@ -20,7 +20,7 @@
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'directori_dokter2.svg',
                                 'title'=>'Direktori Dokter',
-                                'description'=>'Cari tau mengenai perawatan kanker yang diderita',
+                                'description'=>'Temukan dokter kanker disekitarmu',
                                 'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-dokter',

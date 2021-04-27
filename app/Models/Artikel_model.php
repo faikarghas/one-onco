@@ -20,8 +20,8 @@ class Artikel_model extends Model
         ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
         ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')
         ->where(array( 'artikel.idKat' => $id_kategori))
-        ->orderBy('id','DESC')
-        ->paginate(3);
+        ->orderBy('publishDate','DESC')
+        ->paginate(5);
         return $query;
     }
 
