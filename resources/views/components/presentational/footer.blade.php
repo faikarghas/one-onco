@@ -81,7 +81,7 @@
             </div>
             <div class="col-6 mt-5">
                 <div class="sosmed d-flex align-items-center">
-                    <p class="m-0">Terhubung dengan sosial media kami</p>
+                    <p class="m-0">Temukam Kami Di</p>
                     <ul class="m-0">
                         <li><a href=""><img src="{{asset('/images/facebook_logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
                         <li><a href=""><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
