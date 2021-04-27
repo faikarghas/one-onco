@@ -61,22 +61,22 @@
             <div class="col-6 mt-5">
                 <div class="sitemap">
                     <ul>
-                        <li><a href="/perawatan-kanker">Site Map</a></li>
-                        <li><a href="/direktori">Tentang Kami</a></li>
-                        <li><a href="">Untuk Pasien</a></li>
-                        <li><a href="">Untuk Pendamping</a></li>
-                        <li><a href="">Cerita Inspiratif</a></li>
-                        <li><a href="">Artikel & Berita Terkini</a></li>
-                        <li><a href="">Partner Kami</a></li>
+                        <li><a href="/site-map">Site Map</a></li>
+                        <li><a href="/tentang-kami">Tentang Kami</a></li>
+                        <li><a href="/untuk-pasien">Untuk Pasien</a></li>
+                        <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
+                        <li><a href="/cerita-survivor">Cerita Inspiratif</a></li>
+                        <li><a href="/berita-terkini">Artikel & Berita Terkini</a></li>
+                        <li><a href="/partner-kami">Partner Kami</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-6 mt-5">
                 <div class="sitemap2">
                     <ul class="m-0  d-flex align-items-center">
-                        <li><a href="/syaratdanketentuan">Syarat & Ketentuan</a></li>
-                        <li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/syaratdanketentuan/">Syarat & Ketentuan</a></li>
+                        <li><a href="/syaratdanketentuan/kebijakan-privasi">Kebijakan Privasi</a></li>
+                        <li><a href="/syaratdanketentuan/faq">FAQ</a></li>
                     </ul>
                 </div>
             </div>
