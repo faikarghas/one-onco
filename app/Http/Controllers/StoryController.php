@@ -14,30 +14,26 @@ class StoryController extends Controller
     public function index(Request $request){
 
       // GET variable from global data for website
-      $siteConfig   = DB::table('global_data')->first();  
+      $siteConfig   = DB::table('global_data')->first();
+      // get all atribut pages
+      $slugKat = $request->segment(1);
+      $listAttribute = $this->getPages($slugKat);  
+      // $segment = $request->segment(1);
+      // $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first(); 
 
-      // check sebagai customer apa bukan
-      if(Session()->get('username')=="") {
-        $statusLogin = "<a href='/login'>LOGIN</a>";
-      } else {
-        $statusLogin = "<a href='/logout'>LOGOUT</a>";
-      }
- 
-      // listing all story with load more
-      $segment = $request->segment(1);
-      $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first(); 
-      $id_kategori = $content_kategori->id;
-      $title_header = $content_kategori->intro;
-      $tagline_header = $content_kategori->content;
-      $img_header = $content_kategori->image;
+      $id_kategori =  $listAttribute->id;
+      $title_header = $listAttribute->intro;
+      $tagline_header = $listAttribute->content;
+      $img_header =$listAttribute->image;
+
       $model  = new Artikel_model();
       $listingStory  = $model->all_kategori($id_kategori);
 
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+      
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
-                    'statusLogin'=>$statusLogin,
                     'slugStory' => 'testt',
                     'img_header' =>$img_header,
                     'title_header' =>$title_header,
@@ -55,12 +51,7 @@ class StoryController extends Controller
 
       // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();    
-      // check sebagai customer apa bukan
-      if(Session()->get('username')=="") {
-        $statusLogin = "<a href='/login'>LOGIN</a>";
-      } else {
-        $statusLogin = "<a href='/logout'>LOGOUT</a>";
-      }
+      
       // header title and image
       $segment = $request->segment(1);
       $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first(); 
@@ -83,7 +74,6 @@ class StoryController extends Controller
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
-                    'statusLogin'=>$statusLogin,
                     'titleStory'=>$detailStory->title,
                     'authorStory'=>$detailStory->shortContent,
                     'contentStory'=>$detailStory->content,
@@ -91,7 +81,6 @@ class StoryController extends Controller
                     'slugStory' => 'testt',
                     'listingNews'=>$listingNews
                   );
-      
       return view ('v_ceritaSurvivorDetail', $data);
     }
 }

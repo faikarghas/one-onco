@@ -32,7 +32,7 @@
                             <img src="{{asset('/images/kalbe.png')}}" width="180px" alt="" srcset="">
                         </div>
                         <div class="tentangKami__page-intro mb-5">
-                            <h3>{{ $titlePages }}</h3>
+                            <h3>{{ $titleContentPages }}</h3>
                             <p>{{ $contentPages }}</p>
                         </div>
                     </div>
@@ -44,8 +44,24 @@
           @include('/components/presentational/boxContentPagesDesktop',[])
         </section>
         <div style="background-color: #e0e0e0;">
+
+            @switch(Request::segment(1))
+                @case('tentang-kami')
+                    @include('/components/presentational.newsList',[])
+                    @break
+                @case('untuk-pasien')
+                    @include('/components/presentational.storyList',[])
+                    @break
+                @case('untuk-pendamping')
+                    @include('/components/presentational.storyList',[])
+                    @break
+                @case('partner-kami')
+                    @include('/components/presentational.storyList',[])
+                    @break
+                @default
+                    @include('/components/presentational.newsList',[])
             
-            {{-- @include('/components/presentational.newsList',[]) --}}
+            @endswitch
         </div>
     </main>
 @endsection

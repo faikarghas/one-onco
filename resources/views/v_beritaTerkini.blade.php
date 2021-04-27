@@ -6,10 +6,23 @@
 
     <main>
         <div class="box__banner forDesktop">
-            <img src="{{asset('/images/beritabanner.jpg')}}" width="100%" height="100%" alt="">
+
+            @switch(Request::segment(1))
+            @case('berita-terkini')
+                <img src="{{asset('/images/beritabanner.jpg')}}" width="100%" height="100%" alt="">
+                @break
+            @case('artikel-kanker')
+                <img src="{{asset('/images/jurnalbanner.jpg')}}" width="100%" height="100%" alt="">
+                @break
+            @case('cerita-survivor')
+                <img src="{{asset('/images/perPendamping.jpg')}}" width="100%" height="100%" alt=""> 
+                @break
+            @default
+                <img src="{{asset('/images/solusiOnkologiBanner.jpg')}}" width="100%" height="100%" alt="">
+            @endswitch
             <div class="box__banner-desc">
-                <h2>Berita Terkini</h2>
-                <p>Berita terkini seputar kanker</p>
+                <h2>{!! $titleHeader !!}</h2>
+                <p>{!! $taglineHeader !!}</p>
             </div>
         </div>
         <section class="bg-color_lightGrey berita__section">
@@ -21,7 +34,7 @@
                             'title'=>strip_tags($listingNews[0]->title),
                             'image_url'=>'https://source.unsplash.com/random',
                             'author'=>$listingNews[0]->shortContent,
-                            'path'=>'berita-terkini/'.$listingNews[0]->slug,
+                            'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
                             'class'=>'bigBox'
                         ))
                     </div>

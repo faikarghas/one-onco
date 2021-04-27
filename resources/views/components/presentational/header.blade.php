@@ -10,12 +10,12 @@
             <div class="col-8">
                 <nav>
                     <ul>
-                        <li><a class="{{request()->is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a></li>
-                        <li><a class="{{request()->is('untuk-pasien') ? 'active' : '' }}" href="/untuk-pasien">Untuk Pasien</a></li>
-                        <li><a class="{{request()->is('untuk-pendamping') ? 'active' : '' }}" href="/untuk-pendamping">Untuk Pendamping</a></li>
-                        <li><a class="{{request()->is('cerita-survivor') ? 'active' : '' }}" href="/cerita-survivor">Cerita Inspiratif</a></li>
+                        <li><a class="{{Request::segment(1) == 'tentang-kami' ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a></li>
+                        <li><a class="{{Request::segment(1) == 'untuk-pasien' ? 'active' : '' }}" href="/untuk-pasien">Untuk Pasien</a></li>
+                        <li><a class="{{Request::segment(1) == 'untuk-pendamping' ? 'active' : '' }}" href="/untuk-pendamping">Untuk Pendamping</a></li>
+                        <li><a class="{{Request::segment(1) == 'cerita-survivor' ? 'active' : '' }}" href="/cerita-survivor">Cerita Inspiratif</a></li>
                         <li class="show_menu">
-                            <a class="{{request()->is('berita-terkini') ? 'active' : '' }}" href="/berita-terkini">Artikel & Berita Terkini</a>
+                            <a class="{{Request::segment(1) == 'berita-terkini' ? 'active' : '' }}" href="/berita-terkini">Artikel & Berita Terkini</a>
                             <div class="sub_menu">
                                 <ul>
                                     <li><a href="/berita-terkini">Berita Terkini</a></li>
@@ -30,8 +30,13 @@
                 <ul class="userAction">
                     <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                     <li><a><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
-                    <li>{!! $statusLogin !!}</li>
-                    <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                    @if (Auth::check())
+                        <li><a href='/logout'>LOGOUT</a></li>
+                        <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                    @else 
+                        <li><a href='/logout'>LOGIN</a></li>
+                        <li></li>
+                    @endif
                 </ul>
             </div>
         </div>

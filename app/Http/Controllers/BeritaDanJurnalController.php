@@ -11,30 +11,30 @@ use Illuminate\Pagination\Paginator;
 
 class BeritaDanJurnalController extends Controller
 {
-    public function berita(Request $request){
+    public function index(Request $request){
       $siteConfig   = DB::table('global_data')->first();
       $listnews = $this->getnews();
-      $statusLogin = $this->checkLogin();
 
-      // listing all story with load more
-      $segment = $request->segment(1);
-      $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
-      $id_kategori = $content_kategori->id;
-      $title_header = $content_kategori->intro;
-      $tagline_header = $content_kategori->content;
-      $img_header = $content_kategori->image;
+      // get all atribut pages
+      $slugKat = $request->segment(1);
+      $listAttribute = $this->getPages($slugKat);
+
+
+      $id_kategori = $listAttribute->id;
+      $titleHeader = $listAttribute->title;
+      $taglineHeader = $listAttribute->intro;
+      $img_header = $listAttribute->image;
+
       $model  = new Artikel_model();
       $listingStory  = $model->all_kategori($id_kategori);
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
-                    'statusLogin'=>$statusLogin,
-                    'slugStory' => 'testt',
                     'img_header' =>$img_header,
-                    'title_header' =>$title_header,
-                    'tagline_header' => $tagline_header,
+                    'titleHeader' =>$titleHeader,
+                    'taglineHeader' => $taglineHeader,
                     'listingStory' => $listingStory,
                     'pagesStory' => $listingStory,
                     'listingNews'=>$listingNews
@@ -44,11 +44,10 @@ class BeritaDanJurnalController extends Controller
 
       return view ('v_beritaTerkini', $data);
     }
-    public function beritaDetail($slug, Request $request){
+    public function detail($slug, Request $request){
       $siteConfig   = DB::table('global_data')->first();
 
-      $statusLogin = $this->checkLogin();
-
+    
       // header title and image
       $segment = $request->segment(1);
       $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
@@ -57,11 +56,19 @@ class BeritaDanJurnalController extends Controller
       $tagline_header = $content_kategori->content;
       $img_header = $content_kategori->image;
 
-      // listing detail story
+      // detail News/artikel/story
       $segment2 = $request->segment(2);
       $model  = new Artikel_model();
       $detailStory  = $model->detail($segment2);
-      // dd($detailStory);
+      
+      $yearCurrent  = date('Y');
+      $dateNewsDetail =  date('Y', strtotime($detailStory->publishDate));
+      if ($yearCurrent == $dateNewsDetail ){
+          $dateDetail =  date('d M', strtotime($dateNewsDetail));
+      } else {
+          $dateDetail =  date('Y-d-mm', strtotime($dateNewsDetail));
+      }
+                                              
 
       // other artikel
       $id =  $detailStory->id;
@@ -72,86 +79,14 @@ class BeritaDanJurnalController extends Controller
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
-                    'statusLogin'=>$statusLogin,
                     'titleStory'=>$detailStory->title,
+                    'dateStory'=>$dateDetail,
                     'authorStory'=>$detailStory->shortContent,
                     'contentStory'=>$detailStory->content,
                     'otherStory'=>$otherStory,
                     'slugStory' => 'testt',
                     'listingNews'=>$listingNews
                   );
-
       return view ('v_beritaTerkiniDetail', $data);
-    }
-
-    public function jurnal(Request $request){
-      $siteConfig   = DB::table('global_data')->first();
-      $listnews = $this->getnews();
-      $statusLogin = $this->checkLogin();
-
-      // listing all story with load more
-      $segment = $request->segment(1);
-      $content_kategori = DB::table('kategori_artikel')->where('slug','artikel-kanker')->first();
-      $id_kategori = $content_kategori->id;
-      $title_header = $content_kategori->intro;
-      $tagline_header = $content_kategori->content;
-      $img_header = $content_kategori->image;
-      $model  = new Artikel_model();
-      $listingStory  = $model->all_kategori($id_kategori);
-
-      // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',2)->limit(3)->orderBy('id', 'DESC')->get();
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
-                    'statusLogin'=>$statusLogin,
-                    'slugStory' => 'testt',
-                    'img_header' =>$img_header,
-                    'title_header' =>$title_header,
-                    'tagline_header' => $tagline_header,
-                    'listingStory' => $listingStory,
-                    'pagesStory' => $listingStory,
-                    'listingNews'=>$listingNews
-                  );
-
-      return view ('v_jurnalOnkologi', $data);
-    }
-    public function jurnalDetail($slug, Request $request){
-      $siteConfig   = DB::table('global_data')->first();
-
-      $statusLogin = $this->checkLogin();
-
-      // header title and image
-      $segment = $request->segment(1);
-      //DB::enableQueryLog();
-      $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
-
-      $id_kategori = $content_kategori->id;
-      $title_header = $content_kategori->intro;
-      $tagline_header = $content_kategori->content;
-      $img_header = $content_kategori->image;
-
-      // listing detail story
-      $segment2 = $request->segment(2);
-      $model  = new Artikel_model();
-      $detailStory  = $model->detail($segment2);
-
-      // other artikel
-      $id =  $detailStory->id;
-      $otherModel  = new Artikel_model();
-      $otherStory  = $model->otherArticle($id, $id_kategori);
-
-      // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',2)->limit(3)->orderBy('id', 'DESC')->get();
-      $data = array('title' => $detailStory->title,
-                    'copyright'=>$siteConfig->pvar3,
-                    'statusLogin'=>$statusLogin,
-                    'titleStory'=>$detailStory->title,
-                    'authorStory'=>$detailStory->shortContent,
-                    'contentStory'=>$detailStory->content,
-                    'otherStory'=>$otherStory,
-                    'slug' => 'testt',
-                    'listingNews'=>$listingNews
-                  );
-      return view ('v_jurnalOnkologiDetail', $data);
-    }
+  }
 }

@@ -6,7 +6,8 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\BeritaDanJurnalController;
-use App\Http\Controllers\LoginController;
+//use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SistemTubuhController;
 use App\Http\Controllers\UntukPasienDanPendampingController;
@@ -26,38 +27,74 @@ use App\Http\Controllers\PagesController;
 */
 
 // Auth
-Route::get('login', [LoginController::class,'index']);
-Route::post('login/auth',[LoginController::class,'auth']);
-Route::get('forgot',[LoginController::class,'forgot']);
-Route::get('logout',[LoginController::class,'logout']);
 
-Route::get('/register', function () {
-    return view('v_register');
+Route::get('login', [AuthController::class,'showFormLogin'])->name('login');
+Route::post('login', [AuthController::class, 'login']);
+Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
+Route::get('pengaturan', [AuthController::class, 'forgotPassword'])->name('Forgot Password');
+
+
+
+
+
+// Route::get('login', [AuthController::class,'index']);
+// Route::post('login/auth',[LoginController::class,'auth']);
+// Route::get('forgot',[LoginController::class,'forgot']);
+// Route::get('logout',[LoginController::class,'logout']);
+
+
+// Route::get('/register', function () {
+//     return view('v_register');
+// });
+//Route::get('/pengaturan', [PengaturanController::class,'index']);
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
-
-Route::get('/pengaturan', [PengaturanController::class,'index']);
 
 Route::get('/sukses', function () {
     return view('v_success');
 });
 
 // Main
-Route::get('/', [HomeController::class,'index']);
-Route::get('/home', [HomeController::class,'index']);
-Route::get('/tentang-kami',[AboutController::class,'index']);
-Route::get('/tentang-kami/{slug}',[AboutController::class,'pages']);
+Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/home', [HomeController::class,'index'])->name('home');
+// Route::get('/tentang-kami',[AboutController::class,'index']);
+// Route::get('/tentang-kami/{slug}',[AboutController::class,'pages']);
+Route::get('/tentang-kami',[PagesController::class,'index']);
+Route::get('/tentang-kami/{slug}',[PagesController::class,'index']);
+
+
+
 Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
 
 Route::get('/cerita-survivor',[StoryController::class,'index']);
 Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
 
-Route::get('/untuk-pasien',[UntukPasienDanPendampingController::class,'pasien']);
-Route::get('/untuk-pasien/{slug}',[UntukPasienDanPendampingController::class,'detailPasien']);
-Route::get('/untuk-pendamping',[UntukPasienDanPendampingController::class,'pendamping']);
-Route::get('/untuk-pendamping/{slug}',[UntukPasienDanPendampingController::class,'detailPendamping']);
+// Route::get('/untuk-pasien',[UntukPasienDanPendampingController::class,'pasien']);
+// Route::get('/untuk-pasien/{slug}',[UntukPasienDanPendampingController::class,'detailPasien']);
 
-Route::get('/perawatan-kanker',[PerawatanKankerController::class,'index']);
-Route::get('/perawatan-kanker/{slug}',[PerawatanKankerController::class,'detail']);
+Route::get('/untuk-pasien',[PagesController::class,'index']);
+Route::get('/untuk-pasien/{slug}',[PagesController::class,'index']);
+
+// Route::get('/untuk-pendamping',[UntukPasienDanPendampingController::class,'pendamping']);
+// Route::get('/untuk-pendamping/{slug}',[UntukPasienDanPendampingController::class,'detailPendamping']);
+
+Route::get('/untuk-pendamping',[PagesController::class,'index']);
+Route::get('/untuk-pendamping/{slug}',[PagesController::class,'index']);
+
+// Route::get('/perawatan-kanker',[PerawatanKankerController::class,'index']);
+// Route::get('/perawatan-kanker/{slug}',[PerawatanKankerController::class,'detail']);
+
+Route::get('/perawatan-kanker',[PagesController::class,'index']);
+Route::get('/perawatan-kanker/{slug}',[PagesController::class,'index']);
+
+
+
+Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');
+
+Route::get('/get-more-faskes', [DirectoryController::class,'getMoreFaskes'])->name('faskes.get-more-faskes');
+
 
 Route::get('/direktori',[DirectoryController::class,'index']);
 Route::get('/direktori-dokter',[DirectoryController::class,'dokter']);
@@ -73,10 +110,15 @@ Route::get('/direktori-lab',[DirectoryController::class,'lab']);
 Route::get('/direktori-care',[DirectoryController::class,'carehome']);
 Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
 
-Route::get('/berita-terkini',[BeritaDanJurnalController::class,'berita']);
-Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'beritaDetail']);
-Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'jurnal']);
-Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'jurnalDetail']);
+// Route::get('/berita-terkini',[BeritaDanJurnalController::class,'berita']);
+// Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'beritaDetail']);
+// Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'jurnal']);
+// Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'jurnalDetail']);
+
+Route::get('/berita-terkini',[BeritaDanJurnalController::class,'index']);
+Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'detail']);
+Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
+Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
 
 
 
@@ -122,12 +164,6 @@ Route::get('/search', [SearchController::class,'index']);
 // Pages Footer
 Route::get('/syaratdanketentuan',[PagesController::class,'index']);
 Route::get('/syaratdanketentuan/{slug}',[PagesController::class,'index']);
-// Route::get('/kebijakan-privasi',[PagesController::class,'index']);
 
-// // partner
-// Route::get('/partnerkami',[PagesController::class,'index']);
-
-// // sitemap
-// Route::get('/sitemap',[PagesController::class,'index']);
 
 

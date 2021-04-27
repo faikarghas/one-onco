@@ -37,7 +37,6 @@
                                         </ul>
                                     </div>
                                 </li>
-
                             </ul>
                         </nav>
                     </div>
@@ -46,8 +45,13 @@
                             <ul class="userAction">
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                                 <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>                                
-                                <li>{!! $statusLogin !!}</li>
-                                <li>{!! $statusConfig !!}</li>
+                                @if (Auth::check())
+                                    <li><a href='/logout'>LOGOUT</a></li>
+                                    <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                                @else 
+                                    <li><a href='/login'>LOGIN</a></li>
+                                    <li></li>
+                                @endif
                             
                             </ul>
                         <nav>
@@ -232,7 +236,7 @@
                                         <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
                                             <a href="{{ url('/sistem-tubuh') }}">
                                                 <div class="boxSearchKanker_wrapper-boxImg">
-                                                    <img src="http://oneonco-admin.herokuapp.com/data_kanker/{{ $row->image }}" alt="kankerpayudara" width="100%" height="100%">
+                                                    <img src="{{ asset("data_kanker/$row->image") }}" alt="kankerpayudara" width="100%" height="100%">
                                                 </div>
                                                 <?php $titleName = preg_replace("/[\s_]/", "<br>", $row->title, 1); ?>
                                                 <h4>{!! $titleName !!}</h4>
@@ -245,7 +249,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="third__section pt-5">
                 <div class="container">
                     <div class="row">
@@ -270,7 +273,7 @@
                             @include('components/presentational.boxNews',array(
                                 'date'=> $date,
                                 'title'=>$row->title ,
-                                'image_url'=>'http://oneonco-admin.herokuapp.com/data_artikel/'.$row->imgDesktop,
+                                'image_url'=>$row->imgDesktop,
                                 'description'=>$row->shortContent,
                                 'path'=>'artikel-kanker/'.$row->slug
                             ))
@@ -293,7 +296,6 @@
                     </div>
                 </div>
             </div>
-
             <section class="partnerKami__section">
                 <div class="container">
                     <div class="row">
@@ -302,7 +304,7 @@
                             <ul class="partner-slider mb-0">
                                 @foreach($listingPartners as $row)
                                     <li class="ps-3 pe-3">
-                                        <a href="{{ $row->partnerWebsite }}"><img src="http://oneonco-admin.herokuapp.com/data_partner/{{ $row->images  }}" width="100%" height="200px" alt=""></a>
+                                        <a href="{{ $row->partnerWebsite }}"><img src="{{ asset("data_artikel/$row->$images") }}" width="100%" height="200px" alt=""></a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -321,5 +323,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
+        
     </body>
 </html>

@@ -9,7 +9,7 @@
                 </div>
                 @include('components/presentational.boxShowMore',array(
                     'title'=>'Load More',
-                    'path'=>'{{ $pagesStory->links() }}'
+                    'path'=>'cerita-survivor'
                 ))
             </div>
             @foreach($listingStory as $row)

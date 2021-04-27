@@ -12,7 +12,11 @@
                 </div>
                 <ul>
                     <li><p><strong>Unit Operasional Onkologi</strong></p></li>
-                    <li><p>Kemoterapi</p></li>
+                    <li><p>{{ $spesialis  }}</p></li>
+                </ul>
+                <ul>
+                    <li><p><strong>Lokasi Praktek:</strong></p></li>
+                    <li><p>{!! $praktek !!}</p></li>
                 </ul>
             </div>
             <div class="col-2 d-flex align-items-center justify-content-center">
