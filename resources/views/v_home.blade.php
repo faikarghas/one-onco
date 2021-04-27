@@ -295,7 +295,6 @@
                     </div>
                 </div>
             </div>
-
             <section class="partnerKami__section">
                 @include('/components/presentational.partnerList',[])
             </section>
