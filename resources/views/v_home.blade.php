@@ -52,7 +52,6 @@
                                     <li><a href='/login'>LOGIN</a></li>
                                     <li></li>
                                 @endif
-                            
                             </ul>
                         <nav>
                     </div>
@@ -211,10 +210,10 @@
             <section class="second__section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-6 text-center">
+                        <div class="col-12 col-lg-6 text-center">
                             <img id="img-one" class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6">
                             <h3><strong>Mengapa perawatan kanker harus menjadi rumit?</strong></h3>
                             <p class="mb-5">
                             {{ $contentAbout }}
@@ -284,7 +283,39 @@
             </section>
 
             <section class="berita__section">
-                @include('/components/presentational.newsList',[])
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between mb-5">
+                            <div>
+                                <h2 class="text-center"><strong>BERITA TERKINI</strong></h2>
+                            </div>
+                            @include('components/presentational.boxShowMore',array(
+                                'title'=>'Lihat semua',
+                                'path'=>'berita-terkini'
+                            ))
+                        </div>
+                        @foreach($listingNews as $row)
+                                <?php 
+                                    $yearCurrent  = date('Y');
+                                    $dateNews =  date('Y', strtotime($row->publishDate));
+                                    if ($yearCurrent == $dateNews ){
+                                        $date =  date('d-M', strtotime($row->publishDate));
+                                    } else {
+                                        $date =  date('d-M-Y', strtotime($row->publishDate));
+                                    }
+                                ?>
+                                <div class="col-12 col-lg-4">
+                                    @include('components/presentational.boxNews',array(
+                                            'date'=>$date,
+                                            'title'=>$row->title,
+                                            'image_url'=>$row->imgDesktop,
+                                            'description'=>$row->shortContent,
+                                            'path'=>'/berita-terkini/'.$row->slug
+                                    ))
+                                </div>
+                        @endforeach
+                    </div>
+                </div>
             </section>
             <div class="hrdiv">
                 <div class="container">
@@ -298,7 +329,6 @@
             <section class="partnerKami__section">
                 @include('/components/presentational.partnerList',[])
             </section>
-            {{-- @include('components/presentational/boxPartner') --}}
         </main>
         @include('components/presentational/footer')
         <div class="searchpop">

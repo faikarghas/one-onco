@@ -587,7 +587,7 @@ strong {
   width: 85%;
 }
 .homeHeader .headerMobile {
-  height: 100%;
+  height: 40vh;
   position: relative;
   background-position: center;
   background-size: cover;
