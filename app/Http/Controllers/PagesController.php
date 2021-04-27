@@ -15,7 +15,7 @@ class PagesController extends Controller
       
       // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();       
-      if ( Request::segment(1) == 'sistem-stubuh') {
+      if ( $request->segment(1) == 'sistem-tubuh') {
         $slugKat = $request->segment(2);
       } else {
         $slugKat = $request->segment(1);
