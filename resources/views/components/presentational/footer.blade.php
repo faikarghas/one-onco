@@ -61,7 +61,6 @@
             <div class="col-6 mt-5">
                 <div class="sitemap">
                     <ul>
-                        <li><a href="/site-map">Site Map</a></li>
                         <li><a href="/tentang-kami">Tentang Kami</a></li>
                         <li><a href="/untuk-pasien">Untuk Pasien</a></li>
                         <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
