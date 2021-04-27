@@ -9,10 +9,8 @@
             <div class="col-7 d-flex flex-column align-items-start">
                 <div class="title_wrapper">
                     <h3><strong>{{$title}}</strong></h3>
+                    <p>{{ $spesialis  }}</p>
                 </div>
-                <ul>
-                    <li><p>{{ $spesialis  }}</p></li>
-                </ul>
                 <ul>
                     <li><p><strong>Lokasi Praktek:</strong></p></li>
                     <li><p>{!! $praktek !!}</p></li>
