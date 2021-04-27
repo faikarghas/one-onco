@@ -58,7 +58,7 @@
             @if ( $currentUrl == 'direktori-care')
               @include('components/presentational.boxRec',[
                 'image_url'=>$image_url,
-                'title'=>'Direktori Care Center',
+                'title'=>'Direktori Rumah Sakit',
                 'description'=>'Temukan fasilitas perawatan kanker terdekat',
                 'color'=>$color,
                 'colorPar'=>$color,
