@@ -82,6 +82,7 @@ Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail'])
 Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
 Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
 
+Route::get('/partner-kami',[KonsultasiOnlineController::class,'index']);
 
 
 Route::get('/sukses', function () {
@@ -121,6 +122,9 @@ Route::get('/search', [SearchController::class,'index']);
 // Pages Footer
 Route::get('/syaratdanketentuan',[PagesController::class,'index']);
 Route::get('/syaratdanketentuan/{slug}',[PagesController::class,'index']);
+
+Route::get('/partner-kami',[PagesController::class,'index']);
+Route::get('/partner-kami/{slug}',[PagesController::class,'index']);
 
 
 
