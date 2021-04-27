@@ -165,7 +165,7 @@
 .box__rec3{
     height: 130px;
     @include respond(down-tab-port){
-        height: 100px;
+        height: unset;
     }
     .title_wrapper{
         border-bottom:1px solid #c9c9c9;

@@ -1246,7 +1246,7 @@ footer .sosmed ul li {
 }
 @media only screen and (max-width: 62em) {
   .box__rec3 {
-    height: 100px;
+    height: unset;
   }
 }
 .box__rec3 .title_wrapper {
