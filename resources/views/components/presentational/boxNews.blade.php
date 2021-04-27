@@ -4,7 +4,7 @@
 <div class='boxNews {{$class}}'>
 @endif
     <div class="boxImage">
-        <img src="{{ asset("data_kanker/$image_url") }}" alt="{{$title}}">
+        <img src="{{ asset("data_artikel/$image_url") }}" alt="{{$title}}">
     </div>
     <div class="boxInformation">
         @if(empty($description) && !@empty($author))
