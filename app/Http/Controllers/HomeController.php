@@ -38,7 +38,7 @@ class HomeController extends Controller
                           ->select('artikel.*', 'kategori_artikel.slug AS slugkat', 'kategori_artikel.intro' )
                           ->where('artikel.idKat',2)
                           ->limit(3)
-                          ->orderBy('artikel.id', 'DESC')
+                          ->orderBy('artikel.publishDate', 'DESC')
                           ->get();
         // variable news terbaru
         //$sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();

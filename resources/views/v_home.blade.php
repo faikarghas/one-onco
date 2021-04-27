@@ -264,10 +264,11 @@
                             <?php 
                                 $yearCurrent  = date('Y');
                                 $dateNews =  date('Y', strtotime($row->publishDate));
-                                if ($yearCurrent == $dateNews ){
-                                   $date =  date('d-M', strtotime($dateNews));
+
+                                if ($yearCurrent === $dateNews ){
+                                   $date =  date('d-M', strtotime($row->publishDate));
                                 } else {
-                                   $date =  date('Y-d-m', strtotime($dateNews));
+                                   $date =  date('d-M-Y',strtotime($row->publishDate));
                                 }
                             ?>
                             @include('components/presentational.boxNews',array(
