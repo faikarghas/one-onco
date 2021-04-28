@@ -8,7 +8,7 @@
                     <h2 class="text-center text-lg-start mb-5"><strong>Cerita Inspiratif Kanker</strong></h2>
                 </div>
                 @include('components/presentational.boxShowMore',array(
-                    'title'=>'Load More',
+                    'title'=>'Lihat Semua',
                     'path'=>'cerita-survivor'
                 ))
             </div>
@@ -17,7 +17,7 @@
                 @include('components/presentational.boxNews',array(
                     'date'=>$row->created_at,
                     'title'=>strip_tags($row->title),
-                    'image_url'=>'https://source.unsplash.com/random',     
+                    'image_url'=>'https://source.unsplash.com/random',
                     'author'=>$row->shortContent,
                     'path'=>'/cerita-survivor/'.$row->slug
                 ))
