@@ -25,14 +25,14 @@
               <div class="col">
                 @if (Request::segment(1)==='direktori-dokter')
                   <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
-                      <option>{{\App\Constants\GlobalConstants::ALL}}</option>
+                      <option>{{\App\Constants\GlobalConstants::ALLSpec}}</option>
                       @foreach ($spesialis as $spesial => $value)
                           <option>{{ $value }}</option>
                       @endforeach
                   </select>
                   @elseif (Request::segment(1)==='direktori-care')
                   <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
-                    <option>{{\App\Constants\GlobalConstants::ALL}}</option>
+                    <option>{{\App\Constants\GlobalConstants::ALLSpec}}</option>
                     @foreach(\App\Constants\GlobalConstants::LIST_LAYANAN as $type)
                         <option>{{ $type }}</option>
                     @endforeach
@@ -41,7 +41,7 @@
               </div>
               <div class="col">
                   <select class="form-select mb-3" aria-label="Default select example" id="provinsi" name="provinsi">
-                      <option>{{\App\Constants\GlobalConstants::ALL}}</option>
+                      <option>{{\App\Constants\GlobalConstants::ALLProv}}</option>
                       @foreach ($cities as $citi => $value)
                           <option data-id="{{ $citi }}">{{ $value }}</option>
                       @endforeach

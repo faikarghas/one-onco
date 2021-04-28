@@ -84,11 +84,9 @@
             height: 35px;
             border-radius: 12px;
             color: black;
+            font-size: 1.4rem;
             option{
                 color: black;
-                &::placeholder{
-                    font-size: 1.4rem;
-                }
             }
         }
     }
