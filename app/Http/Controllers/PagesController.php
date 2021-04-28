@@ -17,6 +17,7 @@ class PagesController extends Controller
       $siteConfig   = DB::table('global_data')->first();       
       // get all atribut pages
       $slugKat = $request->segment(1);
+      //dd($slugKat);
       $listAttribute = $this->getPages($slugKat);
       //dd($listAttribute);
       $kategoriId = $listAttribute->id;
@@ -27,9 +28,13 @@ class PagesController extends Controller
       //dd($subTitleHeader);         
       // side menu by kategori artikel
       $listingKatArtikel = DB::table('artikel')->where('idKat',$kategoriId)->orderBy('sortId', 'ASC')->get();
+      //dd($listingKatArtikel);
         // main content after and before click
       if (!empty($slug)){
-        $viewDataDetail =  DB::table('artikel')->where('slug',$slug)->first();
+        $viewDataDetail =  DB::table('artikel')
+                              ->where('idKat',$kategoriId)
+                              ->where('slug',$slug)
+                              ->first();
         $titleContentPages = $viewDataDetail->title;
         $mainContent = $viewDataDetail->content;
       } else {

@@ -11,12 +11,18 @@
                     <h3><strong>{{$title}}</strong></h3>
                 </div>
                 <ul>
+<<<<<<< HEAD
+                    <li><p>&nbsp;<p></li>
+                    <li><p>&nbsp;<p></li>
+                    <li><p><strong>Lokasi Praktek:</strong></p></li>
+=======
                     <li class="pt-3 pb-3 spes">
                         <p><strong>{{ $spesialis  }}</strong></p>
                     </li>
                     <li class="pt-3">
                         <p><strong>Lokasi Praktek</strong></p>
                     </li>
+>>>>>>> f103ac78a456ffb3606eabeb355c03c2b0a1e551
                     <li><p>{!! $praktek !!}</p></li>
                 </ul>
             </div>
