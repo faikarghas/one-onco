@@ -22,7 +22,7 @@ class StoryController extends Controller
       // $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
 
       $id_kategori =  $listAttribute->id;
-      $title_header = $listAttribute->content;
+      $title_header = $listAttribute->title;
       $tagline_header = $listAttribute->intro;
       $img_header =$listAttribute->image;
 
@@ -66,7 +66,7 @@ class StoryController extends Controller
 
       $slugKat = $request->segment(1);
       $listAttribute = $this->getPages($slugKat);
-      $title_header = $listAttribute->content;
+      $title_header = $listAttribute->title;
       $tagline_header = $listAttribute->intro;
 
       // other artikel

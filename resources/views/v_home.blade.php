@@ -266,7 +266,7 @@
                                 $dateNews =  date('Y', strtotime($row->publishDate));
                                 if ($yearCurrent === $dateNews ){
                                    $date =  date('d-M', strtotime($row->publishDate));
-                                } else {
+                                } else { 
                                    $date =  date('d-M-Y',strtotime($row->publishDate));
                                 }
                             ?>
