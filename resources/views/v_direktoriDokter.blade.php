@@ -9,7 +9,7 @@
                         <div class="row justify-content-center">
                             <h3 class="text-center mb-4"> <strong>Cari dokter Onkologi di daerahmu:</strong></h3>
                             <div class="input-group">
-                                <input  type="search" class="form-control py-2 rounded-pill mr-1 pr-5 mb-2" id="search" placeholder="Ketik kata kunci">
+                                <input  type="search" class="form-control py-2 rounded-pill mr-1 pr-5 mb-2" id="search_mobile" placeholder="Ketik kata kunci">
                                 {{-- <span class="input-group-append">
                                     <button class="btn rounded-pill border-0 "  style="margin-left: -3rem !important;" type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
