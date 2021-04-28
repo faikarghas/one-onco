@@ -25,14 +25,14 @@
                             <div class="row">
                               <div class="col-12">
                                 @if (Request::segment(1)==='direktori-dokter' || Request::segment(1)==='dokter-detail')
-                                  <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
+                                  <select class="form-select mb-2" aria-label="Default select example" id="spesialis_mobile" name="spesialis">
                                       <option>{{\App\Constants\GlobalConstants::ALL}}</option>
                                       @foreach ($spesialis as $spesial => $value)
                                           <option>{{ $value }}</option>
                                       @endforeach
                                   </select>
                                   @elseif (Request::segment(1)==='direktori-care')
-                                  <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
+                                  <select class="form-select mb-2" aria-label="Default select example" id="spesialis_mobile" name="spesialis">
                                     <option>{{\App\Constants\GlobalConstants::ALL}}</option>
                                     @foreach(\App\Constants\GlobalConstants::LIST_LAYANAN as $type)
                                         <option>{{ $type }}</option>
@@ -41,7 +41,7 @@
                                   @endif
                               </div>
                               <div class="col-12">
-                                  <select class="form-select mb-2" aria-label="Default select example" id="provinsi" name="provinsi">
+                                  <select class="form-select mb-2" aria-label="Default select example" id="provinsi_mobile" name="provinsi">
                                       <option>{{\App\Constants\GlobalConstants::ALL}}</option>
                                       @foreach ($cities as $citi => $value)
                                           <option data-id="{{ $citi }}">{{ $value }}</option>
@@ -49,7 +49,7 @@
                                   </select>
                               </div>
                               <div class="col-12">
-                                  <select class="form-select mb-2" aria-label="Default select example" id="kabupaten" name="kabupaten">
+                                  <select class="form-select mb-2" aria-label="Default select example" id="kabupaten_mobile" name="kabupaten">
                                     <option value="">Pilih Kabupaten - Kabupaten RS</option>
                                   </select>
                               </div>
