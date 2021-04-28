@@ -23,7 +23,7 @@ class DirectoryController extends Controller
     }
     public function dokter(){
       $siteConfig   = DB::table('global_data')->first();
-      // filter select option  
+      // filter select option
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
       // dokter all
@@ -41,7 +41,8 @@ class DirectoryController extends Controller
       $provinsi = $request->provinsi;
       $kabupaten = $request->kabupaten;
       $dokter = Dokter_model::getDokters($query,$spesialis,$provinsi,$kabupaten);
-      return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();    
+
+      return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();
     }
     public function getDokterDetail($id, Request $request) {
       $siteConfig   = DB::table('global_data')->first();
@@ -51,9 +52,9 @@ class DirectoryController extends Controller
         ->first();
 
       $fullname = $dokterDetail->fullname;
-      $layanan = $dokterDetail->subSpesialist;  
+      $layanan = $dokterDetail->subSpesialist;
       $idDokter = $id;
-      
+
       $viewFaskes = DB::table('faskes')
           ->join('jadwal_dokter', 'jadwal_dokter.faskesId', '=', 'faskes.faskesId','LEFT')
           ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten','faskes.website','faskes.phone')
@@ -85,7 +86,7 @@ class DirectoryController extends Controller
     $faskess = Faskes_model::getFaskes('', GlobalConstants::ALL, GlobalConstants::ALL, GlobalConstants::ALL);
 
     //dd($faskess);
-    
+
     $data = array('title' => $siteConfig->pvar2,
                   'copyright'=>$siteConfig->pvar3,
                   'faskes'=>$faskess
@@ -99,7 +100,7 @@ class DirectoryController extends Controller
     $provinsi = $request->provinsi;
     $kabupaten = $request->kabupaten;
     $faskes = Faskes_model::getFaskes($query,$spesialis,$provinsi,$kabupaten);
-    return view('components.presentational.boxResultFilterDirectoryFaskes', compact('faskes'))->render();    
+    return view('components.presentational.boxResultFilterDirectoryFaskes', compact('faskes'))->render();
   }
 
   public function care($id,Request $request){
@@ -186,7 +187,7 @@ public function getFaskesWithKabupaten($id) {
     return response()->json($viewFaskes);
 }
 
- 
+
 
   public function getDokterWithKabupaten($id) {
     $viewDokter = DB::table("dokter_mapped")->select('dokterId', 'fullname' )->where("kabupaten",$id)->distinct()->get();
@@ -218,7 +219,7 @@ public function lab(){
 
 
 
-  
+
 
 
 

@@ -15,7 +15,7 @@
                 <img src="{{asset('/images/jurnalbanner.jpg')}}" width="100%" height="100%" alt="">
                 @break
             @case('cerita-survivor')
-                <img src="{{asset('/images/perPendamping.jpg')}}" width="100%" height="100%" alt=""> 
+                <img src="{{asset('/images/perPendamping.jpg')}}" width="100%" height="100%" alt="">
                 @break
             @default
                 <img src="{{asset('/images/solusiOnkologiBanner.jpg')}}" width="100%" height="100%" alt="">
@@ -43,13 +43,30 @@
                             <?php $index = 0; ?>
                             @foreach($listingNews as $row)
                             @if ($index != 0)
+
+                            <?php
+                                $url;
+                                switch (Request::segment(1)) {
+                                    case 'berita-terkini':
+                                        $url='berita-terkini/'.$row->slug;
+                                        break;
+                                    case 'artikel-kanker':
+                                        $url='artikel-kanker/'.$row->slug;
+                                        break;
+                                    case 'cerita-survivor':
+                                        $url='cerita-survivor/'.$row->slug;
+                                        break;
+                                    default:
+                                        break;
+                                };
+                            ?>
                             <div class="col-12 col-lg-6">
                                 @include('components/presentational.boxNews',array(
                                     'date'=>$row->created_at,
                                     'title'=>strip_tags($row->title),
                                     'image_url'=>'https://source.unsplash.com/random',
                                     'author'=>$row->shortContent,
-                                    'path'=>'/cerita-survivor/'.$row->slug,
+                                    'path'=> $url,
                                     'class'=>'smallBox'
                                 ))
                             </div>

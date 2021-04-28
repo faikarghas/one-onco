@@ -17,9 +17,9 @@ class StoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       // get all atribut pages
       $slugKat = $request->segment(1);
-      $listAttribute = $this->getPages($slugKat);  
+      $listAttribute = $this->getPages($slugKat);
       // $segment = $request->segment(1);
-      // $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first(); 
+      // $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
 
       $id_kategori =  $listAttribute->id;
       $title_header = $listAttribute->intro;
@@ -31,7 +31,7 @@ class StoryController extends Controller
 
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
-      
+
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'slugStory' => 'testt',
@@ -42,19 +42,18 @@ class StoryController extends Controller
                     'pagesStory' => $listingStory,
                     'listingNews'=>$listingNews
                   );
-      
+
       return view ('v_ceritaSurvivor', $data);
     }
-
 
     public function detail($slug, Request $request){
 
       // GET variable from global data for website
-      $siteConfig   = DB::table('global_data')->first();    
-      
+      $siteConfig   = DB::table('global_data')->first();
+
       // header title and image
       $segment = $request->segment(1);
-      $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first(); 
+      $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
@@ -69,7 +68,6 @@ class StoryController extends Controller
       $id =  $detailStory->id;
       $otherModel  = new Artikel_model();
       $otherStory  = $model->otherArticle($id, $id_kategori);
-      
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,

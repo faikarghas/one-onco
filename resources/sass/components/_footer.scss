@@ -15,6 +15,14 @@ footer{
         }
     }
     .newsletter{
+        @include respond(down-tab-port){
+            margin-top: 4rem;
+        }
+        p{
+            @include respond(down-tab-port){
+                text-align: left !important;
+            }
+        }
         .input-group{
             height: 45px;
             @include respond(down-tab-port){
@@ -61,7 +69,7 @@ footer{
             height: 100%;
             padding-left: 0;
             @include respond(down-tab-port){
-                padding-top: 2rem;
+                padding-top: 0rem;
             }
             li{
                 list-style: none;
@@ -70,6 +78,7 @@ footer{
                 @include respond(down-tab-port){
                     display: block;
                     margin-bottom: 1rem;
+                    text-align: left;
                 }
                 a{
                     color: white;
@@ -89,7 +98,7 @@ footer{
             height: 100%;
             padding-left: 0;
             @include respond(down-tab-port){
-                padding-top: 2rem;
+                padding-top: 0;
             }
             li{
                 list-style: none;
@@ -140,6 +149,7 @@ footer{
         justify-content: flex-end;
         @include respond(down-tab-port){
             padding-top: 0;
+            justify-content: flex-start;
         }
         p{
             color: white;

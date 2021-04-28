@@ -1,5 +1,5 @@
 <footer class="pt-5 pb-5">
-    <div class="container forMobile">
+    {{-- <div class="container forMobile">
         <div class="row">
             <div class="col-12">
                 <div class="newsletter">
@@ -34,13 +34,13 @@
                 <p class="text-white mb-0">© Copyright OneOnco 2021</p>
             </div>
         </div>
-    </div>
-    <div class="container forDesktop">
+    </div> --}}
+    <div class="container">
         <div class="row">
-            <div class="col-8 d-flex align-items-center">
-                <img src="{{asset('/images/logo_oneonco.png')}}" width="220px"/>
+            <div class="col-12 col-lg-8 d-flex align-items-center">
+                <img src="{{asset('/images/logo_oneonco_white.png')}}" width="220px"/>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-lg-4">
                 <div class="newsletter">
                     <p class="text-white text-end">Dapatkan informasi terkini seputar kanker melalui e-Newsletter kami</p>
                     <div class="input-group mb-3">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mt-5">
+            <div class="col-12 col-lg-6 mt-5">
                 <div>
                     <p>Hubungi Kami</p>
                     <p>Jl. Rawa Gatel Blok III-S Kav.36, Pulogadung,<br/>
@@ -58,7 +58,7 @@
                     <p><span class="fw-bold">Email:</span> contactus@oneonco.co.id</p>
                 </div>
             </div>
-            <div class="col-6 mt-5">
+            <div class="col-12 col-lg-6 mt-5">
                 <div class="sitemap">
                     <ul>
                         <li><a href="/tentang-kami">Tentang Kami</a></li>
@@ -70,7 +70,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-6 mt-5">
+            <div class="col-12 col-lg-6 mt-5">
                 <div class="sitemap2">
                     <ul class="m-0  d-flex align-items-center">
                         <li><a href="/syaratdanketentuan/">Syarat & Ketentuan</a></li>
@@ -79,7 +79,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-6 mt-5">
+            <div class="col-12 col-lg-6 mt-5">
                 <div class="sosmed d-flex align-items-center">
                     <p class="m-0">Temukan kami di</p>
                     <ul class="m-0">

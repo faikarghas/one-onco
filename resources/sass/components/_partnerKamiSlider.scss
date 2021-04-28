@@ -5,8 +5,15 @@
     ul{
         padding-left: 0;
         li{
+            @include respond(down-tab-port){
+                height: 100px;
+            }
             img{
                 object-fit: cover;
+                @include respond(down-tab-port){
+                    object-fit: contain;
+                    height: 100%;
+                }
             }
         }
     }
