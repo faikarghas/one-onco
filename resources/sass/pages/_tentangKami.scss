@@ -8,8 +8,15 @@
             font-weight: 900;
             font-size: 1.5rem;
         }
-        p,div,p>span,ul>li,a,div>span,li>span{
+        p,div,p>span,ul>li,a,div>span,li>span,ol>li{
             font-size: 1.5rem !important;
+        }
+        table{
+            tr{
+                td{
+                    font-size: 1.5rem !important;
+                }
+            }
         }
     }
 
