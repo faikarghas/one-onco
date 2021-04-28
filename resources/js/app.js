@@ -1,4 +1,5 @@
 require('./bootstrap');
+const { default: axios } = require('axios');
 var html = require('./html')
 // CONTENT FOR SPECIFIC TIME PERIOD
 let baseUrl = window.location.origin
@@ -555,4 +556,34 @@ function getMoreDokters(page) {
   });
 }
 
-console.log(`${baseUrl}/get-more-dokters`);
+// input register
+
+axios.get(`https://dev.farizdotid.com/api/daerahindonesia/provinsi`).then(function (response) {
+
+    $('#register_form select[name="provinsi"]').append('<option value=""> Pilih Kabupaten</option>');
+    $.each(response.data.provinsi, function(key, value){
+        $('#register_form select[name="provinsi"]').append(new Option(value.nama, key));
+    });
+
+});
+
+
+$('#select_provinsi').change(function(){
+    let data= $(this).val();
+    // console.log(data);
+    console.log(data);
+    if (data !== "null") {
+
+        // axios.get(`https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=${response.data.provinsi.id}`).then(function (response) {
+        //     $('#register_form select[name="kota"]').append('<option value=""> Pilih Kabupaten</option>');
+        //     $.each(response.data.provinsi, function(key, value){
+        //         console.log(value);
+        //         $('#register_form select[name="kota"]').append(new Option(value.nama, key));
+        //     });
+        // });
+
+    } else if (data === "null") {
+        $('#selectFasekes').attr( "disabled","disabled")
+        $('#selectFasekes option').empty().remove()
+    }
+});

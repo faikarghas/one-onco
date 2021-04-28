@@ -1842,6 +1842,9 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
+    axios = _require["default"];
+
 var html = __webpack_require__(/*! ./html */ "./resources/js/html.js"); // CONTENT FOR SPECIFIC TIME PERIOD
 
 
@@ -2317,9 +2320,32 @@ function getMoreDokters(page) {
       $('#dokter_data').html(data);
     }
   });
-}
+} // input register
 
-console.log("".concat(baseUrl, "/get-more-dokters"));
+
+axios.get("https://dev.farizdotid.com/api/daerahindonesia/provinsi").then(function (response) {
+  $('#register_form select[name="provinsi"]').append('<option value=""> Pilih Kabupaten</option>');
+  $.each(response.data.provinsi, function (key, value) {
+    $('#register_form select[name="provinsi"]').append(new Option(value.nama, key));
+  });
+});
+$('#select_provinsi').change(function () {
+  var data = $(this).val(); // console.log(data);
+
+  console.log(data);
+
+  if (data !== "null") {// axios.get(`https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=${response.data.provinsi.id}`).then(function (response) {
+    //     $('#register_form select[name="kota"]').append('<option value=""> Pilih Kabupaten</option>');
+    //     $.each(response.data.provinsi, function(key, value){
+    //         console.log(value);
+    //         $('#register_form select[name="kota"]').append(new Option(value.nama, key));
+    //     });
+    // });
+  } else if (data === "null") {
+    $('#selectFasekes').attr("disabled", "disabled");
+    $('#selectFasekes option').empty().remove();
+  }
+});
 
 /***/ }),
 

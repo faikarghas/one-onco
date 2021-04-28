@@ -75,6 +75,52 @@
                             @endforeach
                         </div>
                     </div>
+
+                    <div class="col-12 mt-5">
+                        <div class="row">
+                            <div class="col-12 col-lg-3">
+                                @include('components/presentational.boxNews',array(
+                                    'date'=>$listingNews[0]->created_at,
+                                    'title'=>strip_tags($listingNews[0]->title),
+                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'author'=>$listingNews[0]->shortContent,
+                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
+                                    'class'=>'smallBox'
+                                ))
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                @include('components/presentational.boxNews',array(
+                                    'date'=>$listingNews[0]->created_at,
+                                    'title'=>strip_tags($listingNews[0]->title),
+                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'author'=>$listingNews[0]->shortContent,
+                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
+                                    'class'=>'smallBox'
+                                ))
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                @include('components/presentational.boxNews',array(
+                                    'date'=>$listingNews[0]->created_at,
+                                    'title'=>strip_tags($listingNews[0]->title),
+                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'author'=>$listingNews[0]->shortContent,
+                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
+                                    'class'=>'smallBox'
+                                ))
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                @include('components/presentational.boxNews',array(
+                                    'date'=>$listingNews[0]->created_at,
+                                    'title'=>strip_tags($listingNews[0]->title),
+                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'author'=>$listingNews[0]->shortContent,
+                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
+                                    'class'=>'smallBox'
+                                ))
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-12 text-center mt-5">
                         @include('components/presentational.boxShowMore',array(
                             'title'=>'Tampilkan lainnya',

@@ -14,7 +14,7 @@
         <img src="{{asset('/images/perPendamping.jpg')}}" width="100%" height="100%" alt="">
         @break
     @default
-        <img src="{{asset('/images/perkankerbanner.jpg')}}" width="100%" height="100%" alt="">
+        <img src="{{asset('/images/perawatan_kanker.jpg')}}" width="100%" height="100%" alt="">
     @endswitch
     <div class="box__banner-desc">
     @if (!empty(Request::segment(2)))  
