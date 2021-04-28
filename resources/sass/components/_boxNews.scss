@@ -22,7 +22,7 @@
     height: 100%;
     box-shadow: 0px 0px 14px 0px rgba(16,24,32,0.14);
     &.smallBox{
-        height: 300px;
+        min-height: 300px;
         .boxImage{
             height: 130px;
         }

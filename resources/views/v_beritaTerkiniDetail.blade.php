@@ -15,8 +15,8 @@
                         <div class="detail__page1--description mb-5">
 
                             <h1 class="mb-4">{{ $titleStory }}</h1>
-                            <p class="pagi-init">{!! $dateStory !!}</p>
-                            <p class="pagi-init">{!! $contentStory !!}</p>
+                            <p class="pagi-init">{{ $dateStory }}</p>
+                            {!! $contentStory !!}
                         </div>
                         <div class="share_sosmed forDesktop-dflex">
                             <div class="share_sosmed-link">

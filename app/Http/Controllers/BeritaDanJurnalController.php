@@ -47,7 +47,6 @@ class BeritaDanJurnalController extends Controller
     public function detail($slug, Request $request){
       $siteConfig   = DB::table('global_data')->first();
 
-    
       // header title and image
       $segment = $request->segment(1);
       $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
@@ -60,7 +59,6 @@ class BeritaDanJurnalController extends Controller
       $segment2 = $request->segment(2);
       $model  = new Artikel_model();
       $detailStory  = $model->detail($segment2);
-      
       $yearCurrent  = date('Y');
       $dateNewsDetail =  date('Y', strtotime($detailStory->publishDate));
       if ($yearCurrent == $dateNewsDetail ){
