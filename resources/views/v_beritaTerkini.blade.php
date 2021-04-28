@@ -29,8 +29,17 @@
             <div class="container pt-5 pb-5 ">
                 <div class="row">
                     <div class="col-12 col-lg-6">
+                        <?php
+                                $yearCurrent  = date('Y');
+                                $dateNews =  date('Y', strtotime($listingNews[0]->publishDate));
+                                if ($yearCurrent == $dateNews ){
+                                    $date =  date('d-M', strtotime($listingNews[0]->publishDate)).'-2021';
+                                } else {
+                                    $date =  date('d-M-Y', strtotime($listingNews[0]->publishDate));
+                                }
+                            ?>
                         @include('components/presentational.boxNews',array(
-                            'date'=>$listingNews[0]->created_at,
+                            'date'=>$date,
                             'title'=>strip_tags($listingNews[0]->title),
                             'image_url'=>$listingNews[0]->imgDesktop,
                             'author'=>$listingNews[0]->shortContent,
@@ -59,10 +68,17 @@
                                     default:
                                         break;
                                 };
+                                $yearCurrent  = date('Y');
+                                $dateNews =  date('Y', strtotime($row->publishDate));
+                                if ($yearCurrent == $dateNews ){
+                                    $date =  date('d-M', strtotime($row->publishDate)).'-2021';
+                                } else {
+                                    $date =  date('d-M-Y', strtotime($row->publishDate));
+                                }
                             ?>
                             <div class="col-12 col-lg-6">
                                 @include('components/presentational.boxNews',array(
-                                    'date'=>$row->created_at,
+                                    'date'=>$date,
                                     'title'=>strip_tags($row->title),
                                     'image_url'=>$row->imgDesktop,
                                     'author'=>$row->shortContent,
@@ -76,7 +92,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 mt-5">
+                    {{-- <div class="col-12 mt-5">
                         <div class="row">
                             <div class="col-12 col-lg-3">
                                 @include('components/presentational.boxNews',array(
@@ -119,7 +135,7 @@
                                 ))
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-12 text-center mt-5">
                         @include('components/presentational.boxShowMore',array(
