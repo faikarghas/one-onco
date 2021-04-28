@@ -562,7 +562,7 @@ axios.get(`https://dev.farizdotid.com/api/daerahindonesia/provinsi`).then(functi
 
     $('#register_form select[name="provinsi"]').append('<option value=""> Pilih Kabupaten</option>');
     $.each(response.data.provinsi, function(key, value){
-        $('#register_form select[name="provinsi"]').append(new Option(value.nama, key));
+        $('#register_form select[name="provinsi"]').append(`<option value="${value.nama}" data-id=${value.id}>${value.nama}</option>`);
     });
 
 });
@@ -570,8 +570,8 @@ axios.get(`https://dev.farizdotid.com/api/daerahindonesia/provinsi`).then(functi
 
 $('#select_provinsi').change(function(){
     let data= $(this).val();
-    // console.log(data);
-    console.log(data);
+    console.log($(this));
+
     if (data !== "null") {
 
         // axios.get(`https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=${response.data.provinsi.id}`).then(function (response) {

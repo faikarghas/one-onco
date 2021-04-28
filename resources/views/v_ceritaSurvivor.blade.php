@@ -43,7 +43,7 @@
                         @include('components/presentational.boxNews',array(
                             'date'=>$listingStory[0]->created_at,
                             'title'=>strip_tags($listingStory[0]->title),
-                            'image_url'=>'https://source.unsplash.com/random',
+                            'image_url'=>$listingStory[0]->imgDesktop,
                             'author'=>$listingStory[0]->shortContent,
                             'path'=>'/cerita-survivor/'.$listingStory[0]->slug,
                             'class'=>'bigBox'
@@ -58,7 +58,7 @@
                                 @include('components/presentational.boxNews',array(
                                     'date'=>$row->created_at,
                                     'title'=>strip_tags($row->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'image_url'=>$row->imgDesktop,
                                     'author'=>$row->shortContent,
                                     'path'=>'/cerita-survivor/'.$row->slug,
                                     'class'=>'smallBox'

@@ -32,7 +32,7 @@
                         @include('components/presentational.boxNews',array(
                             'date'=>$listingNews[0]->created_at,
                             'title'=>strip_tags($listingNews[0]->title),
-                            'image_url'=>'https://source.unsplash.com/random',
+                            'image_url'=>$listingNews[0]->imgDesktop,
                             'author'=>$listingNews[0]->shortContent,
                             'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
                             'class'=>'bigBox'
@@ -64,7 +64,7 @@
                                 @include('components/presentational.boxNews',array(
                                     'date'=>$row->created_at,
                                     'title'=>strip_tags($row->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
+                                    'image_url'=>$row->imgDesktop,
                                     'author'=>$row->shortContent,
                                     'path'=> $url,
                                     'class'=>'smallBox'

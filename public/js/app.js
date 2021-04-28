@@ -2326,13 +2326,12 @@ function getMoreDokters(page) {
 axios.get("https://dev.farizdotid.com/api/daerahindonesia/provinsi").then(function (response) {
   $('#register_form select[name="provinsi"]').append('<option value=""> Pilih Kabupaten</option>');
   $.each(response.data.provinsi, function (key, value) {
-    $('#register_form select[name="provinsi"]').append(new Option(value.nama, key));
+    $('#register_form select[name="provinsi"]').append("<option value=\"".concat(value.nama, "\" data-id=").concat(value.id, ">").concat(value.nama, "</option>"));
   });
 });
 $('#select_provinsi').change(function () {
-  var data = $(this).val(); // console.log(data);
-
-  console.log(data);
+  var data = $(this).val();
+  console.log($(this));
 
   if (data !== "null") {// axios.get(`https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=${response.data.provinsi.id}`).then(function (response) {
     //     $('#register_form select[name="kota"]').append('<option value=""> Pilih Kabupaten</option>');
