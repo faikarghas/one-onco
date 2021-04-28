@@ -9,23 +9,17 @@
     <div class="boxInformation">
         @if(empty($description) && !@empty($author))
             <div class="title">
-                {{-- <span>{{date('d-m-Y', $date)}}</span> --}}
                 <h3 class="mt-2">{{$title}}</h3>
                 <p class="author">{{$author}}</p>
         @else
             <div class="title">
-                {{-- <span>{{$date}}</span> --}}
                 <h3 class="mt-2">{{$title}}</h3>
                 <p class="text-secondary">{!! $description !!}</p>
         @endif
         </div>
         <div class="dateFormat">
             <p>{{ $date }}</p>
+            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>$path))
         </div>
-        {{-- @if(empty($description))
-        @else
-            <p class="">{!! $description !!}<br><span>{{ $date }}</span></p>
-        @endif --}}
-        @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>$path))
     </div>
 </div>

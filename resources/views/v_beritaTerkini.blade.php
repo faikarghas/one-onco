@@ -42,7 +42,7 @@
                             'date'=>$date,
                             'title'=>strip_tags($listingNews[0]->title),
                             'image_url'=>$listingNews[0]->imgDesktop,
-                            'author'=>$listingNews[0]->shortContent,
+                            'description'=>$listingNews[0]->shortContent,
                             'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
                             'class'=>'bigBox'
                         ))
@@ -81,7 +81,7 @@
                                     'date'=>$date,
                                     'title'=>strip_tags($row->title),
                                     'image_url'=>$row->imgDesktop,
-                                    'author'=>$row->shortContent,
+                                    'description'=>$row->shortContent,
                                     'path'=> $url,
                                     'class'=>'smallBox'
                                 ))

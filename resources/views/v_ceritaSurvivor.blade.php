@@ -40,8 +40,17 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6">
+                        <?php
+                            $yearCurrent  = date('Y');
+                            $dateNews =  date('Y', strtotime($listingStory[0]->publishDate));
+                            if ($yearCurrent == $dateNews ){
+                                $date =  date('d-M', strtotime($listingStory[0]->publishDate)).'-2021';
+                            } else {
+                                $date =  date('d-M-Y', strtotime($listingStory[0]->publishDate));
+                            }
+                        ?>
                         @include('components/presentational.boxNews',array(
-                            'date'=>$listingStory[0]->created_at,
+                            'date'=>$date,
                             'title'=>strip_tags($listingStory[0]->title),
                             'image_url'=>$listingStory[0]->imgDesktop,
                             'author'=>$listingStory[0]->shortContent,
