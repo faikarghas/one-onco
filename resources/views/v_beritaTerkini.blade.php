@@ -47,7 +47,7 @@
                             'class'=>'bigBox'
                         ))
                     </div>
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-lg-6 ">
                         <div class="row">
                             <?php $index = 0; ?>
                             @foreach($listingNews as $row)
