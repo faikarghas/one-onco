@@ -2320,26 +2320,40 @@ function getMoreDokters(page) {
       $('#dokter_data').html(data);
     }
   });
-} // input register
+} // SELECT API REGISTER FORM
 
 
 axios.get("https://dev.farizdotid.com/api/daerahindonesia/provinsi").then(function (response) {
   $('#register_form select[name="provinsi"]').append('<option value=""> Pilih Kabupaten</option>');
   $.each(response.data.provinsi, function (key, value) {
-    $('#register_form select[name="provinsi"]').append("<option value=\"".concat(value.nama, "\" data-id=").concat(value.id, ">").concat(value.nama, "</option>"));
+    $('#register_form select[name="provinsi"]').append("<option value=\"".concat(value.id, "\" data-id=\"").concat(value.id, "\">").concat(value.nama, "</option>"));
   });
 });
 $('#select_provinsi').change(function () {
   var data = $(this).val();
-  console.log($(this));
 
-  if (data !== "null") {// axios.get(`https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=${response.data.provinsi.id}`).then(function (response) {
-    //     $('#register_form select[name="kota"]').append('<option value=""> Pilih Kabupaten</option>');
-    //     $.each(response.data.provinsi, function(key, value){
-    //         console.log(value);
-    //         $('#register_form select[name="kota"]').append(new Option(value.nama, key));
-    //     });
-    // });
+  if (data !== "null") {
+    axios.get("https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=".concat(data)).then(function (response) {
+      console.log(response);
+      $.each(response.data.kota_kabupaten, function (key, value) {
+        $('#register_form select[name="kota"]').append("<option value=\"".concat(value.id, "\" data-id=\"").concat(value.id, "\">").concat(value.nama, "</option>"));
+      });
+    });
+  } else if (data === "null") {
+    $('#selectFasekes').attr("disabled", "disabled");
+    $('#selectFasekes option').empty().remove();
+  }
+});
+$('#select_kota').change(function () {
+  var data = $(this).val();
+
+  if (data !== "null") {
+    axios.get("https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=".concat(data)).then(function (response) {
+      console.log(response);
+      $.each(response.data.kecamatan, function (key, value) {
+        $('#register_form select[name="kecamatan"]').append("<option value=\"".concat(value.id, "\" data-id=\"").concat(value.id, "\">").concat(value.nama, "</option>"));
+      });
+    });
   } else if (data === "null") {
     $('#selectFasekes').attr("disabled", "disabled");
     $('#selectFasekes option').empty().remove();

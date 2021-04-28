@@ -26,13 +26,11 @@
                                 <select id="select_provinsi" name="provinsi" class="form-select mb-4" aria-label="Default select example">
                                     <option selected>Pilih Provinsi*</option>
                                 </select>
-                                <select name="kota" class="form-select mb-4" aria-label="Default select example">
+                                <select id="select_kota" name="kota" class="form-select mb-4" aria-label="Default select example">
                                     <option selected>Pilih Kota*</option>
                                 </select>
-                                <select class="form-select mb-4" aria-label="Default select example">
+                                <select name="kecamatan" class="form-select mb-4" aria-label="Default select example">
                                     <option selected>Pilih Kecamatan*</option>
-                                    <option value="1">One</option>
-                                    <option value="3">Three</option>
                                 </select>
                                 <textarea name="" id=""  rows="3" placeholder="Alamat"></textarea>
                                 <p><i>Personal OneOnco menyediakan informasi sesuai ketertarikan Anda!</i></p>

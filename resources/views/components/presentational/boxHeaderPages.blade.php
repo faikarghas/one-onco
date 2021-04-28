@@ -13,6 +13,12 @@
     @case('partner-kami')
         <img src="{{asset('/images/perPendamping.jpg')}}" width="100%" height="100%" alt="">
         @break
+    @case('perawatan-kanker')
+        <img src="{{asset('/images/perawatan_kanker.jpg')}}" width="100%" height="100%" alt="">
+        @break
+    @case('kanker-payudara')
+        <img src="{{asset('/images/jenis_kanker.jpg')}}" width="100%" height="100%" alt="">
+        @break
     @default
         <img src="{{asset('/images/perawatan_kanker.jpg')}}" width="100%" height="100%" alt="">
     @endswitch
