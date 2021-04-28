@@ -32,7 +32,7 @@
                             <img src="{{asset('/images/kalbe.png')}}" width="180px" alt="" srcset="">
                         </div>
                         <div class="tentangKami__page-intro mb-5">
-                            <h3>{{ $titleContentPages }}</h3>
+                            <h3>{!! $titleContentPages !!}</h3>
                             <p>{!! $contentPages !!}</p>
                         </div>
                     </div>

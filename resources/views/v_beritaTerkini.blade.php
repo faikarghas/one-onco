@@ -9,7 +9,7 @@
 
             @switch(Request::segment(1))
             @case('berita-terkini')
-                <img src="{{asset('/images/beritabanner.jpg')}}" width="100%" height="100%" alt="">
+                <img src="{{asset('/images/berita_terkini.jpg')}}" width="100%" height="100%" alt="">
                 @break
             @case('artikel-kanker')
                 <img src="{{asset('/images/artikel_kanker.jpg')}}" width="100%" height="100%" alt="">
