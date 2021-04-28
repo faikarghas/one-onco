@@ -71,6 +71,7 @@ Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokter
 
 Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
 Route::get('/direktori-lab',[DirectoryController::class,'lab']);
+
 Route::get('/direktori-care',[DirectoryController::class,'carehome']);
 Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
 

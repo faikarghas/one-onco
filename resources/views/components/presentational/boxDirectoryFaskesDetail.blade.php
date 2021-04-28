@@ -25,21 +25,28 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="jam_op-title">
-                    <p>Jam Operasional</p>
+                    <p>Layanan</p>
                 </div>
                 <div class="row">
-                    <div class="col-6">
-                        <ul class="jam_op-sch">
-                            <li><span>Senin</span>09.00 - 15.00</li>
-                            <li><span>Selasa</span>09.00 - 15.00</li>
-                            <li><span>Rabu</span>09.00 - 15.00</li>
-                        </ul>
-                    </div>
-                    <div class="col-6">
-                        <ul class="jam_op-sch">
-                            <li><span>Kamis</span>09.00 - 15.00</li>
-                            <li><span>Jumat</span>09.00 - 15.00</li>
-                            <li><span>Sabtu</span>09.00 - 15.00</li>
+                    <div class="col-12">
+                        <ul>
+                            @if ($status1==1)
+                                <li>Skrining Dan Diagnotis</li>
+                            @endif
+                            @if ($status2==1)
+                                <li>Onkologi Medis & Kemoterapi</li>
+                            @endif
+                            @if ($status3==1)
+                                <li>Radiasi Onkologi</li>
+                            @endif
+                            @if ($status4==1)
+                                <li>Onkologi Bedah</li>
+                            @endif
+                            @if ($status5==1)
+                                <li>Perawata Paliatif</li>
+                            @endif
+
+                            
                         </ul>
                     </div>
                 </div>
