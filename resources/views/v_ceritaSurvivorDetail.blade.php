@@ -57,25 +57,27 @@
 
                                 @foreach($otherStory as $row)
                                 <div class="col-12">
-                                    <div class="boxNewsWimg mt-4">
-                                        <div class="boxInformation">
-                                            <div class="title">
-                                                <span>{{ $row->created_at }}</span>
-                                                <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
-                                                <?php 
-                                                  $yearCurrent  = date('Y');
-                                                  $dateNews =  date('Y', strtotime($row->publishDate));
-                                                  if ($yearCurrent == $dateNews ){
-                                                      $date =  date('d M', strtotime($dateNews)).' 2021';
-                                                  } else {
-                                                      $date =  date('Y-d-mm', strtotime($dateNews));
-                                                  }
-                                              ?>
-                                                <p>{{ $date }}</p>
+                                        <div class="boxNewsWimg mt-4">
+                                            <a href="{{$row->slug}}">
+                                            <div class="boxInformation">
+                                                <div class="title">
+                                                    <span>{{ $row->created_at }}</span>
+                                                    <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
+                                                    <?php 
+                                                    $yearCurrent  = date('Y');
+                                                    $dateNews =  date('Y', strtotime($row->publishDate));
+                                                    if ($yearCurrent == $dateNews ){
+                                                        $date =  date('d M', strtotime($dateNews)).' 2021';
+                                                    } else {
+                                                        $date =  date('Y-d-mm', strtotime($dateNews));
+                                                    }
+                                                ?>
+                                                    <p>{{ $date }}</p>
+                                                </div>
+                                                {{-- @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'')) --}}
                                             </div>
-                                            {{-- @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'')) --}}
+                                            </a>
                                         </div>
-                                    </div>
                                 </div>
                                 @endforeach
 

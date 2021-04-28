@@ -54,6 +54,7 @@
                                 @foreach ( $otherStory as $row )
                                 <div class="col-12">
                                     <div class="boxNewsWimg mt-4">
+                                        <a href="{{$row->slug}}">
                                         <div class="boxInformation">
                                             <div class="title">
                                                 <span>{{ $row->created_at }}</span>
@@ -71,6 +72,7 @@
                                             </div>
                                             {{-- @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'')) --}}
                                         </div>
+                                        </a>
                                     </div>
                                 </div>
                                 @endforeach

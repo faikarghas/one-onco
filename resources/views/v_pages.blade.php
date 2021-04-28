@@ -43,8 +43,7 @@
           @include('/components/presentational/boxSideMenuPagesDesktop',[])
           @include('/components/presentational/boxContentPagesDesktop',[])
         </section>
-        <div style="background-color: #e0e0e0;">
-
+        <div style="background-color: #e0e0e0;" class="pt-5 pb-5">
             @switch(Request::segment(1))
                 @case('tentang-kami')
                     @include('/components/presentational.newsList',[])
@@ -63,7 +62,6 @@
                     @break
                 @default
                     @include('/components/presentational.newsList',[])
-            
             @endswitch
         </div>
     </main>
