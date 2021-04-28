@@ -89,26 +89,6 @@
                             @endif
                             <?php $index++ ?>
                             @endforeach
-                            <div class="col-12 col-lg-6">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$date,
-                                    'title'=>strip_tags($row->title),
-                                    'image_url'=>$row->imgDesktop,
-                                    'description'=>$row->shortContent,
-                                    'path'=> $url,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$date,
-                                    'title'=>strip_tags($row->title),
-                                    'image_url'=>$row->imgDesktop,
-                                    'description'=>$row->shortContent,
-                                    'path'=> $url,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
                         </div>
                     </div>
 
