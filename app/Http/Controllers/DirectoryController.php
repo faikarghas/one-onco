@@ -81,12 +81,7 @@ class DirectoryController extends Controller
     $provinces = DB::table('indonesia_provinces')->pluck("name","id");
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
     $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
-    // main page
-
     $faskess = Faskes_model::getFaskes('', GlobalConstants::ALL, GlobalConstants::ALL, GlobalConstants::ALL);
-
-    //dd($faskess);
-
     $data = array('title' => $siteConfig->pvar2,
                   'copyright'=>$siteConfig->pvar3,
                   'faskes'=>$faskess
@@ -111,7 +106,7 @@ class DirectoryController extends Controller
     // view rumah sakit detail
 
     $viewFaskes = DB::table('faskes')
-        ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax')
+        ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif')
         ->where('faskes.faskesId', $id)->first();
         // ->dump();
 
@@ -120,6 +115,12 @@ class DirectoryController extends Controller
     $phoneFaskes = $viewFaskes->phone;
     $phoneFax = $viewFaskes->fax;
     $websiteFaskes = $viewFaskes->website;
+
+    $status1 =  $viewFaskes->skriningDiagnosis;
+    $status2 =  $viewFaskes->onkologiMedisKemoterapi;
+    $status3 =  $viewFaskes->radiasiOnkologi;
+    $status4 =  $viewFaskes->onkologiBedah;
+    $status5 =  $viewFaskes->perawatanPaliatif;
 
     $provinces = DB::table('indonesia_provinces')->pluck("name","id");
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
@@ -143,7 +144,12 @@ class DirectoryController extends Controller
                   'website'=>$websiteFaskes,
                   'viewDokter' => $viewDokter,
                   'provinces' => $provinces,
-                  'cities' => $cities
+                  'cities' => $cities,
+                  'status1' => $status1,
+                  'status2' => $status2,
+                  'status3' => $status3,
+                  'status4' => $status4,
+                  'status5' => $status5
                 );
     return view ('v_direktoriCare', $data);
   }
