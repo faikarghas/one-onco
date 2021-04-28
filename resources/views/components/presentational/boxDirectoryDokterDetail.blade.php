@@ -15,7 +15,6 @@
                             </div>
                             <ul>
                                 <li><p><strong>Unit Operasional :  {{ $layanan }}</strong></p></li>
-                                
                             </ul>
                         </div>
                     </div>
@@ -29,8 +28,8 @@
                 <h4><strong>Jadwal Praktik</strong></h4>
             </div>
         </div>
+        @foreach($dokterPraktek as $row)
         <div class="col-12 col-md-6">
-            @foreach($dokterPraktek as $row)
             <div class="box__rec3">
                 <a href="/direktori-care/{{ $row->faskesId }}">
                     <div class="container p-0">
@@ -57,7 +56,7 @@
                     </div>
                 </a>
             </div>
-            @endforeach
         </div>
+        @endforeach
     </div>
 </div>

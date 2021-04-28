@@ -144,6 +144,9 @@
     background-color: white;
     box-shadow: 0px 4px 8px rgb(0 0 0 / 12%);
     overflow: hidden;
+    @include respond(down-tab-port){
+        height: unset;
+    }
     h3{
         font-size: 14px;
     }
@@ -162,7 +165,7 @@
 .box__rec3{
     height: 130px;
     @include respond(down-tab-port){
-        height: 100px;
+        height: unset;
     }
     .title_wrapper{
         border-bottom:1px solid #c9c9c9;

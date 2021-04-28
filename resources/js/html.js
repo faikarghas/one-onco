@@ -82,7 +82,7 @@ export function direktoriDoktorBox(link,dokter,unit,desc) {
                 </div>
                 <ul>
                    <li class="pt-3 pb-3 spes">
-                     <p><strong>Spesialisasi ${unit}</strong></p>
+                     <p><strong>${unit}</strong></p>
                    </li>
                    <li class="pt-3 pb-5">
                      <p><strong>Lokasi Praktek</strong></p>
