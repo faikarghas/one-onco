@@ -14,7 +14,7 @@
                 </div>
                 <ul>
                     <li><p>&nbsp;<p></li>
-                        <li><p>&nbsp;<p></li>
+                    <li><p>&nbsp;<p></li>
                     <li><p><strong>Lokasi Praktek:</strong></p></li>
                     <li><p>{!! $praktek !!}</p></li>
                 </ul>
