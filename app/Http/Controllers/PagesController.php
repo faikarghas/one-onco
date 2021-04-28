@@ -12,9 +12,9 @@ use App\Models\Artikel_model;
 class PagesController extends Controller
 {
     public function index(Request $request, $slug=NULL){
-      
+
       // GET variable from global data for website
-      $siteConfig   = DB::table('global_data')->first();       
+      $siteConfig   = DB::table('global_data')->first();
       // get all atribut pages
       $slugKat = $request->segment(1);
       //dd($slugKat);
@@ -25,7 +25,7 @@ class PagesController extends Controller
       $imageHeader = $listAttribute->image;
       $titleHeader = $listAttribute->title;
       $subTitleHeader = $listAttribute->intro;
-      //dd($subTitleHeader);         
+      //dd($subTitleHeader);
       // side menu by kategori artikel
       $listingKatArtikel = DB::table('artikel')->where('idKat',$kategoriId)->orderBy('sortId', 'ASC')->get();
       //dd($listingKatArtikel);

@@ -299,8 +299,19 @@ main:not([page=home]) {
   display: -ms-flexbox;
   display: flex;
 }
+@media only screen and (max-width: 62em) {
+  .share_sosmed {
+    display: block;
+  }
+}
 .share_sosmed-link {
   width: 40%;
+}
+@media only screen and (max-width: 62em) {
+  .share_sosmed-link {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 .share_sosmed-act img {
   width: 200px;
