@@ -44,7 +44,7 @@
                             $yearCurrent  = date('Y');
                             $dateNews =  date('Y', strtotime($listingStory[0]->publishDate));
                             if ($yearCurrent == $dateNews ){
-                                $date =  date('d-M', strtotime($listingStory[0]->publishDate)).'-2021';
+                                $date =  date('d-M', strtotime($listingStory[0]->publishDate));
                             } else {
                                 $date =  date('d-M-Y', strtotime($listingStory[0]->publishDate));
                             }
@@ -67,7 +67,7 @@
                                 $yearCurrent  = date('Y');
                                 $dateNews =  date('Y', strtotime($row->publishDate));
                                 if ($yearCurrent == $dateNews ){
-                                    $date =  date('d-M', strtotime($row->publishDate)).'-2021';
+                                    $date =  date('d-M', strtotime($row->publishDate));
                                 } else {
                                     $date =  date('d-M-Y', strtotime($row->publishDate));
                                 }

@@ -31,12 +31,20 @@
         }
     }
     &.bigBox{
-        height: 500px;
+        // height: 500px;
         .boxImage{
             height: 270px;
         }
         .boxInformation{
             height: calc(100% - 270px);
+            padding-top: 5rem;
+            padding-right: 4rem;
+            padding-left: 4rem;
+            .title{
+                h3{
+                    font-size: 3rem;
+                }
+            }
         }
     }
     .boxImage{

@@ -1382,14 +1382,17 @@ button.boxReadMore {
 .boxNews.smallBox .boxInformation {
   height: calc(100% - 130px);
 }
-.boxNews.bigBox {
-  height: 500px;
-}
 .boxNews.bigBox .boxImage {
   height: 270px;
 }
 .boxNews.bigBox .boxInformation {
   height: calc(100% - 270px);
+  padding-top: 5rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+.boxNews.bigBox .boxInformation .title h3 {
+  font-size: 3rem;
 }
 .boxNews .boxImage {
   height: 200px;

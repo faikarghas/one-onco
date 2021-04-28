@@ -300,7 +300,7 @@
                                     $yearCurrent  = date('Y');
                                     $dateNews =  date('Y', strtotime($row->publishDate));
                                     if ($yearCurrent == $dateNews ){
-                                        $date =  date('d-M', strtotime($row->publishDate)).'-2021';
+                                        $date =  date('d-M', strtotime($row->publishDate));
                                     } else {
                                         $date =  date('d-M-Y', strtotime($row->publishDate));
                                     }

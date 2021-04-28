@@ -33,7 +33,7 @@
                                 $yearCurrent  = date('Y');
                                 $dateNews =  date('Y', strtotime($listingNews[0]->publishDate));
                                 if ($yearCurrent == $dateNews ){
-                                    $date =  date('d-M', strtotime($listingNews[0]->publishDate)).'-2021';
+                                    $date =  date('d-M', strtotime($listingNews[0]->publishDate));
                                 } else {
                                     $date =  date('d-M-Y', strtotime($listingNews[0]->publishDate));
                                 }
@@ -71,7 +71,7 @@
                                 $yearCurrent  = date('Y');
                                 $dateNews =  date('Y', strtotime($row->publishDate));
                                 if ($yearCurrent == $dateNews ){
-                                    $date =  date('d-M', strtotime($row->publishDate)).'-2021';
+                                    $date =  date('d-M', strtotime($row->publishDate));
                                 } else {
                                     $date =  date('d-M-Y', strtotime($row->publishDate));
                                 }
@@ -89,6 +89,26 @@
                             @endif
                             <?php $index++ ?>
                             @endforeach
+                            <div class="col-12 col-lg-6">
+                                @include('components/presentational.boxNews',array(
+                                    'date'=>$date,
+                                    'title'=>strip_tags($row->title),
+                                    'image_url'=>$row->imgDesktop,
+                                    'description'=>$row->shortContent,
+                                    'path'=> $url,
+                                    'class'=>'smallBox'
+                                ))
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                @include('components/presentational.boxNews',array(
+                                    'date'=>$date,
+                                    'title'=>strip_tags($row->title),
+                                    'image_url'=>$row->imgDesktop,
+                                    'description'=>$row->shortContent,
+                                    'path'=> $url,
+                                    'class'=>'smallBox'
+                                ))
+                            </div>
                         </div>
                     </div>
 
