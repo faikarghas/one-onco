@@ -6,10 +6,10 @@
 
     <main>
         <div class="box__banner forDesktop">
-            <img src="{{asset('/images/ceritasurvivorbanner.jpg')}}" width="100%" height="100%" alt="">
+            <img src="{{asset('/images/cerita_inspiratif.jpg')}}" width="100%" height="100%" alt="">
             <div class="box__banner-desc">
-                <h2>Cerita Inspiratif<br/>Kanker Survivor</h2>
-                <p>Cerita inspiratif dan survivor kanker,<br>sebagai penyemangat hari Anda.</p>
+                <h2>{!! $title_header !!}</h2>
+                <p>{!! $tagline_header !!}</p>
             </div>
         </div>
         <section class="detail__page1">
@@ -62,7 +62,7 @@
                                             <div class="boxInformation">
                                                 <div class="title">
                                                     <span>{{ $row->created_at }}</span>
-                                                    <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
+                                                    <h3 class="mt-2 mb-4">{{ $row->title }}</h3>
                                                     <?php 
                                                     $yearCurrent  = date('Y');
                                                     $dateNews =  date('Y', strtotime($row->publishDate));

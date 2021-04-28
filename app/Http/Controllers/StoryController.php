@@ -22,8 +22,8 @@ class StoryController extends Controller
       // $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
 
       $id_kategori =  $listAttribute->id;
-      $title_header = $listAttribute->intro;
-      $tagline_header = $listAttribute->content;
+      $title_header = $listAttribute->content;
+      $tagline_header = $listAttribute->intro;
       $img_header =$listAttribute->image;
 
       $model  = new Artikel_model();
@@ -64,12 +64,20 @@ class StoryController extends Controller
       $model  = new Artikel_model();
       $detailStory  = $model->detail($segment2);
 
+      $slugKat = $request->segment(1);
+      $listAttribute = $this->getPages($slugKat);
+      $title_header = $listAttribute->content;
+      $tagline_header = $listAttribute->intro;
+
       // other artikel
       $id =  $detailStory->id;
       $otherModel  = new Artikel_model();
       $otherStory  = $model->otherArticle($id, $id_kategori);
+
       // listing news 3 rows
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+
+      // dd($listingNews);
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'titleStory'=>$detailStory->title,
@@ -77,7 +85,9 @@ class StoryController extends Controller
                     'contentStory'=>$detailStory->content,
                     'otherStory'=>$otherStory,
                     'slugStory' => 'testt',
-                    'listingNews'=>$listingNews
+                    'listingNews'=>$listingNews,
+                    'title_header' =>$title_header,
+                    'tagline_header' => $tagline_header
                   );
       return view ('v_ceritaSurvivorDetail', $data);
     }

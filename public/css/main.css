@@ -316,6 +316,9 @@ main:not([page=home]) {
 .share_sosmed-act img {
   width: 200px;
 }
+.share_sosmed-act ul li {
+  list-style: none;
+}
 .share_sosmed p {
   text-align: center;
   font-size: 11px;
@@ -2409,8 +2412,8 @@ button.boxReadMore {
   font-weight: 900;
   font-size: 1.5rem;
 }
-.tentangKami__page-intro p, .tentangKami__page-intro div {
-  font-size: 1.5rem;
+.tentangKami__page-intro p, .tentangKami__page-intro div, .tentangKami__page-intro p > span {
+  font-size: 1.5rem !important;
 }
 .tentangKami__page-list--item {
   margin-bottom: 2rem;
