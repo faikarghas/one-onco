@@ -1845,6 +1845,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var html = __webpack_require__(/*! ./html */ "./resources/js/html.js"); // CONTENT FOR SPECIFIC TIME PERIOD
 
 
+var baseUrl = window.location.origin;
 window.setInterval(function () {
   var d = new Date();
   var h = d.getHours(); // pagi
@@ -2311,12 +2312,14 @@ function getMoreDokters(page) {
       'kabupaten': selectedKabupaten
     },
     //url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
-    url: "{{ route('dokters.get-more-dokters') }}",
+    url: "".concat(baseUrl, "/get-more-dokters"),
     success: function success(data) {
       $('#dokter_data').html(data);
     }
   });
 }
+
+console.log("".concat(baseUrl, "/get-more-dokters"));
 
 /***/ }),
 

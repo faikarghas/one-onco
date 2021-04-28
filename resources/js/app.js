@@ -1,6 +1,7 @@
 require('./bootstrap');
 var html = require('./html')
 // CONTENT FOR SPECIFIC TIME PERIOD
+let baseUrl = window.location.origin
 
 window.setInterval(() => {
     const d = new Date();
@@ -530,6 +531,9 @@ $(document).ready(function() {
       getMoreDokters();
     });
 });
+
+
+
 function getMoreDokters(page) {
   var search = $('#search').val();
   var selectedSpesialis = $("#spesialis option:selected").val();
@@ -544,9 +548,11 @@ function getMoreDokters(page) {
       'kabupaten': selectedKabupaten
     },
     //url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
-    url: "{{ route('dokters.get-more-dokters') }}",
+    url: `${baseUrl}/get-more-dokters`,
     success:function(data) {
       $('#dokter_data').html(data);
     }
   });
 }
+
+console.log(`${baseUrl}/get-more-dokters`);
