@@ -70,11 +70,21 @@
         padding-right: 12.75px;
         padding-left: 12.75px;
     }
+    input{
+        height: 35px;
+        border-radius: 12px;
+        color: black;
+        &::placeholder{
+            font-size: 1.4rem;
+        }
+
+    }
     form{
         select{
             height: 35px;
             border-radius: 12px;
             color: black;
+            font-size: 1.4rem;
             option{
                 color: black;
             }
