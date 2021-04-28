@@ -23,7 +23,7 @@
             </div>
         </section>
         <div class="box__banner">
-            <img src="{{asset('/images/ceritasurvivorbanner.jpg')}}" width="100%" height="100%" alt="">
+            <img src="{{asset('/images/cerita_inspiratif.jpg')}}" width="100%" height="100%" alt="">
             <div class="box__banner-desc">
                 <h2>{!! $title_header !!}</h2>
                 <p>{!! $tagline_header !!}</p>

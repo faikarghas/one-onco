@@ -12,7 +12,7 @@
                 <img src="{{asset('/images/beritabanner.jpg')}}" width="100%" height="100%" alt="">
                 @break
             @case('artikel-kanker')
-                <img src="{{asset('/images/jurnalbanner.jpg')}}" width="100%" height="100%" alt="">
+                <img src="{{asset('/images/artikel_kanker.jpg')}}" width="100%" height="100%" alt="">
                 @break
             @case('cerita-survivor')
                 <img src="{{asset('/images/perPendamping.jpg')}}" width="100%" height="100%" alt="">

@@ -41,15 +41,15 @@
                                 </div>
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="password"><img class="img-fluid" src="{{asset('/images/secure.png')}}" alt="" srcset=""></span>
-                                    <input id="ipss" type="password" class="form-control" aria-label="password" placeholder="Kata Kunci" name="password">
+                                    <input id="ipss" type="password" class="form-control" aria-label="password" placeholder="Password" name="password">
                                     <span class="input-group-text" id="showpass"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" alt="" srcset=""></span>
                                   </div>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
                             </form>
-                            <div class="for_or_reg mt-4">
-                                <p class="text-center">Lupa kata kunci ? <a href="/pengaturan" class="text-green">klik disini</a></p>
-                                <div class="line_or"><span></span>Atau<span></span></div>
-                                <p class="text-center">Belum terdaftar ? Daftar dibawah ini</p>
+                            <div class="for_or_reg mt-2">
+                                <p class="text-center mb-2">Lupa kata kunci ? <a href="/pengaturan" class="text-green">klik disini</a></p>
+                                <div class="line_or mb-2"><span></span>Atau<span></span></div>
+                                <p class="text-center mb-2">Belum terdaftar ? Daftar dibawah ini</p>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Daftar','color'=>'#00A2E3','type'=>'a','path'=>'register'])
                             </div>
                         </div>

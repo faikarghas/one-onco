@@ -29,7 +29,9 @@ class BeritaDanJurnalController extends Controller
       $listingStory  = $model->all_kategori($id_kategori);
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      // $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->orderBy('publishDate', 'DESC')->paginate(3);
+
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'img_header' =>$img_header,
