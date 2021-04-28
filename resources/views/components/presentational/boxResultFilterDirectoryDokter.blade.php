@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row listDokter" id="dokter_data">
         @foreach ($dokter as $row)
-        <?php 
+        <?php
           $rsPraktek = $row->namafaskes;
           $newRsPraktek = str_replace(',','<br>', $rsPraktek);
           $count =  substr_count($rsPraktek, ",")

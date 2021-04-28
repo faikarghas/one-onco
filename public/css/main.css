@@ -294,9 +294,16 @@ main:not([page=home]) {
   border-top: 1px solid #00A2E3;
   border-bottom: 1px solid #00A2E3;
   text-align: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-.share_sosmed.forDesktop {
-  width: calc(40%);
+.share_sosmed-link {
+  width: 40%;
+}
+.share_sosmed-act img {
+  width: 200px;
 }
 .share_sosmed p {
   text-align: center;

@@ -68,7 +68,6 @@ class BeritaDanJurnalController extends Controller
       } else {
           $dateDetail =  date('Y-d-mm', strtotime($dateNewsDetail));
       }
-                                              
 
       // other artikel
       $id =  $detailStory->id;
