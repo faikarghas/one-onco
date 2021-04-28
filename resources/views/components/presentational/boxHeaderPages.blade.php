@@ -12,6 +12,8 @@
         @case('partner-kami')
             <img src="{{asset('/images/perPendamping.jpg')}}" width="100%" height="100%" alt="">
             @break
+        @case('syaratdanketentuan')
+            @break
         @default
             <img src="{{asset('/images/perkankerbanner.jpg')}}" width="100%" height="100%" alt="">
         @endswitch
