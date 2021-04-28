@@ -2275,6 +2275,20 @@ button.boxReadMore {
     padding-left: 12.75px;
   }
 }
+.direktori__list input {
+  height: 35px;
+  border-radius: 12px;
+  color: black;
+}
+.direktori__list input::-moz-placeholder {
+  font-size: 1.4rem;
+}
+.direktori__list input:-ms-input-placeholder {
+  font-size: 1.4rem;
+}
+.direktori__list input::placeholder {
+  font-size: 1.4rem;
+}
 .direktori__list form select {
   height: 35px;
   border-radius: 12px;
@@ -2282,6 +2296,15 @@ button.boxReadMore {
 }
 .direktori__list form select option {
   color: black;
+}
+.direktori__list form select option::-moz-placeholder {
+  font-size: 1.4rem;
+}
+.direktori__list form select option:-ms-input-placeholder {
+  font-size: 1.4rem;
+}
+.direktori__list form select option::placeholder {
+  font-size: 1.4rem;
 }
 
 .direktori__list-detail {

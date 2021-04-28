@@ -9,7 +9,7 @@
                         <div class="row justify-content-center">
                             <h3 class="text-center mb-4"> <strong>Cari dokter Onkologi di daerahmu:</strong></h3>
                             <div class="input-group">
-                                <input  type="search" class="form-control py-2 rounded-pill mr-1 pr-5 mb-2" id="search_mobile" placeholder="Ketik kata kunci">
+                                <input  type="search" class="form-control py-2 mr-1 pr-5 mb-2" id="search_mobile" placeholder="Ketik kata kunci">
                                 {{-- <span class="input-group-append">
                                     <button class="btn rounded-pill border-0 "  style="margin-left: -3rem !important;" type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -99,57 +99,3 @@
         </section>
     </main>
 @endsection
-{{-- 
-@push('custom-scripts')
-<script>
-    $(document).ready(function() {
-        $('#search').on('keyup', function() {
-          $value = $(this).val();
-          getMoreDokters(1);
-        });
-        $('#spesialis').on('change', function() {
-          getMoreDokters();
-        });
-        $('#provinsi').on('change', function() {
-          data = $(this).find(':selected').attr('data-id');
-          if (data !== "null") {
-            axios.get(`/cities/get/${data}`).then(function (response) {
-                $('select[name="kabupaten"]').empty();
-                $('select[name="kabupaten"]').append('<option value=""> Pilih Kabupaten</option>');
-                $.each(response.data, function(key, value){
-                     $('select[name="kabupaten"]').append(new Option(value, value));
-                });
-            });
-        }
-          getMoreDokters();
-        });
-
-        $('#kabupaten').on('change', function() {
-        console.log('kabupaten')
-          getMoreDokters();
-        });
-    });
-    function getMoreDokters(page) {
-      var search = $('#search').val();
-      var selectedSpesialis = $("#spesialis option:selected").val();
-      var selectedProvinsi= $("#provinsi option:selected").val();
-      var selectedKabupaten= $("#kabupaten option:selected").val();
-      $.ajax({
-        type: "GET",
-        data: {
-          'search_query':search,
-          'spesialis': selectedSpesialis,
-          'provinsi': selectedProvinsi,
-          'kabupaten': selectedKabupaten
-        },
-        url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
-        url: "{{ route('dokters.get-more-dokters') }}",
-        success:function(data) {
-          $('#dokter_data').html(data);
-        }
-      });
-    }
-  </script>
-@endpush
-
-@stack('custom-scripts') --}}
