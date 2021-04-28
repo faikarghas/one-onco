@@ -137,9 +137,25 @@
                         </div>
                     </div> --}}
 
+                    <?php
+                        switch (Request::segment(1)) {
+                            case('berita-terkini'):
+                                $pathButton ='Berita Lainnya';
+                                break;
+                            case('artikel-kanker'):
+                                $pathButton ='Artikel Lainnnya';
+                                break;
+                            case('cerita-survivor'):
+                                $pathButton ='Cerita Inspiratif Lainnya';
+                                break;
+                            default:
+                                break;
+                        };
+
+                    ?>
                     <div class="col-12 text-center mt-5">
                         @include('components/presentational.boxShowMore',array(
-                            'title'=>'Tampilkan lainnya',
+                            'title'=>$pathButton,
                             'path'=>''
                         ))
                     </div>
