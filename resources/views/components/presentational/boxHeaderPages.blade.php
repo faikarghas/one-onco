@@ -11,7 +11,7 @@
         <img src="{{asset('/images/untuk_pendamping.jpg')}}" width="100%" height="100%" alt=""> 
         @break
     @case('partner-kami')
-        <img src="{{asset('/images/perPendamping.jpg')}}" width="100%" height="100%" alt="">
+        <img src="{{asset('/images/partner_kami.jpg')}}" width="100%" height="100%" alt="">
         @break
     @case('perawatan-kanker')
         <img src="{{asset('/images/perawatan_kanker.jpg')}}" width="100%" height="100%" alt="">

@@ -31,7 +31,7 @@
                                 <a href="https://facebook.com/sharer/sharer.php?u={{url()->full()}}" target="_blank" rel="noopener"">
                                     <img src="{{asset('/images/fb2-logo.png')}}" alt="fb-logo" width="30px">
                                 </a>
-                                <a href="https://twitter.com/intent/tweet/?text=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;url={{url()->full()}}" target="_blank" rel="noopener" aria-label="">
+                                <a href="https://twitter.com/intent/tweet/?text={{$titleStory}}&url={{url()->full()}}" target="_blank" rel="noopener" aria-label="">
                                     <img src="{{asset('/images/twitter2-logo.png')}}" alt="twitter-logo" width="30px">
                                 </a>
                                 <a href="https://wa.me/?text={{url()->full()}}" target="_blank" rel="noopener">
@@ -92,7 +92,7 @@
                                 <a href="https://facebook.com/sharer/sharer.php?u={{url()->full()}}" target="_blank" rel="noopener"">
                                     <img src="{{asset('/images/fb2-logo.png')}}" alt="fb-logo" width="30px">
                                 </a>
-                                <a href="https://twitter.com/intent/tweet/?text=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;url={{url()->full()}}" target="_blank" rel="noopener" aria-label="">
+                                <a href="https://twitter.com/intent/tweet/?text={{$titleStory}}&url={{url()->full()}}" target="_blank" rel="noopener" aria-label="">
                                     <img src="{{asset('/images/twitter2-logo.png')}}" alt="twitter-logo" width="30px">
                                 </a>
                                 <a href="https://wa.me/?text={{url()->full()}}" target="_blank" rel="noopener">

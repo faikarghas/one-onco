@@ -83,9 +83,6 @@ Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail'])
 Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
 Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
 
-Route::get('/partner-kami',[KonsultasiOnlineController::class,'index']);
-
-
 Route::get('/sukses', function () {
     return view('v_success');
 });
