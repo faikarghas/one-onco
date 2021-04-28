@@ -54,9 +54,18 @@
                             <?php $index = 0; ?>
                             @foreach($listingStory as $row)
                             @if ($index != 0)
+                            <?php
+                                $yearCurrent  = date('Y');
+                                $dateNews =  date('Y', strtotime($row->publishDate));
+                                if ($yearCurrent == $dateNews ){
+                                    $date =  date('d-M', strtotime($row->publishDate)).'-2021';
+                                } else {
+                                    $date =  date('d-M-Y', strtotime($row->publishDate));
+                                }
+                            ?>
                             <div class="col-12 col-lg-6">
                                 @include('components/presentational.boxNews',array(
-                                    'date'=>$row->created_at,
+                                    'date'=>$date,
                                     'title'=>strip_tags($row->title),
                                     'image_url'=>$row->imgDesktop,
                                     'author'=>$row->shortContent,
