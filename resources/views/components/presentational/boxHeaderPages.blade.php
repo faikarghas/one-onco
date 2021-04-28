@@ -18,10 +18,10 @@
     @endswitch
     <div class="box__banner-desc">
     @if (!empty(Request::segment(2)))  
-        <h2>{{ $titleHeader }}</h2>
+        <h2>{!! $titleHeader !!}</h2>
         <p>{!! $introTitle !!}</p>
     @else
-        <h2>{{ $titleHeader }}</h2>
+        <h2>{!! $titleHeader !!}</h2>
         <p>{!! $introTitle !!}<p>
     @endif
     </div>
