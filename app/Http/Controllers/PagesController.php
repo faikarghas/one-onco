@@ -57,9 +57,7 @@ class PagesController extends Controller
                     'listingStory' => $listingStory,
                     'contentPages' => $mainContent,
                     'listingPartners' => $listingPartners
-
                   );
-
       //dd($data);
       return view ('v_pages', $data);
     }

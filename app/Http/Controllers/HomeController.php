@@ -28,8 +28,16 @@ class HomeController extends Controller
           $statusConfig = "<a href='/pengaturan'><img src='{{ asset('/images/setting.png') }}' alt='search' width='15px'/></a>";
         }
         //var_dump ($sliderArtikel);
+
+        // $slider =  DB::table('artikel')->where('idKat',3)->get();
+        // dd($slider);
+
+
         //variable  data about us ( general)
-        $shortContentAbout = DB::table('artikel')->where('id',7)->first();
+        $shortContentAbout = DB::table('kategori_artikel')->where('id',11)->first();
+
+        //dd($shortContentAbout);
+        
         // variable jenis kanker dan nama kanker
         $listingKankers = DB::table('kanker')->where('published',1)->orderBy('id', 'DESC')->get();
         // variable journal onkologi terbaru
@@ -51,7 +59,7 @@ class HomeController extends Controller
                       'statusLogin'=>$statusLogin,
                       'statusConfig'=>$statusConfig,
                       'titleAbout'=>$shortContentAbout->title,
-                      'contentAbout'=>$shortContentAbout->shortContent,
+                      'contentAbout'=>$shortContentAbout->intro,
                       'titleStory' => $sliderArtikel->title,
                       'shortStory' => $sliderArtikel->shortContent,
                       'slug' => $sliderArtikel->slug,

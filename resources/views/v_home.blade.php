@@ -80,7 +80,7 @@
                             'description'=>'Beli langsung suplemen dan nutrisi di sini',
                             'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
-                            'path'=>'login'
+                            'path'=>'belanja-sehat'
                         ))
                     </div>
                     <div class="col-12 col-md-6">
@@ -89,7 +89,7 @@
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Layanan',
                                 'description'=>'Temukan rumah sakit, dokter, dan layanan kanker terdekat',
-                                'color'=>'#00A2E3;',
+                                'color'=>'#33A58F;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori'
                             ))
@@ -99,7 +99,7 @@
                                 'image_url'=>'dirkanker.png',
                                 'title'=>'Direktori Layanan',
                                 'description'=>'Temukan rumah sakit, dokter, dan layanan kanker terdekat',
-                                'color'=>'#00A2E3;',
+                                'color'=>'#33A58F;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori-dokter'
                             ))
@@ -112,7 +112,7 @@
                             'description'=>'Konsultasi online dengan dokter seputar kanker',
                             'color'=>'#C6CB57;',
                             'colorPar'=>'#808080;',
-                            'path'=>'login'
+                            'path'=>'konsultasi-online'
                         ))
                     </div>
                 </div>
@@ -215,7 +215,7 @@
                             <img id="img-one" class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
                         </div>
                         <div class="col-12 col-lg-6">
-                            <h3><strong>Mengapa perawatan kanker harus menjadi rumit?</strong></h3>
+                            <h3><strong>{{ $titleAbout }}</strong></h3>
                             <p class="mb-5">
                             {{ $contentAbout }}
                             </p>
@@ -234,7 +234,7 @@
                                 <div class="row">
                                     @foreach($listingKankers as $row)
                                         <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
-                                            <a href="{{ url("$row->slug") }}">
+                                            <a href="{{ url("/jenis-kanker/$row->slug") }}">
                                                 <div class="boxSearchKanker_wrapper-boxImg">
                                                     <img src="{{ asset("data_kanker/$row->image") }}" alt="kankerpayudara" width="100%" height="100%">
                                                 </div>
