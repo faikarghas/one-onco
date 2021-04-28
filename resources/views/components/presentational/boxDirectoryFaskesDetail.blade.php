@@ -25,11 +25,11 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="jam_op-title">
-                    <p>Layanan</p>
+                    <p>Layanan Terkait Kanker</p>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <ul>
+                        <ul class="list-unstyled">
                             @if ($status1==1)
                                 <li>Skrining Dan Diagnotis</li>
                             @endif
@@ -43,7 +43,7 @@
                                 <li>Onkologi Bedah</li>
                             @endif
                             @if ($status5==1)
-                                <li>Perawata Paliatif</li>
+                                <li>Perawatan Paliatif</li>
                             @endif
 
                             
