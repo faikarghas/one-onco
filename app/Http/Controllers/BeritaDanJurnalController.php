@@ -57,6 +57,7 @@ class BeritaDanJurnalController extends Controller
       $tagline_header = $content_kategori->content;
       $img_header = $content_kategori->image;
 
+
       // detail News/artikel/story
       $segment2 = $request->segment(2);
       $model  = new Artikel_model();
@@ -68,6 +69,7 @@ class BeritaDanJurnalController extends Controller
       } else {
           $dateDetail =  date('Y-d-mm', strtotime($dateNewsDetail));
       }
+
 
       // other artikel
       $id =  $detailStory->id;
@@ -84,7 +86,8 @@ class BeritaDanJurnalController extends Controller
                     'contentStory'=>$detailStory->content,
                     'otherStory'=>$otherStory,
                     'slugStory' => 'testt',
-                    'listingNews'=>$listingNews
+                    'listingNews'=>$listingNews,
+                    'imageNews' => $detailStory->imgDesktop
                   );
       return view ('v_beritaTerkiniDetail', $data);
   }

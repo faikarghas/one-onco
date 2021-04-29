@@ -1286,8 +1286,19 @@ footer .sosmed ul li {
 .box__rec3 .title_wrapper {
   border-bottom: 1px solid #c9c9c9;
 }
+.box__rec3 h3 {
+  font-size: 14px;
+}
 .box__rec3 p {
+  font-size: 13px;
   margin-bottom: 0;
+}
+.box__rec3 ul {
+  width: 100%;
+}
+.box__rec3 ul .spes {
+  border-bottom: 1px solid #c9c9c9;
+  border-top: 1px solid #c9c9c9;
 }
 
 .skr {

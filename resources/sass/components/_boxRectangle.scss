@@ -170,8 +170,19 @@
     .title_wrapper{
         border-bottom:1px solid #c9c9c9;
     }
+    h3{
+        font-size: 14px;
+    }
     p{
+        font-size: 13px;
         margin-bottom: 0;
+    }
+    ul{
+        width: 100%;
+        .spes{
+            border-bottom: 1px solid rgb(201, 201, 201);
+            border-top: 1px solid rgb(201, 201, 201);
+        }
     }
 
 }
