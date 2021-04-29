@@ -6,9 +6,21 @@
     .contentSlider{
         position: relative;
         .arrow_slider{
+            width: 100%;
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
             li{
+                position: absolute;
                 list-style: none;
                 display: inline-block;
+            }
+            .next{
+                right: 2px;
+            }
+            .prev{
+                left: -18px;
+                transform: rotate(180deg);
             }
         }
     }

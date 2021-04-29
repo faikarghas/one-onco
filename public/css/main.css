@@ -307,6 +307,9 @@ main:not([page=home]) {
 .share_sosmed-link {
   width: 40%;
 }
+.share_sosmed-link a {
+  display: inline-block;
+}
 @media only screen and (max-width: 62em) {
   .share_sosmed-link {
     width: 100%;
@@ -1716,6 +1719,39 @@ button.boxReadMore {
   padding-top: 3rem;
   padding-bottom: 3rem;
   background-color: #E8EAEA;
+  position: relative;
+}
+.partnerKami__section .contentSlider {
+  position: relative;
+}
+.partnerKami__section .contentSlider .arrow_slider {
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+}
+.partnerKami__section .contentSlider .arrow_slider li {
+  position: absolute;
+  list-style: none;
+  display: inline-block;
+}
+.partnerKami__section .contentSlider .arrow_slider .next {
+  right: 2px;
+}
+.partnerKami__section .contentSlider .arrow_slider .prev {
+  left: -18px;
+  transform: rotate(180deg);
+}
+@media only screen and (max-width: 62em) {
+  .partnerKami__section {
+    padding-right: 12.75px;
+    padding-left: 12.75px;
+  }
+}
+@media only screen and (max-width: 62em) {
+  .partnerKami__section h2 {
+    text-align: center;
+  }
 }
 .partnerKami__section ul {
   padding-left: 0;
