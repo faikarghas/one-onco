@@ -351,8 +351,8 @@
             var title = @json($titleSlider);
             var image = @json($imageSlider);
             var colours = @json($colorSlider);
+            // var slug = @json($slugSlider);
 
-            console.log(colours);
 
             var counter = 0;
             var backgroundImgD = document.querySelector('.headerDesktop');
@@ -373,6 +373,7 @@
             titleD.innerHTML = title[0];
             shortDescD.innerHTML = intro[0];
             overlayImgD.style.backgroundColor = colours[0];
+            // $('.boxReadStory').attr('a',`cerita-survivor/${slug[0]}`)
 
             backgroundImgM.style.backgroundImage = 'url(' + image[0] + ')';;
             titleM.innerHTML = title[0];
@@ -393,6 +394,8 @@
                 overlayImgM.style.backgroundColor = colours[counter];
                 box.style.backgroundColor = colours[counter];
 
+
+                // $('.boxReadStory').attr('a',`cerita-survivor/${slug[counter]}`)
                 counter++;
                 if (counter >= title.length) {
                     counter = 0;

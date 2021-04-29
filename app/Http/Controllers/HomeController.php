@@ -48,7 +48,10 @@ class HomeController extends Controller
           $titleSlider [] = $row->title;
           $introSlider [] = $row->shortContent;
           $imageSlider [] = url('/data_artikel/'.$row->imgDesktop);
+          // $slugSlider [] = $row->slug;
         }
+
+        // dd($slugSlider);
 
 
         //variable  data about us ( general)
@@ -87,7 +90,8 @@ class HomeController extends Controller
                       'titleSlider'=>$titleSlider,
                       'introSlider'=> $introSlider,
                       'imageSlider'=>$imageSlider,
-                      'colorSlider'=>$colorSlider
+                      'colorSlider'=>$colorSlider,
+                      // 'slugSlider'=>$slugSlider
         );
 
     	return view ('v_home', $data);
