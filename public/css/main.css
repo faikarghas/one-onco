@@ -1213,6 +1213,11 @@ footer .sosmed ul li {
   width: 100%;
   margin-bottom: 0.5rem;
 }
+@media only screen and (max-width: 62em) {
+  .box__rec2 .title_wrapper, .box__rec3 .title_wrapper {
+    height: unset;
+  }
+}
 .box__rec2 h3, .box__rec3 h3 {
   font-size: 1.2rem;
 }

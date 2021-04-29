@@ -98,6 +98,9 @@
         height: 19px;
         width: 100%;
         margin-bottom: 0.5rem;
+        @include respond(down-tab-port){
+            height: unset;
+        }
     }
 
     h3{
