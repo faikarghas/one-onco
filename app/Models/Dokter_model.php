@@ -37,6 +37,5 @@ class Dokter_model extends Model
         return $dokters->paginate(PER_PAGE_LIMIT);
     }
 
-	
 }
 

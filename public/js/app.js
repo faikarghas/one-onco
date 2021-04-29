@@ -1848,48 +1848,7 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 var html = __webpack_require__(/*! ./html */ "./resources/js/html.js"); // CONTENT FOR SPECIFIC TIME PERIOD
 
 
-var baseUrl = window.location.origin; // window.setInterval(() => {
-//     const d = new Date();
-//     const h = d.getHours()
-//     // pagi
-//     // 24-12
-//     // siang
-//     // 12-15
-//     // sore
-//     // 15-18
-//     // malam
-//     // 18-24
-//     if (h <= 12) {
-//         // console.log('pagi');
-//         $('.box__welcome').css('background-color','#E55A24')
-//     } else if(h > 12 && h <= 15) {
-//         // console.log('siang');
-//         $('.box__welcome').css('background-color','#E55A24')
-//     } else if(h > 15  && h <= 18){
-//         // console.log('sore');
-//         $('.box__welcome').css('background-color','#E55A24')
-//     } else if(h > 18 && h <= 24){
-//         $('.box__welcome').css('background-color','#32338E')
-//         // console.log('malam');
-//     }
-//     // console.log(h);
-// }, 3000);
-// const d = new Date();
-// const h = d.getHours()
-// if (h <= 12) {
-//     // console.log('pagi');
-//     $('.box__welcome').css('background-color','#E55A24')
-// } else if(h > 12 && h <= 15) {
-//     console.log('siang');
-//     $('.box__welcome').css('background-color','#E55A24')
-// } else if(h > 15  && h <= 18){
-//     // console.log('sore');
-//     $('.box__welcome').css('background-color','#E55A24')
-// } else if(h > 18 && h <= 24){
-//     $('.box__welcome').css('background-color','#32338E')
-//     // console.log('malam');
-// }
-// MENU HAMBURGER
+var baseUrl = window.location.origin; // MENU HAMBURGER
 
 $('#menu-hamburger').click(function (params) {
   $('#menu-hamburger').toggleClass('open');
@@ -2226,7 +2185,6 @@ $('#selectCities4').change(function () {
 }); // search
 
 $('.search_act').click(function (params) {
-  console.log('test');
   $('.searchpop').toggleClass('show');
 });
 $('.searchinputact').on('keypress', function (e) {
@@ -2276,7 +2234,6 @@ $(document).ready(function () {
   $('#search').on('keyup', function () {
     $value = $(this).val();
     getMoreDokters(1);
-    console.log('test');
   });
   $('#spesialis').on('change', function () {
     getMoreDokters();
@@ -2297,7 +2254,6 @@ $(document).ready(function () {
     getMoreDokters();
   });
   $('#kabupaten').on('change', function () {
-    console.log('kabupaten');
     getMoreDokters();
   });
 });
@@ -2315,9 +2271,10 @@ function getMoreDokters(page) {
       'provinsi': selectedProvinsi,
       'kabupaten': selectedKabupaten
     },
-    //url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
-    url: "".concat(baseUrl, "/get-more-dokters"),
+    // url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
+    url: "".concat(baseUrl, "/get-more-dokters?page=").concat(page),
     success: function success(data) {
+      console.log(data);
       $('#dokter_data').html(data);
     }
   });
