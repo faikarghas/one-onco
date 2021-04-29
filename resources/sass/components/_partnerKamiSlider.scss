@@ -2,6 +2,25 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     background-color: $color_lightGrey;
+    position: relative;
+    .contentSlider{
+        position: relative;
+        .arrow_slider{
+            li{
+                list-style: none;
+                display: inline-block;
+            }
+        }
+    }
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+    }
+    h2{
+        @include respond(down-tab-port){
+            text-align:center;
+        }
+    }
     ul{
         padding-left: 0;
         li{
