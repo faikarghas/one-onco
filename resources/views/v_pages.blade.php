@@ -47,9 +47,6 @@
                     </div>
                     <div class="col-12 mt-4 mb-5 forMobile"><hr></div>
                     <div class="col-12 col-md-6">
-                        <div class="text-center mb-5">
-                            <img src="{{asset('/images/kalbe.png')}}" width="180px" alt="" srcset="">
-                        </div>
                         <div class="tentangKami__page-intro mb-5">
                             <h3>{!! $titleContentPages !!}</h3>
                             <p>{!! $contentPages !!}</p>
