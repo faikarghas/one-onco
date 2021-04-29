@@ -19,7 +19,7 @@ class HomeController extends Controller
         if(Session()->get('username')=="") {
           $statusLogin = "<a href='/login'>LOGIN</a>";
           // tampilakan  slider news story random
-          $sliderArtikel = DB::table('artikel')->where('idKat',3)->select('id','title','shortContent','imgDesktop','themeColor')->orderBy('id', 'DESC')->get();
+          $sliderArtikel = DB::table('artikel')->where('idKat',3)->select('id','title','shortContent','imgDesktop','themeColor','slug')->orderBy('id', 'DESC')->get();
           $statusConfig = '';
           } else {
           // tampilakan  slider news story bedasarkan jenis kanker customer
@@ -41,16 +41,15 @@ class HomeController extends Controller
             $colorSlider [] = $row->themeColor;
           }
         }
-
-
         foreach ($sliderArtikel as $row) {
           $idSlider [] = $row->id;
           $titleSlider [] = $row->title;
           $introSlider [] = $row->shortContent;
           $imageSlider [] = url('/data_artikel/'.$row->imgDesktop);
+          $linkSlider [] = url('/cerita-survivor/'.$row->slug);
         }
 
-
+        
         //variable  data about us ( general)
         $shortContentAbout = DB::table('kategori_artikel')->where('id',11)->first();
 
@@ -87,7 +86,8 @@ class HomeController extends Controller
                       'titleSlider'=>$titleSlider,
                       'introSlider'=> $introSlider,
                       'imageSlider'=>$imageSlider,
-                      'colorSlider'=>$colorSlider
+                      'colorSlider'=>$colorSlider,
+                      'linkSlider'=>$linkSlider
         );
 
     	return view ('v_home', $data);

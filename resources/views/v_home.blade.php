@@ -61,7 +61,9 @@
                 <div class="box__welcomeHome forDesktop">
                     <h1 class="text-white text-center" id="titleSur"></h1>
                     <p class="text-white text-center mb-5" id="shortSur"><i></i></p>
-                    <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+                    {{-- <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a> --}}
+
+                    <a class="boxReadStory" id="linkSlider">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
@@ -351,14 +353,16 @@
             var title = @json($titleSlider);
             var image = @json($imageSlider);
             var colours = @json($colorSlider);
+            var links = @json($linkSlider);
 
-            console.log(colours);
+            //console.log(links);
 
             var counter = 0;
             var backgroundImgD = document.querySelector('.headerDesktop');
             var overlayImgD = document.querySelector(".headOverlay");
             var titleD = document.querySelector("#titleSur");
             var shortDescD = document.querySelector("#shortSur");
+            var link = document.querySelector("#linkSlider");
 
             var backgroundImgM = document.querySelector('.headerMobile');
             var overlayImgM = document.querySelector(".headerMobile .headOverlay");
@@ -385,6 +389,7 @@
                 titleD.innerHTML = title[counter];
                 shortDescD.innerHTML = intro[counter];
                 overlayImgD.style.backgroundColor = colours[counter];
+                link.setAttribute("href", links[counter]);
 
                 box.style.backgroundColor = colours[counter];
                 backgroundImgM.style.backgroundImage = 'url(' + image[counter] + ')';
