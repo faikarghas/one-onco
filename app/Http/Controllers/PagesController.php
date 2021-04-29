@@ -11,29 +11,28 @@ use App\Models\Artikel_model;
 
 class PagesController extends Controller
 {
-    public function index(Request $request, $slug=NULL){
+    public function index(Request $request, $slug = NULL){
 
       // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();
-      // get all atribut pages
-      $slugKat = $request->segment(1);
-      //dd($slugKat);
+      $request_path = explode('/', $slug);
+      if (isset($request_path[1])){
+        $slugDetail = $request_path[1];
+      }
+      $slugKat = $request_path[0];      
       $listAttribute = $this->getPages($slugKat);
-      //dd($listAttribute);
       $kategoriId = $listAttribute->id;
       // header title and image
       $imageHeader = $listAttribute->image;
       $titleHeader = $listAttribute->title;
       $subTitleHeader = $listAttribute->intro;
-      //dd($subTitleHeader);
       // side menu by kategori artikel
       $listingKatArtikel = DB::table('artikel')->where('idKat',$kategoriId)->orderBy('sortId', 'ASC')->get();
-      //dd($listingKatArtikel);
-        // main content after and before click
-      if (!empty($slug)){
+      //main content after and before click
+      if (!empty($slugDetail)){
         $viewDataDetail =  DB::table('artikel')
                               ->where('idKat',$kategoriId)
-                              ->where('slug',$slug)
+                              ->where('slug',$slugDetail)
                               ->first();
         $titleContentPages = $viewDataDetail->title;
         $mainContent = $viewDataDetail->content;
@@ -45,7 +44,6 @@ class PagesController extends Controller
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
       $listingStory  = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('id', 'DESC')->get();
       $listingPartners = DB::table('partner')->limit(4)->orderBy('id', 'DESC')->get();
-
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'listingKatArtikel'=>$listingKatArtikel,
@@ -58,7 +56,6 @@ class PagesController extends Controller
                     'contentPages' => $mainContent,
                     'listingPartners' => $listingPartners
                   );
-      //dd($data);
       return view ('v_pages', $data);
     }
 }
