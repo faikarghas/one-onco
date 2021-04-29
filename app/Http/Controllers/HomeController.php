@@ -46,19 +46,9 @@ class HomeController extends Controller
           $titleSlider [] = $row->title;
           $introSlider [] = $row->shortContent;
           $imageSlider [] = url('/data_artikel/'.$row->imgDesktop);
-<<<<<<< HEAD
-          // $slugSlider [] = $row->slug;
-        }
-
-        // dd($slugSlider);
-
-
-=======
           $linkSlider [] = url('/cerita-survivor/'.$row->slug);
         }
 
-        
->>>>>>> cea7e67ce03b4cb6184e08c1713d3bbc1aff3e05
         //variable  data about us ( general)
         $shortContentAbout = DB::table('kategori_artikel')->where('id',11)->first();
 
@@ -96,11 +86,7 @@ class HomeController extends Controller
                       'introSlider'=> $introSlider,
                       'imageSlider'=>$imageSlider,
                       'colorSlider'=>$colorSlider,
-<<<<<<< HEAD
-                      // 'slugSlider'=>$slugSlider
-=======
                       'linkSlider'=>$linkSlider
->>>>>>> cea7e67ce03b4cb6184e08c1713d3bbc1aff3e05
         );
 
     	return view ('v_home', $data);

@@ -353,14 +353,9 @@
             var title = @json($titleSlider);
             var image = @json($imageSlider);
             var colours = @json($colorSlider);
-<<<<<<< HEAD
-            // var slug = @json($slugSlider);
-
-=======
             var links = @json($linkSlider);
 
             //console.log(links);
->>>>>>> cea7e67ce03b4cb6184e08c1713d3bbc1aff3e05
 
             var counter = 0;
             var backgroundImgD = document.querySelector('.headerDesktop');
