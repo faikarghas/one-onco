@@ -87,7 +87,7 @@
     h2,p{
         text-align: left !important;
         @include respond(down-tab-port){
-            text-align: center !important;
+            // text-align: center !important;
         }
     }
 }

@@ -1933,12 +1933,6 @@ button.boxReadMore {
 .berita__section h2, .berita__section p {
   text-align: left !important;
 }
-@media only screen and (max-width: 62em) {
-  .berita__section h2, .berita__section p {
-    text-align: center !important;
-  }
-}
-
 .login__page {
   padding: 5rem 0;
 }
