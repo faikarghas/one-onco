@@ -1848,48 +1848,48 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 var html = __webpack_require__(/*! ./html */ "./resources/js/html.js"); // CONTENT FOR SPECIFIC TIME PERIOD
 
 
-var baseUrl = window.location.origin;
-window.setInterval(function () {
-  var d = new Date();
-  var h = d.getHours(); // pagi
-  // 24-12
-  // siang
-  // 12-15
-  // sore
-  // 15-18
-  // malam
-  // 18-24
-
-  if (h <= 12) {
-    // console.log('pagi');
-    $('.box__welcome').css('background-color', '#E55A24');
-  } else if (h > 12 && h <= 15) {
-    // console.log('siang');
-    $('.box__welcome').css('background-color', '#E55A24');
-  } else if (h > 15 && h <= 18) {
-    // console.log('sore');
-    $('.box__welcome').css('background-color', '#E55A24');
-  } else if (h > 18 && h <= 24) {
-    $('.box__welcome').css('background-color', '#32338E'); // console.log('malam');
-  } // console.log(h);
-
-}, 3000);
-var d = new Date();
-var h = d.getHours();
-
-if (h <= 12) {
-  // console.log('pagi');
-  $('.box__welcome').css('background-color', '#E55A24');
-} else if (h > 12 && h <= 15) {
-  console.log('siang');
-  $('.box__welcome').css('background-color', '#E55A24');
-} else if (h > 15 && h <= 18) {
-  // console.log('sore');
-  $('.box__welcome').css('background-color', '#E55A24');
-} else if (h > 18 && h <= 24) {
-  $('.box__welcome').css('background-color', '#32338E'); // console.log('malam');
-} // MENU HAMBURGER
-
+var baseUrl = window.location.origin; // window.setInterval(() => {
+//     const d = new Date();
+//     const h = d.getHours()
+//     // pagi
+//     // 24-12
+//     // siang
+//     // 12-15
+//     // sore
+//     // 15-18
+//     // malam
+//     // 18-24
+//     if (h <= 12) {
+//         // console.log('pagi');
+//         $('.box__welcome').css('background-color','#E55A24')
+//     } else if(h > 12 && h <= 15) {
+//         // console.log('siang');
+//         $('.box__welcome').css('background-color','#E55A24')
+//     } else if(h > 15  && h <= 18){
+//         // console.log('sore');
+//         $('.box__welcome').css('background-color','#E55A24')
+//     } else if(h > 18 && h <= 24){
+//         $('.box__welcome').css('background-color','#32338E')
+//         // console.log('malam');
+//     }
+//     // console.log(h);
+// }, 3000);
+// const d = new Date();
+// const h = d.getHours()
+// if (h <= 12) {
+//     // console.log('pagi');
+//     $('.box__welcome').css('background-color','#E55A24')
+// } else if(h > 12 && h <= 15) {
+//     console.log('siang');
+//     $('.box__welcome').css('background-color','#E55A24')
+// } else if(h > 15  && h <= 18){
+//     // console.log('sore');
+//     $('.box__welcome').css('background-color','#E55A24')
+// } else if(h > 18 && h <= 24){
+//     $('.box__welcome').css('background-color','#32338E')
+//     // console.log('malam');
+// }
+// MENU HAMBURGER
 
 $('#menu-hamburger').click(function (params) {
   $('#menu-hamburger').toggleClass('open');

@@ -120,7 +120,7 @@
                 <div class="halfBoxRounded"></div>
             </div>
 
-            <div class="container-fluid headerMobile forMobile" style="background-image:url({{asset('/images/imagebanner_mobile.jpg')}}), linear-gradient(to right, #6DB3F2, #6DB3F2);">
+            <div class="container-fluid headerMobile forMobile">
                 {{-- <div class="headOverlay" style="background-color:#00a3e398;"></div> --}}
                 <div class="headOverlay"></div>
                 <div class="menuOverlay"></div>
@@ -155,8 +155,8 @@
                     </div>
                 </div>
                 <div class="box__welcome">
-                    <h4 class="text-white text-center">"Selamat pagi, jangan menyerah!"</h4>
-                    <p class="text-white text-center mb-4"><i>Angelina Ong, cancer sruvivor 2019</i></p>
+                    <h4 class="text-white text-center" id="titleSurM">"Selamat pagi, jangan menyerah!"</h4>
+                    <p class="text-white text-center mb-4" id="shortSurM"><i>Angelina Ong, cancer sruvivor 2019</i></p>
                     {{-- <a class="boxReadStory" href="cerita-survivor/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a> --}}
                     <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a>
 
@@ -353,25 +353,43 @@
             var colours = @json($colorSlider);
 
             var counter = 0;
-            var elem1 = document.querySelector('.headerDesktop');
-            var elem2 = document.querySelector("#titleSur");
-            var elem3 = document.querySelector("#shortSur");
-            var elem4 = document.querySelector(".headOverlay");
+            var backgroundImgD = document.querySelector('.headerDesktop');
+            var overlayImgD = document.querySelector(".headOverlay");
+            var titleD = document.querySelector("#titleSur");
+            var shortDescD = document.querySelector("#shortSur");
 
-            var inst = setInterval(change, 15000);
+            var backgroundImgM = document.querySelector('.headerMobile');
+            var overlayImgM = document.querySelector(".headerMobile .headOverlay");
+            var titleM = document.querySelector("#titleSurM");
+            var shortDescM = document.querySelector("#shortSurM");
+            var box = document.querySelector(".box__welcome");
 
-            elem1.style.backgroundImage = 'url(' + image[0] + ')';;
-            elem2.innerHTML = title[0];
-            elem3.innerHTML = intro[0];
-            elem4.style.backgroundColor = colours[0];
+
+            var inst = setInterval(change, 5000);
+
+            backgroundImgD.style.backgroundImage = 'url(' + image[0] + ')';;
+            titleD.innerHTML = title[0];
+            shortDescD.innerHTML = intro[0];
+            overlayImgD.style.backgroundColor = colours[0];
+
+            backgroundImgM.style.backgroundImage = 'url(' + image[0] + ')';;
+            titleM.innerHTML = title[0];
+            shortDescM.innerHTML = intro[0];
+            overlayImgM.style.backgroundColor = colours[0];
+            box.style.backgroundColor = colours[0];
 
             function change() {
-                console.log('a');
-                elem1.style.backgroundImage = 'url(' + image[counter] + ')';;
-                elem2.innerHTML = title[counter];
-                elem3.innerHTML = intro[counter];
-                elem4.style.backgroundColor = colours[counter];
-                console.log(counter);
+                backgroundImgD.style.backgroundImage = 'url(' + image[counter] + ')';
+                titleD.innerHTML = title[counter];
+                shortDescD.innerHTML = intro[counter];
+                overlayImgD.style.backgroundColor = colours[counter];
+
+                box.style.backgroundColor = colours[counter];
+                backgroundImgM.style.backgroundImage = 'url(' + image[counter] + ')';
+                titleM.innerHTML = title[counter];
+                shortDescM.innerHTML = intro[counter];
+                overlayImgM.style.backgroundColor = colours[counter];
+                box.style.backgroundColor = colours[counter];
 
                 counter++;
                 if (counter >= title.length) {
@@ -379,10 +397,6 @@
                     // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
                 }
 
-                console.log(intro[counter]);
-                console.log(title[counter]);
-                console.log(image[counter]);
-                console.log(colours[counter]);
             }
         </script>
 

@@ -9,5 +9,10 @@
         {
             "regex": ".*/mobile/.*"
         }
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#2BC294",
+        "statusBar.background": "#2BC294",
+        "statusBar.foreground": "#ffffff"
+    }
 }
