@@ -53,6 +53,8 @@ if (h <= 12) {
     // console.log('malam');
 }
 
+
+
 // MENU HAMBURGER
 
 $('#menu-hamburger').click(function (params) {

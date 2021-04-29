@@ -28,7 +28,7 @@ class HomeController extends Controller
           $statusConfig = "<a href='/pengaturan'><img src='{{ asset('/images/setting.png') }}' alt='search' width='15px'/></a>";
         }
 
-       
+        // dd($sliderArtikel);
 
         foreach ($sliderArtikel as $row) {
             $idSlider [] = $row->id;
@@ -48,8 +48,6 @@ class HomeController extends Controller
         //variable  data about us ( general)
         $shortContentAbout = DB::table('kategori_artikel')->where('id',11)->first();
 
-        //dd($shortContentAbout);
-        
         // variable jenis kanker dan nama kanker
         $listingKankers = DB::table('kanker')->where('published',1)->orderBy('id', 'DESC')->get();
         // variable journal onkologi terbaru
@@ -65,9 +63,6 @@ class HomeController extends Controller
         $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
         // all data variable to views
         $listingPartners = DB::table('partner')->limit(6)->orderBy('id', 'DESC')->get();
-        //var_dump($listingJurnal);
-
-        //dd($sliderArtikel);
 
         $data = array('title' => $siteConfig->pvar2,
                       'copyright'=>$siteConfig->pvar3,
@@ -83,19 +78,12 @@ class HomeController extends Controller
                       'listingPartners'=>$listingPartners,
                       'listingNews'=>$listingNews,
                       'sliderArtikel'=>$sliderArtikel,
-                      
                       'titleSlider'=>$titleSlider,
                       'introSlider'=> $introSlider,
                       'imageSlider'=>$imageSlider,
                       'colorSlider'=>$colorSlider
-
-
-
-
-
         );
 
-        
     	return view ('v_home', $data);
     }
     public function getJenisKanker($id) {

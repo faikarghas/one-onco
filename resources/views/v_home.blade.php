@@ -19,7 +19,7 @@
         <header class="homeHeader">
             @include('components/presentational.menuShowcase')
             {{-- <div class="container-fluid headerDesktop forDesktop" style="background-image:url({{asset('/images/imagebanner_desktop.jpg')}})"> --}}
-            <div class="container-fluid headerDesktop forDesktop" id="imgSur">
+            <div class="container-fluid headerDesktop forDesktop">
                 <div class="headOverlay"></div>
                 <div class="row">
                     <div class="col-2 position-relative"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/></div>
@@ -59,17 +59,9 @@
                     </div>
                 </div>
                 <div class="box__welcomeHome forDesktop">
-
-                    {{-- <h1 class="text-white text-center">{!! $titleStory !!}</h1>
-                    <p class="text-white text-center mb-5"><i>{!! $shortStory !!}</i></p>
-                    <a class="boxReadStory" href="cerita-survivor/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a> --}}
                     <h1 class="text-white text-center" id="titleSur"></h1>
                     <p class="text-white text-center mb-5" id="shortSur"><i></i></p>
                     <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
-
-
-
-
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
@@ -360,17 +352,13 @@
             var image = @json($imageSlider);
             var colours = @json($colorSlider);
 
-
-            console.log(image);
-
-
             var counter = 0;
-            var elem1 = document.querySelector('#imgSur');
+            var elem1 = document.querySelector('.headerDesktop');
             var elem2 = document.querySelector("#titleSur");
             var elem3 = document.querySelector("#shortSur");
             var elem4 = document.querySelector(".headOverlay");
 
-            var inst = setInterval(change, 5000);
+            var inst = setInterval(change, 15000);
 
             elem1.style.backgroundImage = 'url(' + image[0] + ')';;
             elem2.innerHTML = title[0];
@@ -378,15 +366,23 @@
             elem4.style.backgroundColor = colours[0];
 
             function change() {
-                elem1.style.backgroundImage = 'url(' + image[counter++] + ')';;
+                console.log('a');
+                elem1.style.backgroundImage = 'url(' + image[counter] + ')';;
                 elem2.innerHTML = title[counter];
                 elem3.innerHTML = intro[counter];
                 elem4.style.backgroundColor = colours[counter];
+                console.log(counter);
+
                 counter++;
                 if (counter >= title.length) {
                     counter = 0;
                     // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
                 }
+
+                console.log(intro[counter]);
+                console.log(title[counter]);
+                console.log(image[counter]);
+                console.log(colours[counter]);
             }
         </script>
 
