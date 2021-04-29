@@ -483,7 +483,6 @@ $(document).ready(function() {
     });
 });
 
-
 function getMoreDokters(page) {
   var search = $('#search').val();
   var selectedSpesialis = $("#spesialis option:selected").val();
@@ -516,7 +515,6 @@ axios.get(`https://dev.farizdotid.com/api/daerahindonesia/provinsi`).then(functi
     });
 
 });
-
 
 $('#select_provinsi').change(function(){
     let data= $(this).val();

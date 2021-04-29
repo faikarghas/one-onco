@@ -181,9 +181,9 @@
                         <div class="col-12 col-md-6">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'dirkanker.png',
-                                'title'=>'Direktori Kanker',
+                                'title'=>'Direktori Layanan',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
-                                'color'=>'#00A2E3;',
+                                'color'=>'#33A58F;',
                                 'colorPar'=>'#808080;',
                                 'path'=>'direktori'
                             ))
@@ -191,7 +191,7 @@
                         <div class="col-12 col-md-6">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'beliobat.png',
-                                'title'=>'Beli Obat',
+                                'title'=>'Belanja Sehat',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
@@ -201,7 +201,7 @@
                         <div class="col-12 col-md-6">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'live-chat.png',
-                                'title'=>'Live Chat',
+                                'title'=>'Konsultasi Online',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#C6CB57;',
                                 'colorPar'=>'#808080;',

@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 mb-5">
                 <div class="jadwal_list">
                     <h4><strong>Dokter Praktik</strong></h4>
                 </div>
