@@ -509,6 +509,7 @@ $(document).ready(function() {
     $('#search').on('keyup', function() {
       $value = $(this).val();
       getMoreDokters(1);
+      console.log('test');
     });
     $('#spesialis').on('change', function() {
       getMoreDokters();
