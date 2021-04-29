@@ -360,7 +360,8 @@
             var image = @json($imageSlider);
             var colours = @json($colorSlider);
 
-            console.log(colours);
+
+            console.log(image);
 
 
             var counter = 0;
@@ -370,6 +371,11 @@
             var elem4 = document.querySelector(".headOverlay");
 
             var inst = setInterval(change, 5000);
+
+            elem1.style.backgroundImage = 'url(' + image[0] + ')';;
+            elem2.innerHTML = title[0];
+            elem3.innerHTML = intro[0];
+            elem4.style.backgroundColor = colours[0];
 
             function change() {
                 elem1.style.backgroundImage = 'url(' + image[counter++] + ')';;
