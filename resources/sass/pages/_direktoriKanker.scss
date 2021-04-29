@@ -125,7 +125,7 @@
     }
     .jam_op-title{
         padding: 1rem 0;
-        border-top: 1px solid #e0dddd;
+        border-bottom: 1px solid #e0dddd;
         margin-top: 1rem;
         p,li{
             font-size: 1.2rem;
@@ -134,12 +134,10 @@
         }
     }
     .jam_op-sch{
-        border-top: 1px solid #e0dddd;
         padding-left: 0;
         li{
             list-style: none;
             font-size: 1.2rem;
-            border-bottom: 1px solid #e0dddd;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
             span{

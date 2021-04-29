@@ -2359,7 +2359,7 @@ button.boxReadMore {
 }
 .direktori__list-detail .jam_op-title {
   padding: 1rem 0;
-  border-top: 1px solid #e0dddd;
+  border-bottom: 1px solid #e0dddd;
   margin-top: 1rem;
 }
 .direktori__list-detail .jam_op-title p, .direktori__list-detail .jam_op-title li {
@@ -2368,13 +2368,11 @@ button.boxReadMore {
   margin-bottom: 0;
 }
 .direktori__list-detail .jam_op-sch {
-  border-top: 1px solid #e0dddd;
   padding-left: 0;
 }
 .direktori__list-detail .jam_op-sch li {
   list-style: none;
   font-size: 1.2rem;
-  border-bottom: 1px solid #e0dddd;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
