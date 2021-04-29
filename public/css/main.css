@@ -2206,13 +2206,20 @@ button.boxReadMore {
   font-weight: 700;
 }
 .detail__page1--description p {
-  font-size: 1.4rem;
   font-weight: 400;
 }
 .detail__page1--description a {
   font-weight: 900;
-  font-size: 1.4rem;
   text-decoration: none;
+}
+.detail__page1--description p, .detail__page1--description div, .detail__page1--description p > span, .detail__page1--description ul > li, .detail__page1--description a, .detail__page1--description div > span, .detail__page1--description li > span, .detail__page1--description ol > li {
+  font-size: 1.5rem !important;
+}
+.detail__page1--description div span span {
+  font-size: 1.5rem !important;
+}
+.detail__page1--description table tr td {
+  font-size: 1.5rem !important;
 }
 
 .direktoriKanker__page {

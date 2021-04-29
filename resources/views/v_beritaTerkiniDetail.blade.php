@@ -79,18 +79,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 forMobile">
+                    {{-- <div class="col-12 forMobile">
                         <div class="pagination__wrapper">
                             <span>Halaman</span>
                             <div class="pagination__wrapper-button">
                                 <div class="page_number">
-                                    {{-- <div class="page_numberButton active">1</div> --}}
-                                    {{-- <div class="page_numberButton">2</div> --}}
+                                    <div class="page_numberButton active">1</div>
+                                    <div class="page_numberButton">2</div>
                                 </div>
                                 <div class="show_all"><p>Show all</p> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"> </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-12 mt-5 mb-5 forMobile">
                         <div class="share_sosmed">
                             <p>Apabila informasi ini berguna untuk Anda, <br>bagikan ke keluarga, kerabat, dan teman Anda.</p>
