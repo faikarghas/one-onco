@@ -28,17 +28,26 @@ class HomeController extends Controller
           $statusConfig = "<a href='/pengaturan'><img src='{{ asset('/images/setting.png') }}' alt='search' width='15px'/></a>";
         }
 
-       
+        $listSur = DB::table('kategori_artikel')->where('id',3)->first();
 
-        foreach ($sliderArtikel as $row) {
-            $idSlider [] = $row->id;
-            $titleSlider [] = $row->title;
-            $introSlider [] = $row->shortContent;
-            $imageSlider [] = url('/data_artikel/'.$row->imgDesktop);
+        $statusTheme = $listSur->activeTheme;
+        $themeColor = $listSur->themeColor;
+
+        if ($statusTheme === 0) {
+            $colorSlider [] =  $themeColor;
+        } else {
+          foreach ($sliderArtikel as $row) {        
             $colorSlider [] = $row->themeColor;
+          }
+        }
+        foreach ($sliderArtikel as $row) {
+          $idSlider [] = $row->id;
+          $titleSlider [] = $row->title;
+          $introSlider [] = $row->shortContent;
+          $imageSlider [] = url('/data_artikel/'.$row->imgDesktop);  
         }
 
-        //dd($color);
+        //dd($colorSlider);
         //var_dump($color);
 
         // $slider =  DB::table('artikel')->where('idKat',3)->get();

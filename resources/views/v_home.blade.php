@@ -391,11 +391,8 @@
                 counter++;
                 if (counter >= title.length) {
                     counter = 0;
-                    // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
                 }
             }
         </script>
-
-
     </body>
 </html>
