@@ -19,18 +19,30 @@ class HomeController extends Controller
         if(Session()->get('username')=="") {
           $statusLogin = "<a href='/login'>LOGIN</a>";
           // tampilakan  slider news story random
-          $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
+          $sliderArtikel = DB::table('artikel')->where('idKat',3)->select('id','title','shortContent','imgDesktop','themeColor')->orderBy('id', 'DESC')->get();
           $statusConfig = '';
           } else {
           // tampilakan  slider news story bedasarkan jenis kanker customer
           $statusLogin = "";
-          $sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
+          $sliderArtikel = DB::table('artikel')->select('id')->where('idKat',3)->orderBy('id', 'DESC')->get();
           $statusConfig = "<a href='/pengaturan'><img src='{{ asset('/images/setting.png') }}' alt='search' width='15px'/></a>";
         }
-        //var_dump ($sliderArtikel);
+
+       
+
+        foreach ($sliderArtikel as $row) {
+            $idSlider [] = $row->id;
+            $titleSlider [] = $row->title;
+            $introSlider [] = $row->shortContent;
+            $imageSlider [] = url('/data_artikel/'.$row->imgDesktop);
+            $colorSlider [] = $row->themeColor;
+        }
+
+        //dd($color);
+        //var_dump($color);
 
         // $slider =  DB::table('artikel')->where('idKat',3)->get();
-        // dd($slider);
+       //dd($imageSlider);
 
 
         //variable  data about us ( general)
@@ -54,20 +66,36 @@ class HomeController extends Controller
         // all data variable to views
         $listingPartners = DB::table('partner')->limit(6)->orderBy('id', 'DESC')->get();
         //var_dump($listingJurnal);
+
+        //dd($sliderArtikel);
+
         $data = array('title' => $siteConfig->pvar2,
                       'copyright'=>$siteConfig->pvar3,
                       'statusLogin'=>$statusLogin,
                       'statusConfig'=>$statusConfig,
                       'titleAbout'=>$shortContentAbout->title,
                       'contentAbout'=>$shortContentAbout->intro,
-                      'titleStory' => $sliderArtikel->title,
-                      'shortStory' => $sliderArtikel->shortContent,
-                      'slug' => $sliderArtikel->slug,
+                      // 'titleStory' => $sliderArtikel->title,
+                      // 'shortStory' => $sliderArtikel->shortContent,
+                      //'slug' => $sliderArtikel->slug,
                       'listingJurnal'=>$listingJurnal,
                       'listingKankers'=>$listingKankers,
                       'listingPartners'=>$listingPartners,
-                      'listingNews'=>$listingNews
+                      'listingNews'=>$listingNews,
+                      'sliderArtikel'=>$sliderArtikel,
+                      
+                      'titleSlider'=>$titleSlider,
+                      'introSlider'=> $introSlider,
+                      'imageSlider'=>$imageSlider,
+                      'colorSlider'=>$colorSlider
+
+
+
+
+
         );
+
+        
     	return view ('v_home', $data);
     }
     public function getJenisKanker($id) {

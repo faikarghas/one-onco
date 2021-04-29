@@ -18,8 +18,9 @@
     <body>
         <header class="homeHeader">
             @include('components/presentational.menuShowcase')
-            <div class="container-fluid headerDesktop forDesktop" style="background-image:url({{asset('/images/imagebanner_desktop.jpg')}})">
-                <div class="headOverlay" style="background-color:#00a3e398;"></div>
+            {{-- <div class="container-fluid headerDesktop forDesktop" style="background-image:url({{asset('/images/imagebanner_desktop.jpg')}})"> --}}
+            <div class="container-fluid headerDesktop forDesktop" id="imgSur">
+                <div class="headOverlay"></div>
                 <div class="row">
                     <div class="col-2 position-relative"><img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/></div>
                     <div class="col-8 position-relative">
@@ -45,11 +46,11 @@
                         <nav>
                             <ul class="userAction">
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>                                
+                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
                                 @if (Auth::check())
                                     <li><a href='/logout'>LOGOUT</a></li>
                                     <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
-                                @else 
+                                @else
                                     <li><a href='/login'>LOGIN</a></li>
                                     <li></li>
                                 @endif
@@ -58,9 +59,17 @@
                     </div>
                 </div>
                 <div class="box__welcomeHome forDesktop">
-                    <h1 class="text-white text-center">{!! $titleStory !!}</h1>
+
+                    {{-- <h1 class="text-white text-center">{!! $titleStory !!}</h1>
                     <p class="text-white text-center mb-5"><i>{!! $shortStory !!}</i></p>
-                    <a class="boxReadStory" href="cerita-survivor/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+                    <a class="boxReadStory" href="cerita-survivor/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a> --}}
+                    <h1 class="text-white text-center" id="titleSur"></h1>
+                    <p class="text-white text-center mb-5" id="shortSur"><i></i></p>
+                    <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+
+
+
+
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
@@ -120,7 +129,8 @@
             </div>
 
             <div class="container-fluid headerMobile forMobile" style="background-image:url({{asset('/images/imagebanner_mobile.jpg')}}), linear-gradient(to right, #6DB3F2, #6DB3F2);">
-                <div class="headOverlay" style="background-color:#00a3e398;"></div>
+                {{-- <div class="headOverlay" style="background-color:#00a3e398;"></div> --}}
+                <div class="headOverlay"></div>
                 <div class="menuOverlay"></div>
                 <div class="row headerNavBox position-relative">
                     <div class="col-6">
@@ -155,7 +165,9 @@
                 <div class="box__welcome">
                     <h4 class="text-white text-center">"Selamat pagi, jangan menyerah!"</h4>
                     <p class="text-white text-center mb-4"><i>Angelina Ong, cancer sruvivor 2019</i></p>
-                    <a class="boxReadStory" href="cerita-survivor/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a>
+                    {{-- <a class="boxReadStory" href="cerita-survivor/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a> --}}
+                    <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a>
+
                 </div>
                 <div class="halfBoxRounded"></div>
             </div>
@@ -261,12 +273,12 @@
                         </div>
                         @foreach($listingJurnal as $row)
                         <div class="col-12 col-md-4">
-                            <?php 
+                            <?php
                                 $yearCurrent  = date('Y');
                                 $dateNews =  date('Y', strtotime($row->publishDate));
                                 if ($yearCurrent === $dateNews ){
                                    $date =  date('d-M', strtotime($row->publishDate));
-                                } else { 
+                                } else {
                                    $date =  date('d-M-Y',strtotime($row->publishDate));
                                 }
                             ?>
@@ -296,7 +308,7 @@
                             ))
                         </div>
                         @foreach($listingNews as $row)
-                                <?php 
+                                <?php
                                     $yearCurrent  = date('Y');
                                     $dateNews =  date('Y', strtotime($row->publishDate));
                                     if ($yearCurrent == $dateNews ){
@@ -340,5 +352,50 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
+
+        <script>
+
+            // var i = 0; // Will keep track of which color to use
+            // function change() {
+            //     var bg = document.querySelector('.headOverlay');
+            //     var colours = ["red","orange","green","blue","brown","purple","gray","white"];
+            //     var text = ["red","orange","green","blue","brown","purple","gray","white"];
+
+            //         bg.style.backgroundColor = colours[i];
+
+            //         i = (i + 1) % colours.length;
+            //     }
+            //     setInterval(change, 1000);
+
+            var intro = @json($introSlider);
+            var title = @json($titleSlider);
+            var image = @json($imageSlider);
+            var colours = @json($colorSlider);
+
+            console.log(colours);
+
+
+            var counter = 0;
+            var elem1 = document.querySelector('#imgSur');
+            var elem2 = document.querySelector("#titleSur");
+            var elem3 = document.querySelector("#shortSur");
+            var elem4 = document.querySelector(".headOverlay");
+
+            var inst = setInterval(change, 10000);
+
+            function change() {
+                elem1.style.backgroundImage = 'url(' + image[counter++] + ')';;
+                elem2.innerHTML = title[counter];
+                elem3.innerHTML = intro[counter];
+                elem4.style.backgroundColor = colours[counter];
+                counter++;
+                if (counter >= title.length) {
+                    counter = 0;
+                    // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+                }
+            }
+        </script>
+
+
     </body>
 </html>
