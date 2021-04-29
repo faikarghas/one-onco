@@ -355,18 +355,6 @@
 
         <script>
 
-            // var i = 0; // Will keep track of which color to use
-            // function change() {
-            //     var bg = document.querySelector('.headOverlay');
-            //     var colours = ["red","orange","green","blue","brown","purple","gray","white"];
-            //     var text = ["red","orange","green","blue","brown","purple","gray","white"];
-
-            //         bg.style.backgroundColor = colours[i];
-
-            //         i = (i + 1) % colours.length;
-            //     }
-            //     setInterval(change, 1000);
-
             var intro = @json($introSlider);
             var title = @json($titleSlider);
             var image = @json($imageSlider);
@@ -381,7 +369,7 @@
             var elem3 = document.querySelector("#shortSur");
             var elem4 = document.querySelector(".headOverlay");
 
-            var inst = setInterval(change, 10000);
+            var inst = setInterval(change, 5000);
 
             function change() {
                 elem1.style.backgroundImage = 'url(' + image[counter++] + ')';;
