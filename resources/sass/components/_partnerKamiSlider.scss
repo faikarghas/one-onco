@@ -2,6 +2,43 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     background-color: $color_lightGrey;
+    position: relative;
+    .contentSlider{
+        position: relative;
+        .arrow_slider{
+            width: 100%;
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
+            li{
+                position: absolute;
+                list-style: none;
+                display: inline-block;
+                @include respond(down-tab-port){
+                    height: unset;
+                }
+            }
+            .next{
+                right: 2px;
+            }
+            .prev{
+                left: -18px;
+                @include respond(down-tab-port){
+                    left: -10px;
+                }
+                transform: rotate(180deg);
+            }
+        }
+    }
+    @include respond(down-tab-port){
+        padding-right: 12.75px;
+        padding-left: 12.75px;
+    }
+    h2{
+        @include respond(down-tab-port){
+            text-align:center;
+        }
+    }
     ul{
         padding-left: 0;
         li{

@@ -51,13 +51,5 @@ class Artikel_model extends Model
          return $query;
      }
 
-     
-
-
-
-
-
-
-
 
 }

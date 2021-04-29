@@ -127,11 +127,12 @@ class DirectoryController extends Controller
     // view dokter praktek by Faskes
     $viewDokter = DB::table('dokter')
     ->join('jadwal_dokter', 'jadwal_dokter.dokterId', '=', 'dokter.dokterId','LEFT')
-    ->select('dokter.id', 'dokter.fullname')
+    ->select('dokter.dokterId', 'dokter.fullname')
     ->distinct('dokter.fullname')
     ->where('jadwal_dokter.faskesId', $id)
     ->get();
 
+    // dd($viewDokter);
 
     $data = array('title' => $siteConfig->pvar2,
                   'copyright'=>$siteConfig->pvar3,
@@ -147,7 +148,7 @@ class DirectoryController extends Controller
                   'status2' => $status2,
                   'status3' => $status3,
                   'status4' => $status4,
-                  'status5' => $status5
+                  'status5' => $status5,
                 );
     return view ('v_direktoriCare', $data);
   }

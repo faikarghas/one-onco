@@ -66,7 +66,7 @@ class HomeController extends Controller
                           ->get();
         // variable news terbaru
         //$sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
-        $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+        $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
         // all data variable to views
         $listingPartners = DB::table('partner')->limit(6)->orderBy('id', 'DESC')->get();
 
