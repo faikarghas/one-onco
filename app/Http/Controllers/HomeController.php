@@ -29,9 +29,7 @@ class HomeController extends Controller
         }
 
         $listSur = DB::table('kategori_artikel')->where('id',3)->first();
-=======
         // dd($sliderArtikel);
->>>>>>> 7a22b50bd15bbb350f5402182c4a06bd7a70ad30
 
         $statusTheme = $listSur->activeTheme;
         $themeColor = $listSur->themeColor;
