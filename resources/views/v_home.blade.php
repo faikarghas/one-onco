@@ -124,8 +124,8 @@
                 {{-- <div class="headOverlay" style="background-color:#00a3e398;"></div> --}}
                 <div class="headOverlay"></div>
                 <div class="menuOverlay"></div>
-                <div class="row headerNavBox position-relative">
-                    <div class="col-6">
+                <div class="row headerNavBox">
+                    <div class="col-6 position-relative">
                         <div class="user">
                             <ul>
                                 <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
