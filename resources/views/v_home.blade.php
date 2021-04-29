@@ -352,6 +352,8 @@
             var image = @json($imageSlider);
             var colours = @json($colorSlider);
 
+            console.log(colours);
+
             var counter = 0;
             var backgroundImgD = document.querySelector('.headerDesktop');
             var overlayImgD = document.querySelector(".headOverlay");

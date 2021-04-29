@@ -34,25 +34,21 @@ class HomeController extends Controller
         $statusTheme = $listSur->activeTheme;
         $themeColor = $listSur->themeColor;
 
-        if ($statusTheme === 0) {
+        if ($statusTheme === 1) {
             $colorSlider [] =  $themeColor;
         } else {
-          foreach ($sliderArtikel as $row) {        
+          foreach ($sliderArtikel as $row) {
             $colorSlider [] = $row->themeColor;
           }
         }
+
+
         foreach ($sliderArtikel as $row) {
           $idSlider [] = $row->id;
           $titleSlider [] = $row->title;
           $introSlider [] = $row->shortContent;
-          $imageSlider [] = url('/data_artikel/'.$row->imgDesktop);  
+          $imageSlider [] = url('/data_artikel/'.$row->imgDesktop);
         }
-
-        //dd($colorSlider);
-        //var_dump($color);
-
-        // $slider =  DB::table('artikel')->where('idKat',3)->get();
-       //dd($imageSlider);
 
 
         //variable  data about us ( general)
