@@ -174,7 +174,7 @@
         font-size: 14px;
     }
     p{
-        font-size: 13px;
+        font-size: 1.2rem;
         margin-bottom: 0;
     }
     ul{
@@ -183,6 +183,9 @@
             border-bottom: 1px solid rgb(201, 201, 201);
             border-top: 1px solid rgb(201, 201, 201);
         }
+    }
+    a{
+        font-size: 1.2rem;
     }
 
 }

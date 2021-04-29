@@ -27,7 +27,7 @@
                 <div class="jam_op-title">
                     <p>Layanan Terkait Kanker</p>
                 </div>
-                <div class="row">
+                <div class="row jam_op-sch">
                     <div class="col-12">
                         <ul class="list-unstyled">
                             @if ($status1==1)
@@ -45,8 +45,6 @@
                             @if ($status5==1)
                                 <li>Perawatan Paliatif</li>
                             @endif
-
-                            
                         </ul>
                     </div>
                 </div>
@@ -71,10 +69,17 @@
                                 </div>
                                 <div class="col-7 d-flex flex-column align-items-start">
                                     <div class="title_wrapper">
-                                        <h3 style="color: #00A2E3;"><strong>{{ $row->fullname }}</strong></h3>
+                                        <h3 style="color: #00A2E3;"><strong>{{$row->fullname}}</strong></h3>
                                     </div>
-                                    {{-- <p><strong>Jadwal Praktik</strong></p> --}}
-                                    {{-- <p>{{ $row->jadwal }}</p> --}}
+                                    {{-- <ul>
+                                        <li class="pt-2 pb-2 spes">
+                                            <p><strong>{{ $spesialis  }}</strong></p>
+                                        </li>
+                                        <li class="pt-2">
+                                            <p><strong>Lokasi Praktek</strong></p>
+                                        </li>
+                                        <li><p>{!! $praktek !!}</p></li>
+                                    </ul> --}}
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">

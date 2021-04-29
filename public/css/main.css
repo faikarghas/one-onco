@@ -1290,7 +1290,7 @@ footer .sosmed ul li {
   font-size: 14px;
 }
 .box__rec3 p {
-  font-size: 13px;
+  font-size: 1.2rem;
   margin-bottom: 0;
 }
 .box__rec3 ul {
@@ -1299,6 +1299,9 @@ footer .sosmed ul li {
 .box__rec3 ul .spes {
   border-bottom: 1px solid #c9c9c9;
   border-top: 1px solid #c9c9c9;
+}
+.box__rec3 a {
+  font-size: 1.2rem;
 }
 
 .skr {
@@ -2345,7 +2348,7 @@ button.boxReadMore {
   border-top: 1px solid #e0dddd;
   margin-top: 1rem;
 }
-.direktori__list-detail .jam_op-title p {
+.direktori__list-detail .jam_op-title p, .direktori__list-detail .jam_op-title li {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0;
@@ -2356,6 +2359,7 @@ button.boxReadMore {
 }
 .direktori__list-detail .jam_op-sch li {
   list-style: none;
+  font-size: 1.2rem;
   border-bottom: 1px solid #e0dddd;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
