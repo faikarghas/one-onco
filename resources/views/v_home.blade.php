@@ -370,10 +370,10 @@
             var intro = @json($introSlider);
             var title = @json($titleSlider);
             var image = @json($imageSlider);
-            var colours = ["red","orange","green","blue","brown","purple"];
-            //var colours = @json($colorSlider);
+            //var colours = ["red","orange","green","blue","brown","purple"];
+            var colours = @json($colorSlider);
 
-            console.log (image);
+            //console.log (image);
 
             var counter = 0;
             var elem1 = document.querySelector('#imgSur');
