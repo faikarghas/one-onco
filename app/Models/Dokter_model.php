@@ -17,21 +17,21 @@ class Dokter_model extends Model
         $dokters = DB::table('dokter_mapped');
         if($search_keyword && !empty($search_keyword)) {
             $dokters->where(function($q) use ($search_keyword) {
-                $q->where('fullname', 'like', "%{$search_keyword}%")
-                ->orWhere('subSpesialist', 'like', "%{$search_keyword}%")
-                ->orWhere('namafaskes', 'like', "%{$search_keyword}%");
+                $q->where('fullname', 'LIKE', "%{$search_keyword}%")
+                ->orWhere('subSpesialist', 'LIKE', "%{$search_keyword}%")
+                ->orWhere('namafaskes', 'LIKE', "%{$search_keyword}%");
             });
         }
         //Filter Spesialis
-        if($spesialis && $spesialis!= GlobalConstants::ALL) {
+        if($spesialis && $spesialis!= GlobalConstants::ALLSpec) {
             $dokters = $dokters->where('subSpesialist', $spesialis);
         }
         //Filter Provinsi
-        if($provinsi && $provinsi!= GlobalConstants::ALL) {
+        if($provinsi && $provinsi!= GlobalConstants::ALLProv) {
             $dokters = $dokters->where('provinsi', $provinsi);
         }
         //Filter Kabupaten
-        if($kabupaten && $kabupaten!= GlobalConstants::ALL) {
+        if($kabupaten && $kabupaten!= GlobalConstants::ALLKab) {
             $dokters = $dokters->where('kabupaten', $kabupaten);
         }
         return $dokters->paginate(PER_PAGE_LIMIT);

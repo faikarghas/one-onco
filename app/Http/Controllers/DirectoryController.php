@@ -27,7 +27,7 @@ class DirectoryController extends Controller
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
       // dokter all
-      $dokters = Dokter_model::getDokters('', GlobalConstants::ALL, GlobalConstants::ALL, GlobalConstants::ALL);
+      $dokters = Dokter_model::getDokters('', GlobalConstants::ALLSpec, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
       //dd($dokters);
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
@@ -36,7 +36,8 @@ class DirectoryController extends Controller
       return view ('v_direktoriDokter', $data,compact('cities','spesialis'));
     }
     public function getMoreDokters(Request $request){
-      $query = $request->search_query;
+      $query = strtolower($request->search_query);
+      //dd($query);
       $spesialis = $request->spesialis;
       $provinsi = $request->provinsi;
       $kabupaten = $request->kabupaten;
