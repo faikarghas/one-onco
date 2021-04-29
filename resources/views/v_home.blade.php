@@ -61,7 +61,9 @@
                 <div class="box__welcomeHome forDesktop">
                     <h1 class="text-white text-center" id="titleSur"></h1>
                     <p class="text-white text-center mb-5" id="shortSur"><i></i></p>
-                    <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+                    {{-- <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a> --}}
+
+                    <a class="boxReadStory" id="linkSlider">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
@@ -238,7 +240,7 @@
                                 <div class="row">
                                     @foreach($listingKankers as $row)
                                         <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
-                                            <a href="{{ url("/jenis-kanker/$row->slug") }}">
+                                            <a href="{{ url("$row->slug") }}">
                                                 <div class="boxSearchKanker_wrapper-boxImg">
                                                     <img src="{{ asset("data_kanker/$row->image") }}" alt="kankerpayudara" width="100%" height="100%">
                                                 </div>
@@ -351,14 +353,21 @@
             var title = @json($titleSlider);
             var image = @json($imageSlider);
             var colours = @json($colorSlider);
+<<<<<<< HEAD
             // var slug = @json($slugSlider);
 
+=======
+            var links = @json($linkSlider);
+
+            //console.log(links);
+>>>>>>> cea7e67ce03b4cb6184e08c1713d3bbc1aff3e05
 
             var counter = 0;
             var backgroundImgD = document.querySelector('.headerDesktop');
             var overlayImgD = document.querySelector(".headOverlay");
             var titleD = document.querySelector("#titleSur");
             var shortDescD = document.querySelector("#shortSur");
+            var link = document.querySelector("#linkSlider");
 
             var backgroundImgM = document.querySelector('.headerMobile');
             var overlayImgM = document.querySelector(".headerMobile .headOverlay");
@@ -386,6 +395,7 @@
                 titleD.innerHTML = title[counter];
                 shortDescD.innerHTML = intro[counter];
                 overlayImgD.style.backgroundColor = colours[counter];
+                link.setAttribute("href", links[counter]);
 
                 box.style.backgroundColor = colours[counter];
                 backgroundImgM.style.backgroundImage = 'url(' + image[counter] + ')';

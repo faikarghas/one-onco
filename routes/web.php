@@ -16,6 +16,8 @@ use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\BelanjaSehatController;
 use App\Http\Controllers\KonsultasiOnlineController;
+use App\Http\Controllers\JenisKankerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,18 +48,11 @@ Route::get('/sukses', function () {
 // Main
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/home', [HomeController::class,'index'])->name('home');
-Route::get('/tentang-kami',[PagesController::class,'index']);
-Route::get('/tentang-kami/{slug}',[PagesController::class,'index']);
+
 
 Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
 Route::get('/cerita-survivor',[StoryController::class,'index']);
 Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
-Route::get('/untuk-pasien',[PagesController::class,'index']);
-Route::get('/untuk-pasien/{slug}',[PagesController::class,'index']);
-Route::get('/untuk-pendamping',[PagesController::class,'index']);
-Route::get('/untuk-pendamping/{slug}',[PagesController::class,'index']);
-Route::get('/perawatan-kanker',[PagesController::class,'index']);
-Route::get('/perawatan-kanker/{slug}',[PagesController::class,'index']);
 Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');
 Route::get('/get-more-faskes', [DirectoryController::class,'getMoreFaskes'])->name('faskes.get-more-faskes');
 Route::get('/direktori',[DirectoryController::class,'index']);
@@ -109,8 +104,7 @@ Route::get('/sistem-tubuh', function () {
 // });
 
 
-Route::get('/jenis-kanker/{slug}',[PagesController::class,'index']);
-Route::get('/jenis-kanker/{slug}/{detail}',[PagesController::class,'index']);
+Route::get('/jenis-kanker/{slug}',[JenisKankerController::class,'index']);
 
 ////////////////////////////////////////
 
@@ -118,12 +112,5 @@ Route::get('/jenis-kanker/{slug}/{detail}',[PagesController::class,'index']);
 Route::get('/search', [SearchController::class,'index']);
 
 
-// Pages Footer
-Route::get('/syaratdanketentuan',[PagesController::class,'index']);
-Route::get('/syaratdanketentuan/{slug}',[PagesController::class,'index']);
-
-Route::get('/partner-kami',[PagesController::class,'index']);
-Route::get('/partner-kami/{slug}',[PagesController::class,'index']);
-
-
-
+// Catch all page controller (place at the very bottom)
+Route::get('{slug}',[PagesController::class, 'index'])->where('slug', '([A-Za-z0-9\-\/]+)');
