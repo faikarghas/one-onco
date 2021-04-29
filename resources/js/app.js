@@ -499,7 +499,7 @@ function getMoreDokters(page) {
       'kabupaten': selectedKabupaten
     },
     // url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
-    url: `${baseUrl}/get-more-dokters?page=${page}`,
+    url: `${baseUrl}/get-more-dokters`,
     success:function(data) {
         console.log(data);
         $('#dokter_data').html(data);
