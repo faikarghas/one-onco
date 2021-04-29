@@ -2,7 +2,11 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>''])
+    @if (Request::segment(1)=='berita-terkini')
+    @include('components/presentational/header',['path'=>'berita-terkini'])
+    @else
+    @include('components/presentational/header',['path'=>'artikel-kanker'])
+    @endif
 
     <main>
         <section class="detail__page1">
