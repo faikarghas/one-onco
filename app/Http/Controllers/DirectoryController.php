@@ -108,7 +108,7 @@ class DirectoryController extends Controller
     $viewFaskes = DB::table('faskes')
         ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif')
         ->where('faskes.faskesId', $id)->first();
-        // ->dump();
+
 
     $namaFaskes = $viewFaskes->namaFaskes;
     $addressFaskes = $viewFaskes->alamat;
@@ -133,7 +133,6 @@ class DirectoryController extends Controller
     ->where('jadwal_dokter.faskesId', $id)
     ->get();
 
-    //dd($viewDokter);
 
     $data = array('title' => $siteConfig->pvar2,
                   'copyright'=>$siteConfig->pvar3,
@@ -155,17 +154,15 @@ class DirectoryController extends Controller
   }
 
 
+  public function getCities($id) {
+    $faskes = DB::table("indonesia_cities")->where("province_id",$id)->pluck("name","id");
+    return json_encode($faskes);
+  }
 
-
-    public function getCities($id) {
-      $faskes = DB::table("indonesia_cities")->where("province_id",$id)->pluck("name","id");
-      return json_encode($faskes);
-    }
-    public function getDokter($id) {
+  public function getDokter($id) {
       $viewDokter = DB::table("dokter_mapped")->select('dokterId', 'fullname', 'subSpesialist' )->where("provinsi",$id)->distinct()->get();
       return response()->json($viewDokter);
   }
-
 
   public function getFaskes($id) {
 

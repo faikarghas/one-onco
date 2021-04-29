@@ -1848,48 +1848,7 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 var html = __webpack_require__(/*! ./html */ "./resources/js/html.js"); // CONTENT FOR SPECIFIC TIME PERIOD
 
 
-var baseUrl = window.location.origin;
-window.setInterval(function () {
-  var d = new Date();
-  var h = d.getHours(); // pagi
-  // 24-12
-  // siang
-  // 12-15
-  // sore
-  // 15-18
-  // malam
-  // 18-24
-
-  if (h <= 12) {
-    // console.log('pagi');
-    $('.box__welcome').css('background-color', '#E55A24');
-  } else if (h > 12 && h <= 15) {
-    // console.log('siang');
-    $('.box__welcome').css('background-color', '#E55A24');
-  } else if (h > 15 && h <= 18) {
-    // console.log('sore');
-    $('.box__welcome').css('background-color', '#E55A24');
-  } else if (h > 18 && h <= 24) {
-    $('.box__welcome').css('background-color', '#32338E'); // console.log('malam');
-  } // console.log(h);
-
-}, 3000);
-var d = new Date();
-var h = d.getHours();
-
-if (h <= 12) {
-  // console.log('pagi');
-  $('.box__welcome').css('background-color', '#E55A24');
-} else if (h > 12 && h <= 15) {
-  console.log('siang');
-  $('.box__welcome').css('background-color', '#E55A24');
-} else if (h > 15 && h <= 18) {
-  // console.log('sore');
-  $('.box__welcome').css('background-color', '#E55A24');
-} else if (h > 18 && h <= 24) {
-  $('.box__welcome').css('background-color', '#32338E'); // console.log('malam');
-} // MENU HAMBURGER
-
+var baseUrl = window.location.origin; // MENU HAMBURGER
 
 $('#menu-hamburger').click(function (params) {
   $('#menu-hamburger').toggleClass('open');
@@ -1905,35 +1864,33 @@ $(window).on('scroll', function () {
   } else {
     $('.headerNavBox').removeClass('topScroll');
   }
-});
-$(document).ready(function () {
-  var data = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sapiente sunt fugiat quis molestias, expedita asperiores, eaque laudantium necessitatibus incidunt recusandae perferendis libero non? Nobis dolorum aperiam est esse tenetur a qui ab quos odit totam rerum, quis perspiciatis porro nihil tempora sequi ex repellendus et quisquam. Quia quidem eum qui, blanditiis aperiam, nobis maxime maiores ratione quis corrupti ipsam consequuntur iure quisquam possimus at voluptatem alias? Qui veniam magnam suscipit officiis et quod officia necessitatibus atque corrupti odio accusantium optio laudantium possimus, dicta consequuntur blanditiis quos ipsam vero nam veritatis eum! Architecto id reprehenderit sit facere eaque placeat iure in similique vero, totam ipsum repellat pariatur dolorum natus itaque tenetur laboriosam iste hic corporis, deleniti qui? Voluptatibus voluptates commodi praesentium molestiae pariatur eius, dolores fugiat! Asperiores est alias tempore sunt aperiam reprehenderit provident quo a. Nostrum commodi vero labore ad molestias consectetur minus. Repellendus illum tenetur excepturi facere voluptatem fugiat praesentium sapiente, corporis enim, minima ipsa consequuntur ad repellat esse? Magnam accusamus exercitationem repellat laudantium ut sint numquam reiciendis neque quo harum excepturi tempore hic commodi minima molestias, alias voluptatibus ipsa";
-  var pageLength = $('.pagi-init').text().split(' ').length;
-  var page1 = $('.pagi-init').text().split(' ').slice(0, 150).join(' ');
-  var lengthPerPage = Math.ceil(pageLength / 150);
-  $('.pagi-init').html(page1);
-
-  for (var index = 0; index < lengthPerPage; index++) {
-    $('.pagination__wrapper .pagination__wrapper-button .page_number').append("<div class=\"page_numberButton\" data-id=".concat(index + 1, ">").concat(index + 1, "</div>"));
-  }
-
-  $('.pagination__wrapper .pagination__wrapper-button .page_number .page_numberButton').each(function (index) {
-    $(this).click(function () {
-      console.log($(this).data('id'));
-
-      if ($(this).data('id') === 2) {
-        $('.pagi-init').html(data.split(' ').slice(150, pageLength).join(' '));
-        $(window).scrollTop(0);
-      } else {
-        $('.pagi-init').html(data.split(' ').slice(0, 150).join(' '));
-        $(window).scrollTop(0);
-      }
-    });
-  });
-  $('.show_all').click(function (params) {
-    $('.pagi-init').html(data);
-  });
-}); // CARI KANKER
+}); // PAGINATION ARTIKEL
+// $(document).ready(function() {
+//     let data = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sapiente sunt fugiat quis molestias, expedita asperiores, eaque laudantium necessitatibus incidunt recusandae perferendis libero non? Nobis dolorum aperiam est esse tenetur a qui ab quos odit totam rerum, quis perspiciatis porro nihil tempora sequi ex repellendus et quisquam. Quia quidem eum qui, blanditiis aperiam, nobis maxime maiores ratione quis corrupti ipsam consequuntur iure quisquam possimus at voluptatem alias? Qui veniam magnam suscipit officiis et quod officia necessitatibus atque corrupti odio accusantium optio laudantium possimus, dicta consequuntur blanditiis quos ipsam vero nam veritatis eum! Architecto id reprehenderit sit facere eaque placeat iure in similique vero, totam ipsum repellat pariatur dolorum natus itaque tenetur laboriosam iste hic corporis, deleniti qui? Voluptatibus voluptates commodi praesentium molestiae pariatur eius, dolores fugiat! Asperiores est alias tempore sunt aperiam reprehenderit provident quo a. Nostrum commodi vero labore ad molestias consectetur minus. Repellendus illum tenetur excepturi facere voluptatem fugiat praesentium sapiente, corporis enim, minima ipsa consequuntur ad repellat esse? Magnam accusamus exercitationem repellat laudantium ut sint numquam reiciendis neque quo harum excepturi tempore hic commodi minima molestias, alias voluptatibus ipsa"
+//     let pageLength = $('.pagi-init').text().split(' ').length
+//     let page1 = $('.pagi-init').text().split(' ').slice(0,150).join(' ')
+//     let lengthPerPage = Math.ceil(pageLength/150)
+//     $('.pagi-init').html(page1)
+//     for (let index = 0; index < lengthPerPage; index++) {
+//         $('.pagination__wrapper .pagination__wrapper-button .page_number').append(`<div class="page_numberButton" data-id=${index+1}>${index+1}</div>`)
+//     }
+//     $('.pagination__wrapper .pagination__wrapper-button .page_number .page_numberButton').each(function (index) {
+//         $(this).click(function () {
+//             console.log( $(this).data('id'));
+//             if ($(this).data('id') === 2) {
+//                 $('.pagi-init').html(data.split(' ').slice(150,pageLength).join(' '))
+//                 $(window).scrollTop(0);
+//             } else {
+//                 $('.pagi-init').html(data.split(' ').slice(0,150).join(' '))
+//                 $(window).scrollTop(0);
+//             }
+//         })
+//     })
+//     $('.show_all').click(function (params) {
+//         $('.pagi-init').html(data)
+//     })
+// });
+// CARI KANKER
 
 var kankerData = {
   lokasi: '',
@@ -2226,7 +2183,6 @@ $('#selectCities4').change(function () {
 }); // search
 
 $('.search_act').click(function (params) {
-  console.log('test');
   $('.searchpop').toggleClass('show');
 });
 $('.searchinputact').on('keypress', function (e) {
@@ -2276,7 +2232,6 @@ $(document).ready(function () {
   $('#search').on('keyup', function () {
     $value = $(this).val();
     getMoreDokters(1);
-    console.log('test');
   });
   $('#spesialis').on('change', function () {
     getMoreDokters();
@@ -2297,7 +2252,6 @@ $(document).ready(function () {
     getMoreDokters();
   });
   $('#kabupaten').on('change', function () {
-    console.log('kabupaten');
     getMoreDokters();
   });
 });
@@ -2315,9 +2269,10 @@ function getMoreDokters(page) {
       'provinsi': selectedProvinsi,
       'kabupaten': selectedKabupaten
     },
-    //url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
-    url: "".concat(baseUrl, "/get-more-dokters"),
+    // url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
+    url: "".concat(baseUrl, "/get-more-dokters?page=").concat(page),
     success: function success(data) {
+      console.log(data);
       $('#dokter_data').html(data);
     }
   });

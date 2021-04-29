@@ -6,15 +6,15 @@
                     <img width="100%" height="100%" src="{{asset("/images/$image_url")}}" alt="{{$image_url}}" />
                 </div>
             </div>
-            <div class="col-7 d-flex flex-column align-items-start">
+            <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                 <div class="title_wrapper">
                     <h3><strong>{{$title}}</strong></h3>
                 </div>
                 <ul>
-                    <li class="pt-3 pb-3 spes">
+                    <li class="pt-2 pb-2 spes">
                         <p><strong>{{ $spesialis  }}</strong></p>
                     </li>
-                    <li class="pt-3">
+                    <li class="pt-2">
                         <p><strong>Lokasi Praktek</strong></p>
                     </li>
                     <li><p>{!! $praktek !!}</p></li>

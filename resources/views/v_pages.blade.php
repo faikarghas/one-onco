@@ -20,7 +20,26 @@
                                         <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                                     </div>
                                     <div class="col-11 ps-4">
-                                        <a href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                                        @switch(Request::segment(1))
+                                            @case('tentang-kami')
+                                                <a href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
+                                            @case('untuk-pasien')
+                                                <a href="/untuk-pasien/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
+                                            @case('untuk-pendamping')
+                                                <a href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
+                                            @case('partner-kami')
+                                                <a href="/partner-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
+                                            @case('syaratdanketentuan')
+                                                @include('/components/presentational.partnerList',[])
+                                                <a href="/syaratdanketentuan/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
+                                            @default
+                                                <a href="/syaratdanketentuan/{{ $row->slug }}">{{ $row->title }}</a>
+                                        @endswitch
                                     </div>
                                 </div>
                             @endforeach

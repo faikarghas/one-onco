@@ -83,6 +83,7 @@ class StoryController extends Controller
                     'titleStory'=>$detailStory->title,
                     'authorStory'=>$detailStory->shortContent,
                     'contentStory'=>$detailStory->content,
+                    'imageStory'=>$detailStory->imgDesktop,
                     'otherStory'=>$otherStory,
                     'slugStory' => 'testt',
                     'listingNews'=>$listingNews,

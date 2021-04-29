@@ -32,7 +32,6 @@
   <div class="container">
       <div class="row">
           <div class="col-12 col-lg-4">
-            <div class="box__rec">
               @if ( $currentUrl == 'direktori-dokter' ||  $currentUrl == 'dokter-detail' )
                 @include('components/presentational.boxRec',[
                   'image_url'=>$image_url,
@@ -54,10 +53,8 @@
                   'bgColor'=> 'white'
               ]) 
               @endif
-            </div>
           </div>
         <div class="col-12 col-lg-4">
-          <div class="box__rec">
             @if ( $currentUrl == 'direktori-care')
               @include('components/presentational.boxRec',[
                 'image_url'=>$image_url,
@@ -79,10 +76,8 @@
                 'bgColor'=>'white'
               ])
             @endif
-          </div>
         </div>
         <div class="col-12 col-lg-4">
-          <div class="box__rec">
             @if ( $currentUrl == 'direktori-lab')
               @include('components/presentational.boxRec',[
               'image_url'=>$image_url,
@@ -104,7 +99,6 @@
               'bgColor'=>'white'
             ])
             @endif
-          </div>
         </div>
       </div>
   </div>

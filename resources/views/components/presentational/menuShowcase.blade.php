@@ -10,7 +10,7 @@
                         <li><a href="/untuk-pendamping">Untuk Pedamping</a></li>
                         <li><a href="/cerita-survivor">Cerita Inspiratif Survivor</a></li>
                         <li><a href="/berita-terkini">Berita Terkini</a></li>
-                        <li><a href="/jurnal-onkologi">Jurnal Onkologi</a></li>
+                        <li><a href="/artikel-kanker">Artikel Kanker</a></li>
                     </ul>
                 </div>
                 <div class="col-12">
@@ -25,15 +25,15 @@
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRecMenu',array(
                             'image_url'=>'dirkanker.png',
-                            'title'=>'Direktori Kanker',
-                            'color'=>'#32A48E;',
+                            'title'=>'Direktori Layanan',
+                            'color'=>'#33A58F;',
                             'path'=>'direktori'
                         ))
                     </div>
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRecMenu',array(
                             'image_url'=>'beliobat.png',
-                            'title'=>'Beli Obat',
+                            'title'=>'Belanja Sehat',
                             'color'=>'#00A2E3;',
                             'path'=>'login'
                         ))
@@ -41,7 +41,7 @@
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRecMenu',array(
                             'image_url'=>'live-chat.png',
-                            'title'=>'Live Chat',
+                            'title'=>'Konsultasi Online',
                             'color'=>'#C6CB57;',
                             'path'=>'login'
                         ))

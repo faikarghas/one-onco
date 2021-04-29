@@ -425,6 +425,10 @@ main:not([page=home]) {
   color: #00A2E3 !important;
 }
 
+.box-sh {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+}
+
 p, li, a {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -474,7 +478,7 @@ strong {
 }
 
 .homeHeader {
-  height: 85vh;
+  height: 95vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -501,6 +505,7 @@ strong {
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0.4;
 }
 .homeHeader .headerDesktop {
   height: 100%;
@@ -585,7 +590,7 @@ strong {
   z-index: 10;
   text-align: center;
   top: 50%;
-  transform: translateY(-150%);
+  transform: translateY(-136%);
 }
 .homeHeader .headerDesktop .box__welcomeHome h1 {
   font-size: 4rem;
@@ -1116,9 +1121,6 @@ footer .sosmed ul li {
   margin-bottom: 1rem;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
 }
-.box__rec:hover {
-  background-color: #e3f4fd;
-}
 .box__rec a {
   text-decoration: none;
   color: black;
@@ -1207,9 +1209,14 @@ footer .sosmed ul li {
   height: 100%;
 }
 .box__rec2 .title_wrapper, .box__rec3 .title_wrapper {
-  height: 32px;
+  height: 19px;
   width: 100%;
   margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 62em) {
+  .box__rec2 .title_wrapper, .box__rec3 .title_wrapper {
+    height: unset;
+  }
 }
 .box__rec2 h3, .box__rec3 h3 {
   font-size: 1.2rem;
@@ -1250,7 +1257,7 @@ footer .sosmed ul li {
 }
 
 .box__rec2 {
-  height: 200px;
+  min-height: 200px;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -1285,8 +1292,22 @@ footer .sosmed ul li {
 .box__rec3 .title_wrapper {
   border-bottom: 1px solid #c9c9c9;
 }
+.box__rec3 h3 {
+  font-size: 14px;
+}
 .box__rec3 p {
+  font-size: 1.2rem;
   margin-bottom: 0;
+}
+.box__rec3 ul {
+  width: 100%;
+}
+.box__rec3 ul .spes {
+  border-bottom: 1px solid #c9c9c9;
+  border-top: 1px solid #c9c9c9;
+}
+.box__rec3 a {
+  font-size: 1.2rem;
 }
 
 .skr {
@@ -1605,6 +1626,9 @@ button.boxReadMore {
 }
 .button__auth img {
   margin-left: 1rem;
+}
+.button__auth:hover {
+  color: white;
 }
 
 .box__success {
@@ -2191,13 +2215,20 @@ button.boxReadMore {
   font-weight: 700;
 }
 .detail__page1--description p {
-  font-size: 1.4rem;
   font-weight: 400;
 }
 .detail__page1--description a {
   font-weight: 900;
-  font-size: 1.4rem;
   text-decoration: none;
+}
+.detail__page1--description p, .detail__page1--description div, .detail__page1--description p > span, .detail__page1--description ul > li, .detail__page1--description a, .detail__page1--description div > span, .detail__page1--description li > span, .detail__page1--description ol > li {
+  font-size: 1.5rem !important;
+}
+.detail__page1--description div span span {
+  font-size: 1.5rem !important;
+}
+.detail__page1--description table tr td {
+  font-size: 1.5rem !important;
 }
 
 .direktoriKanker__page {
@@ -2330,21 +2361,20 @@ button.boxReadMore {
 }
 .direktori__list-detail .jam_op-title {
   padding: 1rem 0;
-  border-top: 1px solid #e0dddd;
+  border-bottom: 1px solid #e0dddd;
   margin-top: 1rem;
 }
-.direktori__list-detail .jam_op-title p {
+.direktori__list-detail .jam_op-title p, .direktori__list-detail .jam_op-title li {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0;
 }
 .direktori__list-detail .jam_op-sch {
-  border-top: 1px solid #e0dddd;
   padding-left: 0;
 }
 .direktori__list-detail .jam_op-sch li {
   list-style: none;
-  border-bottom: 1px solid #e0dddd;
+  font-size: 1.2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -2423,11 +2453,17 @@ button.boxReadMore {
     padding: 4rem 3rem;
   }
 }
+.tentangKami__page-intro {
+  overflow-x: auto;
+}
 .tentangKami__page-intro h3 {
   font-weight: 900;
   font-size: 1.5rem;
 }
 .tentangKami__page-intro p, .tentangKami__page-intro div, .tentangKami__page-intro p > span, .tentangKami__page-intro ul > li, .tentangKami__page-intro a, .tentangKami__page-intro div > span, .tentangKami__page-intro li > span, .tentangKami__page-intro ol > li {
+  font-size: 1.5rem !important;
+}
+.tentangKami__page-intro div span span {
   font-size: 1.5rem !important;
 }
 .tentangKami__page-intro table tr td {

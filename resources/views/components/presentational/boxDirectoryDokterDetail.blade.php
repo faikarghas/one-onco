@@ -23,14 +23,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 mb-5">
             <div class="jadwal_list">
                 <h4><strong>Jadwal Praktik</strong></h4>
             </div>
         </div>
         @foreach($dokterPraktek as $row)
         <div class="col-12 col-md-6">
-            <div class="box__rec3">
+            <div class="box__rec3 box-sh">
                 <a href="/direktori-care/{{ $row->faskesId }}">
                     <div class="container p-0">
                         <div class="row">

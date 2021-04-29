@@ -11,7 +11,7 @@
                                 <img width="100%" height="100%" src="{{asset("/images/care_center.svg")}}" alt="care_center">
                              </div>
                           </div>
-                          <div class="col-7 d-flex flex-column align-items-start">
+                          <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                              <div class="title_wrapper">
                                 <h3><strong>{{ $row->namaFaskes }}</strong></h3>
                              </div>

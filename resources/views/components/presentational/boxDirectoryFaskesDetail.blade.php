@@ -13,11 +13,24 @@
                             <div class="col-9 d-flex flex-column align-items-start">
                                 <h3><strong>{{ $name }}</strong></h3>
                                 <ul>
-                                    <li><p>{{ $address }}<br></p></li>
-                                    <li class="mt-3"><p>{{ $phone }}</p></li>
-                                    <li><p>{{ $fax }}</p></li>
+                                    <li class="d-flex align-items-start">
+                                        <img class="me-4" src="{{asset('images/placeholder.svg')}}" width="14px" alt="icon web">
+                                        <p>{{ $address }}<br></p>
+                                    </li>
+                                    <li class="mt-3 d-flex align-items-start">
+                                        <img class="me-4" src="{{asset('images/phone-call.svg')}}" width="14px" alt="icon web">
+                                        <p>{{ $phone }}</p>
+                                    </li>
+                                    <li class="d-flex align-items-start mb-4">
+                                        <img class="me-4" src="{{asset('images/phone-call.svg')}}" width="14px" alt="icon web">
+                                        <p>{{ $fax }}</p>
+                                    </li>
+                                    <li class="d-flex align-items-start">
+                                        <img class="me-4" src="{{asset('images/global.svg')}}" width="14px" alt="icon web">
+                                        <a href="" style="color: #00A2E3">{{ $website }}</a>
+                                    </li>
                                 </ul>
-                                <a class="mt-3" href="" style="color: #00A2E3">{{ $website }}</a>
+                                {{-- <img src="{{asset('images/global.svg')}}" alt=""> --}}
                             </div>
                         </div>
                     </div>
@@ -27,7 +40,7 @@
                 <div class="jam_op-title">
                     <p>Layanan Terkait Kanker</p>
                 </div>
-                <div class="row">
+                <div class="row jam_op-sch">
                     <div class="col-12">
                         <ul class="list-unstyled">
                             @if ($status1==1)
@@ -45,22 +58,20 @@
                             @if ($status5==1)
                                 <li>Perawatan Paliatif</li>
                             @endif
-
-                            
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 mb-5">
                 <div class="jadwal_list">
                     <h4><strong>Dokter Praktik</strong></h4>
                 </div>
             </div>
             @foreach ($viewDokter as $row)
             <div class="col-12 col-md-6">
-                <div class="box__rec3">
+                <div class="box__rec3 box-sh">
                     <a href="/dokter-detail/{{ $row->id }}">
                         <div class="container p-0">
                             <div class="row">
@@ -69,12 +80,10 @@
                                         <img width="100%" height="100%" src="{{asset("/images/doctor.svg")}}" alt="dokter" />
                                     </div>
                                 </div>
-                                <div class="col-7 d-flex flex-column align-items-start">
+                                <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                                     <div class="title_wrapper">
-                                        <h3 style="color: #00A2E3;"><strong>{{ $row->fullname }}</strong></h3>
+                                        <h3 style="color: #00A2E3;"><strong>{{$row->fullname}}</strong></h3>
                                     </div>
-                                    {{-- <p><strong>Jadwal Praktik</strong></p> --}}
-                                    {{-- <p>{{ $row->jadwal }}</p> --}}
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">
