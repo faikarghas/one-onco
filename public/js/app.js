@@ -2270,7 +2270,7 @@ function getMoreDokters(page) {
       'kabupaten': selectedKabupaten
     },
     // url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
-    url: "".concat(baseUrl, "/get-more-dokters?page=").concat(page),
+    url: "".concat(baseUrl, "/get-more-dokters"),
     success: function success(data) {
       console.log(data);
       $('#dokter_data').html(data);

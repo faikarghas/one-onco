@@ -16,6 +16,7 @@ use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\BelanjaSehatController;
 use App\Http\Controllers\KonsultasiOnlineController;
+use App\Http\Controllers\JenisKankerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,8 +110,7 @@ Route::get('/sistem-tubuh', function () {
 // });
 
 
-Route::get('/jenis-kanker/{slug}',[PagesController::class,'index']);
-Route::get('/jenis-kanker/{slug}/{detail}',[PagesController::class,'index']);
+Route::get('/jenis-kanker/{slug}',[JenisKankerController::class,'index']);
 
 ////////////////////////////////////////
 

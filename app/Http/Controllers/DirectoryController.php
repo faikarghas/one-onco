@@ -41,7 +41,6 @@ class DirectoryController extends Controller
       $provinsi = $request->provinsi;
       $kabupaten = $request->kabupaten;
       $dokter = Dokter_model::getDokters($query,$spesialis,$provinsi,$kabupaten);
-
       return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();
     }
     public function getDokterDetail($id, Request $request) {
