@@ -1735,12 +1735,22 @@ button.boxReadMore {
   list-style: none;
   display: inline-block;
 }
+@media only screen and (max-width: 62em) {
+  .partnerKami__section .contentSlider .arrow_slider li {
+    height: unset;
+  }
+}
 .partnerKami__section .contentSlider .arrow_slider .next {
   right: 2px;
 }
 .partnerKami__section .contentSlider .arrow_slider .prev {
   left: -18px;
   transform: rotate(180deg);
+}
+@media only screen and (max-width: 62em) {
+  .partnerKami__section .contentSlider .arrow_slider .prev {
+    left: -10px;
+  }
 }
 @media only screen and (max-width: 62em) {
   .partnerKami__section {

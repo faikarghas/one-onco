@@ -14,12 +14,18 @@
                 position: absolute;
                 list-style: none;
                 display: inline-block;
+                @include respond(down-tab-port){
+                    height: unset;
+                }
             }
             .next{
                 right: 2px;
             }
             .prev{
                 left: -18px;
+                @include respond(down-tab-port){
+                    left: -10px;
+                }
                 transform: rotate(180deg);
             }
         }
