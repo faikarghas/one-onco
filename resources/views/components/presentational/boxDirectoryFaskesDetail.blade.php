@@ -58,7 +58,7 @@
             </div>
             @foreach ($viewDokter as $row)
             <div class="col-12 col-md-6">
-                <div class="box__rec3">
+                <div class="box__rec3 box-sh">
                     <a href="/dokter-detail/{{ $row->id }}">
                         <div class="container p-0">
                             <div class="row">
@@ -67,19 +67,10 @@
                                         <img width="100%" height="100%" src="{{asset("/images/doctor.svg")}}" alt="dokter" />
                                     </div>
                                 </div>
-                                <div class="col-7 d-flex flex-column align-items-start">
+                                <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                                     <div class="title_wrapper">
                                         <h3 style="color: #00A2E3;"><strong>{{$row->fullname}}</strong></h3>
                                     </div>
-                                    {{-- <ul>
-                                        <li class="pt-2 pb-2 spes">
-                                            <p><strong>{{ $spesialis  }}</strong></p>
-                                        </li>
-                                        <li class="pt-2">
-                                            <p><strong>Lokasi Praktek</strong></p>
-                                        </li>
-                                        <li><p>{!! $praktek !!}</p></li>
-                                    </ul> --}}
                                 </div>
                                 <div class="col-2 d-flex align-items-center justify-content-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.6 35.13">

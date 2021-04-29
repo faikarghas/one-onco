@@ -425,6 +425,10 @@ main:not([page=home]) {
   color: #00A2E3 !important;
 }
 
+.box-sh {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+}
+
 p, li, a {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -1620,6 +1624,9 @@ button.boxReadMore {
 }
 .button__auth img {
   margin-left: 1rem;
+}
+.button__auth:hover {
+  color: white;
 }
 
 .box__success {

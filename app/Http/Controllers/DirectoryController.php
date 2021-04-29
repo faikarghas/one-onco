@@ -154,17 +154,15 @@ class DirectoryController extends Controller
   }
 
 
+  public function getCities($id) {
+    $faskes = DB::table("indonesia_cities")->where("province_id",$id)->pluck("name","id");
+    return json_encode($faskes);
+  }
 
-
-    public function getCities($id) {
-      $faskes = DB::table("indonesia_cities")->where("province_id",$id)->pluck("name","id");
-      return json_encode($faskes);
-    }
-    public function getDokter($id) {
+  public function getDokter($id) {
       $viewDokter = DB::table("dokter_mapped")->select('dokterId', 'fullname', 'subSpesialist' )->where("provinsi",$id)->distinct()->get();
       return response()->json($viewDokter);
   }
-
 
   public function getFaskes($id) {
 

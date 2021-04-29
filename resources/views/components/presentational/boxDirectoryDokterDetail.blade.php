@@ -30,7 +30,7 @@
         </div>
         @foreach($dokterPraktek as $row)
         <div class="col-12 col-md-6">
-            <div class="box__rec3">
+            <div class="box__rec3 box-sh">
                 <a href="/direktori-care/{{ $row->faskesId }}">
                     <div class="container p-0">
                         <div class="row">
