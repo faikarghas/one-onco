@@ -61,16 +61,11 @@
                                         <a href="{{$row->slug}}">
                                         <div class="boxInformation">
                                             <div class="title">
-                                                <span>{{ $row->created_at }}</span>
                                                 <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
                                                 <?php 
-                                                  $yearCurrent  = date('Y');
-                                                  $dateNews =  date('Y', strtotime($row->publishDate));
-                                                  if ($yearCurrent == $dateNews ){
-                                                      $date =  date('d M', strtotime($dateNews));
-                                                  } else {
-                                                      $date =  date('Y-d-mm', strtotime($dateNews));
-                                                  }
+                                                    $yearCurrent  = date('Y');
+                                                    $dateNews =  date('Y', strtotime($row->publishDate));
+                                                    $date =  date('d-M-Y', strtotime($dateNews));
                                               ?>
                                                 <p>{{ $date }}</p>
                                             </div>

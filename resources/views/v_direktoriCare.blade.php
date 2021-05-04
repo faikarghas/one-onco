@@ -38,14 +38,14 @@
         @if (empty(Request::segment(2)))
         <section class="direktori__list">
             @include('components/presentational/boxFilterDirectoryDesktop',['path'=>'direktori'])
-            <div class="container forMobile">
+            @include('components/presentational/boxResultFilterDirectoryFaskes',['path'=>'direktori'])
+            <div class="container">
                 <div class="row">
                     <div class="col-12 ">
                         <p style="color:#c3c2c2;">Segala konten yang diterbitkan/ publikasikan hanya ditujukan untuk kepentingan penyampaian informasi kepada public. Jadwal dan informasi terkait layanan dapat berubah sewaktu-waktu tanpa pemberitahuan. Seluruh pengguna diharapkan untuk mengkonfirmasi jadwal dengan layanan sebelumnya.</p>
                     </div>
                 </div>
-            </div>
-            @include('components/presentational/boxResultFilterDirectoryFaskes',['path'=>'direktori']) 
+            </div> 
         </section>
         @else
         <section class="direktori__list-detail">
