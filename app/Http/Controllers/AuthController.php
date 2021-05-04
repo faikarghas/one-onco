@@ -1,15 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
-  
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Hash;
 use Session;
 use App\Models\User;
+use Carbon\Carbon;
+use Mail; 
 
 class AuthController extends Controller
 {
@@ -22,7 +23,6 @@ class AuthController extends Controller
       }
       return view('v_login');
     }
-
     public function login(Request $request)
     {
       $rules = [
@@ -41,71 +41,85 @@ class AuthController extends Controller
       if($validator->fails()){
         return redirect()->back()->withErrors($validator)->withInput($request->all);
       }
-  
+
+
       $data = [
         'email'     => $request->input('email'),
         'password'  => $request->input('password'),
       ];
       
-      Auth::attempt($data);
-        if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
-          //Login Success
-          //return redirect()->route('home');
+      $user = DB::table('users')->where('email', '=', $request->email)->first();
+      
+      $idVerification = $user->isVerified;
+      if ($idVerification === 0 ) {
+        $msg = 'the given email address has not benn confirmed. <a href="'. route('login') . '"> click here  </a>';
+        Session::flash('error', $msg);
+        return redirect()->route('login');
+      } else {
+        Auth::attempt($data);
+        if (Auth::check()) {
           return redirect('/')->with(['succes' => 'Anda berhasil login']);
-        } else { // false
-          //Login Fail
+        } else {
           Session::flash('error', 'Email atau password salah');
           return redirect()->route('login');
-        }
+        }  
+      } 
     }
-
     public function showFormRegister()
-    {
-        return view('v_register');
+    { 
+      return view('v_register');
     }
 
     public function register(Request $request)
     {
-        $rules = [
-            'name'                  => 'required|min:3|max:35',
-            'email'                 => 'required|email|unique:users,email',
-            'password'              => 'required|confirmed'
-        ];
-  
-        $messages = [
-            'name.required'         => 'Nama Lengkap wajib diisi',
-            'name.min'              => 'Nama lengkap minimal 3 karakter',
-            'name.max'              => 'Nama lengkap maksimal 35 karakter',
-            'email.required'        => 'Email wajib diisi',
-            'email.email'           => 'Email tidak valid',
-            'email.unique'          => 'Email sudah terdaftar',
-            'password.required'     => 'Password wajib diisi',
-            'password.confirmed'    => 'Password tidak sama dengan konfirmasi password'
-        ];
-  
+      $rules = [
+        'name'                  => 'required|min:3|max:35',
+        'email'                 => 'required|email|unique:users,email',
+        'password'              => 'required|min:3|max:16',
+        'phone'                 => 'required|min:3|max:35',
+      ];
+      $messages = [
+        'name.required'         => 'Nama Lengkap wajib diisi',
+        'name.min'              => 'Nama lengkap minimal 3 karakter',
+        'name.max'              => 'Nama lengkap maksimal 35 karakter',
+        'email.required'        => 'Email wajib diisi',
+        'email.email'           => 'Email tidak valid',
+        'email.unique'          => 'Email sudah terdaftar',
+        'password.required'     => 'Password wajib diisi',
+      ];
+
         $validator = Validator::make($request->all(), $rules, $messages);
   
         if($validator->fails()){
-            return redirect()->back()->withErrors($validator)->withInput($request->all);
+          return redirect()->back()->withErrors($validator)->withInput($request->all);
         }
-
-        // check if register exits 
-
-  
         $user = new User;
         $user->name = ucwords(strtolower($request->name));
         $user->email = strtolower($request->email);
         $user->password = Hash::make($request->password);
+        $user->phone= $request->phone;
+        $user->address= $request->address;
+        $user->provinsi= $request->provinsi;
+        $user->kabupaten= $request->kota;
+        $user->kecamatan= $request->kecamatan;
+        $user->jenis_kanker= $request->jenis_kanker;
+        $user->status= $request->status;
         $user->email_verified_at = \Carbon\Carbon::now();
+        $user->remember_token =  str::random(30);
+        $user->token_activation =  str::random(6);    
         $simpan = $user->save();
-  
         if($simpan){
-            Session::flash('success', 'Register berhasil! Silahkan login untuk mengakses data');
-            return redirect()->route('login');
+          Session::flash('success', 'Silahkan Untuk Mengechek email anda untuk aktivasi');
+          Mail::send('v_emailActiv', ['token' =>$user->remember_token, 'userName' =>   $user->name], function($message) use($request){
+            $message->to($request->email);
+            $message->subject('Verification Register Notification');
+          });    
+          return redirect()->route('login');
         } else {
-            Session::flash('errors', ['' => 'Register gagal! Silahkan ulangi beberapa saat lagi']);
-            return redirect()->route('register');
+          Session::flash('errors', ['' => 'Register gagal! Silahkan ulangi beberapa saat lagi']);
+          return redirect()->route('register');
         }
+
     }
 
     public function logout()
@@ -115,6 +129,93 @@ class AuthController extends Controller
     }
     public function forgotPassword()
     {
+      return view ('v_forgotPassword');
+    }
+    
+    public function changePassword()
+    {
       return view ('v_pengaturan');
-    } 
+    }
+
+    public function storeNewPassword(Request $request)
+    {
+        $request->validate([
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+   
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        Auth::logout();
+        return redirect()->route('login');
+    }
+
+    public function validatePasswordRequest(Request $request)
+    {
+      $user = DB::table('users')->where('email', '=', $request->email)->first();
+      
+      if (is_null($user)) {
+          return redirect()->back()->withErrors(['email' => trans('User does not exist')]);
+      }
+
+      //Create Password Reset Token
+      DB::table('password_resets')->insert([
+          'email' => $request->email,
+          'token' => str::random(60),
+          'created_at' => Carbon::now()
+      ]);
+      //Get the token just created above
+      $tokenData = DB::table('password_resets')->where('email', $request->email)->first();
+      $token = $tokenData->token;
+
+      Mail::send('v_emailVeri', ['token' => $token], function($message) use($request){
+        $message->to($request->email);
+        $message->subject('Reset Password Notification');
+      });    
+
+      return redirect()->back()->with('status', trans('A reset link has been sent to your email address.'));
+  }
+
+  private function sendResetEmail($email, $token)
+  {
+  //Retrieve the user from the database
+  $user = DB::table('users')->where('email', $email)->select('name', 'email')->first();
+  //Generate, the password reset link. The token generated is embedded in the link
+  $link = config('base_url') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
+    try {
+        return true;
+    } catch (\Exception $e) {
+        return false;
+    }
+  }
+  public function getPassword($token) { 
+    return view('v_pengaturan_withToken', ['token' => $token]);
+ }
+
+ public function updatePassword(Request $request)
+ {
+  $request->validate([
+      'email' => 'required|email|exists:users',
+      'new_password' => ['required'],
+      'new_confirm_password' => ['same:new_password'],
+  ]);
+  $updatePassword = DB::table('password_resets')
+                      ->where(['email' => $request->email, 'token' => $request->token])
+                      ->first();
+  if(!$updatePassword)
+      return back()->withInput()->with('error', 'Invalid token!');
+      $user = User::where('email', $request->email)
+                ->update(['password' => Hash::make($request->new_password)]);
+      DB::table('password_resets')->where(['email'=> $request->email])->delete();
+      return redirect('/login')->with('message', 'Your password has been changed!');
+  }
+  public function verifyRegistration(Request $request)
+  {
+    $user = User::where('remember_token', $request->token)
+                ->update(['isVerified' => '1', 'remember_token' => NULL]);
+    if ($user){
+      return redirect('/login')->with('success', 'You Successfully confirmed your email address Please Log in');
+    } else {
+      return redirect('/login')->with('success', 'You User Already Active Please Log In');
+    }              
+  }
 }
