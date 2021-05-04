@@ -14,11 +14,7 @@
                     <?php 
                         $yearCurrent  = date('Y');
                         $dateNews =  date('Y', strtotime($row->publishDate));
-                        if ($yearCurrent == $dateNews ){
-                            $date =  date('d-M', strtotime($row->publishDate));
-                        } else {
-                            $date =  date('d-M-Y', strtotime($row->publishDate));
-                        }
+                        $date =  date('d-M-Y', strtotime($row->publishDate));
                     ?>
                     <div class="col-12 col-lg-4">
                         @include('components/presentational.boxNews',array(

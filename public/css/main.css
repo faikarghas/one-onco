@@ -2317,7 +2317,7 @@ button.boxReadMore {
   width: 100%;
   top: 135px;
   left: 0;
-  z-index: 3;
+  z-index: 10;
 }
 .direktori__menuTab .box__rec img {
   width: 60px;

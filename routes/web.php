@@ -2,17 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\BeritaDanJurnalController;
 //use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\SistemTubuhController;
-use App\Http\Controllers\UntukPasienDanPendampingController;
-use App\Http\Controllers\PerawatanKankerController;
-use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\BelanjaSehatController;
 use App\Http\Controllers\KonsultasiOnlineController;
@@ -109,15 +104,6 @@ Route::get('/sistem-tubuh', function () {
                     ->get();
     return view('v_sistemTubuh',['katKankers'=>$katKankers]);
 });
-
-// Route::get('/sistem-tubuh/{lokasi}', function ($lokasi) {
-//     $lokasi = DB::table('kanker')
-//                     ->leftJoin('kategori_kanker', 'kategori_kanker.id', '=', 'kanker.idKat')
-//                     ->select('kanker.*', 'kategori_kanker.slug AS slugkat')
-//                     ->where ('kategori_kanker.slug',$lokasi)
-//                     ->get();
-//     return view('v_sistemLokasiKanker',['lokasi'=>$lokasi]);
-// });
 
 
 Route::get('/jenis-kanker/{slug}',[JenisKankerController::class,'index']);

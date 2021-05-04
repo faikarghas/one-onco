@@ -55,9 +55,6 @@
             </div>
           </form>
         </div>
-        <div class="col-12 mb-1">
-          <p style="color:#c3c2c2;" class="text-center">Segala konten yang diterbitkan/ publikasikan hanya ditujukan untuk kepentingan penyampaian informasi kepada public. Jadwal dan informasi terkait layanan dapat berubah sewaktu-waktu tanpa pemberitahuan. Seluruh pengguna diharapkan untuk mengkonfirmasi jadwal dengan layanan sebelumnya.</p>
-        </div>
     </div>
   </div>
 </div>

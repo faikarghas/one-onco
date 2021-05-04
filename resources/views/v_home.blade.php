@@ -13,7 +13,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
-        {{-- @laravelPWA --}}
+        @laravelPWA
     </head>
     <body>
         <header class="homeHeader">
@@ -270,11 +270,7 @@
                             <?php
                                 $yearCurrent  = date('Y');
                                 $dateNews =  date('Y', strtotime($row->publishDate));
-                                if ($yearCurrent === $dateNews ){
-                                   $date =  date('d-M', strtotime($row->publishDate));
-                                } else {
-                                   $date =  date('d-M-Y',strtotime($row->publishDate));
-                                }
+                                $date =  date('d-M-Y',strtotime($row->publishDate));
                             ?>
                             @include('components/presentational.boxNews',array(
                                 'date'=> $date,
@@ -305,11 +301,7 @@
                                 <?php
                                     $yearCurrent  = date('Y');
                                     $dateNews =  date('Y', strtotime($row->publishDate));
-                                    if ($yearCurrent == $dateNews ){
-                                        $date =  date('d-M', strtotime($row->publishDate));
-                                    } else {
-                                        $date =  date('d-M-Y', strtotime($row->publishDate));
-                                    }
+                                    $date =  date('d-M-Y', strtotime($row->publishDate));
                                 ?>
                                 <div class="col-12 col-lg-4">
                                     @include('components/presentational.boxNews',array(
@@ -377,6 +369,7 @@
             titleD.innerHTML = title[0];
             shortDescD.innerHTML = intro[0];
             overlayImgD.style.backgroundColor = colours[0];
+            // $('.boxReadStory').attr('a',`cerita-survivor/${slug[0]}`)
 
             backgroundImgM.style.backgroundImage = 'url(' + image[0] + ')';;
             titleM.innerHTML = title[0];
@@ -398,6 +391,8 @@
                 overlayImgM.style.backgroundColor = colours[counter];
                 box.style.backgroundColor = colours[counter];
 
+
+                // $('.boxReadStory').attr('a',`cerita-survivor/${slug[counter]}`)
                 counter++;
                 if (counter >= title.length) {
                     counter = 0;

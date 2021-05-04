@@ -49,7 +49,6 @@ class HomeController extends Controller
           $linkSlider [] = url('/cerita-survivor/'.$row->slug);
         }
 
-        
         //variable  data about us ( general)
         $shortContentAbout = DB::table('kategori_artikel')->where('id',11)->first();
 

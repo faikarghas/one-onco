@@ -66,11 +66,7 @@
                                                     <?php 
                                                     $yearCurrent  = date('Y');
                                                     $dateNews =  date('Y', strtotime($row->publishDate));
-                                                    if ($yearCurrent == $dateNews ){
-                                                        $date =  date('d M', strtotime($dateNews)).' 2021';
-                                                    } else {
-                                                        $date =  date('Y-d-mm', strtotime($dateNews));
-                                                    }
+                                                    $date =  date('Y-d-mm', strtotime($dateNews));
                                                 ?>
                                                     <p>{{ $date }}</p>
                                                 </div>
