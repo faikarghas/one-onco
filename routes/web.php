@@ -30,11 +30,29 @@ use App\Http\Controllers\JenisKankerController;
 Route::get('login', [AuthController::class,'showFormLogin'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
-Route::get('pengaturan', [AuthController::class, 'forgotPassword'])->name('Forgot Password');
+Route::post('register', [AuthController::class, 'register']);
+Route::get('forgotpassword', [AuthController::class, 'forgotPassword'])->name('forgot.password');
+
+
+Route::post('reset_password_without_token', [AuthController::class, 'validatePasswordRequest']);
+Route::post('reset_password_with_token', [AuthController::class, 'resetPassword']);
+
+// Route::get('/reset-password/{token}', 'ResetPasswordController@getPassword');
+// Route::post('/reset-password', 'ResetPasswordController@updatePassword');
+
+Route::get('/reset-password/{token}', [AuthController::class, 'getPassword']);
+Route::post('/reset-password',[AuthController::class, 'updatePassword'])->name('    reset.passwordwithToken');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('pengaturan', [AuthController::class, 'changePassword']);
+    Route::post('change-password', [AuthController::class, 'storeNewPassword'])->name('change.password');
+    Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
+    Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
 });
+
+Route::get('/verify-registration/{token}',[AuthController::class, 'verifyRegistration']);
+
 
 Route::get('/sukses', function () {
     return view('v_success');
@@ -70,8 +88,6 @@ Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'detail'])
 Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
 Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
 
-Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
-Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
 
 Route::get('/sukses', function () {
     return view('v_success');

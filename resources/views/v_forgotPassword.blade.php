@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="box__login">
-                            <h2 class="mb-5">Masuk</h2>
+                            <h2 class="mb-5">Forgot Password</h2>
                             @if(session('errors'))
                               <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 <ul>
@@ -27,29 +27,23 @@
                             @endif
                             @if (Session::has('error'))
                               <div class="alert alert-danger">
-                                {!! Session::get('error') !!}
+                                {{ Session::get('error') }}
                               </div>
                             @endif
-                            <form action={{ asset('login') }} method="post" accept-charset="utf-8" >
+                            @if (Session::has('status'))
+                            <div class="alert alert-danger">
+                              {{ Session::get('status') }}
+                            </div>
+                          @endif
+                            <form method="POST" action="{{ url('/reset_password_without_token') }}">
                             {{-- {{ csrf_field() }} --}}
                             @csrf
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="email"><img class="img-fluid" src="{{asset('/images/mail.png')}}" alt="" srcset=""></span>
                                     <input type="text" class="form-control" placeholder="Email Anda" aria-label="Email" aria-describedby="email" name="email">
                                 </div>
-                                <div class="input-group mb-4">
-                                    <span class="input-group-text" id="password"><img class="img-fluid" src="{{asset('/images/secure.png')}}" alt="" srcset=""></span>
-                                    <input id="ipss" type="password" class="form-control" aria-label="password" placeholder="Password" name="password">
-                                    <span class="input-group-text" id="showpass"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" alt="" srcset=""></span>
-                                  </div>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
                             </form>
-                            <div class="for_or_reg mt-2">
-                                <p class="text-center mb-2">Lupa kata kunci ? <a href="{{ route('forgot.password') }}" class="text-green">klik disini</a></p>
-                                <div class="line_or mb-2"><span></span>Atau<span></span></div>
-                                <p class="text-center mb-2">Belum terdaftar ? Daftar dibawah ini</p>
-                                @include('/components/presentational.boxAuthButton',['title'=>'Daftar','color'=>'#00A2E3','type'=>'a','path'=>'register'])
-                            </div>
                         </div>
                     </div>
                 </div>
