@@ -22,7 +22,7 @@
                                     <select class="form-select mb-2" aria-label="Default select example" id="selectProvinces2" name="provinces2">
                                         <option selected>Pilih Kota</option>
                                         @foreach ($provinces as $province => $value)
-                                            <option value="{{ $province }}"> {{ $value }}</option>   
+                                            <option value="{{ $province }}"> {{ $value }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -34,7 +34,7 @@
                               </div>
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="container">
