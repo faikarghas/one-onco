@@ -15,7 +15,8 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravolt/indonesia": "^0.29.0",
-        "silviolleite/laravelpwa": "^2.0"
+        "silviolleite/laravelpwa": "^2.0",
+        "spatie/laravel-newsletter": "^4.9"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

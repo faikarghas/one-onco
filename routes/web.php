@@ -12,6 +12,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\BelanjaSehatController;
 use App\Http\Controllers\KonsultasiOnlineController;
 use App\Http\Controllers\JenisKankerController;
+use App\Http\Controllers\NewsletterController;
 
 
 /*
@@ -24,6 +25,10 @@ use App\Http\Controllers\JenisKankerController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/', [HomeController::class,'index']);
+Route::get('/home', [HomeController::class,'index']);
 
 // Auth
 
@@ -41,7 +46,7 @@ Route::post('reset_password_with_token', [AuthController::class, 'resetPassword'
 // Route::post('/reset-password', 'ResetPasswordController@updatePassword');
 
 Route::get('/reset-password/{token}', [AuthController::class, 'getPassword']);
-Route::post('/reset-password',[AuthController::class, 'updatePassword'])->name('    reset.passwordwithToken');
+Route::post('/reset-password',[AuthController::class, 'updatePassword'])->name('reset.passwordwithToken');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
@@ -59,8 +64,7 @@ Route::get('/sukses', function () {
 });
 
 // Main
-Route::get('/', [HomeController::class,'index'])->name('home');
-Route::get('/home', [HomeController::class,'index'])->name('home');
+
 
 
 Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
@@ -112,6 +116,8 @@ Route::get('/jenis-kanker/{slug}',[JenisKankerController::class,'index']);
 
 
 Route::get('/search', [SearchController::class,'index']);
+
+Route::post('newsletter/store',[NewsletterController::class,'store']);
 
 
 // Catch all page controller (place at the very bottom)
