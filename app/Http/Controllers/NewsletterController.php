@@ -12,6 +12,8 @@ class NewsletterController extends Controller
 {
     public function store(Request $request)
     {
+
+        //dd($request->all());
         if ( ! Newsletter::isSubscribed($request->email) ) 
         {
             Newsletter::subscribe($request->email);

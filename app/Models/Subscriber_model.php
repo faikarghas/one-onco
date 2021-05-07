@@ -13,6 +13,8 @@ class Subscriber_model extends Model
     protected $table 		= "subscriber";
 	protected $primaryKey 	= 'id';
 
+    
+
 
     
 

@@ -2319,6 +2319,29 @@ $('#select_kota').change(function () {
     $('#selectFasekes option').empty().remove();
   }
 });
+$(document).ready(function () {
+  var form = document.getElementById('newsletterForm');
+  var formData = new FormData(form);
+  $('#inputEmailNewsletter').keyup(function () {
+    if ($(this).val() != '') {
+      $('#button-addon2').prop('disabled', false);
+      $("#button-addon2").click(function () {
+        $(this).prop("disabled", true);
+        $("#inputEmailNewsletter").prop('disabled', true);
+        $(this).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+        formData.append('email', $('#inputEmailNewsletter').val());
+        axios.post('http://127.0.0.1:8000/newsletter/store', formData).then(function (response) {
+          //console.log(formData);
+          $('#exampleModal').modal('show');
+          window.setTimeout(function () {
+            $("#exampleModal").modal("hide");
+            location.reload();
+          }, 5000);
+        });
+      });
+    }
+  });
+});
 
 /***/ }),
 

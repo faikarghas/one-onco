@@ -329,6 +329,29 @@
                 @include('/components/presentational.partnerList',[])
             </section>
         </main>
+
+        <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title text-center" id="exampleModalLabel">TERIMA KASIH !!</h1>
+                    
+                    </div>
+                    <div class="modal-body">
+                    <h3>Selamat bergabung dalam grup newletter One Onco. 
+                        Nantikan berita dan informasi menarik dari kami! 
+                         Mari kita lawan kanker Bersama!
+                        </h3>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Simak Juga Kegiatan Kami</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+         <!-- End Modal -->
+
         @include('components/presentational/footer')
         <div class="searchpop">
             <input type="text" class="form-control searchinputact" placeholder="Kata Kunci..." aria-label="search" aria-describedby="button-addon2">

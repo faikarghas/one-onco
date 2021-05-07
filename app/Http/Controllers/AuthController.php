@@ -10,7 +10,8 @@ use Hash;
 use Session;
 use App\Models\User;
 use Carbon\Carbon;
-use Mail; 
+use Mail;
+use Illuminate\Support\Facades\Http;
 
 class AuthController extends Controller
 {
@@ -58,6 +59,21 @@ class AuthController extends Controller
       } else {
         Auth::attempt($data);
         if (Auth::check()) {
+
+          $fullName= $user->name;
+          $phone = $user->phone;
+
+          $client_id = "KD-Api-Key";
+          $secret = "eLpBOZEiQrddasAbDf1w8nELWgMGkldW";
+          $url = "https://api.medkomtek.net/partner/login";
+          $data = [
+                    'full_name' => $name,
+                    'phone' => $phone
+                  ];
+          $response =  Http::asForm()->withBasicAuth($client_id, $secret)->post($url, $data);
+          $jsonData = $response->json();
+     	    dd($jsonData);
+                  
           return redirect('/')->with(['succes' => 'Anda berhasil login']);
         } else {
           Session::flash('error', 'Email atau password salah');
@@ -218,4 +234,51 @@ class AuthController extends Controller
       return redirect('/login')->with('success', 'You User Already Active Please Log In');
     }              
   }
+
+  // function processLogin(){
+  //   $username = $this->input->post('username');
+  //   $password = $this->input->post('password');
+  //   $url = 'https://msdservice.pefindobirokredit.com/api/login';
+  //   $ch = curl_init($url);
+  //   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+  //     'Accept: application/json',
+  //     'Content-Type: application/x-www-form-urlencoded'
+  //   ));
+  //   curl_setopt($ch, CURLOPT_TIMEOUT, 0);
+  //   curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+  //   curl_setopt($ch, CURLOPT_POST, true);
+  //   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array(
+  //   'Username' =>$username,
+  //   'Password' => $password,
+  //   'grant_type' => 'password')));
+  //   curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+  //   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  //   $result = curl_exec($ch);
+
+
+  //   if ($result === false) {
+  //     //$error_msg = curl_error($ch);
+  //     $error_msg = 'Invalid username or password.';
+  //     echo json_encode(array('info' => 'error', 'msg' => $error_msg));
+  //   } else {
+  //     $data = json_decode($result,true);
+  //     if (!isset($data['error'])){
+  //       $token = $data['access_token'];
+  //       $this->session->set_userdata(array(
+  //         'member_login'=>1,
+  //         'username' =>$username,
+  //         'access_token' => $token,
+  //         'password' => $password
+  //       ));
+  //       echo json_encode(array('redirect'=> base_url('member')));
+  //     } else {
+  //       $messages = $data['error_description'];
+  //       $messages = "Invalid username or password";
+  //       echo json_encode(array('info' => 'error', 'msg' => $messages));
+  //     }
+  //   }
+  //   curl_close($ch);
+  // }
+
+
 }
