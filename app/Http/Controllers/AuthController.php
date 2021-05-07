@@ -12,6 +12,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Mail;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\Response;
 
 class AuthController extends Controller
 {
@@ -67,12 +68,14 @@ class AuthController extends Controller
           $secret = "eLpBOZEiQrddasAbDf1w8nELWgMGkldW";
           $url = "https://api.medkomtek.net/partner/login";
           $data = [
-                    'full_name' => $name,
+                    'full_name' => $fullName,
                     'phone' => $phone
                   ];
-          $response =  Http::asForm()->withBasicAuth($client_id, $secret)->post($url, $data);
+          $response =  Http::asForm()->withHeaders([$client_id => $secret])->post($url, $data);
           $jsonData = $response->json();
      	    dd($jsonData);
+
+           //$token = $data['token'];
                   
           return redirect('/')->with(['succes' => 'Anda berhasil login']);
         } else {
