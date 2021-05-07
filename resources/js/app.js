@@ -557,6 +557,7 @@ $('#select_kota').change(function(){
 });
 
 $(document).ready(function() {
+    
     const form = document.getElementById('newsletterForm');
     const formData = new FormData(form);
     $('#inputEmailNewsletter').keyup(function() {
@@ -568,8 +569,9 @@ $(document).ready(function() {
             $(this).html(
               '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
             );
+            
             formData.append('email', $('#inputEmailNewsletter').val());
-            axios.post('https://one-onco.herokuapp.com/newsletter/store', formData).then(function (response) {
+            axios.post(`${baseUrl}/newsletter/store`, formData).then(function (response) {
               //console.log(formData);
               
               $('#exampleModal').modal('show');

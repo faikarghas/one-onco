@@ -2330,7 +2330,7 @@ $(document).ready(function () {
         $("#inputEmailNewsletter").prop('disabled', true);
         $(this).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
         formData.append('email', $('#inputEmailNewsletter').val());
-        axios.post('http://127.0.0.1:8000/newsletter/store', formData).then(function (response) {
+        axios.post("".concat(baseUrl, "/newsletter/store"), formData).then(function (response) {
           //console.log(formData);
           $('#exampleModal').modal('show');
           window.setTimeout(function () {
