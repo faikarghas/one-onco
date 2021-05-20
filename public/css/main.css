@@ -1776,8 +1776,8 @@ button.boxReadMore {
   }
 }
 .partnerKami__section ul li img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media only screen and (max-width: 62em) {
   .partnerKami__section ul li img {
