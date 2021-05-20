@@ -26,7 +26,7 @@
 
                               @csrf
 
-                                <p class="m-0"><i>Data Diri</i></p>
+                                <p class="m-0"><strong>Data Diri</strong></p>
                                 <div class="input-group mb-4">
                                     <input type="text" class="form-control" placeholder="Nama Lengkap" aria-label="nama" name="name" value="{{ old('name') }}">
                                 </div>
@@ -40,7 +40,7 @@
                                 </div>
                                 <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                                 <div class="input-group mb-4">
-                                  <input type="number" class="form-control" placeholder="Nomor ponsel" aria-label="wa" name="phone" value="{{ old('phone') }}">
+                                  <input type="number" class="form-control" placeholder="Nomor ponsel*" aria-label="wa" name="phone" value="{{ old('phone') }}">
                               </div>
                               <span class="text-danger">@error('phone'){{ $message }} @enderror</span>
                               <br>

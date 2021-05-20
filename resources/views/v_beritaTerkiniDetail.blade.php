@@ -61,12 +61,12 @@
                                         <a href="{{$row->slug}}">
                                         <div class="boxInformation">
                                             <div class="title">
-                                                <h3 class="mt-2 mb-4">{{ $row->shortContent }}</h3>
+                                                <h3 class="mt-2 mb-4">{{ $row->title }}</h3>
                                                 <?php 
                                                     $yearCurrent  = date('Y');
                                                     $dateNews =  date('Y', strtotime($row->publishDate));
-                                                    $date =  date('d-M-Y', strtotime($dateNews));
-                                              ?>
+                                                    $date =  date('d-M-Y', strtotime($row->publishDate));
+                                                ?>
                                                 <p>{{ $date }}</p>
                                             </div>
                                             {{-- @include('components/presentational.boxReadMore',array('title'=>'Baca selengkapnya','path'=>'')) --}}
