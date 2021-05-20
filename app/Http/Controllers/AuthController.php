@@ -18,7 +18,7 @@ class AuthController extends Controller
 {
     public function showFormLogin()
     {
-      if (Auth::check()) { 
+      if (Auth::check()) {
           // true sekalian session field di users nanti bisa dipanggil via Auth
           //Login Success
           return redirect()->route('home');
@@ -38,7 +38,7 @@ class AuthController extends Controller
           'password.required'     => 'Password wajib diisi',
           'password.string'       => 'Password harus berupa string'
       ];
-      
+
       $validator = Validator::make($request->all(), $rules, $messages);
       if($validator->fails()){
         return redirect()->back()->withErrors($validator)->withInput($request->all);
@@ -49,12 +49,12 @@ class AuthController extends Controller
         'email'     => $request->input('email'),
         'password'  => $request->input('password'),
       ];
-      
+
       $user = DB::table('users')->where('email', '=', $request->email)->first();
-      
+
       $idVerification = $user->isVerified;
       if ($idVerification === 0 ) {
-        $msg = 'the given email address has not benn confirmed. <a href="'. route('login') . '"> click here  </a>';
+        $msg = 'Email ini belum terdaftar sebagai akun. <a href="'. route('login') . '"> Daftar disni  </a>';
         Session::flash('error', $msg);
         return redirect()->route('login');
       } else {
@@ -76,16 +76,16 @@ class AuthController extends Controller
      	    // dd($jsonData);
 
            //$token = $data['token'];
-                  
+
           return redirect('/')->with(['succes' => 'Anda berhasil login']);
         } else {
           Session::flash('error', 'Email atau password salah');
           return redirect()->route('login');
-        }  
-      } 
+        }
+      }
     }
     public function showFormRegister()
-    { 
+    {
       return view('v_register');
     }
 
@@ -104,11 +104,12 @@ class AuthController extends Controller
         'email.required'        => 'Email wajib diisi',
         'email.email'           => 'Email tidak valid',
         'email.unique'          => 'Email sudah terdaftar',
-        'password.required'     => 'Password wajib diisi',
+        'password.required'     => 'Kata Sandi wajib diisi',
+        'phone.required'        => 'Nomor ponsel wajib diisi',
       ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
-  
+
         if($validator->fails()){
           return redirect()->back()->withErrors($validator)->withInput($request->all);
         }
@@ -125,14 +126,14 @@ class AuthController extends Controller
         $user->status= $request->status;
         $user->email_verified_at = \Carbon\Carbon::now();
         $user->remember_token =  str::random(30);
-        $user->token_activation =  str::random(6);    
+        $user->token_activation =  str::random(6);
         $simpan = $user->save();
         if($simpan){
-          Session::flash('success', 'Silahkan Untuk Mengechek email anda untuk aktivasi');
+          Session::flash('success', 'Silahkan buka email Anda untuk mengkonfirmasi alamat email Anda.');
           Mail::send('v_emailActiv', ['token' =>$user->remember_token, 'userName' =>   $user->name], function($message) use($request){
             $message->to($request->email);
             $message->subject('Verification Register Notification');
-          });    
+          });
           return redirect()->route('login');
         } else {
           Session::flash('errors', ['' => 'Register gagal! Silahkan ulangi beberapa saat lagi']);
@@ -150,7 +151,7 @@ class AuthController extends Controller
     {
       return view ('v_forgotPassword');
     }
-    
+
     public function changePassword()
     {
       return view ('v_pengaturan');
@@ -162,7 +163,7 @@ class AuthController extends Controller
             'new_password' => ['required'],
             'new_confirm_password' => ['same:new_password'],
         ]);
-   
+
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         Auth::logout();
         return redirect()->route('login');
@@ -171,7 +172,7 @@ class AuthController extends Controller
     public function validatePasswordRequest(Request $request)
     {
       $user = DB::table('users')->where('email', '=', $request->email)->first();
-      
+
       if (is_null($user)) {
           return redirect()->back()->withErrors(['email' => trans('User does not exist')]);
       }
@@ -189,9 +190,9 @@ class AuthController extends Controller
       Mail::send('v_emailVeri', ['token' => $token], function($message) use($request){
         $message->to($request->email);
         $message->subject('Reset Password Notification');
-      });    
+      });
 
-      return redirect()->back()->with('status', trans('A reset link has been sent to your email address.'));
+      return redirect()->back()->with('status', trans('Mohon check email Anda untuk membuat kata sandi baru.'));
   }
 
   private function sendResetEmail($email, $token)
@@ -206,7 +207,7 @@ class AuthController extends Controller
         return false;
     }
   }
-  public function getPassword($token) { 
+  public function getPassword($token) {
     return view('v_pengaturan_withToken', ['token' => $token]);
  }
 
@@ -232,10 +233,10 @@ class AuthController extends Controller
     $user = User::where('remember_token', $request->token)
                 ->update(['isVerified' => '1', 'remember_token' => NULL]);
     if ($user){
-      return redirect('/login')->with('success', 'You Successfully confirmed your email address Please Log in');
+      return redirect('/login')->with('success', 'Anda berhasil mengkonfirmasi alamat email Anda. Silahkan Masuk.');
     } else {
       return redirect('/login')->with('success', 'You User Already Active Please Log In');
-    }              
+    }
   }
 
   // function processLogin(){

@@ -132,13 +132,13 @@
                     <?php
                         switch (Request::segment(1)) {
                             case('berita-terkini'):
-                                $pathButton ='Berita Lainnya';
+                                $pathButton ='Berita lainnya';
                                 break;
                             case('artikel-kanker'):
-                                $pathButton ='Artikel Lainnnya';
+                                $pathButton ='Artikel lainnnya';
                                 break;
                             case('cerita-survivor'):
-                                $pathButton ='Cerita Inspiratif Lainnya';
+                                $pathButton ='Cerita inspiratif lainnya';
                                 break;
                             default:
                                 break;

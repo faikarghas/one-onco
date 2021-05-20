@@ -38,6 +38,10 @@
         @include respond(down-tab-port){
             text-align:center;
         }
+        a{
+            text-decoration: none;
+            color: black;
+        }
     }
     ul{
         padding-left: 0;

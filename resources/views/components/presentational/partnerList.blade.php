@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 contentSlider">
-            <h2 class="mb-5"><strong>PARTNER KAMI</strong></h2>
+            <h2 class="mb-5"><a href="/partner-kami"><strong>PARTNER KAMI</strong></a></h2>
             <ul class="partner-slider mb-0">
                 @foreach($listingPartners as $row)
                     <li class="ps-3 pe-3">

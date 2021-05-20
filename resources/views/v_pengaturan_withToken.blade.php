@@ -9,14 +9,14 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="box__setting">
-                            <h2 class="mb-5"> <img width="20px" src="{{asset('/images/settingBlack.png')}}" alt=""> Change  Password</h2>
+                            <h2 class="mb-5"> <img width="20px" src="{{asset('/images/settingBlack.png')}}" alt="">Ubah Kata Sandi</h2>
                             <form method="post" action="{{ route('reset.passwordwithToken') }}">
                                 <input type="hidden" name="token" value="{{ $token }}">
                                 @csrf
                                 @foreach ($errors->all() as $error)
                                     <p class="text-danger">{{ $error }}</p>
                                 @endforeach
-                                <p class="m-0">Rubah Kata Sandi</p>
+                                {{-- <p class="m-0">Rubah Kata Sandi</p> --}}
                                 <div class="input-group mb-4">
                                     <input type="email" class="form-control" placeholder="Email*" aria-label="email" name="email" value="{{ old('email') }}"> 
                                 </div>

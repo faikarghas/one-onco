@@ -93,10 +93,14 @@
                     @include('/components/presentational.storyList',[])
                     @break
                 @case('partner-kami')
+                    <section class="partnerKami__section">
                     @include('/components/presentational.partnerList',[])
+                    </section>
                     @break
                 @case('syaratdanketentuan')
+                    <section class="partnerKami__section">
                     @include('/components/presentational.partnerList',[])
+                    </section>
                     @break
                 @default
                     @include('/components/presentational.newsList',[])

@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-12 mt-5 text-center">
                         @include('components/presentational.boxShowMore',array(
-                            'title'=>'Cerita Inspiratif Lainnya',
+                            'title'=>'Cerita inspiratif lainnya',
                             'path'=>'{{ $pagesStory->links() }}'
                         ))
                     </div>

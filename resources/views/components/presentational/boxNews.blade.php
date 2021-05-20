@@ -19,7 +19,7 @@
         </div>
         <div class="dateFormat">
             <p>{{ $date }}</p>
-            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>$path))
+            @include('components/presentational.boxReadMore',array('title'=>'Baca selengkapnya','path'=>$path))
         </div>
     </div>
 </div>

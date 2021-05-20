@@ -70,7 +70,7 @@
                                                 ?>
                                                     <p>{{ $date }}</p>
                                                 </div>
-                                                {{-- @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'')) --}}
+                                                {{-- @include('components/presentational.boxReadMore',array('title'=>'Baca selengkapnya','path'=>'')) --}}
                                             </div>
                                             </a>
                                         </div>

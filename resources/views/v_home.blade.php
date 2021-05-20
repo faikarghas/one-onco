@@ -217,7 +217,7 @@
             <section class="second__section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-lg-6 text-center">
+                        <div class="col-12 col-lg-6 text-center d-flex align-items-center">
                             <img id="img-one" class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
                         </div>
                         <div class="col-12 col-lg-6">
@@ -225,7 +225,7 @@
                             <p class="mb-5">
                             {{ $contentAbout }}
                             </p>
-                            @include('components/presentational.boxReadMore',array('title'=>'Baca Selengkapnya','path'=>'/tentang-kami'))
+                            @include('components/presentational.boxReadMore',array('title'=>'Baca selengkapnya','path'=>'/tentang-kami'))
                         </div>
                     </div>
                 </div>
@@ -336,7 +336,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                     <h1 class="modal-title text-center" id="exampleModalLabel">TERIMA KASIH !!</h1>
-                    
                     </div>
                     <div class="modal-body">
                     <h3>Selamat bergabung dalam grup newletter One Onco. 
