@@ -8,9 +8,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 forMobile">
-                        <div class="tentangKami__page-intro mb-5">
+                        {{-- <div class="tentangKami__page-intro mb-5">
                             <p>Mempermudah dan mendampingi pasien kanker melalui naik dan turunfnya hidup, itulah nilai utama dari One Onco.</p>
-                         </div>
+                         </div> --}}
                    </div>
                     <div class="col-12 col-md-6">
                         <div class="list__component">
