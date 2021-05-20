@@ -6,7 +6,6 @@ let baseUrl = window.location.origin
 
 
 // MENU HAMBURGER
-
 $('#menu-hamburger').click(function (params) {
     $('#menu-hamburger').toggleClass('open')
     $('.menuShowcase').toggleClass('open')

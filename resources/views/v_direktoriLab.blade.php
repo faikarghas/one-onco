@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="row justify-content-center">
-                            <h3 class="text-start"> <strong>Cari dokter Onkologi di daerahmu:</strong></h3>
+                            <h3 class="text-start"> <strong>Cari Komunitas Kanker di sekitarmu:</strong></h3>
                         </div>
                     </div>
                     <div class="col-12">
@@ -27,9 +27,7 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <select class="form-select mb-3" aria-label="Default select example" id="selectFaskes2" name="faskes2">
-                                        <option value="">Pilih Rumah Sakit</option>
-                                    </select>
+
                                 </div>
                               </div>
                         </form>
@@ -39,6 +37,7 @@
             </div>
             <div class="container">
                 <div class="row listFaskes2">
+                    @include('components/presentational/boxDirectoryKomunitasDetail',['path'=>'direktori'])
                 </div>
                 <div class="row">
                     <div class="col-12 mb-1 text-center">

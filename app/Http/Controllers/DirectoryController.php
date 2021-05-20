@@ -201,23 +201,34 @@ public function getFaskesWithKabupaten($id) {
 
 public function lab(){
 
+  // // GET variable from global data for website
+  // $siteConfig   = DB::table('global_data')->first();
+  // // check sebagai customer apa bukan
+  // if(Session()->get('username')=="") {
+  //   $statusLogin = "<a href='/login'>LOGIN</a>";
+  // } else {
+  //   $statusLogin = "<a href='/logout'>LOGOUT</a>";
+  // }
+  // $provinces = DB::table('indonesia_provinces')->pluck("name","id");
+
+
+  // // main page
+  // $data = array('title' => $siteConfig->pvar2,
+  //               'copyright'=>$siteConfig->pvar3,
+  //               'statusLogin'=>$statusLogin
+  //             );
+
   // GET variable from global data for website
   $siteConfig   = DB::table('global_data')->first();
-  // check sebagai customer apa bukan
-  if(Session()->get('username')=="") {
-    $statusLogin = "<a href='/login'>LOGIN</a>";
-  } else {
-    $statusLogin = "<a href='/logout'>LOGOUT</a>";
-  }
-
   $provinces = DB::table('indonesia_provinces')->pluck("name","id");
-
-
-  // main page
+  $cities = DB::table('indonesia_provinces')->pluck("name","id");
+  $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
+  $faskess = Faskes_model::getFaskes('', GlobalConstants::ALL, GlobalConstants::ALL, GlobalConstants::ALL);
   $data = array('title' => $siteConfig->pvar2,
                 'copyright'=>$siteConfig->pvar3,
-                'statusLogin'=>$statusLogin
+                'faskes'=>$faskess
               );
+  //return view ('v_direktoriCare', $data,compact('provinces','spesialis','cities'));
   return view ('v_direktoriLab', $data,compact('provinces'));
 }
 
