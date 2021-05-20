@@ -65,8 +65,8 @@
                                                 <?php 
                                                     $yearCurrent  = date('Y');
                                                     $dateNews =  date('Y', strtotime($row->publishDate));
-                                                    $date =  date('d-M-Y', strtotime($dateNews));
-                                              ?>
+                                                    $date =  date('d-M-Y', strtotime($row->publishDate));
+                                                ?>
                                                 <p>{{ $date }}</p>
                                             </div>
                                             {{-- @include('components/presentational.boxReadMore',array('title'=>'Baca selengkapnya','path'=>'')) --}}
