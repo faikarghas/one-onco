@@ -73,7 +73,7 @@ class AuthController extends Controller
                   ];
           $response =  Http::asForm()->withHeaders([$client_id => $secret])->post($url, $data);
           $jsonData = $response->json();
-     	    dd($jsonData);
+     	    // dd($jsonData);
 
            //$token = $data['token'];
                   
