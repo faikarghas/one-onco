@@ -41,8 +41,8 @@ class PagesController extends Controller
         $mainContent = $listAttribute->content;
       }
       // widget
-      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
-      $listingStory  = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      $listingStory  = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $listingPartners = DB::table('partner')->limit(4)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,

@@ -13,6 +13,7 @@ use App\Http\Controllers\BelanjaSehatController;
 use App\Http\Controllers\KonsultasiOnlineController;
 use App\Http\Controllers\JenisKankerController;
 use App\Http\Controllers\NewsletterController;
+// App::forgetMiddleware('Illuminate\Http\FrameGuard');
 
 
 /*
@@ -72,6 +73,7 @@ Route::get('/cerita-survivor',[StoryController::class,'index']);
 Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
 Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');
 Route::get('/get-more-faskes', [DirectoryController::class,'getMoreFaskes'])->name('faskes.get-more-faskes');
+Route::get('/get-more-komunitas', [DirectoryController::class,'getMoreKomunitas'])->name('faskes.get-more-komunitas');
 Route::get('/direktori',[DirectoryController::class,'index']);
 Route::get('/direktori-dokter',[DirectoryController::class,'dokter']);
 Route::get('cities/get/{id}',[DirectoryController::class,'getCities']);

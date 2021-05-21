@@ -4,12 +4,20 @@
         <?php
           $rsPraktek = $row->namafaskes;
           $newRsPraktek = str_replace(',','<br>', $rsPraktek);
-          $count =  substr_count($rsPraktek, ",")
+          $count =  substr_count($rsPraktek, ",");
+          $foto = $row->Image;
+        $path = public_path('/data_dokter/'.$foto);
+        $isExists = file_exists($path);
+        if ($isExists) {
+            $fotoDokter = $foto;
+        } else {
+            $fotoDokter = 'doctor.svg';
+        }
         ?>
         <div class="col-12 col-lg-6">
             <div class="box__rec2">
                 @include('components/presentational.boxRec2',array(
-                    'image_url'=>'doctor.svg',
+                    'image_url'=>$fotoDokter,
                     'title'=>$row->fullname,
                     'spesialis'=>$row->subSpesialist,
                     'praktek'=>$newRsPraktek,

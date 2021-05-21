@@ -2231,57 +2231,7 @@ $('.partner-slider').slick({
       arrows: false
     }
   }]
-});
-$(document).ready(function () {
-  $('#search').on('keyup', function () {
-    $value = $(this).val();
-    getMoreDokters(1);
-  });
-  $('#spesialis').on('change', function () {
-    getMoreDokters();
-  });
-  $('#provinsi').on('change', function () {
-    data = $(this).find(':selected').attr('data-id');
-
-    if (data !== "null") {
-      axios.get("/cities/get/".concat(data)).then(function (response) {
-        $('select[name="kabupaten"]').empty();
-        $('select[name="kabupaten"]').append('<option value=""> Pilih Kabupaten</option>');
-        $.each(response.data, function (key, value) {
-          $('select[name="kabupaten"]').append(new Option(value, value));
-        });
-      });
-    }
-
-    getMoreDokters();
-  });
-  $('#kabupaten').on('change', function () {
-    getMoreDokters();
-  });
-});
-
-function getMoreDokters(page) {
-  var search = $('#search').val();
-  var selectedSpesialis = $("#spesialis option:selected").val();
-  var selectedProvinsi = $("#provinsi option:selected").val();
-  var selectedKabupaten = $("#kabupaten option:selected").val();
-  $.ajax({
-    type: "GET",
-    data: {
-      'search_query': search,
-      'spesialis': selectedSpesialis,
-      'provinsi': selectedProvinsi,
-      'kabupaten': selectedKabupaten
-    },
-    // url: "{{ route('dokters.get-more-dokters') }}" + "?page=" + page,
-    url: "".concat(baseUrl, "/get-more-dokters"),
-    success: function success(data) {
-      console.log(data);
-      $('#dokter_data').html(data);
-    }
-  });
-} // SELECT API REGISTER FORM
-
+}); // SELECT API REGISTER FORM
 
 axios.get("https://dev.farizdotid.com/api/daerahindonesia/provinsi").then(function (response) {
   $('#register_form select[name="provinsi"]').append('<option value=""> Pilih Kabupaten</option>');

@@ -35,15 +35,51 @@ class DirectoryController extends Controller
                   );
       return view ('v_direktoriDokter', $data,compact('cities','spesialis'));
     }
+
+    public function lab(){
+      $siteConfig   = DB::table('global_data')->first();
+      $cities = DB::table('indonesia_provinces')->pluck("name","id");
+      $faskess = Faskes_model::getKomunitas('', GlobalConstants::ALLProv, GlobalConstants::ALLKab);
+      $data = array('title' => $siteConfig->pvar2,
+                    'copyright'=>$siteConfig->pvar3,
+                    'faskes'=>$faskess
+                  );
+      return view ('v_direktoriLab', $data,compact('cities'));
+    }
     public function getMoreDokters(Request $request){
       $query = strtolower($request->search_query);
       //dd($query);
       $spesialis = $request->spesialis;
       $provinsi = $request->provinsi;
       $kabupaten = $request->kabupaten;
+      //DB::enableQueryLog();
       $dokter = Dokter_model::getDokters($query,$spesialis,$provinsi,$kabupaten);
+      //dd(DB::getQueryLog());
+      //dd($dokter);
       return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();
     }
+
+    public function getMoreFaskes(Request $request){
+      $query = $request->search_query;
+      $spesialis = $request->spesialis;
+      $provinsi = $request->provinsi;
+      $kabupaten = $request->kabupaten;
+      $faskes = Faskes_model::getFaskes($query,$spesialis,$provinsi,$kabupaten);
+      return view('components.presentational.boxResultFilterDirectoryFaskes', compact('faskes'))->render();
+    }
+  
+    public function getMoreKomunitas(Request $request){
+      $query = $request->search_query;
+      //dd($query);
+      $provinsi = $request->provinsi;
+      $kabupaten = $request->kabupaten;
+      //DB::enableQueryLog();
+      $faskes = Faskes_model::getKomunitas($query,$provinsi,$kabupaten);
+      //dd($faskes);
+      //dd(DB::getQueryLog());
+      return view('components.presentational.boxResultFilterDirectoryKomunitas', compact('faskes'))->render();
+    }
+
     public function getDokterDetail($id, Request $request) {
       $siteConfig   = DB::table('global_data')->first();
       $dokterDetail = DB::table('dokter')
@@ -89,14 +125,7 @@ class DirectoryController extends Controller
     return view ('v_direktoriCare', $data,compact('provinces','spesialis','cities'));
   }
 
-  public function getMoreFaskes(Request $request){
-    $query = $request->search_query;
-    $spesialis = $request->spesialis;
-    $provinsi = $request->provinsi;
-    $kabupaten = $request->kabupaten;
-    $faskes = Faskes_model::getFaskes($query,$spesialis,$provinsi,$kabupaten);
-    return view('components.presentational.boxResultFilterDirectoryFaskes', compact('faskes'))->render();
-  }
+ 
 
   public function care($id,Request $request){
 
@@ -199,38 +228,7 @@ public function getFaskesWithKabupaten($id) {
     // return json_encode($viewDokter);
 }
 
-public function lab(){
 
-  // // GET variable from global data for website
-  // $siteConfig   = DB::table('global_data')->first();
-  // // check sebagai customer apa bukan
-  // if(Session()->get('username')=="") {
-  //   $statusLogin = "<a href='/login'>LOGIN</a>";
-  // } else {
-  //   $statusLogin = "<a href='/logout'>LOGOUT</a>";
-  // }
-  // $provinces = DB::table('indonesia_provinces')->pluck("name","id");
-
-
-  // // main page
-  // $data = array('title' => $siteConfig->pvar2,
-  //               'copyright'=>$siteConfig->pvar3,
-  //               'statusLogin'=>$statusLogin
-  //             );
-
-  // GET variable from global data for website
-  $siteConfig   = DB::table('global_data')->first();
-  $provinces = DB::table('indonesia_provinces')->pluck("name","id");
-  $cities = DB::table('indonesia_provinces')->pluck("name","id");
-  $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
-  $faskess = Faskes_model::getFaskes('', GlobalConstants::ALL, GlobalConstants::ALL, GlobalConstants::ALL);
-  $data = array('title' => $siteConfig->pvar2,
-                'copyright'=>$siteConfig->pvar3,
-                'faskes'=>$faskess
-              );
-  //return view ('v_direktoriCare', $data,compact('provinces','spesialis','cities'));
-  return view ('v_direktoriLab', $data,compact('provinces'));
-}
 
 
 

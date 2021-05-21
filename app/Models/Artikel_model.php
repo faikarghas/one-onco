@@ -46,7 +46,7 @@ class Artikel_model extends Model
           ->select('artikel.*')
           ->where('artikel.idkat',$idKat)
           ->whereNotIn('artikel.id',[$id])
-          ->orderBy('artikel.id','DESC')
+          ->orderBy('artikel.PublishDate','DESC')
           ->paginate(3);
          return $query;
      }

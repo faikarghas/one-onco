@@ -3,13 +3,24 @@
         @foreach ($faskes as $row)
         <div class="col-12 col-lg-6">
             <div class="box__rec2">
-                <a href="/direktori-care/{{ $row->faskesId }}" class="d-block h-100">
+                <a href="#" class="d-block h-100">
                     <div class="container">
                        <div class="row">
                           <div class="col-3 d-flex align-items-center justify-content-center">
                              <div class="rounded_img">
-                                <img width="100%" height="100%" src="{{asset("/images/care_center.svg")}}" alt="care_center">
-                             </div>
+                                <?php
+                                    $foto = $row->foto;
+                                    $path = public_path('/data_faskes/'.$foto);
+                                    $isExists = file_exists($path);
+                                    if ($isExists && !empty($foto)) {
+                                          $fotoDokter = $foto;
+                                    } else {
+                                          $fotoDokter = 'care_center.svg';
+                                    }
+                                ?>
+                                <img width="100%" height="100%" src="{{asset("/data_faskes/$fotoDokter")}}" alt="care_center">
+                             
+                              </div>
                           </div>
                           <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                              <div class="title_wrapper">
