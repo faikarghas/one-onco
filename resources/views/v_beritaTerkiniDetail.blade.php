@@ -4,7 +4,7 @@
 @section('meta')
     {{-- <meta property="og:url"         content="http://www.mypage.de" /> --}}
         <meta property="og:type"        content="website" />
-        <meta property='og:title'       content="{{ $titleStory }}" />
+        <meta property='og:title'       content="{{ strip_tags(html_entity_decode($titleStory)) }}" />
         <meta property='og:description' content="{{ strip_tags(html_entity_decode(substr($contentStory,0,200))) }}" />
         <meta property='og:image'       content="{{asset('data_artikel')}}/{{$imageNews}}">
 @endsection

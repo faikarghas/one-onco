@@ -2,7 +2,7 @@
 @section('meta')
     {{-- <meta property="og:url"         content="http://www.mypage.de" /> --}}
         <meta property="og:type"        content="website" />
-        <meta property='og:title'       content="{{ $titlePages }}" />
+        <meta property='og:title'       content="{{ strip_tags(html_entity_decode($titlePages)) }}" />
         <meta property='og:description' content="{{ strip_tags(html_entity_decode(substr($Content,0,200))) }}" />
         @switch(Request::segment(1))
         @case('tentang-kami')
