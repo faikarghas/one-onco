@@ -51,7 +51,6 @@ class AuthController extends Controller
       ];
 
       $user = DB::table('users')->where('email', '=', $request->email)->first();
-
       $idVerification = $user->isVerified;
       if ($idVerification === 0 ) {
         $msg = 'Email ini belum terdaftar sebagai akun. <a href="'. route('login') . '"> Daftar disni  </a>';
@@ -129,7 +128,8 @@ class AuthController extends Controller
         $user->token_activation =  str::random(6);
         $simpan = $user->save();
         if($simpan){
-          Session::flash('success', 'Silahkan buka email Anda untuk mengkonfirmasi alamat email Anda.');
+          Session::flash('success', 'Silahkan buka email Anda untuk mengkonfirmasi alamat email Anda.
+          ');
           Mail::send('v_emailActiv', ['token' =>$user->remember_token, 'userName' =>   $user->name], function($message) use($request){
             $message->to($request->email);
             $message->subject('Verification Register Notification');
@@ -166,7 +166,7 @@ class AuthController extends Controller
 
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         Auth::logout();
-        return redirect()->route('login');
+        return redirect('/login')->with('success', 'Kata sandi berhasil diubah. Silahkan masuk.');
     }
 
     public function validatePasswordRequest(Request $request)
@@ -235,7 +235,7 @@ class AuthController extends Controller
     if ($user){
       return redirect('/login')->with('success', 'Anda berhasil mengkonfirmasi alamat email Anda. Silahkan Masuk.');
     } else {
-      return redirect('/login')->with('success', 'You User Already Active Please Log In');
+      return redirect('/login')->with('success', 'Akun Anda sudah aktif. Silahkan masuk.');
     }
   }
 
