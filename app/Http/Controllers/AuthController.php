@@ -166,7 +166,7 @@ class AuthController extends Controller
 
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         Auth::logout();
-        return redirect()->route('login');
+        return redirect('/login')->with('success', 'Kata sandi berhasil diubah. Silahkan masuk.');
     }
 
     public function validatePasswordRequest(Request $request)
