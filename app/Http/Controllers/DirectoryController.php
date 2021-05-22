@@ -197,35 +197,28 @@ public function getFaskesWithKabupaten($id) {
     $viewDokter = DB::table("dokter_mapped")->select('dokterId', 'fullname' )->where("kabupaten",$id)->distinct()->get();
     return response()->json($viewDokter);
     // return json_encode($viewDokter);
-}
-
-public function lab(){
-
-  // GET variable from global data for website
-  $siteConfig   = DB::table('global_data')->first();
-  // check sebagai customer apa bukan
-  if(Session()->get('username')=="") {
-    $statusLogin = "<a href='/login'>LOGIN</a>";
-  } else {
-    $statusLogin = "<a href='/logout'>LOGOUT</a>";
   }
 
-  $provinces = DB::table('indonesia_provinces')->pluck("name","id");
+  public function lab(){
+
+    // GET variable from global data for website
+    $siteConfig   = DB::table('global_data')->first();
+    // check sebagai customer apa bukan
+    if(Session()->get('username')=="") {
+      $statusLogin = "<a href='/login'>LOGIN</a>";
+    } else {
+      $statusLogin = "<a href='/logout'>LOGOUT</a>";
+    }
+
+    $provinces = DB::table('indonesia_provinces')->pluck("name","id");
 
 
-  // main page
-  $data = array('title' => $siteConfig->pvar2,
-                'copyright'=>$siteConfig->pvar3,
-                'statusLogin'=>$statusLogin
-              );
-  return view ('v_direktoriLab', $data,compact('provinces'));
-}
-
-
-
-
-
-
-
+    // main page
+    $data = array('title' => $siteConfig->pvar2,
+                  'copyright'=>$siteConfig->pvar3,
+                  'statusLogin'=>$statusLogin
+                );
+    return view ('v_direktoriLab', $data,compact('provinces'));
+  }
 
 }

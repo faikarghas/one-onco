@@ -1,11 +1,11 @@
 @extends('components/layouts.layout')
 
 @section('content')
-    @include('components/presentational/header',['path'=>'/'])
+    @include('components/presentational/header',['path'=>'direktori'])
     <main>
         @include('components/presentational/boxHeaderDirectoryDesktop',['path'=>'direktori'])
         <section class="direktoriLab__list pt-5">
-            <div class="container mb-5 forDesktop">
+            <div class="container mb-5">
                 <div class="row">
                     <div class="col-12">
                         <div class="row justify-content-center">
