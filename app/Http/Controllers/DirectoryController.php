@@ -83,23 +83,25 @@ class DirectoryController extends Controller
     public function getDokterDetail($id, Request $request) {
       $siteConfig   = DB::table('global_data')->first();
       $dokterDetail = DB::table('dokter')
-        ->select('dokter.dokterId', 'dokter.fullname', 'dokter.subSpesialist')
+        ->select('dokter.dokterId', 'dokter.fullname', 'dokter.subSpesialist','dokter.foto')
         ->where('dokter.dokterId',$id)
         ->first();
 
+      $foto = $dokterDetail->foto;
       $fullname = $dokterDetail->fullname;
       $layanan = $dokterDetail->subSpesialist;
       $idDokter = $id;
 
       $viewFaskes = DB::table('faskes')
           ->join('jadwal_dokter', 'jadwal_dokter.faskesId', '=', 'faskes.faskesId','LEFT')
-          ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten','faskes.website','faskes.phone')
+          ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten','faskes.website','faskes.phone','faskes.foto')
           ->distinct('faskes.namaFaskes')
           ->where('jadwal_dokter.dokterId', $idDokter)->get();
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
       $data = array('title' => $siteConfig->pvar2,
                       'copyright'=>$siteConfig->pvar3,
+                      'foto'=>$foto,
                       'fullname'=>$fullname,
                       'layanan'=>$layanan,
                       'dokterPraktek'=>$viewFaskes,
@@ -135,7 +137,7 @@ class DirectoryController extends Controller
     // view rumah sakit detail
 
     $viewFaskes = DB::table('faskes')
-        ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif')
+        ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif', 'faskes.foto')
         ->where('faskes.faskesId', $id)->first();
 
 
@@ -144,6 +146,7 @@ class DirectoryController extends Controller
     $phoneFaskes = $viewFaskes->phone;
     $phoneFax = $viewFaskes->fax;
     $websiteFaskes = $viewFaskes->website;
+    $foto = $viewFaskes->foto;
 
     $status1 =  $viewFaskes->skriningDiagnosis;
     $status2 =  $viewFaskes->onkologiMedisKemoterapi;
@@ -157,7 +160,7 @@ class DirectoryController extends Controller
     // view dokter praktek by Faskes
     $viewDokter = DB::table('dokter')
     ->join('jadwal_dokter', 'jadwal_dokter.dokterId', '=', 'dokter.dokterId','LEFT')
-    ->select('dokter.dokterId', 'dokter.fullname')
+    ->select('dokter.dokterId', 'dokter.fullname','dokter.foto')
     ->distinct('dokter.fullname')
     ->where('jadwal_dokter.faskesId', $id)
     ->get();
@@ -173,6 +176,7 @@ class DirectoryController extends Controller
                   'website'=>$websiteFaskes,
                   'viewDokter' => $viewDokter,
                   'provinces' => $provinces,
+                  'foto' => $foto,
                   'cities' => $cities,
                   'status1' => $status1,
                   'status2' => $status2,
