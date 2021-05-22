@@ -22,23 +22,27 @@
           </div>
           <form action="">
             <div class="row">
-              <div class="col">
-                @if (Request::segment(1)==='direktori-dokter')
-                  <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
+              @if (Request::segment(1)==='direktori-lab')
+
+              @else
+                <div class="col">
+                  @if (Request::segment(1)==='direktori-dokter')
+                    <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
+                        <option>{{\App\Constants\GlobalConstants::ALLSpec}}</option>
+                        @foreach ($spesialis as $spesial => $value)
+                            <option>{{ $value }}</option>
+                        @endforeach
+                    </select>
+                    @elseif (Request::segment(1)==='direktori-care')
+                    <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
                       <option>{{\App\Constants\GlobalConstants::ALLSpec}}</option>
-                      @foreach ($spesialis as $spesial => $value)
-                          <option>{{ $value }}</option>
+                      @foreach(\App\Constants\GlobalConstants::LIST_LAYANAN as $type)
+                          <option>{{ $type }}</option>
                       @endforeach
                   </select>
-                  @elseif (Request::segment(1)==='direktori-care')
-                  <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
-                    <option>{{\App\Constants\GlobalConstants::ALLSpec}}</option>
-                    @foreach(\App\Constants\GlobalConstants::LIST_LAYANAN as $type)
-                        <option>{{ $type }}</option>
-                    @endforeach
-                </select>
-                  @endif
-              </div>
+                    @endif
+                </div>
+              @endif
               <div class="col">
                   <select class="form-select mb-3" aria-label="Default select example" id="provinsi" name="provinsi">
                       <option>{{\App\Constants\GlobalConstants::ALLProv}}</option>
