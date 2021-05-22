@@ -226,7 +226,7 @@ class AuthController extends Controller
       $user = User::where('email', $request->email)
                 ->update(['password' => Hash::make($request->new_password)]);
       DB::table('password_resets')->where(['email'=> $request->email])->delete();
-      return redirect('/login')->with('message', 'Your password has been changed!');
+      return redirect('/login')->with('success', 'Kata sandi berhasil diubah. Silahkan masuk.');
   }
   public function verifyRegistration(Request $request)
   {

@@ -45,7 +45,7 @@
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
                             </form>
                             <div class="for_or_reg mt-2">
-                                <p class="text-center mb-2">Lupa kata kunci ? <a href="{{ route('forgot.password') }}" class="text-green">klik disini</a></p>
+                                <p class="text-center mb-2">Lupa kata sandi ? <a href="{{ route('forgot.password') }}" class="text-green">klik disini</a></p>
                                 <div class="line_or mb-2"><span></span>Atau<span></span></div>
                                 <p class="text-center mb-2">Belum memiliki akun? Daftar dibawah ini</p>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Daftar','color'=>'#00A2E3','type'=>'a','path'=>'register'])
