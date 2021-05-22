@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <meta property="og:title" content="your_link_title">
-        <meta property="og:image" content="https://source.unsplash.com/random">
+        @yield('meta')
 
         <title>Laravel test</title>
 

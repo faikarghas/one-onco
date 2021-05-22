@@ -1,6 +1,14 @@
 
 @extends('components/layouts.layout')
 
+@section('meta')
+    {{-- <meta property="og:url"         content="http://www.mypage.de" /> --}}
+    <meta property="og:type"        content="website" />
+    <meta property='og:title'       content={{ $titleStory }}>
+    {{-- <meta property='og:description' content={{ $contentStory }}> --}}
+    <meta property='og:image'       content="{{asset('data_artikel')}}/{{$imageNews}}">
+@endsection
+
 @section('content')
     @if (Request::segment(1)=='berita-terkini')
     @include('components/presentational/header',['path'=>'berita-terkini'])
