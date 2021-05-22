@@ -84,7 +84,7 @@
 
 @push('custom-scripts')
 <script>
-    $(document).ready(function() {
+    document.addEventListener('DOMContentLoaded', function () {
         $('#search').on('keyup', function() {
           $value = $(this).val();
           getMoreFaskes(1);
@@ -132,7 +132,6 @@
     }
   </script>
 @endpush
-
 @stack('custom-scripts')
 
 

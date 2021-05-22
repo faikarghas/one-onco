@@ -8,8 +8,25 @@
                        <div class="row">
                           <div class="col-3 d-flex align-items-center justify-content-center">
                              <div class="rounded_img">
-                                <img width="100%" height="100%" src="{{asset("/images/care_center.svg")}}" alt="care_center">
-                             </div>
+                              <?php
+                              $foto = $row->foto;
+                              // $filename =  '/data_faskes/'.$foto;
+                              // if (file_exists($filename)) {
+                              //    echo $fotoDokter = $foto;
+                              //    } else {
+                              //    $fotoDokter = 'care_center.svg';
+                              // }
+                              $path = public_path('/data_faskes/'.$foto);
+                              $isExists = file_exists($path);
+                              if ($isExists) {
+                                    $fotoDokter = $foto;
+                              } else {
+                                    $fotoDokter = 'care_center.svg';
+                              }
+                          ?>
+                          <img width="100%" height="100%" src="{{asset("/data_faskes/$fotoDokter")}}" alt="care_center">
+                             
+                              </div>
                           </div>
                           <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                              <div class="title_wrapper">

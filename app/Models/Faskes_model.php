@@ -50,6 +50,22 @@ class Faskes_model extends Model
         return $faskes->paginate(PER_PAGE_LIMIT);
     }
 
-
-
+    public static function getKomunitas($search_keyword,$provinsi,$kabupaten) {
+        $faskes = DB::table('faskes')->where('tipeFaskes',2);
+        if($search_keyword && !empty($search_keyword)) {
+            $faskes->where(function($q) use ($search_keyword) {
+                $q->where('namaFaskes', 'like', "%{$search_keyword}%")
+                ->orWhere('alamat', 'like', "%{$search_keyword}%");
+            });
+        }
+        //Filter Provinsi
+        if($provinsi && $provinsi!= GlobalConstants::ALLProv) {
+            $faskes = $faskes->where('provinsi', $provinsi);
+        }
+        //Filter Kabupaten
+        if($kabupaten && $kabupaten!= GlobalConstants::ALLKab) {
+            $faskes = $faskes->where('kabupaten', $kabupaten);
+        }
+        return $faskes->paginate(PER_PAGE_LIMIT);
+    }
 }

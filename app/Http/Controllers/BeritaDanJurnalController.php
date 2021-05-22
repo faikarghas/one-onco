@@ -78,7 +78,7 @@ class BeritaDanJurnalController extends Controller
       $otherStory  = $model->otherArticle($id, $id_kategori);
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'titleStory'=>$detailStory->title,
