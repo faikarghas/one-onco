@@ -1,5 +1,33 @@
 
 @extends('components/layouts.layout')
+@section('meta')
+    {{-- <meta property="og:url"         content="http://www.mypage.de" /> --}}
+        <meta property="og:type"        content="website" />
+        <meta property='og:title'       content="{{ $titleContentPages }}" />
+        <meta property='og:description' content="{{ strip_tags(html_entity_decode(substr($contentPages,0,200))) }}" />
+        @switch(Request::segment(1))
+        @case('tentang-kami')
+            <meta property='og:image' content="{{asset('/images/tentang_kami.jpg')}}">
+            @break
+        @case('untuk-pasien')
+            <meta property='og:image' content="{{asset('/images/menghadapi_kangker.jpg')}}">
+            @break
+        @case('untuk-pendamping')
+            <meta property='og:image' content="{{asset('/images/untuk_pendamping.jpg')}}">
+            @break
+        @case('partner-kami')
+            <meta property='og:image' content="{{asset('/images/partner_kami.jpg')}}">
+            @break
+        @case('perawatan-kanker')
+            <meta property='og:image' content="{{asset('/images/perawatan_kanker.jpg')}}">
+            @break
+        @case('kanker-payudara')
+            <meta property='og:image' content="{{asset('/images/jenis_kanker.jpg')}}">
+            @break
+        @default
+            <meta property='og:image' content="{{asset('/images/perawatan_kanker.jpg')}}">
+        @endswitch
+@endsection
 @section('content')
     @include('components/presentational/header',['path'=>''])
     <main>
