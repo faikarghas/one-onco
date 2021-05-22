@@ -66,9 +66,9 @@ class BeritaDanJurnalController extends Controller
       $yearCurrent  = date('Y');
       $dateNewsDetail =  date('Y', strtotime($detailStory->publishDate));
       if ($yearCurrent == $dateNewsDetail ){
-          $dateDetail =  date('d M', strtotime($dateNewsDetail));
+          $dateDetail =  date('d M', strtotime($detailStory->publishDate));
       } else {
-          $dateDetail =  date('Y-d-mm', strtotime($dateNewsDetail));
+          $dateDetail =  date('Y-d-mm', strtotime($detailStory->publishDate));
       }
 
 

@@ -67,12 +67,12 @@
                                             <a href="{{$row->slug}}">
                                             <div class="boxInformation">
                                                 <div class="title">
-                                                    <span>{{ $row->created_at }}</span>
+                                                    {{-- <span>{{ $row->created_at }}</span> --}}
                                                     <h3 class="mt-2 mb-4">{{ $row->title }}</h3>
                                                     <?php 
                                                     $yearCurrent  = date('Y');
                                                     $dateNews =  date('Y', strtotime($row->publishDate));
-                                                    $date =  date('Y-d-mm', strtotime($dateNews));
+                                                    $date =  date('d-M-Y', strtotime($row->publishDate));
                                                 ?>
                                                     <p>{{ $date }}</p>
                                                 </div>
