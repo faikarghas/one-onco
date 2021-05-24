@@ -84,9 +84,9 @@
                         </div>
                     </div>
 
-                    {{-- <div class="col-12 mt-5">
-                        <div class="row">
-                            <div class="col-12 col-lg-3">
+                    <div class="col-12 mt-5">
+                        <div class="row boxListLoadMore">
+                            {{-- <div class="col-12 col-lg-3">
                                 @include('components/presentational.boxNews',array(
                                     'date'=>$listingNews[0]->created_at,
                                     'title'=>strip_tags($listingNews[0]->title),
@@ -125,9 +125,9 @@
                                     'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
                                     'class'=>'smallBox'
                                 ))
-                            </div>
+                            </div> --}}
                         </div>
-                    </div> --}}
+                    </div>
 
                     <?php
                         switch (Request::segment(1)) {
@@ -151,6 +151,8 @@
                             'path'=>''
                         ))
                     </div>
+
+                    <button class="btn btn-primary loadMoreNews">BUTTON</button>
                 </div>
             </div>
         </section>

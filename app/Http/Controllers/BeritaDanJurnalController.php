@@ -91,5 +91,11 @@ class BeritaDanJurnalController extends Controller
                     'imageNews' => $detailStory->imgDesktop
                   );
       return view ('v_beritaTerkiniDetail', $data);
-  }
+    }
+
+    public function loadMoreNews($offset){
+      $listingNews = DB::table('artikel')->where('idKat',1)->skip($offset)->take(8)->orderBy('publishDate', 'DESC')->get();
+
+      return response()->json($listingNews);
+    }
 }

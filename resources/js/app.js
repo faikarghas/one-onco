@@ -303,7 +303,7 @@ $('#selectProvinces3').change(function(){
                 html.direktoriCareBox(display[i]["NamaFaskes"],display[i]["alamat"],display[i]["website"],display[i]["faskesId"])
                 i++;
             })
-            
+
           });
 
 
@@ -509,32 +509,55 @@ $('#select_kota').change(function(){
 });
 
 $(document).ready(function() {
-    
+
     const form = document.getElementById('newsletterForm');
     const formData = new FormData(form);
     $('#inputEmailNewsletter').keyup(function() {
         if($(this).val() != '') {
            $('#button-addon2').prop('disabled', false);
-           $("#button-addon2").click(function() {        
+           $("#button-addon2").click(function() {
             $(this).prop("disabled", true);
             $("#inputEmailNewsletter").prop('disabled', true);
             $(this).html(
               '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
             );
-            
+
             formData.append('email', $('#inputEmailNewsletter').val());
             axios.post(`${baseUrl}/newsletter/store`, formData).then(function (response) {
               //console.log(formData);
-              
+
               $('#exampleModal').modal('show');
               window.setTimeout(function () {
                 $("#exampleModal").modal("hide");
-                location.reload(); 
-            }, 5000); 
+                location.reload();
+            }, 5000);
             });
 
           });
         }
      });
 });
+
+
+// LOAD MORE
+
+let offestLoad = 4
+offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
+let dataLoadNews = []
+
+$('.loadMoreNews').click(function () {
+    console.log('test');
+    axios.get(`/beritaload/${offestLoad}`).then(function (response) {
+        dataLoadNews.push(response.data)
+        // dataLoadNews.map(function (i,val) {
+        //     html.boxNews()
+        // })
+        console.log(dataLoadNews[0]);
+
+    });
+
+    offestLoad++
+    // html.boxNews()
+    // console.log(dataLoadNews);
+})
 

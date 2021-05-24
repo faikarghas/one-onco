@@ -162,3 +162,22 @@ export function direktoriLoader() {
    `
    return loader
 }
+
+export function boxNews(params) {
+   $('.boxListLoadMore').append(`<div class="col-12 col-lg-3">
+      <div class="boxNews smallBox">
+         <div class="boxImage">
+            <img src="http://127.0.0.1:8000/data_artikel/https://source.unsplash.com/random" alt="Selayang Pandang tentang Kanker Usus Besar">
+         </div>
+         <div class="boxInformation">
+            <div class="title">
+               <h3 class="mt-2">Selayang Pandang tentang Kanker Usus Besar</h3>
+               <p class="author">Siloam Hospitals Manado bekerjasama dengan KALBE FARMA menyelenggarakan virtual health talk</p>
+            </div>
+            <div class="dateFormat">
+               <p></p>
+               <a href="berita-terkini/selayang-pandang-tentang-kanker-usus-besar" class="boxReadMore">Baca selengkapnya <img class="img-fluid" width="8px" src="http://127.0.0.1:8000/images/arrow-white.png" alt="arrow"></a>        </div>
+            </div>
+         </div>
+   </div>`)
+}
