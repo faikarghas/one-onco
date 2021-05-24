@@ -96,6 +96,9 @@ Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
 Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
 Route::get('beritaload/{offset}',[BeritaDanJurnalController::class,'loadMoreNews']);
 
+Route::post('/berita-terkini/load_data',[BeritaDanJurnalController::class,'load_data'])->name('loadmore.load_data');;
+
+
 
 Route::get('/sukses', function () {
     return view('v_success');

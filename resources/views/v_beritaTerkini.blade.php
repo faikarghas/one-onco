@@ -85,47 +85,9 @@
                     </div>
 
                     <div class="col-12 mt-5">
-                        <div class="row boxListLoadMore">
-                            {{-- <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
+                        <div class="row" id="post_data">
+                            {{ csrf_field() }}      
                             </div>
-                            <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
-                            <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
-                            <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div> --}}
                         </div>
                     </div>
 
@@ -145,16 +107,40 @@
                         };
 
                     ?>
-                    <div class="col-12 text-center mt-5">
-                        @include('components/presentational.boxShowMore',array(
-                            'title'=>$pathButton,
-                            'path'=>''
-                        ))
+                   
                     </div>
 
+<<<<<<< HEAD
                     <button class="btn btn-primary loadMoreNews">BUTTON</button>
+=======
+>>>>>>> 684874faa07c7b67fb39abf63c244854009e8a2c
                 </div>
             </div>
         </section>
     </main>
 @endsection
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+     var _token = $('input[name="_token"]').val();
+     load_data('', _token);
+     function load_data(id="", _token)
+     {
+      $.ajax({
+       url:"{{ route('loadmore.load_data') }}",
+       method:"POST",
+       data:{id:id, _token:_token},
+       success:function(data)
+       {
+        $('#load_more_button').remove();
+        $('#post_data').append(data);
+       }
+      })
+     }
+    
+     $(document).on('click', '#load_more_button', function(){
+      var id = $(this).data('id');
+      $('#load_more_button').html('<b>Loading...</b>');
+      load_data(id, _token);
+     });
+    });
+</script>
