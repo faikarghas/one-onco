@@ -94,7 +94,7 @@ class BeritaDanJurnalController extends Controller
     }
 
     public function loadMoreNews($offset){
-      $listingNews = DB::table('artikel')->where('idKat',1)->skip($offset)->take(8)->orderBy('publishDate', 'DESC')->get();
+      $listingNews = DB::table('artikel')->where('idKat',1)->skip(4)->take(16)->orderBy('id', 'DESC')->get();
 
       return response()->json($listingNews);
     }

@@ -536,30 +536,21 @@ $(document).ready(function() {
           });
         }
      });
-
-    let offestLoad = 4
-    offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
-    let dataLoadNews = []
-
-    $('.loadMoreNews').click(function () {
-        console.log('test');
-        axios.get(`/beritaload/${offestLoad}`).then(function (response) {
-            dataLoadNews.push(response.data)
-            // dataLoadNews.map(function (i,val) {
-            //     html.boxNews()
-            // })
-            console.log(dataLoadNews[0]);
-
-        });
-
-        offestLoad++
-        // html.boxNews()
-        // console.log(dataLoadNews);
-    })
-
 });
 
 
 // LOAD MORE
 
+let offestLoad = 4
+offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
+let dataLoadNews = []
+
+$('.loadMoreNews').on('click',function () {
+    console.log('test');
+
+    axios.get(`/beritaload/${offestLoad}`).then(function (response) {
+        console.log(response);
+    });
+    offestLoad+=4
+})
 
