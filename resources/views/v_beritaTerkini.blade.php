@@ -86,9 +86,13 @@
 
                     <div class="col-12 mt-5">
                         <div class="row" id="post_data">
-                            {{ csrf_field() }}      
+                            {{ csrf_field() }}
                             </div>
                         </div>
+                    </div>
+
+                    <div id="load_more"  class="col-12 text-center mt-5">
+                        <button type="button" name="load_more_button" class="boxShowMore"  id="load_more_button">Berita lainnya</button>
                     </div>
 
                     <?php
@@ -107,13 +111,8 @@
                         };
 
                     ?>
-                   
                     </div>
 
-<<<<<<< HEAD
-                    <button class="btn btn-primary loadMoreNews">BUTTON</button>
-=======
->>>>>>> 684874faa07c7b67fb39abf63c244854009e8a2c
                 </div>
             </div>
         </section>
@@ -122,9 +121,7 @@
 <script>
    document.addEventListener('DOMContentLoaded', function () {
      var _token = $('input[name="_token"]').val();
-     load_data('', _token);
-     function load_data(id="", _token)
-     {
+     function load_data(id="", _token){
       $.ajax({
        url:"{{ route('loadmore.load_data') }}",
        method:"POST",
@@ -136,7 +133,7 @@
        }
       })
      }
-    
+
      $(document).on('click', '#load_more_button', function(){
       var id = $(this).data('id');
       $('#load_more_button').html('<b>Loading...</b>');

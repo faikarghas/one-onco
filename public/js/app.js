@@ -2291,17 +2291,6 @@ $(document).ready(function () {
       });
     }
   });
-}); // LOAD MORE
-
-var offestLoad = 4;
-offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
-var dataLoadNews = [];
-$('.loadMoreNews').on('click', function () {
-  console.log('test');
-  axios.get("/beritaload/".concat(offestLoad)).then(function (response) {
-    console.log(response);
-  });
-  offestLoad += 4;
 });
 
 /***/ }),

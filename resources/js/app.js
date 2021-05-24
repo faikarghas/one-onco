@@ -539,18 +539,3 @@ $(document).ready(function() {
 });
 
 
-// LOAD MORE
-
-let offestLoad = 4
-offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
-let dataLoadNews = []
-
-$('.loadMoreNews').on('click',function () {
-    console.log('test');
-
-    axios.get(`/beritaload/${offestLoad}`).then(function (response) {
-        console.log(response);
-    });
-    offestLoad+=4
-})
-

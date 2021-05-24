@@ -97,8 +97,14 @@ class BeritaDanJurnalController extends Controller
       return view ('v_beritaTerkiniDetail', $data);
   }
 
+  public function loadMoreNews($offset){
+    $listingNews = DB::table('artikel')->where('idKat',1)->skip(4)->take(16)->orderBy('id', 'DESC')->get();
+
+    return response()->json($listingNews);
+  }
+
   public function load_data(Request $request)
-  {  
+  {
     $slugKat = $request->segment(1);
     $listAttribute = $this->getPages($slugKat);
     $id_Kat = $listAttribute->id;
@@ -122,7 +128,6 @@ class BeritaDanJurnalController extends Controller
           ->limit(8)
           ->skip(5)
           ->get();
-        
       }
       else
       {
@@ -132,11 +137,10 @@ class BeritaDanJurnalController extends Controller
           ->limit(8)
           ->skip(5)
           ->get();
-          
       }
       $output = '';
       $last_id = '';
-      
+
       if(!$data->isEmpty())
       {
        foreach($data as $row)
@@ -149,7 +153,7 @@ class BeritaDanJurnalController extends Controller
             <div class="boxImage">
               <img src="/data_artikel/'.$row->imgDesktop.'" alt="">
             </div>
-            <div class="boxInformation">     
+            <div class="boxInformation">
                 <div class="title">
                     <h3 class="mt-2">'.$row->title.'</h3>
                     <p class="author">'.$row->shortContent.'</p>
