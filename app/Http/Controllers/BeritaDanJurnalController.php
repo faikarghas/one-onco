@@ -141,6 +141,8 @@ class BeritaDanJurnalController extends Controller
       {
        foreach($data as $row)
        {
+
+        $date =  date('d-M-Y', strtotime($row->publishDate));
         $output .= '
         <div class="col-12 col-lg-3 mt-5">
           <div class="boxNews smallBox">
@@ -153,7 +155,7 @@ class BeritaDanJurnalController extends Controller
                     <p class="author">'.$row->shortContent.'</p>
                 </div>
               <div class="dateFormat">
-                  <p>'.$row->publishDate.'</p>
+                  <p>'.$date.'</p>
               </div>
               </div>
           </div>

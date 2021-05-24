@@ -147,7 +147,6 @@
                    
                     </div>
 
-                    {{-- <button class="btn btn-primary loadMoreNews">BUTTON</button> --}}
                 </div>
             </div>
         </section>
