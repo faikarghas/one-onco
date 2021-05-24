@@ -6,9 +6,23 @@
                     <div class="container p-0">
                         <div class="row">
                             <div class="col-3 d-flex align-items-start justify-content-center">
+                                  <?php
+                                    $path = public_path('data_faskes\\'.$foto);
+                                   
+                                    $isExists = file_exists($path);
+                                    if ($isExists) {
+                                      $fotoDokter = $foto;
+                                    } else {
+                                      $fotoDokter = 'care_center.svg';
+                                    }
+                                ?>
                                 <div class="rounded_img">
-                                    <img width="100%" height="100%" src="{{asset("/images/care_center.svg")}}" alt="dokter" />
+
+                                    <img width="100%" height="100%" src="{{asset("/data_faskes/$fotoDokter")}}" alt="dokter" />
+                                
                                 </div>
+
+
                             </div>
                             <div class="col-9 d-flex flex-column align-items-start">
                                 <h3><strong>{{ $name }}</strong></h3>
@@ -76,9 +90,21 @@
                         <div class="container p-0">
                             <div class="row">
                                 <div class="col-3 d-flex align-items-center justify-content-center">
+                                    <?php
+                                        $foto = $row->foto;
+                                        $path = public_path('data_dokter\\'.$foto);
+                                        $isExists = file_exists($path);
+                                        if ($isExists) {
+                                            $fotoDokter = $foto;
+                                        } else {
+                                            $fotoDokter = 'doctor.svg';
+                                        }
+                                    ?>
                                     <div class="rounded_img">
-                                        <img width="100%" height="100%" src="{{asset("/images/doctor.svg")}}" alt="dokter" />
-                                    </div>
+
+                                        <img width="100%" height="100%" src="{{asset("/data_dokter/$fotoDokter")}}" alt="dokter" />
+                                    
+                                      </div>
                                 </div>
                                 <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                                     <div class="title_wrapper">

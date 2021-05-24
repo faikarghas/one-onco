@@ -10,18 +10,12 @@
                              <div class="rounded_img">
                               <?php
                               $foto = $row->foto;
-                              // $filename =  '/data_faskes/'.$foto;
-                              // if (file_exists($filename)) {
-                              //    echo $fotoDokter = $foto;
-                              //    } else {
-                              //    $fotoDokter = 'care_center.svg';
-                              // }
                               $path = public_path('/data_faskes/'.$foto);
                               $isExists = file_exists($path);
                               if ($isExists) {
-                                    $fotoDokter = $foto;
+                                 $fotoDokter = $foto;
                               } else {
-                                    $fotoDokter = 'care_center.svg';
+                                 $fotoDokter = 'care_center.svg';
                               }
                           ?>
                           <img width="100%" height="100%" src="{{asset("/data_faskes/$fotoDokter")}}" alt="care_center">
