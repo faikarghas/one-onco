@@ -51,9 +51,15 @@ class AuthController extends Controller
       ];
 
       $user = DB::table('users')->where('email', '=', $request->email)->first();
+      
+      if ($user === null) {
+        $msg = 'Email ini belum terdaftar sebagai akun. <a href="'. route('register') . '"> Daftar disni  </a>';
+        Session::flash('error', $msg);
+        return redirect()->route('login');
+      } else {
       $idVerification = $user->isVerified;
       if ($idVerification === 0 ) {
-        $msg = 'Email ini belum terdaftar sebagai akun. <a href="'. route('login') . '"> Daftar disni  </a>';
+        $msg = 'Email ini belum terverisifikasi. <a href="'. route('login') . '"> Daftar disni  </a>';
         Session::flash('error', $msg);
         return redirect()->route('login');
       } else {
@@ -81,6 +87,7 @@ class AuthController extends Controller
           Session::flash('error', 'Email atau password salah');
           return redirect()->route('login');
         }
+      }
       }
     }
     public function showFormRegister()
