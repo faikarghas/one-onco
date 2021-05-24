@@ -84,50 +84,26 @@
                         </div>
                     </div>
 
-                    {{-- <div class="col-12 mt-5">
-                        <div class="row">
-                            <div class="col-12 col-lg-3">
+                    <div class="col-12 mt-5">
+                        <div class="row" id="post_data">
+                            {{ csrf_field() }}   
+                            {{-- @foreach ($moreData as $row)
+                           
+                            <div class="col-12 col-lg-3 mt-5 ">
                                 @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
+                                    'date'=>$row->publishDate,
+                                    'title'=>strip_tags($row->title),
                                     'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
+                                    'author'=>$row->shortContent,
+                                    'path'=>Request::segment(1).'/'.$row->slug,
                                     'class'=>'smallBox'
                                 ))
                             </div>
-                            <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
-                            <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
-                            <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
+                            @endforeach --}}
+                           
+
                         </div>
-                    </div> --}}
+                    </div>
 
                     <?php
                         switch (Request::segment(1)) {
@@ -145,14 +121,40 @@
                         };
 
                     ?>
-                    <div class="col-12 text-center mt-5">
+                    {{-- <div class="col-12 text-center mt-5">
                         @include('components/presentational.boxShowMore',array(
                             'title'=>$pathButton,
                             'path'=>''
+                            // 'path'=>'/'.Request::segment(1).'/load_data'
                         ))
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
     </main>
 @endsection
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+     var _token = $('input[name="_token"]').val();
+     load_data('', _token);
+     function load_data(id="", _token)
+     {
+      $.ajax({
+       url:"{{ route('loadmore.load_data') }}",
+       method:"POST",
+       data:{id:id, _token:_token},
+       success:function(data)
+       {
+        $('#load_more_button').remove();
+        $('#post_data').append(data);
+       }
+      })
+     }
+    
+     $(document).on('click', '#load_more_button', function(){
+      var id = $(this).data('id');
+      $('#load_more_button').html('<b>Loading...</b>');
+      load_data(id, _token);
+     });
+    });
+</script>
