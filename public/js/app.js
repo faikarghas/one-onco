@@ -2291,23 +2291,22 @@ $(document).ready(function () {
       });
     }
   });
-}); // LOAD MORE
+  var offestLoad = 4;
+  offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
+  var dataLoadNews = [];
+  $('.loadMoreNews').click(function () {
+    console.log('test');
+    axios.get("/beritaload/".concat(offestLoad)).then(function (response) {
+      dataLoadNews.push(response.data); // dataLoadNews.map(function (i,val) {
+      //     html.boxNews()
+      // })
 
-var offestLoad = 4;
-offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
-var dataLoadNews = [];
-$('.loadMoreNews').click(function () {
-  console.log('test');
-  axios.get("/beritaload/".concat(offestLoad)).then(function (response) {
-    dataLoadNews.push(response.data); // dataLoadNews.map(function (i,val) {
-    //     html.boxNews()
-    // })
-
-    console.log(dataLoadNews[0]);
+      console.log(dataLoadNews[0]);
+    });
+    offestLoad++; // html.boxNews()
+    // console.log(dataLoadNews);
   });
-  offestLoad++; // html.boxNews()
-  // console.log(dataLoadNews);
-});
+}); // LOAD MORE
 
 /***/ }),
 
