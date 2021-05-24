@@ -85,13 +85,11 @@
                     </div>
 
                     <div class="col-12 mt-5">
-<<<<<<< HEAD
                         <div class="row" id="post_data">
                             {{ csrf_field() }}   
                             {{-- @foreach ($moreData as $row)
                            
                             <div class="col-12 col-lg-3 mt-5 ">
-=======
                         <div class="row boxListLoadMore">
                             {{-- <div class="col-12 col-lg-3">
                                 @include('components/presentational.boxNews',array(
@@ -114,7 +112,6 @@
                                 ))
                             </div>
                             <div class="col-12 col-lg-3">
->>>>>>> 4fe77c80f9ed86ae42bc959a7784effcd9aacf8f
                                 @include('components/presentational.boxNews',array(
                                     'date'=>$row->publishDate,
                                     'title'=>strip_tags($row->title),
@@ -123,14 +120,11 @@
                                     'path'=>Request::segment(1).'/'.$row->slug,
                                     'class'=>'smallBox'
                                 ))
-<<<<<<< HEAD
                             </div>
                             @endforeach --}}
                            
 
-=======
                             </div> --}}
->>>>>>> 4fe77c80f9ed86ae42bc959a7784effcd9aacf8f
                         </div>
                     </div>
 
@@ -156,13 +150,10 @@
                             'path'=>''
                             // 'path'=>'/'.Request::segment(1).'/load_data'
                         ))
-<<<<<<< HEAD
                     </div> --}}
-=======
                     </div>
 
                     {{-- <button class="btn btn-primary loadMoreNews">BUTTON</button> --}}
->>>>>>> 4fe77c80f9ed86ae42bc959a7784effcd9aacf8f
                 </div>
             </div>
         </section>
