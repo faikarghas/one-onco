@@ -67,8 +67,12 @@ Route::get('/sukses', function () {
 // Main
 
 Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
+
 Route::get('/cerita-survivor',[StoryController::class,'index']);
 Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
+Route::post('cerita-survivor/load_data',[StoryController::class,'load_data'])->name('loadmore_story.load_data');
+
+
 Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');
 Route::get('/get-more-faskes', [DirectoryController::class,'getMoreFaskes'])->name('faskes.get-more-faskes');
 Route::get('/get-more-komunitas', [DirectoryController::class,'getMoreKomunitas'])->name('faskes.get-more-komunitas');

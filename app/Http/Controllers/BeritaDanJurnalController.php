@@ -122,6 +122,7 @@ class BeritaDanJurnalController extends Controller
           ->limit(8)
           ->skip(5)
           ->get();
+         echo  $request->id;
         
       }
       else
@@ -132,7 +133,7 @@ class BeritaDanJurnalController extends Controller
           ->limit(8)
           ->skip(5)
           ->get();
-          
+          echo 'test';
       }
       $output = '';
       $last_id = '';

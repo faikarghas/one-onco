@@ -92,4 +92,65 @@ class StoryController extends Controller
                   );
       return view ('v_ceritaSurvivorDetail', $data);
     }
+  
+    public function load_data(Request $request)
+  {  
+    $slugKat = $request->segment(1);
+    $listAttribute = $this->getPages($slugKat);
+    $id_Kat = $listAttribute->id;
+
+    $test = "loadMore";
+
+    if($request->ajax())
+     {
+      if($request->id > 0)
+      {
+       $data = DB::table('artikel')
+          ->where('id','<', $request->id)
+          ->where('idKat', $id_Kat)
+          ->orderBy('publishDate', 'DESC')
+          ->limit(8)
+          ->skip(5)
+          ->get();
+        dd( $request->id);
+      }
+      $output = '';
+      $last_id = '';
+      
+      if(!$data->isEmpty())
+      {
+       foreach($data as $row)
+       {
+
+        $date =  date('d-M-Y', strtotime($row->publishDate));
+        $output .= '
+        <div class="col-12 col-lg-3 mt-5">
+          <div class="boxNews smallBox">
+            <div class="boxImage">
+              <img src="/data_artikel/'.$row->imgDesktop.'" alt="">
+            </div>
+            <div class="boxInformation">     
+                <div class="title">
+                    <h3 class="mt-2">'.$row->title.'</h3>
+                    <p class="author">'.$row->shortContent.'</p>
+                </div>
+              <div class="dateFormat">
+                  <p>'.$date.'</p>
+              </div>
+              </div>
+          </div>
+        </div>
+        ';
+        $last_id = $row->id;
+       }
+
+       
+      }
+      else
+      {
+      
+      }
+      echo $output;
+     }
+  }
 }
