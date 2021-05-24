@@ -31,7 +31,7 @@
                               </div>
                             @endif
                             <form action={{ asset('login') }} method="post" accept-charset="utf-8" >
-                            {{-- {{ csrf_field() }} --}}
+                            {{ csrf_field() }}  
                             @csrf
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="email"><img class="img-fluid" src="{{asset('/images/mail.png')}}" alt="" srcset=""></span>

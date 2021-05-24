@@ -87,43 +87,8 @@
                     <div class="col-12 mt-5">
                         <div class="row" id="post_data">
                             {{ csrf_field() }}   
-                            {{-- @foreach ($moreData as $row)
-                           
-                            <div class="col-12 col-lg-3 mt-5 ">
-                        <div class="row boxListLoadMore">
-                            {{-- <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
-                            <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$listingNews[0]->created_at,
-                                    'title'=>strip_tags($listingNews[0]->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$listingNews[0]->shortContent,
-                                    'path'=>Request::segment(1).'/'.$listingNews[0]->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
-                            <div class="col-12 col-lg-3">
-                                @include('components/presentational.boxNews',array(
-                                    'date'=>$row->publishDate,
-                                    'title'=>strip_tags($row->title),
-                                    'image_url'=>'https://source.unsplash.com/random',
-                                    'author'=>$row->shortContent,
-                                    'path'=>Request::segment(1).'/'.$row->slug,
-                                    'class'=>'smallBox'
-                                ))
-                            </div>
-                            @endforeach --}}
-                           
-
+                            
+                        
                             </div>
                         </div>
                     </div>
