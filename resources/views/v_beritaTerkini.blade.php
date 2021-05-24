@@ -124,7 +124,7 @@
                             @endforeach --}}
                            
 
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
 
@@ -144,13 +144,7 @@
                         };
 
                     ?>
-                    {{-- <div class="col-12 text-center mt-5">
-                        @include('components/presentational.boxShowMore',array(
-                            'title'=>$pathButton,
-                            'path'=>''
-                            // 'path'=>'/'.Request::segment(1).'/load_data'
-                        ))
-                    </div> --}}
+                   
                     </div>
 
                     {{-- <button class="btn btn-primary loadMoreNews">BUTTON</button> --}}
