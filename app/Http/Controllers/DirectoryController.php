@@ -232,26 +232,45 @@ public function getFaskesWithKabupaten($id) {
     // return json_encode($viewDokter);
   }
 
-  // public function lab(){
+  
+  public function getLabDetail($id,Request $request){
 
-  //   // GET variable from global data for website
-  //   $siteConfig   = DB::table('global_data')->first();
-  //   // check sebagai customer apa bukan
-  //   if(Session()->get('username')=="") {
-  //     $statusLogin = "<a href='/login'>LOGIN</a>";
-  //   } else {
-  //     $statusLogin = "<a href='/logout'>LOGOUT</a>";
-  //   }
+    // GET variable from global data for website
+    $siteConfig   = DB::table('global_data')->first();
 
-  //   $provinces = DB::table('indonesia_provinces')->pluck("name","id");
+    // view rumah sakit detail
+
+    $viewFaskes = DB::table('faskes')
+        ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif', 'faskes.foto','faskes.description')
+        ->where('faskes.faskesId', $id)->first();
 
 
-  //   // main page
-  //   $data = array('title' => $siteConfig->pvar2,
-  //                 'copyright'=>$siteConfig->pvar3,
-  //                 'statusLogin'=>$statusLogin
-  //               );
-  //   return view ('v_direktoriLab', $data,compact('provinces'));
-  // }
+    $namaFaskes = $viewFaskes->namaFaskes;
+    $addressFaskes = $viewFaskes->alamat;
+    $phoneFaskes = $viewFaskes->phone;
+    $phoneFax = $viewFaskes->fax;
+    $websiteFaskes = $viewFaskes->website;
+    $foto = $viewFaskes->foto;
+    $description = $viewFaskes->description;
+
+
+    
+    $provinces = DB::table('indonesia_provinces')->pluck("name","id");
+    $cities = DB::table('indonesia_provinces')->pluck("name","id");
+    $data = array('title' => $siteConfig->pvar2,
+                  'copyright'=>$siteConfig->pvar3,
+                  'name'=>$namaFaskes,
+                  'address'=>$addressFaskes,
+                  'fax'=>$phoneFax,
+                  'phone'=>$phoneFaskes,
+                  'website'=>$websiteFaskes,
+                  'provinces' => $provinces,
+                  'foto' => $foto,
+                  'cities' => $cities,
+                  'description' => $description,
+
+                );
+    return view ('v_direktoriLab', $data);
+  }
 
 }

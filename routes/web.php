@@ -84,7 +84,9 @@ Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskes
 Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
 
 Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
+
 Route::get('/direktori-lab',[DirectoryController::class,'lab']);
+Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
 
 
 Route::get('/direktori-care',[DirectoryController::class,'carehome']);
