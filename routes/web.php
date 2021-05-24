@@ -66,8 +66,6 @@ Route::get('/sukses', function () {
 
 // Main
 
-
-
 Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
 Route::get('/cerita-survivor',[StoryController::class,'index']);
 Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
@@ -96,6 +94,7 @@ Route::get('/berita-terkini',[BeritaDanJurnalController::class,'index']);
 Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'detail']);
 Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
 Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
+Route::get('beritaload/{offset}',[BeritaDanJurnalController::class,'loadMoreNews']);
 
 Route::post('/berita-terkini/load_data',[BeritaDanJurnalController::class,'load_data'])->name('loadmore.load_data');;
 

@@ -2291,7 +2291,22 @@ $(document).ready(function () {
       });
     }
   });
-});
+  var offestLoad = 4;
+  offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
+  var dataLoadNews = [];
+  $('.loadMoreNews').click(function () {
+    console.log('test');
+    axios.get("/beritaload/".concat(offestLoad)).then(function (response) {
+      dataLoadNews.push(response.data); // dataLoadNews.map(function (i,val) {
+      //     html.boxNews()
+      // })
+
+      console.log(dataLoadNews[0]);
+    });
+    offestLoad++; // html.boxNews()
+    // console.log(dataLoadNews);
+  });
+}); // LOAD MORE
 
 /***/ }),
 
@@ -2338,7 +2353,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "direktoriCareBox": () => /* binding */ direktoriCareBox,
 /* harmony export */   "direktoriLabBox": () => /* binding */ direktoriLabBox,
 /* harmony export */   "direktoriDoktorBox": () => /* binding */ direktoriDoktorBox,
-/* harmony export */   "direktoriLoader": () => /* binding */ direktoriLoader
+/* harmony export */   "direktoriLoader": () => /* binding */ direktoriLoader,
+/* harmony export */   "boxNews": () => /* binding */ boxNews
 /* harmony export */ });
 var baseUrl = window.location.origin;
 function direktoriCareBox(rs, alamat, website, link) {
@@ -2353,6 +2369,9 @@ function direktoriDoktorBox(link, dokter, unit, desc) {
 function direktoriLoader() {
   var loader = "<div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img skr\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper skr\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper skr\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   <div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   ";
   return loader;
+}
+function boxNews(params) {
+  $('.boxListLoadMore').append("<div class=\"col-12 col-lg-3\">\n      <div class=\"boxNews smallBox\">\n         <div class=\"boxImage\">\n            <img src=\"http://127.0.0.1:8000/data_artikel/https://source.unsplash.com/random\" alt=\"Selayang Pandang tentang Kanker Usus Besar\">\n         </div>\n         <div class=\"boxInformation\">\n            <div class=\"title\">\n               <h3 class=\"mt-2\">Selayang Pandang tentang Kanker Usus Besar</h3>\n               <p class=\"author\">Siloam Hospitals Manado bekerjasama dengan KALBE FARMA menyelenggarakan virtual health talk</p>\n            </div>\n            <div class=\"dateFormat\">\n               <p></p>\n               <a href=\"berita-terkini/selayang-pandang-tentang-kanker-usus-besar\" class=\"boxReadMore\">Baca selengkapnya <img class=\"img-fluid\" width=\"8px\" src=\"http://127.0.0.1:8000/images/arrow-white.png\" alt=\"arrow\"></a>        </div>\n            </div>\n         </div>\n   </div>");
 }
 
 /***/ }),
