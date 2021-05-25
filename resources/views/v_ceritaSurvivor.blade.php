@@ -62,11 +62,14 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-12 mt-5 text-center">
-                        @include('components/presentational.boxShowMore',array(
-                            'title'=>'Cerita inspiratif lainnya',
-                            'path'=>'{{ $pagesStory->links() }}'
-                        ))
+                    <div class="col-12 mt-5">
+                        <div class="row" id="post_data">
+                            {{ csrf_field() }}
+                            </div>
+                        </div>
+                    </div>
+                    <div id="load_more"  class="col-12 d-flex align-items-center justify-content-center mt-5">
+                        <button type="button" name="load_more_button" class="boxShowMore d-flex align-items-center justify-content-center"  id="loadMoreNews">Cerita inspirasi lainnya</button>
                     </div>
                 </div>
             </div>

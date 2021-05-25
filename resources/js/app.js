@@ -536,6 +536,43 @@ $(document).ready(function() {
           });
         }
      });
+
+    // LOAD MORE
+
+    let offestLoad = 5
+    offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
+    let idKat = location.pathname
+    switch (idKat) {
+        case '/berita-terkini':
+            idKat = 1
+            break;
+        case '/cerita-survivor':
+            idKat = 3
+            break;
+        case '/artikel-kanker':
+            idKat = 5
+            break;
+        default:
+            break;
+    }
+    console.log(idKat);
+
+    $('#loadMoreNews').on('click',function () {
+        let thisGlob = $(this)
+        $(this).html('<div class="lds-dual-ring"></div>')
+        axios.get(`/beritaload/${offestLoad}/${idKat}`).then(function (response) {
+            console.log(response);
+            response.data.forEach(element => {
+                console.log(element);
+                html.boxNews(element.title,element.imgDesktop,element.shortContent,element.slug,element.publishDate)
+            });
+            thisGlob.html('Berita Lainnya')
+        });
+        offestLoad+=8
+    })
+
 });
+
+
 
 

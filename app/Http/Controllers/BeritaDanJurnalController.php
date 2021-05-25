@@ -29,9 +29,9 @@ class BeritaDanJurnalController extends Controller
       $listingStory  = $model->all_kategori($id_kategori);
 
       // listing news 3 rows
-      // $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      // $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(5)->orderBy('publishDate', 'DESC')->get();
       $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->orderBy('publishDate', 'DESC')->paginate(5);
-      //dd($listingNews);
+      // dd($listingNews);
 
       $moreDatas = Artikel_model::select('*')->limit(8)->skip('5')->get();
       //dd($moreDatas);
@@ -97,91 +97,10 @@ class BeritaDanJurnalController extends Controller
       return view ('v_beritaTerkiniDetail', $data);
   }
 
-  public function loadMoreNews($offset){
-    $listingNews = DB::table('artikel')->where('idKat',1)->skip(4)->take(16)->orderBy('id', 'DESC')->get();
+  public function loadMore($offset,$idKat){
+    $data = DB::table('artikel')->where('idKat',$idKat)->skip($offset)->take(8)->orderBy('publishDate', 'DESC')->get();
 
-    return response()->json($listingNews);
+    return response()->json($data);
   }
 
-  public function load_data(Request $request)
-  {
-    $slugKat = $request->segment(1);
-    $listAttribute = $this->getPages($slugKat);
-    $id_Kat = $listAttribute->id;
-
-    $test = "loadMore";
-
-    if ($slugKat == 'berita-terkini') {
-      $test = "Berita lainnya";
-    } else {
-      $test = "Artikel lainnnya";
-    }
-
-    if($request->ajax())
-     {
-      if($request->id > 0)
-      {
-       $data = DB::table('artikel')
-          ->where('id', '<', $request->id)
-          ->where('idKat', $id_Kat)
-          ->orderBy('publishDate', 'DESC')
-          ->limit(8)
-          ->skip(5)
-          ->get();
-      }
-      else
-      {
-       $data = DB::table('artikel')
-          ->where('idKat', $id_Kat)
-          ->orderBy('publishDate', 'DESC')
-          ->limit(8)
-          ->skip(5)
-          ->get();
-      }
-      $output = '';
-      $last_id = '';
-
-      if(!$data->isEmpty())
-      {
-       foreach($data as $row)
-       {
-
-        $date =  date('d-M-Y', strtotime($row->publishDate));
-        $output .= '
-        <div class="col-12 col-lg-3 mt-5">
-          <div class="boxNews smallBox">
-            <div class="boxImage">
-              <img src="/data_artikel/'.$row->imgDesktop.'" alt="">
-            </div>
-            <div class="boxInformation">
-                <div class="title">
-                    <h3 class="mt-2">'.$row->title.'</h3>
-                    <p class="author">'.$row->shortContent.'</p>
-                </div>
-              <div class="dateFormat">
-                  <p>'.$date.'</p>
-              </div>
-              </div>
-          </div>
-        </div>
-        ';
-        $last_id = $row->id;
-       }
-       $output .= '
-       <div id="load_more"  class="col-12 text-center mt-5">
-        <button type="button" name="load_more_button" class="boxShowMore" data-id="'.$last_id.'" id="load_more_button">'.$test.'</button>
-       </div>
-       ';
-      }
-      else
-      {
-       $output .= '
-       <div id="load_more"  class="col-12 text-center mt-5">
-        <button type="button" name="load_more_button" class="btn btn-info form-control">No Data Found</button>
-       </div>
-       ';
-      }
-      echo $output;
-     }
-  }
 }
