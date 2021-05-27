@@ -5,17 +5,16 @@
                 <div class="container p-0">
                     <div class="row">
                         <div class="col-3 d-flex align-items-center justify-content-center">
-                            <?php 
+                            <?php
                                    $path = public_path('data_dokter\\'.$foto);
                                     $isExists = file_exists($path);
                                     if ($isExists) {
                                         $fotoDokter = $foto;
                                     } else {
                                         $fotoDokter = 'doctor.svg';
-                                    }    
+                                    }
                                 ?>
                             <div class="rounded_img">
-                                
                                 <img width="100%" height="100%" src="{{ asset("/data_dokter/$foto") }}" alt="dokter" />
                             </div>
                         </div>
@@ -41,7 +40,7 @@
         @foreach($dokterPraktek as $row)
         <div class="col-12 col-md-6">
             <div class="box__rec3 box-sh">
-                <a href="/direktori-care/{{ $row->faskesId }}">
+                <a href="{{url('/direktori-care')}}/{{ $row->faskesId }}">
                     <div class="container p-0">
                         <div class="row">
                             <div class="col-3 d-flex align-items-center justify-content-center">
