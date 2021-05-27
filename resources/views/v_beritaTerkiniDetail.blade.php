@@ -46,8 +46,8 @@
                             <div class="share_sosmed-act">
                                 <ul>
                                     <li>
-                                        <a href="/belanja-sehat"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
-                                        <a href="/konsultasi-online"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/belanja-sehat')}}"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/konsultasi-online')}}"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
                                     </li>
                                 </ul>
                             </div>
@@ -115,8 +115,8 @@
                             <div class="share_sosmed-act">
                                 <ul>
                                     <li>
-                                        <a href="/belanja-sehat"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
-                                        <a href="/konsultasi-online"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/belanja-sehat')}}"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/konsultasi-online')}}"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
                                     </li>
                                 </ul>
                             </div>
@@ -134,3 +134,13 @@
         @include('/components/presentational.newsList',[])
     </main>
 @endsection
+
+
+
+
+
+
+
+
+
+

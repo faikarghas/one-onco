@@ -3,7 +3,7 @@
 @else
 <div class="box__rec" style="background-color: {{$bgColor}}">
 @endif
-    <a href="/{{$path}}" class="d-block h-100">
+    <a href="{{url($path)}}" class="d-block h-100">
         <div class="container" >
             <div class="row">
                 <div class="col-3 d-flex align-items-center justify-content-center">

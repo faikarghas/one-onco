@@ -47,8 +47,8 @@
                             <div class="share_sosmed-act">
                                 <ul>
                                     <li>
-                                        <a href="/belanja-sehat"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
-                                        <a href="/konsultasi-online"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/belanja-sehat')}}"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/konsultasi-online')}}"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
                                     </li>
                                 </ul>
                             </div>
@@ -67,7 +67,6 @@
                                             <a href="{{$row->slug}}">
                                             <div class="boxInformation">
                                                 <div class="title">
-                                                    {{-- <span>{{ $row->created_at }}</span> --}}
                                                     <h3 class="mt-2 mb-4">{{ $row->title }}</h3>
                                                     <?php 
                                                     $yearCurrent  = date('Y');
@@ -104,8 +103,8 @@
                             <div class="share_sosmed-act">
                                 <ul>
                                     <li>
-                                        <a href="/belanja-sehat"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
-                                        <a href="/konsultasi-online"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/belanja-sehat')}}"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/konsultasi-online')}}"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
                                     </li>
                                 </ul>
                             </div>

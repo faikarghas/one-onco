@@ -18,8 +18,7 @@
                                  $fotoDokter = 'care_center.svg';
                               }
                           ?>
-                          <img width="100%" height="100%" src="{{asset("/data_faskes/$fotoDokter")}}" alt="care_center">
-                             
+                              <img width="100%" height="100%" src="{{asset("/data_faskes/$fotoDokter")}}" alt="care_center">
                               </div>
                           </div>
                           <div class="col-7 d-flex flex-column align-items-start justify-content-center">

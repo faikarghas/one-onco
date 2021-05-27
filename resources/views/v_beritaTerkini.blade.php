@@ -91,10 +91,6 @@
                         </div>
                     </div>
 
-                    {{-- <div id="load_more"  class="col-12 text-center mt-5">
-                        <button type="button" name="load_more_button" class="boxShowMore"  id="load_more_button">Berita lainnya</button>
-                    </div> --}}
-
                     <div id="load_more"  class="col-12 d-flex align-items-center justify-content-center mt-5">
                         <button type="button" name="load_more_button" class="boxShowMore d-flex align-items-center justify-content-center"  id="loadMoreNews">Berita lainnya</button>
                     </div>

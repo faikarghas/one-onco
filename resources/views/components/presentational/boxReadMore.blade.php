@@ -1,1 +1,1 @@
-<a href="{{$path}}" class="boxReadMore">{{$title}} <img class="img-fluid" width="8px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
+<a href="{{url($path)}}" class="boxReadMore">{{$title}} <img class="img-fluid" width="8px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>

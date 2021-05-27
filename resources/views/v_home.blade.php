@@ -26,16 +26,16 @@
                     <div class="col-8 position-relative">
                         <nav>
                             <ul>
-                                <li><a href="/tentang-kami">Tentang Kami</a></li>
-                                <li><a href="/untuk-pasien">Untuk Pasien</a></li>
-                                <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
-                                <li><a href="/cerita-survivor">Cerita Inspiratif</a></li>
+                                <li><a href="{{url('/tentang-kami')}}">Tentang Kami</a></li>
+                                <li><a href="{{url('/untuk-pasien')}}">Untuk Pasien</a></li>
+                                <li><a href="{{url('/untuk-pendamping')}}">Untuk Pendamping</a></li>
+                                <li><a href="{{url('/cerita-survivor')}}">Cerita Inspiratif</a></li>
                                 <li class="show_menu">
                                     <a href="/berita-terkini">Artikel & Berita Terkini</a>
                                     <div class="sub_menu">
                                         <ul>
-                                            <li><a href="/berita-terkini">Berita Terkini</a></li>
-                                            <li><a href="/artikel-kanker">Artikel Kanker</a></li>
+                                            <li><a href="{{url('/berita-terkini')}}">Berita Terkini</a></li>
+                                            <li><a href="{{url('/artikel-kanker')}}">Artikel Kanker</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -46,12 +46,12 @@
                         <nav>
                             <ul class="userAction">
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
+                                <li><a href="{{url('/login')}}"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
                                 @if (Auth::check())
-                                    <li><a href='/logout'>LOGOUT</a></li>
-                                    <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                                    <li><a href='{{url('/logout')}}'>LOGOUT</a></li>
+                                    <li><a href="{{url('/pengaturan')}}"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
                                 @else
-                                    <li><a href='/login'>LOGIN</a></li>
+                                    <li><a href='{{url('/login')}}'>LOGIN</a></li>
                                     <li></li>
                                 @endif
                             </ul>
@@ -130,7 +130,7 @@
                     <div class="col-6 position-relative">
                         <div class="user">
                             <ul>
-                                <li><a href="/login"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
+                                <li><a href="{{url('/login')}}"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
                                 <li>{!! $statusLogin !!}</li>
                             </ul>
                         </div>
@@ -160,8 +160,7 @@
                     <h4 class="text-white text-center" id="titleSurM">"Selamat pagi, jangan menyerah!"</h4>
                     <p class="text-white text-center mb-4" id="shortSurM"><i>Angelina Ong, cancer sruvivor 2019</i></p>
                     {{-- <a class="boxReadStory" href="cerita-survivor/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a> --}}
-                    <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a>
-
+                    <a class="boxReadStory" href="{{url('cerita-survivor')}}">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a>
                 </div>
                 <div class="halfBoxRounded"></div>
             </div>

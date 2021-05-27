@@ -71,21 +71,21 @@
             <div class="col-12 col-lg-6 mt-5">
                 <div class="sitemap">
                     <ul>
-                        <li><a href="/tentang-kami">Tentang Kami</a></li>
-                        <li><a href="/untuk-pasien">Untuk Pasien</a></li>
-                        <li><a href="/untuk-pendamping">Untuk Pendamping</a></li>
-                        <li><a href="/cerita-survivor">Cerita Inspiratif</a></li>
-                        <li><a href="/berita-terkini">Artikel & Berita Terkini</a></li>
-                        <li><a href="/partner-kami">Partner Kami</a></li>
+                        <li><a href="{{url('/tentang-kami')}}">Tentang Kami</a></li>
+                        <li><a href="{{url('/untuk-pasien')}}">Untuk Pasien</a></li>
+                        <li><a href="{{url('/untuk-pendamping')}}">Untuk Pendamping</a></li>
+                        <li><a href="{{url('/cerita-survivor')}}">Cerita Inspiratif</a></li>
+                        <li><a href="{{url('/berita-terkini')}}">Artikel & Berita Terkini</a></li>
+                        <li><a href="{{url('/partner-kami')}}">Partner Kami</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-12 col-lg-6 mt-5">
                 <div class="sitemap2">
                     <ul class="m-0  d-flex align-items-center">
-                        <li><a href="/syaratdanketentuan/">Syarat & Ketentuan</a></li>
-                        <li><a href="/syaratdanketentuan/kebijakan-privasi">Kebijakan Privasi</a></li>
-                        <li><a href="/syaratdanketentuan/faq">FAQ</a></li>
+                        <li><a href="{{url('/syaratdanketentuan')}}">Syarat & Ketentuan</a></li>
+                        <li><a href="{{url('/syaratdanketentuan/kebijakan-privasi')}}">Kebijakan Privasi</a></li>
+                        <li><a href="{{url('/syaratdanketentuan/faq')}}">FAQ</a></li>
                     </ul>
                 </div>
             </div>
