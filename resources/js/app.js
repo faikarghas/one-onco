@@ -2,7 +2,7 @@ require('./bootstrap');
 const { default: axios } = require('axios');
 var html = require('./html')
 // CONTENT FOR SPECIFIC TIME PERIOD
-let baseUrl = window.location.origin
+let baseUrl = window.location.origin + '/oneonco'
 
 
 // MENU HAMBURGER
@@ -74,7 +74,7 @@ $('#selectLokasiKanker').change(function(){
 
     if (data !== "null") {
         $('#selectJenisKanker').removeAttr( "disabled" )
-            axios.get(`/jenisKanker/get/${data}`).then(function (response) {
+            axios.get(`${baseUrl}/jenisKanker/get/${data}`).then(function (response) {
             // handle success
             $('select[name="jenisKanker"]').empty();
             kankerData['jenis'] =  Object.values(response.data)[0].toLowerCase().split(' ').join('-');
@@ -124,7 +124,7 @@ $('#selectCities').change(function(){
         $('#selectFasekes').attr( "disabled","disabled")
         $('#selectFasekes option').empty().remove()
 
-        axios.get(`/cities/get/${data}`).then(function (response) {
+        axios.get(`${baseUrl}/cities/get/${data}`).then(function (response) {
             $('select[name="faskes"]').empty();
             $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
             $.each(response.data, function(key, value){
@@ -132,7 +132,7 @@ $('#selectCities').change(function(){
                 $('select[name="faskes"]').append(new Option(value, key));
             });
 
-            axios.get(`/dokter/get/${data}`).then(function (response) {
+            axios.get(`${baseUrl}/dokter/get/${data}`).then(function (response) {
                 // console.log(data);
                 $('.direktori__list .listDokter').empty();
                 i = 0;
@@ -155,7 +155,7 @@ $('#selectFaskes').change(function(){
         $('.direktori__list .listDokter').empty();
         $('.direktori__list .listDokter').append(html.direktoriLoader())
 
-        axios.get(`/dokterWithKabupaten/get/${data}`).then(function (response) {
+        axios.get(`${baseUrl}/dokterWithKabupaten/get/${data}`).then(function (response) {
             $('.direktori__list .listDokter').empty();
             if (response.data.length != 0) {
                 $.each(response.data, function(i, dokter ){
@@ -184,7 +184,7 @@ $('#selectCitiesM').change(function(){
         $('#selectFasekes').attr( "disabled","disabled")
         $('#selectFasekes option').empty().remove()
 
-        axios.get(`/cities/get/${data}`).then(function (response) {
+        axios.get(`${baseUrl}/cities/get/${data}`).then(function (response) {
             $('select[name="faskes"]').empty();
             $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
             $.each(response.data, function(key, value){
@@ -192,7 +192,7 @@ $('#selectCitiesM').change(function(){
                 $('select[name="faskes"]').append(new Option(value, key));
             });
 
-            axios.get(`/dokter/get/${data}`).then(function (response) {
+            axios.get(`${baseUrl}/dokter/get/${data}`).then(function (response) {
                 // console.log(data);
                 $('.direktori__list .listDokter').empty();
                 i = 0;
@@ -215,7 +215,7 @@ $('#selectFaskesM').change(function(){
         $('.direktori__list .listDokter').empty();
         $('.direktori__list .listDokter').append(html.direktoriLoader())
 
-        axios.get(`/dokterWithKabupaten/get/${data}`).then(function (response) {
+        axios.get(`${baseUrl}/dokterWithKabupaten/get/${data}`).then(function (response) {
             $('.direktori__list .listDokter').empty();
             if (response.data.length != 0) {
                 $.each(response.data, function(i, dokter ){
@@ -238,7 +238,7 @@ $('#selectProvinces2').change(function(){
   let data= $(this).val();
   // console.log(data);
   if (data !== "null") {
-      axios.get(`/faskesWithPropinsi/get/${data}`).then(function (response) {
+      axios.get(`${baseUrl}/faskesWithPropinsi/get/${data}`).then(function (response) {
           $('select[name="faskes2"]').empty();
           $('select[name="faskes2"]').append('<option value=""> Pilih Rumah Sakit</option>');
           $.each(response.data, function(key, value){
@@ -257,7 +257,7 @@ $('#selectFaskes2').change(function(){
   $('.direktori__list .listFaskes2').empty();
   let data= $(this).val();
   if (data !== "null") {
-      axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
+      axios.get(`${baseUrl}/faskesWithKabupaten/get/${data}`).then(function (response) {
         $.each(response.data, function(i, dokter ){
           display = response.data;
           html.direktoriLabBox()
@@ -278,7 +278,7 @@ $('#selectProvinces3').change(function(){
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader())
-      axios.get(`/cities/get/${data}`).then(function (response) {
+      axios.get(`${baseUrl}/cities/get/${data}`).then(function (response) {
           $('select[name="cities3"]').empty();
           $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
           $.each(response.data, function(key, value){
@@ -288,7 +288,7 @@ $('#selectProvinces3').change(function(){
 
           console.log(response.data);
 
-          axios.get(`/faskes/get/${data}`).then(function (response) {
+          axios.get(`${baseUrl}/faskes/get/${data}`).then(function (response) {
               $('.direktori__list .listFaskes').empty();
             // //   i = 0;
             //   $.each(response.data, function(i, dokter ){
@@ -320,7 +320,7 @@ $('#selectCities3').change(function(){
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader())
-    axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
+    axios.get(`${baseUrl}/faskesWithKabupaten/get/${data}`).then(function (response) {
         $('.direktori__list .listFaskes').empty();
         if (response.data.length != 0) {
             $.each(response.data, function(i, dokter ){
@@ -344,7 +344,7 @@ $('#selectProvinces4').change(function(){
     if (data !== "null") {
       $('.direktori__list .listFaskes').empty();
       $('.direktori__list .listFaskes').append(html.direktoriLoader())
-        axios.get(`/cities/get/${data}`).then(function (response) {
+        axios.get(`${baseUrl}/cities/get/${data}`).then(function (response) {
             $('select[name="cities3"]').empty();
             $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
             $.each(response.data, function(key, value){
@@ -354,7 +354,7 @@ $('#selectProvinces4').change(function(){
 
             console.log(response.data);
 
-            axios.get(`/faskes/get/${data}`).then(function (response) {
+            axios.get(`${baseUrl}/faskes/get/${data}`).then(function (response) {
                 $('.direktori__list .listFaskes').empty();
                 //i = 0;
                 $.each(response.data, function(i, dokter ){
@@ -379,7 +379,7 @@ let data= $(this).val();
 if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader())
-    axios.get(`/faskesWithKabupaten/get/${data}`).then(function (response) {
+    axios.get(`${baseUrl}/faskesWithKabupaten/get/${data}`).then(function (response) {
         $('.direktori__list .listFaskes').empty();
         if (response.data.length != 0) {
             $.each(response.data, function(i, dokter ){
@@ -560,7 +560,7 @@ $(document).ready(function() {
     $('#loadMoreNews').on('click',function () {
         let thisGlob = $(this)
         $(this).html('<div class="lds-dual-ring"></div>')
-        axios.get(`/beritaload/${offestLoad}/${idKat}`).then(function (response) {
+        axios.get(`${baseUrl}/beritaload/${offestLoad}/${idKat}`).then(function (response) {
             console.log(response);
             response.data.forEach(element => {
                 console.log(element);

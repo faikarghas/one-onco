@@ -1848,7 +1848,7 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 var html = __webpack_require__(/*! ./html */ "./resources/js/html.js"); // CONTENT FOR SPECIFIC TIME PERIOD
 
 
-var baseUrl = window.location.origin; // MENU HAMBURGER
+var baseUrl = window.location.origin + '/oneonco'; // MENU HAMBURGER
 
 $('#menu-hamburger').click(function (params) {
   $('#menu-hamburger').toggleClass('open');
@@ -1906,7 +1906,7 @@ $('#selectLokasiKanker').change(function () {
 
   if (data !== "null") {
     $('#selectJenisKanker').removeAttr("disabled");
-    axios.get("/jenisKanker/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/jenisKanker/get/").concat(data)).then(function (response) {
       // handle success
       $('select[name="jenisKanker"]').empty();
       kankerData['jenis'] = Object.values(response.data)[0].toLowerCase().split(' ').join('-');
@@ -1941,14 +1941,14 @@ $('#selectCities').change(function () {
     $('.direktori__list .listDokter').append(html.direktoriLoader());
     $('#selectFasekes').attr("disabled", "disabled");
     $('#selectFasekes option').empty().remove();
-    axios.get("/cities/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/cities/get/").concat(data)).then(function (response) {
       $('select[name="faskes"]').empty();
       $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
         // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
         $('select[name="faskes"]').append(new Option(value, key));
       });
-      axios.get("/dokter/get/".concat(data)).then(function (response) {
+      axios.get("".concat(baseUrl, "/dokter/get/").concat(data)).then(function (response) {
         // console.log(data);
         $('.direktori__list .listDokter').empty();
         i = 0;
@@ -1970,7 +1970,7 @@ $('#selectFaskes').change(function () {
   if (data !== "null") {
     $('.direktori__list .listDokter').empty();
     $('.direktori__list .listDokter').append(html.direktoriLoader());
-    axios.get("/dokterWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/dokterWithKabupaten/get/").concat(data)).then(function (response) {
       $('.direktori__list .listDokter').empty();
 
       if (response.data.length != 0) {
@@ -1994,14 +1994,14 @@ $('#selectCitiesM').change(function () {
     $('.direktori__list .listDokter').append(html.direktoriLoader());
     $('#selectFasekes').attr("disabled", "disabled");
     $('#selectFasekes option').empty().remove();
-    axios.get("/cities/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/cities/get/").concat(data)).then(function (response) {
       $('select[name="faskes"]').empty();
       $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
         // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
         $('select[name="faskes"]').append(new Option(value, key));
       });
-      axios.get("/dokter/get/".concat(data)).then(function (response) {
+      axios.get("".concat(baseUrl, "/dokter/get/").concat(data)).then(function (response) {
         // console.log(data);
         $('.direktori__list .listDokter').empty();
         i = 0;
@@ -2023,7 +2023,7 @@ $('#selectFaskesM').change(function () {
   if (data !== "null") {
     $('.direktori__list .listDokter').empty();
     $('.direktori__list .listDokter').append(html.direktoriLoader());
-    axios.get("/dokterWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/dokterWithKabupaten/get/").concat(data)).then(function (response) {
       $('.direktori__list .listDokter').empty();
 
       if (response.data.length != 0) {
@@ -2044,7 +2044,7 @@ $('#selectProvinces2').change(function () {
   var data = $(this).val(); // console.log(data);
 
   if (data !== "null") {
-    axios.get("/faskesWithPropinsi/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/faskesWithPropinsi/get/").concat(data)).then(function (response) {
       $('select[name="faskes2"]').empty();
       $('select[name="faskes2"]').append('<option value=""> Pilih Rumah Sakit</option>');
       $.each(response.data, function (key, value) {
@@ -2063,7 +2063,7 @@ $('#selectFaskes2').change(function () {
   var data = $(this).val();
 
   if (data !== "null") {
-    axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/faskesWithKabupaten/get/").concat(data)).then(function (response) {
       $.each(response.data, function (i, dokter) {
         display = response.data;
         html.direktoriLabBox();
@@ -2078,7 +2078,7 @@ $('#selectProvinces3').change(function () {
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader());
-    axios.get("/cities/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/cities/get/").concat(data)).then(function (response) {
       $('select[name="cities3"]').empty();
       $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
@@ -2086,7 +2086,7 @@ $('#selectProvinces3').change(function () {
         $('select[name="cities3"]').append(new Option(value, key));
       });
       console.log(response.data);
-      axios.get("/faskes/get/".concat(data)).then(function (response) {
+      axios.get("".concat(baseUrl, "/faskes/get/").concat(data)).then(function (response) {
         $('.direktori__list .listFaskes').empty(); // //   i = 0;
         //   $.each(response.data, function(i, dokter ){
         //     display = response.data;
@@ -2112,7 +2112,7 @@ $('#selectCities3').change(function () {
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader());
-    axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/faskesWithKabupaten/get/").concat(data)).then(function (response) {
       $('.direktori__list .listFaskes').empty();
 
       if (response.data.length != 0) {
@@ -2134,7 +2134,7 @@ $('#selectProvinces4').change(function () {
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader());
-    axios.get("/cities/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/cities/get/").concat(data)).then(function (response) {
       $('select[name="cities3"]').empty();
       $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
@@ -2142,7 +2142,7 @@ $('#selectProvinces4').change(function () {
         $('select[name="cities3"]').append(new Option(value, key));
       });
       console.log(response.data);
-      axios.get("/faskes/get/".concat(data)).then(function (response) {
+      axios.get("".concat(baseUrl, "/faskes/get/").concat(data)).then(function (response) {
         $('.direktori__list .listFaskes').empty(); //i = 0;
 
         $.each(response.data, function (i, dokter) {
@@ -2164,7 +2164,7 @@ $('#selectCities4').change(function () {
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader());
-    axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/faskesWithKabupaten/get/").concat(data)).then(function (response) {
       $('.direktori__list .listFaskes').empty();
 
       if (response.data.length != 0) {
@@ -2317,7 +2317,7 @@ $(document).ready(function () {
   $('#loadMoreNews').on('click', function () {
     var thisGlob = $(this);
     $(this).html('<div class="lds-dual-ring"></div>');
-    axios.get("/beritaload/".concat(offestLoad, "/").concat(idKat)).then(function (response) {
+    axios.get("".concat(baseUrl, "/beritaload/").concat(offestLoad, "/").concat(idKat)).then(function (response) {
       console.log(response);
       response.data.forEach(function (element) {
         console.log(element);
@@ -2403,7 +2403,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "direktoriLoader": () => /* binding */ direktoriLoader,
 /* harmony export */   "boxNews": () => /* binding */ boxNews
 /* harmony export */ });
-var baseUrl = window.location.origin;
+var baseUrl = window.location.origin + '/oneonco';
 
 var func = __webpack_require__(/*! ./functions */ "./resources/js/functions.js");
 
