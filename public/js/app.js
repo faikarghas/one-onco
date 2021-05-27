@@ -1848,7 +1848,7 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 var html = __webpack_require__(/*! ./html */ "./resources/js/html.js"); // CONTENT FOR SPECIFIC TIME PERIOD
 
 
-var baseUrl = window.location.origin + '/oneonco'; // MENU HAMBURGER
+var baseUrl = window.location.origin; // MENU HAMBURGER
 
 $('#menu-hamburger').click(function (params) {
   $('#menu-hamburger').toggleClass('open');
@@ -2403,7 +2403,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "direktoriLoader": () => /* binding */ direktoriLoader,
 /* harmony export */   "boxNews": () => /* binding */ boxNews
 /* harmony export */ });
-var baseUrl = window.location.origin + '/oneonco';
+var baseUrl = window.location.origin;
 
 var func = __webpack_require__(/*! ./functions */ "./resources/js/functions.js");
 

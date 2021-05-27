@@ -1,4 +1,4 @@
-var baseUrl = window.location.origin + '/oneonco'
+var baseUrl = window.location.origin 
 var func = require('./functions')
 
 export function direktoriCareBox(rs,alamat,website,link) {
