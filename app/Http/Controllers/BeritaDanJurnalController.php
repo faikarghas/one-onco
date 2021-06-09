@@ -120,7 +120,7 @@ class BeritaDanJurnalController extends Controller
           ->skip(5)
           ->get();
          echo  $request->id;
-        
+
       }
       else
       {
@@ -134,7 +134,7 @@ class BeritaDanJurnalController extends Controller
       }
       $output = '';
       $last_id = '';
-      
+
       if(!$data->isEmpty())
       {
        foreach($data as $row)
@@ -147,7 +147,7 @@ class BeritaDanJurnalController extends Controller
             <div class="boxImage">
               <img src="/data_artikel/'.$row->imgDesktop.'" alt="">
             </div>
-            <div class="boxInformation">     
+            <div class="boxInformation">
                 <div class="title">
                     <h3 class="mt-2">'.$row->title.'</h3>
                     <p class="author">'.$row->shortContent.'</p>
