@@ -64,7 +64,6 @@
                     </div>
                     <div class="col-12 mt-5">
                         <div class="row" id="post_data">
-<<<<<<< HEAD
                             {{ csrf_field() }}      
                             </div>
                         </div>
@@ -75,14 +74,6 @@
                             'title'=>'Cerita inspiratif lainnya',
                             'path'=>''
                         ))
-=======
-                            {{ csrf_field() }}
-                            </div>
-                        </div>
-                    </div>
-                    <div id="load_more"  class="col-12 d-flex align-items-center justify-content-center mt-5">
-                        <button type="button" name="load_more_button" class="boxShowMore d-flex align-items-center justify-content-center"  id="loadMoreNews">Cerita inspirasi lainnya</button>
->>>>>>> 0bcabb6986921c008cc9fd87e3209aaa787f1942
                     </div>
                 </div>
             </div>
