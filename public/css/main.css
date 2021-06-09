@@ -1907,6 +1907,7 @@ button.boxReadMore {
   font-size: 1.6rem;
   color: black;
   font-weight: 600;
+  text-align: justify;
 }
 @media only screen and (max-width: 62em) {
   .second__section p {

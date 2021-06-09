@@ -2,7 +2,7 @@ require('./bootstrap');
 const { default: axios } = require('axios');
 var html = require('./html')
 // CONTENT FOR SPECIFIC TIME PERIOD
-let baseUrl = window.location.origin 
+let baseUrl = window.location.origin;
 
 
 // MENU HAMBURGER
