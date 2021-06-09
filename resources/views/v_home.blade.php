@@ -196,7 +196,7 @@
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
-                                'path'=>'login'
+                                'path'=>'direktori-dokter'
                             ))
                         </div>
                         <div class="col-12 col-md-6">
@@ -206,7 +206,7 @@
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#C6CB57;',
                                 'colorPar'=>'#808080;',
-                                'path'=>'login'
+                                'path'=>'konsultasi-online'
                             ))
                         </div>
                     </div>
