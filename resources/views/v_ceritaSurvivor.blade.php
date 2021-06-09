@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-12 mt-5">
                         <div class="row" id="post_data">
-                            {{ csrf_field() }}      
+                            {{ csrf_field() }}
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
             }
             })
         }
-   
+
      });
 
  </script>

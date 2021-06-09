@@ -28,7 +28,7 @@
 
                                 <p class="m-0"><strong>Data Diri</strong></p>
                                 <div class="input-group mb-4">
-                                    <input type="text" class="form-control" placeholder="Nama Lengkap" aria-label="nama" name="name" value="{{ old('name') }}">
+                                    <input type="text" class="form-control" placeholder="Nama Lengkap*" aria-label="nama" name="name" value="{{ old('name') }}">
                                 </div>
                                 <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                                 <div class="input-group mb-4">
@@ -43,6 +43,7 @@
                                   <input type="text" class="form-control" placeholder="Nomor ponsel*" aria-label="wa" name="phone" value="{{ old('phone') }}">
                               </div>
                               <span class="text-danger">@error('phone'){{ $message }} @enderror</span>
+                              <p><i>*Harus diisi</i></p>
                               <br>
                                 <p><i>Kami ingin mengenal Anda! Ceritakan kesukaan Anda agar kami dapat memberikan informasi yang menarik untuk Anda</i></p>
                                 <select class="form-select mb-4" aria-label="Default select example" name="jenis_kanker">
