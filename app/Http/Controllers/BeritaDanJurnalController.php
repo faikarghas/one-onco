@@ -100,7 +100,6 @@ class BeritaDanJurnalController extends Controller
   public function loadMore($offset,$idKat){
     $data = DB::table('artikel')->where('idKat',$idKat)->skip($offset)->take(8)->orderBy('publishDate', 'DESC')->get();
 
-<<<<<<< HEAD
     $test = "loadMore";
 
     if ($slugKat == 'berita-terkini') {
@@ -178,9 +177,6 @@ class BeritaDanJurnalController extends Controller
       }
       echo $output;
      }
-=======
-    return response()->json($data);
->>>>>>> 0bcabb6986921c008cc9fd87e3209aaa787f1942
   }
 
 }
