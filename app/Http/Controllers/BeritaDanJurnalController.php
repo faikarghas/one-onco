@@ -29,9 +29,9 @@ class BeritaDanJurnalController extends Controller
       $listingStory  = $model->all_kategori($id_kategori);
 
       // listing news 3 rows
-      // $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      // $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(5)->orderBy('publishDate', 'DESC')->get();
       $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->orderBy('publishDate', 'DESC')->paginate(5);
-      //dd($listingNews);
+      // dd($listingNews);
 
       $moreDatas = Artikel_model::select('*')->limit(8)->skip('5')->get();
       //dd($moreDatas);
@@ -97,12 +97,10 @@ class BeritaDanJurnalController extends Controller
       return view ('v_beritaTerkiniDetail', $data);
   }
 
-  public function load_data(Request $request)
-  {  
-    $slugKat = $request->segment(1);
-    $listAttribute = $this->getPages($slugKat);
-    $id_Kat = $listAttribute->id;
+  public function loadMore($offset,$idKat){
+    $data = DB::table('artikel')->where('idKat',$idKat)->skip($offset)->take(8)->orderBy('publishDate', 'DESC')->get();
 
+<<<<<<< HEAD
     $test = "loadMore";
 
     if ($slugKat == 'berita-terkini') {
@@ -180,5 +178,9 @@ class BeritaDanJurnalController extends Controller
       }
       echo $output;
      }
+=======
+    return response()->json($data);
+>>>>>>> 0bcabb6986921c008cc9fd87e3209aaa787f1942
   }
+
 }

@@ -1,11 +1,9 @@
-<a href="/{{$path}}" class="d-block h-100">
+<a href="{{url($path)}}" class="d-block h-100">
     <div class="container">
         <div class="row">
             <div class="col-3 d-flex align-items-center justify-content-center">
                 <div class="{{$rounded}}">
-
                     <img width="100%" height="100%" src="{{asset("/data_dokter/$image_url")}}" alt="{{$image_url}}" />
-                
                 </div>
             </div>
             <div class="col-7 d-flex flex-column align-items-start justify-content-center">

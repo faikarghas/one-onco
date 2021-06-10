@@ -10,7 +10,7 @@
                     <a class="{{ Request::segment(2) == $row->slug ? 'active' : '' }}" href="/{{ $slugKat }}/{{ $row->slug }}">{{ $row->title }}</a>
                     <div class="tab_line {{ Request::segment(2) == $row->slug ? '' : 'd-none' }}"></div>   
                 @else 
-                <a href="/{{ $slugKat }}/{{ $row->slug }}">{{ $row->title }}</a>
+                <a href="{{url($slugKat)}}/{{ $row->slug }}">{{ $row->title }}</a>
                 @endif
             </div>
         </div>

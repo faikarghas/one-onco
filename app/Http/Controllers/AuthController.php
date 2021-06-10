@@ -77,10 +77,27 @@ class AuthController extends Controller
                     'phone' => $phone
                   ];
           $response =  Http::asForm()->withHeaders([$client_id => $secret])->post($url, $data);
-          $jsonData = $response->json();
-     	    // dd($jsonData);
 
-           //$token = $data['token'];
+          $jsonData = $response->json();
+
+          // $content=json_encode($jsonData);
+          
+          // $result=json_decode($content,true);
+          
+          foreach ($jsonData as $value) {
+             $tokenUser =  $value['token'];
+          }
+
+          $request->session()->put('tokenUser',$tokenUser);
+            
+          //dd($result);
+
+          //dd($result['token']);
+
+     	    //dd($jsonData);
+
+          // $token = $data['token'];
+          // dd($token);
 
           return redirect('/')->with(['succes' => 'Anda berhasil login']);
         } else {

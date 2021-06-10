@@ -480,6 +480,40 @@ strong {
   font-weight: 800 !important;
 }
 
+.lds-dual-ring {
+  display: inline-block;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .homeHeader {
   height: 95vh;
   background-position: center;
@@ -1517,7 +1551,7 @@ button.boxReadMore {
   display: inline-block;
   text-align: center;
   transition: 0.5s all;
-  height: 39px;
+  height: 40px;
 }
 .boxShowMore img {
   margin-left: 1rem;
@@ -1873,6 +1907,7 @@ button.boxReadMore {
   font-size: 1.6rem;
   color: black;
   font-weight: 600;
+  text-align: justify;
 }
 @media only screen and (max-width: 62em) {
   .second__section p {

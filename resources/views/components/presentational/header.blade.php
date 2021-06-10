@@ -3,23 +3,23 @@
     <div class="container-fluid headerDesktop forDesktop">
         <div class="row">
             <div class="col-2">
-                <a href="/">
+                <a href="{{url('')}}">
                     <img class="img-fluid" src="{{ asset('/images/logo_oneonco_white.png') }}" width="200px" alt="one-onco logo"/>
                 </a>
             </div>
             <div class="col-8">
                 <nav>
                     <ul>
-                        <li><a class="{{Request::segment(1) == 'tentang-kami' ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a></li>
-                        <li><a class="{{Request::segment(1) == 'untuk-pasien' ? 'active' : '' }}" href="/untuk-pasien">Untuk Pasien</a></li>
-                        <li><a class="{{Request::segment(1) == 'untuk-pendamping' ? 'active' : '' }}" href="/untuk-pendamping">Untuk Pendamping</a></li>
-                        <li><a class="{{Request::segment(1) == 'cerita-survivor' ? 'active' : '' }}" href="/cerita-survivor">Cerita Inspiratif</a></li>
+                        <li><a class="{{Request::segment(1) == 'tentang-kami' ? 'active' : '' }}" href="{{url('/tentang-kami')}}">Tentang Kami</a></li>
+                        <li><a class="{{Request::segment(1) == 'untuk-pasien' ? 'active' : '' }}" href="{{url('/untuk-pasien')}}">Untuk Pasien</a></li>
+                        <li><a class="{{Request::segment(1) == 'untuk-pendamping' ? 'active' : '' }}" href="{{url('/untuk-pendamping')}}">Untuk Pendamping</a></li>
+                        <li><a class="{{Request::segment(1) == 'cerita-survivor' ? 'active' : '' }}" href="{{url('/cerita-survivor')}}">Cerita Inspiratif</a></li>
                         <li class="show_menu">
-                            <a class="{{Request::segment(1) == 'berita-terkini' ? 'active' : '' }}" href="/berita-terkini">Artikel & Berita Terkini</a>
+                            <a class="{{Request::segment(1) == 'berita-terkini' ? 'active' : '' }}" href="{{url('/berita-terkini')}}">Artikel & Berita Terkini</a>
                             <div class="sub_menu">
                                 <ul>
-                                    <li><a href="/berita-terkini">Berita Terkini</a></li>
-                                    <li><a href="/artikel-kanker">Artikel Kanker</a></li>
+                                    <li><a href="{{url('/berita-terkini')}}">Berita Terkini</a></li>
+                                    <li><a href="{{url('/artikel-kanker')}}">Artikel Kanker</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -31,10 +31,10 @@
                     <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                     <li><a><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
                     @if (Auth::check())
-                        <li><a href='/logout'>LOGOUT</a></li>
-                        <li><a href="/pengaturan"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
+                        <li><a href='{{url('/logout')}}'>LOGOUT</a></li>
+                        <li><a href="{{url('/pengaturan')}}"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
                     @else 
-                        <li><a href='/logout'>LOGIN</a></li>
+                        <li><a href='{{url('/logout')}}'>LOGIN</a></li>
                         <li></li>
                     @endif
                 </ul>
@@ -49,8 +49,8 @@
             <div class="col-6">
                 <div class="user">
                     <ul>
-                        <li><a href="/{{$path}}"><img src="{{ asset('/images/arrow-left.png') }}" alt="search" width="14px" style="object-fit:contain;"/></a></li>
-                        <li><a href="/{{$path}}">Kembali</a></li>
+                        <li><a href="{{url($path)}}"><img src="{{ asset('/images/arrow-left.png') }}" alt="search" width="14px" style="object-fit:contain;"/></a></li>
+                        <li><a href="{{url($path)}}">Kembali</a></li>
                     </ul>
                 </div>
             </div>

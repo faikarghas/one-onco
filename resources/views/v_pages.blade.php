@@ -50,23 +50,23 @@
                                     <div class="col-11 ps-4">
                                         @switch(Request::segment(1))
                                             @case('tentang-kami')
-                                                <a href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a href="{{url('tentang-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('untuk-pasien')
-                                                <a href="/untuk-pasien/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a href="{{url('untuk-pasien')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('untuk-pendamping')
-                                                <a href="/untuk-pendamping/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a href="{{url('/untuk-pendamping')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('partner-kami')
-                                                <a href="/partner-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a href="{{url('/partner-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('syaratdanketentuan')
                                                 @include('/components/presentational.partnerList',[])
-                                                <a href="/syaratdanketentuan/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @default
-                                                <a href="/syaratdanketentuan/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                         @endswitch
                                     </div>
                                 </div>
@@ -95,8 +95,8 @@
                             <div class="share_sosmed-act">
                                 <ul>
                                     <li>
-                                        <a href="/belanja-sehat"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
-                                        <a href="/konsultasi-online"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/belanja-sehat')}}"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
+                                        <a href="{{url('/konsultasi-online')}}"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
                                     </li>
                                 </ul>
                             </div>

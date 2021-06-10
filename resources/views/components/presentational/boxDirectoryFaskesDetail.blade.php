@@ -8,7 +8,6 @@
                             <div class="col-3 d-flex align-items-start justify-content-center">
                                   <?php
                                     $path = public_path('data_faskes\\'.$foto);
-                                   
                                     $isExists = file_exists($path);
                                     if ($isExists) {
                                       $fotoDokter = $foto;
@@ -17,12 +16,8 @@
                                     }
                                 ?>
                                 <div class="rounded_img">
-
                                     <img width="100%" height="100%" src="{{asset("/data_faskes/$fotoDokter")}}" alt="dokter" />
-                                
                                 </div>
-
-
                             </div>
                             <div class="col-9 d-flex flex-column align-items-start">
                                 <h3><strong>{{ $name }}</strong></h3>
@@ -86,7 +81,7 @@
             @foreach ($viewDokter as $row)
             <div class="col-12 col-md-6">
                 <div class="box__rec3 box-sh">
-                    <a href="/dokter-detail/{{ $row->dokterId }}">
+                    <a href="{{url('/dokter-detail')}}/{{ $row->dokterId }}">
                         <div class="container p-0">
                             <div class="row">
                                 <div class="col-3 d-flex align-items-center justify-content-center">
@@ -101,10 +96,8 @@
                                         }
                                     ?>
                                     <div class="rounded_img">
-
                                         <img width="100%" height="100%" src="{{asset("/data_dokter/$fotoDokter")}}" alt="dokter" />
-                                    
-                                      </div>
+                                    </div>
                                 </div>
                                 <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                                     <div class="title_wrapper">

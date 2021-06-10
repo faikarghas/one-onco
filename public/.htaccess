@@ -18,4 +18,13 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    
+    <IfModule mod_headers.c>
+    # Prevent click jacking
+    Header set X-Frame-Options Deny
+    Header always append X-Frame-Options SAMEORIGIN
+    </IfModule>
+
+
 </IfModule>

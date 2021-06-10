@@ -1906,7 +1906,7 @@ $('#selectLokasiKanker').change(function () {
 
   if (data !== "null") {
     $('#selectJenisKanker').removeAttr("disabled");
-    axios.get("/jenisKanker/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/jenisKanker/get/").concat(data)).then(function (response) {
       // handle success
       $('select[name="jenisKanker"]').empty();
       kankerData['jenis'] = Object.values(response.data)[0].toLowerCase().split(' ').join('-');
@@ -1941,14 +1941,14 @@ $('#selectCities').change(function () {
     $('.direktori__list .listDokter').append(html.direktoriLoader());
     $('#selectFasekes').attr("disabled", "disabled");
     $('#selectFasekes option').empty().remove();
-    axios.get("/cities/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/cities/get/").concat(data)).then(function (response) {
       $('select[name="faskes"]').empty();
       $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
         // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
         $('select[name="faskes"]').append(new Option(value, key));
       });
-      axios.get("/dokter/get/".concat(data)).then(function (response) {
+      axios.get("".concat(baseUrl, "/dokter/get/").concat(data)).then(function (response) {
         // console.log(data);
         $('.direktori__list .listDokter').empty();
         i = 0;
@@ -1970,7 +1970,7 @@ $('#selectFaskes').change(function () {
   if (data !== "null") {
     $('.direktori__list .listDokter').empty();
     $('.direktori__list .listDokter').append(html.direktoriLoader());
-    axios.get("/dokterWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/dokterWithKabupaten/get/").concat(data)).then(function (response) {
       $('.direktori__list .listDokter').empty();
 
       if (response.data.length != 0) {
@@ -1994,14 +1994,14 @@ $('#selectCitiesM').change(function () {
     $('.direktori__list .listDokter').append(html.direktoriLoader());
     $('#selectFasekes').attr("disabled", "disabled");
     $('#selectFasekes option').empty().remove();
-    axios.get("/cities/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/cities/get/").concat(data)).then(function (response) {
       $('select[name="faskes"]').empty();
       $('select[name="faskes"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
         // $('select[name="faskes"]').append(`<option value=""> Pilih Kabupaten</option><option value="${key}">${value}</option>`);
         $('select[name="faskes"]').append(new Option(value, key));
       });
-      axios.get("/dokter/get/".concat(data)).then(function (response) {
+      axios.get("".concat(baseUrl, "/dokter/get/").concat(data)).then(function (response) {
         // console.log(data);
         $('.direktori__list .listDokter').empty();
         i = 0;
@@ -2023,7 +2023,7 @@ $('#selectFaskesM').change(function () {
   if (data !== "null") {
     $('.direktori__list .listDokter').empty();
     $('.direktori__list .listDokter').append(html.direktoriLoader());
-    axios.get("/dokterWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/dokterWithKabupaten/get/").concat(data)).then(function (response) {
       $('.direktori__list .listDokter').empty();
 
       if (response.data.length != 0) {
@@ -2044,7 +2044,7 @@ $('#selectProvinces2').change(function () {
   var data = $(this).val(); // console.log(data);
 
   if (data !== "null") {
-    axios.get("/faskesWithPropinsi/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/faskesWithPropinsi/get/").concat(data)).then(function (response) {
       $('select[name="faskes2"]').empty();
       $('select[name="faskes2"]').append('<option value=""> Pilih Rumah Sakit</option>');
       $.each(response.data, function (key, value) {
@@ -2063,7 +2063,7 @@ $('#selectFaskes2').change(function () {
   var data = $(this).val();
 
   if (data !== "null") {
-    axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/faskesWithKabupaten/get/").concat(data)).then(function (response) {
       $.each(response.data, function (i, dokter) {
         display = response.data;
         html.direktoriLabBox();
@@ -2078,7 +2078,7 @@ $('#selectProvinces3').change(function () {
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader());
-    axios.get("/cities/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/cities/get/").concat(data)).then(function (response) {
       $('select[name="cities3"]').empty();
       $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
@@ -2086,7 +2086,7 @@ $('#selectProvinces3').change(function () {
         $('select[name="cities3"]').append(new Option(value, key));
       });
       console.log(response.data);
-      axios.get("/faskes/get/".concat(data)).then(function (response) {
+      axios.get("".concat(baseUrl, "/faskes/get/").concat(data)).then(function (response) {
         $('.direktori__list .listFaskes').empty(); // //   i = 0;
         //   $.each(response.data, function(i, dokter ){
         //     display = response.data;
@@ -2112,7 +2112,7 @@ $('#selectCities3').change(function () {
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader());
-    axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/faskesWithKabupaten/get/").concat(data)).then(function (response) {
       $('.direktori__list .listFaskes').empty();
 
       if (response.data.length != 0) {
@@ -2134,7 +2134,7 @@ $('#selectProvinces4').change(function () {
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader());
-    axios.get("/cities/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/cities/get/").concat(data)).then(function (response) {
       $('select[name="cities3"]').empty();
       $('select[name="cities3"]').append('<option value=""> Pilih Kabupaten</option>');
       $.each(response.data, function (key, value) {
@@ -2142,7 +2142,7 @@ $('#selectProvinces4').change(function () {
         $('select[name="cities3"]').append(new Option(value, key));
       });
       console.log(response.data);
-      axios.get("/faskes/get/".concat(data)).then(function (response) {
+      axios.get("".concat(baseUrl, "/faskes/get/").concat(data)).then(function (response) {
         $('.direktori__list .listFaskes').empty(); //i = 0;
 
         $.each(response.data, function (i, dokter) {
@@ -2164,7 +2164,7 @@ $('#selectCities4').change(function () {
   if (data !== "null") {
     $('.direktori__list .listFaskes').empty();
     $('.direktori__list .listFaskes').append(html.direktoriLoader());
-    axios.get("/faskesWithKabupaten/get/".concat(data)).then(function (response) {
+    axios.get("".concat(baseUrl, "/faskesWithKabupaten/get/").concat(data)).then(function (response) {
       $('.direktori__list .listFaskes').empty();
 
       if (response.data.length != 0) {
@@ -2290,23 +2290,44 @@ $(document).ready(function () {
         });
       });
     }
-  });
-  var offestLoad = 4;
-  offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
-  var dataLoadNews = [];
-  $('.loadMoreNews').click(function () {
-    console.log('test');
-    axios.get("/beritaload/".concat(offestLoad)).then(function (response) {
-      dataLoadNews.push(response.data); // dataLoadNews.map(function (i,val) {
-      //     html.boxNews()
-      // })
+  }); // LOAD MORE
 
-      console.log(dataLoadNews[0]);
+  var offestLoad = 5;
+  offestLoad = isNaN(offestLoad) ? 0 : offestLoad;
+  var idKat = location.pathname;
+
+  switch (idKat) {
+    case '/berita-terkini':
+      idKat = 1;
+      break;
+
+    case '/cerita-survivor':
+      idKat = 3;
+      break;
+
+    case '/artikel-kanker':
+      idKat = 5;
+      break;
+
+    default:
+      break;
+  }
+
+  console.log(idKat);
+  $('#loadMoreNews').on('click', function () {
+    var thisGlob = $(this);
+    $(this).html('<div class="lds-dual-ring"></div>');
+    axios.get("".concat(baseUrl, "/beritaload/").concat(offestLoad, "/").concat(idKat)).then(function (response) {
+      console.log(response);
+      response.data.forEach(function (element) {
+        console.log(element);
+        html.boxNews(element.title, element.imgDesktop, element.shortContent, element.slug, element.publishDate);
+      });
+      thisGlob.html('Berita Lainnya');
     });
-    offestLoad++; // html.boxNews()
-    // console.log(dataLoadNews);
+    offestLoad += 8;
   });
-}); // LOAD MORE
+});
 
 /***/ }),
 
@@ -2341,6 +2362,32 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/functions.js":
+/*!***********************************!*\
+  !*** ./resources/js/functions.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "timeConverter": () => /* binding */ timeConverter
+/* harmony export */ });
+function timeConverter(timestamp) {
+  var a = new Date(Date.parse(timestamp));
+  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var sec = a.getSeconds();
+  var time = "".concat(date, "-").concat(month, "-").concat(year);
+  return time;
+}
+
+/***/ }),
+
 /***/ "./resources/js/html.js":
 /*!******************************!*\
   !*** ./resources/js/html.js ***!
@@ -2357,6 +2404,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "boxNews": () => /* binding */ boxNews
 /* harmony export */ });
 var baseUrl = window.location.origin;
+
+var func = __webpack_require__(/*! ./functions */ "./resources/js/functions.js");
+
 function direktoriCareBox(rs, alamat, website, link) {
   $('.direktori__list .listFaskes').append("<div class=\"col-12 col-lg-6\"><div class=\"box__rec2\">\n    <a href=\"/direktori-care/".concat(link, "\" class=\"d-block h-100\">\n       <div class=\"container\">\n          <div class=\"row\">\n             <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                <div class=\"rounded_img\">\n                   <img width=\"100%\" height=\"100%\" src=\"").concat(baseUrl, "/images/care_center.svg\" alt=\"dir-dokter.png\">\n                </div>\n             </div>\n             <div class=\"col-7 d-flex flex-column align-items-start\">\n                <div class=\"title_wrapper\">\n                   <h3><strong>").concat(rs, "</strong></h3>\n                </div>\n                <ul>\n                   <li>\n                      <p style=\"font-size:1.2rem;\">").concat(alamat, "</p>\n                   </li>\n                   <li>\n                      <p style=\"font-size:1.2rem;color:#00A2E3;\">").concat(website, "</p>\n                   </li>\n                </ul>\n             </div>\n             <div class=\"col-2 d-flex align-items-center justify-content-center\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39.6 35.13\">\n                   <path style=\"fill:#4172CB;\" class=\"a\" d=\"M19.18,4.48,30.53,15h-28a2.56,2.56,0,0,0,0,5.12h28L19.18,30.7a2.56,2.56,0,0,0,3.48,3.74l16.11-15a2.54,2.54,0,0,0,0-3.74L22.67.69a2.55,2.55,0,0,0-3.61.13A2.61,2.61,0,0,0,19.18,4.48Z\"></path>\n                </svg>\n             </div>\n          </div>\n       </div>\n    </a>\n</div></div>"));
 }
@@ -2370,8 +2420,8 @@ function direktoriLoader() {
   var loader = "<div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img skr\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper skr\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper skr\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   <div class=\"col-12 col-lg-6\">\n   <div class=\"box__rec2\">\n      <a href=\"/dokter-detail/21011058\" class=\"d-block h-100\">\n         <div class=\"container\">\n            <div class=\"row\">\n               <div class=\"col-3 d-flex align-items-center justify-content-center\">\n                  <div class=\"rounded_img\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n               </div>\n               <div class=\"col-9 d-flex flex-column align-items-center\" style=\"\n                  justify-content: center;\n                  \">\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     \">\n                  </div>\n                  <div class=\"title_wrapper\" style=\"\n                     background-color: lightgrey;\n                     margin-bottom: 0;\n                     \">\n                  </div>\n               </div>\n            </div>\n         </div>\n      </a>\n   </div>\n   </div>\n   ";
   return loader;
 }
-function boxNews(params) {
-  $('.boxListLoadMore').append("<div class=\"col-12 col-lg-3\">\n      <div class=\"boxNews smallBox\">\n         <div class=\"boxImage\">\n            <img src=\"http://127.0.0.1:8000/data_artikel/https://source.unsplash.com/random\" alt=\"Selayang Pandang tentang Kanker Usus Besar\">\n         </div>\n         <div class=\"boxInformation\">\n            <div class=\"title\">\n               <h3 class=\"mt-2\">Selayang Pandang tentang Kanker Usus Besar</h3>\n               <p class=\"author\">Siloam Hospitals Manado bekerjasama dengan KALBE FARMA menyelenggarakan virtual health talk</p>\n            </div>\n            <div class=\"dateFormat\">\n               <p></p>\n               <a href=\"berita-terkini/selayang-pandang-tentang-kanker-usus-besar\" class=\"boxReadMore\">Baca selengkapnya <img class=\"img-fluid\" width=\"8px\" src=\"http://127.0.0.1:8000/images/arrow-white.png\" alt=\"arrow\"></a>        </div>\n            </div>\n         </div>\n   </div>");
+function boxNews(title, img, shortContent, slug, publishDate) {
+  $('#post_data').append("<div class=\"col-12 col-lg-3 mb-4\">\n      <div class=\"boxNews smallBox\">\n         <div class=\"boxImage\">\n            <img src=\"".concat(baseUrl, "/data_artikel/").concat(img, "\" alt=\"Selayang Pandang tentang Kanker Usus Besar\">\n         </div>\n         <div class=\"boxInformation\">\n            <div class=\"title\">\n               <h3 class=\"mt-2\">").concat(title, "</h3>\n               <p class=\"author\">").concat(shortContent, "</p>\n            </div>\n            <div class=\"dateFormat\">\n               <p>").concat(func.timeConverter(publishDate), "</p>\n               <a href=\"berita-terkini/").concat(slug, "\" class=\"boxReadMore\">Baca selengkapnya <img class=\"img-fluid\" width=\"8px\" src=\"").concat(baseUrl, "/images/arrow-white.png\" alt=\"arrow\"></a>        </div>\n            </div>\n         </div>\n   </div>"));
 }
 
 /***/ }),

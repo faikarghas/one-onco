@@ -48,7 +48,7 @@
                             <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                         </div>
                         <div class="col-11 ps-4">
-                            <a href="/tentang-kami/{{ $row->slug }}">{{ $row->title }}</a>
+                            <a href="{{url('/tentang-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
                         </div>
                     </div>
                 @endforeach

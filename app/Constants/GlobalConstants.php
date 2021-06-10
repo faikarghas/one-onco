@@ -6,6 +6,7 @@ class GlobalConstants {
 
     const ALL = 'ALL';
     const ALLSpec = 'Pilih Spesialisasi';
+    const ALLSpec2 = 'Pilih Layanan Kanker';
     
     const ALLProv = 'Pilih Provinsi';
     const ALLKab = 'Pilih Kabupaten';

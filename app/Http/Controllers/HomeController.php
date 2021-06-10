@@ -14,7 +14,8 @@ class HomeController extends Controller
         // GET variable from global data for website
         $siteConfig   = DB::table('global_data')->first();
         //$session = $request->session()->all();
-        //print_r ($session);
+
+        //dd($session);
         // check sebagai customer apa bukan
         if(Session()->get('username')=="") {
           $statusLogin = "<a href='/login'>LOGIN</a>";
@@ -23,6 +24,7 @@ class HomeController extends Controller
           $statusConfig = '';
           } else {
           // tampilakan  slider news story bedasarkan jenis kanker customer
+          
           $statusLogin = "";
           $sliderArtikel = DB::table('artikel')->select('id')->where('idKat',3)->orderBy('id', 'DESC')->get();
           $statusConfig = "<a href='/pengaturan'><img src='{{ asset('/images/setting.png') }}' alt='search' width='15px'/></a>";
