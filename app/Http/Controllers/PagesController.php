@@ -19,7 +19,7 @@ class PagesController extends Controller
       if (isset($request_path[1])){
         $slugDetail = $request_path[1];
       }
-      $slugKat = $request_path[0];      
+      $slugKat = $request_path[0];
       $listAttribute = $this->getPages($slugKat);
       $kategoriId = $listAttribute->id;
       // header title and image
@@ -40,6 +40,7 @@ class PagesController extends Controller
         $titleContentPages = $titleHeader;
         $mainContent = $listAttribute->content;
       }
+
       // widget
       $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $listingStory  = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('publishDate', 'DESC')->get();

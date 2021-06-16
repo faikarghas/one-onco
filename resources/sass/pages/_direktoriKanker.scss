@@ -21,6 +21,7 @@
     @include respond(down-tab-port){
         padding-right: 12.75px;
         padding-left: 12.75px;
+        z-index: 5;
     }
     input{
         height: 30px;
@@ -64,7 +65,7 @@
     margin-top: calc(137px + 130px);
     min-height: 300px;
     @include respond(down-tab-port){
-        padding-top: 220px;
+        padding-top: 300px;
         margin-top: unset;
         padding-bottom: 0rem;
         padding-right: 12.75px;

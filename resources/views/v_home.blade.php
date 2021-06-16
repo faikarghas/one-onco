@@ -160,7 +160,7 @@
                     <h4 class="text-white text-center" id="titleSurM">"Selamat pagi, jangan menyerah!"</h4>
                     <p class="text-white text-center mb-4" id="shortSurM"><i>Angelina Ong, cancer sruvivor 2019</i></p>
                     {{-- <a class="boxReadStory" href="cerita-survivor/{{ $slug }}">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a> --}}
-                    <a class="boxReadStory" href="{{url('cerita-survivor')}}">Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a>
+                    <a class="boxReadStory" id="linkSliderM" >Baca ceritanya<img class="img-fluid" width="8px" src="{{asset('/images/arrow-black.png')}}" alt="arrow"></a>
                 </div>
                 <div class="halfBoxRounded"></div>
             </div>
@@ -382,6 +382,7 @@
             var titleM = document.querySelector("#titleSurM");
             var shortDescM = document.querySelector("#shortSurM");
             var box = document.querySelector(".box__welcome");
+            var linkM = document.querySelector("#linkSliderM");
 
 
             var inst = setInterval(change, 5000);
@@ -411,6 +412,7 @@
                 shortDescM.innerHTML = intro[counter];
                 overlayImgM.style.backgroundColor = colours[counter];
                 box.style.backgroundColor = colours[counter];
+                linkM.setAttribute("href", links[counter]);
 
 
                 // $('.boxReadStory').attr('a',`cerita-survivor/${slug[counter]}`)

@@ -61,8 +61,13 @@
                                             @case('partner-kami')
                                                 <a href="{{url('/partner-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
+                                            @case('perawatan-kanker')
+                                                <a href="{{url('/perawatan-kanker')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
+                                            @case('kanker-payudara')
+                                                <a href="{{url('/kanker-payudara')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
                                             @case('syaratdanketentuan')
-                                                @include('/components/presentational.partnerList',[])
                                                 <a href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @default

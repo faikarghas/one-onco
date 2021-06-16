@@ -122,12 +122,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 text-center forMobile">
-                        @include('components/presentational.boxShowMore',array(
-                            'title'=>'Berita Terkini',
-                            'path'=>''
-                        ))
-                    </div>
                 </div>
             </div>
         </section>

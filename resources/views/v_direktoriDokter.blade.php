@@ -2,7 +2,7 @@
 @section('content')
     @include('components/presentational/header',['path'=>'direktori'])
     <main>
-        <section class="direktoriDet__header forMobile">
+        {{-- <section class="direktoriDet__header forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -10,13 +10,13 @@
                             <h3 class="text-center mb-4"> <strong>Cari dokter Onkologi di daerahmu:</strong></h3>
                             <div class="input-group">
                                 <input  type="search" class="form-control py-2 mr-1 pr-5 mb-2" id="search_mobile" placeholder="Ketik kata kunci">
-                                {{-- <span class="input-group-append">
+                                <span class="input-group-append">
                                     <button class="btn rounded-pill border-0 "  style="margin-left: -3rem !important;" type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                                           </svg>
                                     </button>
-                                </span> --}}
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                               <div class="col-12">
                                 @if (Request::segment(1)==='direktori-dokter' || Request::segment(1)==='dokter-detail')
                                   <select class="form-select mb-2" aria-label="Default select example" id="spesialis_mobile" name="spesialis">
-                                      <option value="ALL">{\App\Constants\GlobalConstants::ALLSpec}}</option>
+                                      <option value="ALL">{{\App\Constants\GlobalConstants::ALLSpec}}</option>
                                       @foreach ($spesialis as $spesial => $value)
                                           <option>{{ $value }}</option>
                                       @endforeach
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         @include('components/presentational/boxHeaderDirectoryDesktop',['path'=>'direktori'])
         @if (Request::segment(1)==='direktori-dokter')
             <section class="direktori__list">

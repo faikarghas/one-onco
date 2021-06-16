@@ -2,7 +2,7 @@
 @section('content')
     @include('components/presentational/header',['path'=>'direktori'])
     <main>
-        <section class="direktoriDet__header forMobile">
+        {{-- <section class="direktoriDet__header forMobile">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         @include('components/presentational/boxHeaderDirectoryDesktop',['path'=>'direktori'])
 
         @if (empty(Request::segment(2)))

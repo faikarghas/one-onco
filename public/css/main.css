@@ -432,6 +432,22 @@ main:not([page=home]) {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
 }
 
+@media only screen and (max-width: 62em) {
+  .box_fliter {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    z-index: 5;
+  }
+  .box_fliter.container {
+    margin: 0;
+    padding: 3rem;
+  }
+}
+
 p, li, a {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -2342,6 +2358,7 @@ button.boxReadMore {
   .direktoriDet__header {
     padding-right: 12.75px;
     padding-left: 12.75px;
+    z-index: 5;
   }
 }
 .direktoriDet__header input {
@@ -2384,7 +2401,7 @@ button.boxReadMore {
 }
 @media only screen and (max-width: 62em) {
   .direktori__list {
-    padding-top: 220px;
+    padding-top: 300px;
     margin-top: unset;
     padding-bottom: 0rem;
     padding-right: 12.75px;
