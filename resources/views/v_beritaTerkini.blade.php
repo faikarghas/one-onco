@@ -30,10 +30,10 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <?php
-                                $yearCurrent  = date('Y');
-                                $dateNews =  date('Y', strtotime($listingNews[0]->publishDate));
-                                $date =  date('d-M-Y', strtotime($listingNews[0]->publishDate));
-                            ?>
+                            $yearCurrent  = date('Y');
+                            $dateNews =  date('Y', strtotime($listingNews[0]->publishDate));
+                            $date =  date('d-M-Y', strtotime($listingNews[0]->publishDate));
+                        ?>
                         @include('components/presentational.boxNews',array(
                             'date'=>$date,
                             'title'=>strip_tags($listingNews[0]->title),

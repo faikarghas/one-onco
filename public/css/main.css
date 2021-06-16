@@ -2322,7 +2322,7 @@ button.boxReadMore {
   font-weight: 900;
   text-decoration: none;
 }
-.detail__page1--description p, .detail__page1--description div, .detail__page1--description p > span, .detail__page1--description ul > li, .detail__page1--description a, .detail__page1--description div > span, .detail__page1--description li > span, .detail__page1--description ol > li {
+.detail__page1--description p, .detail__page1--description div, .detail__page1--description p > span, .detail__page1--description ul > li, .detail__page1--description a, .detail__page1--description div > span, .detail__page1--description li > span, .detail__page1--description ol > li, .detail__page1--description p > b > span, .detail__page1--description div > b > span {
   font-size: 1.5rem !important;
 }
 .detail__page1--description div span span {
@@ -2562,7 +2562,7 @@ button.boxReadMore {
   font-weight: 900;
   font-size: 1.5rem;
 }
-.tentangKami__page-intro p, .tentangKami__page-intro div, .tentangKami__page-intro p > span, .tentangKami__page-intro ul > li, .tentangKami__page-intro a, .tentangKami__page-intro div > span, .tentangKami__page-intro li > span, .tentangKami__page-intro ol > li {
+.tentangKami__page-intro p, .tentangKami__page-intro div, .tentangKami__page-intro p > span, .tentangKami__page-intro ul > li, .tentangKami__page-intro a, .tentangKami__page-intro div > span, .tentangKami__page-intro li > span, .tentangKami__page-intro ol > li, .tentangKami__page-intro p > b > span, .tentangKami__page-intro div > b > span {
   font-size: 1.5rem !important;
 }
 .tentangKami__page-intro div span span {
