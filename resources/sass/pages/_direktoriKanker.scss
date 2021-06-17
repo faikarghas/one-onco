@@ -100,7 +100,7 @@
     padding-bottom: 1rem;
     margin-top: calc(137px + 130px);
     @include respond(down-tab-port){
-        padding-top: 220px;
+        // padding-top: 220px;
         margin-top: unset;
         padding-right: 12.75px;
         padding-left: 12.75px;

@@ -2,7 +2,13 @@
     <div class="row">
         <div class="col-12">
           <div class="row justify-content-center">
-            <h3 class="text-start mb-0"> <strong>Cari dokter kanker di sekitarmu:</strong></h3>
+            @if (Request::segment(1)==='direktori-dokter')
+              <h3 class="text-start mb-0"><strong>Cari dokter kanker di sekitarmu:</strong></h3>
+            @elseif(Request::segment(1)==='direktori-lab')
+             <h3 class="text-start mb-0"><strong>Cari komunitas kanker di sekitarmu:</strong></h3>
+            @elseif(Request::segment(1)==='direktori-care')
+              <h3 class="text-start mb-0"><strong>Cari rumah sakit kanker di sekitarmu:</strong></h3>
+            @endif
           </div>
         </div>
         <div class="col-12">

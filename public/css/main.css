@@ -2440,7 +2440,6 @@ button.boxReadMore {
 }
 @media only screen and (max-width: 62em) {
   .direktori__list-detail {
-    padding-top: 220px;
     margin-top: unset;
     padding-right: 12.75px;
     padding-left: 12.75px;

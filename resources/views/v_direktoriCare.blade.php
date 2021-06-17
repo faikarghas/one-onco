@@ -68,7 +68,7 @@
                         ))
                         @include('components/presentational.boxRec',array(
                             'image_url'=>'directori_komunitas.svg',
-                            'title'=>'Direktori Lab',
+                            'title'=>'Direktori Komunitas',
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                             'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
