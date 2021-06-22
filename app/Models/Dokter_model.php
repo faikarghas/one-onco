@@ -14,11 +14,12 @@ class Dokter_model extends Model
     protected $table = "dokter_mapped";
 
     public static function getDokters($search_keyword,$spesialis,$provinsi,$kabupaten) {
-        $dokters = DB::table('dokter_mapped');
+
+        $dokters = DB::table('dokter_mapped')->select(['dokterId','fullname','Image','subSpesialist','namafaskes']);
         if($search_keyword && !empty($search_keyword)) {
             $dokters->where(function($q) use ($search_keyword) {
-                $q->where('fullname', 'LIKE', "%{$search_keyword}%")
-                ->orWhere('subSpesialist', 'LIKE', "%{$search_keyword}%")
+                $q->where('fullname', 'LIKE', "{$search_keyword}%")
+                ->orWhere('subSpesialist', 'LIKE', "{$search_keyword}%")
                 ->orWhere('namafaskes', 'LIKE', "%{$search_keyword}%");
             });
         }

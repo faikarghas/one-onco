@@ -13,6 +13,7 @@ use App\Http\Controllers\BelanjaSehatController;
 use App\Http\Controllers\KonsultasiOnlineController;
 use App\Http\Controllers\JenisKankerController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\DeteksiKankerController;
 // App::forgetMiddleware('Illuminate\Http\FrameGuard');
 
 
@@ -55,6 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('change-password', [AuthController::class, 'storeNewPassword'])->name('change.password');
     Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
     Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
+    Route::get('/deteksi-kanker',[DeteksiKankerController::class,'index']);
 });
 
 Route::get('/verify-registration/{token}',[AuthController::class, 'verifyRegistration']);

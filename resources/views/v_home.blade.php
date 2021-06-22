@@ -68,12 +68,12 @@
                 <div class="row ps">
                     <div class="col-12 col-md-6">
                             @include('components/presentational.boxRec',array(
-                                'image_url'=>'perkanker.png',
-                                'title'=>'Perawatan Kanker',
-                                'description'=>'Cari tau mengenai kanker dan perawatannya',
+                                'image_url'=>'deteksidini.png',
+                                'title'=>'Deteksi Kanker',
+                                'description'=>'Cari tes skrining untuk pendeteksian dini',
                                 'color'=>'#80bc41;',
                                 'colorPar'=>'#808080;',
-                                'path'=>'perawatan-kanker'
+                                'path'=>'deteksi-kanker'
                             ))
                     </div>
                     <div class="col-12 col-md-6">

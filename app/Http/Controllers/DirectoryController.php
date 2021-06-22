@@ -36,6 +36,7 @@ class DirectoryController extends Controller
       return view ('v_direktoriDokter', $data,compact('cities','spesialis'));
     }
 
+    
     public function lab(){
       $siteConfig   = DB::table('global_data')->first();
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
@@ -56,7 +57,8 @@ class DirectoryController extends Controller
       $dokter = Dokter_model::getDokters($query,$spesialis,$provinsi,$kabupaten);
       //dd(DB::getQueryLog());
       //dd($dokter);
-      return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();
+      //return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();
+      return view('components.presentational.boxResultFilterDirectoryDokter', ['dokter'->$dokter]);
     }
 
     public function getMoreFaskes(Request $request){
