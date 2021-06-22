@@ -55,7 +55,7 @@ class HomeController extends Controller
         $shortContentAbout = DB::table('kategori_artikel')->where('id',11)->first();
 
         // variable jenis kanker dan nama kanker
-        $listingKankers = DB::table('kanker')->where('published',1)->orderBy('id', 'DESC')->get();
+        $listingKankers = DB::table('kategori_artikel')->where('type','kanker')->orderBy('id', 'DESC')->get();
         // variable journal onkologi terbaru
         $listingJurnal = DB::table('artikel')
                           ->leftJoin('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')

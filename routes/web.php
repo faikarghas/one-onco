@@ -55,10 +55,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('pengaturan', [AuthController::class, 'changePassword']);
     Route::post('change-password', [AuthController::class, 'storeNewPassword'])->name('change.password');
     Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
-    Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
+   
     Route::get('/deteksi-kanker',[DeteksiKankerController::class,'index']);
 });
 
+Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
 Route::get('/verify-registration/{token}',[AuthController::class, 'verifyRegistration']);
 
 
