@@ -60,11 +60,11 @@ class Faskes_model extends Model
         }
         //Filter Provinsi
         if($provinsi && $provinsi!= GlobalConstants::ALLProv) {
-            $faskes = $faskes->where('provinsi', $provinsi);
+            $faskes = $faskes->whereRaw('provinsi=?', [$provinsi]);
         }
         //Filter Kabupaten
         if($kabupaten && $kabupaten!= GlobalConstants::ALLKab) {
-            $faskes = $faskes->where('kabupaten', $kabupaten);
+            $faskes = $faskes->whereRaw('kabupaten=?', [$kabupaten]);
         }
         return $faskes->paginate(PER_PAGE_LIMIT);
     }

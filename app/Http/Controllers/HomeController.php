@@ -20,17 +20,17 @@ class HomeController extends Controller
         if(Session()->get('username')=="") {
           $statusLogin = "<a href='/login'>LOGIN</a>";
           // tampilakan  slider news story random
-          $sliderArtikel = DB::table('artikel')->where('idKat',3)->select('id','title','shortContent','imgDesktop','themeColor','slug')->orderBy('id', 'DESC')->get();
+          $sliderArtikel = DB::table('artikel')->whereRaw('idKat=?',3)->select('id','title','shortContent','imgDesktop','themeColor','slug')->orderBy('id', 'DESC')->get();
           $statusConfig = '';
           } else {
           // tampilakan  slider news story bedasarkan jenis kanker customer
           
           $statusLogin = "";
-          $sliderArtikel = DB::table('artikel')->select('id')->where('idKat',3)->orderBy('id', 'DESC')->get();
+          $sliderArtikel = DB::table('artikel')->select('id')->whereRaw('idKat=?',3)->orderBy('id', 'DESC')->get();
           $statusConfig = "<a href='/pengaturan'><img src='{{ asset('/images/setting.png') }}' alt='search' width='15px'/></a>";
         }
 
-        $listSur = DB::table('kategori_artikel')->where('id',3)->first();
+        $listSur = DB::table('kategori_artikel')->whereRaw('id=?',3)->first();
         // dd($sliderArtikel);
 
         $statusTheme = $listSur->activeTheme;
@@ -52,7 +52,7 @@ class HomeController extends Controller
         }
 
         //variable  data about us ( general)
-        $shortContentAbout = DB::table('kategori_artikel')->where('id',11)->first();
+        $shortContentAbout = DB::table('kategori_artikel')->whereRaw('id=?',11)->first();
 
         // variable jenis kanker dan nama kanker
         $listingKankers = DB::table('kategori_artikel')->where('type','kanker')->orderBy('id', 'DESC')->get();

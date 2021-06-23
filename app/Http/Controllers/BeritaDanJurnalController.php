@@ -30,7 +30,7 @@ class BeritaDanJurnalController extends Controller
 
       // listing news 3 rows
       // $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(5)->orderBy('publishDate', 'DESC')->get();
-      $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->orderBy('publishDate', 'DESC')->paginate(5);
+      $listingNews = DB::table('artikel')->whereRaw('idKat=?',[$id_kategori])->orderBy('publishDate', 'DESC')->paginate(5);
       // dd($listingNews);
 
       $moreDatas = Artikel_model::select('*')->limit(8)->skip('5')->get();
@@ -56,7 +56,7 @@ class BeritaDanJurnalController extends Controller
 
       // header title and image
       $segment = $request->segment(1);
-      $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
+      $content_kategori = DB::table('kategori_artikel')->whereRaw('slug=?',[$segment])->first();
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
@@ -82,7 +82,7 @@ class BeritaDanJurnalController extends Controller
       $otherStory  = $model->otherArticle($id, $id_kategori);
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      $listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'titleStory'=>$detailStory->title,
@@ -98,8 +98,7 @@ class BeritaDanJurnalController extends Controller
   }
 
   public function loadMore($offset,$idKat){
-    $data = DB::table('artikel')->where('idKat',$idKat)->skip($offset)->take(8)->orderBy('publishDate', 'DESC')->get();
-
+    $data = DB::table('artikel')->whereRaw('idKat=?',[$idKat])->skip($offset)->take(8)->orderBy('publishDate', 'DESC')->get();
     return response()->json($data);
   }
 

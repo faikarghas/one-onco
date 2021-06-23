@@ -208,7 +208,7 @@ class AuthController extends Controller
           'created_at' => Carbon::now()
       ]);
       //Get the token just created above
-      $tokenData = DB::table('password_resets')->where('email', $request->email)->first();
+      $tokenData = DB::table('password_resets')->where('email=?', [$request->email])->first();
       $token = $tokenData->token;
 
       Mail::send('v_emailVeri', ['token' => $token], function($message) use($request){

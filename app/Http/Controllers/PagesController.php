@@ -12,7 +12,6 @@ use App\Models\Artikel_model;
 class PagesController extends Controller
 {
     public function index(Request $request, $slug = NULL){
-
       // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();
       $request_path = explode('/', $slug);
@@ -27,13 +26,16 @@ class PagesController extends Controller
       $titleHeader = $listAttribute->title;
       $subTitleHeader = $listAttribute->intro;
       // side menu by kategori artikel
-      $listingKatArtikel = DB::table('artikel')->where('idKat',$kategoriId)->orderBy('sortId', 'ASC')->get();
-      //main content after and before click
+      $listingKatArtikel = DB::table('artikel')->whereRaw('idKat = ?', [$kategoriId])->orderBy('sortId', 'ASC')->get();
+
+      //dd($listingKatArtikel);
+      
       if (!empty($slugDetail)){
         $viewDataDetail =  DB::table('artikel')
-                              ->where('idKat',$kategoriId)
-                              ->where('slug',$slugDetail)
+                              ->whereRaw('idKat = ?', [$kategoriId])
+                              ->whereRaw('slug = ?',[$slugDetail])
                               ->first();
+        //dd ($viewDataDetail);
         $titleContentPages = $viewDataDetail->title;
         $mainContent = $viewDataDetail->content;
       } else {
@@ -42,8 +44,8 @@ class PagesController extends Controller
       }
 
       // widget
-      $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
-      $listingStory  = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      $listingNews = DB::table('artikel')->whereRaw('idKat =?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      $listingStory  = DB::table('artikel')->whereRaw('idKat =?',3)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $listingPartners = DB::table('partner')->limit(4)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,

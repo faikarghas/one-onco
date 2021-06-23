@@ -19,7 +19,7 @@ class Artikel_model extends Model
       $query = DB::table('artikel')
         ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
         ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')
-        ->where(array( 'artikel.idKat' => $id_kategori))
+        ->whereRaw(array( 'artikel.idKat=?' => [$id_kategori]))
         ->orderBy('publishDate','DESC')
         ->paginate(5);
         return $query;
@@ -31,7 +31,7 @@ class Artikel_model extends Model
          $query = DB::table('artikel')
           ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
           ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content AS content_kategori_artikel','kategori_artikel.image')
-          ->where('artikel.slug',$slug)
+          ->whereRaw('artikel.slug=?',[$slug])
           ->orderBy('id','DESC')
           ->first();
          return $query;
@@ -44,7 +44,7 @@ class Artikel_model extends Model
          $query = DB::table('artikel')
           ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
           ->select('artikel.*')
-          ->where('artikel.idkat',$idKat)
+          ->whereRaw('artikel.idkat=?',[$idKat])
           ->whereNotIn('artikel.id',[$id])
           ->orderBy('artikel.PublishDate','DESC')
           ->paginate(3);

@@ -14,7 +14,7 @@ class FaskesController extends Controller
 
     }
     public function getFaskes($id) {
-        $faskes = DB::table("faskes")->where("provinsi",$id)->pluck("namaFaskes","faskesId");
+        $faskes = DB::table("faskes")->whereRaw("provinsi=?",[$id])->pluck("namaFaskes","faskesId");
         return json_encode($faskes);
     }
 }

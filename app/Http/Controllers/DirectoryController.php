@@ -25,7 +25,7 @@ class DirectoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       // filter select option
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
-      $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
+      $spesialis = DB::table('dokter_spesialis')->whereRaw('parentId=?',2)->pluck("title","id");
       // dokter all
       $dokters = Dokter_model::getDokters('', GlobalConstants::ALLSpec, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
       //dd($dokters);
@@ -58,7 +58,11 @@ class DirectoryController extends Controller
       //dd(DB::getQueryLog());
       //dd($dokter);
       //return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();
-      return view('components.presentational.boxResultFilterDirectoryDokter', ['dokter'->$dokter]);
+      $data = array(
+                    'dokter'=>$dokter
+      );
+
+      return view('components.presentational.boxResultFilterDirectoryDokter', $data);
     }
 
     public function getMoreFaskes(Request $request){
@@ -86,7 +90,7 @@ class DirectoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       $dokterDetail = DB::table('dokter')
         ->select('dokter.dokterId', 'dokter.fullname', 'dokter.subSpesialist','dokter.foto')
-        ->where('dokter.dokterId',$id)
+        ->whereRaw('dokter.dokterId=?',[$id])
         ->first();
 
       $foto = $dokterDetail->foto;
@@ -98,9 +102,9 @@ class DirectoryController extends Controller
           ->join('jadwal_dokter', 'jadwal_dokter.faskesId', '=', 'faskes.faskesId','LEFT')
           ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten','faskes.website','faskes.phone','faskes.foto')
           ->distinct('faskes.namaFaskes')
-          ->where('jadwal_dokter.dokterId', $idDokter)->get();
+          ->whereRaw('jadwal_dokter.dokterId=?',[$idDokter])->get();
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
-      $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
+      $spesialis = DB::table('dokter_spesialis')->whereRaw('parentId=?',2)->pluck("title","id");
       $data = array('title' => $siteConfig->pvar2,
                       'copyright'=>$siteConfig->pvar3,
                       'foto'=>$foto,
@@ -120,7 +124,7 @@ class DirectoryController extends Controller
     $siteConfig   = DB::table('global_data')->first();
     $provinces = DB::table('indonesia_provinces')->pluck("name","id");
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
-    $spesialis = DB::table('dokter_spesialis')->where('parentId',2)->pluck("title","id");
+    $spesialis = DB::table('dokter_spesialis')->whereRaw('parentId=?',2)->pluck("title","id");
     $faskess = Faskes_model::getFaskes('', GlobalConstants::ALL, GlobalConstants::ALL, GlobalConstants::ALL);
     $data = array('title' => $siteConfig->pvar2,
                   'copyright'=>$siteConfig->pvar3,
@@ -140,7 +144,7 @@ class DirectoryController extends Controller
 
     $viewFaskes = DB::table('faskes')
         ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif', 'faskes.foto')
-        ->where('faskes.faskesId', $id)->first();
+        ->whereRaw('faskes.faskesId=?', [$id])->first();
 
 
     $namaFaskes = $viewFaskes->namaFaskes;
@@ -164,7 +168,7 @@ class DirectoryController extends Controller
     ->join('jadwal_dokter', 'jadwal_dokter.dokterId', '=', 'dokter.dokterId','LEFT')
     ->select('dokter.dokterId', 'dokter.fullname','dokter.foto')
     ->distinct('dokter.fullname')
-    ->where('jadwal_dokter.faskesId', $id)
+    ->whereRaw('jadwal_dokter.faskesId=?', [$id])
     ->get();
 
     // dd($viewDokter);
@@ -191,12 +195,12 @@ class DirectoryController extends Controller
 
 
   public function getCities($id) {
-    $faskes = DB::table("indonesia_cities")->where("province_id",$id)->pluck("name","id");
+    $faskes = DB::table("indonesia_cities")->whereRaw("province_id=?",[$id])->pluck("name","id");
     return json_encode($faskes);
   }
 
   public function getDokter($id) {
-      $viewDokter = DB::table("dokter_mapped")->select('dokterId', 'fullname', 'subSpesialist' )->where("provinsi",$id)->distinct()->get();
+      $viewDokter = DB::table("dokter_mapped")->select('dokterId', 'fullname', 'subSpesialist' )->whereRaw("provinsi=?",[$id])->distinct()->get();
       return response()->json($viewDokter);
   }
 
@@ -205,14 +209,14 @@ class DirectoryController extends Controller
     $viewFaskes = DB::table("faskes")
     ->join('indonesia_cities', 'indonesia_cities.id', '=', 'faskes.kabupaten','LEFT')
     ->select('faskesId', 'NamaFaskes', 'alamat','kodepos', 'phone','fax', 'email','website', 'indonesia_cities.name AS propinsi')
-    ->where("provinsi",$id)
+    ->whereRaw("provinsi=?",[$id])
     ->get();
     return response()->json($viewFaskes);
 }
 
 public function getFaskesWithPropinsi($id) {
 
-  $faskes = DB::table("faskes")->where("provinsi",$id)->pluck("namaFaskes","faskesid");
+  $faskes = DB::table("faskes")->whereRaw("provinsi=?",[$id])->pluck("namaFaskes","faskesid");
   return json_encode($faskes);
 }
 
@@ -221,7 +225,7 @@ public function getFaskesWithKabupaten($id) {
   $viewFaskes = DB::table("faskes")
     ->join('indonesia_cities', 'indonesia_cities.id', '=', 'faskes.kabupaten','LEFT')
     ->select('faskesId', 'NamaFaskes', 'alamat','kodepos', 'phone','fax', 'email','website', 'indonesia_cities.name AS propinsi')
-    ->where("kabupaten",$id)
+    ->whereRaw("kabupaten=?",[$id])
     ->get();
     return response()->json($viewFaskes);
 }
@@ -229,7 +233,7 @@ public function getFaskesWithKabupaten($id) {
 
 
   public function getDokterWithKabupaten($id) {
-    $viewDokter = DB::table("dokter_mapped")->select('dokterId', 'fullname' )->where("kabupaten",$id)->distinct()->get();
+    $viewDokter = DB::table("dokter_mapped")->select('dokterId', 'fullname' )->whereRaw("kabupaten=?",[$id])->distinct()->get();
     return response()->json($viewDokter);
     // return json_encode($viewDokter);
   }
@@ -244,7 +248,7 @@ public function getFaskesWithKabupaten($id) {
 
     $viewFaskes = DB::table('faskes')
         ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif', 'faskes.foto','faskes.description')
-        ->where('faskes.faskesId', $id)->first();
+        ->whereRaw('faskes.faskesId=?', [$id])->first();
 
 
     $namaFaskes = $viewFaskes->namaFaskes;
@@ -270,7 +274,6 @@ public function getFaskesWithKabupaten($id) {
                   'foto' => $foto,
                   'cities' => $cities,
                   'description' => $description,
-
                 );
     return view ('v_direktoriLab', $data);
   }

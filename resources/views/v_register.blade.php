@@ -10,9 +10,9 @@
                     <div class="col-12">
                         <div class="box__register">
                             <h2 class="mb-5">Pendaftaran Akun</h2>
-
-
                             <form id="register_form" method="post" action="{{ route('register') }}">
+                              @csrf
+
                               @if(Session::get('success'))
                                 <div class="alert alert-success">
                                   {{ Session::get('success') }}
@@ -24,8 +24,7 @@
                                 </div>
                               @endif
 
-                              @csrf
-
+                             
                                 <p class="m-0"><strong>Data Diri</strong></p>
                                 <div class="input-group mb-4">
                                     <input type="text" class="form-control" placeholder="Nama Lengkap*" aria-label="nama" name="name" value="{{ old('name') }}">
