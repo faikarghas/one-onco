@@ -14,6 +14,8 @@
     }
 
     &_wrapper{
+        margin-bottom: 4rem;
+
         @include respond(down-tab-port){
             &:nth-child(3){
                 margin-top: 2rem;

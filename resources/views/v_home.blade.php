@@ -172,11 +172,11 @@
                         <div class="col-12 col-md-6">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'perkanker.png',
-                                'title'=>'Perawatan Kanker',
+                                'title'=>'Deteksi Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#80bc41;',
                                 'colorPar'=>'#808080;',
-                                'path'=>'perawatan-kanker'
+                                'path'=>'deteksi-kanker'
                             ))
                         </div>
                         <div class="col-12 col-md-6">
@@ -238,7 +238,7 @@
                                 <h3 class="text-center mb-5"><strong>CARI TAU LEBIH LANJUT TENTANG KANKER</strong></h3>
                                 <div class="row">
                                     @foreach($listingKankers as $row)
-                                        <div class="col-6 col-md-3 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
+                                        <div class="col-6 col-md-2 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
                                             <a href="{{ url("$row->slug") }}">
                                                 <div class="boxSearchKanker_wrapper-boxImg">
                                                     <img src="{{ asset("data_artikel/$row->icon") }}" alt="kankerpayudara" width="100%" height="100%">
