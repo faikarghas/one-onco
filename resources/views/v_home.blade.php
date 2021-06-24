@@ -236,7 +236,7 @@
                         <div class="col-12">
                             <div class="boxSearchKanker">
                                 <h3 class="text-center mb-5"><strong>CARI TAU LEBIH LANJUT TENTANG KANKER</strong></h3>
-                                <div class="row">
+                                <div class="row justify-content-center">
                                     @foreach($listingKankers as $row)
                                         <div class="col-6 col-md-2 text-center d-flex align-items-center flex-column boxSearchKanker_wrapper">
                                             <a href="{{ url("$row->slug") }}">

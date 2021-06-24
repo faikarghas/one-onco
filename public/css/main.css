@@ -1578,7 +1578,7 @@ button.boxReadMore {
 }
 
 .boxSearchKanker {
-  padding: 3rem 15rem;
+  padding: 3rem 7rem;
 }
 @media only screen and (max-width: 62em) {
   .boxSearchKanker {
@@ -2287,6 +2287,37 @@ button.boxReadMore {
   font-size: 1.3rem;
   color: dimgray;
   margin-bottom: 0;
+}
+
+.konsultasi__page {
+  padding: 8rem 3rem;
+}
+.konsultasi__page-item {
+  border-bottom: 1px solid black;
+  padding: 1rem 0 !important;
+}
+.konsultasi__page .tx {
+  font-size: 1.5rem;
+}
+.konsultasi__page .rg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.konsultasi__page .rg .box_jadwal {
+  padding: 3rem;
+  width: 70%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+}
+.konsultasi__page .rg .box_jadwal ul li {
+  list-style: none;
+  font-size: 1.5rem;
+}
+.konsultasi__page .none-boxShadow {
+  box-shadow: none !important;
+  height: unset;
 }
 
 .detail__page1 {
