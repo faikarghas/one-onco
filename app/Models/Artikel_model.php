@@ -16,10 +16,18 @@ class Artikel_model extends Model
     // listing artikel by kategori
     public function all_kategori($id_kategori)
     {
-      $query = DB::table('artikel')
+    //   $query = DB::table('artikel')
+    //     ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
+    //     ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')
+    //     ->whereRaw(array( 'artikel.idKat=?' => [$id_kategori]))
+    //     ->orderBy('publishDate','DESC')
+    //     ->paginate(5);
+    //     return $query;
+
+    $query = DB::table('artikel')
         ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
         ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')
-        ->whereRaw(array( 'artikel.idKat=?' => [$id_kategori]))
+        ->whereRaw('artikel.idKat=?',[$id_kategori])
         ->orderBy('publishDate','DESC')
         ->paginate(5);
         return $query;

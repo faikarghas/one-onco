@@ -17,17 +17,25 @@ class StoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       // get all atribut pages
       $slugKat = $request->segment(1);
+      
       $listAttribute = $this->getPages($slugKat);
       // $segment = $request->segment(1);
       // $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
 
       $id_kategori =  $listAttribute->id;
+      
+      
+
       $title_header = $listAttribute->title;
       $tagline_header = $listAttribute->intro;
       $img_header =$listAttribute->image;
-
+      
       $model  = new Artikel_model();
+
+
       $listingStory  = $model->all_kategori($id_kategori);
+
+      //dd($listingStory);      
 
       // listing news 3 rows
       $listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
