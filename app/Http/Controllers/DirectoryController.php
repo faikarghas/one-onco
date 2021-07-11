@@ -76,10 +76,10 @@ class DirectoryController extends Controller
       //dd($provinsi);
       $kabupaten = $request->kabupaten;
       
-      //DB::enableQueryLog();
+      DB::enableQueryLog();
       $faskes = Faskes_model::getFaskes($query,$spesialis,$provinsi,$kabupaten);
-      //dd(DB::getQueryLog());
-      //dd($faskes);
+      dd(DB::getQueryLog());
+      dd($faskes);
 
       $data = array(
         'faskes'=>$faskes

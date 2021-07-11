@@ -26,7 +26,7 @@ class Faskes_model extends Model
         return $query;  
     }
 
-    public static function getFaskes($search_keyword,$spesialis,$provinsi,$kabupaten) {
+    public static function getFaskes($search_keyword,$spesialis=NULL,$provinsi,$kabupaten) {
         $faskes = DB::table('faskes')->select(['faskesId','namaFaskes','alamat','foto','phone','website']);;
         if($search_keyword && !empty($search_keyword)) {
             $faskes->where(function($q) use ($search_keyword) {
@@ -34,9 +34,11 @@ class Faskes_model extends Model
                 ->orWhere('alamat', 'LIKE', "%{$search_keyword}%");
             });
         }
+       
         //Filter Spesialis
-        if($spesialis && $spesialis!= GlobalConstants::ALLSpec2) {
+        if($spesialis && $spesialis!= GlobalConstants::ALLSpec2 && $spesialis!= 'pilihLayananKanker' ) {
             $faskes = $faskes->where($spesialis, '1');
+            dd($spesialis);
         }
         //Filter Provinsi
         if($provinsi && $provinsi!= GlobalConstants::ALLProv) {
