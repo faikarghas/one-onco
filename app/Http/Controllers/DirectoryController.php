@@ -53,11 +53,12 @@ class DirectoryController extends Controller
       $spesialis = $request->spesialis;
       $provinsi = $request->provinsi;
       $kabupaten = $request->kabupaten;
-      //DB::enableQueryLog();
+      DB::enableQueryLog();
       $dokter = Dokter_model::getDokters($query,$spesialis,$provinsi,$kabupaten);
-      //dd(DB::getQueryLog());
-      //dd($dokter);
+      dd(DB::getQueryLog());
+      dd($dokter);
       //return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();
+      //dd($dokter);
       $data = array(
                     'dokter'=>$dokter
       );
@@ -66,12 +67,27 @@ class DirectoryController extends Controller
     }
 
     public function getMoreFaskes(Request $request){
-      $query = $request->search_query;
-      $spesialis = $request->spesialis;
+      $query = strtolower($request->search_query);
+      //dd($query);
+      $spesialis = preg_replace("/[^A-Za-z0-9]/", "", $request->spesialis);
+      $spesialis = lcfirst($spesialis);
+      //dd($spesialis);
       $provinsi = $request->provinsi;
+      //dd($provinsi);
       $kabupaten = $request->kabupaten;
+      
+      //DB::enableQueryLog();
       $faskes = Faskes_model::getFaskes($query,$spesialis,$provinsi,$kabupaten);
-      return view('components.presentational.boxResultFilterDirectoryFaskes', compact('faskes'))->render();
+      //dd(DB::getQueryLog());
+      //dd($faskes);
+
+      $data = array(
+        'faskes'=>$faskes
+);
+
+      return view('components.presentational.boxResultFilterDirectoryFaskes', $data);
+      
+      // return view('components.presentational.boxResultFilterDirectoryFaskes', compact('faskes'))->render();
     }
   
     public function getMoreKomunitas(Request $request){
@@ -125,7 +141,7 @@ class DirectoryController extends Controller
     $provinces = DB::table('indonesia_provinces')->pluck("name","id");
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
     $spesialis = DB::table('dokter_spesialis')->whereRaw('parentId=?',2)->pluck("title","id");
-    $faskess = Faskes_model::getFaskes('', GlobalConstants::ALL, GlobalConstants::ALL, GlobalConstants::ALL);
+    $faskess = Faskes_model::getFaskes('', GlobalConstants::ALLSpec2, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
     $data = array('title' => $siteConfig->pvar2,
                   'copyright'=>$siteConfig->pvar3,
                   'faskes'=>$faskess
