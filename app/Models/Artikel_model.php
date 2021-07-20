@@ -12,6 +12,7 @@ class Artikel_model extends Model
 
     protected $table 		= "artikel";
 	protected $primaryKey 	= 'id';
+    protected $fillable = array('idKat');
 
     // listing artikel by kategori
     public function all_kategori($id_kategori)
@@ -24,6 +25,14 @@ class Artikel_model extends Model
     //     ->paginate(5);
     //     return $query;
 
+    // $query = DB::table('artikel')
+    //     ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
+    //     ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')
+    //     ->whereRaw('artikel.idKat=?',[$id_kategori])
+    //     ->orderBy('publishDate','DESC')
+    //     ->paginate(5);
+    //     return $query;
+    
     $query = DB::table('artikel')
         ->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat','LEFT')
         ->select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')
@@ -58,6 +67,4 @@ class Artikel_model extends Model
           ->paginate(3);
          return $query;
      }
-
-
 }

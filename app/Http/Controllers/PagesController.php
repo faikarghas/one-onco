@@ -15,7 +15,7 @@ class PagesController extends Controller
       // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();
       $request_path = explode('/', $slug);
-      dd ($request_path);
+      //dd ($request_path);
 
       
       if (isset($request_path[1])){

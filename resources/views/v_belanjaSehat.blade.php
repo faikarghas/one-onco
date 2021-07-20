@@ -2,7 +2,6 @@
 
 @section('content')
     @include('components/presentational/header',['path'=>''])
-
     <main>
         <section class="belanja__page">
             <div class="container">
