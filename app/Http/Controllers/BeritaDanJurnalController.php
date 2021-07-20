@@ -37,7 +37,12 @@ class BeritaDanJurnalController extends Controller
 
 
       $model  = new Artikel_model();
-      $listingStory  = $model->all_kategori($id_kategori);
+
+      //$listingStory  = $model->all_kategori($id_kategori);
+      $listingStory  = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',$id_kategori)->orderBy('artikel.publishDate','desc')->paginate(5);
+
+     // dd($listingStory);
+
 
      
 
@@ -89,7 +94,9 @@ class BeritaDanJurnalController extends Controller
       // detail News/artikel/story
       $segment2 = $request->segment(2);
       $model  = new Artikel_model();
-      $detailStory  = $model->detail($segment2);
+      
+      $detailStory  = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.slug','=',$slug)->orderBy('artikel.id','desc')->first();
+
       $yearCurrent  = date('Y');
       $dateNewsDetail =  date('Y', strtotime($detailStory->publishDate));
       if ($yearCurrent == $dateNewsDetail ){
@@ -102,8 +109,10 @@ class BeritaDanJurnalController extends Controller
       // other artikel
       $id =  $detailStory->id;
       $otherModel  = new Artikel_model();
-      $otherStory  = $model->otherArticle($id, $id_kategori);
+      //$otherStory  = $model->otherArticle($id, $id_kategori);
+      $otherStory  = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')->where('artikel.idKat','=',$id_kategori)->whereNotIn('artikel.id',[$id])->orderBy('artikel.publishDate','desc')->paginate(3);
 
+      //dd($otherStory);
      
       // listing news 3 rows
       //$listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
