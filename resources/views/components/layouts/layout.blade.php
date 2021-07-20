@@ -12,7 +12,7 @@
         
         @yield('meta')  
 
-        <title>Laravel test</title>
+        <title>ONE ONCO</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">

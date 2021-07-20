@@ -29,13 +29,15 @@ class StoryController extends Controller
       $img_header =$listAttribute->image;
       
       $model  = new Artikel_model();
-      $listingStory  = $model->all_kategori($id_kategori);
+      $listingStory  = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',$id_kategori)->orderBy('artikel.publishDate','desc')->paginate(5);
 
       //dd($listingStory);      
 
       // listing news 3 rows
       //$listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $listingNews = Artikel_model::where('idkat' ,'1')->skip(0)->take(3)->orderBy('publishDate','desc')->get();
+
+      //dd($listAttribute);
 
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
