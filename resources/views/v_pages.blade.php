@@ -42,7 +42,7 @@
                    </div>
                     <div class="col-12 col-md-6">
                         <div class="list__component">
-                            @foreach($listingKatArtikel as $row)
+                            @foreach($listingKatArtikel as $key => $row)
                                 <div class="row list__component-list--item">
                                     <div class="col-1">
                                         <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">

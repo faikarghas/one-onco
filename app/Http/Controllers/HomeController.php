@@ -82,10 +82,14 @@ class HomeController extends Controller
           ->take(3)
           ->orderBy('publishDate', 'DESC')
           ->get();
-          
         // all data variable to views
 //        $listingPartners = DB::table('partner')->limit(6)->orderBy('id', 'DESC')->get();
         $listingPartners = Partner_model::skip(0)->take(6)->orderBy('id','desc')->get();
+
+        $tentangKamiFirst = DB::table('artikel')
+        ->where('artikel.idKat','6')
+        ->orderBy('sortId','ASC')
+        ->get();
 
         $data = array('title' => $siteConfig->pvar2,
                       'copyright'=>$siteConfig->pvar3,

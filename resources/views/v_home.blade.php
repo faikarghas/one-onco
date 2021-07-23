@@ -429,11 +429,6 @@
         <script>
 
 
-            // $(function () {
-            //     $("#myiframe").load(function () {
-            //         frames["myframe"].document.body.innerHTML = htmlValue;
-            //     });
-            // });
 
         </script>
     </body>
