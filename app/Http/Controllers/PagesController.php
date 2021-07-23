@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\News_model;
 use App\Models\Customer_model;
 use App\Models\Artikel_model;
+use App\Models\Partner_model;
 
 class PagesController extends Controller
 {
@@ -15,7 +16,7 @@ class PagesController extends Controller
       // GET variable from global data for website
       $siteConfig   = DB::table('global_data')->first();
       $request_path = explode('/', $slug);
-      dd ($request_path);
+      //dd ($request_path);
 
       
       if (isset($request_path[1])){
@@ -29,15 +30,17 @@ class PagesController extends Controller
       $titleHeader = $listAttribute->title;
       $subTitleHeader = $listAttribute->intro;
       // side menu by kategori artikel
-      $listingKatArtikel = DB::table('artikel')->whereRaw('idKat = ?', [$kategoriId])->orderBy('sortId', 'ASC')->get();
-
+      //$listingKatArtikel = DB::table('artikel')->whereRaw('idKat = ?', [$kategoriId])->orderBy('sortId', 'ASC')->get();
+      $listingKatArtikel = Artikel_model::where('idKat','=',$kategoriId)->orderBy('sortId', 'ASC')->get();
       //dd($listingKatArtikel);
       
       if (!empty($slugDetail)){
-        $viewDataDetail =  DB::table('artikel')
-                              ->whereRaw('idKat = ?', [$kategoriId])
-                              ->whereRaw('slug = ?',[$slugDetail])
-                              ->first();
+        // $viewDataDetail =  DB::table('artikel')
+        //                       ->whereRaw('idKat = ?', [$kategoriId])
+        //                       ->whereRaw('slug = ?',[$slugDetail])
+        //                       ->first();
+        $viewDataDetail =  Artikel_model::where('idKat','=',$kategoriId)->where('slug','=',$slugDetail)->first();
+        
         //dd ($viewDataDetail);
         $titleContentPages = $viewDataDetail->title;
         $mainContent = $viewDataDetail->content;
@@ -47,9 +50,12 @@ class PagesController extends Controller
       }
 
       // widget
-      $listingNews = DB::table('artikel')->whereRaw('idKat =?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
-      $listingStory  = DB::table('artikel')->whereRaw('idKat =?',3)->limit(3)->orderBy('publishDate', 'DESC')->get();
-      $listingPartners = DB::table('partner')->limit(4)->orderBy('id', 'DESC')->get();
+      //$listingNews = DB::table('artikel')->whereRaw('idKat =?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      //$listingStory  = DB::table('artikel')->whereRaw('idKat =?',3)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      //$listingPartners = DB::table('partner')->limit(4)->orderBy('id', 'DESC')->get();
+      $listingNews = Artikel_model::where('idKat','=',1)->skip(0)->take(3)->orderBy('publishDate', 'DESC')->get();
+      $listingStory  = Artikel_model::where('idKat','=',3)->skip(0)->take(3)->orderBy('publishDate', 'DESC')->get();
+      $listingPartners = Partner_model::skip(0)->take(4)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'listingKatArtikel'=>$listingKatArtikel,

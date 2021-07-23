@@ -26,17 +26,22 @@ class JenisKankerController extends Controller
       $subTitleHeader = $listAttribute->intro;
       //dd($subTitleHeader);
       // side menu by kategori artikel
-      $listingKatArtikel = DB::table('artikel')->whereRaw('idKat=?',[$kategoriId])->orderBy('sortId', 'ASC')->get();
+      //$listingKatArtikel = DB::table('artikel')->whereRaw('idKat=?',[$kategoriId])->orderBy('sortId', 'ASC')->get();
+      $listingKatArtikel = Artikel_model::where('idKat','=',$kategoriId)->orderBy('sortId', 'ASC')->get();
+
       //dd($listingKatArtikel);
-        // main content after and before click
+      // main content after and before click
 
       //dd($slug);  
       if (!empty($slug)){
-        $viewDataDetail =  DB::table('artikel')
-                              ->where('idKat=?',[$kategoriId])
-                              ->where('slug=?',[$slug])
+        // $viewDataDetail =  DB::table('artikel')
+        //                       ->where('idKat=?',[$kategoriId])
+        //                       ->where('slug=?',[$slug])
+        //                       ->first();
+        $viewDataDetail =  Artikel_model::where('idKat','=',$kategoriId)
+                              ->where('slug=','=',$slug)
                               ->first();
-        dd($viewDataDetail);
+       
         $titleContentPages = $viewDataDetail->title;
         $mainContent = $viewDataDetail->content;
       } else {
@@ -44,8 +49,8 @@ class JenisKankerController extends Controller
         $mainContent = $listAttribute->content;
       }
       // widget
-      $listingNews = DB::table('artikel')->where('idKat=?',1)->limit(3)->orderBy('id', 'DESC')->get();
-
+      //$listingNews = DB::table('artikel')->where('idKat=?',1)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingNews = Artikel_model::where('idKat','=',1)->skip(0)->take(3)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'listingKatArtikel'=>$listingKatArtikel,

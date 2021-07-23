@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Artikel_model;
+use App\Models\ArtikelKategori_model;
 use App\Models\Customer_model;
 use Illuminate\Pagination\Paginator;
 
@@ -19,9 +20,6 @@ class StoryController extends Controller
       $slugKat = $request->segment(1);
       
       $listAttribute = $this->getPages($slugKat);
-      // $segment = $request->segment(1);
-      // $content_kategori = DB::table('kategori_artikel')->where('slug',$segment)->first();
-
       $id_kategori =  $listAttribute->id;
       
       
@@ -31,14 +29,20 @@ class StoryController extends Controller
       $img_header =$listAttribute->image;
       
       $model  = new Artikel_model();
+      $listingStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)
+      ->where('artikel.idKat','=',$id_kategori)
+      ->orderBy('artikel.publishDate','desc')
+      ->paginate(5);
 
-
-      $listingStory  = $model->all_kategori($id_kategori);
+      //dd($listingStory);
 
       //dd($listingStory);      
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      //$listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
+      $listingNews = Artikel_model::where('idkat' ,'1')->skip(0)->take(3)->orderBy('publishDate','desc')->get();
+
+      //dd($listAttribute);
 
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
@@ -61,7 +65,8 @@ class StoryController extends Controller
 
       // header title and image
       $segment = $request->segment(1);
-      $content_kategori = DB::table('kategori_artikel')->whereRaw('slug=?',[$segment])->first();
+      $content_kategori = ArtikelKategori_model::where('slug', '=' , $segment)->first(); 
+      
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
@@ -69,8 +74,10 @@ class StoryController extends Controller
 
       // listing detail story
       $segment2 = $request->segment(2);
-      $model  = new Artikel_model();
-      $detailStory  = $model->detail($segment2);
+      
+      //$model  = new Artikel_model();
+      //$detailStory  = $model->detail($segment2);
+      $detailStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content AS content_kategori_artikel','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.slug','=',$segment2)->orderBy('artikel.id','desc')->first(); 
 
       $slugKat = $request->segment(1);
       $listAttribute = $this->getPages($slugKat);
@@ -79,11 +86,13 @@ class StoryController extends Controller
 
       // other artikel
       $id =  $detailStory->id;
-      $otherModel  = new Artikel_model();
-      $otherStory  = $model->otherArticle($id, $id_kategori);
+      //$otherModel  = new Artikel_model();
+      //$otherStory  = $model->otherArticle($id, $id_kategori);
+      $otherStory = Artikel_model::select('artikel.*')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')->where('artikel.idKat','=',$id_kategori)->whereNotIn('artikel.id',[$id])->orderBy('artikel.publishDate','desc')->paginate(3);
+
 
       // listing news 3 rows
-      $listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('id', 'DESC')->get();
+      $listingNews = Artikel_model::where('idkat' ,'1')->skip(0)->take(3)->orderBy('publishDate','desc')->get();
 
       // dd($listingNews);
       $data = array('title' => $siteConfig->pvar2,
@@ -113,14 +122,21 @@ class StoryController extends Controller
      {
       if($request->id > 0)
       {
-       $data = DB::table('artikel')
-          ->where('id','<', $request->id)
-          ->whereRaw('idKat=?', [$id_Kat])
-          ->orderBy('publishDate', 'DESC')
-          ->limit(8)
-          ->skip(5)
-          ->get();
-        dd( $request->id);
+      //  $data = DB::table('artikel')
+      //     ->where('id','<', $request->id)
+      //     ->whereRaw('idKat=?', [$id_Kat])
+      //     ->orderBy('publishDate', 'DESC')
+      //     ->limit(8)
+      //     ->skip(5)
+      //     ->get();
+      //   dd( $request->id);
+
+        $data = Artikel_model::where('id' ,'<',$request->id)
+              ->where('idKat', '=' ,$id_Kat)
+              ->skip(5)
+              ->take(8)
+              ->orderBy('publishDate','desc')
+              ->get();
       }
       $output = '';
       $last_id = '';

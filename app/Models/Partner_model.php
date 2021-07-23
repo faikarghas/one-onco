@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\DB;
 use App\Constants\GlobalConstants;
 
 
-class Dokter_model extends Model
+class Partner_model extends Model
 {
     use HasFactory;
-    protected $table = "dokter";
+    protected $table = "partner";
     protected $primaryKey 	= 'id';
-    protected $fillable = array('id','dokterId');
+    protected $fillable = array('id');
     
 }
 

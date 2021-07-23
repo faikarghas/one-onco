@@ -81,7 +81,7 @@
             @foreach ($viewDokter as $row)
             <div class="col-12 col-md-6">
                 <div class="box__rec3 box-sh">
-                    <a href="{{url('/dokter-detail')}}/{{ $row->dokterId }}">
+                    <a href="{{url('/dokter-detail')}}/{{ $row->uuid }}">
                         <div class="container p-0">
                             <div class="row">
                                 <div class="col-3 d-flex align-items-center justify-content-center">

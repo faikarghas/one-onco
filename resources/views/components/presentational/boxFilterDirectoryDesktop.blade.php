@@ -43,6 +43,7 @@
                     <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
                       <option>{{\App\Constants\GlobalConstants::ALLSpec2}}</option>
                       @foreach(\App\Constants\GlobalConstants::LIST_LAYANAN as $type)
+                         
                           <option>{{ $type }}</option>
                       @endforeach
                   </select>

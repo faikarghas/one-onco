@@ -12,7 +12,6 @@ use App\Constants\GlobalConstants;
 class Faskes_model extends Model
 {
     use HasFactory;
-
     protected $table 		= "faskes";
 	protected $primaryKey 	= 'faskesId';
 
@@ -27,24 +26,26 @@ class Faskes_model extends Model
         return $query;  
     }
 
-    public static function getFaskes($search_keyword,$spesialis,$provinsi,$kabupaten) {
-        $faskes = DB::table('faskes');
+    public static function getFaskes($search_keyword,$spesialis=NULL,$provinsi,$kabupaten) {
+        $faskes = DB::table('faskes')->select(['faskesId','namaFaskes','alamat','foto','phone','website']);;
         if($search_keyword && !empty($search_keyword)) {
             $faskes->where(function($q) use ($search_keyword) {
-                $q->where('namaFaskes', 'like', "%{$search_keyword}%")
-                ->orWhere('alamat', 'like', "%{$search_keyword}%");
+                $q->where('namaFaskes', 'LIKE', "%{$search_keyword}%")
+                ->orWhere('alamat', 'LIKE', "%{$search_keyword}%");
             });
         }
+       
         //Filter Spesialis
-        if($spesialis && $spesialis!= GlobalConstants::ALL) {
-            $faskes = $faskes->where('subSpesialist', $spesialis);
+        if($spesialis && $spesialis!= GlobalConstants::ALLSpec2 && $spesialis!= 'pilihLayananKanker' ) {
+            $faskes = $faskes->where($spesialis, '1');
+            //dd($spesialis);
         }
         //Filter Provinsi
-        if($provinsi && $provinsi!= GlobalConstants::ALL) {
+        if($provinsi && $provinsi!= GlobalConstants::ALLProv) {
             $faskes = $faskes->where('provinsi', $provinsi);
         }
         //Filter Kabupaten
-        if($kabupaten && $kabupaten!= GlobalConstants::ALL) {
+        if($kabupaten && $kabupaten!= GlobalConstants::ALLKab) {
             $faskes = $faskes->where('kabupaten', $kabupaten);
         }
         return $faskes->paginate(PER_PAGE_LIMIT);

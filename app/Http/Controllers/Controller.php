@@ -8,7 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Models\News_model;
+use App\Models\Artikel_model;
+use App\Models\ArtikelKategori_model;
 
 define('PER_PAGE_LIMIT', 30);
 
@@ -17,17 +18,27 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function getnews(){
-        $listingNews = DB::table('artikel')->where('idKat',1)->limit(3)->orderBy('id', 'DESC')->get();
+  
+        $listingNews = Artikel_model::where('idKat' ,1)
+                      ->skip(0)
+                      ->take(3)
+                      ->orderBy('id','DESC')
+                      ->get();
         return $listingNews;
     }
 
     public function getPages($slugKat){
-        $getAllVariable = DB::table('kategori_artikel')->where('slug',$slugKat)->first();
+        $getAllVariable = ArtikelKategori_model::where('slug' ,'=', $slugKat)->first();
         return $getAllVariable;
     }
 
     public function getstory(){
-      $listingNews = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('id', 'DESC')->get();
+      //$listingNews = DB::table('artikel')->where('idKat',3)->limit(3)->orderBy('id', 'DESC')->get(); 
+      $listingNews = Artikel_model::where('idKat' ,3)
+      ->skip(0)
+      ->take(3)
+      ->orderBy('id','DESC')
+      ->get();
       return $listingNews;
   }
 

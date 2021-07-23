@@ -6,7 +6,8 @@
           $newRsPraktek = str_replace(',','<br>', $rsPraktek);
           $count =  substr_count($rsPraktek, ",");
           $foto = $row->Image;
-        $path = public_path('/data_dokter/'.$foto);
+          $path = public_path('/data_dokter/'.$foto);
+
         $isExists = file_exists($path);
         if ($isExists) {
             $fotoDokter = $foto;
@@ -23,7 +24,7 @@
                     'praktek'=>$newRsPraktek,
                     'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                     'color'=>'#4172CB;',
-                    'path'=>'dokter-detail/'.$row->dokterId,
+                    'path'=>'dokter-detail/'.$row->uuid,
                     'rounded'=>'rounded_img'
                 ))
             </div>
