@@ -36,7 +36,7 @@
                                         </ul>
                                     </div>
                                     <div class="col-12 mt-5">
-                                        <div class="box__rec none-boxShadow">
+                                        <div class="box__rec">
                                             <a href="http://127.0.0.1:8000/konsultasi-online/chat" class="d-block h-100">
                                                 <div class="container">
                                                     <div class="row">

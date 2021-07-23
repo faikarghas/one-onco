@@ -340,8 +340,8 @@
                     <h1 class="modal-title text-center" id="exampleModalLabel">TERIMA KASIH !!</h1>
                     </div>
                     <div class="modal-body">
-                    <h3>Selamat bergabung dalam grup newletter One Onco. 
-                        Nantikan berita dan informasi menarik dari kami! 
+                    <h3>Selamat bergabung dalam grup newletter One Onco.
+                        Nantikan berita dan informasi menarik dari kami!
                          Mari kita lawan kanker Bersama!
                         </h3>
                     </div>
@@ -427,14 +427,13 @@
             }
         </script>
         <script>
-            function coba() {
-                let head = $("#iframeaimz").contents().find("head");
-                let css = '<style>.test{display:none;}</style>';
-                $(head).append(css);
 
-                console.log(head);
-            }
-            coba()
+
+            // $(function () {
+            //     $("#myiframe").load(function () {
+            //         frames["myframe"].document.body.innerHTML = htmlValue;
+            //     });
+            // });
 
         </script>
     </body>
