@@ -337,8 +337,8 @@
                     <h1 class="modal-title text-center" id="exampleModalLabel">TERIMA KASIH !!</h1>
                     </div>
                     <div class="modal-body">
-                    <h3>Selamat bergabung dalam grup newletter One Onco. 
-                        Nantikan berita dan informasi menarik dari kami! 
+                    <h3>Selamat bergabung dalam grup newletter One Onco.
+                        Nantikan berita dan informasi menarik dari kami!
                          Mari kita lawan kanker Bersama!
                         </h3>
                     </div>
@@ -422,6 +422,11 @@
                 }
 
             }
+        </script>
+        <script>
+
+
+
         </script>
     </body>
 </html>

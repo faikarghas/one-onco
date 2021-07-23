@@ -18,7 +18,7 @@ class PagesController extends Controller
       $request_path = explode('/', $slug);
       //dd ($request_path);
 
-      
+
       if (isset($request_path[1])){
         $slugDetail = $request_path[1];
       }
@@ -33,14 +33,14 @@ class PagesController extends Controller
       //$listingKatArtikel = DB::table('artikel')->whereRaw('idKat = ?', [$kategoriId])->orderBy('sortId', 'ASC')->get();
       $listingKatArtikel = Artikel_model::where('idKat','=',$kategoriId)->orderBy('sortId', 'ASC')->get();
       //dd($listingKatArtikel);
-      
+
       if (!empty($slugDetail)){
         // $viewDataDetail =  DB::table('artikel')
         //                       ->whereRaw('idKat = ?', [$kategoriId])
         //                       ->whereRaw('slug = ?',[$slugDetail])
         //                       ->first();
         $viewDataDetail =  Artikel_model::where('idKat','=',$kategoriId)->where('slug','=',$slugDetail)->first();
-        
+
         //dd ($viewDataDetail);
         $titleContentPages = $viewDataDetail->title;
         $mainContent = $viewDataDetail->content;
