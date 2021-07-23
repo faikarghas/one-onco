@@ -39,7 +39,7 @@ class BeritaDanJurnalController extends Controller
       $model  = new Artikel_model();
 
       //$listingStory  = $model->all_kategori($id_kategori);
-      $listingStory  = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',$id_kategori)->orderBy('artikel.publishDate','desc')->paginate(5);
+      $listingStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',$id_kategori)->orderBy('artikel.publishDate','desc')->paginate(5);
 
      // dd($listingStory);
 
@@ -95,7 +95,7 @@ class BeritaDanJurnalController extends Controller
       $segment2 = $request->segment(2);
       $model  = new Artikel_model();
       
-      $detailStory  = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.slug','=',$slug)->orderBy('artikel.id','desc')->first();
+      $detailStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content AS content_kategori_artikel','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.slug','=',$slug)->orderBy('artikel.id','desc')->first();
 
       $yearCurrent  = date('Y');
       $dateNewsDetail =  date('Y', strtotime($detailStory->publishDate));
@@ -110,7 +110,7 @@ class BeritaDanJurnalController extends Controller
       $id =  $detailStory->id;
       $otherModel  = new Artikel_model();
       //$otherStory  = $model->otherArticle($id, $id_kategori);
-      $otherStory  = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')->where('artikel.idKat','=',$id_kategori)->whereNotIn('artikel.id',[$id])->orderBy('artikel.publishDate','desc')->paginate(3);
+      $otherStory  = Artikel_model::select('artikel.*')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')->where('artikel.idKat','=',$id_kategori)->whereNotIn('artikel.id',[$id])->orderBy('artikel.publishDate','desc')->paginate(3);
 
       //dd($otherStory);
      
