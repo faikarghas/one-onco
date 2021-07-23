@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                   <select class="form-select mb-3" aria-label="Default select example" id="kabupaten" name="kabupaten">
-                    <option value="">Pilih Kabupaten - Kabupaten RS</option>
+                    <option value="">Pilih Kabupaten</option>
                   </select>
                 </div>
               @else
@@ -74,11 +74,10 @@
                 </div>
                 <div class="col-12 col-md-4">
                   <select class="form-select mb-3" aria-label="Default select example" id="kabupaten" name="kabupaten">
-                    <option value="">Pilih Kabupaten - Kabupaten RS</option>
+                    <option value="">Pilih Kabupaten</option>
                   </select>
                 </div>
               @endif
-              
             </div>
           </form>
         </div>
