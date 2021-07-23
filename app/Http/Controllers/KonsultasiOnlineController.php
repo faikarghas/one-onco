@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class KonsultasiOnlineController extends Controller
@@ -11,8 +10,6 @@ class KonsultasiOnlineController extends Controller
         return view('v_indexChat');
     }
     public function chat(Request $request){     
-        
-        
         return view('v_konsultasiOnline');
     }
 }

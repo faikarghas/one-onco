@@ -28,13 +28,13 @@ class DirectoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       // filter select option
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
-      
-      //$spesialis = DB::table('dokter_spesialis')->whereRaw('parentId=?',2)->pluck("title","id");
-      
+       
       $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
       
       // dokter all
       $dokters = DokterMapped_model::getDokters('', GlobalConstants::ALLSpec, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
+
+      //dd($dokters);
       //dd($dokters);
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
@@ -120,13 +120,17 @@ class DirectoryController extends Controller
       // ->whereRaw('dokter.dokterId=?',[$id])
       // ->first();
 
-      $dokterDetail = Dokter_model::where('dokterId','=',$id)->first();
+      $dokterDetail = Dokter_model::where('uuid','=',$id)->first();
 
+      
       
       $foto = $dokterDetail->foto;
       $fullname = $dokterDetail->fullname;
       $layanan = $dokterDetail->subSpesialist;
-      $idDokter = $id;
+      
+      $idDokter = $dokterDetail->dokterId;
+
+      
 
       // $viewFaskes = DB::table('faskes')
       //     ->join('jadwal_dokter', 'jadwal_dokter.faskesId', '=', 'faskes.faskesId','LEFT')
@@ -209,14 +213,19 @@ class DirectoryController extends Controller
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
 
     // view dokter praktek by Faskes
-    $viewDokter = DB::table('dokter')
-    ->join('jadwal_dokter', 'jadwal_dokter.dokterId', '=', 'dokter.dokterId','LEFT')
-    ->select('dokter.dokterId', 'dokter.fullname','dokter.foto')
-    ->distinct('dokter.fullname')
-    ->whereRaw('jadwal_dokter.faskesId=?', [$id])
-    ->get();
+    // $viewDokter = DB::table('dokter')
+    // ->join('jadwal_dokter', 'jadwal_dokter.dokterId', '=', 'dokter.dokterId','LEFT')
+    // ->select('dokter.dokterId', 'dokter.fullname','dokter.foto')
+    // ->distinct('dokter.fullname')
+    // ->whereRaw('jadwal_dokter.faskesId=?', [$id])
+    // ->get();
 
-    // dd($viewDokter);
+    //view dokter praktek by Faskes
+    $viewDokter = Dokter_model::join('jadwal_dokter', 'jadwal_dokter.dokterId', '=', 'dokter.dokterId')
+    ->distinct('fullname')
+    ->where('faskesId','=', $id)
+    ->get();
+    //dd($viewDokter);
 
     $data = array('title' => $siteConfig->pvar2,
                   'copyright'=>$siteConfig->pvar3,

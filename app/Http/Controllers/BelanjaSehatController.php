@@ -9,10 +9,6 @@ class BelanjaSehatController extends Controller
 {
     //
     public function index(Request $request){
-
-
-        $data = session()->all();
-        dd($data);
         return view('v_belanjaSehat');
     }
 }

@@ -29,7 +29,12 @@ class StoryController extends Controller
       $img_header =$listAttribute->image;
       
       $model  = new Artikel_model();
-      $listingStory  = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',$id_kategori)->orderBy('artikel.publishDate','desc')->paginate(5);
+      $listingStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)
+      ->where('artikel.idKat','=',$id_kategori)
+      ->orderBy('artikel.publishDate','desc')
+      ->paginate(5);
+
+      //dd($listingStory);
 
       //dd($listingStory);      
 
@@ -61,6 +66,7 @@ class StoryController extends Controller
       // header title and image
       $segment = $request->segment(1);
       $content_kategori = ArtikelKategori_model::where('slug', '=' , $segment)->first(); 
+      
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
       $tagline_header = $content_kategori->content;
@@ -68,8 +74,10 @@ class StoryController extends Controller
 
       // listing detail story
       $segment2 = $request->segment(2);
-      $model  = new Artikel_model();
-      $detailStory  = $model->detail($segment2);
+      
+      //$model  = new Artikel_model();
+      //$detailStory  = $model->detail($segment2);
+      $detailStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content AS content_kategori_artikel','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.slug','=',$segment2)->orderBy('artikel.id','desc')->first(); 
 
       $slugKat = $request->segment(1);
       $listAttribute = $this->getPages($slugKat);
@@ -78,8 +86,10 @@ class StoryController extends Controller
 
       // other artikel
       $id =  $detailStory->id;
-      $otherModel  = new Artikel_model();
-      $otherStory  = $model->otherArticle($id, $id_kategori);
+      //$otherModel  = new Artikel_model();
+      //$otherStory  = $model->otherArticle($id, $id_kategori);
+      $otherStory = Artikel_model::select('artikel.*')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')->where('artikel.idKat','=',$id_kategori)->whereNotIn('artikel.id',[$id])->orderBy('artikel.publishDate','desc')->paginate(3);
+
 
       // listing news 3 rows
       $listingNews = Artikel_model::where('idkat' ,'1')->skip(0)->take(3)->orderBy('publishDate','desc')->get();

@@ -68,6 +68,8 @@ class HomeController extends Controller
 
         $listingJurnal = Artikel_model::join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')
         ->where('artikel.idKat',2)
+        ->skip(0)
+        ->take(3)
         ->orderBy('artikel.publishDate','desc')
         ->get();
 

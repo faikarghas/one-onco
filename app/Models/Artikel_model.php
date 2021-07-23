@@ -12,7 +12,8 @@ class Artikel_model extends Model
 
     protected $table 		= "artikel";
 	protected $primaryKey 	= 'id';
-    protected $fillable = array('idKat');
+    //protected $fillable = array('idKat');
+    public $timestamps = false;
 
     // listing artikel by kategori
     public function all_kategori($id_kategori)
