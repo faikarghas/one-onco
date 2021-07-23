@@ -43,26 +43,42 @@
                     <select class="form-select mb-2" aria-label="Default select example" id="spesialis" name="spesialis">
                       <option>{{\App\Constants\GlobalConstants::ALLSpec2}}</option>
                       @foreach(\App\Constants\GlobalConstants::LIST_LAYANAN as $type)
-                         
                           <option>{{ $type }}</option>
                       @endforeach
                   </select>
                     @endif
                 </div>
               @endif
-              <div class="col-12 col-md-4">
+              @if (Request::segment(1)==='direktori-lab')
+                <div class="col-12 col-md-6">
+                    <select class="form-select mb-3" aria-label="Default select example" id="provinsi" name="provinsi">
+                        <option>{{\App\Constants\GlobalConstants::ALLProv}}</option>
+                        @foreach ($cities as $citi => $value)
+                            <option data-id="{{ $citi }}">{{ $value }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-12 col-md-6">
+                  <select class="form-select mb-3" aria-label="Default select example" id="kabupaten" name="kabupaten">
+                    <option value="">Pilih Kabupaten - Kabupaten RS</option>
+                  </select>
+                </div>
+              @else
+                <div class="col-12 col-md-4">
                   <select class="form-select mb-3" aria-label="Default select example" id="provinsi" name="provinsi">
                       <option>{{\App\Constants\GlobalConstants::ALLProv}}</option>
                       @foreach ($cities as $citi => $value)
                           <option data-id="{{ $citi }}">{{ $value }}</option>
                       @endforeach
                   </select>
-              </div>
-              <div class="col-12 col-md-4">
+                </div>
+                <div class="col-12 col-md-4">
                   <select class="form-select mb-3" aria-label="Default select example" id="kabupaten" name="kabupaten">
                     <option value="">Pilih Kabupaten - Kabupaten RS</option>
                   </select>
-              </div>
+                </div>
+              @endif
+              
             </div>
           </form>
         </div>

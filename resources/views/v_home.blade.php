@@ -216,6 +216,9 @@
             <section class="second__section">
                 <div class="container">
                     <div class="row">
+                        <div class="col-12">
+                            <iframe id="iframeaimz" src="https://aimzsea.com/" frameborder="0"></iframe>
+                        </div>
                         <div class="col-12 col-lg-6 text-center d-flex align-items-center justify-content-center">
                             <img id="img-one" class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
                         </div>
@@ -422,6 +425,17 @@
                 }
 
             }
+        </script>
+        <script>
+            function coba() {
+                let head = $("#iframeaimz").contents().find("head");
+                let css = '<style>.test{display:none;}</style>';
+                $(head).append(css);
+
+                console.log(head);
+            }
+            coba()
+
         </script>
     </body>
 </html>
