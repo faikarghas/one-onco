@@ -7,7 +7,7 @@
                 </div>
                 @include('components/presentational.boxShowMore',array(
                     'title'=>'Lihat semua',
-                    'path'=>'berita-terkini'
+                    'path'=>url('berita-terkini')
                 ))
             </div>
             @foreach($listingNews as $row)
