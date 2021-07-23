@@ -2688,3 +2688,39 @@ button.boxReadMore {
 .sistem_tubuh ul li a:focus {
   color: white;
 }
+
+.search__page nav .nav-tabs button {
+  font-size: 2rem;
+}
+.search__page .tab-content {
+  padding: 4rem 0;
+}
+@media only screen and (max-width: 62em) {
+  .search__page .tab-content {
+    padding: 4rem;
+  }
+}
+.search__page .tab-content .list_artikelSearch {
+  padding-left: 0;
+}
+.search__page .tab-content .list_artikelSearch li {
+  padding: 2rem 0;
+  list-style: none;
+  border-bottom: 1px solid #c5c5c5;
+}
+.search__page .tab-content .list_artikelSearch li a {
+  text-decoration: none;
+}
+.search__page .tab-content .list_artikelSearch li a .title {
+  color: blue;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.search__page .tab-content .list_artikelSearch li a .content {
+  color: black;
+  font-size: 1.6rem;
+}
+.search__page .tab-content .list_artikelSearch li a .date {
+  color: lightgray;
+  font-size: 1.2rem;
+}
