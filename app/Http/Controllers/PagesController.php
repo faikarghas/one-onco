@@ -55,7 +55,7 @@ class PagesController extends Controller
       //$listingPartners = DB::table('partner')->limit(4)->orderBy('id', 'DESC')->get();
       $listingNews = Artikel_model::where('idKat','=',1)->skip(0)->take(3)->orderBy('publishDate', 'DESC')->get();
       $listingStory  = Artikel_model::where('idKat','=',3)->skip(0)->take(3)->orderBy('publishDate', 'DESC')->get();
-      $listingPartners = Partner_model::skip(0)->take(4)->orderBy('id', 'DESC')->get();
+      $listingPartners = Partner_model::skip(0)->take(6)->orderBy('id', 'DESC')->get();
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'listingKatArtikel'=>$listingKatArtikel,
