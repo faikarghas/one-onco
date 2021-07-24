@@ -16,7 +16,7 @@
                 <div class="col-12">
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRecMenu',array(
-                            'image_url'=>'perkanker.png',
+                            'image_url'=>'deteksidini.png',
                             'title'=>'Deteksi Dini Kanker',
                             'color'=>'#80bc41;',
                             'path'=>'perawatan-kanker'
