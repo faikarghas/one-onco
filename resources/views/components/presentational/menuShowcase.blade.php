@@ -17,7 +17,7 @@
                     <div class="box__rec" style="height: 60px">
                         @include('components/presentational.boxRecMenu',array(
                             'image_url'=>'perkanker.png',
-                            'title'=>'Perawatan Kanker',
+                            'title'=>'Deteksi Dini Kanker',
                             'color'=>'#80bc41;',
                             'path'=>'perawatan-kanker'
                         ))
@@ -47,16 +47,20 @@
                         ))
                     </div>
                 </div>
-                <div class="col-12">
-                    <ul class="setting">
-                        <li>
-                            <a href="{{url('/pengaturan')}}" class="d-flex align-items-center">
-                                <img class="me-4" src="{{asset('/images/setting.png')}}" alt="" width="15px">
-                                Pengaturan Akun
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                @if (Auth::check())
+                    <div class="col-12">
+                        <ul class="setting">
+                            <li>
+                                <a href="{{url('/pengaturan')}}" class="d-flex align-items-center">
+                                    <img class="me-4" src="{{asset('/images/setting.png')}}" alt="" width="15px">
+                                    Pengaturan Akun
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                @else
+                @endif
+                
             </div>
         </div>
     </div>
