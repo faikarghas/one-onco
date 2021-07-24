@@ -59,6 +59,22 @@
                                     <option value="Warrior">Warrior</option>
                                     <option value="Tenaga Kesehatan">Tenaga Kesehatan</option>
                                 </select>
+                                <div class="input-group mb-4">
+                                   
+                                    <div class="captcha">
+                                      <span>{!! captcha_img() !!}</span>
+                                      <button type="button" class="btn btn-danger" class="reload" id="reload">
+                                          &#x21bb;
+                                      </button>
+                                  </div>
+                                  </div>
+                                  <div class="input-group mb-4">
+                                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+
+                                    
+                                  </div>
+                                  <span class="text-danger">@error('captcha'){{ $message }} @enderror</span>
+                                  <br>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Daftar','color'=>'#32A48E'])
                                 <br>
                                 <p class="text-center mb-2">Sudah memiliki akun? <a href="{{route('login')}}">Masuk disini</a></p>

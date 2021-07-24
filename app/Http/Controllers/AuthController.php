@@ -120,6 +120,7 @@ class AuthController extends Controller
         'email'                 => 'required|email|unique:users,email',
         'password'              => 'required|min:3|max:16',
         'phone'                 => 'required|min:3|max:35',
+        'captcha' => 'required|captcha'
       ];
       $messages = [
         'name.required'         => 'Nama Lengkap wajib diisi',
