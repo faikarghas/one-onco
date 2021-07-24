@@ -2339,7 +2339,12 @@ $(document).ready(function () {
         console.log(element);
         html.boxNews(element.title, element.imgDesktop, element.shortContent, element.slug, element.publishDate);
       });
-      thisGlob.html('Berita Lainnya');
+
+      if (location.pathname === '/cerita-survivor') {
+        thisGlob.html('Cerita Inspiratif Lainnya');
+      } else {
+        thisGlob.html('Berita Lainnya');
+      }
     });
     offestLoad += 8;
   });

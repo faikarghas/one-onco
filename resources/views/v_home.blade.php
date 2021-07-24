@@ -18,7 +18,6 @@
     <body>
         <header class="homeHeader">
             @include('components/presentational.menuShowcase')
-            {{-- <div class="container-fluid headerDesktop forDesktop" style="background-image:url({{asset('/images/imagebanner_desktop.jpg')}})"> --}}
             <div class="container-fluid headerDesktop forDesktop">
                 <div class="headOverlay"></div>
                 <div class="row">
@@ -61,8 +60,6 @@
                 <div class="box__welcomeHome forDesktop">
                     <h1 class="text-white text-center" id="titleSur"></h1>
                     <p class="text-white text-center mb-5" id="shortSur"><i></i></p>
-                    {{-- <a class="boxReadStory" href="cerita-survivor/">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a> --}}
-
                     <a class="boxReadStory" id="linkSlider">Baca ceritanya<img class="img-fluid" width="12px" src="{{asset('/images/arrow-white.png')}}" alt="arrow"></a>
                 </div>
                 <div class="row ps">
@@ -123,7 +120,6 @@
             </div>
 
             <div class="container-fluid headerMobile forMobile">
-                {{-- <div class="headOverlay" style="background-color:#00a3e398;"></div> --}}
                 <div class="headOverlay"></div>
                 <div class="menuOverlay"></div>
                 <div class="row headerNavBox">
@@ -368,8 +364,6 @@
             var colours = @json($colorSlider);
             var links = @json($linkSlider);
 
-            //console.log(links);
-
             var counter = 0;
             var backgroundImgD = document.querySelector('.headerDesktop');
             var overlayImgD = document.querySelector(".headOverlay");
@@ -425,8 +419,10 @@
         </script>
         <script>
 
-
-
+            // var iframe = document.getElementById("iframe1");
+            // var elmnt = iframe.contentWindow.document.getElementsByTagName("H1")[0];
+            // // elmnt.style.display = "none";
+            // console.log(iframe);
         </script>
     </body>
 </html>
