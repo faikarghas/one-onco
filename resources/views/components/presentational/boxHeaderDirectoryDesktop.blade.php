@@ -19,7 +19,7 @@
     case "direktori-lab" : 
       $bgColor = $currentUrl == 'direktori-lab' ? '#00A2E3;' : 'white';
       $color = $currentUrl == 'direktori-lab' ? 'white' : '#00A2E3;';
-      $image_url = $currentUrl == 'direktori-lab' ? 'directori_komunitas_white' : 'directori_komunitas.svg';
+      $image_url = $currentUrl == 'direktori-lab' ? 'directori_komunitas_white.svg' : 'directori_komunitas.svg';
       break;
   }
 ?>
