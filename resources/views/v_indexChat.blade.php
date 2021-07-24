@@ -8,19 +8,19 @@
                     <div class="col-12 col-lg-5">
                         <h1><strong>Konsultasi spesialis onkologi</strong></h1>
                         <div class="row konsultasi__page-item">
-                            <div class="col-md-4 tx">Dr. Faikar Ghassan</div>
-                            <div class="col-md-4 tx text-center">Senin</div>
-                            <div class="col-md-4 tx text-end">14.00-17.00</div>
+                            <div class="col-4 col-md-4 tx">Dr. Faikar Ghassan</div>
+                            <div class="col-4 col-md-4 tx text-center">Senin</div>
+                            <div class="col-4 col-md-4 tx text-end">14.00-17.00</div>
                         </div>
                         <div class="row konsultasi__page-item">
-                            <div class="col-md-4 tx">Dr. Faikar Ghassan</div>
-                            <div class="col-md-4 tx text-center">Senin</div>
-                            <div class="col-md-4 tx text-end">14.00-17.00</div>
+                            <div class="col-4 col-md-4 tx">Dr. Faikar Ghassan</div>
+                            <div class="col-4 col-md-4 tx text-center">Senin</div>
+                            <div class="col-4 col-md-4 tx text-end">14.00-17.00</div>
                         </div>
                         <div class="row konsultasi__page-item">
-                            <div class="col-md-4 tx">Dr. Faikar Ghassan</div>
-                            <div class="col-md-4 tx text-center">Senin</div>
-                            <div class="col-md-4 tx text-end">14.00-17.00</div>
+                            <div class="col-4 col-md-4 tx">Dr. Faikar Ghassan</div>
+                            <div class="col-4 col-md-4 tx text-center">Senin</div>
+                            <div class="col-4 col-md-4 tx text-end">14.00-17.00</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-7 rg">

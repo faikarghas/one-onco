@@ -2307,11 +2307,22 @@ button.boxReadMore {
   align-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 62em) {
+  .konsultasi__page .rg {
+    padding: 0;
+  }
+}
 .konsultasi__page .rg .box_jadwal {
   padding: 3rem;
   width: 70%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
   background-color: white;
+}
+@media only screen and (max-width: 62em) {
+  .konsultasi__page .rg .box_jadwal {
+    width: 100%;
+    margin-top: 5rem;
+  }
 }
 .konsultasi__page .rg .box_jadwal ul li {
   list-style: none;
