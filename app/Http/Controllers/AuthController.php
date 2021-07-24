@@ -30,7 +30,7 @@ class AuthController extends Controller
       $rules = [
         'email'                 => 'required|email',
         'password'              => 'required|string',
-        'g-recaptcha-response' => 'required'
+        'captcha' => 'required|captcha'
       ];
 
       $messages = [
@@ -308,6 +308,12 @@ class AuthController extends Controller
   //   }
   //   curl_close($ch);
   // }
+
+
+  public function reloadCaptcha()
+  {
+      return response()->json(['captcha'=> captcha_img()]);
+  }
 
 
 }

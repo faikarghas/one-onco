@@ -25,6 +25,7 @@
         <!-- Slider -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
+        {!! RecaptchaV3::initJs() !!}
         @laravelPWA
     </head>
     <body>
@@ -37,6 +38,18 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
         <script src="{{ asset('/js/app.js') }}"></script>
+        <script type="text/javascript">
+            $('#reload').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'reload-captcha',
+                    success: function (data) {
+                        $(".captcha span").html(data.captcha);
+                    }
+                });
+            });
+          
+          </script>
         {{-- @stack('custom-scripts') --}}
     </body>
 </html>

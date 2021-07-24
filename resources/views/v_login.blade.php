@@ -43,7 +43,17 @@
                                     <span class="input-group-text" id="showpass"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" alt="" srcset=""></span>
                                   </div>
                                   <div class="input-group mb-4">
-                                    <input type="hidden" name="g-recaptcha-response" id="recaptcha">
+                                   
+                                    <div class="captcha">
+                                      <span>{!! captcha_img() !!}</span>
+                                      <button type="button" class="btn btn-danger" class="reload" id="reload">
+                                          &#x21bb;
+                                      </button>
+                                  </div>
+                                  </div>
+                                  <div class="input-group mb-4">
+                                   
+                                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
                                   </div>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
                             </form>
@@ -59,17 +69,8 @@
             </div>
         </section>
     </main>
-    @push('custom-scripts')
-<script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.sitekey') }}"></script>
-    <script>
-             grecaptcha.ready(function() {
-                 grecaptcha.execute('{{ config('services.recaptcha.sitekey') }}', {action: 'login'}).then(function(token) {
-                    if (token) {
-                      document.getElementById('recaptcha').value = token;
-                    }
-                 });
-             });
-    </script>
+@endsection
+@push('custom-scripts')
+
 @endpush
 @stack('custom-scripts')
-@endsection

@@ -38,6 +38,7 @@ Route::get('login', [AuthController::class,'showFormLogin'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 
 Route::post('validate-g-recaptcha', [AuthController::class, 'validateGCaptch']);
+Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha']);
 
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
 Route::post('register', [AuthController::class, 'register']);
