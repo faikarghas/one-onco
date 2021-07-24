@@ -16,6 +16,7 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                 <h2><strong>Pencarian Kata Sandi: "Kampung"</strong></h2>
+                                
                                 <h2 class="mb-5" style="color: lightgray">Menampilkan 10 dari 800 artikel</h2>
 
                                 <ul class="list_artikelSearch">

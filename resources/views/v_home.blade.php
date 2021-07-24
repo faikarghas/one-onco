@@ -351,7 +351,9 @@
 
         @include('components/presentational/footer')
         <div class="searchpop">
-            <input type="text" class="form-control searchinputact" placeholder="Kata Kunci..." aria-label="search" aria-describedby="button-addon2">
+            <form class="card-body" action="/search" method="GET" role="search">
+                <input type="text" class="form-control searchinputact" placeholder="Kata Kunci..." aria-label="search" aria-describedby="button-addon2">
+            </form>
             <div class="close-search">X</div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

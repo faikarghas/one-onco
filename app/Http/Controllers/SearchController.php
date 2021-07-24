@@ -23,6 +23,9 @@ class SearchController extends Controller
 
       $data = ['statusLogin'=>$statusLogin];
 
+
+
+      
       return view ('v_searchResult', $data);
     }
 }
