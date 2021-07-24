@@ -170,7 +170,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             @include('components/presentational.boxRec',array(
-                                'image_url'=>'perkanker.png',
+                                'image_url'=>'deteksidini.png',
                                 'title'=>'Deteksi Dini Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#80bc41;',
