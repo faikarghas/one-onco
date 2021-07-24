@@ -42,6 +42,9 @@
                                     <input id="ipss" type="password" class="form-control" aria-label="password" placeholder="Kata Sandi" name="password">
                                     <span class="input-group-text" id="showpass"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" alt="" srcset=""></span>
                                   </div>
+                                  <div class="input-group mb-4">
+                                    <input type="hidden" name="g-recaptcha-response" id="recaptcha">
+                                  </div>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
                             </form>
                             <div class="for_or_reg mt-2">
@@ -56,4 +59,17 @@
             </div>
         </section>
     </main>
+    @push('custom-scripts')
+<script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.sitekey') }}"></script>
+    <script>
+             grecaptcha.ready(function() {
+                 grecaptcha.execute('{{ config('services.recaptcha.sitekey') }}', {action: 'login'}).then(function(token) {
+                    if (token) {
+                      document.getElementById('recaptcha').value = token;
+                    }
+                 });
+             });
+    </script>
+@endpush
+@stack('custom-scripts')
 @endsection

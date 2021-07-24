@@ -9,7 +9,7 @@
                 </div>
                 @include('components/presentational.boxShowMore',array(
                     'title'=>'Lihat Semua',
-                    'path'=>'cerita-survivor'
+                    'path'=>url('cerita-survivor')
                 ))
             </div>
             @foreach($listingStory as $row)

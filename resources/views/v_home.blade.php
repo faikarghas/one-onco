@@ -66,7 +66,7 @@
                     <div class="col-12 col-md-6">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'deteksidini.png',
-                                'title'=>'Deteksi Dini',
+                                'title'=>'Deteksi Dini Kanker',
                                 'description'=>'Cari tes skrining untuk pendeteksian dini',
                                 'color'=>'#80bc41;',
                                 'colorPar'=>'#808080;',
