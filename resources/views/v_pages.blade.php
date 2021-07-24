@@ -79,6 +79,9 @@
                                             @case('kanker-paru')
                                                 <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-paru')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
+                                            @case('kanker-kolorektal')
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-kolorektal')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
                                             @default
                                                 <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                         @endswitch

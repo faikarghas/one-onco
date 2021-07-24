@@ -263,7 +263,7 @@
                                 'path'=>'artikel-kanker'
                             ))
                         </div>
-                        @foreach($listingJurnal as $row)
+                        @foreach($listingArtikelKanker as $row)
                         <div class="col-12 col-md-4">
                             <?php
                                 $yearCurrent  = date('Y');

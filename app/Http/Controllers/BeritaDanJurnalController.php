@@ -28,7 +28,6 @@ class BeritaDanJurnalController extends Controller
       $taglineHeader = $listAttribute->intro;
       $img_header = $listAttribute->image;
 
-
       // $column_name= array('idKat','publishDate');
       // if (!in_array($request->firstname, $column_name, true)){
       //   //you can add whatever result here if not found
@@ -42,7 +41,7 @@ class BeritaDanJurnalController extends Controller
       $listingStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',$id_kategori)->orderBy('artikel.publishDate','desc')->paginate(5);
 
      // dd($listingStory);
-
+// 
 
      
 
@@ -112,8 +111,6 @@ class BeritaDanJurnalController extends Controller
       //$otherStory  = $model->otherArticle($id, $id_kategori);
       $otherStory  = Artikel_model::select('artikel.*')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat')->where('artikel.idKat','=',$id_kategori)->whereNotIn('artikel.id',[$id])->orderBy('artikel.publishDate','desc')->paginate(3);
 
-      //dd($otherStory);
-     
       // listing news 3 rows
       //$listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $listingNews = Artikel_model::where('idkat' ,'1')->skip(0)->take(3)->orderBy('publishDate','desc')->get();

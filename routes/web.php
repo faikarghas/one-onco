@@ -63,7 +63,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/konsultasi-online/chat',[KonsultasiOnlineController::class,'chat']);
 });
 
-
 Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
 Route::get('/verify-registration/{token}',[AuthController::class, 'verifyRegistration']);
 

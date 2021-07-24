@@ -73,6 +73,7 @@ class HomeController extends Controller
         ->orderBy('artikel.publishDate','desc')
         ->get();
 
+        $listingArtikelKanker  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',2)->orderBy('artikel.publishDate','desc')->paginate(3);
 
         // variable news terbaru
         //$sliderArtikel = DB::table('artikel')->where('idKat',3)->limit(1)->orderBy('id', 'DESC')->first();
@@ -97,7 +98,7 @@ class HomeController extends Controller
                       'statusConfig'=>$statusConfig,
                       'titleAbout'=>$shortContentAbout->title,
                       'contentAbout'=>$shortContentAbout->intro,
-                      // 'titleStory' => $sliderArtikel->title,
+                      'listingArtikelKanker' => $listingArtikelKanker,
                       // 'shortStory' => $sliderArtikel->shortContent,
                       //'slug' => $sliderArtikel->slug,
                       'listingJurnal'=>$listingJurnal,
