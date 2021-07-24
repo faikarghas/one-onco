@@ -419,10 +419,10 @@
         </script>
         <script>
 
-            // var iframe = document.getElementById("iframe1");
-            // var elmnt = iframe.contentWindow.document.getElementsByTagName("H1")[0];
-            // // elmnt.style.display = "none";
-            // console.log(iframe);
+            var iframe = document.getElementById("belanja_sehat_iframe");
+            var elmnt = iframe.contentWindow.document.getElementsByClassName("browser-headers");
+            elmnt.style.display = "none";
+
         </script>
     </body>
 </html>
