@@ -50,28 +50,28 @@
                                     <div class="col-11 ps-4">
                                         @switch(Request::segment(1))
                                             @case('tentang-kami')
-                                                <a href="{{url('tentang-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('tentang-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('untuk-pasien')
-                                                <a href="{{url('untuk-pasien')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('untuk-pasien')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('untuk-pendamping')
-                                                <a href="{{url('/untuk-pendamping')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/untuk-pendamping')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('partner-kami')
-                                                <a href="{{url('/partner-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/partner-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('perawatan-kanker')
-                                                <a href="{{url('/perawatan-kanker')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/perawatan-kanker')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('kanker-payudara')
-                                                <a href="{{url('/kanker-payudara')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-payudara')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('syaratdanketentuan')
-                                                <a href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @default
-                                                <a href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                         @endswitch
                                     </div>
                                 </div>
