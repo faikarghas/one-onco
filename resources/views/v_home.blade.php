@@ -195,7 +195,7 @@
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#00A2E3;',
                                 'colorPar'=>'#808080;',
-                                'path'=>'direktori-dokter'
+                                'path'=>'belanja-sehat'
                             ))
                         </div>
                         <div class="col-12 col-md-6">
