@@ -37,11 +37,11 @@
                                     </div>
                                     <div class="col-12 mt-5">
                                         <div class="box__rec">
-                                            <a href="http://127.0.0.1:8000/konsultasi-online/chat" class="d-block h-100">
+                                            <a href="/konsultasi-online/chat" class="d-block h-100">
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-3 d-flex align-items-center justify-content-center">
-                                                            <img width="40px" height="40px" src="http://127.0.0.1:8000/images/live-chat.png" alt="">
+                                                            <img width="40px" height="40px" src="/images/live-chat.png" alt="">
                                                         </div>
                                                         <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                                                             <h3 style="color: #C6CB57;"><strong>Konsultasi Online</strong></h3>
