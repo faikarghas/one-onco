@@ -168,7 +168,7 @@
                         <div class="col-12 col-md-6">
                             @include('components/presentational.boxRec',array(
                                 'image_url'=>'perkanker.png',
-                                'title'=>'Deteksi Kanker',
+                                'title'=>'Deteksi Dini Kanker',
                                 'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                                 'color'=>'#80bc41;',
                                 'colorPar'=>'#808080;',
