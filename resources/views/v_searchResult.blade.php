@@ -15,61 +15,55 @@
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <h2><strong>Pencarian Kata Sandi: "Kampung"</strong></h2>
+
                                 
-                                <h2 class="mb-5" style="color: lightgray">Menampilkan 10 dari 800 artikel</h2>
+                                <h2><strong>Pencarian Kata Sandi: {{ $titleResult }}</strong></h2>
+                                
+                                {{-- <h2 class="mb-5" style="color: lightgray">Menampilkan 10 dari 800 artikel</h2> --}}
 
                                 <ul class="list_artikelSearch">
+                                    @foreach ( $resultArtikel as $row )
                                     <li>
-                                        <a href="">
-                                            <span class="title d-block">lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore aut. Tenetur porro commodi fugiat.</span>
-                                            <span class="content d-block">LOREM, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nemo nam distinctio voluptates tempora nobis repellendus asperiores, fugit ipsa. Accusantium?</span>
-                                            <span class="date d-block">Sun Dec, 2011<span>
+                                        <a href="{{ url($row->idKat) }}/{{ $row->slug }}">
+                                            <span class="title d-block">{{ $row->title }}</span>
+                                            <span class="content d-block">{{ $row->shortContent  }}</span>
+                                            <span class="date d-block">{{ $row->publishDate }}<span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="">
-                                            <span class="title d-block">lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore aut. Tenetur porro commodi fugiat.</span>
-                                            <span class="content d-block">LOREM, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nemo nam distinctio voluptates tempora nobis repellendus asperiores, fugit ipsa. Accusantium?</span>
-                                            <span class="date d-block">Sun Dec, 2011<span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <span class="title d-block">lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore aut. Tenetur porro commodi fugiat.</span>
-                                            <span class="content d-block">LOREM, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nemo nam distinctio voluptates tempora nobis repellendus asperiores, fugit ipsa. Accusantium?</span>
-                                            <span class="date d-block">Sun Dec, 2011<span>
-                                        </a>
-                                    </li>
+                                    @endforeach
+
+                                    
+                                    
                                 </ul>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <h2><strong>Pencarian Kata Sandi: "Kampung"</strong></h2>
-                                <h2 class="mb-5" style="color: lightgray">Menampilkan 10 dari 800 artikel</h2>
+                                <h2><strong>Pencarian Kata Sandi: {{ $titleResult }}</strong></h2>
+                                {{-- <h2 class="mb-5" style="color: lightgray">Menampilkan 10 dari 800 artikel</h2> --}}
                                 <div class="container g-0">
                                     <div class="row">
+                                        @foreach ( $resultDokter as $row )
                                         <div class="col-12 col-lg-6">
                                             <div class="box__rec2">
-                                                <a href="https://oneonco.co.id/dokter-detail/f0a74300-eab0-11eb-8ac6-00505692a8e6" class="d-block h-100">
+                                                <a href="dokter-detail/f0a74300-eab0-11eb-8ac6-00505692a8e6" class="d-block h-100">
                                                     <div class="container">
                                                         <div class="row">
                                                             <div class="col-3 d-flex align-items-center justify-content-center">
                                                                 <div class="rounded_img">
-                                                                    <img width="100%" height="100%" src="https://oneonco.co.id/data_dokter/202104061001_A._A._A._Susraini.jpg" alt="202104061001_A._A._A._Susraini.jpg">
+                                                                    <img width="100%" height="100%" src="/data_dokter/{{ $row->Image }}" alt="{{ $row->Image }}">
                                                                 </div>
                                                             </div>
                                                             <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                                                                 <div class="title_wrapper">
-                                                                    <h3><strong>dr. A. A. A. Susraini, Sp.PA (K)</strong></h3>
+                                                                    <h3><strong>{{ $row-> fullname }}</strong></h3>
                                                                 </div>
                                                                 <ul>
                                                                     <li class="pt-2 pb-2 spes">
-                                                                        <p><strong>Patologi Anatomi</strong></p>
+                                                                        <p><strong>{{ $row->subSpesialist }}</strong></p>
                                                                     </li>
                                                                     <li class="pt-2">
                                                                         <p><strong>Lokasi Praktek</strong></p>
                                                                     </li>
-                                                                    <li><p>RSUP Sanglah</p></li>
+                                                                    <li><p>{{ $row->namafaskes }}</p></li>
                                                                 </ul>
                                                             </div>
                                                             <div class="col-2 d-flex align-items-center justify-content-center">
@@ -82,6 +76,8 @@
                                                 </a>
                                             </div>
                                         </div>
+                                        @endforeach
+                                        @foreach ( $resultFaskes as $row )
                                         <div class="col-12 col-lg-6">
                                             <div class="box__rec2">
                                                 <a href="https://oneonco.co.id/direktori-care/31731001" class="d-block h-100">
@@ -89,22 +85,22 @@
                                                        <div class="row">
                                                           <div class="col-3 d-flex align-items-center justify-content-center">
                                                              <div class="rounded_img">
-                                                                                            <img width="100%" height="100%" src="https://oneonco.co.id/data_faskes/care_center.svg" alt="care_center">
+                                                                                            <img width="100%" height="100%" src="/data_faskes/{{ $row->foto }}" alt="care_center">
                                                               </div>
                                                           </div>
                                                           <div class="col-7 d-flex flex-column align-items-start justify-content-center">
                                                              <div class="title_wrapper">
-                                                                <h3><strong>RS Puri Indah</strong></h3>
+                                                                <h3><strong>{{ $row->namaFaskes }}</strong></h3>
                                                              </div>
                                                              <ul>
                                                                 <li>
-                                                                   <p style="font-size:1.2rem;">Jl. Puri Indah raya Blok KJ No 2 RT 1 RW 2 kembangan</p>
+                                                                   <p style="font-size:1.2rem;">{{ $row->alamat }}</p>
                                                                 </li>
                                                                 <li>
-                                                                    <p style="font-size:1.2rem;">(021) 25695222</p>
+                                                                    <p style="font-size:1.2rem;">{{ $row->phone }}</p>
                                                                  </li>
                                                                 <li>
-                                                                   <p style="font-size:1.2rem;color:#00A2E3;">www.rspondokindah.co.id</p>
+                                                                   <p style="font-size:1.2rem;color:#00A2E3;">{{ $row->website }}</p>
                                                                 </li>
                                                              </ul>
                                                           </div>
@@ -118,6 +114,7 @@
                                                  </a>
                                             </div>
                                         </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

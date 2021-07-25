@@ -352,7 +352,8 @@
         @include('components/presentational/footer')
         <div class="searchpop">
             <form class="card-body" action="/search" method="GET" role="search">
-                <input type="text" class="form-control searchinputact" placeholder="Kata Kunci..." aria-label="search" aria-describedby="button-addon2">
+                <input type="text" class="form-control searchinputact" placeholder="Kata Kunci..." aria-label="search" aria-describedby="button-addon2" name="textInput">
+                <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"tabindex="-1" />
             </form>
             <div class="close-search">X</div>
         </div>

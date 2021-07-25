@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\News_model;
 use App\Models\Customer_model;
+use App\Models\Artikel_model;
+use App\Models\DokterMapped_model;
+use App\Models\Faskes_model;
 
 class SearchController extends Controller
 {
@@ -23,9 +26,40 @@ class SearchController extends Controller
 
       $data = ['statusLogin'=>$statusLogin];
 
-
-
+      $searchTerm = $request->textInput;
       
-      return view ('v_searchResult', $data);
+      $reservedSymbols = ['-', '+', '<', '>', '@', '(', ')', '~'];
+      $searchTerm = str_replace($reservedSymbols, ' ', $searchTerm);
+      
+      $searchValues = preg_split('/\s+/', $searchTerm, -1, PREG_SPLIT_NO_EMPTY);
+      
+      $res = Artikel_model::where(function ($q) use ($searchValues) {
+        foreach ($searchValues as $value) {
+          $q->orWhere('title', 'like', "%{$value}%");
+          }
+      })->get();
+    
+
+      $resDokter = DokterMapped_model::where(function ($q) use ($searchValues) {
+        foreach ($searchValues as $value) {
+          $q->orWhere('fullname', 'like', "%{$value}%");
+         
+          }
+      })->get();
+
+      $resFaskes = Faskes_model::where(function ($q) use ($searchValues) {
+        foreach ($searchValues as $value) {
+          $q->orWhere('namaFaskes', 'like', "%{$value}%");
+          }
+      })->get();
+
+      $data = array(
+      'titleResult'  => $searchTerm,
+      'resultArtikel' => $res,
+      'resultDokter'=> $resDokter,
+      'resultFaskes'=> $resFaskes
+    );
+
+       return view ('v_searchResult', $data);
     }
 }
