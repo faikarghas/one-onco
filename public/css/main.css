@@ -448,6 +448,10 @@ main:not([page=home]) {
   }
 }
 
+a:visited {
+  color: #0a58ca;
+}
+
 p, li, a {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -2340,9 +2344,6 @@ button.boxReadMore {
   padding: 4rem 3rem;
   position: relative;
   z-index: 2;
-}
-.detail__page1 a:visited {
-  color: #0a58ca;
 }
 .detail__page1--img {
   height: 350px;
