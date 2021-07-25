@@ -28,7 +28,7 @@
             </div>
             <div class="col-2">
                 <ul class="userAction">
-                    <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
+                    <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                     <li><a><img src="{{ asset('/images/user.png') }}" alt="search" width="15px"/></a></li>
                     @if (Auth::check())
                         <li><a href='{{url('/logout')}}'>LOGOUT</a></li>
@@ -57,7 +57,7 @@
             <div class="col-6">
                 <div class="menu">
                     <ul>
-                        <li><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
+                        <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
                         <li class="open_menu">
                             <div id="menu-hamburger" class="">
                                 <span></span>

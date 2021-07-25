@@ -104,14 +104,6 @@
                                         </table>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><a href="https://oneonco.co.id"><img width="40px" height="40px" src="https://oneonco.co.id/images/deteksidini.png"><p>Artikel Sebagai Kanker</p><p>Cari tau mengenai kanker dan perawatnya</p></a></td>
-                                    <td><a href="https://oneonco.co.id"><img width="40px" height="40px" src="https://oneonco.co.id/images/deteksidini.png"><p>Artikel Sebagai Kanker</p><p>Cari tau mengenai kanker dan perawatnya</p></td>
-                                    <td><a href="https://oneonco.co.id"><img width="40px" height="40px" src="https://oneonco.co.id/images/deteksidini.png"><p>Artikel Sebagai Kanker</p><p>Cari tau mengenai kanker dan perawatnya</p></a></td>
-                                <tr>
-                                <tr>
-                                    <td><a href="https://oneonco.co.id"><img width="40px" height="40px" src="https://oneonco.co.id/images/deteksidini.png"></a><a href="https://oneonco.co.id"><img width="40px" height="40px" src="https://oneonco.co.id/images/deteksidini.png"></a></td>
-                                </tr>
                             </table>
                         </td>
                     <tr>
@@ -119,7 +111,7 @@
                     </tr>
                     <tr>
                         <td style="text-align:center;">
-                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>GLOBAL ONKOLAB FARMA Jl. Jend. Ahmad Yani No.2, RT.3/RW.13, Kayu Putih, Kec. Pulo Gadung, Kota Jakarta Timur, DKI Jakarta 13210</strong></p>
+                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.oneonco.co.id</strong></p>
                         </td>
                     </tr>
                     <tr>
