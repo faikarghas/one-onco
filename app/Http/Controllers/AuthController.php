@@ -158,7 +158,7 @@ class AuthController extends Controller
           ');
           Mail::send('v_emailActiv', ['token' =>$user->remember_token, 'userName' =>   $user->name], function($message) use($request){
             $message->to($request->email);
-            $message->subject('Verification Register Notification');
+            $message->subject('Pendaftaran Akun');
           });
           return redirect()->route('login');
         } else {
@@ -218,7 +218,7 @@ class AuthController extends Controller
 
       Mail::send('v_emailVeri', ['token' => $token], function($message) use($request){
         $message->to($request->email);
-        $message->subject('Reset Password Notification');
+        $message->subject('Notifikasi Ubah Kata Sandi');
       });
 
       return redirect()->back()->with('status', trans('Mohon check email Anda untuk membuat kata sandi baru.'));

@@ -25,7 +25,7 @@ class NewsletterController extends Controller
 
             Mail::send('v_emailSubscriber', ['emailSubscriber' => $request->email], function($message) use($request){
                 $message->to($request->email);
-                $message->subject('New Subscriber');
+                $message->subject('Notifikasi Berlangganan');
               });    
 
             //return redirect('/')->with('success', 'Thanks For Subscribe');
