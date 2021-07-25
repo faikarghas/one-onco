@@ -30,7 +30,6 @@
                             <h4>{{ $authorStory }}</h4>
                             <div class="forDesktop">{!! $contentStory !!}</div>
                             <div class="pagi-init forMobile">{!! $contentStory !!}</div>
-                            <a href="/perawatan-kanker" class="text-green forMobile"><strong><i>List Referensi</i></strong></a>
                         </div>
                         <div class="share_sosmed forDesktop-dflex">
                             <div class="share_sosmed-link">
