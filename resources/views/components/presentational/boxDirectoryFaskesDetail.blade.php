@@ -7,8 +7,8 @@
                         <div class="row">
                             <div class="col-3 d-flex align-items-start justify-content-center">
                                   <?php
-                                    $path = public_path('data_faskes\\'.$foto);
-                                    echo $path;
+                                    $path = public_path('data_faskes//'.$foto);
+                                    //echo $path;
                                     $isExists = file_exists($path);
                                     if ($isExists) {
                                       $fotoDokter = $foto;
@@ -88,9 +88,9 @@
                                 <div class="col-3 d-flex align-items-center justify-content-center">
                                     <?php
                                         $foto = $row->foto;
-                                        echo $foto;
-                                        $path = public_path('data_dokter\\'.$foto);
-                                        echo $path;
+                                        //echo $foto;
+                                        $path = public_path('data_dokter//'.$foto);
+                                        //echo $path;
                                         $isExists = file_exists($path);
                                         if ($isExists) {
                                             $fotoDokter = $foto;
