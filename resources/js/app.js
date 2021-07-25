@@ -447,6 +447,42 @@ $('#showpass').click(function (params) {
     }
 })
 
+$('#showpassbaru').click(function (params) {
+    var x = document.getElementById("ipss2");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+})
+
+$('#showpassulang').click(function (params) {
+    var x = document.getElementById("ipss3");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+})
+
+$('#showpassbaru1').click(function (params) {
+    var x = document.getElementById("ipss4");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+})
+
+$('#showpassulang1').click(function (params) {
+    var x = document.getElementById("ipss5");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+})
+
 $('.partner-slider').slick({
     infinite: true,
     slidesToShow: 5,

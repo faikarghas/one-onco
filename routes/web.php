@@ -56,12 +56,13 @@ Route::post('/reset-password',[AuthController::class, 'updatePassword'])->name('
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('pengaturan', [AuthController::class, 'changePassword']);
+    // Route::get('pengaturan', [AuthController::class, 'changePassword']);
     Route::post('change-password', [AuthController::class, 'storeNewPassword'])->name('change.password');
     Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
     Route::get('/deteksi-kanker',[DeteksiKankerController::class,'index']);
     Route::get('/konsultasi-online/chat',[KonsultasiOnlineController::class,'chat']);
 });
+Route::get('pengaturan', [AuthController::class, 'changePassword']);
 
 Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
 Route::get('/verify-registration/{token}',[AuthController::class, 'verifyRegistration']);
@@ -137,6 +138,21 @@ Route::get('/search', [SearchController::class,'index']);
 
 Route::post('newsletter/store',[NewsletterController::class,'store']);
 
+// Route::get('/email1', function () {
+//     return view('v_emailActiv');
+// });
+
+// Route::get('/email2', function () {
+//     return view('v_emailVeri');
+// });
+
+// Route::get('/email3', function () {
+//     return view('v_emailSubscriber');
+// });
+
+
 
 // Catch all page controller (place at the very bottom)
 Route::get('{slug}',[PagesController::class, 'index'])->where('slug', '([A-Za-z0-9\-\/]+)');
+
+

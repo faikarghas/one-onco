@@ -21,10 +21,12 @@
                                     <input type="email" class="form-control" placeholder="Email*" aria-label="email" name="email" value="{{ old('email') }}"> 
                                 </div>
                                 <div class="input-group mb-4">
-                                    <input type="password" class="form-control" placeholder="Kata sandi baru*" aria-label="sandi-baru" name="new_password">
+                                    <input id="ipss2" type="password" class="form-control" placeholder="Kata sandi baru*" aria-label="sandi-baru" name="new_password">
+                                    <span class="input-group-text showpas" id="showpassbaru"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" width="20px" alt="" srcset=""></span>
                                 </div>
                                 <div class="input-group mb-4">
-                                    <input type="password" class="form-control" placeholder="Ulangi kata sandi baru*" aria-label="re-sandi-baru" name='new_confirm_password'>
+                                    <input id="ipss3" type="password" class="form-control" placeholder="Ulangi kata sandi baru*" aria-label="re-sandi-baru" name='new_confirm_password'>
+                                    <span class="input-group-text showpas" id="showpassulang"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" width="20px" alt="" srcset=""></span>
                                 </div>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
                             </form>

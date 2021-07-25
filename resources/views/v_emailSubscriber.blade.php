@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style type="text/css">
-        a:hover {text-decoration: underline !important;}
+        a:hover {text-decoration: none !important;}
         font-family:{'Montserrat', sans-serif;}
     </style>
 </head>
@@ -59,7 +59,58 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height:40px;">&nbsp;</td>
+                                    <td style="height:80px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="esd-stripe" align="center">
+                                        <table bgcolor="#ffffff" class="es-header-body" align="center" cellpadding="0" cellspacing="0" width="600">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="esd-structure es-p20t es-p20r es-p20l" align="left">
+                                                        <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="194" valign="top"><![endif]-->
+                                                        <table cellpadding="0" cellspacing="0" class="es-left" align="left" style="width: 100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="174" class="es-m-p0r es-m-p20b esd-container-frame" align="center">
+                                                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td style="width:33.33%; text-align: center;" align="left" class="esd-block-text">
+                                                                                        <a href="{{ URL::to('/deteksi-kanker') }}" style="text-decoration: none">
+                                                                                            <img style="text-align: center;object-fit:contain; width:50px;"src="{{asset('/images/deteksidini.png')}}" alt="">
+                                                                                            <h3 style="color: #80bc41; text-align:center;margin-top:10px;margin-bottom:5px;font-size:16px;"><strong>Deteksi Dini Kanker</strong></h3>
+                                                                                            <p style="font-size: 12px; color:black;margin-top:5px;">Beli langsung suplemen dan nutrisi di sini.</p>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                    <td style="width:33.33%; text-align: center" align="left" class="esd-block-text" >
+                                                                                        <a href="{{ URL::to('/belanja-sehat') }}" style="text-decoration: none">
+                                                                                            <img style="text-align: center;object-fit:contain; width:50px;"src="{{asset('/images/beliobat.png')}}" alt="">
+                                                                                            <h3 style="color: #00A2E3; text-align:center;margin-top:10px;margin-bottom:5px;font-size:16px;"><strong>Belanja Sehat</strong></h3>
+                                                                                            <p style="font-size: 12px; color:black;margin-top:5px;">Cari tes skrining untuk pendeteksian dini.</p>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                    <td style="width:33.33%;text-align:center;" align="left" class="esd-block-text">
+                                                                                        <a href="{{ URL::to('/konsultasi-online') }}" style="text-decoration: none">
+                                                                                            <img style="text-align: center;object-fit:contain; width:50px;"src="{{asset('/images/live-chat.png')}}" alt="">
+                                                                                            <h3 style="color: #C6CB57; text-align:center;margin-top:10px;margin-bottom:5px;font-size:16px;"><strong>Konsultasi Online</strong></h3>
+                                                                                            <p style="font-size: 12px; color:black;margin-top:5px;">Konsultasi online dengan dokter seputar kanker.</p>
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="height:40px;">&nbsp;</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><a href="https://oneonco.co.id"><img width="40px" height="40px" src="https://oneonco.co.id/images/deteksidini.png"><p>Artikel Sebagai Kanker</p><p>Cari tau mengenai kanker dan perawatnya</p></a></td>
@@ -90,3 +141,5 @@
 </body>
 
 </html>
+
+
