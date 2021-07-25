@@ -25,14 +25,18 @@
                                 <br>
                                 <p class=""><i>Personal OneOnco menyediakan informasi sesuai ketertarikan Anda!</i></p>
                                 <select class="form-select mb-4" aria-label="Default select example">
-                                    <option selected>Kanker Payudara</option>
-                                    <option value="1">One</option>
-                                    <option value="3">Three</option>
+                                    <option selected>Pilih Jenis Kanker</option>
+                                    <option value="Kanker Kolorektal">Kanker Kolorektal</option>
+                                    <option value="Kanker Serviks">Kanker Serviks</option>
+                                    <option value="Kanker Payudara">Kanker Payudara</option>
+                                    <option value="Kanker Paru-paru">Kanker Paru-paru</option>
                                 </select>
                                 <select class="form-select mb-4" aria-label="Default select example">
-                                    <option selected>Pilih Profesi Anda</option>
-                                    <option value="1">One</option>
-                                    <option value="3">Three</option>
+                                    <option selected>Pilih Status Anda</option>
+                                    <option value="Caregiver">Caregiver</option>
+                                    <option value="Survivor">Survivor</option>
+                                    <option value="Warrior">Warrior</option>
+                                    <option value="Tenaga Kesehatan">Tenaga Kesehatan</option>
                                 </select>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
                             </form>

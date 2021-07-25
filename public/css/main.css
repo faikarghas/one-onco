@@ -451,6 +451,9 @@ main:not([page=home]) {
 a:visited {
   color: #0a58ca;
 }
+a:focus {
+  color: #0a58ca;
+}
 
 p, li, a {
   font-family: "Nunito Sans", sans-serif;
