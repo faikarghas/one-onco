@@ -158,7 +158,7 @@ class AuthController extends Controller
           ');
           Mail::send('v_emailActiv', ['token' =>$user->remember_token, 'userName' =>   $user->name], function($message) use($request){
             $message->to($request->email);
-            $message->subject('Verification Register Notification');
+            $message->subject('Pendaftaran Akun');
           });
           return redirect()->route('login');
         } else {
@@ -197,8 +197,10 @@ class AuthController extends Controller
 
     public function validatePasswordRequest(Request $request)
     {
-      $user = DB::table('users')->where('email', '=', $request->email)->first();
 
+      //dd($request->email);
+      $user = DB::table('users')->where('email', '=', $request->email)->first();
+      //dd($user);
       if (is_null($user)) {
           return redirect()->back()->withErrors(['email' => trans('User does not exist')]);
       }
@@ -210,12 +212,13 @@ class AuthController extends Controller
           'created_at' => Carbon::now()
       ]);
       //Get the token just created above
-      $tokenData = DB::table('password_resets')->where('email=?', [$request->email])->first();
+
+      $tokenData = DB::table('password_resets')->whereRaw('email=?', [$request->email])->first();
       $token = $tokenData->token;
 
       Mail::send('v_emailVeri', ['token' => $token], function($message) use($request){
         $message->to($request->email);
-        $message->subject('Reset Password Notification');
+        $message->subject('Notifikasi Ubah Kata Sandi');
       });
 
       return redirect()->back()->with('status', trans('Mohon check email Anda untuk membuat kata sandi baru.'));
@@ -225,6 +228,7 @@ class AuthController extends Controller
   {
   //Retrieve the user from the database
   $user = DB::table('users')->where('email', $email)->select('name', 'email')->first();
+  dd($user);
   //Generate, the password reset link. The token generated is embedded in the link
   $link = config('base_url') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
     try {

@@ -33,7 +33,7 @@
                                     <p style="font-size:1.2rem;">{{ $row->phone }}</p>
                                  </li>
                                 <li>
-                                   <p style="font-size:1.2rem;color:#00A2E3;">{{ $row->website }}</p>
+                                 <object><a href="//{{($row->website)}}" target="blank"><p style="font-size:1.2rem;color:#00A2E3;">{{ $row->website }}</p></a></object>
                                 </li>
                              </ul>
                           </div>
