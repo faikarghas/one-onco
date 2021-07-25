@@ -47,7 +47,7 @@
                                             Terima kasih telah mendaftarkan diri di One Onco. Dapatkan informasi terkini seputar kanker dan perawatannya melalui situs kami.
                                         </p>
                                         <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">Untuk verifikasi email Anda, silakan klik tombol di bawah ini. </p>
-                                        <a href="{{ URL::to('/verify-registration') }}/{{ $token }}" style="background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Verifikasi Email Sekarang</a>
+                                        <a href="{{ URL::to('/verify-registration') }}/{{ $token }}" style="background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Verifikasi Sekarang</a>
                                     </td>
                                 </tr>
                                 <tr>
