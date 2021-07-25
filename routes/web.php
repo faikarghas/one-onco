@@ -137,18 +137,6 @@ Route::get('/search', [SearchController::class,'index']);
 
 Route::post('newsletter/store',[NewsletterController::class,'store']);
 
-// Route::get('/email1', function () {
-//     return view('v_emailActiv');
-// });
-
-// Route::get('/email2', function () {
-//     return view('v_emailVeri');
-// });
-
-// Route::get('/email3', function () {
-//     return view('v_emailSubscriber');
-// });
-
 
 
 // Catch all page controller (place at the very bottom)
