@@ -7,7 +7,7 @@
                         <li><a href="{{url('')}}">Beranda</a></li>
                         <li><a href="{{url('/tentang-kami')}}">Tentang Kami</a></li>
                         <li><a href="{{url('/untuk-pasien')}}">Untuk Pasien</a></li>
-                        <li><a href="{{url('/untuk-pendamping')}}">Untuk Pedamping</a></li>
+                        <li><a href="{{url('/untuk-pendamping')}}">Untuk Pendamping</a></li>
                         <li><a href="{{url('/cerita-survivor')}}">Cerita Inspiratif</a></li>
                         <li><a href="{{url('/berita-terkini')}}">Berita Terkini</a></li>
                         <li><a href="{{url('/artikel-kanker')}}">Artikel Kanker</a></li>

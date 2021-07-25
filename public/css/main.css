@@ -1765,6 +1765,9 @@ button.boxReadMore {
     margin-bottom: 0.7rem;
   }
 }
+.list__component-list--item a.active {
+  color: #0d6efd;
+}
 .list__component-list--item p {
   font-size: 1.3rem;
   color: dimgray;
