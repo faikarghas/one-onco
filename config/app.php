@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://one-onco.herokuapp.com/'),
+    'url' => env('APP_URL', 'https://oneonco.co.id/'),
 
     'asset_url' => env('ASSET_URL', null),
 
