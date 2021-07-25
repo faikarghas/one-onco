@@ -596,7 +596,6 @@ $(document).ready(function() {
         let css = '<style>nav{background-color:red;}</style>';
         $(head).append(css);
     });
-    
 
 });
 

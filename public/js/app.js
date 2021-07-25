@@ -2323,7 +2323,7 @@ $(document).ready(function () {
       break;
 
     case '/artikel-kanker':
-      idKat = 5;
+      idKat = 2;
       break;
 
     default:
