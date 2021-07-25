@@ -11,9 +11,5 @@
             </div>
         </section>
     </main>
-    <script>
-        var iframe = document.getElementById("belanja_sehat_iframe");
-        var elmnt = iframe.contentWindow.document.getElementsByClassName("browser-headers");
-        elmnt.style.display = "none";
-    </script>
+   
 @endsection

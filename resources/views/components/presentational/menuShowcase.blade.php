@@ -35,7 +35,7 @@
                             'image_url'=>'beliobat.png',
                             'title'=>'Belanja Sehat',
                             'color'=>'#00A2E3;',
-                            'path'=>'login'
+                            'path'=>'belanja-sehat'
                         ))
                     </div>
                     <div class="box__rec" style="height: 60px">

@@ -2348,6 +2348,11 @@ $(document).ready(function () {
     });
     offestLoad += 8;
   });
+  $("#belanja_sehat_iframe").on("load", function () {
+    var head = $("#belanja_sehat_iframe").contents().find("head");
+    var css = '<style>nav{background-color:red;}</style>';
+    $(head).append(css);
+  });
 });
 
 /***/ }),

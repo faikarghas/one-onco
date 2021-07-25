@@ -591,9 +591,14 @@ $(document).ready(function() {
         offestLoad+=8
     })
 
+    $("#belanja_sehat_iframe").on("load", function() {
+        let head = $("#belanja_sehat_iframe").contents().find("head");
+        let css = '<style>nav{background-color:red;}</style>';
+        $(head).append(css);
+    });
+    
 
 });
-
 
 
 
