@@ -2298,7 +2298,6 @@ $(document).ready(function () {
         $(this).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
         formData.append('email', $('#inputEmailNewsletter').val());
         axios.post("".concat(baseUrl, "/newsletter/store"), formData).then(function (response) {
-          //console.log(formData);
           $('#exampleModal').modal('show');
           window.setTimeout(function () {
             $("#exampleModal").modal("hide");
@@ -2334,9 +2333,7 @@ $(document).ready(function () {
     var thisGlob = $(this);
     $(this).html('<div class="lds-dual-ring"></div>');
     axios.get("".concat(baseUrl, "/beritaload/").concat(offestLoad, "/").concat(idKat)).then(function (response) {
-      console.log(response);
       response.data.forEach(function (element) {
-        console.log(element);
         html.boxNews(element.title, element.imgDesktop, element.shortContent, element.slug, element.publishDate);
       });
 
@@ -2352,6 +2349,7 @@ $(document).ready(function () {
     var head = $("#belanja_sehat_iframe").contents().find("head");
     var css = '<style>.browser-headers{display:none;}</style>';
     $(head).append(css);
+    console.log(head, 'head');
   });
 });
 

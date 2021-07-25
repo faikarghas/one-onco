@@ -541,8 +541,6 @@ $(document).ready(function() {
 
             formData.append('email', $('#inputEmailNewsletter').val());
             axios.post(`${baseUrl}/newsletter/store`, formData).then(function (response) {
-              //console.log(formData);
-
               $('#exampleModal').modal('show');
               window.setTimeout(function () {
                 $("#exampleModal").modal("hide");
@@ -577,9 +575,7 @@ $(document).ready(function() {
         let thisGlob = $(this)
         $(this).html('<div class="lds-dual-ring"></div>')
         axios.get(`${baseUrl}/beritaload/${offestLoad}/${idKat}`).then(function (response) {
-            console.log(response);
             response.data.forEach(element => {
-                console.log(element);
                 html.boxNews(element.title,element.imgDesktop,element.shortContent,element.slug,element.publishDate)
             });
             if (location.pathname === '/cerita-survivor') {
@@ -595,6 +591,7 @@ $(document).ready(function() {
         let head = $("#belanja_sehat_iframe").contents().find("head");
         let css = '<style>.browser-headers{display:none;}</style>';
         $(head).append(css);
+        console.log(head,'head');
     });
 
 });
