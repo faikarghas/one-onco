@@ -84,33 +84,3 @@
         @include('/components/presentational.newsList',[])
     </main>
 @endsection
-@push('custom-scripts')
-<script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var _token = $('input[name="_token"]').val();
-
-        $(document).on('click','#btn-more',function(){
-            var id = $(this).data('id');
-            // $('#btn-more').html('<b>Loading...</b>');
-            load_data(id, _token);
-        });
-
-        function load_data(id="", _token)
-        {
-            $.ajax({
-            url:"{{ route('loadmore_story.load_data') }}",
-            method:"POST",
-            data:{id:id, _token:_token},
-            success:function(data)
-            {
-                $('#post_data').append(data);
-            }
-            })
-        }
-
-     });
-
- </script>
- @endpush
- @stack('custom-scripts')
