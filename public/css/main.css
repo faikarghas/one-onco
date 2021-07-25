@@ -963,7 +963,7 @@ strong {
   width: 120%;
   background-color: #000000d9;
   position: absolute;
-  z-index: 4;
+  z-index: 11;
   left: 0;
   top: 100%;
   border-top: 1px solid white;
