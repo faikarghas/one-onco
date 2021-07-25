@@ -483,6 +483,15 @@ $('#showpassulang1').click(function (params) {
     }
 })
 
+$('#showpassp').click(function (params) {
+    var x = document.getElementById("ipssp");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+})
+
 $('.partner-slider').slick({
     infinite: true,
     slidesToShow: 5,

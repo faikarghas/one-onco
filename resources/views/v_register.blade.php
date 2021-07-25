@@ -24,7 +24,6 @@
                                 </div>
                               @endif
 
-                             
                                 <p class="m-0"><strong>Data Diri</strong></p>
                                 <div class="input-group mb-4">
                                     <input type="text" class="form-control" placeholder="Nama Lengkap*" aria-label="nama" name="name" value="{{ old('name') }}">
@@ -35,8 +34,9 @@
                                 </div>
                                 <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                                 <div class="input-group mb-4">
-                                    <input type="password" class="form-control" placeholder="Kata Sandi*" aria-label="password" name="password" value="{{ old('password') }}">
-                                </div>
+                                    <input id="ipssp" type="password" class="form-control" placeholder="Kata Sandi*" aria-label="password" name="password" value="{{ old('password') }}">
+                                    <span class="input-group-text showpas" id="showpassp"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" width="20px" alt="" srcset=""></span>
+                                  </div>
                                 <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                                 <div class="input-group mb-4">
                                   <input type="text" class="form-control" placeholder="Nomor ponsel*" aria-label="wa" name="phone" value="{{ old('phone') }}">

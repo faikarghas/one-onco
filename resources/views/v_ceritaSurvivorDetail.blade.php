@@ -28,7 +28,7 @@
                         <div class="detail__page1--description mb-5">
                             <h1 class="mb-4">{{ $titleStory }}</h1>
                             <h4>{{ $authorStory }}</h4>
-                            <div class="forDekstop">{!! $contentStory !!}</div>
+                            <div class="forDesktop">{!! $contentStory !!}</div>
                             <div class="pagi-init forMobile">{!! $contentStory !!}</div>
                             <a href="/perawatan-kanker" class="text-green forMobile"><strong><i>List Referensi</i></strong></a>
                         </div>

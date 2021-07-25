@@ -41,15 +41,11 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0 35px;">
-                                        <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">You have
-                                            requested to reset your password</h1>
+                                        <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Anda telah mengajukan untuk mengubah kata sandi.</h1>
                                         <span
                                             style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
-                                        <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                                            We cannot simply send you your old password. A unique link to reset your
-                                            password has been generated for you. To reset your password, click the
-                                            following link and follow the instructions.
-                                        </p>
+                                        <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">Untuk alasan keamanan kami tidak bisa mengirimkan kata sandi yang lama. 
+                                            Untuk mengubah kata sandi Anda, klik tautan berikut ini.</p>
                                         <a href="{{ URL::to('/reset-password') }}/{{ $token }}" style="background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset Password</a>
                                     </td>
                                 </tr>
@@ -70,25 +66,25 @@
                                                                         <table cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td style="width:33.33%; text-align: center;" align="left" class="esd-block-text">
+                                                                                    <td style="width:33.33%; text-align: center; padding:0 20px;" align="left" class="esd-block-text">
                                                                                         <a href="{{ URL::to('/deteksi-kanker') }}" style="text-decoration: none">
                                                                                             <img style="text-align: center;object-fit:contain; width:50px;"src="{{asset('/images/deteksidini.png')}}" alt="">
-                                                                                            <h3 style="color: #80bc41; text-align:center;margin-top:10px;margin-bottom:5px;font-size:16px;"><strong>Deteksi Dini Kanker</strong></h3>
-                                                                                            <p style="font-size: 12px; color:black;margin-top:5px;">Beli langsung suplemen dan nutrisi di sini.</p>
+                                                                                            <h3 style="color: #80bc41; text-align:center;margin-top:10px;margin-bottom:5px;font-size:14px;"><strong>Deteksi Dini Kanker</strong></h3>
+                                                                                            <p style="font-size: 10px; color:black;margin-top:5px;">Beli langsung suplemen dan nutrisi di sini.</p>
                                                                                         </a>
                                                                                     </td>
-                                                                                    <td style="width:33.33%; text-align: center" align="left" class="esd-block-text" >
+                                                                                    <td style="width:33.33%; text-align: center; padding:0 20px;" align="left" class="esd-block-text" >
                                                                                         <a href="{{ URL::to('/belanja-sehat') }}" style="text-decoration: none">
                                                                                             <img style="text-align: center;object-fit:contain; width:50px;"src="{{asset('/images/beliobat.png')}}" alt="">
-                                                                                            <h3 style="color: #00A2E3; text-align:center;margin-top:10px;margin-bottom:5px;font-size:16px;"><strong>Belanja Sehat</strong></h3>
-                                                                                            <p style="font-size: 12px; color:black;margin-top:5px;">Cari tes skrining untuk pendeteksian dini.</p>
+                                                                                            <h3 style="color: #00A2E3; text-align:center;margin-top:10px;margin-bottom:5px;font-size:14px;"><strong>Belanja Sehat</strong></h3>
+                                                                                            <p style="font-size: 10px; color:black;margin-top:5px;">Cari tes skrining untuk pendeteksian dini.</p>
                                                                                         </a>
                                                                                     </td>
-                                                                                    <td style="width:33.33%;text-align:center;" align="left" class="esd-block-text">
+                                                                                    <td style="width:33.33%;text-align:center; padding:0 20px;" align="left" class="esd-block-text">
                                                                                         <a href="{{ URL::to('/konsultasi-online') }}" style="text-decoration: none">
                                                                                             <img style="text-align: center;object-fit:contain; width:50px;"src="{{asset('/images/live-chat.png')}}" alt="">
-                                                                                            <h3 style="color: #C6CB57; text-align:center;margin-top:10px;margin-bottom:5px;font-size:16px;"><strong>Konsultasi Online</strong></h3>
-                                                                                            <p style="font-size: 12px; color:black;margin-top:5px;">Konsultasi online dengan dokter seputar kanker.</p>
+                                                                                            <h3 style="color: #C6CB57; text-align:center;margin-top:10px;margin-bottom:5px;font-size:14px;"><strong>Konsultasi Online</strong></h3>
+                                                                                            <p style="font-size: 10px; color:black;margin-top:5px;">Konsultasi online dengan dokter seputar kanker.</p>
                                                                                         </a>
                                                                                     </td>
                                                                                 </tr>
@@ -114,7 +110,7 @@
                     </tr>
                     <tr>
                         <td style="text-align:center;">
-                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.one-onco.com</strong></p>
+                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.oneonco.com</strong></p>
                         </td>
                     </tr>
                     <tr>

@@ -1408,7 +1408,7 @@ footer .sosmed ul li {
 
 .boxReadMore {
   background-color: #00A2E3;
-  color: white;
+  color: white !important;
   padding: 10px 0;
   border-radius: 5px;
   text-decoration: none;
