@@ -27,7 +27,7 @@
                                     </li>
                                     <li class="d-flex align-items-start">
                                         <img class="me-4" src="{{asset('images/global.svg')}}" width="14px" alt="icon web">
-                                        <a href="" style="color: #00A2E3">{{ $website }}</a>
+                                        <a href="//{{ $website }}" target="blank" style="color: #00A2E3">{{ $website }}</a>
                                     </li>
                                 </ul>
                                 {{-- <img src="{{asset('images/global.svg')}}" alt=""> --}}
