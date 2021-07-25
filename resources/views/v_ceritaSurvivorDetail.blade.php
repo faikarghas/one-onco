@@ -28,7 +28,7 @@
                         <div class="detail__page1--description mb-5">
                             <h1 class="mb-4">{{ $titleStory }}</h1>
                             <h4>{{ $authorStory }}</h4>
-                            <p class="pagi-init">{!! $contentStory !!}</p>
+                            <div class="pagi-init">{!! $contentStory !!}</div>
                             <a href="/perawatan-kanker" class="text-green forMobile"><strong><i>List Referensi</i></strong></a>
                         </div>
                         <div class="share_sosmed forDesktop-dflex">
@@ -83,6 +83,15 @@
                                 @endforeach
 
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 forMobile">
+                        <div class="pagination__wrapper">
+                            <span>Halaman</span>
+                            <div class="pagination__wrapper-button">
+                                <div class="page_number"></div>
+                                <div class="show_all"><p>Show all</p> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"> </div>
                             </div>
                         </div>
                     </div>

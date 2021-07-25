@@ -26,7 +26,6 @@
                             <img src="{{asset('data_artikel')}}/{{$imageNews}}" alt="{{$slugStory}}-img" height="180px" width="100%">
                         </div>
                         <div class="detail__page1--description mb-5">
-
                             <h1 class="mb-4">{{ $titleStory }}</h1>
                             <p>{{ $dateStory }}</p>
                             <div class="pagi-init">{!! $contentStory !!}</div>
@@ -91,10 +90,7 @@
                         <div class="pagination__wrapper">
                             <span>Halaman</span>
                             <div class="pagination__wrapper-button">
-                                <div class="page_number">
-                                    {{-- <div class="page_numberButton active">1</div> --}}
-                                    {{-- <div class="page_numberButton">2</div> --}}
-                                </div>
+                                <div class="page_number"></div>
                                 <div class="show_all"><p>Show all</p> <img src="{{asset('/images/arrow-white.png')}}" alt="arrow" width="10px"> </div>
                             </div>
                         </div>

@@ -35,11 +35,6 @@
         <section class="tentangKami__page forMobile">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 forMobile">
-                        {{-- <div class="tentangKami__page-intro mb-5">
-                            <p>Mempermudah dan mendampingi pasien kanker melalui naik dan turunfnya hidup, itulah nilai utama dari One Onco.</p>
-                         </div> --}}
-                   </div>
                     <div class="col-12 col-md-6">
                         <div class="list__component">
                             @foreach($listingKatArtikel as $key => $row)
@@ -48,43 +43,83 @@
                                         <img src="{{asset('images/rarrow.png')}}" width="18px" alt="round-arrow">
                                     </div>
                                     <div class="col-11 ps-4">
-                                        @switch(Request::segment(1))
+                                        @if (!empty(Request::segment(2)))
+                                            @switch(Request::segment(1))
                                             @case('tentang-kami')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('tentang-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('tentang-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('untuk-pasien')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('untuk-pasien')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('untuk-pasien')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('untuk-pendamping')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/untuk-pendamping')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/untuk-pendamping')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('partner-kami')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/partner-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/partner-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('perawatan-kanker')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/perawatan-kanker')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/perawatan-kanker')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('kanker-payudara')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-payudara')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/kanker-payudara')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('syaratdanketentuan')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('kanker-umum')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-umum')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/kanker-umum')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('kanker-serviks')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-serviks')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/kanker-serviks')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('kanker-paru')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-paru')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/kanker-paru')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @case('kanker-kolorektal')
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-kolorektal')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/kanker-kolorektal')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
                                             @default
-                                                <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                         @endswitch
+                                        @else
+                                            @switch(Request::segment(1))
+                                                @case('tentang-kami')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('tentang-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('untuk-pasien')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('untuk-pasien')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('untuk-pendamping')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/untuk-pendamping')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('partner-kami')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/partner-kami')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('perawatan-kanker')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/perawatan-kanker')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('kanker-payudara')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-payudara')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('syaratdanketentuan')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('kanker-umum')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-umum')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('kanker-serviks')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-serviks')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('kanker-paru')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-paru')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('kanker-kolorektal')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-kolorektal')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @default
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                            @endswitch
+                                        @endif
                                     </div>
                                 </div>
                             @endforeach
