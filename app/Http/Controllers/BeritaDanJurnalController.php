@@ -41,19 +41,19 @@ class BeritaDanJurnalController extends Controller
       $listingStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',$id_kategori)->orderBy('artikel.publishDate','desc')->paginate(5);
 
      // dd($listingStory);
-// 
+//
 
-     
+
 
       // listing news 3 rows
       // $listingNews = DB::table('artikel')->where('idKat',$id_kategori)->limit(5)->orderBy('publishDate', 'DESC')->get();
-      
+
       // model raws
       //$listingNews = DB::table('artikel')->whereRaw('idKat=?',[$id_kategori])->orderBy('publishDate', 'DESC')->paginate(5);
 
-      // elequent 
+      // elequent
       $listingNews = Artikel_model::where('idkat' ,'=', $id_kategori)->skip(0)->take(5)->orderBy('publishDate','desc')->get();
-      
+
       //dd($listingNews);
 
       $moreDatas = Artikel_model::select('*')->limit(8)->skip('5')->get();
@@ -78,11 +78,11 @@ class BeritaDanJurnalController extends Controller
 
       // header title and image
       $segment = $request->segment(1);
-      
+
       // sqlRaw
       //$content_kategori = DB::table('kategori_artikel')->whereRaw('slug=?',[$segment])->first();
-      
-      $content_kategori = ArtikelKategori_model::where('slug', '=' , $segment)->first(); 
+
+      $content_kategori = ArtikelKategori_model::where('slug', '=' , $segment)->first();
 
       $id_kategori = $content_kategori->id;
       $title_header = $content_kategori->intro;
@@ -93,15 +93,15 @@ class BeritaDanJurnalController extends Controller
       // detail News/artikel/story
       $segment2 = $request->segment(2);
       $model  = new Artikel_model();
-      
+
       $detailStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content AS content_kategori_artikel','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.slug','=',$slug)->orderBy('artikel.id','desc')->first();
 
       $yearCurrent  = date('Y');
       $dateNewsDetail =  date('Y', strtotime($detailStory->publishDate));
       if ($yearCurrent == $dateNewsDetail ){
-          $dateDetail =  date('d M', strtotime($detailStory->publishDate));
+          $dateDetail =  date('d-M-Y', strtotime($detailStory->publishDate));
       } else {
-          $dateDetail =  date('Y-d-mm', strtotime($detailStory->publishDate));
+          $dateDetail =  date('d-M-Y', strtotime($detailStory->publishDate));
       }
 
 
@@ -131,7 +131,7 @@ class BeritaDanJurnalController extends Controller
 
   public function loadMore($offset,$idKat){
 
-    
+
 
     //$data = DB::table('artikel')->whereRaw('idKat=?',[$idKat])->skip($offset)->take(8)->orderBy('publishDate', 'DESC')->get();
 
