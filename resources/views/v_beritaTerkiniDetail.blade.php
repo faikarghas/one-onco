@@ -28,7 +28,7 @@
                         <div class="detail__page1--description mb-5">
                             <h1 class="mb-4">{{ $titleStory }}</h1>
                             <p>{{ $dateStory }}</p>
-                            <div class="forDekstop">{!! $contentStory !!}</div>
+                            <div class="forDesktop">{!! $contentStory !!}</div>
                             <div class="pagi-init forMobile">{!! $contentStory !!}</div>
                         </div>
                         <div class="share_sosmed forDesktop-dflex">

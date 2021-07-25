@@ -66,14 +66,14 @@
                 </div>
                 <div class="row ps">
                     <div class="col-12 col-md-6">
-                            @include('components/presentational.boxRec',array(
-                                'image_url'=>'deteksidini.png',
-                                'title'=>'Deteksi Dini Kanker',
-                                'description'=>'Cari tes skrining untuk pendeteksian dini',
-                                'color'=>'#80bc41;',
-                                'colorPar'=>'#808080;',
-                                'path'=>'deteksi-kanker'
-                            ))
+                        @include('components/presentational.boxRec',array(
+                            'image_url'=>'deteksidini.png',
+                            'title'=>'Deteksi Dini Kanker',
+                            'description'=>'Cari tes skrining untuk pendeteksian dini',
+                            'color'=>'#80bc41;',
+                            'colorPar'=>'#808080;',
+                            'path'=>'deteksi-kanker'
+                        ))
                     </div>
                     <div class="col-12 col-md-6">
                         @include('components/presentational.boxRec',array(
@@ -335,17 +335,10 @@
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                    <h1 class="modal-title text-center" id="exampleModalLabel">TERIMA KASIH !!</h1>
-                    </div>
-                    <div class="modal-body">
-                    <h3>Selamat bergabung dalam grup newletter One Onco.
-                        Nantikan berita dan informasi menarik dari kami!
-                         Mari kita lawan kanker Bersama!
-                        </h3>
-                    </div>
-                    <div class="modal-footer">
-                        <p>Simak Juga Kegiatan Kami</p>
+                    <div class="modal-body" style="text-align: center;padding:3rem">
+                        <img class="mb-4" src="{{asset('/images/email-marketing.svg')}}" width="70px" alt="mail" srcset="">
+                        <h1 style="color: #00A2E3;font-weight:bold;" class="modal-title text-center mb-4" id="exampleModalLabel">Terima Kasih!</h1>
+                        <h3 style="color: rgb(173, 173, 173)">Selamat bergabung dalam grup newletter One Onco. Nantikan berita dan informasi menarik dari kami! Mari kita lawan kanker Bersama!</h3>
                     </div>
                 </div>
                 </div>
