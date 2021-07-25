@@ -2,6 +2,11 @@
     padding: 4rem 3rem;
     position: relative;
     z-index: 2;
+    a{
+        &:visited{
+            color: #0a58ca;
+        }
+    }
     &--img{
         height: 350px;
         @include respond(down-tab-port){

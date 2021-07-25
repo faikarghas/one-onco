@@ -2341,6 +2341,9 @@ button.boxReadMore {
   position: relative;
   z-index: 2;
 }
+.detail__page1 a:visited {
+  color: #0a58ca;
+}
 .detail__page1--img {
   height: 350px;
   width: 100%;
