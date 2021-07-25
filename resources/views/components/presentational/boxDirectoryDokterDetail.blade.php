@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="col-3 d-flex align-items-center justify-content-center">
                             <?php
-                                   $path = public_path('data_dokter\\'.$foto);
+                                   $path = public_path('data_dokter/'.$foto);
                                     $isExists = file_exists($path);
                                     if ($isExists) {
                                         $fotoDokter = $foto;
@@ -15,7 +15,7 @@
                                     }
                                 ?>
                             <div class="rounded_img">
-                                <img width="100%" height="100%" src="{{ asset("/data_dokter/$foto") }}" alt="dokter" />
+                                <img width="100%" height="100%" src="{{ asset("/data_dokter/$fotoDokter") }}" alt="dokter" />
                             </div>
                         </div>
                         <div class="col-7 d-flex flex-column align-items-start">
