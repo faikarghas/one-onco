@@ -386,6 +386,7 @@ main:not([page=home]) {
 .tab__menu .list__component-list--item {
   position: relative;
   padding: 0 1rem;
+  padding-right: 3rem;
 }
 .tab__menu .list__component-list--item a {
   height: 100%;
@@ -453,6 +454,10 @@ a:visited {
 }
 a:focus {
   color: #0a58ca;
+}
+
+.showpas {
+  cursor: pointer;
 }
 
 p, li, a {
@@ -1757,6 +1762,7 @@ button.boxReadMore {
 
 .list__component-list--item {
   margin-bottom: 2rem;
+  padding-right: 3rem;
 }
 .list__component-list--item a {
   font-weight: 600;

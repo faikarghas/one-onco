@@ -17,10 +17,12 @@
                                 @endforeach
                                 <p class="m-0">Rubah Kata Sandi</p>
                                 <div class="input-group mb-4">
-                                    <input type="password" class="form-control" placeholder="Kata sandi baru*" aria-label="sadi-baru" name="new_password">
+                                    <input id="ipss4" type="password" class="form-control" placeholder="Kata sandi baru*" aria-label="sadi-baru" name="new_password">
+                                    <span class="input-group-text showpas" id="showpassbaru1"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" width="20px" alt="" srcset=""></span>
                                 </div>
                                 <div class="input-group mb-4">
-                                    <input type="password" class="form-control" placeholder="Ulangi kata sandi baru*" aria-label="re-sandi-baru" name='new_confirm_password'>
+                                    <input id="ipss5" type="password" class="form-control" placeholder="Ulangi kata sandi baru*" aria-label="re-sandi-baru" name='new_confirm_password'>
+                                    <span class="input-group-text showpas" id="showpassulang1"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" width="20px" alt="" srcset=""></span>
                                 </div>
                                 <br>
                                 <p class=""><i>Personal OneOnco menyediakan informasi sesuai ketertarikan Anda!</i></p>

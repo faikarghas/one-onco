@@ -302,6 +302,7 @@
             &--item{
                 position: relative;
                 padding: 0 1rem;
+                padding-right: 3rem;
                 a{
                     height: 100%;
                     color: black;
@@ -376,4 +377,8 @@ a{
     &:focus{
         color: #0a58ca;
     }
+}
+
+.showpas{
+    cursor: pointer;
 }

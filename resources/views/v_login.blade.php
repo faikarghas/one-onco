@@ -40,10 +40,9 @@
                                 <div class="input-group mb-4">
                                     <span class="input-group-text" id="password"><img class="img-fluid" src="{{asset('/images/secure.png')}}" alt="" srcset=""></span>
                                     <input id="ipss" type="password" class="form-control" aria-label="password" placeholder="Kata Sandi" name="password">
-                                    <span class="input-group-text" id="showpass"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" alt="" srcset=""></span>
+                                    <span class="input-group-text showpas" id="showpass"><img class="img-fluid" src="{{asset('/images/showpassword.png')}}" alt="" srcset=""></span>
                                   </div>
                                   <div class="input-group mb-4">
-                                   
                                     <div class="captcha">
                                       <span>{!! captcha_img() !!}</span>
                                       <button type="button" class="btn btn-danger" class="reload" id="reload">
@@ -52,7 +51,6 @@
                                   </div>
                                   </div>
                                   <div class="input-group mb-4">
-                                   
                                     <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
                                   </div>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Masuk','color'=>'#32A48E'])
