@@ -2350,7 +2350,7 @@ $(document).ready(function () {
   });
   $("#belanja_sehat_iframe").on("load", function () {
     var head = $("#belanja_sehat_iframe").contents().find("head");
-    var css = '<style>nav{background-color:red;}</style>';
+    var css = '<style>.browser-headers{display:none;}</style>';
     $(head).append(css);
   });
 });

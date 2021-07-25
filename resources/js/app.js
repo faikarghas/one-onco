@@ -593,7 +593,7 @@ $(document).ready(function() {
 
     $("#belanja_sehat_iframe").on("load", function() {
         let head = $("#belanja_sehat_iframe").contents().find("head");
-        let css = '<style>nav{background-color:red;}</style>';
+        let css = '<style>.browser-headers{display:none;}</style>';
         $(head).append(css);
     });
 
