@@ -12,7 +12,7 @@
                     <p class="text-white text-end">Dapatkan informasi terkini seputar kanker melalui e-Newsletter kami</p>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Email Anda..." aria-label="Recipient's username" aria-describedby="button-addon2" name="email"  value="{{ old('email') }}" id="inputEmailNewsletter">
-                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2" disabled>Mulai Membaca</button>
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2" disabled>Berlangganan</button>
                     </div>
                     </form>
                 </div>
