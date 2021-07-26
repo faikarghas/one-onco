@@ -71,14 +71,14 @@
                                                                                         <a href="{{ URL::to('/deteksi-kanker') }}" style="text-decoration: none">
                                                                                             <img style="text-align: center;object-fit:contain; width:50px;"src="{{asset('/images/deteksidini.png')}}" alt="">
                                                                                             <h3 style="color: #80bc41; text-align:center;margin-top:10px;margin-bottom:5px;font-size:14px;"><strong>Deteksi Dini Kanker</strong></h3>
-                                                                                            <p style="font-size: 10px; color:black;margin-top:5px;">Beli langsung suplemen dan nutrisi di sini.</p>
+                                                                                            <p style="font-size: 10px; color:black;margin-top:5px;">Cari tes skrining untuk pendeteksian dini.</p>
                                                                                         </a>
                                                                                     </td>
                                                                                     <td style="width:33.33%; text-align: center; padding:0 20px;" align="left" class="esd-block-text" >
                                                                                         <a href="{{ URL::to('/belanja-sehat') }}" style="text-decoration: none">
                                                                                             <img style="text-align: center;object-fit:contain; width:50px;"src="{{asset('/images/beliobat.png')}}" alt="">
                                                                                             <h3 style="color: #00A2E3; text-align:center;margin-top:10px;margin-bottom:5px;font-size:14px;"><strong>Belanja Sehat</strong></h3>
-                                                                                            <p style="font-size: 10px; color:black;margin-top:5px;">Cari tes skrining untuk pendeteksian dini.</p>
+                                                                                            <p style="font-size: 10px; color:black;margin-top:5px;">Beli langsung suplemen dan nutrisi di sini.</p>
                                                                                         </a>
                                                                                     </td>
                                                                                     <td style="width:33.33%;text-align:center; padding:0 20px;" align="left" class="esd-block-text">
