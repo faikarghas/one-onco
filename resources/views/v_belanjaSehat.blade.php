@@ -5,7 +5,7 @@
         <section class="belanja__page">
             <div class="container-fluid">
                 <div class="row">
-                    <iframe id="belanja_sehat_iframe" src="https://healthmall.klikdokter.net/products/category/kanker?kdUser={{ session()->get('tokenUser') }}" frameborder="0" width="100%" height="800" target="_parent" ></iframe>
+                    <iframe id="belanja_sehat_iframe" src="https://healthmall.klikdokter.com/products/category/kanker?kdUser={{ session()->get('tokenUser') }}" frameborder="0" width="100%" height="800" target="_parent" ></iframe>
                 </div>
             </div>
         </section>
