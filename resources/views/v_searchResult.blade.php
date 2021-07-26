@@ -83,6 +83,16 @@
                                         </div>
                                         @endforeach
                                         @foreach ( $resultFaskes as $row )
+                                        <?php
+                                            $foto = $row->foto;
+                                            $path = public_path('/data_faskes/'.$foto);
+                                            $isExists = file_exists($path);
+                                            if ($isExists) {
+                                                $fotoFaskes = $foto;
+                                            } else {
+                                                echo $fotoFaskes = "care_center.svg";
+                                            }
+                                        ?>
                                         <div class="col-12 col-lg-6">
                                             <div class="box__rec2">
                                                 <a href="{{ url('direktori-care/'.$row->faskesId) }}" class="d-block h-100">
@@ -90,7 +100,7 @@
                                                        <div class="row">
                                                           <div class="col-3 d-flex align-items-center justify-content-center">
                                                              <div class="rounded_img">
-                                                                <img width="100%" height="100%" src="/data_faskes/{{ $row->foto }}" alt="care_center">
+                                                                <img width="100%" height="100%" src="{{asset("/data_faskes/$fotoFaskes")}}" alt="care_center">
                                                               </div>
                                                           </div>
                                                           <div class="col-7 d-flex flex-column align-items-start justify-content-center">
