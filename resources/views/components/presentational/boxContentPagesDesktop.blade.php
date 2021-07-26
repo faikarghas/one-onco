@@ -21,7 +21,8 @@
             <ul>
                 <li>
                     <a href="{{url('/belanja-sehat')}}"><img src="{{asset('/images/belanja_sehat_icon.png')}}" alt="logo belanja sehat"></a>
-                    <a href="{{url('/konsultasi-online')}}"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo belanja sehat"></a>
+                    <a href="{{url('/konsultasi-online')}}"><img src="{{asset('/images/konsultasi_online_icon.png')}}" alt="logo konsultasi online"></a>
+                    <a href="{{url('/deteksi-kanker')}}"><img src="{{asset('/images/deteksi_dini_kanker_icon.png')}}" alt="logo deteksi kanker"></a>
                 </li>
             </ul>
         </div>
