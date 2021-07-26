@@ -22,14 +22,19 @@
                                 {{-- <h2 class="mb-5" style="color: lightgray">Menampilkan 10 dari 800 artikel</h2> --}}
 
                                 <ul class="list_artikelSearch">
-                                    @foreach ( $resultArtikel as $row )
+
+                                   
+                                    @foreach ($resultArtikel as $row )
+                                    
+
                                     <li>
-                                        <a href="{{ url($row->idKat) }}/{{ $row->slug }}">
+                                        <a href="{{ url($row->slug2.'/'.$row->slug1) }}">
                                             <span class="title d-block">{{ $row->title }}</span>
                                             <span class="content d-block">{{ $row->shortContent  }}</span>
                                             <span class="date d-block">{{ $row->publishDate }}<span>
                                         </a>
                                     </li>
+                                    
                                     @endforeach
 
                                     
@@ -80,12 +85,12 @@
                                         @foreach ( $resultFaskes as $row )
                                         <div class="col-12 col-lg-6">
                                             <div class="box__rec2">
-                                                <a href="https://oneonco.co.id/direktori-care/31731001" class="d-block h-100">
+                                                <a href="{{ url('direktori-care/'.$row->faskesId) }}" class="d-block h-100">
                                                     <div class="container">
                                                        <div class="row">
                                                           <div class="col-3 d-flex align-items-center justify-content-center">
                                                              <div class="rounded_img">
-                                                                                            <img width="100%" height="100%" src="/data_faskes/{{ $row->foto }}" alt="care_center">
+                                                                <img width="100%" height="100%" src="/data_faskes/{{ $row->foto }}" alt="care_center">
                                                               </div>
                                                           </div>
                                                           <div class="col-7 d-flex flex-column align-items-start justify-content-center">

@@ -33,17 +33,17 @@ class SearchController extends Controller
       
       $searchValues = preg_split('/\s+/', $searchTerm, -1, PREG_SPLIT_NO_EMPTY);
       
-      $res = Artikel_model::where(function ($q) use ($searchValues) {
+      $res = Artikel_model::join('kategori_artikel', 'artikel.idKat', '=', 'kategori_artikel.id')->select('artikel.id','artikel.title','artikel.shortContent','artikel.publishDate','artikel.slug as slug1','kategori_artikel.slug as slug2')->where(function ($q) use ($searchValues) {
         foreach ($searchValues as $value) {
-          $q->orWhere('title', 'like', "%{$value}%");
+          $q->orWhere('artikel.title', 'like', "%{$value}%");
           }
       })->get();
-    
 
+      //dd($res);
+  
       $resDokter = DokterMapped_model::where(function ($q) use ($searchValues) {
         foreach ($searchValues as $value) {
           $q->orWhere('fullname', 'like', "%{$value}%");
-         
           }
       })->get();
 
@@ -52,6 +52,10 @@ class SearchController extends Controller
           $q->orWhere('namaFaskes', 'like', "%{$value}%");
           }
       })->get();
+
+    
+
+
 
       $data = array(
       'titleResult'  => $searchTerm,
