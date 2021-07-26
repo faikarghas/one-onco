@@ -19,7 +19,7 @@
                             'image_url'=>'deteksidini.png',
                             'title'=>'Deteksi Dini Kanker',
                             'color'=>'#80bc41;',
-                            'path'=>'perawatan-kanker'
+                            'path'=>'deteksi-kanker'
                         ))
                     </div>
                     <div class="box__rec" style="height: 60px">
