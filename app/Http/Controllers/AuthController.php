@@ -71,8 +71,8 @@ class AuthController extends Controller
           $phone = $user->phone;
 
           $client_id = "KD-Api-Key";
-          $secret = "eLpBOZEiQrddasAbDf1w8nELWgMGkldW";
-          $url = "https://api.medkomtek.net/partner/login";
+          $secret = "CffnUrPN1t3iE2O5Y5A6emjwciGe1NRn";
+          $url = "https://api.medkomtek.com/kdapi/partner/login";
           $data = [
                     'full_name' => $fullName,
                     'phone' => $phone
