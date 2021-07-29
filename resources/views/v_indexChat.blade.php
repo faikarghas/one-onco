@@ -6,33 +6,69 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-5">
-                        <h1><strong>Konsultasi spesialis onkologi</strong></h1>
+                        <h1><strong>Jadwal Konsultasi Reguler</strong></h1>
                         <div class="row konsultasi__page-item">
-                            <div class="col-4 col-md-4 tx">Dr. Faikar Ghassan</div>
-                            <div class="col-4 col-md-4 tx text-center">Senin</div>
-                            <div class="col-4 col-md-4 tx text-end">14.00-17.00</div>
+                            <div class="col-4 col-md-4 tx">Seputar Kanker</div>
+                            <div class="col-4 col-md-4 tx text-center">Senin-Minggu</div>
+                            <div class="col-4 col-md-4 tx text-end">00:00-23:59</div>
                         </div>
                         <div class="row konsultasi__page-item">
-                            <div class="col-4 col-md-4 tx">Dr. Faikar Ghassan</div>
-                            <div class="col-4 col-md-4 tx text-center">Senin</div>
-                            <div class="col-4 col-md-4 tx text-end">14.00-17.00</div>
+                            <div class="col-4 col-md-4 tx">Seputar Penyakit Dalam</div>
+                            <div class="col-4 col-md-4 tx text-center">Senin-Minggu</div>
+                            <div class="col-4 col-md-4 tx text-end">00:00-23:59</div>
                         </div>
                         <div class="row konsultasi__page-item">
-                            <div class="col-4 col-md-4 tx">Dr. Faikar Ghassan</div>
-                            <div class="col-4 col-md-4 tx text-center">Senin</div>
-                            <div class="col-4 col-md-4 tx text-end">14.00-17.00</div>
+                            <div class="col-4 col-md-4 tx">Seputar Psikologi </div>
+                            <div class="col-4 col-md-4 tx text-center">Senin-Minggu</div>
+                            <div class="col-4 col-md-4 tx text-end">00:00-23:59</div>
+                        </div>
+                         
+                        <h1 class="mt-5"><strong>Jadwal Konsultasi Spesialis Onkologi</strong></h1>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. David Samuel Kereh, Sp. B (K) Onk</div>
+                            <div class="col-2 col-md-2 tx text-center">Bedah Onkologi</div>
+                            <div class="col-4 col-md-4 tx text-end">Senin & Kamis</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Dedyanto Jenky Saputra, M.Gizi</div>
+                            <div class="col-2 col-md-2 tx text-center">Gizi</div>
+                            <div class="col-4 col-md-4 tx text-end">Senin-Minggu</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Ericko Ekaputra, Sp. Onk. Rad</div>
+                            <div class="col-2 col-md-2 tx text-center">Radiasi Onkologi</div>
+                            <div class="col-4 col-md-4 tx text-end">Senin-Jumat</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Gumilang Wiranegara, Sp.OG (K) Onk</div>
+                            <div class="col-2 col-md-2 tx text-center">Obgyn Onkologi</div>
+                            <div class="col-4 col-md-4 tx text-end">Senin</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Hastarita Lawrenti</div>
+                            <div class="col-2 col-md-2 tx text-center">Onkologi</div>
+                            <div class="col-4 col-md-4 tx text-end">Selasa, Rabu, & Kamis</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Lucky Taufika Yuhedi, Sp. Onk.Rad</div>
+                            <div class="col-2 col-md-2 tx text-center">Radiasi Onkologi</div>
+                            <div class="col-4 col-md-4 tx text-end">Selasa</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Reza Musmarliansyah, Sp. B (K) Onk</div>
+                            <div class="col-2 col-md-2 tx text-center">Bedah Onkologi</div>
+                            <div class="col-4 col-md-4 tx text-end">Selasa & Kamis</div>
                         </div>
                     </div>
+                    
                     <div class="col-12 col-lg-7 rg">
                             <div class="box_jadwal">
                                 <div class="row">
-                                    <div class="col-3" style="font-size:1.8rem;font-weight:bold">Jadwal</div>
+                                    <div class="col-3" style="font-size:1.8rem;font-weight:bold">Konsultasi seputar kesehatan & kanker sekarang!</div>
                                     <div class="col-9">
                                         <ul>
-                                            <li>lorem ipsum dolor sit amet</li>
-                                            <li>lorem ipsum dolor sit amet</li>
-                                            <li>lorem ipsum dolor sit amet</li>
-                                            <li>lorem ipsum dolor sit amet</li>
+                                            <li>Jadwal dan informasi terkait layanan dapat berubah sewaktu-waktu tanpa pemberitahuan. </li>
+                                            
                                         </ul>
                                     </div>
                                     <div class="col-12 mt-5">
