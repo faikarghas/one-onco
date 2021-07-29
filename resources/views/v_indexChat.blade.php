@@ -8,19 +8,22 @@
                     <div class="col-12 col-lg-7">
                         <h1><strong>Jadwal Konsultasi Reguler</strong></h1>
                         <div class="row konsultasi__page-item small">
-                            <div class="col-4 col-md-4 tx">Seputar Kanker</div>
-                            <div class="col-4 col-md-4 tx text-center">Senin-Minggu</div>
-                            <div class="col-4 col-md-4 tx text-end">00:00-23:59</div>
+                            <div class="col-6 col-md-6 tx">Seputar Kanker</div>
+                            <div class="col-2 col-md-2 tx text-center">Senin-Minggu</div>
+                            <div class="col-2 col-md-2 tx text-end"></div>
+                            <div class="col-2 col-md-2 tx text-end">00:00-23:59</div>
                         </div>
                         <div class="row konsultasi__page-item">
-                            <div class="col-4 col-md-4 tx">Seputar Penyakit Dalam</div>
-                            <div class="col-4 col-md-4 tx text-center">Senin-Minggu</div>
-                            <div class="col-4 col-md-4 tx text-end">00:00-23:59</div>
+                            <div class="col-6 col-md-6 tx">Seputar Penyakit Dalam</div>
+                            <div class="col-2 col-md-2 tx text-center">Senin-Minggu</div>
+                            <div class="col-2 col-md-2 tx text-end"></div>
+                            <div class="col-2 col-md-2 tx text-end">00:00-23:59</div>
                         </div>
                         <div class="row konsultasi__page-item">
-                            <div class="col-4 col-md-4 tx">Seputar Psikologi </div>
-                            <div class="col-4 col-md-4 tx text-center">Senin-Minggu</div>
-                            <div class="col-4 col-md-4 tx text-end">00:00-23:59</div>
+                            <div class="col-6 col-md-6 tx">Seputar Psikologi </div>
+                            <div class="col-2 col-md-2 tx text-center">Senin-Minggu</div>
+                            <div class="col-2 col-md-2 tx text-end"></div>
+                            <div class="col-2 col-md-2 tx text-end">00:00-23:59</div>
                         </div>
                          
                         <h1 class="mt-5"><strong>Jadwal Konsultasi Spesialis Onkologi</strong></h1>
