@@ -20,7 +20,7 @@
             <div class="col-12 col-lg-6 mt-5">
                 <div>
                     <p class="mb-4"><strong>Hubungi Kami</strong></p>
-                    <p>Alamat Kami</p>
+                   
                     <p>GLOBAL ONKOLAB FARMA<br/>
                         Jl. Jend. Ahmad Yani No.2, RT.3/RW.13,
                         <br>
@@ -29,7 +29,7 @@
                         Timur, DKI Jakarta 13210
                     </p>
                     <p class="m-0"><span class="fw-bold">Telp:</span> 021-5086 7767</p>
-                    <p><span class="fw-bold">Email:</span> contactus@oneonco.co.id</p>
+                    <p><span class="fw-bold">Email:</span> oneonco.OTS@gmail.com</p>
                 </div>
             </div>
             <div class="col-12 col-lg-6 mt-5">
@@ -57,10 +57,10 @@
                 <div class="sosmed d-flex align-items-center">
                     <p class="m-0">Temukan kami di</p>
                     <ul class="m-0">
-                        <li><a href="https://www.facebook.com/OneOnco-104876148400857"><img src="{{asset('/images/facebook_logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
-                        <li><a href=""><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
+                        <li><a href="https://www.facebook.com/OneOnco-104876148400857" target="_blank"><img src="{{asset('/images/facebook_logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
+                        <li><a href="oneonco.OTS@gmail.com"><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
                         <li><a href=""><img src="{{asset('/images/youtube_logo.png')}}" alt="logo-youtube" width="30px" height="30px"/></a></li>
-                        <li><a href="https://www.instagram.com/one.onco/"><img src="{{asset('/images/instagram_logo.png')}}" alt="logo-ig" width="30px" height="30px"/></a></li>
+                        <li><a href="https://www.instagram.com/one.onco/" target="_blank"><img src="{{asset('/images/instagram_logo.png')}}" alt="logo-ig" width="30px" height="30px"/></a></li>
                     </ul>
                 </div>
             </div>
