@@ -1869,12 +1869,15 @@ $(window).on('scroll', function () {
 $(document).ready(function () {
   var data = $('.pagi-init').html();
   var pageLength = $('.pagi-init').html().split(' ').length;
-  var maxPerPage = 200;
+  var maxPerPage;
 
-  if (pageLength.length > 3000) {
+  if (pageLength > 3000) {
     maxPerPage = pageLength / 5;
+  } else {
+    maxPerPage = 200;
   }
 
+  console.log(pageLength.length);
   var page1 = $('.pagi-init').html().split(' ').slice(0, maxPerPage).join(' ');
   var lengthPerPage = Math.ceil(pageLength / maxPerPage);
   $('.pagi-init').html(page1);

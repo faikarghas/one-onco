@@ -28,10 +28,15 @@ $(window).on('scroll', function() {
 $(document).ready(function() {
     let data = $('.pagi-init').html()
     let pageLength = $('.pagi-init').html().split(' ').length
-    let maxPerPage = 200
-    if (pageLength.length > 3000) {
+    var maxPerPage;
+
+    if (pageLength > 3000) {
         maxPerPage = pageLength / 5
+    } else {
+        maxPerPage = 200
     }
+
+    console.log(pageLength.length);
 
     let page1 = $('.pagi-init').html().split(' ').slice(0,maxPerPage).join(' ')
     let lengthPerPage = Math.ceil(pageLength/maxPerPage)
