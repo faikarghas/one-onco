@@ -36,7 +36,7 @@ $(document).ready(function() {
         maxPerPage = 200
     }
 
-    console.log(pageLength.length);
+    console.log(pageLength);
 
     let page1 = $('.pagi-init').html().split(' ').slice(0,maxPerPage).join(' ')
     let lengthPerPage = Math.ceil(pageLength/maxPerPage)

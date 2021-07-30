@@ -1877,7 +1877,7 @@ $(document).ready(function () {
     maxPerPage = 200;
   }
 
-  console.log(pageLength.length);
+  console.log(pageLength);
   var page1 = $('.pagi-init').html().split(' ').slice(0, maxPerPage).join(' ');
   var lengthPerPage = Math.ceil(pageLength / maxPerPage);
   $('.pagi-init').html(page1);
