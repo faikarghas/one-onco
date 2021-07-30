@@ -43,7 +43,7 @@
                             <div class="col-6 col-md-6 tx">dr. Ericko Ekaputra, Sp. Onk. Rad</div>
                             <div class="col-2 col-md-2 tx text-left">Radiasi Onkologi</div>
                             <div class="col-2 col-md-2 tx text-left">Senin-Jumat</div>
-                            <div class="col-2 col-md-2 tx text-left">17:00-19:00</div>
+                            <div class="col-2 col-md-2 tx text-left">05:00-07:00</div>
                         </div>
                         <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Gumilang Wiranegara, Sp.OG (K) Onk</div>
@@ -68,6 +68,16 @@
                             <div class="col-2 col-md-2 tx text-left">Bedah Onkologi</div>
                             <div class="col-2 col-md-2 tx text-left">Selasa & Kamis</div>
                             <div class="col-2 col-md-2 tx text-left">13:00-14:00</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Umi Mangesti Tjiptoningsih, Sp. Onk.Rad</div>
+                            <div class="col-2 col-md-2 tx text-left">Radiasi Onkologi</div>
+                            <div class="col-2 col-md-2 tx text-left">Senin - Jumat</div>
+                            <div class="col-2 col-md-2 tx text-left">16:00-18:00</div>
+                            <div class="col-6 col-md-6 tx text-left"></div>
+                            <div class="col-2 col-md-2 tx text-left"></div>
+                            <div class="col-2 col-md-2 tx text-left">Sabtu - Minggu</div>
+                            <div class="col-2 col-md-2 tx text-left">20:00-21:00</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-7 forMobile">
@@ -140,7 +150,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="col-12 tx mb-2 text-end">Senin-Minggu</div>
-                                <div class="col-12 tx text-end">17:00-19:00</div>
+                                <div class="col-12 tx text-end">05:00-07:00</div>
                             </div>
                         </div>
                         <div class="row konsultasi__page-item">
@@ -189,6 +199,20 @@
                             <div class="col-6">
                                 <div class="col-12 tx mb-2 text-end">Selasa & Kamis</div>
                                 <div class="col-12 tx text-end">13:00-14:00</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx mb-2">dr. Umi Mangesti Tjiptoningsih, Sp. Onk.Rad</div>
+                                    <div class="col-12 tx mb-2">Radiasi Onkologi</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx mb-2 text-end">Senin - Jumat</div>
+                                <div class="col-12 tx text-end">16:00-18:00</div>
+                                <div class="col-12 tx mb-2 text-end">Sabtu - Minggu</div>
+                                <div class="col-12 tx text-end">20:00-21:00</div>
                             </div>
                         </div>
                     </div>
