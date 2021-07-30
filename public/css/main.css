@@ -2356,6 +2356,16 @@ button.boxReadMore {
     margin-top: 5rem;
   }
 }
+@media only screen and (max-width: 23.44em) {
+  .konsultasi__page .rg .box_jadwal {
+    padding: 3rem;
+  }
+}
+@media only screen and (max-width: 23.44em) {
+  .konsultasi__page .rg .box_jadwal .box__rec p {
+    font-size: 1rem;
+  }
+}
 .konsultasi__page .rg .box_jadwal ul li {
   list-style: none;
   font-size: 1.5rem;
