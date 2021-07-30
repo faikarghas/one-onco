@@ -2656,6 +2656,9 @@ button.boxReadMore {
 .tentangKami__page-intro p, .tentangKami__page-intro div, .tentangKami__page-intro p > span, .tentangKami__page-intro ul > li, .tentangKami__page-intro a, .tentangKami__page-intro div > span, .tentangKami__page-intro li > span, .tentangKami__page-intro ol > li, .tentangKami__page-intro p > b > span, .tentangKami__page-intro div > b > span {
   font-size: 1.5rem !important;
 }
+.tentangKami__page-intro strong {
+  font-size: 1.5rem !important;
+}
 .tentangKami__page-intro em {
   font-size: 1.5rem !important;
 }
