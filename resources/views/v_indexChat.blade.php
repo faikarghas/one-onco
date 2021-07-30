@@ -5,7 +5,7 @@
         <section class="konsultasi__page">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-7">
+                    <div class="col-12 col-lg-7 forDesktop">
                         <h1><strong>Jadwal Konsultasi Reguler</strong></h1>
                         <div class="row konsultasi__page-item small">
                             <div class="col-6 col-md-6 tx">Seputar Kanker</div>
@@ -70,19 +70,134 @@
                             <div class="col-2 col-md-2 tx text-left">13:00-14:00</div>
                         </div>
                     </div>
+                    <div class="col-12 col-lg-7 forMobile">
+                        <h1><strong>Jadwal Konsultasi Reguler</strong></h1>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx">Seputar Kanker</div>
+                                    <div class="col-12 tx">Senin-Minggu</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">00:00-23:59</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx">Seputar Penyakit Dalam</div>
+                                    <div class="col-12 tx">Senin-Minggu</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">00:00-23:59</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx">Seputar Psikologi</div>
+                                    <div class="col-12 tx">Senin-Minggu</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">00:00-23:59</div>
+                            </div>
+                        </div>
 
+                        <h1 class="mt-5"><strong>Jadwal Konsultasi Spesialis Onkologi</strong></h1>
+                        <div class="row konsultasi__page-item small">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx mb-2">dr. David Samuel Kereh, Sp. B (K) Onk</div>
+                                    <div class="col-12 tx mb-2">Bedah Onkologi</div>
+                                    <div class="col-12 tx mb-2">Senin-Minggu</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">17:00-18:00</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx mb-2">dr. Dedyanto Jenky Saputra, M.Gizi</div>
+                                    <div class="col-12 tx mb-2">Gizi</div>
+                                    <div class="col-12 tx mb-2">Senin-Minggu</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">19:00-21:00</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx mb-2">dr. Ericko Ekaputra, Sp. Onk. Rad</div>
+                                    <div class="col-12 tx mb-2">Radiasi Onkologi</div>
+                                    <div class="col-12 tx mb-2">Senin-Minggu</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">17:00-19:00</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx mb-2">dr. Gumilang Wiranegara, Sp.OG (K) Onk</div>
+                                    <div class="col-12 tx mb-2">Obgyn Onkologi</div>
+                                    <div class="col-12 tx mb-2">Senin</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">11:00-12:00</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx mb-2">dr. Hastarita Lawrenti</div>
+                                    <div class="col-12 tx mb-2">Onkologi</div>
+                                    <div class="col-12 tx mb-2">Selasa, Rabu, & Kamis</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">18:30-20:30</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx mb-2">dr. Lucky Taufika Yuhedi, Sp. Onk.Rad</div>
+                                    <div class="col-12 tx mb-2">Radiasi Onkologi</div>
+                                    <div class="col-12 tx mb-2">Selasa</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">19:30-21:00</div>
+                            </div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 tx mb-2">dr. Reza Musmarliansyah, Sp. B (K) Onk</div>
+                                    <div class="col-12 tx mb-2">Bedah Onkologi</div>
+                                    <div class="col-12 tx mb-2">Selasa & Kamis</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12 tx text-end">13:00-14:00</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-12 col-lg-5 rg" style="align-items: flex-start;">
                             <div class="box_jadwal">
                                 <div class="row">
                                     <div class="col-12" style="font-size:1.8rem;font-weight:bold">
                                         Konsultasi seputar kesehatan & kanker sekarang!
-
                                     </div>
-                                    {{-- <div class="col-9">
-                                        <ul>
-                                            <li>Jadwal dan informasi terkait layanan dapat berubah sewaktu-waktu tanpa pemberitahuan. </li>
-                                        </ul>
-                                    </div> --}}
                                     <div class="col-12 mt-5">
                                         <div class="box__rec">
                                             <a href="/konsultasi-online/chat" class="d-block h-100">
