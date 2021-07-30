@@ -43,7 +43,7 @@
                             'image_url'=>'live-chat.png',
                             'title'=>'Konsultasi Online',
                             'color'=>'#C6CB57;',
-                            'path'=>'login'
+                            'path'=>'konsultasi-online'
                         ))
                     </div>
                 </div>

@@ -25,7 +25,7 @@
                             <div class="col-2 col-md-2 tx text-left"></div>
                             <div class="col-2 col-md-2 tx text-left">00:00-23:59</div>
                         </div>
-                         
+
                         <h1 class="mt-5"><strong>Jadwal Konsultasi Spesialis Onkologi</strong></h1>
                         <div class="row konsultasi__page-item small">
                             <div class="col-6 col-md-6 tx small">dr. David Samuel Kereh, Sp. B (K) Onk</div>
@@ -70,17 +70,17 @@
                             <div class="col-2 col-md-2 tx text-left">13:00-14:00</div>
                         </div>
                     </div>
-                    
+
                     <div class="col-12 col-lg-5 rg" style="align-items: flex-start;">
-                            <div class="box_jadwal" style="padding:5rem; width:80%;">
+                            <div class="box_jadwal">
                                 <div class="row">
                                     <div class="col-12" style="font-size:1.8rem;font-weight:bold">
                                         Konsultasi seputar kesehatan & kanker sekarang!
-                                        
+
                                     </div>
                                     {{-- <div class="col-9">
                                         <ul>
-                                            <li>Jadwal dan informasi terkait layanan dapat berubah sewaktu-waktu tanpa pemberitahuan. </li>  
+                                            <li>Jadwal dan informasi terkait layanan dapat berubah sewaktu-waktu tanpa pemberitahuan. </li>
                                         </ul>
                                     </div> --}}
                                     <div class="col-12 mt-5">

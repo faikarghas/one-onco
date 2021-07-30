@@ -28,9 +28,9 @@ class DirectoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       // filter select option
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
-       
+
       $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
-      
+
       // dokter all
       $dokters = DokterMapped_model::getDokters('', GlobalConstants::ALLSpec, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
 
@@ -43,7 +43,7 @@ class DirectoryController extends Controller
       return view ('v_direktoriDokter', $data,compact('cities','spesialis'));
     }
 
-    
+
     public function lab(){
       $siteConfig   = DB::table('global_data')->first();
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
@@ -80,7 +80,7 @@ class DirectoryController extends Controller
       $provinsi = $request->provinsi;
       //dd($provinsi);
       $kabupaten = $request->kabupaten;
-      
+
       //DB::enableQueryLog();
       $faskes = Faskes_model::getFaskes($query,$spesialis,$provinsi,$kabupaten);
       //dd(DB::getQueryLog());
@@ -91,10 +91,10 @@ class DirectoryController extends Controller
 );
 
       return view('components.presentational.boxResultFilterDirectoryFaskes', $data);
-      
+
       // return view('components.presentational.boxResultFilterDirectoryFaskes', compact('faskes'))->render();
     }
-  
+
     public function getMoreKomunitas(Request $request){
       $query = $request->search_query;
       //dd($query);
@@ -114,7 +114,7 @@ class DirectoryController extends Controller
       //   ->select('dokter.dokterId', 'dokter.fullname', 'dokter.subSpesialist','dokter.foto')
       //   ->whereRaw('dokter.dokterId=?',[$id])
       //   ->first();
-      
+
       // $dokterDetail = DB::table('dokter')
       // ->select('dokter.dokterId', 'dokter.fullname', 'dokter.subSpesialist','dokter.foto')
       // ->whereRaw('dokter.dokterId=?',[$id])
@@ -122,15 +122,15 @@ class DirectoryController extends Controller
 
       $dokterDetail = Dokter_model::where('uuid','=',$id)->first();
 
-      
-      
+
+
       $foto = $dokterDetail->foto;
       $fullname = $dokterDetail->fullname;
       $layanan = $dokterDetail->subSpesialist;
-      
+
       $idDokter = $dokterDetail->dokterId;
 
-      
+
 
       // $viewFaskes = DB::table('faskes')
       //     ->join('jadwal_dokter', 'jadwal_dokter.faskesId', '=', 'faskes.faskesId','LEFT')
@@ -142,9 +142,9 @@ class DirectoryController extends Controller
         ->where('jadwal_dokter.dokterId','=',$idDokter)
         ->distinct('faskes.namaFaskes')
         ->get();
-      
 
-      
+
+
 
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
@@ -181,7 +181,7 @@ class DirectoryController extends Controller
     return view ('v_direktoriCare', $data,compact('provinces','spesialis','cities'));
   }
 
- 
+
 
   public function care($id,Request $request){
 
@@ -293,7 +293,7 @@ public function getFaskesWithKabupaten($id) {
     // return json_encode($viewDokter);
   }
 
-  
+
   public function getLabDetail($id,Request $request){
 
     // GET variable from global data for website
@@ -304,7 +304,7 @@ public function getFaskesWithKabupaten($id) {
     // $viewFaskes = DB::table('faskes')
     //     ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif', 'faskes.foto','faskes.description')
     //     ->whereRaw('faskes.faskesId=?', [$id])->first();
-    
+
     $viewFaskes = Faskes_model::where('faskesId','=',$id)->first();
 
 
@@ -317,7 +317,7 @@ public function getFaskesWithKabupaten($id) {
     $description = $viewFaskes->description;
 
 
-    
+
     $provinces = DB::table('indonesia_provinces')->pluck("name","id");
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
     $data = array('title' => $siteConfig->pvar2,

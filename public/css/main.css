@@ -1570,7 +1570,7 @@ button.boxReadMore {
 
 .boxShowMore {
   background-color: black;
-  color: white;
+  color: white !important;
   padding: 10px 0;
   border-radius: 5px;
   text-decoration: none;
@@ -2329,8 +2329,8 @@ button.boxReadMore {
   }
 }
 .konsultasi__page .rg .box_jadwal {
-  padding: 3rem;
-  width: 70%;
+  padding: 5rem;
+  width: 80%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
   background-color: white;
 }
@@ -2619,6 +2619,9 @@ button.boxReadMore {
 }
 .tentangKami__page-intro {
   overflow-x: auto;
+}
+.tentangKami__page-intro img {
+  width: 100%;
 }
 .tentangKami__page-intro h3 {
   font-weight: 900;

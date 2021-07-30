@@ -78,6 +78,9 @@
                                             @case('kanker-kolorektal')
                                                 <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/kanker-kolorektal')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                 @break
+                                            @case('seputar-kanker')
+                                                <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/seputar-kanker')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                @break
                                             @default
                                                 <a class="{{Request::segment(2) == $row->slug ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                         @endswitch
@@ -115,6 +118,9 @@
                                                     @break
                                                 @case('kanker-kolorektal')
                                                     <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/kanker-kolorektal')}}/{{ $row->slug }}">{{ $row->title }}</a>
+                                                    @break
+                                                @case('seputar-kanker')
+                                                    <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/seputar-kanker')}}/{{ $row->slug }}">{{ $row->title }}</a>
                                                     @break
                                                 @default
                                                     <a class="{{$key == 0 ? 'active' : ''}}" href="{{url('/syaratdanketentuan')}}/{{ $row->slug }}">{{ $row->title }}</a>

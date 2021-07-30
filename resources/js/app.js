@@ -26,11 +26,16 @@ $(window).on('scroll', function() {
 // PAGINATION ARTIKEL
 
 $(document).ready(function() {
-    let maxPerPage = 150
     let data = $('.pagi-init').html()
     let pageLength = $('.pagi-init').html().split(' ').length
+    let maxPerPage = 200
+    if (pageLength.length > 3000) {
+        maxPerPage = pageLength / 5
+    }
+
     let page1 = $('.pagi-init').html().split(' ').slice(0,maxPerPage).join(' ')
     let lengthPerPage = Math.ceil(pageLength/maxPerPage)
+
 
     $('.pagi-init').html(page1)
 
@@ -59,6 +64,11 @@ $(document).ready(function() {
                 $(this).addClass('active')
             } else if ($(this).data('id') === 4){
                 $('.pagi-init').html(data.split(' ').slice(maxPerPage*3,maxPerPage*4).join(' '))
+                $(window).scrollTop(0);
+                $('.page_numberButton').removeClass('active')
+                $(this).addClass('active')
+            }  else if ($(this).data('id') === 5){
+                $('.pagi-init').html(data.split(' ').slice(maxPerPage*4,maxPerPage*5).join(' '))
                 $(window).scrollTop(0);
                 $('.page_numberButton').removeClass('active')
                 $(this).addClass('active')
