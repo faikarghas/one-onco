@@ -76,10 +76,10 @@
                             <div class="col-6">
                                 <div class="row">
                                     <div class="col-12 tx">Seputar Kanker</div>
-                                    <div class="col-12 tx">Senin-Minggu</div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6"> 
+                                <div class="col-12 tx text-end">Senin-Minggu</div>
                                 <div class="col-12 tx text-end">00:00-23:59</div>
                             </div>
                         </div>
@@ -87,10 +87,10 @@
                             <div class="col-6">
                                 <div class="row">
                                     <div class="col-12 tx">Seputar Penyakit Dalam</div>
-                                    <div class="col-12 tx">Senin-Minggu</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx text-end">Senin-Minggu</div>
                                 <div class="col-12 tx text-end">00:00-23:59</div>
                             </div>
                         </div>
@@ -98,10 +98,10 @@
                             <div class="col-6">
                                 <div class="row">
                                     <div class="col-12 tx">Seputar Psikologi</div>
-                                    <div class="col-12 tx">Senin-Minggu</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx text-end">Senin-Minggu</div>
                                 <div class="col-12 tx text-end">00:00-23:59</div>
                             </div>
                         </div>
@@ -112,10 +112,10 @@
                                 <div class="row">
                                     <div class="col-12 tx mb-2">dr. David Samuel Kereh, Sp. B (K) Onk</div>
                                     <div class="col-12 tx mb-2">Bedah Onkologi</div>
-                                    <div class="col-12 tx mb-2">Senin-Minggu</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx mb-2 text-end">Senin-Minggu</div>
                                 <div class="col-12 tx text-end">17:00-18:00</div>
                             </div>
                         </div>
@@ -124,10 +124,10 @@
                                 <div class="row">
                                     <div class="col-12 tx mb-2">dr. Dedyanto Jenky Saputra, M.Gizi</div>
                                     <div class="col-12 tx mb-2">Gizi</div>
-                                    <div class="col-12 tx mb-2">Senin-Minggu</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx mb-2 text-end">Senin-Minggu</div>
                                 <div class="col-12 tx text-end">19:00-21:00</div>
                             </div>
                         </div>
@@ -136,10 +136,10 @@
                                 <div class="row">
                                     <div class="col-12 tx mb-2">dr. Ericko Ekaputra, Sp. Onk. Rad</div>
                                     <div class="col-12 tx mb-2">Radiasi Onkologi</div>
-                                    <div class="col-12 tx mb-2">Senin-Minggu</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx mb-2 text-end">Senin-Minggu</div>
                                 <div class="col-12 tx text-end">17:00-19:00</div>
                             </div>
                         </div>
@@ -148,10 +148,10 @@
                                 <div class="row">
                                     <div class="col-12 tx mb-2">dr. Gumilang Wiranegara, Sp.OG (K) Onk</div>
                                     <div class="col-12 tx mb-2">Obgyn Onkologi</div>
-                                    <div class="col-12 tx mb-2">Senin</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx mb-2 text-end">Senin</div>
                                 <div class="col-12 tx text-end">11:00-12:00</div>
                             </div>
                         </div>
@@ -160,10 +160,10 @@
                                 <div class="row">
                                     <div class="col-12 tx mb-2">dr. Hastarita Lawrenti</div>
                                     <div class="col-12 tx mb-2">Onkologi</div>
-                                    <div class="col-12 tx mb-2">Selasa, Rabu, & Kamis</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx mb-2 text-end">Selasa, Rabu, & Kamis</div>
                                 <div class="col-12 tx text-end">18:30-20:30</div>
                             </div>
                         </div>
@@ -172,10 +172,10 @@
                                 <div class="row">
                                     <div class="col-12 tx mb-2">dr. Lucky Taufika Yuhedi, Sp. Onk.Rad</div>
                                     <div class="col-12 tx mb-2">Radiasi Onkologi</div>
-                                    <div class="col-12 tx mb-2">Selasa</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx mb-2 text-end">Selasa</div>
                                 <div class="col-12 tx text-end">19:30-21:00</div>
                             </div>
                         </div>
@@ -184,10 +184,10 @@
                                 <div class="row">
                                     <div class="col-12 tx mb-2">dr. Reza Musmarliansyah, Sp. B (K) Onk</div>
                                     <div class="col-12 tx mb-2">Bedah Onkologi</div>
-                                    <div class="col-12 tx mb-2">Selasa & Kamis</div>
                                 </div>
                             </div>
                             <div class="col-6">
+                                <div class="col-12 tx mb-2 text-end">Selasa & Kamis</div>
                                 <div class="col-12 tx text-end">13:00-14:00</div>
                             </div>
                         </div>
