@@ -58,7 +58,7 @@
                     <p class="m-0">Temukan kami di</p>
                     <ul class="m-0">
                         <li><a href="https://www.facebook.com/OneOnco-104876148400857" target="_blank"><img src="{{asset('/images/facebook_logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
-                        <li><a href="oneonco.OTS@gmail.com"><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
+                        <li><a href="mailto:oneonco.OTS@gmail.com"><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
                         <li><a href=""><img src="{{asset('/images/youtube_logo.png')}}" alt="logo-youtube" width="30px" height="30px"/></a></li>
                         <li><a href="https://www.instagram.com/one.onco/" target="_blank"><img src="{{asset('/images/instagram_logo.png')}}" alt="logo-ig" width="30px" height="30px"/></a></li>
                     </ul>
