@@ -178,6 +178,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                @include respond(down-phone375){
+                    width: 25px;
+                    height: 25px;
+                }
                 &.active{
                     color: white;
                     background-color: $color_green;
@@ -190,10 +194,16 @@
             border-radius: 8px;
             display: inline-flex;
             align-items: center;
+            @include respond(down-phone375){
+                padding: 0.5rem 0.5rem;
+            }
             p{
                 margin: 0;
                 color: white;
                 font-size: 1.2rem;
+                @include respond(down-phone375){
+                    font-size: 1rem;
+                }
             }
             img{
                 object-fit: contain;

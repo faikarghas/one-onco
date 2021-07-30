@@ -265,6 +265,12 @@ main:not([page=home]) {
   align-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 23.44em) {
+  .pagination__wrapper-button .page_number .page_numberButton {
+    width: 25px;
+    height: 25px;
+  }
+}
 .pagination__wrapper-button .page_number .page_numberButton.active {
   color: white;
   background-color: #00A2E3;
@@ -278,10 +284,20 @@ main:not([page=home]) {
   display: inline-flex;
   align-items: center;
 }
+@media only screen and (max-width: 23.44em) {
+  .pagination__wrapper-button .show_all {
+    padding: 0.5rem 0.5rem;
+  }
+}
 .pagination__wrapper-button .show_all p {
   margin: 0;
   color: white;
   font-size: 1.2rem;
+}
+@media only screen and (max-width: 23.44em) {
+  .pagination__wrapper-button .show_all p {
+    font-size: 1rem;
+  }
 }
 .pagination__wrapper-button .show_all img {
   -o-object-fit: contain;
@@ -2631,7 +2647,7 @@ button.boxReadMore {
   font-size: 1.5rem !important;
 }
 .tentangKami__page-intro em {
-  font-size: 1.4rem !important;
+  font-size: 1.5rem !important;
 }
 .tentangKami__page-intro div span span {
   font-size: 1.5rem !important;
