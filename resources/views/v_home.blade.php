@@ -418,6 +418,8 @@
                 }
 
             }
+
+            change()
         </script>
     </body>
 </html>
