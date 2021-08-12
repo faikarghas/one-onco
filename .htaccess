@@ -9,10 +9,10 @@
 RewriteEngine On
 RewriteRule ^(.*)$ public/$1 [L]
 
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} ^www\. [NC]
-RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+RewriteCond %{HTTP_HOST} www.oneonco.co.id
+RewriteRule (.*) http://oneonco.co.id/$1 [R=301,L]
+
+
 
 </IfModule>
 
