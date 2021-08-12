@@ -132,7 +132,7 @@
                         <div class="row konsultasi__page-item">
                             <div class="col-6">
                                 <div class="row">
-                                    <div class="col-12 tx mb-2">dr. Dedyanto Jenky Saputra, M.Gizi</div>
+                                    <div class="col-12 tx mb-2">dr. Dedyanto Henky Saputra, M.Gizi</div>
                                     <div class="col-12 tx mb-2">Gizi</div>
                                 </div>
                             </div>
