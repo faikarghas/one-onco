@@ -34,7 +34,7 @@
                             <div class="col-2 col-md-2 tx text-left">17:00-18:00</div>
                         </div>
                         <div class="row konsultasi__page-item">
-                            <div class="col-6 col-md-6 tx">dr. Dedyanto Jenky Saputra, M.Gizi</div>
+                            <div class="col-6 col-md-6 tx">dr. Dedyanto Henky Saputra, M.Gizi</div>
                             <div class="col-2 col-md-2 tx text-left">Gizi</div>
                             <div class="col-2 col-md-2 tx text-left">Senin-Minggu</div>
                             <div class="col-2 col-md-2 tx text-left">19:00-21:00</div>
