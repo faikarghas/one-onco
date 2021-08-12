@@ -10,8 +10,7 @@ RewriteEngine On
 RewriteRule ^(.*)$ public/$1 [L]
 
 RewriteCond %{HTTP_HOST} www.oneonco.co.id
-RewriteRule (.*) http://oneonco.co.id/$1 [R=301,L]
-
+RewriteRule (.*) https://oneonco.co.id/$1 [R=301,L]
 
 
 </IfModule>

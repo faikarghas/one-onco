@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="google-site-verification" content="-ZgFFqhiigYQf61ejqjIj4TZmRtfOcJHN569ORKeO0A" />
 
         {{-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> --}}
 
