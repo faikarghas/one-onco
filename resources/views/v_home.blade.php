@@ -48,7 +48,7 @@
                         <nav>
                             <ul class="userAction">
                                 <li class="search_act"><img src="{{ asset('/images/search.png') }}" alt="search" width="15px"/></li>
-                                <li><a href="{{url('/login')}}"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
+                                <li><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></li>
                                 @if (Auth::check())
                                     <li><a href='{{url('/logout')}}'>LOGOUT</a></li>
                                     <li><a href="{{url('/pengaturan')}}"><img src="{{ asset('/images/setting.png') }}" alt="search" width="15px"/></a></li>
@@ -128,7 +128,7 @@
                     <div class="col-6 position-relative">
                         <div class="user">
                             <ul>
-                                <li><a href="{{url('/login')}}"><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></a></li>
+                                <li><img src="{{ asset('/images/user.png') }}" alt="user" width="15px"/></li>
                                 @if (Auth::check())
                                     <li><a href='{{url('/logout')}}'>LOGOUT</a></li>
                                 @else

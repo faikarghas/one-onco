@@ -36,7 +36,6 @@ class BeritaDanJurnalController extends Controller
 
 
       $model  = new Artikel_model();
-
       //$listingStory  = $model->all_kategori($id_kategori);
       $listingStory  = Artikel_model::select('artikel.*', 'kategori_artikel.slug AS slug_kategori', 'kategori_artikel.intro','kategori_artikel.content','kategori_artikel.image')->join('kategori_artikel', 'kategori_artikel.id', '=', 'artikel.idKat',)->where('artikel.idKat','=',$id_kategori)->orderBy('artikel.publishDate','desc')->paginate(5);
 
