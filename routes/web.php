@@ -28,10 +28,67 @@ use App\Http\Controllers\DeteksiKankerController;
 |
 */
 
+// Route::group(['middleware' => 'nocache'], function () {
 
-Route::get('/', [HomeController::class,'index']);
-Route::get('/home', [HomeController::class,'index']);
+//     Route::get('/', [HomeController::class,'index']);
+//     Route::get('/home', [HomeController::class,'index']);
+//     Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
+//     Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
+//     Route::get('/cerita-survivor',[StoryController::class,'index']);
+//     Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
+//     Route::post('cerita-survivor/load_data',[StoryController::class,'load_data'])->name('loadmore_story.load_data');
+//     Route::get('/berita-terkini',[BeritaDanJurnalController::class,'index']);
+//     Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'detail']);
+//     Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
+//     Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
+    
+// });
 
+//Route::get('/', [HomeController::class,'index'])->middleware('cache.headers:no-store,private,max-age=300;etag');
+
+//Route::get('/', [HomeController::class,'index']);
+
+// Route::get('/', function () {
+
+//     return response('Hello World', 200)
+//                   ->header('Cache-Control', 'text/plain');
+// });
+
+
+// Route::get('/home', [HomeController::class,'index']);
+
+// Route::middleware(['nocache'])->group(function () {
+//     Route::get('/', function () {
+//         // Uses first & second middleware...
+//     });
+
+//     Route::get('/home', function () {
+//         // Uses first & second middleware...
+//     });
+// });
+
+// Route::group(['middleware' => 'nocache'], function () {
+
+//         Route::get('/', [HomeController::class,'index']);
+//         Route::get('/home', [HomeController::class,'index']);
+// });
+
+Route::middleware('cache.headers:no_cache;no_store;must_revalidate;max_age=0;etag')->group(function () {
+    Route::get('/', [HomeController::class,'index']);
+    Route::get('/home', [HomeController::class,'index']);
+    Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
+    Route::get('/cerita-survivor',[StoryController::class,'index']);
+    Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
+    Route::post('cerita-survivor/load_data',[StoryController::class,'load_data'])->name('loadmore_story.load_data');
+    Route::get('/berita-terkini',[BeritaDanJurnalController::class,'index']);
+    Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'detail']);
+    Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
+    Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
+    Route::get('/direktori',[DirectoryController::class,'index']);
+    Route::get('/direktori-care',[DirectoryController::class,'carehome']);
+    Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
+    Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
+});
 // Auth
 
 Route::get('login', [AuthController::class,'showFormLogin'])->name('login');
@@ -73,11 +130,7 @@ Route::get('/sukses', function () {
 
 // Main
 
-Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
 
-Route::get('/cerita-survivor',[StoryController::class,'index']);
-Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
-Route::post('cerita-survivor/load_data',[StoryController::class,'load_data'])->name('loadmore_story.load_data');
 
 
 Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');
@@ -92,19 +145,15 @@ Route::get('faskesWithPropinsi/get/{id}',[DirectoryController::class,'getFaskesW
 Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskesWithKabupaten']);
 Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
 
-Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
+
 
 Route::get('/direktori-lab',[DirectoryController::class,'lab']);
 Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
 
 
-Route::get('/direktori-care',[DirectoryController::class,'carehome']);
-Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
 
-Route::get('/berita-terkini',[BeritaDanJurnalController::class,'index']);
-Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'detail']);
-Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
-Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
+
+
 Route::get('beritaload/{offset}/{idKat}',[BeritaDanJurnalController::class,'loadMore']);
 
 Route::post('/berita-terkini/load_data',[BeritaDanJurnalController::class,'load_data'])->name('loadmore.load_data');;

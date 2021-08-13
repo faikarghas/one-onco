@@ -15,7 +15,3 @@ RewriteRule (.*) https://oneonco.co.id/$1 [R=301,L]
 
 </IfModule>
 
-
-
- 
-
