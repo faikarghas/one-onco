@@ -85,6 +85,15 @@ Route::middleware('cache.headers:no_cache;no_store;must_revalidate;max_age=0;eta
     Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
     Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
     Route::get('/direktori',[DirectoryController::class,'index']);
+    Route::get('/direktori-dokter',[DirectoryController::class,'dokter']);
+    Route::get('cities/get/{id}',[DirectoryController::class,'getCities']);
+    Route::get('dokter/get/{id}',[DirectoryController::class,'getDokter']);
+    Route::get('faskes/get/{id}',[DirectoryController::class,'getFaskes']);
+    Route::get('faskesWithPropinsi/get/{id}',[DirectoryController::class,'getFaskesWithPropinsi']);
+    Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskesWithKabupaten']);
+    Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
+    Route::get('/direktori-lab',[DirectoryController::class,'lab']);
+    Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
     Route::get('/direktori-care',[DirectoryController::class,'carehome']);
     Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
     Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
@@ -136,19 +145,19 @@ Route::get('/sukses', function () {
 Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');
 Route::get('/get-more-faskes', [DirectoryController::class,'getMoreFaskes'])->name('faskes.get-more-faskes');
 Route::get('/get-more-komunitas', [DirectoryController::class,'getMoreKomunitas'])->name('faskes.get-more-komunitas');
-Route::get('/direktori',[DirectoryController::class,'index']);
-Route::get('/direktori-dokter',[DirectoryController::class,'dokter']);
-Route::get('cities/get/{id}',[DirectoryController::class,'getCities']);
-Route::get('dokter/get/{id}',[DirectoryController::class,'getDokter']);
-Route::get('faskes/get/{id}',[DirectoryController::class,'getFaskes']);
-Route::get('faskesWithPropinsi/get/{id}',[DirectoryController::class,'getFaskesWithPropinsi']);
-Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskesWithKabupaten']);
-Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
+//Route::get('/direktori',[DirectoryController::class,'index']);
+// Route::get('/direktori-dokter',[DirectoryController::class,'dokter']);
+// Route::get('cities/get/{id}',[DirectoryController::class,'getCities']);
+// Route::get('dokter/get/{id}',[DirectoryController::class,'getDokter']);
+// Route::get('faskes/get/{id}',[DirectoryController::class,'getFaskes']);
+// Route::get('faskesWithPropinsi/get/{id}',[DirectoryController::class,'getFaskesWithPropinsi']);
+// Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskesWithKabupaten']);
+// Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
 
 
 
-Route::get('/direktori-lab',[DirectoryController::class,'lab']);
-Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
+// Route::get('/direktori-lab',[DirectoryController::class,'lab']);
+// Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
 
 
 

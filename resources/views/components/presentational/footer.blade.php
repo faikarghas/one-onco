@@ -29,7 +29,7 @@
                         Timur, DKI Jakarta 13210
                     </p>
                     <p class="m-0"><span class="fw-bold">Telp:</span> 021-5086 7767</p>
-                    <p><span class="fw-bold">Email:</span> oneonco.OTS@gmail.com</p>
+                    
                 </div>
             </div>
             <div class="col-12 col-lg-6 mt-5">

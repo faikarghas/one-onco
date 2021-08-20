@@ -22,6 +22,8 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         // \App\Http\Middleware\NoCache::class,
+        \Bepsvpt\SecureHeaders\SecureHeadersMiddleware::class,
+        
     ];
 
     /**
@@ -39,6 +41,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Spatie\Csp\AddCspHeaders::class,
+            
         ],
 
         'api' => [
