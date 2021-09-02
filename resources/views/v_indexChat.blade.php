@@ -149,7 +149,7 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="col-12 tx mb-2 text-end">Senin-Minggu</div>
+                                <div class="col-12 tx mb-2 text-end">Senin-Jumat</div>
                                 <div class="col-12 tx text-end">05:00-07:00</div>
                             </div>
                         </div>
