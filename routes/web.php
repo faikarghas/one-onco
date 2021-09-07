@@ -28,50 +28,38 @@ use App\Http\Controllers\DeteksiKankerController;
 |
 */
 
-// Route::group(['middleware' => 'nocache'], function () {
+// Auth
+Route::get('login', [AuthController::class,'showFormLogin'])->name('login');
+Route::post('login', [AuthController::class, 'login']);
 
-//     Route::get('/', [HomeController::class,'index']);
-//     Route::get('/home', [HomeController::class,'index']);
-//     Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
-//     Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
-//     Route::get('/cerita-survivor',[StoryController::class,'index']);
-//     Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);
-//     Route::post('cerita-survivor/load_data',[StoryController::class,'load_data'])->name('loadmore_story.load_data');
-//     Route::get('/berita-terkini',[BeritaDanJurnalController::class,'index']);
-//     Route::get('/berita-terkini/{slug}',[BeritaDanJurnalController::class,'detail']);
-//     Route::get('/artikel-kanker',[BeritaDanJurnalController::class,'index']);
-//     Route::get('/artikel-kanker/{slug}',[BeritaDanJurnalController::class,'detail']);
-    
-// });
+Route::post('validate-g-recaptcha', [AuthController::class, 'validateGCaptch']);
+Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha']);
 
-//Route::get('/', [HomeController::class,'index'])->middleware('cache.headers:no-store,private,max-age=300;etag');
+Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
+Route::post('register', [AuthController::class, 'register']);
+Route::get('forgotpassword', [AuthController::class, 'forgotPassword'])->name('forgot.password');
 
-//Route::get('/', [HomeController::class,'index']);
+Route::post('reset_password_without_token', [AuthController::class, 'validatePasswordRequest']);
+Route::post('reset_password_with_token', [AuthController::class, 'resetPassword']);
 
-// Route::get('/', function () {
+Route::get('/reset-password/{token}', [AuthController::class, 'getPassword']);
+Route::post('/reset-password',[AuthController::class, 'updatePassword'])->name('reset.passwordwithToken');
 
-//     return response('Hello World', 200)
-//                   ->header('Cache-Control', 'text/plain');
-// });
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('pengaturan', [AuthController::class, 'changePassword']);
+    Route::post('change-password', [AuthController::class, 'storeNewPassword'])->name('change.password');
+    Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
+    Route::get('/deteksi-kanker',[DeteksiKankerController::class,'index']);
+    Route::get('/konsultasi-online/chat',[KonsultasiOnlineController::class,'chat']);
+});
 
+Route::get('/verify-registration/{token}',[AuthController::class, 'verifyRegistration']);
+Route::get('/sukses', function () {
+    return view('v_success');
+});
 
-// Route::get('/home', [HomeController::class,'index']);
-
-// Route::middleware(['nocache'])->group(function () {
-//     Route::get('/', function () {
-//         // Uses first & second middleware...
-//     });
-
-//     Route::get('/home', function () {
-//         // Uses first & second middleware...
-//     });
-// });
-
-// Route::group(['middleware' => 'nocache'], function () {
-
-//         Route::get('/', [HomeController::class,'index']);
-//         Route::get('/home', [HomeController::class,'index']);
-// });
+Route::post('newsletter/store',[NewsletterController::class,'store']);
 
 Route::middleware('cache.headers:no_cache;no_store;must_revalidate;max_age=0;etag')->group(function () {
     Route::get('/', [HomeController::class,'index']);
@@ -92,112 +80,25 @@ Route::middleware('cache.headers:no_cache;no_store;must_revalidate;max_age=0;eta
     Route::get('faskesWithPropinsi/get/{id}',[DirectoryController::class,'getFaskesWithPropinsi']);
     Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskesWithKabupaten']);
     Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
-    Route::get('/direktori-lab',[DirectoryController::class,'lab']);
+   
     Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
     Route::get('/direktori-care',[DirectoryController::class,'carehome']);
     Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
     Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
+    Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
+    Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');
+    Route::get('/get-more-faskes', [DirectoryController::class,'getMoreFaskes'])->name('faskes.get-more-faskes');
+    Route::get('/get-more-komunitas', [DirectoryController::class,'getMoreKomunitas'])->name('faskes.get-more-komunitas');
+    Route::get('beritaload/{offset}/{idKat}',[BeritaDanJurnalController::class,'loadMore']);
+    Route::post('/berita-terkini/load_data',[BeritaDanJurnalController::class,'load_data'])->name('loadmore.load_data');;
+    Route::get('/sistem-tubuh', function () {
+        $katKankers = DB::table('kategori_kanker')
+                        ->select('id','title','slug')
+                        ->get();
+        return view('v_sistemTubuh',['katKankers'=>$katKankers]);
+    });
+    Route::get('/jenis-kanker/{slug}',[JenisKankerController::class,'index']);
+    Route::get('/search', [SearchController::class,'index']);
+    // Catch all page controller (place at the very bottom)
+    Route::get('{slug}',[PagesController::class, 'index'])->where('slug', '([A-Za-z0-9\-\/]+)');
 });
-// Auth
-
-Route::get('login', [AuthController::class,'showFormLogin'])->name('login');
-Route::post('login', [AuthController::class, 'login']);
-
-Route::post('validate-g-recaptcha', [AuthController::class, 'validateGCaptch']);
-Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha']);
-
-Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
-Route::post('register', [AuthController::class, 'register']);
-Route::get('forgotpassword', [AuthController::class, 'forgotPassword'])->name('forgot.password');
-
-
-Route::post('reset_password_without_token', [AuthController::class, 'validatePasswordRequest']);
-Route::post('reset_password_with_token', [AuthController::class, 'resetPassword']);
-
-// Route::get('/reset-password/{token}', 'ResetPasswordController@getPassword');
-// Route::post('/reset-password', 'ResetPasswordController@updatePassword');
-
-Route::get('/reset-password/{token}', [AuthController::class, 'getPassword']);
-Route::post('/reset-password',[AuthController::class, 'updatePassword'])->name('reset.passwordwithToken');
-
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('pengaturan', [AuthController::class, 'changePassword']);
-    Route::post('change-password', [AuthController::class, 'storeNewPassword'])->name('change.password');
-    Route::get('/belanja-sehat',[BelanjaSehatController::class,'index']);
-    Route::get('/deteksi-kanker',[DeteksiKankerController::class,'index']);
-    Route::get('/konsultasi-online/chat',[KonsultasiOnlineController::class,'chat']);
-});
-
-Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
-Route::get('/verify-registration/{token}',[AuthController::class, 'verifyRegistration']);
-
-
-Route::get('/sukses', function () {
-    return view('v_success');
-});
-
-// Main
-
-
-
-
-Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');
-Route::get('/get-more-faskes', [DirectoryController::class,'getMoreFaskes'])->name('faskes.get-more-faskes');
-Route::get('/get-more-komunitas', [DirectoryController::class,'getMoreKomunitas'])->name('faskes.get-more-komunitas');
-//Route::get('/direktori',[DirectoryController::class,'index']);
-// Route::get('/direktori-dokter',[DirectoryController::class,'dokter']);
-// Route::get('cities/get/{id}',[DirectoryController::class,'getCities']);
-// Route::get('dokter/get/{id}',[DirectoryController::class,'getDokter']);
-// Route::get('faskes/get/{id}',[DirectoryController::class,'getFaskes']);
-// Route::get('faskesWithPropinsi/get/{id}',[DirectoryController::class,'getFaskesWithPropinsi']);
-// Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskesWithKabupaten']);
-// Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
-
-
-
-// Route::get('/direktori-lab',[DirectoryController::class,'lab']);
-// Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
-
-
-
-
-
-Route::get('beritaload/{offset}/{idKat}',[BeritaDanJurnalController::class,'loadMore']);
-
-Route::post('/berita-terkini/load_data',[BeritaDanJurnalController::class,'load_data'])->name('loadmore.load_data');;
-
-
-
-Route::get('/sukses', function () {
-    return view('v_success');
-});
-
-
-////////////////////////////////////////
-// CARI SESUAI KATEGORI KANKER HOME PAGE
-
-Route::get('/sistem-tubuh', function () {
-    // $katKankers = DB::table('kategori_kanker')->pluck("title","id");
-    $katKankers = DB::table('kategori_kanker')
-                    ->select('id','title','slug')
-                    ->get();
-    return view('v_sistemTubuh',['katKankers'=>$katKankers]);
-});
-
-
-Route::get('/jenis-kanker/{slug}',[JenisKankerController::class,'index']);
-
-////////////////////////////////////////
-
-
-Route::get('/search', [SearchController::class,'index']);
-
-Route::post('newsletter/store',[NewsletterController::class,'store']);
-
-
-
-// Catch all page controller (place at the very bottom)
-Route::get('{slug}',[PagesController::class, 'index'])->where('slug', '([A-Za-z0-9\-\/]+)');
-
-

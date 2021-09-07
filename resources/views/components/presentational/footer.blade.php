@@ -7,7 +7,7 @@
             <div class="col-12 col-lg-4">
                 <div class="newsletter">
                     {{-- <form action="{{ url('newsletter/store') }}" method="post"> --}}
-                    <form  action="" id="newsletterForm">
+                    <form  action="" id="newsletterForm" method="post">
                     @csrf
                     <p class="text-white text-end">Dapatkan informasi terkini seputar kanker melalui e-Newsletter kami</p>
                     <div class="input-group mb-3">
@@ -58,7 +58,7 @@
                     <p class="m-0">Temukan kami di</p>
                     <ul class="m-0">
                         <li><a href="https://www.facebook.com/OneOnco-104876148400857" target="_blank"><img src="{{asset('/images/facebook_logo.png')}}" alt="logo-fb" width="30px" height="30px"/></a></li>
-                        <li><a href="mailto:oneonco.OTS@gmail.com"><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li>
+                        {{-- <li><a href="mailto:oneonco.OTS@gmail.com"><img src="{{asset('/images/email_logo.png')}}" alt="logo-mail" width="30px" height="30px"/></a></li> --}}
                         <li><a href=""><img src="{{asset('/images/youtube_logo.png')}}" alt="logo-youtube" width="30px" height="30px"/></a></li>
                         <li><a href="https://www.instagram.com/one.onco/" target="_blank"><img src="{{asset('/images/instagram_logo.png')}}" alt="logo-ig" width="30px" height="30px"/></a></li>
                     </ul>
