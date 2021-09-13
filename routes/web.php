@@ -63,7 +63,7 @@ Route::post('newsletter/store',[NewsletterController::class,'store']);
 
 Route::middleware('cache.headers:no_cache;no_store;must_revalidate;max_age=0;etag')->group(function () {
     Route::get('/', [HomeController::class,'index']);
-    Route::get('/home', [HomeController::class,'index']);
+    Route::get('/home', [HomeController::class,'index'])->middleware(Spatie\Csp\AddCspHeaders::class);
     Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
     Route::get('/cerita-survivor',[StoryController::class,'index']);
     Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);

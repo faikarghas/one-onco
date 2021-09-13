@@ -294,19 +294,21 @@ public function getFaskesWithKabupaten($id) {
   }
 
 
+
   public function getLabDetail($id,Request $request){
 
     // GET variable from global data for website
     $siteConfig   = DB::table('global_data')->first();
 
-    // view rumah sakit detail
-
-    // $viewFaskes = DB::table('faskes')
-    //     ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif', 'faskes.foto','faskes.description')
-    //     ->whereRaw('faskes.faskesId=?', [$id])->first();
-
     $viewFaskes = Faskes_model::where('faskesId','=',$id)->first();
 
+    //$string = urlencode($id);
+
+    //dd($string);
+
+    $string = urlencode("http://127.0.0.1:8000/direktori-lab/32061001%20-%20Copy");
+
+    //dd($string);
 
     $namaFaskes = $viewFaskes->namaFaskes;
     $addressFaskes = $viewFaskes->alamat;
