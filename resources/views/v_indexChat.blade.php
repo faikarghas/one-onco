@@ -46,6 +46,13 @@
                             <div class="col-2 col-md-2 tx text-left">05:00-07:00</div>
                         </div>
                         <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Ginanjar Arum Desianti, Sp.P.Onk (K)</div>
+                            <div class="col-2 col-md-2 tx text-left">Onkologi Toraks</div>
+                            <div class="col-2 col-md-2 tx text-left">Senin, Rabu, & Sabtu</div>
+                            <div class="col-2 col-md-2 tx text-left">19:00-21:00</div>
+                        </div>
+
+                        <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Gumilang Wiranegara, Sp.OG (K) Onk</div>
                             <div class="col-2 col-md-2 tx text-left">Obgyn Onkologi</div>
                             <div class="col-2 col-md-2 tx text-left">Senin</div>
@@ -64,10 +71,26 @@
                             <div class="col-2 col-md-2 tx text-left">19:30-21:00</div>
                         </div>
                         <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">Dr. dr. Made Agus Mahendra Sp.BS,VINPS</div>
+                            <div class="col-2 col-md-2 tx text-left">Bedah Saraf</div>
+                            <div class="col-2 col-md-2 tx text-left">Senin, Rabu, & Jumat</div>
+                            <div class="col-2 col-md-2 tx text-left">12:00-14:00</div>
+                            <div class="col-6 col-md-6 tx text-left"></div>
+                            <div class="col-2 col-md-2 tx text-left"></div>
+                            <div class="col-2 col-md-2 tx text-left">Selasa, Kamis, & Sabtu</div>
+                            <div class="col-2 col-md-2 tx text-left">09:00-13:00</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Reza Musmarliansyah, Sp. B (K) Onk</div>
                             <div class="col-2 col-md-2 tx text-left">Bedah Onkologi</div>
                             <div class="col-2 col-md-2 tx text-left">Selasa & Kamis</div>
                             <div class="col-2 col-md-2 tx text-left">13:00-14:00</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Selfy Oswari, Sp.BS (K) Onk</div>
+                            <div class="col-2 col-md-2 tx text-left">Bedah Saraf onkologi</div>
+                            <div class="col-2 col-md-2 tx text-left">Selasa & Rabu</div>
+                            <div class="col-2 col-md-2 tx text-left">19:00-21:00</div>
                         </div>
                         <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Umi Mangesti Tjiptoningsih, Sp. Onk.Rad</div>
@@ -78,6 +101,16 @@
                             <div class="col-2 col-md-2 tx text-left"></div>
                             <div class="col-2 col-md-2 tx text-left">Sabtu - Minggu</div>
                             <div class="col-2 col-md-2 tx text-left">20:00-21:00</div>
+                        </div>
+                        <div class="row konsultasi__page-item">
+                            <div class="col-6 col-md-6 tx">dr. Widyorini Hanafi, SpOG(K) Onk</div>
+                            <div class="col-2 col-md-2 tx text-left">Onkologi Ginekologi</div>
+                            <div class="col-2 col-md-2 tx text-left">Selasa</div>
+                            <div class="col-2 col-md-2 tx text-left">19:00-21:00</div>
+                            <div class="col-6 col-md-6 tx text-left"></div>
+                            <div class="col-2 col-md-2 tx text-left"></div>
+                            <div class="col-2 col-md-2 tx text-left">Minggu</div>
+                            <div class="col-2 col-md-2 tx text-left">09:00-12:00</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-7 forMobile">
