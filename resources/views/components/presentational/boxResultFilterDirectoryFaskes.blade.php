@@ -3,7 +3,7 @@
         @foreach ($faskes as $row)
         <div class="col-12 col-lg-6">
             <div class="box__rec2">
-                <a href="{{url('/direktori-care')}}/{{ $row->faskesId }}" class="d-block h-100">
+                <a href="{{url('/direktori-care')}}/{{ $row->slug }}" class="d-block h-100">
                     <div class="container">
                        <div class="row">
                           <div class="col-3 d-flex align-items-center justify-content-center">

@@ -183,7 +183,7 @@ class DirectoryController extends Controller
 
 
 
-  public function care($id,Request $request){
+  public function care($slug,Request $request){
 
     // GET variable from global data for website
     $siteConfig   = DB::table('global_data')->first();
@@ -194,8 +194,14 @@ class DirectoryController extends Controller
     //     ->select('faskes.faskesId','faskes.namaFaskes', 'faskes.alamat', 'faskes.provinsi', 'faskes.kabupaten', 'faskes.website','faskes.phone','faskes.fax', 'faskes.skriningDiagnosis', 'faskes.onkologiMedisKemoterapi', 'faskes.radiasiOnkologi', 'faskes.onkologiBedah', 'faskes.perawatanPaliatif', 'faskes.foto')
     //     ->whereRaw('faskes.faskesId=?', [$id])->first();
 
-    $viewFaskes = Faskes_model::where('faskesId','=',$id)->first();
+    //$viewFaskes = Faskes_model::where('slug','=',$slug)->first();
 
+    $viewFaskes = Faskes_model::where('slug', '=', $slug)->firstOrFail();
+
+    //$viewFaskes = Faskes_model::findOrFail($slug);
+
+
+    $id = $viewFaskes->faskesId;
     $namaFaskes = $viewFaskes->namaFaskes;
     $addressFaskes = $viewFaskes->alamat;
     $phoneFaskes = $viewFaskes->phone;

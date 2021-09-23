@@ -88,7 +88,7 @@ Route::middleware('cache.headers:no_cache;no_store;must_revalidate;max_age=0;eta
    
     Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
     Route::get('/direktori-care',[DirectoryController::class,'carehome']);
-    Route::get('/direktori-care/{id}',[DirectoryController::class,'care']);
+    Route::get('/direktori-care/{slug}',[DirectoryController::class,'care']);
     Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);
     Route::get('/konsultasi-online',[KonsultasiOnlineController::class,'index']);
     Route::get('/get-more-dokters', [DirectoryController::class,'getMoreDokters'])->name('dokters.get-more-dokters');

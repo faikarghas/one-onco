@@ -20,14 +20,14 @@ class Faskes_model extends Model
     //   DB::enableQueryLog();
       $query = DB::table('faskes')
         ->join('jadwal_dokter', 'jadwal_dokter.faskesId', '=', 'faskes.faskesId','LEFT')
-        ->select('faskes.namaFaskes', 'faskes.provinsi', 'faskes.kabupaten','faskes.website')
+        ->select('faskes.namaFaskes', 'faskes.provinsi', 'faskes.kabupaten','faskes.website','slug')
         ->where(array('jadwal_dokter.dokterId' => $idDokter))
          ->dump();
         return $query;  
     }
 
     public static function getFaskes($search_keyword,$spesialis=NULL,$provinsi,$kabupaten) {
-        $faskes = DB::table('faskes')->select(['faskesId','namaFaskes','alamat','foto','phone','website']);;
+        $faskes = DB::table('faskes')->select(['faskesId','namaFaskes','alamat','foto','phone','website','slug']);;
         if($search_keyword && !empty($search_keyword)) {
             $faskes->where(function($q) use ($search_keyword) {
                 $q->where('namaFaskes', 'LIKE', "%{$search_keyword}%")
