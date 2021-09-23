@@ -36,8 +36,8 @@
                         <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Dedyanto Henky Saputra, M.Gizi</div>
                             <div class="col-2 col-md-2 tx text-left">Gizi</div>
-                            <div class="col-2 col-md-2 tx text-left">Senin-Minggu</div>
-                            <div class="col-2 col-md-2 tx text-left">19:00-21:00</div>
+                            <div class="col-2 col-md-2 tx text-left">Selasa, Rabu, & Kamis</div>
+                            <div class="col-2 col-md-2 tx text-left">18:30-20:30</div>
                         </div>
                         <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Ericko Ekaputra, Sp. Onk. Rad</div>
@@ -51,18 +51,11 @@
                             <div class="col-2 col-md-2 tx text-left">Senin, Rabu, & Sabtu</div>
                             <div class="col-2 col-md-2 tx text-left">19:00-21:00</div>
                         </div>
-
-                        <div class="row konsultasi__page-item">
-                            <div class="col-6 col-md-6 tx">dr. Gumilang Wiranegara, Sp.OG (K) Onk</div>
-                            <div class="col-2 col-md-2 tx text-left">Obgyn Onkologi</div>
-                            <div class="col-2 col-md-2 tx text-left">Senin</div>
-                            <div class="col-2 col-md-2 tx text-left">11:00-12:00</div>
-                        </div>
                         <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Hastarita Lawrenti</div>
                             <div class="col-2 col-md-2 tx text-left">Onkologi</div>
-                            <div class="col-2 col-md-2 tx text-left">Selasa, Rabu, & Kamis</div>
-                            <div class="col-2 col-md-2 tx text-left">18:30-20:30</div>
+                            <div class="col-2 col-md-2 tx text-left">Senin - Minggu</div>
+                            <div class="col-2 col-md-2 tx text-left">19:00-21:00</div>
                         </div>
                         <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Lucky Taufika Yuhedi, Sp. Onk.Rad</div>
@@ -83,8 +76,8 @@
                         <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Reza Musmarliansyah, Sp. B (K) Onk</div>
                             <div class="col-2 col-md-2 tx text-left">Bedah Onkologi</div>
-                            <div class="col-2 col-md-2 tx text-left">Selasa & Kamis</div>
-                            <div class="col-2 col-md-2 tx text-left">13:00-14:00</div>
+                            <div class="col-2 col-md-2 tx text-left">Selasa & Rabu</div>
+                            <div class="col-2 col-md-2 tx text-left">10:00-13:00</div>
                         </div>
                         <div class="row konsultasi__page-item">
                             <div class="col-6 col-md-6 tx">dr. Selfy Oswari, Sp.BS (K) Onk</div>
