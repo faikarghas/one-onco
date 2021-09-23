@@ -27,85 +27,65 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
+
+      //dd(session()->all());
       $rules = [
         'email'                 => 'required|email',
         'password'              => 'required|string',
-        'captcha' => 'required|captcha'
+        'captcha'               => 'required|captcha'
       ];
-
       $messages = [
           'email.required'        => 'Email wajib diisi',
           'email.email'           => 'Email tidak valid',
           'password.required'     => 'Password wajib diisi',
-          'password.string'       => 'Password harus berupa string'
+          'password.string'       => 'Password harus berupa string',
+          'captcha.required'     =>  'Captcha wajib diisi',
       ];
-
+      
       $validator = Validator::make($request->all(), $rules, $messages);
       if($validator->fails()){
-        return redirect()->back()->withErrors($validator)->withInput($request->all);
-      }
-
-
-      $data = [
-        'email'     => $request->input('email'),
-        'password'  => $request->input('password'),
-      ];
-
-      $user = DB::table('users')->where('email', '=', $request->email)->first();
-      
-      if ($user === null) {
-        $msg = 'Email ini belum terdaftar sebagai akun. <a href="'. route('register') . '"> Daftar disini  </a>';
-        Session::flash('error', $msg);
-        return redirect()->route('login');
+        return redirect('/login')->withErrors($validator)->withInput($request->all);
       } else {
-      $idVerification = $user->isVerified;
-      if ($idVerification === 0 ) {
-        $msg = 'Email ini belum terverifikasi. <a href="'. route('login') . '"> Daftar disini  </a>';
-        Session::flash('error', $msg);
-        return redirect()->route('login');
-      } else {
-        Auth::attempt($data);
-        if (Auth::check()) {
-
-          $fullName= $user->name;
-          $phone = $user->phone;
-
-          $client_id = "KD-Api-Key";
-          $secret = "CffnUrPN1t3iE2O5Y5A6emjwciGe1NRn";
-          $url = "https://api.medkomtek.com/kdapi/partner/login";
-          $data = [
-                    'full_name' => $fullName,
-                    'phone' => $phone
-                  ];
-          $response =  Http::asForm()->withHeaders([$client_id => $secret])->post($url, $data);
-
-          $jsonData = $response->json();
-
-          // $content=json_encode($jsonData);
-          
-          // $result=json_decode($content,true);
-          
-          foreach ($jsonData as $value) {
-             $tokenUser =  $value['token'];
-          }
-
-          $request->session()->put('tokenUser',$tokenUser);
-            
-          //dd($result);
-
-          //dd($result['token']);
-
-     	    //dd($jsonData);
-
-          // $token = $data['token'];
-          // dd($token);
-
-          return redirect('/')->with(['succes' => 'Anda berhasil login']);
-        } else {
-          Session::flash('error', 'Email atau password salah');
+        $data = [
+          'email'     => $request->input('email'),
+          'password'  => $request->input('password'),
+        ];
+        $user = DB::table('users')->where('email', '=', $request->email)->first();
+        if ($user === null) {
+          $msg = 'Email ini belum terdaftar sebagai akun. <a href="'. route('register') . '"> Daftar disini  </a>';
+          Session::flash('error', $msg);
           return redirect()->route('login');
-        }
-      }
+        } else {
+          $idVerification = $user->isVerified;
+          if ($idVerification === 0 ) {
+            $msg = 'Email ini belum terverifikasi. <a href="'. route('login') . '"> Daftar disini  </a>';
+            Session::flash('error', $msg);
+            return redirect()->route('login');
+          } else {
+            Auth::attempt($data);
+            if (Auth::check()) {
+              $fullName= $user->name;
+              $phone = $user->phone;
+              $client_id = "KD-Api-Key";
+              $secret = "CffnUrPN1t3iE2O5Y5A6emjwciGe1NRn";
+              $url = "https://api.medkomtek.com/kdapi/partner/login";
+              $data = [
+                        'full_name' => $fullName,
+                        'phone' => $phone
+                      ];
+              $response =  Http::asForm()->withHeaders([$client_id => $secret])->post($url, $data);
+              $jsonData = $response->json();
+              foreach ($jsonData as $value) {
+                $tokenUser =  $value['token'];
+              }
+              $request->session()->put('tokenUser',$tokenUser);
+              return redirect('/')->with(['succes' => 'Anda berhasil login']);
+            } else {
+              Session::flash('error', 'Email atau password salah');
+              return redirect()->route('login');
+            }
+          }
+        }  
       }
     }
     public function showFormRegister()
@@ -136,36 +116,38 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if($validator->fails()){
-          return redirect()->back()->withErrors($validator)->withInput($request->all);
-        }
-        $user = new User;
-        $user->name = ucwords(strtolower($request->name));
-        $user->email = strtolower($request->email);
-        $user->password = Hash::make($request->password);
-        $user->phone= $request->phone;
-        $user->address= $request->address;
-        $user->provinsi= $request->provinsi;
-        $user->kabupaten= $request->kota;
-        $user->kecamatan= $request->kecamatan;
-        $user->jenis_kanker= $request->jenis_kanker;
-        $user->status= $request->status;
-        $user->email_verified_at = \Carbon\Carbon::now();
-        $user->remember_token =  str::random(30);
-        $user->token_activation =  str::random(6);
-        $simpan = $user->save();
-        if($simpan){
-          Session::flash('success', 'Silahkan buka email Anda untuk mengkonfirmasi alamat email Anda.
-          ');
-          Mail::send('v_emailActiv', ['token' =>$user->remember_token, 'userName' =>   $user->name], function($message) use($request){
-            $message->to($request->email);
-            $message->subject('Pendaftaran Akun');
-          });
-          return redirect()->route('login');
+          //return redirect()->back()->withErrors($validator)->withInput($request->all);
+          return redirect('/register')->withErrors($validator)->withInput($request->all);
         } else {
-          Session::flash('errors', ['' => 'Register gagal! Silahkan ulangi beberapa saat lagi']);
-          return redirect()->route('register');
-        }
 
+          $user = new User;
+          $user->name = ucwords(strtolower($request->name));
+          $user->email = strtolower($request->email);
+          $user->password = Hash::make($request->password);
+          $user->phone= $request->phone;
+          $user->address= $request->address;
+          $user->provinsi= $request->provinsi;
+          $user->kabupaten= $request->kota;
+          $user->kecamatan= $request->kecamatan;
+          $user->jenis_kanker= $request->jenis_kanker;
+          $user->status= $request->status;
+          $user->email_verified_at = \Carbon\Carbon::now();
+          $user->remember_token =  str::random(30);
+          $user->token_activation =  str::random(6);
+          $simpan = $user->save();
+          if($simpan){
+            Session::flash('success', 'Silahkan buka email Anda untuk mengkonfirmasi alamat email Anda.
+            ');
+            Mail::send('v_emailActiv', ['token' =>$user->remember_token, 'userName' =>   $user->name], function($message) use($request){
+              $message->to($request->email);
+              $message->subject('Pendaftaran Akun');
+            });
+            return redirect()->route('login');
+          } else {
+            Session::flash('errors', ['' => 'Register gagal! Silahkan ulangi beberapa saat lagi']);
+            return redirect()->route('register');
+          }
+        }
     }
 
     public function logout()
@@ -226,11 +208,11 @@ class AuthController extends Controller
 
   private function sendResetEmail($email, $token)
   {
-  //Retrieve the user from the database
-  $user = DB::table('users')->where('email', $email)->select('name', 'email')->first();
-  dd($user);
-  //Generate, the password reset link. The token generated is embedded in the link
-  $link = config('base_url') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
+    //Retrieve the user from the database
+    $user = DB::table('users')->where('email', $email)->select('name', 'email')->first();
+    dd($user);
+    //Generate, the password reset link. The token generated is embedded in the link
+    $link = config('base_url') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
     try {
         return true;
     } catch (\Exception $e) {
@@ -239,7 +221,7 @@ class AuthController extends Controller
   }
   public function getPassword($token) {
     return view('v_pengaturan_withToken', ['token' => $token]);
- }
+  }
 
  public function updatePassword(Request $request)
  {
@@ -268,56 +250,9 @@ class AuthController extends Controller
       return redirect('/login')->with('success', 'Akun Anda sudah aktif. Silahkan masuk.');
     }
   }
-
-  // function processLogin(){
-  //   $username = $this->input->post('username');
-  //   $password = $this->input->post('password');
-  //   $url = 'https://msdservice.pefindobirokredit.com/api/login';
-  //   $ch = curl_init($url);
-  //   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  //     'Accept: application/json',
-  //     'Content-Type: application/x-www-form-urlencoded'
-  //   ));
-  //   curl_setopt($ch, CURLOPT_TIMEOUT, 0);
-  //   curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-  //   curl_setopt($ch, CURLOPT_POST, true);
-  //   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array(
-  //   'Username' =>$username,
-  //   'Password' => $password,
-  //   'grant_type' => 'password')));
-  //   curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-  //   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-  //   $result = curl_exec($ch);
-
-
-  //   if ($result === false) {
-  //     //$error_msg = curl_error($ch);
-  //     $error_msg = 'Invalid username or password.';
-  //     echo json_encode(array('info' => 'error', 'msg' => $error_msg));
-  //   } else {
-  //     $data = json_decode($result,true);
-  //     if (!isset($data['error'])){
-  //       $token = $data['access_token'];
-  //       $this->session->set_userdata(array(
-  //         'member_login'=>1,
-  //         'username' =>$username,
-  //         'access_token' => $token,
-  //         'password' => $password
-  //       ));
-  //       echo json_encode(array('redirect'=> base_url('member')));
-  //     } else {
-  //       $messages = $data['error_description'];
-  //       $messages = "Invalid username or password";
-  //       echo json_encode(array('info' => 'error', 'msg' => $messages));
-  //     }
-  //   }
-  //   curl_close($ch);
-  // }
-
-
   public function reloadCaptcha()
   {
-      return response()->json(['captcha'=> captcha_img()]);
+    return response()->json(['captcha'=> captcha_img()]);
   }
 
 

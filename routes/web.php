@@ -29,11 +29,12 @@ use App\Http\Controllers\DeteksiKankerController;
 */
 
 // Auth
+
 Route::get('login', [AuthController::class,'showFormLogin'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
-
 Route::post('validate-g-recaptcha', [AuthController::class, 'validateGCaptch']);
 Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha']);
+
 
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
 Route::post('register', [AuthController::class, 'register']);
@@ -62,8 +63,12 @@ Route::get('/sukses', function () {
 Route::post('newsletter/store',[NewsletterController::class,'store']);
 
 Route::middleware('cache.headers:no_cache;no_store;must_revalidate;max_age=0;etag')->group(function () {
+
+   
+
     Route::get('/', [HomeController::class,'index']);
-    Route::get('/home', [HomeController::class,'index'])->middleware(Spatie\Csp\AddCspHeaders::class);
+    Route::get('/home', [HomeController::class,'index'])->middleware(Spatie\Csp\AddCspHeaders::class. ':' . MyCustomPolicy::class);
+
     Route::get('jenisKanker/get/{id}', [HomeController::class,'getJenisKanker']);
     Route::get('/cerita-survivor',[StoryController::class,'index']);
     Route::get('/cerita-survivor/{slug}',[StoryController::class,'detail']);

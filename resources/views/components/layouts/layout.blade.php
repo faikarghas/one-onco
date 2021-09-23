@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -22,14 +21,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
-        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-        {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> --}}
-        <!-- Slider -->
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"> --}}
-        <link rel="stylesheet" href="{{ asset('/css/slick.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('/css/slick-theme.min.css') }}">
+        <link rel="stylesheet" href="{{asset('/css/main.css')}}">
+        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('/css/slick.min.css')}}">
+        <link rel="stylesheet" href="{{asset('/css/slick-theme.min.css')}}">
         {!! RecaptchaV3::initJs() !!}
         @laravelPWA
 
@@ -78,7 +73,6 @@
         <script src="{{ asset('/js/jquery.min.js') }}"></script>
         <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('/js/slick.min.js') }}"></script>
-
         <script src="{{ asset('/js/app.js') }}"></script>
         <script type="text/javascript">
             $('#reload').click(function () {
@@ -90,8 +84,7 @@
                     }
                 });
             });
-
-          </script>
-        {{-- @stack('custom-scripts') --}}
+          </script> --}}
+        {{-- @stack('custom-scripts')
     </body>
 </html>

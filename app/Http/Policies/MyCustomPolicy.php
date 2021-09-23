@@ -2,7 +2,6 @@
     namespace App\Http\Policies;
 
     use Spatie\Csp\Directive;
-    use Spatie\Csp\Policies\Basic;
     use Spatie\Csp\Keyword;
 
   class MyCustomPolicy extends Basic
@@ -16,45 +15,74 @@
             ->addDirectivesForGoogleAnalytics()
             ->addDirectivesForGoogleTagManager()
             ->addDirectivesForTwitter()
-            ->addDirectivesForYouTube();
+            ->addDirectivesForYouTube()
+            ->addDirectivesForJsdelivr()
+            ->addDirectivesForCloudflare();
     }
 
     private function addGeneralDirectives()
     {
-        return $this->addDirective(Directive::BASE, 'self')
-        ->addDirective(Directive::CONNECT, 'self')
-        ->addDirective(Directive::DEFAULT, 'self')
-        ->addDirective(Directive::FORM_ACTION, 'self')
-        ->addDirective(Directive::IMG, 'self')
-        ->addDirective(Directive::MEDIA, 'self')
-        ->addDirective(Directive::OBJECT, 'self')
-        ->addDirective(Directive::SCRIPT, 'self')
-        ->addDirective(Directive::STYLE, 'self')
-        ->addNonceForDirective(Directive::SCRIPT);
+        return $this
+        ->addDirective(Directive::BASE, Keyword::SELF)
+        ->addDirective(Directive::CONNECT, Keyword::SELF)
+        ->addDirective(Directive::DEFAULT, Keyword::SELF)
+        ->addDirective(Directive::FORM_ACTION, Keyword::SELF)
+        ->addDirective(Directive::IMG, Keyword::SELF)
+        ->addDirective(Directive::MEDIA, Keyword::SELF)
+        ->addDirective(Directive::OBJECT, Keyword::NONE)
+        ->addDirective(Directive::SCRIPT, Keyword::SELF)
+        ->addDirective(Directive::STYLE, Keyword::SELF)
+        ->addNonceForDirective(Directive::SCRIPT)
+        ->addNonceForDirective(Directive::STYLE);
        
     }
-
     private function addDirectivesForBootstrap()
     {
         return $this
             ->addDirective(Directive::FONT, [
                 '*.bootstrapcdn.com',
-                'cdnjs.cloudflare.com',
             ])
             ->addDirective(Directive::SCRIPT, [
                 '*.bootstrapcdn.com',
-                'cdn.jsdelivr.net',
-                'cdnjs.cloudflare.com',
             ])
             ->addDirective(Directive::STYLE, [
-                'cdn.jsdelivr.net',
-                'cdnjs.cloudflare.com',
+                '*.bootstrapcdn.com',
+            ]);
+    }
+    private function addDirectivesForCloudflare()
+    {
+        return $this
+            ->addDirective(Directive::FONT, [
+                '*.cloudflare.com',
+            ])
+            ->addDirective(Directive::SCRIPT, [
+                '*.cloudflare.com',
+            ])
+            ->addDirective(Directive::IMG, [
+                '*.cloudflare.com',
+            ])
+            ->addDirective(Directive::STYLE, [
+                '*.cloudflare.com',
             ]);
     }
 
-   
-
-    protected function addDirectivesForGoogleFonts(): self
+    private function addDirectivesForJsdelivr()
+    {
+        return $this
+            ->addDirective(Directive::FONT, [
+                '*.jsdelivr.net',
+            ])
+            ->addDirective(Directive::SCRIPT, [
+                '*.jsdelivr.net',
+            ])
+            ->addDirective(Directive::IMG, [
+                '*.jsdelivr.net',
+            ])
+            ->addDirective(Directive::STYLE, [
+                '*.jsdelivr.net',
+            ]);
+    }
+    protected function addDirectivesForGoogleFonts():self
     {
         return $this
             ->addDirective(Directive::FONT, 'fonts.gstatic.com')
@@ -66,12 +94,10 @@
     {
         return $this->addDirective(Directive::SCRIPT, '*.google-analytics.com');
     }
-
     protected function addDirectivesForGoogleTagManager(): self
     {
         return $this->addDirective(Directive::SCRIPT, '*.googletagmanager.com');
     }
-
     protected function addDirectivesForTwitter(): self
     {
         return $this
