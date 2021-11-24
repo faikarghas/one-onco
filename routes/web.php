@@ -34,18 +34,13 @@ Route::get('login', [AuthController::class,'showFormLogin'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 Route::post('validate-g-recaptcha', [AuthController::class, 'validateGCaptch']);
 Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha']);
-
-
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
 Route::post('register', [AuthController::class, 'register']);
 Route::get('forgotpassword', [AuthController::class, 'forgotPassword'])->name('forgot.password');
-
 Route::post('reset_password_without_token', [AuthController::class, 'validatePasswordRequest']);
 Route::post('reset_password_with_token', [AuthController::class, 'resetPassword']);
-
 Route::get('/reset-password/{token}', [AuthController::class, 'getPassword']);
 Route::post('/reset-password',[AuthController::class, 'updatePassword'])->name('reset.passwordwithToken');
-
 Route::group(['middleware' => 'auth'], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('pengaturan', [AuthController::class, 'changePassword']);
@@ -85,8 +80,8 @@ Route::middleware('cache.headers:no_cache;no_store;must_revalidate;max_age=0;eta
     Route::get('faskesWithPropinsi/get/{id}',[DirectoryController::class,'getFaskesWithPropinsi']);
     Route::get('faskesWithKabupaten/get/{id}',[DirectoryController::class,'getFaskesWithKabupaten']);
     Route::get('dokterWithKabupaten/get/{id}',[DirectoryController::class,'getDokterWithKabupaten']);
-   
-    Route::get('/direktori-lab/{id}',[DirectoryController::class,'getLabDetail']);
+    Route::get('/direktori-komunitas',[DirectoryController::class,'komunitasHome']);
+    Route::get('/direktori-komunitas/{slug}',[DirectoryController::class,'getLabDetail']);
     Route::get('/direktori-care',[DirectoryController::class,'carehome']);
     Route::get('/direktori-care/{slug}',[DirectoryController::class,'care']);
     Route::get('dokter-detail/{id}',[DirectoryController::class,'getDokterDetail']);

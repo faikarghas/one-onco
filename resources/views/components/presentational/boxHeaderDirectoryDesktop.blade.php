@@ -16,14 +16,13 @@
       $color = $currentUrl == 'direktori-care' ? 'white' : '#00A2E3;';
       $image_url = $currentUrl == 'direktori-care' ? 'dir-care_white.png' : 'directori_care_center.svg';
       break;
-    case "direktori-lab" : 
-      $bgColor = $currentUrl == 'direktori-lab' ? '#00A2E3;' : 'white';
-      $color = $currentUrl == 'direktori-lab' ? 'white' : '#00A2E3;';
-      $image_url = $currentUrl == 'direktori-lab' ? 'directori_komunitas_white.svg' : 'directori_komunitas.svg';
+    case "direktori-komunitas" : 
+      $bgColor = $currentUrl == 'direktori-komunitas' ? '#00A2E3;' : 'white';
+      $color = $currentUrl == 'direktori-komunitas' ? 'white' : 'white';
+      $image_url = $currentUrl == 'direktori-komunitas  ' ? 'directori_komunitas_white.svg' : 'directori_komunitas.svg';
       break;
   }
 ?>
-
 @if (Request::segment(2))
   <section class="direktori__menuTab forDesktop" style="background-color: #FFF">
 @else
@@ -78,28 +77,27 @@
             @endif
         </div>
         <div class="col-12 col-lg-4">
-            @if ( $currentUrl == 'direktori-lab')
+            @if ( $currentUrl == 'direktori-komunitas')
               @include('components/presentational.boxRec',[
               'image_url'=>$image_url,
-              'title'=>'Direktori Komunitas',
               'description'=>'Temukan komunitas kanker disekitarmu',
               'color'=>$color,
               'colorPar'=>$color,
-              'path'=>'direktori-lab',
+              'path'=>'direktori-komunitas',
               'bgColor'=> $bgColor
             ])
             @else
               @include('components/presentational.boxRec',[
-              'image_url'=>'directori_komunitas.svg',
+              'image_url'=>$image_url,
               'title'=>'Direktori Komunitas',
               'description'=>'Temukan komunitas kanker disekitarmu',
               'color'=>'#00A2E3;',
               'colorPar'=>'#808080;',
-              'path'=>'direktori-lab',
+              'path'=>'direktori-komunitas',
               'bgColor'=>'white'
             ])
-            @endif
+            @endif  
         </div>
       </div>
   </div>
-</section>
+</section>  

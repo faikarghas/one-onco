@@ -13,13 +13,12 @@ use App\Models\Faskes_model;
 use App\Models\DokterSpesialis_model;
 use App\Constants\GlobalConstants;
 
-
 class DirectoryController extends Controller
 {
-    public function index(Request $request){
-      // GET variable from global data for website
-      $siteConfig   = DB::table('global_data')->first();
-      $data = array('title' => $siteConfig->pvar2,
+  public function index(Request $request){
+    // GET variable from global data for website
+    $siteConfig   = DB::table('global_data')->first();
+    $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                   );
       return view ('v_direktoriKanker', $data);
@@ -28,14 +27,9 @@ class DirectoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       // filter select option
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
-
       $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
-
       // dokter all
       $dokters = DokterMapped_model::getDokters('', GlobalConstants::ALLSpec, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
-
-      //dd($dokters);
-      //dd($dokters);
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'dokter'=>$dokters
@@ -43,8 +37,18 @@ class DirectoryController extends Controller
       return view ('v_direktoriDokter', $data,compact('cities','spesialis'));
     }
 
-
     public function lab(){
+      $siteConfig   = DB::table('global_data')->first();
+      $cities = DB::table('indonesia_provinces')->pluck("name","id");
+      $faskess = Faskes_model::getKomunitas('', GlobalConstants::ALLProv, GlobalConstants::ALLKab);
+      $data = array('title' => $siteConfig->pvar2,
+                    'copyright'=>$siteConfig->pvar3,
+                    'faskes'=>$faskess
+                  );
+      return view ('v_direktoriLab', $data,compact('cities'));
+    }
+
+    public function komunitasHome(){
       $siteConfig   = DB::table('global_data')->first();
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $faskess = Faskes_model::getKomunitas('', GlobalConstants::ALLProv, GlobalConstants::ALLKab);
@@ -80,12 +84,9 @@ class DirectoryController extends Controller
       $provinsi = $request->provinsi;
       //dd($provinsi);
       $kabupaten = $request->kabupaten;
-
       //DB::enableQueryLog();
       $faskes = Faskes_model::getFaskes($query,$spesialis,$provinsi,$kabupaten);
-      //dd(DB::getQueryLog());
-      //dd($faskes);
-
+      
       $data = array(
         'faskes'=>$faskes
 );
