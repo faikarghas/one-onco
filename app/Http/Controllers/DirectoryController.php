@@ -81,7 +81,11 @@ class DirectoryController extends Controller
       //dd($query);
       //$spesialis = preg_replace("/[^A-Za-z0-9]/", "", $request->spesialis);
       $spesialis = $request->spesialis;
-      dd($spesialis);
+      
+      $layanan = FaskerLayanan::where('title','=',$spesialis)->first();
+
+      dd($layanan);
+
       $provinsi = $request->provinsi;
       //dd($provinsi);
       $kabupaten = $request->kabupaten;

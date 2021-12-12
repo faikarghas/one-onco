@@ -39,10 +39,10 @@ class Faskes_model extends Model
         //Filter Spesialis
         if($spesialis && $spesialis!= GlobalConstants::ALLSpec2 && $spesialis!= 'pilihLayananKanker' ) {
 
-
-            $faskes = $faskes->where('layanan', $spesialis);
-            //dd($spesialis);
             
+            
+            $faskes = $faskes->where('layanan', $spesialis);
+                        
         }
         //Filter Provinsi
         if($provinsi && $provinsi!= GlobalConstants::ALLProv) {
