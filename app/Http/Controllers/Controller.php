@@ -23,8 +23,8 @@ class Controller extends BaseController
     public function __construct()
     {
       $siteSetting = GlobalData::where('id' ,1)->first();
-      View::share('address', $siteSetting->pvar3);
-      View::share('copyright', $siteSetting->ptext3);
+      View::share('address', $siteSetting->ptext3);
+      View::share('copyright', $siteSetting->pvar3);
     }
 
     public function getnews(){
