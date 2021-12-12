@@ -227,7 +227,24 @@ class DirectoryController extends Controller
     $websiteFaskes = $viewFaskes->website;
     $foto = $viewFaskes->foto;
 
-    $selectLayanan = DB::table('faskes_layanan')->pluck("title","id");
+
+    // $idDokter = $dokterDetail->dokterId;
+    // // get data by separate comas
+    // $idPraktek = $dokterDetail->praktekId;
+    // $array=array_map('intval', explode(',', $idPraktek));
+    // //$array = implode("','",$array);
+
+    // //dd($array);
+
+    // $viewFaskes = Faskes_model::whereIn('faskesId', $array)->get();
+
+    $layanan = $viewFaskes->layanan;
+    $array=array_map('intval', explode(',', $layanan));
+    $layanan = DB::table('faskes_layanan')->whereIN("id",$array)->get();
+
+    //dd($layanan);
+
+   
     //dd( $selectLayanan);
 
     // $status1 =  $viewFaskes->skriningDiagnosis;
@@ -263,7 +280,7 @@ class DirectoryController extends Controller
                   'website'=>$websiteFaskes,
                   'viewDokter' => $viewDokter,
                   'provinces' => $provinces,
-                  'layanans' => $selectLayanan,
+                  'layanans' => $layanan,
                   'foto' => $foto,
                   'cities' => $cities,
                   // 'status1' => $status1,

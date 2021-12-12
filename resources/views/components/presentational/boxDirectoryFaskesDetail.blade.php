@@ -53,7 +53,10 @@
                 <div class="row jam_op-sch">
                     <div class="col-12">
                         <ul class="list-unstyled">
-                            @if ($status1==1)
+                            @foreach ($layanans as $row)
+                                <li>{!! $row->title !!}</li>
+                            @endforeach
+                            {{-- @if ($status1==1)
                                 <li>Skrining Dan Diagnotis</li>
                             @endif
                             @if ($status2==1)
@@ -67,7 +70,9 @@
                             @endif
                             @if ($status5==1)
                                 <li>Perawatan Paliatif</li>
-                            @endif
+                            @endif --}}
+
+
                         </ul>
                     </div>
                 </div>
