@@ -99,7 +99,7 @@ class AuthController extends Controller
         'name'                  => 'required|min:3|max:35',
         'email'                 => 'required|email|unique:users,email',
         'password'              => 'required|min:8',
-        'phone'                 => 'required|min:8|max:12|numeric',
+        'phone'                 => 'required|numeric|digits_between:8,13',
         // 'captcha' => 'required|captcha'
       ];
       $messages = [
@@ -111,9 +111,10 @@ class AuthController extends Controller
         'email.unique'          => 'Email sudah terdaftar',
         'password.required'     => 'Kata sandi wajib diisi',
         'phone.required'        => 'Nomor ponsel wajib diisi',
-        'phone.min'             => 'Nomor telepon minimal 8 digit',
-        'phone.max'             => 'Nomor telepon maksimal 12 digit',
         'phone.numeric'         => 'Nomor telepon harus berupa angka',
+        'phone.digits_between'  => 'Nomor telepon minimal 8 digit dan maksimal 13 digit',
+      
+        
       ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
