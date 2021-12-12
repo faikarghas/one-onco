@@ -14,7 +14,7 @@ class PagesController extends Controller
 {
     public function index(Request $request, $slug = NULL){
       // GET variable from global data for website
-      $siteConfig   = DB::table('global_data')->first();
+      // $siteConfig   = DB::table('global_data')->first();
       $request_path = explode('/', $slug);
       //dd ($request_path);
 
@@ -60,8 +60,7 @@ class PagesController extends Controller
       $listingNews = Artikel_model::where('idKat','=',1)->skip(0)->take(3)->orderBy('publishDate', 'DESC')->get();
       $listingStory  = Artikel_model::where('idKat','=',3)->skip(0)->take(3)->orderBy('publishDate', 'DESC')->get();
       $listingPartners = Partner_model::skip(0)->take(6)->orderBy('id', 'DESC')->get();
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'listingKatArtikel'=>$listingKatArtikel,
                     'slugKat'=>$slugKat,
                     'titleHeader' => $titleHeader,
