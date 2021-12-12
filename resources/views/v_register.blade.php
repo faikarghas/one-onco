@@ -57,7 +57,7 @@
                                     <option value="Warrior">Warrior</option>
                                     <option value="Tenaga Kesehatan">Tenaga Kesehatan</option>
                                 </select>
-                                <div class="input-group mb-4">
+                                {{-- <div class="input-group mb-4">
                                    
                                     <div class="captcha">
                                       <span>{!! captcha_img() !!}</span>
@@ -65,13 +65,13 @@
                                           &#x21bb;
                                       </button>
                                   </div>
-                                  </div>
-                                  <div class="input-group mb-4">
+                                  </div> --}}
+                                  {{-- <div class="input-group mb-4">
                                     <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
 
                                     
-                                  </div>
-                                  <span class="text-danger">@error('captcha'){{ $message }} @enderror</span>
+                                  </div> --}}
+                                  {{-- <span class="text-danger">@error('captcha'){{ $message }} @enderror</span> --}}
                                   <br>
                                 @include('/components/presentational.boxAuthButton',['title'=>'Daftar','color'=>'#32A48E'])
                                 <br>

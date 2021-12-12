@@ -5,6 +5,7 @@
         <meta property="og:type"        content="website" />
         <meta property='og:title'       content="{{ strip_tags(html_entity_decode($titleContentPages)) }}" />
         <meta property='og:description' content="{{ strip_tags(html_entity_decode(substr($contentPages,0,200))) }}" />
+        
         @switch(Request::segment(1))
         @case('tentang-kami')
             <meta property='og:image' content="{{asset('/images/tentang_kami.jpg')}}">
@@ -27,7 +28,9 @@
         @default
             <meta property='og:image' content="{{asset('/images/perawatan_kanker.jpg')}}">
         @endswitch
-@endsection
+
+        
+        @endsection
 @section('content')
     @include('components/presentational/header',['path'=>''])
     <main>

@@ -23,12 +23,16 @@ class PagesController extends Controller
         $slugDetail = $request_path[1];
       }
       $slugKat = $request_path[0];
+
+     // dd($slugKat);
       $listAttribute = $this->getPages($slugKat);
       $kategoriId = $listAttribute->id;
       // header title and image
       $imageHeader = $listAttribute->image;
       $titleHeader = $listAttribute->title;
       $subTitleHeader = $listAttribute->intro;
+
+
       // side menu by kategori artikel
       //$listingKatArtikel = DB::table('artikel')->whereRaw('idKat = ?', [$kategoriId])->orderBy('sortId', 'ASC')->get();
       $listingKatArtikel = Artikel_model::where('idKat','=',$kategoriId)->orderBy('sortId', 'ASC')->get();
@@ -61,6 +65,7 @@ class PagesController extends Controller
                     'listingKatArtikel'=>$listingKatArtikel,
                     'slugKat'=>$slugKat,
                     'titleHeader' => $titleHeader,
+                    'imageHeader' => $imageHeader,
                     'introTitle' => $subTitleHeader,
                     'titleContentPages' => $titleContentPages,
                     'listingNews' => $listingNews,

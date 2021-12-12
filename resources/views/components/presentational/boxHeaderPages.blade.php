@@ -1,7 +1,8 @@
 @if (Request::segment(1) !== 'syaratdanketentuan')
 <div class="box__banner">
-    @switch(Request::segment(1))
-    @case('tentang-kami')
+    {{-- @switch(Request::segment(1)) --}}
+
+    {{-- @case('tentang-kami')
         <img src="{{asset('/images/tentang_kami.jpg')}}" alt="tentang kami one once" width="100%" height="100%" alt="">
         @break
     @case('untuk-pasien')
@@ -21,7 +22,10 @@
         @break
     @default
         <img src="{{asset('/images/perawatan_kanker.jpg')}}" width="100%" height="100%" alt="">
-    @endswitch
+    @endswitch --}}
+
+    <img src="{{asset('/images/'.$imageHeader)}}" alt="{{ $slugKat }}" width="100%" height="100%" alt="">
+    
     <div class="box__banner-desc">
     @if (!empty(Request::segment(2)))
         <h2>{!! $titleHeader !!}</h2>

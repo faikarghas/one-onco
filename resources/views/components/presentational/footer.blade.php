@@ -19,7 +19,7 @@
             </div>
             <div class="col-12 col-lg-6 mt-5">
                 <div>
-                    <p class="mb-4"><strong>Hubungi Kami</strong></p>
+                    {{-- <p class="mb-4"><strong>Hubungi Kami</strong></p>
                    
                     <p>GLOBAL ONKOLAB FARMA<br/>
                         Jl. Jend. Ahmad Yani No.2, RT.3/RW.13,
@@ -28,7 +28,8 @@
                         <br>
                         Timur, DKI Jakarta 13210
                     </p>
-                    <p class="m-0"><span class="fw-bold">Telp:</span> 021-5086 7767</p>
+                    <p class="m-0"><span class="fw-bold">Telp:</span> 021-5086 7767</p> --}}
+
                     
                 </div>
             </div>
@@ -65,8 +66,8 @@
                 </div>
             </div>
             <div class="col-12 mt-5">
-                <p class="text-white mb-0 ">Copyright © 2021 ONEOnco | ALL RIGHTS RESERVED</p>
-                <p class="text-white text-sm">ONEOnco adalah sebuah unit kerja, hak cipta dan kepemilikan dari PT. Global Onkolab Farma dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan ONEOnco dan masing-masing partnernya.</p>
+                    {{-- <p class="text-white mb-0 ">Copyright © 2021 ONEOnco | ALL RIGHTS RESERVED</p>
+                    <p class="text-white text-sm">ONEOnco adalah sebuah unit kerja, hak cipta dan kepemilikan dari PT. Global Onkolab Farma dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan ONEOnco dan masing-masing partnernya.</p> --}}
             </div>
         </div>
     </div>

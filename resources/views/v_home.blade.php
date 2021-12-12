@@ -222,9 +222,9 @@
                             <img id="img-one" class="img-fluid mb-4" src="{{asset('/images/logo_oneonco_black.png')}}" width="300px" alt="logo oneonco" srcset="">
                         </div>
                         <div class="col-12 col-lg-6">
-                            <h3><strong>{{ $titleAbout }}</strong></h3>
+                            <h3><strong>Mengapa perawatan kanker harus menjadi rumit?</strong></h3>
                             <p class="mb-5">
-                            {{ $contentAbout }}
+                                Tugas seorang pasien kanker adalah untuk beristirahat dan sembuh, bukan stress memikirkan proses perawatan. Karena itu, One Onco hadir untuk mendampingi Anda melawati ragamnya perawatan kanker dan mendapatkan yang terbaik. 
                             </p>
                             @include('components/presentational.boxReadMore',array('title'=>'Baca selengkapnya','path'=>'/tentang-kami'))
                         </div>
