@@ -85,7 +85,7 @@ class DirectoryController extends Controller
       
       $layanan = DB::table('faskes_layanan')->where('title', $spesialis)->first();
       $spesialis =  $layanan->id;
-      
+
       $provinsi = $request->provinsi;
       //dd($provinsi);
       $kabupaten = $request->kabupaten;
@@ -228,7 +228,7 @@ class DirectoryController extends Controller
     $foto = $viewFaskes->foto;
 
     $selectLayanan = DB::table('faskes_layanan')->pluck("title","id");
-    dd( $viewLayanan);
+    //dd( $selectLayanan);
 
     // $status1 =  $viewFaskes->skriningDiagnosis;
     // $status2 =  $viewFaskes->onkologiMedisKemoterapi;
