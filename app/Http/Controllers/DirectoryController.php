@@ -84,9 +84,8 @@ class DirectoryController extends Controller
       $spesialis = $request->spesialis;
       
       $layanan = DB::table('faskes_layanan')->where('title', $spesialis)->first();
-
-      dd($layanan);
-
+      $spesialis =  $layanan->id;
+      
       $provinsi = $request->provinsi;
       //dd($provinsi);
       $kabupaten = $request->kabupaten;
