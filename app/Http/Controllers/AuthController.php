@@ -98,8 +98,8 @@ class AuthController extends Controller
       $rules = [
         'name'                  => 'required|min:3|max:35',
         'email'                 => 'required|email|unique:users,email',
-        'password'              => 'required|min:8|max:16',
-        'phone'                 => 'required|min:9|max:35|numeric',
+        'password'              => 'required|min:8',
+        'phone'                 => 'required|min:9|numeric',
         // 'captcha' => 'required|captcha'
       ];
       $messages = [
