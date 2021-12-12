@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Dokter_model;
 use App\Models\DokterMapped_model;
+use App\Models\DokterMap;
 use App\Models\Kanker_model;
 use App\Models\Customer_model;
 use App\Models\Faskes_model;
@@ -29,7 +30,7 @@ class DirectoryController extends Controller
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
       // dokter all
-      $dokters = DokterMapped_model::getDokters('', GlobalConstants::ALLSpec, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
+      $dokters = DokterMap::getDokters('', GlobalConstants::ALLSpec, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
       $data = array('title' => $siteConfig->pvar2,
                     'copyright'=>$siteConfig->pvar3,
                     'dokter'=>$dokters

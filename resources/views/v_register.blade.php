@@ -44,14 +44,14 @@
                               <br>
                                 <p><i>Kami ingin mengenal Anda! Ceritakan kesukaan Anda agar kami dapat memberikan informasi yang menarik untuk Anda</i></p>
                                 <select class="form-select mb-4" aria-label="Default select example" name="jenis_kanker">
-                                    <option selected>Pilih Jenis Kanker</option>
+                                    <option value="" selected>Pilih Jenis Kanker</option>
                                     <option value="Kanker Kolorektal">Kanker Kolorektal</option>
                                     <option value="Kanker Serviks">Kanker Serviks</option>
                                     <option value="Kanker Payudara">Kanker Payudara</option>
                                     <option value="Kanker Paru-paru">Kanker Paru-paru</option>
                                 </select>
                                 <select class="form-select mb-4" aria-label="Default select example" name="status">
-                                    <option selected>Pilih Status Anda</option>
+                                    <option value="" selected>Pilih Status Anda</option>
                                     <option value="Caregiver">Caregiver</option>
                                     <option value="Survivor">Survivor</option>
                                     <option value="Warrior">Warrior</option>

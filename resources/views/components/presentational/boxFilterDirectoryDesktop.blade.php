@@ -4,7 +4,7 @@
           <div class="row justify-content-center">
             @if (Request::segment(1)==='direktori-dokter')
               <h3 class="text-start mb-0"><strong>Cari dokter kanker di sekitarmu:</strong></h3>
-            @elseif(Request::segment(1)==='direktori-lab')
+            @elseif(Request::segment(1)==='direktori-komunitas')
              <h3 class="text-start mb-0"><strong>Cari komunitas kanker di sekitarmu:</strong></h3>
             @elseif(Request::segment(1)==='direktori-care')
               <h3 class="text-start mb-0"><strong>Cari rumah sakit kanker di sekitarmu:</strong></h3>
@@ -28,7 +28,7 @@
           </div>
           <form action="">
             <div class="row">
-              @if (Request::segment(1)==='direktori-lab')
+              @if (Request::segment(1)==='direktori-komunitas')
 
               @else
                 <div class="col-12 col-md-4">
@@ -49,7 +49,7 @@
                     @endif
                 </div>
               @endif
-              @if (Request::segment(1)==='direktori-lab')
+              @if (Request::segment(1)==='direktori-komunitas')
                 <div class="col-12 col-md-6">
                     <select class="form-select mb-3" aria-label="Default select example" id="provinsi" name="provinsi">
                         <option>{{\App\Constants\GlobalConstants::ALLProv}}</option>

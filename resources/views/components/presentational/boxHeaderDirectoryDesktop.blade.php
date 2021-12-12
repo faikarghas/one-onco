@@ -80,6 +80,7 @@
             @if ( $currentUrl == 'direktori-komunitas')
               @include('components/presentational.boxRec',[
               'image_url'=>$image_url,
+              'title'=>'Direktori Komunitas',
               'description'=>'Temukan komunitas kanker disekitarmu',
               'color'=>$color,
               'colorPar'=>$color,
