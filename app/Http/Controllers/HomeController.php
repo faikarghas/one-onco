@@ -93,7 +93,8 @@ class HomeController extends Controller
         ->get();
 
         $data = array('title' => $siteConfig->pvar2,
-                      'copyright'=>$siteConfig->pvar3,
+                      'copyright'=>$siteConfig->ptext3,
+                      'address'=>$siteConfig->pvar3,
                       'statusLogin'=>$statusLogin,
                       'statusConfig'=>$statusConfig,
                       //'titleAbout'=>$shortContentAbout->title,

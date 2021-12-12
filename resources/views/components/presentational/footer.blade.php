@@ -30,6 +30,8 @@
                     </p>
                     <p class="m-0"><span class="fw-bold">Telp:</span> 021-5086 7767</p> --}}
 
+                    { ! $address !}
+
                     
                 </div>
             </div>
@@ -68,6 +70,7 @@
             <div class="col-12 mt-5">
                     {{-- <p class="text-white mb-0 ">Copyright © 2021 ONEOnco | ALL RIGHTS RESERVED</p>
                     <p class="text-white text-sm">ONEOnco adalah sebuah unit kerja, hak cipta dan kepemilikan dari PT. Global Onkolab Farma dan Kalbe Group. Media dan konten didalam website ini adalah kepemilikan ONEOnco dan masing-masing partnernya.</p> --}}
+                    { ! $copyright !}
             </div>
         </div>
     </div>
