@@ -66,7 +66,7 @@ class DirectoryController extends Controller
       $provinsi = $request->provinsi;
       $kabupaten = $request->kabupaten;
       //DB::enableQueryLog();
-      $dokter = DokterMapped_model::getDokters($query,$spesialis,$provinsi,$kabupaten);
+      $dokter = DokterMap::getDokters($query,$spesialis,$provinsi,$kabupaten);
       //dd(DB::getQueryLog());
       //dd($dokter);
       //return view('components.presentational.boxResultFilterDirectoryDokter', compact('dokter'))->render();
@@ -129,7 +129,6 @@ class DirectoryController extends Controller
       $foto = $dokterDetail->foto;
       $fullname = $dokterDetail->fullname;
       $layanan = $dokterDetail->subSpesialist;
-
       $idDokter = $dokterDetail->dokterId;
 
 
@@ -140,13 +139,20 @@ class DirectoryController extends Controller
       //     ->distinct('faskes.namaFaskes')
       //     ->whereRaw('jadwal_dokter.dokterId=?',[$idDokter])->get();
 
-      $viewFaskes = Faskes_model::join('jadwal_dokter', 'jadwal_dokter.faskesId', '=', 'faskes.faskesId')
-        ->where('jadwal_dokter.dokterId','=',$idDokter)
-        ->distinct('faskes.namaFaskes')
-        ->get();
+      
+      //dd($dokterDetail);
+      //get id dokter
+      $idDokter = $dokterDetail->dokterId;
+      // get data by separate comas
+      $idPraktek = $dokterDetail->praktekId;
+      $array=array_map('intval', explode(',', $idPraktek));
+      //$array = implode("','",$array);
 
+      //dd($array);
 
+      $viewFaskes = Faskes_model::whereIn('faskesId', $array)->get();
 
+     // dd($viewFaskes);
 
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
@@ -175,12 +181,18 @@ class DirectoryController extends Controller
 
     $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
 
+    //dd($spesialis);
+
+    $selectLayanan = DB::table('faskes_layanan')->pluck("title","id");
+    //dd( $selectLayanan);
+
+
     $faskess = Faskes_model::getFaskes('', GlobalConstants::ALLSpec2, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
     $data = array('title' => $siteConfig->pvar2,
                   'copyright'=>$siteConfig->pvar3,
                   'faskes'=>$faskess
                 );
-    return view ('v_direktoriCare', $data,compact('provinces','spesialis','cities'));
+    return view ('v_direktoriCare', $data,compact('provinces','spesialis','cities','selectLayanan'));
   }
 
 
@@ -211,11 +223,14 @@ class DirectoryController extends Controller
     $websiteFaskes = $viewFaskes->website;
     $foto = $viewFaskes->foto;
 
-    $status1 =  $viewFaskes->skriningDiagnosis;
-    $status2 =  $viewFaskes->onkologiMedisKemoterapi;
-    $status3 =  $viewFaskes->radiasiOnkologi;
-    $status4 =  $viewFaskes->onkologiBedah;
-    $status5 =  $viewFaskes->perawatanPaliatif;
+    $selectLayanan = DB::table('faskes_layanan')->pluck("title","id");
+    dd( $viewLayanan);
+
+    // $status1 =  $viewFaskes->skriningDiagnosis;
+    // $status2 =  $viewFaskes->onkologiMedisKemoterapi;
+    // $status3 =  $viewFaskes->radiasiOnkologi;
+    // $status4 =  $viewFaskes->onkologiBedah;
+    // $status5 =  $viewFaskes->perawatanPaliatif;
 
     $provinces = DB::table('indonesia_provinces')->pluck("name","id");
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
@@ -244,13 +259,14 @@ class DirectoryController extends Controller
                   'website'=>$websiteFaskes,
                   'viewDokter' => $viewDokter,
                   'provinces' => $provinces,
+                  'layanans' => $selectLayanan,
                   'foto' => $foto,
                   'cities' => $cities,
-                  'status1' => $status1,
-                  'status2' => $status2,
-                  'status3' => $status3,
-                  'status4' => $status4,
-                  'status5' => $status5,
+                  // 'status1' => $status1,
+                  // 'status2' => $status2,
+                  // 'status3' => $status3,
+                  // 'status4' => $status4,
+                  // 'status5' => $status5,
                 );
     return view ('v_direktoriCare', $data);
   }

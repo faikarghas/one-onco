@@ -10,7 +10,7 @@ class GlobalConstants {
     
     const ALLProv = 'Pilih Provinsi';
     const ALLKab = 'Pilih Kabupaten';
-    const LIST_LAYANAN = ["Skrining & Diagnosis", "Onkologi Medis & Kemoterapi", "Radiasi Onkologi", "Onkologi Bedah", "Perawatan Paliatif",];
+    //const LIST_LAYANAN = ["Skrining & Diagnosis", "Onkologi Medis & Kemoterapi", "Radiasi Onkologi", "Onkologi Bedah", "Perawatan Paliatif",];
     
     const ALLStatus = "Pilih Status Anda";
     const LIST_STATUS = ["Care Giver", "Survivor", "Wariror", "Tenaga Kesehatan"];
