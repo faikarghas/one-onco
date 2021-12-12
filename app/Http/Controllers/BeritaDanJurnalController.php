@@ -58,8 +58,7 @@ class BeritaDanJurnalController extends Controller
       $moreDatas = Artikel_model::select('*')->limit(8)->skip('5')->get();
       //dd($moreDatas);
 
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'img_header' =>$img_header,
                     'titleHeader' =>$titleHeader,
                     'taglineHeader' => $taglineHeader,
@@ -114,8 +113,7 @@ class BeritaDanJurnalController extends Controller
       //$listingNews = DB::table('artikel')->whereRaw('idKat=?',1)->limit(3)->orderBy('publishDate', 'DESC')->get();
       $listingNews = Artikel_model::where('idkat' ,'1')->skip(0)->take(3)->orderBy('publishDate','desc')->get();
 
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'titleStory'=>$detailStory->title,
                     'dateStory'=>$dateDetail,
                     'authorStory'=>$detailStory->shortContent,

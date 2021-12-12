@@ -15,7 +15,7 @@ class StoryController extends Controller
     public function index(Request $request){
 
       // GET variable from global data for website
-      $siteConfig   = DB::table('global_data')->first();
+      
       // get all atribut pages
       $slugKat = $request->segment(1);
       
@@ -44,8 +44,7 @@ class StoryController extends Controller
 
       //dd($listAttribute);
 
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'slugStory' => 'testt',
                     'img_header' =>$img_header,
                     'title_header' =>$title_header,
@@ -95,8 +94,7 @@ class StoryController extends Controller
       $listingNews = Artikel_model::where('idkat' ,'1')->skip(0)->take(3)->orderBy('publishDate','desc')->get();
 
       // dd($listingNews);
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'titleStory'=>$detailStory->title,
                     'authorStory'=>$detailStory->shortContent,
                     'contentStory'=>$detailStory->content,

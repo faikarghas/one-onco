@@ -51,8 +51,7 @@ class JenisKankerController extends Controller
       // widget
       //$listingNews = DB::table('artikel')->where('idKat=?',1)->limit(3)->orderBy('id', 'DESC')->get();
       $listingNews = Artikel_model::where('idKat','=',1)->skip(0)->take(3)->orderBy('id', 'DESC')->get();
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'listingKatArtikel'=>$listingKatArtikel,
                     'slugKat'=>$slugKat,
                     'titleHeader' => $titleHeader,

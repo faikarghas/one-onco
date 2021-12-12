@@ -20,8 +20,7 @@ class DirectoryController extends Controller
   public function index(Request $request){
     // GET variable from global data for website
     $siteConfig   = DB::table('global_data')->first();
-    $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+    $data = array(
                   );
       return view ('v_direktoriKanker', $data);
     }
@@ -32,8 +31,7 @@ class DirectoryController extends Controller
       $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
       // dokter all
       $dokters = DokterMap::getDokters('', GlobalConstants::ALLSpec, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'dokter'=>$dokters
                   );
       return view ('v_direktoriDokter', $data,compact('cities','spesialis'));
@@ -43,8 +41,7 @@ class DirectoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $faskess = Faskes_model::getKomunitas('', GlobalConstants::ALLProv, GlobalConstants::ALLKab);
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'faskes'=>$faskess
                   );
       return view ('v_direktoriLab', $data,compact('cities'));
@@ -54,8 +51,7 @@ class DirectoryController extends Controller
       $siteConfig   = DB::table('global_data')->first();
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $faskess = Faskes_model::getKomunitas('', GlobalConstants::ALLProv, GlobalConstants::ALLKab);
-      $data = array('title' => $siteConfig->pvar2,
-                    'copyright'=>$siteConfig->pvar3,
+      $data = array(
                     'faskes'=>$faskess
                   );
       return view ('v_direktoriLab', $data,compact('cities'));
@@ -161,8 +157,7 @@ class DirectoryController extends Controller
       $cities = DB::table('indonesia_provinces')->pluck("name","id");
       $spesialis = DokterSpesialis_model::where('parentId',2)->pluck("title","id");
 
-      $data = array('title' => $siteConfig->pvar2,
-                      'copyright'=>$siteConfig->pvar3,
+      $data = array(
                       'foto'=>$foto,
                       'fullname'=>$fullname,
                       'layanan'=>$layanan,
@@ -192,8 +187,7 @@ class DirectoryController extends Controller
 
 
     $faskess = Faskes_model::getFaskes('', GlobalConstants::ALLSpec2, GlobalConstants::ALLProv, GlobalConstants::ALLKab);
-    $data = array('title' => $siteConfig->pvar2,
-                  'copyright'=>$siteConfig->pvar3,
+    $data = array(
                   'faskes'=>$faskess
                 );
     return view ('v_direktoriCare', $data,compact('provinces','spesialis','cities','selectLayanan'));
@@ -271,8 +265,8 @@ class DirectoryController extends Controller
     ->get();
     //dd($viewDokter);
 
-    $data = array('title' => $siteConfig->pvar2,
-                  'copyright'=>$siteConfig->pvar3,
+    $data = array(
+                 
                   'name'=>$namaFaskes,
                   'address'=>$addressFaskes,
                   'fax'=>$phoneFax,
@@ -368,7 +362,7 @@ public function getFaskesWithKabupaten($id) {
     $provinces = DB::table('indonesia_provinces')->pluck("name","id");
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
     $data = array('title' => $siteConfig->pvar2,
-                  'copyright'=>$siteConfig->pvar3,
+                  
                   'name'=>$namaFaskes,
                   'address'=>$addressFaskes,
                   'fax'=>$phoneFax,
