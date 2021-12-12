@@ -83,7 +83,7 @@ class DirectoryController extends Controller
       //$spesialis = preg_replace("/[^A-Za-z0-9]/", "", $request->spesialis);
       $spesialis = $request->spesialis;
       
-      $layanan = FaskesLayanan::find('title',$spesialis)->first();
+      $layanan = DB::table('faskes_layanan')->where('title', $spesialis)->first();
 
       dd($layanan);
 
