@@ -103,16 +103,17 @@ class AuthController extends Controller
         // 'captcha' => 'required|captcha'
       ];
       $messages = [
-        'name.required'         => 'Nama Lengkap wajib diisi',
+        'name.required'         => 'Nama lengkap wajib diisi',
         'name.min'              => 'Nama lengkap minimal 3 karakter',
         'name.max'              => 'Nama lengkap maksimal 35 karakter',
         'email.required'        => 'Email wajib diisi',
         'email.email'           => 'Email tidak valid',
         'email.unique'          => 'Email sudah terdaftar',
-        'password.required'     => 'Kata Sandi wajib diisi',
+        'password.required'     => 'Kata sandi wajib diisi',
         'phone.required'        => 'Nomor ponsel wajib diisi',
-        'phone.min'             => 'Nomor lengkap minimal 8 ',
-        'phone.max'             => 'Nomor lengkap maksimal 12',
+        'phone.min'             => 'Nomor telepon minimal 8 digit',
+        'phone.max'             => 'Nomor telepon maksimal 12 digit',
+        'phone.numeric'         => 'Nomor telepon harus berupa angka',
       ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
