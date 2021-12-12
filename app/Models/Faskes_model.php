@@ -40,7 +40,7 @@ class Faskes_model extends Model
         if($spesialis && $spesialis!= GlobalConstants::ALLSpec2 && $spesialis!= 'pilihLayananKanker' ) {
 
             
-            $faskes = $faskes->whereIN('layanan', $spesialis);
+            $faskes = $faskes->whereRaw("find_in_set($spesialis , layanan)");
                         
         }
         //Filter Provinsi
