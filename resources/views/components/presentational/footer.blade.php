@@ -19,9 +19,9 @@
             </div>
             <div class="col-12 col-lg-6 mt-5">
                 <div>
-                    {{-- <p class="mb-4"><strong>Hubungi Kami</strong></p>
+                    <p class="mb-4"><strong>Hubungi Kami</strong></p>
                    
-                    <p>GLOBAL ONKOLAB FARMA<br/>
+                    {{-- <p>GLOBAL ONKOLAB FARMA<br/>
                         Jl. Jend. Ahmad Yani No.2, RT.3/RW.13,
                         <br>
                         Kayu Putih, Kec. Pulo Gadung, Kota Jakarta

@@ -9,13 +9,23 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Artikel_model;
+use App\Models\GlobalData;
 use App\Models\ArtikelKategori_model;
+use Illuminate\Support\Facades\View;
+
 
 define('PER_PAGE_LIMIT', 30);
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct()
+    {
+      $siteSetting = GlobalData::where('id' ,1)->first();
+      View::share('address', $siteSetting->pvar3);
+      View::share('copyright', $siteSetting->ptext3);
+    }
 
     public function getnews(){
   
@@ -51,4 +61,12 @@ class Controller extends BaseController
         }
         return $statusLogin;
     }
+
+  //   public function siteSettings(){
+      
+  //     // check sebagai customer apa bukan
+  //     $siteSetting = GlobalData::where('pvar1' ,'company');
+  //     return $globalData;
+      
+  // }
 }

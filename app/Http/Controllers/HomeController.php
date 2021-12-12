@@ -14,8 +14,11 @@ class HomeController extends Controller
 {
     public function index(Request $request){
         // GET variable from global data for website
-        $siteConfig   = DB::table('global_data')->first();
+        //$siteConfig   = DB::table('global_data')->where('id',1)->get();
         //$session = $request->session()->all();
+        //dd ($siteSetting);
+        //$titlePages = $siteConfig->pvar1;
+        //dd($siteConfig);
 
         //dd($session);
         // check sebagai customer apa bukan
@@ -92,9 +95,9 @@ class HomeController extends Controller
         ->orderBy('sortId','ASC')
         ->get();
 
-        $data = array('title' => $siteConfig->pvar2,
-                      'copyright'=>$siteConfig->ptext3,
-                      'address'=>$siteConfig->pvar3,
+
+
+        $data = array(
                       'statusLogin'=>$statusLogin,
                       'statusConfig'=>$statusConfig,
                       //'titleAbout'=>$shortContentAbout->title,
