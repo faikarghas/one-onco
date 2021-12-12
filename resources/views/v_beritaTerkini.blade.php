@@ -7,7 +7,7 @@
     <main>
         <div class="box__banner forDesktop">
 
-            @switch(Request::segment(1))
+            {{-- @switch(Request::segment(1))
             @case('berita-terkini')
                 <img src="{{asset('/images/berita_terkini.jpg')}}" width="100%" height="100%" alt="">
                 @break
@@ -19,7 +19,9 @@
                 @break
             @default
                 <img src="{{asset('/images/solusiOnkologiBanner.jpg')}}" width="100%" height="100%" alt="">
-            @endswitch
+            @endswitch --}}
+
+            <img src="{{asset('/images/'.$imageHeader)}}" alt="{{ $slugKat }}" width="100%" height="100%" alt="">
             <div class="box__banner-desc">
                 <h2>{!! $titleHeader !!}</h2>
                 <p>{!! $taglineHeader !!}</p>
