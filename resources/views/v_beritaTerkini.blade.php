@@ -21,7 +21,7 @@
                 <img src="{{asset('/images/solusiOnkologiBanner.jpg')}}" width="100%" height="100%" alt="">
             @endswitch --}}
 
-            <img src="{{asset('/images/'.$img_header)}}" alt="{{ $slugKat }}" width="100%" height="100%" alt="">
+            <img src="{{asset('/images/'.$img_header)}}" alt="" width="100%" height="100%" alt="">
             <div class="box__banner-desc">
                 <h2>{!! $titleHeader !!}</h2>
                 <p>{!! $taglineHeader !!}</p>
