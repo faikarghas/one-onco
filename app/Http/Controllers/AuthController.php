@@ -99,7 +99,7 @@ class AuthController extends Controller
         'name'                  => 'required|min:3|max:35',
         'email'                 => 'required|email|unique:users,email',
         'password'              => 'required|min:8',
-        'phone'                 => 'required|min:8|max:13|numeric',
+        'phone'                 => 'required|min:8|max:12|numeric',
         // 'captcha' => 'required|captcha'
       ];
       $messages = [
@@ -112,7 +112,7 @@ class AuthController extends Controller
         'password.required'     => 'Kata Sandi wajib diisi',
         'phone.required'        => 'Nomor ponsel wajib diisi',
         'phone.min'             => 'Nomor lengkap minimal 8 ',
-        'phone.max'             => 'Nomor lengkap maksimal 13',
+        'phone.max'             => 'Nomor lengkap maksimal 12',
       ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
