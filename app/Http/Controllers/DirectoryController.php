@@ -11,6 +11,7 @@ use App\Models\DokterMap;
 use App\Models\Kanker_model;
 use App\Models\Customer_model;
 use App\Models\Faskes_model;
+use App\Models\FaskesLayanan;
 use App\Models\DokterSpesialis_model;
 use App\Constants\GlobalConstants;
 
