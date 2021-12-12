@@ -41,7 +41,7 @@ class Faskes_model extends Model
 
 
             $faskes = $faskes->where('layanan', $spesialis);
-            dd($spesialis);
+            //dd($spesialis);
             
         }
         //Filter Provinsi
