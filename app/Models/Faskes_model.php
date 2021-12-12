@@ -35,10 +35,14 @@ class Faskes_model extends Model
             });
         }
        
+
         //Filter Spesialis
         if($spesialis && $spesialis!= GlobalConstants::ALLSpec2 && $spesialis!= 'pilihLayananKanker' ) {
-            $faskes = $faskes->where($spesialis, '1');
+
+
+            $faskes = $faskes->where('layanan', $spesialis);
             dd($spesialis);
+            
         }
         //Filter Provinsi
         if($provinsi && $provinsi!= GlobalConstants::ALLProv) {
