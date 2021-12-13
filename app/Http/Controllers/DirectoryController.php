@@ -84,9 +84,9 @@ class DirectoryController extends Controller
       //dd($layanan);
       
       $spesialis =  $layanan->id;
-      dd($spesialis);
+    
       $provinsi = $request->provinsi;
-      //dd($provinsi);
+      dd($provinsi);
       $kabupaten = $request->kabupaten;
       //DB::enableQueryLog();
       $faskes = Faskes_model::getFaskes($query,$spesialis,$provinsi,$kabupaten);
