@@ -8,7 +8,7 @@
                       
                             <div class="rounded_img">
                                 @if ($foto != NULL)
-                                <img width="100%" height="100%" src="{{asset("/data_dokter/$foto")}}" alt="{{$title}}" />    
+                                <img width="100%" height="100%" src="{{asset("/data_dokter/$foto")}}" alt="{{$fullname}}" />    
                             @else
                                 <img width="100%" height="100%" src="{{asset("/data_dokter/doctor.svg")}}" alt="" />    
                             @endif
