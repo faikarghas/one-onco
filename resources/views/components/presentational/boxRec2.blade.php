@@ -3,7 +3,19 @@
         <div class="row">
             <div class="col-3 d-flex align-items-center justify-content-center">
                 <div class="{{$rounded}}">
-                    <img width="100%" height="100%" src="{{asset("/data_dokter/$image_url")}}" alt="{{$image_url}}" />
+                    {{-- @if ()
+                        <img width="100%" height="100%" src="{{asset("/data_dokter/$image_url")}}" alt="{{$image_url}}" />    
+                    @else
+
+                    @endif --}}
+
+                    @if ($image_url != NULL)
+                        <img width="100%" height="100%" src="{{asset("/data_dokter/$image_url")}}" alt="{{$title}}" />    
+                    @else
+                        <img width="100%" height="100%" src="{{asset("/data_dokter/doctor.svg")}}" alt="" />    
+                    @endif
+                    
+                
                 </div>
             </div>
             <div class="col-7 d-flex flex-column align-items-start justify-content-center">

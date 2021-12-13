@@ -5,17 +5,13 @@
                 <div class="container p-0">
                     <div class="row">
                         <div class="col-3 d-flex align-items-center justify-content-center">
-                            <?php
-                                   $path = public_path('data_dokter/'.$foto);
-                                    $isExists = file_exists($path);
-                                    if ($isExists) {
-                                        $fotoDokter = $foto;
-                                    } else {
-                                        $fotoDokter = 'doctor.svg';
-                                    }
-                                ?>
+                      
                             <div class="rounded_img">
-                                <img width="100%" height="100%" src="{{ asset("/data_dokter/$fotoDokter") }}" alt="dokter" />
+                                @if ($foto != NULL)
+                                <img width="100%" height="100%" src="{{asset("/data_dokter/$foto")}}" alt="{{$title}}" />    
+                            @else
+                                <img width="100%" height="100%" src="{{asset("/data_dokter/doctor.svg")}}" alt="" />    
+                            @endif
                             </div>
                         </div>
                         <div class="col-7 d-flex flex-column align-items-start">
