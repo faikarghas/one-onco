@@ -111,16 +111,6 @@ class DirectoryController extends Controller
 
     public function getDokterDetail($id, Request $request) {
 
-      $siteConfig   = DB::table('global_data')->first();
-      // $dokterDetail = DB::table('dokter')
-      //   ->select('dokter.dokterId', 'dokter.fullname', 'dokter.subSpesialist','dokter.foto')
-      //   ->whereRaw('dokter.dokterId=?',[$id])
-      //   ->first();
-
-      // $dokterDetail = DB::table('dokter')
-      // ->select('dokter.dokterId', 'dokter.fullname', 'dokter.subSpesialist','dokter.foto')
-      // ->whereRaw('dokter.dokterId=?',[$id])
-      // ->first();
 
       $dokterDetail = Dokter_model::where('uuid','=',$id)->first();
 
@@ -334,20 +324,10 @@ public function getFaskesWithKabupaten($id) {
 
 
 
-  public function getLabDetail($id,Request $request){
+  public function getLabDetail($slug,Request $request){
 
-    // GET variable from global data for website
-    $siteConfig   = DB::table('global_data')->first();
-
-    $viewFaskes = Faskes_model::where('faskesId','=',$id)->first();
-
-    //$string = urlencode($id);
-
-    //dd($string);
-
+    $viewFaskes = Faskes_model::where('slug','=',$slug)->first();
     $string = urlencode("http://127.0.0.1:8000/direktori-lab/32061001%20-%20Copy");
-
-    //dd($string);
 
     $namaFaskes = $viewFaskes->namaFaskes;
     $addressFaskes = $viewFaskes->alamat;
@@ -361,8 +341,7 @@ public function getFaskesWithKabupaten($id) {
 
     $provinces = DB::table('indonesia_provinces')->pluck("name","id");
     $cities = DB::table('indonesia_provinces')->pluck("name","id");
-    $data = array('title' => $siteConfig->pvar2,
-                  
+    $data = array(
                   'name'=>$namaFaskes,
                   'address'=>$addressFaskes,
                   'fax'=>$phoneFax,
