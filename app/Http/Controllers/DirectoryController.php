@@ -75,7 +75,7 @@ class DirectoryController extends Controller
 
     public function getMoreFaskes(Request $request){
       $query = strtolower($request->search_query);
-      //dd($query);
+      dd($query);
       $spesialis = preg_replace("/[^A-Za-z0-9]/", "", $request->spesialis);
       $spesialis = $request->spesialis;
       
