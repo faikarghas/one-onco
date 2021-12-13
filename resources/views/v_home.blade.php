@@ -380,7 +380,7 @@
             var linkM = document.querySelector("#linkSliderM");
 
 
-            var inst = setInterval(change, 10* 10 * 10);
+            var inst = setInterval(change, 1000 * 60 * 60);
 
             backgroundImgD.style.backgroundImage = 'url(' + image[0] + ')';;
             titleD.innerHTML = title[0];
