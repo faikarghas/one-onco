@@ -77,9 +77,9 @@ class DirectoryController extends Controller
       $query = strtolower($request->search_query);
       //$spesialis = preg_replace("/[^A-Za-z0-9]/", "", $request->spesialis);
       $spesialis = $request->spesialis;
-      //$layanan = DB::table('faskes_layanan')->where('title', $spesialis)->first();
+      $layanan = DB::table('faskes_layanan')->where('title', $spesialis)->get();
       //dd($layanan);
-      //$spesialis =  $layanan->id;
+      $spesialis =  $layanan->id;
 
       $provinsi = $request->provinsi;
       //dd($provinsi);
