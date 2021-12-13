@@ -82,6 +82,7 @@ class DirectoryController extends Controller
 
       $layanan = DB::table('faskes_layanan')->where('title', $spesialis)->first();
 
+      dd($layanan);
 
 
       $spesialis =  $layanan->id;
