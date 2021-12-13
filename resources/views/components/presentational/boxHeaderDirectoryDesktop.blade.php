@@ -18,8 +18,9 @@
       break;
     case "direktori-komunitas" : 
       $bgColor = $currentUrl == 'direktori-komunitas' ? '#00A2E3;' : 'white';
-      $color = $currentUrl == 'direktori-komunitas' ? 'white' : 'white';
-      $image_url = $currentUrl == 'direktori-komunitas  ' ? 'directori_komunitas_white.svg' : 'directori_komunitas.svg';
+      $color = $currentUrl == 'direktori-komunitas' ? 'white' : '#00A2E3';
+     // $image_url = $currentUrl == 'direktori-komunitas  ' ? 'directori_komunitas_white.svg' : 'directori_komunitas.svg';
+     $image_url = $currentUrl == 'direktori-komunitas  ' ? 'directori_komunitas.svg' : 'directori_komunitas_white.svg';
       break;
   }
 ?>
@@ -89,7 +90,7 @@
             ])
             @else
               @include('components/presentational.boxRec',[
-              'image_url'=>$image_url,
+              'image_url'=>'directori_komunitas.svg',
               'title'=>'Direktori Komunitas',
               'description'=>'Temukan komunitas kanker disekitarmu',
               'color'=>'#00A2E3;',
