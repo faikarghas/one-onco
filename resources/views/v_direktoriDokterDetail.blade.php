@@ -78,7 +78,7 @@
                             'description'=>'Cari tau mengenai perawatan kanker yang diderita',
                             'color'=>'#00A2E3;',
                             'colorPar'=>'#808080;',
-                            'path'=>'direktori-lab',
+                            'path'=>'direktori-komunitas',
                             'bgColor'=> 'white'
                         ])
                         @include('components/presentational.boxRec',[

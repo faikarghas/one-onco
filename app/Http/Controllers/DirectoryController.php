@@ -330,7 +330,7 @@ public function getFaskesWithKabupaten($id) {
   public function getLabDetail($slug,Request $request){
 
     $viewFaskes = Faskes_model::where('slug','=',$slug)->first();
-    $string = urlencode("http://127.0.0.1:8000/direktori-lab/32061001%20-%20Copy");
+    $string = urlencode("http://127.0.0.1:8000/direktori-komunitas/32061001%20-%20Copy");
 
     $namaFaskes = $viewFaskes->namaFaskes;
     $addressFaskes = $viewFaskes->alamat;
