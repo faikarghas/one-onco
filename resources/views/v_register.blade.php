@@ -68,8 +68,6 @@
                                   </div> 
                                   <div class="input-group mb-4">
                                     <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
-
-                                    
                                   </div>
                                   <span class="text-danger">@error('captcha'){{ $message }} @enderror</span>
                                   <br>
